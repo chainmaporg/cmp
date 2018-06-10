@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ./partials/developer-header %>
+</header>
+
+<main>
+<h1>Challenges</h1>
+
+                 <table border="1" cellpadding="7" cellspacing="7">
+					  <tr>
+						<th width="50px"><center>No<center></th>
+						<th width="200px"><center>Name<center></th>
+						<th width="400px"><center>Event Invitation<center></th>
+						<th width="150px"><center>Join Event<center></th>
+						<th width="100px"><center>Learn<center></th>
+					  </tr>
+					  <% if(data.length){ 
+						for(var i = 0;i < data.length;i++) { %>
+					  <tr height="200px">
+						<td><center><%=(i+1)%></center></td>
+						<td><center><font size="5"><b><%=data[i].name%></b></font></center></td>
+						<td><%=data[i].description%></td>
+						
+						<td><center><img src="image/files/candy.jpeg" width="40"></img></center><br><a href="<%=data[i].eventlink%>"><center><b>Take the challenge</b></center></a></td>
+						<td><a href="<%=data[i].git%>"><center>Git</center> </a><br> <a href="<%=data[i].learninginfo%>"><center>Learning Info</center> </a></td>
+					  </tr>
+			  		  <% }
+  						}else{ %>
+  						<tr>
+   						 <td colspan="4">NA</td>
+  						</tr>
+					  <% } %>
+
+					</table>
+
+</main>
+
+<footer>
+    <% include ./partials/developer-footer %>
+</footer>
+
+</body>
+</html>
+
+

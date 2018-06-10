@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ./partials/developer-header %>
+</header>
+
+<main>
+<h1>Login</h1>
+<br>
+<br>
+<form method="post" action="/login">
+  
+  <table>
+    <tr><td>
+    <label>Username(Email):</label>
+    </td><td>
+    <input type="text" name="email" size="60">
+    </td></tr>
+
+    <tr><td>
+    <label>Password:</label>
+    </td><td>
+    <input type="password" name="password" size="60">
+    </td></tr>
+  </table>
+    <br>
+
+    <input type="submit" value="Login">
+  </p>
+</form>
+
+
+</main>
+
+<footer>
+    <% include ./partials/developer-footer %>
+</footer>
+
+</body>
+</html>

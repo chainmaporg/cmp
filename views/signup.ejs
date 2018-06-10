@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./partials/head %>
+</head>
+
+<header>
+    <% include ./partials/developer-header %>
+</header>
+
+
+<body class="container">
+
+<main>
+
+
+<p><b>Thanks for your interest to join the ChainMap community. The community is just started. 
+</b>
+
+<p>
+As a member of the community, you shall be able to get personalised info (event, article, team etc.) based on your own interest. 
+</p>
+
+<p>
+As a member of the community, you shall be able to contribute to the community and get rewards by the incentives the community is designing.
+</p>
+<br>
+<form method="post" action="/register">
+  
+  <table>
+    <tr><td>  
+    <label>Email (*):</label>  
+    </td><td>
+    <input type="text" name="email" size="60">
+    </td></tr>
+   
+    
+     <tr><td> 
+    <label>Password (*) :</label>
+    </td><td>
+    <input type="password" name="password" size="60">
+    </td></tr>
+    
+    
+    
+      <tr><td> 
+  <label>Primary BlockChain Interest Category (*):</label>  
+  </td><td>  
+  <select name="primarycat">
+    <option value="PublicChainInfr">Public Chain Infrastructure</option>
+    <option value="EnterpriseChainInfr">Enterprise Chain Infrastructure</option>
+    <option value="Finance">Finance</option>
+    <option value="Data">Data</option>
+    <option value="AI">AI</option>
+    <option value="Identity">Identity</option>
+    <option value="CopyRight">CopyRight</option>
+    <option value="Social">Social</option>
+    <option value="IOT">IOT</option>
+    <option value="Law">Law</option>
+    <option value="Entertainment">Entertainment</option>
+    <option value="Game">Game</option>
+    <option value="RealEstate">RealEstate</option>
+    <option value="Charity">Charity</option>
+    <option value="Enterprise">Enterprise</option>
+    <option value="HealthCare">HealthCare</option>
+    <option value="Energy">Energy</option>
+    <option value="Agriculture">Agriculture</option>    
+  </select>
+  </td></tr>
+   
+      <tr><td> 
+  <label>Seek partner or team members for challenge? :</label>
+  </td><td>
+  <select name="partneryes">
+    <option value="No">No</option>
+    <option value="Yes">Yes</option>
+  </select>
+  </td></tr>
+    
+   <tr><td> 
+    <label>If Yes, what kind of team partners are you looking for (optional)? :</label>
+    </td><td>
+    <input type="text" name="teamneeds" size="60">
+    </td></tr>
+    
+    
+   <tr><td> 
+    <label>Your Location (optional):</label>
+    </td><td>
+    <input type="text" name="location" size="60">
+    </td></tr>
+    </table>
+    
+    <br>
+    <input type="submit" value="Signup">
+</form>
+
+
+</main>
+
+<footer>
+    <% include ./partials/developer-footer %>
+</footer>
+
+</body>
+</html>
