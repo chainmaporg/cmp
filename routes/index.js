@@ -37,6 +37,9 @@ router.get('/login', function(req, res) {
     res.render('login', { title: 'Login' });
 });
 
+router.get('/questionBoard', function(req, res) {
+    res.render('questionBoard', { title: 'Question Board' });
+});
 
 
 
