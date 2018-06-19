@@ -37,15 +37,14 @@ router.get('/login', function(req, res) {
     res.render('login', { title: 'Login' });
 });
 
-router.get('/questionBoard', function(req, res) {
-    res.render('questionBoard', { title: 'Question Board' });
-});
+
 
 
 
 //route to handle user registration
 var login = require('../routes/login');
 var challenge = require('../routes/challenge');
+var questionBoard = require("../routes/questionBoard");
 router.get('/register', login.register)
 router.post('/register', login.register)
 router.post('/login',login.login)
@@ -67,6 +66,11 @@ router.get('/signup', function(req, res) {
 router.get('/', function(req, res) {
     res.render('home', { title: 'Home' });
 });
+
+router.get('/questionBoard', questionBoard.getAllChallenge);
+router.get('/getChallengebyID/:challenge_id', questionBoard.getDetailsChallenge);
+router.post('/postChallenge', questionBoard.postChallenge);
+
 
 
 

@@ -90,84 +90,134 @@
                                 <h2 id="description-header">All the challenges are sorted by date</h2>
                                 <div class="main-questions-list">
                                     <ul id="main_questions_list">
-                                        <% if(data.length){ 
-                                                for(var i = 0;i < data.length;i++) { %>
-                                            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="question-item post-2341 question type-question status-publish hentry question_category-business qa_tag-business-2 qa_tag-technology-2"
-                                                data-id="2341">
-                                                <div itemprop="item" itemscope="" itemtype="http://schema.org/Question">
-                                                    <div class="col-md-8 col-xs-8 q-left-content">
-                                                        <div class="q-ltop-content">
-                                                            <h2 itemprop="name">
-                                                                <a itemprop="url" href="http://localhost:8080/getChallengebyID/<%=data[i].challenge_id%>" class="question-title">
-                                                                    <%=data[i].title%>
-                                                                </a>
-                                                            </h2>
+                                        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="question-item post-2341 question type-question status-publish hentry question_category-business qa_tag-business-2 qa_tag-technology-2"
+                                            data-id="2341">
+                                            <div itemprop="item" itemscope="" itemtype="http://schema.org/Question">
+                                                <div class="col-md-8 col-xs-8 q-left-content">
+                                                    <div class="q-ltop-content">
+                                                        <h2 itemprop="name">
+                                                            <a itemprop="url" href="http://localhost:8080/getChallengebyID/<%=data.challengedetails[0].challenge_id%>" class="question-title">
+                                                                <%=data.challengedetails[0].title%>
+                                                            </a>
+                                                        </h2>
+                                                    </div>
+                                                    <div class="q-lbtm-content">
+                                                        <div itemprop="text" class="question-excerpt">
+                                                            <p>
+                                                                <%=data.challengedetails[0].description%>
+                                                            </p>
                                                         </div>
-                                                        <div class="q-lbtm-content">
-                                                            <div itemprop="text" class="question-excerpt">
-                                                                <p>
-                                                                    <%=data[i].description%>
-                                                                </p>
-                                                            </div>
-                                                            <div class="question-cat">
-                                                                <ul class="question-tags">
-                                                                    <li>
-                                                                        <a class="q-tag" href="javascript:">
-                                                                            <%=data[i].category%>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a class="q-tag" href="javascript: ">
-                                                                            <%=data[i].level%>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                                <div class="clearfix"></div>
+                                                        <div class="question-cat">
+                                                            <ul class="question-tags">
+                                                                <li>
+                                                                    <a class="q-tag" href="javascript:">
+                                                                        <%=data.challengedetails[0].category%>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="q-tag" href="javascript: ">
+                                                                        <%=data.challengedetails[0].level%>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                            <div class="clearfix"></div>
 
-                                                                <span title="90" class="user-badge" style="background-color:#04aad4;">Asked By
-                                                                    <%=data[i].user_name%>
-                                                                </span>
-                                                                <span itemprop="dateCreated" datetime="on July 14, 2016" class="question-time">
-                                                                    Asked on
-                                                                    <%=data[i].posting_date%>
-                                                                </span>
-                                                                <!-- <span class="question-category">
+                                                            <span title="90" class="user-badge" style="background-color:#04aad4;">Asked By
+                                                                <%=data.challengedetails[0].user_name%>
+                                                            </span>
+                                                            <span itemprop="dateCreated" datetime="on July 14, 2016" class="question-time">
+                                                                Asked on
+                                                                <%=data.challengedetails[0].posting_date%>
+                                                            </span>
+                                                            <!-- <span class="question-category">
                                                                 <a href="https://qaengine.enginethemes.com/blog/question-category/business/">Business.</a>
                                                             </span> -->
-                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <!-- end left content -->
-                                                    <div class="col-md-4 col-xs-4 q-right-content">
-                                                        <ul class="question-statistic">
-                                                            <li>
-                                                                <span class="question-views">
-                                                                    <%=data[i].view_count%>
-                                                                </span>
-                                                                views </li>
-                                                            <li class="active">
-                                                                <span itemprop="answerCount" class="question-answers">
-                                                                    <%=data[i].total_answers%>
-                                                                </span>
-                                                                answers </li>
-                                                            <li>
-                                                                <span itemprop="upvoteCount" class="question-votes">
-                                                                    <%=data[i].upvote_count + data[i].downvote_count%>
-                                                                </span>
-                                                                votes </li>
-                                                        </ul>
-                                                        <div class="pumping">
-                                                        </div>
-                                                    </div>
-                                                    <!-- end right content -->
-                                                    <div class="clearfix"></div>
                                                 </div>
-                                            </li>
-                                            <% }} %>
+                                                <!-- end left content -->
+                                                <div class="col-md-4 col-xs-4 q-right-content">
+                                                    <ul class="question-statistic">
+                                                        <li>
+                                                            <span class="question-views">
+                                                                <%=data.challengedetails[0].view_count%>
+                                                            </span>
+                                                            views </li>
+                                                        <li class="active">
+                                                            <span itemprop="answerCount" class="question-answers">
+                                                                <%=data.challengedetails[0].total_answers%>
+                                                            </span>
+                                                            answers </li>
+                                                        <li>
+                                                            <span itemprop="upvoteCount" class="question-votes">
+                                                                <%=data.challengedetails[0].upvote_count + data.challengedetails[0].downvote_count%>
+                                                            </span>
+                                                            votes </li>
+                                                    </ul>
+                                                    <div class="pumping">
+                                                    </div>
+                                                </div>
+                                                <!-- end right content -->
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </li>
+                                        <% if(data.answers.length){ 
+                                            for(var i = 0;i < data.answers.length;i++) { %>    
+                                        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="question-item post-2341 question type-question status-publish hentry question_category-business qa_tag-business-2 qa_tag-technology-2"
+                                            data-id="2341">
+                                            <div itemprop="item" itemscope="" itemtype="http://schema.org/Question">
+                                                <div class="col-md-8 col-xs-8 q-left-content">
+                                                    <div class="q-lbtm-content">
+                                                        <div itemprop="text" class="question-excerpt">
+                                                            <p>
+                                                                <%=data.answers[i].description%>
+                                                            </p>
+                                                        </div>
+                                                        <div class="question-cat">
+                                                            <div class="clearfix"></div>
+
+                                                            <span title="90" class="user-badge" style="background-color:#04aad4;">Answered By
+                                                                <%=data.answers[i].user_name%>
+                                                            </span>
+                                                            <span itemprop="dateCreated" datetime="on July 14, 2016" class="question-time">
+                                                                Answered on
+                                                                <%=data.answers[i].posting_date%>
+                                                            </span>
+                                                            <!-- <span class="question-category">
+                                                            <a href="https://qaengine.enginethemes.com/blog/question-category/business/">Business.</a>
+                                                        </span> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end left content -->
+                                                <div class="col-md-4 col-xs-4 q-right-content">
+                                                    <ul class="question-statistic">
+                                                        <li>
+                                                            <span class="question-views">
+                                                                <%=data.answers[i].view_count%>
+                                                            </span>
+                                                            views </li>
+                                                        <li class="active">
+                                                            <span itemprop="answerCount" class="question-answers">
+                                                                <%=data.answers[i].total_answers%>
+                                                            </span>
+                                                            answers </li>
+                                                        <li>
+                                                            <span itemprop="upvoteCount" class="question-votes">
+                                                                <%=data.answers[i].upvote_count + data.answers[i].downvote_count%>
+                                                            </span>
+                                                            votes </li>
+                                                    </ul>
+                                                    <div class="pumping">
+                                                    </div>
+                                                </div>
+                                                <!-- end right content -->
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </li>
+                                        <% }} %>
                                     </ul>
                                 </div>
-
-
                             </div>
 
                             <div id="tab-installation" class="plugin-installation section">
@@ -218,7 +268,7 @@
 
             <!-- Modal Posting question modal window-->
             <div class="modal fade" id="register-modal" role="dialog">
-                <div class="modal-dialog modal-lg">
+                <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">
@@ -232,37 +282,19 @@
                         <div class="modal-body">
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label for="listname">Title</label>
-                                    <input type="text" class="form-control" id="ChallengeHeader" placeholder="Challenge Header" required="true" name="ChallengeHeader"
-                                        </div>
+                                    <label class="col-sm-3 control-label" for="listname">Challenge Header</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control" id="ChallengeHeader" placeholder="Challenge Header" required="true" name="ChallengeHeader"
+                                        />
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="position">Question</label>
+                                    <label class="col-sm-2 control-label" for="position">Challenge Question</label>
+                                    <div class="col-sm-10">
+                                        <textarea class="form-control" rows="5" id="ChallengeQuestion" name="ChallengeQuestion"></textarea>
+                                    </div>
+                                </div>
 
-                                    <textarea class="form-control" rows="10" id="ChallengeQuestion" name="ChallengeQuestion"></textarea>
-
-                                </div>
-                                <div class="form-group">
-                                    <label for="sel1">Category of the Question:</label>
-                                    <select class="form-control" id="category">
-                                        <option value="Public Chain Infrastructure, consensus">Public Chain Infrastructure, consensus</option>
-                                        <option value="Smart Contract">Smart Contract</option>
-                                        <option value="dApp Backend">dApp Backend</option>
-                                        <option value="dApp Frontend">dApp Frontend</option>
-                                        <option value="IPFS/Storage/Network">IPFS/Storage/Network</option>
-                                        <option value="Industry Use Cases">Industry Use Cases</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="sel1">Category of the Question:</label>
-                                    <select class="form-control" id="level">
-                                        <option value="Diamond (need >2 hrs)">Diamond (need >2 hrs)</option>
-                                        <option value="Gold (need >30 mins)">Gold (need >30 mins)</option>
-                                        <option value="Silver (need >5 mins)">Silver (need >5 mins)</option>
-                                        <option value="Brozen (<5 mins)">Brozen (
-                                            <5 mins)</option>
-                                    </select>
-                                </div>
                             </form>
                         </div>
                         <!-- Modal Footer -->
@@ -280,26 +312,16 @@
                     var url = "postChallenge";
                     var ChallengeHeader = $("#ChallengeHeader").val();
                     var ChallengeQuestion = $("#ChallengeQuestion").val();
-                    var category = $("#category").val();
-                    var level = $("#level").val();
                     $.ajax({
                         type: 'POST',
                         url: url,
                         data: {
                             ChallengeHeader: ChallengeHeader,
-                            ChallengeQuestion: ChallengeQuestion,
-                            category: category,
-                            level: level
+                            ChallengeQuestion: ChallengeQuestion
                         },
                         async: false
-                        // success: function (data) {
-                            
-                        // },
-                        // error: function () {
-                        //     alert('Error occured');
-                        // }
                     });
-                    window.location.reload();
+                    // window.location.reload();
                 }
             </script>
 

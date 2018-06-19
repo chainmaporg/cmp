@@ -12,14 +12,16 @@ var app = express();
 
 // app.set('view engine', 'pug');
 app.set('view engine', 'ejs');
-app.use(express.static('public'))
+// app.use(express.static('public'))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(session({secret: 'chainmapsecret'}));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
+// app.use('/img',express.static(path.join(__dirname, 'public/images')));
+// app.use('/js',express.static(path.join(__dirname, 'public/javascripts')));
+// app.use('/css',express.static(path.join(__dirname, 'public/stylesheets')));
 app.use(express.static('image'));
 
 app.use('/', indexRouter);
@@ -44,4 +46,5 @@ app.use(function(err, req, res, next) {
   res.render('error', {errorMsg: err});
 });
 
+app.use(express.static(path.join(__dirname, 'public')));
 module.exports = app;
