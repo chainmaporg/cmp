@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<head>
+    <% include ./partials/header %>
+</head>
+
+<body id="wordpress-org" class="plugin-template-default single single-plugin postid-9596 admin-bar no-customize-support no-js">
+    <script type="text/javascript">document.body.className = document.body.className.replace('no-js', 'js');</script>
+    <% include ./partials/body_header %>
+        <div id="page" class="site">
+            <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+            <div id="content" class="site-content">
+                <header id="masthead" class="site-header " role="banner">
+                    <div class="site-branding">
+                        <p class="site-title">
+                            <a href="javascript:" rel="home">Challenge Board</a>
+                        </p>
+
+                        <nav id="site-navigation" class="main-navigation" role="navigation">
+                            <button class="menu-toggle dashicons dashicons-arrow-down-alt2" aria-controls="primary-menu" aria-expanded="false" aria-label="Primary Menu"></button>
+                            <div id="primary-menu" class="menu">
+                                <ul>
+                                    <li class="page_item">
+                                        <a href="#register-modal" data-target="#register-modal" data-toggle="modal">Post a Challenge</a>
+                                    </li>
+                                    <li class="page_item">
+                                        <a class="" href="javascript:" title="Sub Menu 2">Sub Menu 2</a>
+                                    </li>
+                                    <li class="page_item">
+                                        <a class="" href="javascript:" title="Sub Menu 3">Sub Menu 3</a>
+                                    </li>
+                                    <!-- <li><form role="search" method="get" class="search-form" action="https://wordpress.org/plugins/">
+    <label for="s" class="screen-reader-text">Search for:</label>
+    <input type="search" id="s" class="search-field" placeholder="Search plugins" value="" name="s" />
+    <button class="button button-primary button-search"><i class="dashicons dashicons-search"></i><span class="screen-reader-text">Search plugins</span></button>
+    </form>
+    </li> -->
+                                </ul>
+                            </div>
+                        </nav>
+                        <!-- #site-navigation -->
+                    </div>
+                    <!-- .site-branding -->
+                </header>
+                <!-- #masthead -->
+
+                <main id="main" class="site-main" role="main">
+
+
+                    <article id="post-9596" class="post-9596 plugin type-plugin status-publish hentry plugin_category-discussion-and-community plugin_contributors-trevorpythag plugin_committers-trevorpythag plugin_tags-answers plugin_tags-forum plugin_tags-questions">
+
+                        <header class="plugin-header">
+
+                            <h1 class="plugin-title">Challenge Title</h1>
+
+                            <span class="byline">By
+                                <span class="author vcard">
+                                    <a class="url fn n" rel="nofollow" href="javascript">User Name</a>
+                                </span>
+                            </span>
+                        </header>
+                        <!-- .entry-header -->
+
+                        <script type="text/javascript">if ('#changelog' == window.location.hash) { window.location.hash = '#developers'; }</script>
+                        <span id="description"></span>
+                        <span id="reviews"></span>
+                        <span id="installation"></span>
+                        <span id="developers"></span>
+                        <span id="extras"></span>
+                        <ul class="tabs clear">
+                            <li id="tablink-description">
+                                <a href="#description">All Challenges</a>
+                            </li>
+                            <!-- <li id="tablink-reviews"><a href="#reviews">Reviews</a></li> -->
+                            <li id="tablink-installation">
+                                <a href="#installation">Challenge Details</a>
+                            </li>
+                            <li id="tablink-extras">
+                                <a href="#extras">Extras</a>
+                            </li>
+
+                            <!-- <li id="tablink-developers"><a href="#developers">Development</a></li> -->
+                        </ul>
+
+                        <div class="entry-content">
+
+                            <div id="tab-description" class="plugin-description section">
+                                <h2 id="description-header">All the challenges are sorted by date</h2>
+                                <div class="main-questions-list">
+                                    <ul id="main_questions_list">
+                                        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="question-item post-2341 question type-question status-publish hentry question_category-business qa_tag-business-2 qa_tag-technology-2"
+                                            data-id="2341">
+                                            <div itemprop="item" itemscope="" itemtype="http://schema.org/Question">
+                                                <div class="col-md-8 col-xs-8 q-left-content">
+                                                    <div class="q-ltop-content">
+                                                        <h2 itemprop="name">
+                                                            <a itemprop="url" href="http://localhost:8080/getChallengebyID/<%=data.challengedetails[0].challenge_id%>" class="question-title">
+                                                                <%=data.challengedetails[0].title%>
+                                                            </a>
+                                                        </h2>
+                                                    </div>
+                                                    <div class="q-lbtm-content">
+                                                        <div itemprop="text" class="question-excerpt">
+                                                            <p>
+                                                                <%=data.challengedetails[0].description%>
+                                                            </p>
+                                                        </div>
+                                                        <div class="question-cat">
+                                                            <ul class="question-tags">
+                                                                <li>
+                                                                    <a class="q-tag" href="javascript:">
+                                                                        <%=data.challengedetails[0].category%>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="q-tag" href="javascript: ">
+                                                                        <%=data.challengedetails[0].level%>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                            <div class="clearfix"></div>
+
+                                                            <span title="90" class="user-badge" style="background-color:#04aad4;">Asked By
+                                                                <%=data.challengedetails[0].user_name%>
+                                                            </span>
+                                                            <span itemprop="dateCreated" datetime="on July 14, 2016" class="question-time">
+                                                                Asked on
+                                                                <%=data.challengedetails[0].posting_date%>
+                                                            </span>
+                                                            <!-- <span class="question-category">
+                                                                <a href="https://qaengine.enginethemes.com/blog/question-category/business/">Business.</a>
+                                                            </span> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end left content -->
+                                                <div class="col-md-4 col-xs-4 q-right-content">
+                                                    <ul class="question-statistic">
+                                                        <li>
+                                                            <span class="question-views">
+                                                                <%=data.challengedetails[0].view_count%>
+                                                            </span>
+                                                            views </li>
+                                                        <li class="active">
+                                                            <span itemprop="answerCount" class="question-answers">
+                                                                <%=data.challengedetails[0].total_answers%>
+                                                            </span>
+                                                            answers </li>
+                                                        <li>
+                                                            <span itemprop="upvoteCount" class="question-votes">
+                                                                <%=data.challengedetails[0].upvote_count + data.challengedetails[0].downvote_count%>
+                                                            </span>
+                                                            votes </li>
+                                                    </ul>
+                                                    <div class="pumping">
+                                                    </div>
+                                                </div>
+                                                <!-- end right content -->
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </li>
+                                        <% if(data.answers.length){ 
+                                            for(var i = 0;i < data.answers.length;i++) { %>    
+                                        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="question-item post-2341 question type-question status-publish hentry question_category-business qa_tag-business-2 qa_tag-technology-2"
+                                            data-id="2341">
+                                            <div itemprop="item" itemscope="" itemtype="http://schema.org/Question">
+                                                <div class="col-md-8 col-xs-8 q-left-content">
+                                                    <div class="q-lbtm-content">
+                                                        <div itemprop="text" class="question-excerpt">
+                                                            <p>
+                                                                <%=data.answers[i].description%>
+                                                            </p>
+                                                        </div>
+                                                        <div class="question-cat">
+                                                            <div class="clearfix"></div>
+
+                                                            <span title="90" class="user-badge" style="background-color:#04aad4;">Answered By
+                                                                <%=data.answers[i].user_name%>
+                                                            </span>
+                                                            <span itemprop="dateCreated" datetime="on July 14, 2016" class="question-time">
+                                                                Answered on
+                                                                <%=data.answers[i].posting_date%>
+                                                            </span>
+                                                            <!-- <span class="question-category">
+                                                            <a href="https://qaengine.enginethemes.com/blog/question-category/business/">Business.</a>
+                                                        </span> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end left content -->
+                                                <div class="col-md-4 col-xs-4 q-right-content">
+                                                    <ul class="question-statistic">
+                                                        <li>
+                                                            <span class="question-views">
+                                                                <%=data.answers[i].view_count%>
+                                                            </span>
+                                                            views </li>
+                                                        <li class="active">
+                                                            <span itemprop="answerCount" class="question-answers">
+                                                                <%=data.answers[i].total_answers%>
+                                                            </span>
+                                                            answers </li>
+                                                        <li>
+                                                            <span itemprop="upvoteCount" class="question-votes">
+                                                                <%=data.answers[i].upvote_count + data.answers[i].downvote_count%>
+                                                            </span>
+                                                            votes </li>
+                                                    </ul>
+                                                    <div class="pumping">
+                                                    </div>
+                                                </div>
+                                                <!-- end right content -->
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </li>
+                                        <% }} %>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div id="tab-installation" class="plugin-installation section">
+                                <h2 id="installation-header">Installation</h2>
+                                <ol>
+                                    <li>Extract the zip file and just drop the contents in the wp-content/plugins/ directory
+                                        of your WordPress installation and then activate the Plugin from Plugins page.</li>
+                                    <li>View the Q&amp;A Forum page under settings in the wordpress admin to choose settings</li>
+                                    <li>Create a normal wordpress page with the shortcode [question_form width=\&#8217;x\&#8217;
+                                        bordercolor=\&#8217;x\&#8217; style=\&#8217;x\&#8217;]question form title[/question_form]
+                                        to insert the question form where each of the parameters can be omitted (the style
+                                        parameter is any addition css styles to add to the form)</li>
+                                    <li>use the [list_questions] short code to list questions which can be filtered by category
+                                        or user. Use the parameter author=’%’ to display the current user.</li>
+                                    <li>If you wish the users to be logged in to ask a question select the appropriate option
+                                        on the options page. It is recommended you use another plugin to manage your users
+                                        (such as login with ajax and customise your community). You will also need to ensure
+                                        that anyone can register in the general settings for wordpress.</li>
+                                    <li>To customise the look of your forum create a single-question.php and quser.php if you
+                                        are using user profiles file in your themes folder. This can be created in the same
+                                        way as the single.php file (you could copy this if your license allows). In this
+                                        forum the questions are actually posts and the answers comments so you should change
+                                        the output accordingly, eg if you comment form as the text submit comment change
+                                        it to submit answer.</li>
+                                </ol>
+                            </div>
+
+                            <div id="tab-extras" class="plugin-description section">
+                                <h2 id="extras-header">Extra</h2>
+                                <p>Question description will be given here</p>
+                            </div>
+
+
+
+
+                        </div>
+                        <!-- .entry-content -->
+                    </article>
+                    <!-- #post-## -->
+
+                </main>
+                <!-- #main -->
+
+
+            </div>
+            <!-- #content -->
+
+
+            <!-- Modal Posting question modal window-->
+            <div class="modal fade" id="register-modal" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">
+                                <span aria-hidden="true">&times;</span>
+                                <span class="sr-only">Close</span>
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
+                                Post a new Challenge
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="listname">Challenge Header</label>
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control" id="ChallengeHeader" placeholder="Challenge Header" required="true" name="ChallengeHeader"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="position">Challenge Question</label>
+                                    <div class="col-sm-10">
+                                        <textarea class="form-control" rows="5" id="ChallengeQuestion" name="ChallengeQuestion"></textarea>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                        <!-- Modal Footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" onclick="getvalues();">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- List Add modal window end -->
+
+            <script type="text/javascript">
+                function getvalues() {
+                    var url = "postChallenge";
+                    var ChallengeHeader = $("#ChallengeHeader").val();
+                    var ChallengeQuestion = $("#ChallengeQuestion").val();
+                    $.ajax({
+                        type: 'POST',
+                        url: url,
+                        data: {
+                            ChallengeHeader: ChallengeHeader,
+                            ChallengeQuestion: ChallengeQuestion
+                        },
+                        async: false
+                    });
+                    // window.location.reload();
+                }
+            </script>
+
+
+
+            <% include ./partials/footer %>
+</body>
+
+</html>
