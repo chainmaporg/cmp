@@ -1,11 +1,10 @@
 
 var mysql = require('mysql');
 
-
 var db_config = {
   host: '107.181.170.169',
-  user: 'root',
-  password: '',
+  user: 'dbuser',
+  password: 'telenav123',
   database: 'cmpdb'
 };
 
