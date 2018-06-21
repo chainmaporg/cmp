@@ -2,12 +2,13 @@
 var mysql      = require('mysql');
 
 
+
 var db_config = {
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'test'
-};
+   host     : '107.181.170.169 ',
+   user     : 'dbuser',
+   password : 'telenav123',
+   database : 'rsdb'
+ };
 
 
 
