@@ -3,10 +3,10 @@ var mysql = require('mysql');
 
 
 var db_config = {
-  host: 'localhost',
+  host: '107.181.170.169',
   user: 'root',
   password: '',
-  database: 'chainmap'
+  database: 'cmpdb'
 };
 
 
