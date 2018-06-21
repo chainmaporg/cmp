@@ -22,6 +22,7 @@ do
     scp ./public/stylesheets/*.* $user@${hosts[$ix]}:$target/public/stylesheets
     scp ./routes/* $user@${hosts[$ix]}:$target/routes
     scp ./views/* $user@${hosts[$ix]}:$target/views
+    scp ./dbscripts/* $user@${hosts[$ix]}:$target/dbscripts
     scp ./views/partials/*.* $user@${hosts[$ix]}:$target/views/partials
     scp ./views/pages/*.* $user@${hosts[$ix]}:$target/views/pages
 
