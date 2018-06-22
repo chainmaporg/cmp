@@ -77,7 +77,10 @@ router.get('/login', function(req, res) {
 //route to handle user registration
 var login = require('../routes/login');
 var challenge = require('../routes/challenge');
+var users = require('../routes/users');
 var questionBoard = require("../routes/questionBoard");
+
+
 router.get('/register', login.register)
 router.post('/register', login.register)
 router.post('/login',login.login)
@@ -103,7 +106,9 @@ router.get('/', function(req, res) {
 router.get('/questionBoard', questionBoard.getAllChallenge);
 router.get('/getChallengebyID/:challenge_id', questionBoard.getDetailsChallenge);
 router.post('/postChallenge', questionBoard.postChallenge);
-
+router.post('/postanswer', questionBoard.postanswer);
+router.post('/userRegister', users.userRegister);
+router.post('/getCompanies', users.getCompanies);
 
 
 

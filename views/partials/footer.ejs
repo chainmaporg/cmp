@@ -78,11 +78,11 @@
         <ul>
             <li>
                 <iframe title="Follow @WordPress on Twitter" allowtransparency="true" frameborder="0" scrolling="no" src="//platform.twitter.com/widgets/follow_button.html?screen_name=WordPress&amp;show_count=false"
-                 style="width:135px; height:20px;"></iframe>
+                    style="width:135px; height:20px;"></iframe>
             </li>
             <li>
                 <iframe title="Like WordPress on Facebook" src="//www.facebook.com/plugins/like.php?app_id=121415197926116&amp;href=http%3A%2F%2Fwww.facebook.com%2Fwordpress&amp;send=false&amp;layout=button_count&amp;width=135&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=lucida+grande&amp;height=21"
-                 scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:135px; height:21px;" allowTransparency="true"></iframe>
+                    scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:135px; height:21px;" allowTransparency="true"></iframe>
             </li>
             <li>
                 <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -255,14 +255,226 @@
 <div id="wpadminbar" class="nojq nojs">
     <a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">Skip to toolbar</a>
     <div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar" tabindex="0">
-        
+
         <ul id='wp-admin-bar-top-secondary' class="ab-top-secondary ab-top-menu">
             <li id='wp-admin-bar-log-in'>
                 <a class='ab-item' href='https://login.wordpress.org/?redirect_to=https%3A%2F%2Fwordpress.org%2Fplugins%2Fquestion-and-answer-forum%2F&#038;locale=en_US'>Log In</a>
             </li>
             <li id='wp-admin-bar-register'>
-                <a class='ab-item' href='https://login.wordpress.org/register?locale=en_US'>Register</a>
+                <a href="#userRegister-modal" data-target="#userRegister-modal" data-toggle="modal" onclick="getCompanies();">Register</a>
             </li>
         </ul>
     </div>
 </div>
+
+
+<!-- Modal Posting question modal window-->
+<div class="modal fade" id="userRegister-modal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    User Registration
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form" id="registerForm">
+                    <div class="form-group">
+                        <label for="isReviewRequired">You can either Select an Employer from the dropdown or create your own company</label>
+                        <label class="radio-inline">
+                            <input type="radio" name="isReviewRequired" value="select" onclick="selectMode('select')" checked>Select an Employer</label>
+                        <label class="radio-inline">
+                            <input type="radio" name="isReviewRequired" value="create" onclick="selectMode('create')">Create Company</label>
+                    </div>
+                    <div class="form-group employerFields">
+                        <label for="employer">Select Employer</label>
+                        <select class="form-control" id="employer" required>
+                            <option value="">Please select an Employer</option>
+                        </select>
+                    </div>
+                    <div class="form-group companyFields">
+                        <label for="companyName">Company Name</label>
+                        <input type="text" class="form-control" id="companyName" placeholder="Company Name" required="true" name="companyName" required />
+                    </div>
+                    <div class="form-group companyFields">
+                        <label for="companyInfo">Company Information</label>
+                        <input type="text" class="form-control" id="companyInfo" placeholder="Company Information" required="true" name="companyInfo"
+                        />
+                    </div>
+                    <div class="form-group companyFields">
+                        <label for="companyEmail">Company Email</label>
+                        <input type="text" class="form-control" id="companyEmail" placeholder="Company E-mail" required="true" name="companyEmail" required
+                        />
+                    </div>
+                    <div class="form-group companyFields">
+                        <label for="companyPhone">Company Phone</label>
+                        <input type="text" class="form-control" id="companyPhone" placeholder="Company Phone" required="true" name="companyPhone" required
+                        />
+                    </div>
+                    
+                    <div class="form-group companyFields">
+                        <label for="companyweb">Company Website</label>
+                        <input type="text" class="form-control" id="companyweb" placeholder="Company Website" required="true" name="companyweb" />
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName">User First Name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="User First Name" required="true" name="firstName" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">User Last Name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="User Last Name" required="true" name="lastName" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="userName">User Name</label>
+                        <input type="text" class="form-control" id="userName" placeholder="User Name" required="true" name="userName" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmail">User E-mail</label>
+                        <input type="text" class="form-control" id="userEmail" placeholder="User E-mail" required="true" name="userEmail" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="userPhone">User Phone</label>
+                        <input type="text" class="form-control" id="userPhone" placeholder="User Phone" required="true" name="userPhone" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="userPasswd">User Password</label>
+                        <input type="text" class="form-control" id="userPasswd" placeholder="User Password" required="true" name="userPasswd" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="userPAddress">User Payment Address</label>
+                        <input type="text" class="form-control" id="userPAddress" placeholder="User Payment Address" required="true" name="userPAddress"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="isReviewRequired">Do you want to be reviewer?</label>
+                        <label class="radio-inline">
+                            <input type="radio" name="isReviewRequired" value="1">Yes</label>
+                        <label class="radio-inline">
+                            <input type="radio" name="isReviewRequired" value="0" checked>No</label>
+                    </div>
+                </form>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="getvaluesToRegisterUser();">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var gMode = "select";
+    function selectMode(mode) {
+        if (mode == "select") {
+            $(".companyFields").hide();
+            clear_form_elements('companyFields')
+            $(".employerFields").show();
+            gMode = "select"
+        }
+        else if (mode == "create") {
+            $(".employerFields").hide();
+            clear_form_elements('employerFields')
+            $(".companyFields").show();
+            gMode = "create"
+        }
+    }
+
+    function clear_form_elements(class_name) {
+        $("." + class_name).find(':input').each(function () {
+            switch (this.type) {
+                case 'password':
+                case 'text':
+                case 'textarea':
+                case 'file':
+                case 'select-one':
+                case 'select-multiple':
+                case 'date':
+                case 'number':
+                case 'tel':
+                case 'email':
+                    jQuery(this).val('');
+                    break;
+                case 'checkbox':
+                case 'radio':
+                    this.checked = false;
+                    break;
+            }
+        });
+    }
+    function getvaluesToRegisterUser() {
+        var url = "/userRegister";
+        if (gMode == "select") {
+            data = {
+                'mode':gMode,
+                'company_id': $("#employer").val(),
+                'firstname': $("#firstName").val(),
+                'lastname': $("#lastName").val(),
+                'user_name': $("#userName").val(),
+                'user_email': $("#userEmail").val(),
+                'user_phone': $("#userPhone").val(),
+                'password': $("#userPasswd").val(),
+                'payment_address': $("#userPAddress").val(),
+                'is_reviewer': $('input[name="isReviewRequired"]:checked').val()
+            };
+        }
+        else if (gMode == "create") {
+            data = {
+                'mode':gMode,
+                'company_name': $("#companyName").val(),
+                'company_info': $("#companyInfo").val(),
+                'company_email': $("#companyEmail").val(),
+                'company_phone': $("#companyPhone").val(),
+                'company_site': $("#companyweb").val(),
+                'firstname': $("#firstName").val(),
+                'lastname': $("#lastName").val(),
+                'user_name': $("#userName").val(),
+                'user_email': $("#userEmail").val(),
+                'user_phone': $("#userPhone").val(),
+                'password': $("#userPasswd").val(),
+                'payment_address': $("#userPAddress").val(),
+                'is_reviewer': $('input[name="isReviewRequired"]:checked').val()
+            };
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: data,
+            async: false,
+            success: function (data) {
+                window.location.reload();
+            },
+            error: function () {
+                alert('Error occured');
+            }
+        });
+    }
+
+    function getCompanies(){
+        var url = "/getCompanies";
+        $.ajax({
+            type: 'POST',
+            url: url,
+            async: false,
+            success: function (data) {
+                for (i=0; i<data.length;i++){
+                    $('#employer').append('<option value="'+data[i].company_id+'">' + data[i].company_name  + '</option');
+                }
+            },
+            error: function () {
+                alert('Error occured');
+            }
+        });
+    }
+</script>
+<style>
+    .companyFields {
+        display: none;
+    }
+</style>
+<!-- List Add modal window end -->
