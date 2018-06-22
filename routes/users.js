@@ -2,19 +2,22 @@ var express = require('express');
 var md5 = require('md5');
 var mysql = require('mysql');
 // var router = express.Router();
-// var db_config = {
-//   host: 'localhost',
-//   user: 'root',
-//   password: '',
-//   database: 'chainmap'
-// };
+var db_config = {
+   host     : 'localhost',
+   user     : 'root',
+   password : '',
+   database : 'cmpdb'
+};
 
+
+/*
 var db_config = {
   host: '107.181.170.169',
   user: 'dbuser',
   password: 'telenav123',
   database: 'cmpdb'
 };
+*/
 
 var connection;
 
