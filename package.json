@@ -6,17 +6,19 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.3",
     "body-parser": "^1.7.0",
+    "cookie-parser": "~1.4.3",
+    "crypt": "0.0.2",
     "debug": "~2.6.9",
     "ejs": "^2.5.9",
-    "express-session": "^1.7.6",
     "express": "~4.16.0",
+    "express-session": "^1.7.6",
     "http-errors": "~1.6.2",
+    "md5": "^2.2.1",
     "morgan": "~1.9.0",
+    "mysql": "^2.13.0",
     "node-rest-client": "^3.1.0",
     "pug": "2.0.0-beta11",
-    "solr-node": "^1.0.13",
-    "mysql": "^2.13.0"
+    "solr-node": "^1.0.13"
   }
 }
