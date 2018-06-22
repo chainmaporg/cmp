@@ -1,0 +1,261 @@
+Fri, 22 Jun 2018 03:45:34 GMT express-session deprecated undefined resave option; provide resave option at app.js:18:9
+Fri, 22 Jun 2018 03:45:34 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:18:9
+error when connecting to db: { Error: getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:67:26)
+    --------------------
+    at Protocol._enqueue (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at Protocol.handshake (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:52:23)
+    at Connection.connect (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/Connection.js:130:18)
+    at handleDisconnect (/Users/xingfeiy/githup/chainmap/cmp/cmp/routes/login.js:22:14)
+    at Object.<anonymous> (/Users/xingfeiy/githup/chainmap/cmp/cmp/routes/login.js:40:1)
+    at Module._compile (internal/modules/cjs/loader.js:654:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:665:10)
+    at Module.load (internal/modules/cjs/loader.js:566:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:506:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:498:3)
+  message: 'getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306',
+  errno: 'ENOTFOUND',
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: '107.181.170.169 ',
+  host: '107.181.170.169 ',
+  port: 3306,
+  fatal: true }
+error when connecting to db: { Error: getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:67:26)
+    --------------------
+    at Protocol._enqueue (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at Protocol.handshake (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:52:23)
+    at Connection.connect (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/Connection.js:130:18)
+    at handleDisconnect (/Users/xingfeiy/githup/chainmap/cmp/cmp/routes/challenge.js:28:14)
+    at Object.<anonymous> (/Users/xingfeiy/githup/chainmap/cmp/cmp/routes/challenge.js:46:1)
+    at Module._compile (internal/modules/cjs/loader.js:654:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:665:10)
+    at Module.load (internal/modules/cjs/loader.js:566:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:506:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:498:3)
+  message: 'getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306',
+  errno: 'ENOTFOUND',
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: '107.181.170.169 ',
+  host: '107.181.170.169 ',
+  port: 3306,
+  fatal: true }
+[0mGET / [36m304 [0m14.585 ms - -[0m
+[0mGET /image/files/cm-logo-w.jpg [36m304 [0m2.419 ms - -[0m
+[0mGET /image/arrow2.png [36m304 [0m0.792 ms - -[0m
+[0mGET /query/ICO/bitcoin [32m200 [0m92.083 ms - 347[0m
+[0mGET /image/ICO.png [32m200 [0m3.557 ms - 28674[0m
+[0mGET /resource/ICO/Bitcoin%20Green [36m302 [0m4.267 ms - 140[0m
+[0mGET / [32m200 [0m2.036 ms - 5911[0m
+[0mGET /image/files/cm-logo-w.jpg [36m304 [0m0.732 ms - -[0m
+[0mGET /image/arrow2.png [36m304 [0m0.660 ms - -[0m
+error when connecting to db: { Error: getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:67:26)
+    --------------------
+    at Protocol._enqueue (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at Protocol.handshake (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:52:23)
+    at Connection.connect (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/Connection.js:130:18)
+    at Timeout.handleDisconnect [as _onTimeout] (/Users/xingfeiy/githup/chainmap/cmp/cmp/routes/login.js:22:14)
+    at ontimeout (timers.js:466:11)
+    at tryOnTimeout (timers.js:304:5)
+    at Timer.listOnTimeout (timers.js:267:5)
+  message: 'getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306',
+  errno: 'ENOTFOUND',
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: '107.181.170.169 ',
+  host: '107.181.170.169 ',
+  port: 3306,
+  fatal: true }
+error when connecting to db: { Error: getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:67:26)
+    --------------------
+    at Protocol._enqueue (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at Protocol.handshake (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:52:23)
+    at Connection.connect (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/Connection.js:130:18)
+    at Timeout.handleDisconnect [as _onTimeout] (/Users/xingfeiy/githup/chainmap/cmp/cmp/routes/challenge.js:28:14)
+    at ontimeout (timers.js:466:11)
+    at tryOnTimeout (timers.js:304:5)
+    at Timer.listOnTimeout (timers.js:267:5)
+  message: 'getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306',
+  errno: 'ENOTFOUND',
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: '107.181.170.169 ',
+  host: '107.181.170.169 ',
+  port: 3306,
+  fatal: true }
+error when connecting to db: { Error: getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:67:26)
+    --------------------
+    at Protocol._enqueue (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at Protocol.handshake (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:52:23)
+    at Connection.connect (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/Connection.js:130:18)
+    at Timeout.handleDisconnect [as _onTimeout] (/Users/xingfeiy/githup/chainmap/cmp/cmp/routes/login.js:22:14)
+    at ontimeout (timers.js:466:11)
+    at tryOnTimeout (timers.js:304:5)
+    at Timer.listOnTimeout (timers.js:267:5)
+  message: 'getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306',
+  errno: 'ENOTFOUND',
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: '107.181.170.169 ',
+  host: '107.181.170.169 ',
+  port: 3306,
+  fatal: true }
+error when connecting to db: { Error: getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:67:26)
+    --------------------
+    at Protocol._enqueue (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at Protocol.handshake (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:52:23)
+    at Connection.connect (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/Connection.js:130:18)
+    at Timeout.handleDisconnect [as _onTimeout] (/Users/xingfeiy/githup/chainmap/cmp/cmp/routes/challenge.js:28:14)
+    at ontimeout (timers.js:466:11)
+    at tryOnTimeout (timers.js:304:5)
+    at Timer.listOnTimeout (timers.js:267:5)
+  message: 'getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306',
+  errno: 'ENOTFOUND',
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: '107.181.170.169 ',
+  host: '107.181.170.169 ',
+  port: 3306,
+  fatal: true }
+error when connecting to db: { Error: getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:67:26)
+    --------------------
+    at Protocol._enqueue (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at Protocol.handshake (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:52:23)
+    at Connection.connect (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/Connection.js:130:18)
+    at Timeout.handleDisconnect [as _onTimeout] (/Users/xingfeiy/githup/chainmap/cmp/cmp/routes/challenge.js:28:14)
+    at ontimeout (timers.js:466:11)
+    at tryOnTimeout (timers.js:304:5)
+    at Timer.listOnTimeout (timers.js:267:5)
+  message: 'getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306',
+  errno: 'ENOTFOUND',
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: '107.181.170.169 ',
+  host: '107.181.170.169 ',
+  port: 3306,
+  fatal: true }
+error when connecting to db: { Error: getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:67:26)
+    --------------------
+    at Protocol._enqueue (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at Protocol.handshake (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:52:23)
+    at Connection.connect (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/Connection.js:130:18)
+    at Timeout.handleDisconnect [as _onTimeout] (/Users/xingfeiy/githup/chainmap/cmp/cmp/routes/login.js:22:14)
+    at ontimeout (timers.js:466:11)
+    at tryOnTimeout (timers.js:304:5)
+    at Timer.listOnTimeout (timers.js:267:5)
+  message: 'getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306',
+  errno: 'ENOTFOUND',
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: '107.181.170.169 ',
+  host: '107.181.170.169 ',
+  port: 3306,
+  fatal: true }
+[0mGET / [32m200 [0m2.521 ms - 3274[0m
+[0mGET /image/files/cm-logo-w.jpg [36m304 [0m0.719 ms - -[0m
+[0mGET / [32m200 [0m1.541 ms - 5839[0m
+[0mGET /image/files/cm-logo-w.jpg [36m304 [0m0.828 ms - -[0m
+[0mGET /image/arrow2.png [36m304 [0m0.728 ms - -[0m
+error when connecting to db: { Error: getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:67:26)
+    --------------------
+    at Protocol._enqueue (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at Protocol.handshake (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:52:23)
+    at Connection.connect (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/Connection.js:130:18)
+    at Timeout.handleDisconnect [as _onTimeout] (/Users/xingfeiy/githup/chainmap/cmp/cmp/routes/challenge.js:28:14)
+    at ontimeout (timers.js:466:11)
+    at tryOnTimeout (timers.js:304:5)
+    at Timer.listOnTimeout (timers.js:267:5)
+  message: 'getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306',
+  errno: 'ENOTFOUND',
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: '107.181.170.169 ',
+  host: '107.181.170.169 ',
+  port: 3306,
+  fatal: true }
+error when connecting to db: { Error: getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:67:26)
+    --------------------
+    at Protocol._enqueue (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at Protocol.handshake (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:52:23)
+    at Connection.connect (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/Connection.js:130:18)
+    at Timeout.handleDisconnect [as _onTimeout] (/Users/xingfeiy/githup/chainmap/cmp/cmp/routes/login.js:22:14)
+    at ontimeout (timers.js:466:11)
+    at tryOnTimeout (timers.js:304:5)
+    at Timer.listOnTimeout (timers.js:267:5)
+  message: 'getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306',
+  errno: 'ENOTFOUND',
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: '107.181.170.169 ',
+  host: '107.181.170.169 ',
+  port: 3306,
+  fatal: true }
+[0mGET / [32m200 [0m2.368 ms - 5901[0m
+[0mGET /image/files/cm-logo-w.jpg [36m304 [0m0.663 ms - -[0m
+[0mGET /image/arrow2.png [36m304 [0m1.768 ms - -[0m
+[0mGET / [32m200 [0m1.502 ms - 5984[0m
+[0mGET /image/files/cm-logo-w.jpg [36m304 [0m0.489 ms - -[0m
+[0mGET /image/arrow2.png [36m304 [0m0.776 ms - -[0m
+[0mGET / [32m200 [0m2.660 ms - 6035[0m
+[0mGET /image/files/cm-logo-w.jpg [36m304 [0m0.755 ms - -[0m
+[0mGET /image/arrow2.png [36m304 [0m0.598 ms - -[0m
+[0mGET /signup [32m200 [0m1.979 ms - 3902[0m
+[0mGET /image/files/cm-logo-w.jpg [36m304 [0m0.653 ms - -[0m
+[0mGET /query/White%20Papers/bitcoin [32m200 [0m158.154 ms - 3178[0m
+[0mGET /image/white_paper.png [36m304 [0m0.690 ms - -[0m
+[0mGET /resource/white_paper/%E9%BA%A6%E8%82%AF%E9%94%A1%E6%8A%A5%E5%91%8A%EF%BC%9A%E5%8C%BA%E5%9D%97%E9%93%BE%E5%AF%B9%E4%BF%9D%E9%99%A9%E8%A1%8C%E4%B8%9A%E7%9A%84%E5%BD%B1%E5%93%8D.pdf [36m302 [0m0.968 ms - 440[0m
+[0mGET /query/company/bitcoin [32m200 [0m184.215 ms - 1104[0m
+[0mGET /image/company.png [32m200 [0m1.232 ms - 25788[0m
+[0mGET /resource/company/Bitcoin%20Planet [36m302 [0m0.720 ms - 150[0m
+[0mGET /query/event/bitcoin [36m304 [0m159.941 ms - -[0m
+[0mGET /image/event.png [36m304 [0m0.620 ms - -[0m
+[0mGET /resource/event/Texas%20Bitcoin%20Conference [36m302 [0m0.729 ms - 170[0m
+[0mGET /query/ICO/bitcoin [36m304 [0m105.121 ms - -[0m
+[0mGET /image/ICO.png [36m304 [0m0.618 ms - -[0m
+[0mGET /resource/ICO/Bitcoin%20Green [36m302 [0m0.572 ms - 140[0m
+error when connecting to db: { Error: getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:67:26)
+    --------------------
+    at Protocol._enqueue (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at Protocol.handshake (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:52:23)
+    at Connection.connect (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/Connection.js:130:18)
+    at Timeout.handleDisconnect [as _onTimeout] (/Users/xingfeiy/githup/chainmap/cmp/cmp/routes/challenge.js:28:14)
+    at ontimeout (timers.js:466:11)
+    at tryOnTimeout (timers.js:304:5)
+    at Timer.listOnTimeout (timers.js:267:5)
+  message: 'getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306',
+  errno: 'ENOTFOUND',
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: '107.181.170.169 ',
+  host: '107.181.170.169 ',
+  port: 3306,
+  fatal: true }
+error when connecting to db: { Error: getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:67:26)
+    --------------------
+    at Protocol._enqueue (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+    at Protocol.handshake (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/protocol/Protocol.js:52:23)
+    at Connection.connect (/Users/xingfeiy/githup/chainmap/cmp/cmp/node_modules/mysql/lib/Connection.js:130:18)
+    at Timeout.handleDisconnect [as _onTimeout] (/Users/xingfeiy/githup/chainmap/cmp/cmp/routes/login.js:22:14)
+    at ontimeout (timers.js:466:11)
+    at tryOnTimeout (timers.js:304:5)
+    at Timer.listOnTimeout (timers.js:267:5)
+  message: 'getaddrinfo ENOTFOUND 107.181.170.169  107.181.170.169 :3306',
+  errno: 'ENOTFOUND',
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: '107.181.170.169 ',
+  host: '107.181.170.169 ',
+  port: 3306,
+  fatal: true }
