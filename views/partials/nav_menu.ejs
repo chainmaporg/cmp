@@ -1,0 +1,113 @@
+<nav id="site-navigation" class="main-navigation" role="navigation">
+    <button class="menu-toggle dashicons dashicons-arrow-down-alt2" aria-controls="primary-menu" aria-expanded="false" aria-label="Primary Menu"></button>
+    <div id="primary-menu" class="menu">
+        <ul>
+            <li class="page_item">
+                <a class="" href="/questionBoard" title="Sub Menu 2">Challenge Board</a>
+            </li>
+            <li class="page_item">
+                <a href="#register-modal" data-target="#register-modal" data-toggle="modal">Post a Challenge</a>
+            </li>
+            
+            <li class="page_item">
+                <a class="" href="javascript:" title="Ranking">Ranking</a>
+            </li>
+            <!-- <li><form role="search" method="get" class="search-form" action="https://wordpress.org/plugins/">
+<label for="s" class="screen-reader-text">Search for:</label>
+<input type="search" id="s" class="search-field" placeholder="Search plugins" value="" name="s" />
+<button class="button button-primary button-search"><i class="dashicons dashicons-search"></i><span class="screen-reader-text">Search plugins</span></button>
+</form>
+</li> -->
+        </ul>
+    </div>
+</nav>
+
+
+
+<!-- Modal Posting question modal window-->
+<div class="modal fade" id="register-modal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Post a new Challenge
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="listname">Title</label>
+                        <input type="text" class="form-control" id="ChallengeHeader" placeholder="Challenge Header" required="true" name="ChallengeHeader"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="position">Question</label>
+
+                        <textarea class="form-control" rows="10" id="ChallengeQuestion" name="ChallengeQuestion"></textarea>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="sel1">Category of the Question:</label>
+                        <select class="form-control" id="category">
+                            <option value="">Please select a Category</option>
+                            <option value="Public Chain Infrastructure, consensus">Public Chain Infrastructure, consensus</option>
+                            <option value="Smart Contract">Smart Contract</option>
+                            <option value="dApp Backend">dApp Backend</option>
+                            <option value="dApp Frontend">dApp Frontend</option>
+                            <option value="IPFS/Storage/Network">IPFS/Storage/Network</option>
+                            <option value="Industry Use Cases">Industry Use Cases</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sel1">Category of the Question:</label>
+                        <select class="form-control" id="level">
+                            <option value="">Please select level of the Challenge</option>
+                            <option value="Diamond (need >2 hrs)">Diamond (need >2 hrs)</option>
+                            <option value="Gold (need >30 mins)">Gold (need >30 mins)</option>
+                            <option value="Silver (need >5 mins)">Silver (need >5 mins)</option>
+                            <option value="Brozen (<5 mins)">Brozen (
+                                <5 mins)</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="getvaluesToPostChallenge();">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- List Add modal window end -->
+
+<script type="text/javascript">
+    function getvaluesToPostChallenge() {
+        var url = "/postChallenge";
+        var ChallengeHeader = $("#ChallengeHeader").val();
+        var ChallengeQuestion = $("#ChallengeQuestion").val();
+        var category = $("#category").val();
+        var level = $("#level").val();
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+                ChallengeHeader: ChallengeHeader,
+                ChallengeQuestion: ChallengeQuestion,
+                category: category,
+                level: level
+            },
+            async: false,
+            success: function (data) {
+                alert(data)
+                window.location.href = "/questionBoard";
+            },
+            error: function () {
+                alert('Error occured');
+            }
+        });
+    }
+</script>
