@@ -1,137 +1,301 @@
 <!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
 
-<head>
-    <% include ./partials/header %>
-</head>
+<!-- header part start -->
+<% include ./partials/header %>
+    <!-- header part end -->
 
-<body id="wordpress-org" class="plugin-template-default single single-plugin postid-9596 admin-bar no-customize-support no-js">
-    <script type="text/javascript">document.body.className = document.body.className.replace('no-js', 'js');</script>
-    <% include ./partials/body_header %>
-        <div id="page" class="site">
-            <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+    <!-- body part start -->
 
-            <div id="content" class="site-content">
-                <header id="masthead" class="site-header " role="banner">
-                    <div class="site-branding">
-                        <p class="site-title">
-                            <a href="javascript:" rel="home">Challenge Board</a>
-                        </p>
+    <body>
 
-                        <% include ./partials/nav_menu %>
-                        <!-- #site-navigation -->
+        <div class="loader">
+            <div class="loader_html"></div>
+        </div>
+
+        <div id="wrap" class="grid_1200">
+
+            <% include ./partials/header_login %>
+
+                <% include ./partials/body_header %>
+
+                    <div class="section-warp ask-me">
+                        <div class="container clearfix">
+                            <div class="box_icon box_warp box_no_border box_no_background" box_border="transparent" box_background="transparent" box_color="#FFF">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h2>Welcome to Ask me</h2>
+                                        <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna
+                                            adipiscing iaculis. Curabitur vitae velit in neque dictum blandit. Proin in iaculis
+                                            neque.
+                                        </p>
+                                        <div class="clearfix"></div>
+                                        <a class="color button dark_button medium" href="#">About Us</a>
+                                        <a class="color button dark_button medium" href="#">Join Now</a>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <form class="form-style form-style-2">
+                                            <p>
+                                                <textarea rows="4" id="question_title" onfocus="if(this.value=='Ask any question and you be sure find your answer ?')this.value='';"
+                                                    onblur="if(this.value=='')this.value='Ask any question and you be sure find your answer ?';">Ask any question and you be sure find your answer ?</textarea>
+                                                <i class="icon-pencil"></i>
+                                                <span class="color button small publish-question">Ask Now</span>
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- End row -->
+                            </div>
+                            <!-- End box_icon -->
+                        </div>
+                        <!-- End container -->
                     </div>
-                    <!-- .site-branding -->
-                </header>
-                <!-- #masthead -->
+                    <!-- End section-warp -->
 
-                <main id="main" class="site-main" role="main">
+                    <section class="container main-content">
+                        <div class="row">
+                            <div class="col-md-9">
 
-
-                    <article id="post-9596" class="post-9596 plugin type-plugin status-publish hentry plugin_category-discussion-and-community plugin_contributors-trevorpythag plugin_committers-trevorpythag plugin_tags-answers plugin_tags-forum plugin_tags-questions">
-                        <!-- .entry-header -->
-
-                        <script type="text/javascript">if ('#changelog' == window.location.hash) { window.location.hash = '#developers'; }</script>
-                        
-
-                            <div id="tab-description" class="plugin-description section">
-                                <div class="main-questions-list">
-                                    <ul id="main_questions_list">
-                                        <% if(data.length){ 
-                                                for(var i = 0;i < data.length;i++) { %>
-                                            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="question-item post-2341 question type-question status-publish hentry question_category-business qa_tag-business-2 qa_tag-technology-2"
-                                                data-id="2341">
-                                                <div itemprop="item" itemscope="" itemtype="http://schema.org/Question">
-                                                    <div class="col-md-8 col-xs-8 q-left-content">
-                                                        <div class="q-ltop-content">
-                                                            <h2 itemprop="name">
-                                                                <a itemprop="url" href="/getChallengebyID/<%=data[i].challenge_id%>" class="question-title">
-                                                                    <%=data[i].title%>
-                                                                </a>
-                                                            </h2>
-                                                        </div>
-                                                        <div class="q-lbtm-content">
-                                                            <div itemprop="text" class="question-excerpt">
-                                                                <p>
-                                                                    <%=data[i].description%>
-                                                                </p>
-                                                            </div>
-                                                            <div class="question-cat">
-                                                                <ul class="question-tags">
-                                                                    <li>
-                                                                        <a class="q-tag" href="javascript:">
-                                                                            <%=data[i].category%>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a class="q-tag" href="javascript: ">
-                                                                            <%=data[i].level%>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                                <div class="clearfix"></div>
-
-                                                                <span title="90" class="user-badge" style="background-color:#04aad4;">Asked By
-                                                                    <%=data[i].user_name%>
-                                                                </span>
-                                                                <span itemprop="dateCreated" datetime="on July 14, 2016" class="question-time">
-                                                                    Asked on
-                                                                    <%=data[i].posting_date%>
-                                                                </span>
-                                                                <!-- <span class="question-category">
-                                                                <a href="https://qaengine.enginethemes.com/blog/question-category/business/">Business.</a>
-                                                            </span> -->
-                                                            </div>
-                                                        </div>
+                                <div class="tabs-warp question-tab">
+                                    <ul class="tabs">
+                                        <li class="tab">
+                                            <a href="#" class="current">Recent Questions</a>
+                                        </li>
+                                        <li class="tab">
+                                            <a href="#">Most Responses</a>
+                                        </li>
+                                        <li class="tab">
+                                            <a href="#">Recently Answered</a>
+                                        </li>
+                                        <li class="tab">
+                                            <a href="#">No answers</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-inner-warp">
+                                        <div class="tab-inner">
+                                            <% if(data.length){ 
+                                            for(var i = 0;i < data.length;i++) { %>
+                                                <article class="question question-type-normal">
+                                                    <h2>
+                                                        <a href="/getChallengebyID/<%=data[i].challenge_id%>">
+                                                            <%=data[i].title%>
+                                                        </a>
+                                                    </h2>
+                                                    <a class="question-report" href="javascript:">Report</a>
+                                                    <div class="question-type-main">
+                                                        <i class="icon-question-sign"></i>Question</div>
+                                                    <div class="question-author">
+                                                        <a href="javascript:" original-title="<%=data[i].user_name%>" class="question-author-img tooltip-n">
+                                                            <span>
+                                                                <%=data[i].user_name%>
+                                                            </span>
+                                                            <img alt="" src="http://placehold.it/60x60/FFF/444" />
+                                                        </a>
                                                     </div>
-                                                    <!-- end left content -->
-                                                    <div class="col-md-4 col-xs-4 q-right-content">
-                                                        <ul class="question-statistic">
-                                                            <li>
-                                                                <span class="question-views">
-                                                                    <%=data[i].view_count%>
-                                                                </span>
-                                                                views </li>
-                                                            <li class="active">
-                                                                <span itemprop="answerCount" class="question-answers">
-                                                                    <%=data[i].total_answers%>
-                                                                </span>
-                                                                answers </li>
-                                                            <li>
-                                                                <span itemprop="upvoteCount" class="question-votes">
-                                                                    <%=data[i].upvote_count + data[i].downvote_count%>
-                                                                </span>
-                                                                votes </li>
-                                                        </ul>
-                                                        <div class="pumping">
+                                                    <div class="question-inner">
+                                                        <div class="clearfix"></div>
+                                                        <p class="question-desc">
+                                                            <%=data[i].description%>
+                                                        </p>
+                                                        <div class="question-details">
+                                                            <span class="question-answered question-answered-done">
+                                                                <i class="icon-ok"></i>solved</span>
+                                                            <span class="question-favorite">
+                                                                <i class="icon-star"></i>5</span>
                                                         </div>
+                                                        <span class="question-category">
+                                                            <a href="javascript:">
+                                                                <i class="icon-folder-close"></i><%=data[i].category%></a>
+                                                        </span>
+                                                        <span class="question-date">
+                                                            <i class="icon-time"></i><%=data[i].posting_date%></span>
+                                                        <span class="question-comment">
+                                                            <a href="#">
+                                                                <i class="icon-comment"></i><%=data[i].total_answers%> Answer</a>
+                                                        </span>
+                                                        <span class="question-view">
+                                                            <i class="icon-user"></i><%=data[i].view_count%> views</span>
+                                                        <div class="clearfix"></div>
                                                     </div>
-                                                    <!-- end right content -->
+                                                </article>
+                                                <% }} %>
+                                                    <a href="#" class="load-questions">
+                                                        <i class="icon-refresh"></i>Load More Questions</a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-inner-warp">
+                                        <div class="tab-inner">
+                                            <article class="question question-type-normal">
+                                                <h2>
+                                                    <a href="single_question.html">This is my first Question</a>
+                                                </h2>
+                                                <a class="question-report" href="#">Report</a>
+                                                <div class="question-type-main">
+                                                    <i class="icon-question-sign"></i>Question</div>
+                                                <div class="question-author">
+                                                    <a href="#" original-title="ahmed" class="question-author-img tooltip-n">
+                                                        <span></span>
+                                                        <img alt="" src="http://placehold.it/60x60/FFF/444">
+                                                    </a>
+                                                </div>
+                                                <div class="question-inner">
+                                                    <div class="clearfix"></div>
+                                                    <p class="question-desc">Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at
+                                                        elit quis urna adipiscing iaculis. Curabitur vitae velit in neque
+                                                        dictum blandit. Proin in iaculis neque. Pellentesque habitant morbi
+                                                        tristique senectus et netus et malesuada fames ac turpis egestas.
+                                                        Curabitur vitae velit in neque dictum blandit.
+                                                    </p>
+                                                    <div class="question-details">
+                                                        <span class="question-answered question-answered-done">
+                                                            <i class="icon-ok"></i>solved</span>
+                                                        <span class="question-favorite">
+                                                            <i class="icon-star"></i>5</span>
+                                                    </div>
+                                                    <span class="question-category">
+                                                        <a href="#">
+                                                            <i class="icon-folder-close"></i>wordpress</a>
+                                                    </span>
+                                                    <span class="question-date">
+                                                        <i class="icon-time"></i>4 mins ago</span>
+                                                    <span class="question-comment">
+                                                        <a href="#">
+                                                            <i class="icon-comment"></i>5 Answer</a>
+                                                    </span>
+                                                    <span class="question-view">
+                                                        <i class="icon-user"></i>70 views</span>
                                                     <div class="clearfix"></div>
                                                 </div>
-                                            </li>
-                                            <% }} %>
-                                    </ul>
+                                            </article>
+
+                                            <a href="#" class="load-questions">
+                                                <i class="icon-refresh"></i>Load More Questions</a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-inner-warp">
+                                        <div class="tab-inner">
+                                            <article class="question question-type-normal">
+                                                <h2>
+                                                    <a href="single_question.html">This is my first Question</a>
+                                                </h2>
+                                                <a class="question-report" href="#">Report</a>
+                                                <div class="question-type-main">
+                                                    <i class="icon-question-sign"></i>Question</div>
+                                                <div class="question-author">
+                                                    <a href="#" original-title="ahmed" class="question-author-img tooltip-n">
+                                                        <span></span>
+                                                        <img alt="" src="http://placehold.it/60x60/FFF/444">
+                                                    </a>
+                                                </div>
+                                                <div class="question-inner">
+                                                    <div class="clearfix"></div>
+                                                    <p class="question-desc">Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at
+                                                        elit quis urna adipiscing iaculis. Curabitur vitae velit in neque
+                                                        dictum blandit. Proin in iaculis neque. Pellentesque habitant morbi
+                                                        tristique senectus et netus et malesuada fames ac turpis egestas.
+                                                        Curabitur vitae velit in neque dictum blandit.
+                                                    </p>
+                                                    <div class="question-details">
+                                                        <span class="question-answered question-answered-done">
+                                                            <i class="icon-ok"></i>solved</span>
+                                                        <span class="question-favorite">
+                                                            <i class="icon-star"></i>5</span>
+                                                    </div>
+                                                    <span class="question-category">
+                                                        <a href="#">
+                                                            <i class="icon-folder-close"></i>wordpress</a>
+                                                    </span>
+                                                    <span class="question-date">
+                                                        <i class="icon-time"></i>4 mins ago</span>
+                                                    <span class="question-comment">
+                                                        <a href="#">
+                                                            <i class="icon-comment"></i>5 Answer</a>
+                                                    </span>
+                                                    <span class="question-view">
+                                                        <i class="icon-user"></i>70 views</span>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </article>
+
+                                            <a href="#" class="load-questions">
+                                                <i class="icon-refresh"></i>Load More Questions</a>
+                                        </div>
+                                    </div>
+                                    <div class="tab-inner-warp">
+                                        <div class="tab-inner">
+                                            <article class="question question-type-normal">
+                                                <h2>
+                                                    <a href="single_question.html">This is my first Question</a>
+                                                </h2>
+                                                <a class="question-report" href="#">Report</a>
+                                                <div class="question-type-main">
+                                                    <i class="icon-question-sign"></i>Question</div>
+                                                <div class="question-author">
+                                                    <a href="#" original-title="ahmed" class="question-author-img tooltip-n">
+                                                        <span></span>
+                                                        <img alt="" src="http://placehold.it/60x60/FFF/444">
+                                                    </a>
+                                                </div>
+                                                <div class="question-inner">
+                                                    <div class="clearfix"></div>
+                                                    <p class="question-desc">Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at
+                                                        elit quis urna adipiscing iaculis. Curabitur vitae velit in neque
+                                                        dictum blandit. Proin in iaculis neque. Pellentesque habitant morbi
+                                                        tristique senectus et netus et malesuada fames ac turpis egestas.
+                                                        Curabitur vitae velit in neque dictum blandit.
+                                                    </p>
+                                                    <div class="question-details">
+                                                        <span class="question-answered question-answered-done">
+                                                            <i class="icon-ok"></i>solved</span>
+                                                        <span class="question-favorite">
+                                                            <i class="icon-star"></i>5</span>
+                                                    </div>
+                                                    <span class="question-category">
+                                                        <a href="javascript:">
+                                                            <i class="icon-folder-close"></i></a>
+                                                    </span>
+                                                    <span class="question-date">
+                                                        <i class="icon-time"></i></span>
+                                                    <span class="question-comment">
+                                                        <a href="#">
+                                                            <i class="icon-comment"></i> Answer</a>
+                                                    </span>
+                                                    <span class="question-view">
+                                                        <i class="icon-user"></i> views</span>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </article>
+
+                                            <a href="#" class="load-questions">
+                                                <i class="icon-refresh"></i>Load More Questions</a>
+                                        </div>
+                                    </div>
                                 </div>
+                                <!-- End page-content -->
                             </div>
+                            <!-- End main -->
+                            <% include ./partials/sidebar %>
+                        </div>
+                        <!-- End row -->
+                    </section>
+                    <!-- End container -->
 
-                        <!-- .entry-content -->
-                    </article>
-                    <!-- #post-## -->
-
-                </main>
-                <!-- #main -->
-
-
-            </div>
-            <!-- #content -->
-
-
-            
+                    <!-- body footer start -->
+                    <% include ./partials/body_footer %>
+                        <!-- body footer end -->
+        </div>
+        <!-- End wrap -->
+        <!-- footer started -->
+        <% include ./partials/footer_js %>
+            <!-- footer end -->
 
 
 
-            <% include ./partials/footer %>
-</body>
+
+    </body>
+    <!-- body part end -->
 
 </html>

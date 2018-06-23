@@ -1,262 +1,340 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- header start -->
+<% include ./partials/header %>
+    <!-- header end -->
 
-<head>
-    <% include ./partials/header %>
-</head>
+    <!-- body start -->
 
-<body id="wordpress-org" class="plugin-template-default single single-plugin postid-9596 admin-bar no-customize-support no-js">
-    <script type="text/javascript">document.body.className = document.body.className.replace('no-js', 'js');</script>
-    <% include ./partials/body_header %>
-        <div id="page" class="site">
-            <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+    <body>
 
-            <div id="content" class="site-content">
-                <header id="masthead" class="site-header " role="banner">
-                    <div class="site-branding">
-                        <p class="site-title">
-                            <a href="javascript:" rel="home">Challenge Board</a>
-                        </p>
+        <div class="loader">
+            <div class="loader_html"></div>
+        </div>
 
-                        <% include ./partials/nav_menu %>
-                            <!-- #site-navigation -->
+        <div id="wrap" class="grid_1200">
+
+
+            <% include ./partials/header_login %>
+
+                <% include ./partials/body_header %>
+
+                    <div class="breadcrumbs">
+                        <section class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1><%=data.challengedetails[0].title%></h1>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="crumbs">
+                                        <a href="/">Home</a>
+                                        <span class="crumbs-span">/</span>
+                                        <a href="/questionBoard">Questions</a>
+                                        <span class="crumbs-span">/</span>
+                                        <span class="current"><%=data.challengedetails[0].title%></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End row -->
+                        </section>
+                        <!-- End container -->
                     </div>
-                    <!-- .site-branding -->
-                </header>
-                <!-- #masthead -->
+                    <!-- End breadcrumbs -->
 
-                <main id="main" class="site-main" role="main">
+                    <section class="container main-content">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <article class="question single-question question-type-normal">
+                                    <h2>
+                                        <a href="/getChallengebyID/<%data.challengedetails[0].challenge_id%>"><%=data.challengedetails[0].title%></a>
+                                    </h2>
+                                    <a class="question-report" href="javascript:">Report</a>
+                                    <div class="question-type-main">
+                                        <i class="icon-question-sign"></i>Question</div>
+                                    <div class="question-inner">
+                                        <div class="clearfix"></div>
+                                        <div class="question-desc">
+                                            <p>
+                                                <%=data.challengedetails[0].description%>
+                                            </p>
+                                        </div>
+                                        <div class="question-details">
+                                            <span class="question-answered question-answered-done">
+                                                <i class="icon-ok"></i>solved</span>
+                                            <span class="question-favorite">
+                                                <i class="icon-star"></i>5</span>
+                                        </div>
+                                        <span class="question-category">
+                                            <a href="javascript:">
+                                                <i class="icon-folder-close"></i><%=data.challengedetails[0].category%></a>
+                                        </span>
+                                        <span class="question-date">
+                                            <i class="icon-time"></i><%=data.challengedetails[0].posting_date%></span>
+                                        <span class="question-comment">
+                                            <a href="javascript:">
+                                                <i class="icon-comment"></i><%=data.challengedetails[0].total_answers%> Answer</a>
+                                        </span>
+                                        <span class="question-view">
+                                            <i class="icon-user"></i><%=data.challengedetails[0].view_count%> views</span>
+                                        <span class="single-question-vote-result"><%=data.challengedetails[0].upvote_count - data.challengedetails[0].downvote_count%></span>
+                                        <ul class="single-question-vote">
+                                            <li>
+                                                <a href="javascript:" class="single-question-vote-down" title="Dislike">
+                                                    <i class="icon-thumbs-down"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:" class="single-question-vote-up" title="Like">
+                                                    <i class="icon-thumbs-up"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </article>
 
+                                <div class="share-tags page-content">
+                                    <div class="question-tags">
+                                        <i class="icon-tags"></i>
+                                        <a href="#">wordpress</a>,
+                                        <a href="#">question</a>,
+                                        <a href="#">developer</a>
+                                    </div>
+                                    <div class="share-inside-warp">
+                                        <ul>
+                                            <li>
+                                                <a href="#" original-title="Facebook">
+                                                    <span class="icon_i">
+                                                        <span class="icon_square" icon_size="20" span_bg="#3b5997" span_hover="#666">
+                                                            <i i_color="#FFF" class="social_icon-facebook"></i>
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                                <a href="#" target="_blank">Facebook</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <span class="icon_i">
+                                                        <span class="icon_square" icon_size="20" span_bg="#00baf0" span_hover="#666">
+                                                            <i i_color="#FFF" class="social_icon-twitter"></i>
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                                <a target="_blank" href="#">Twitter</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <span class="icon_i">
+                                                        <span class="icon_square" icon_size="20" span_bg="#ca2c24" span_hover="#666">
+                                                            <i i_color="#FFF" class="social_icon-gplus"></i>
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                                <a href="#" target="_blank">Google plus</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <span class="icon_i">
+                                                        <span class="icon_square" icon_size="20" span_bg="#e64281" span_hover="#666">
+                                                            <i i_color="#FFF" class="social_icon-dribbble"></i>
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                                <a href="#" target="_blank">Dribbble</a>
+                                            </li>
+                                            <li>
+                                                <a target="_blank" href="#">
+                                                    <span class="icon_i">
+                                                        <span class="icon_square" icon_size="20" span_bg="#c7151a" span_hover="#666">
+                                                            <i i_color="#FFF" class="icon-pinterest"></i>
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                                <a href="#" target="_blank">Pinterest</a>
+                                            </li>
+                                        </ul>
+                                        <span class="share-inside-f-arrow"></span>
+                                        <span class="share-inside-l-arrow"></span>
+                                    </div>
+                                    <!-- End share-inside-warp -->
+                                    <div class="share-inside">
+                                        <i class="icon-share-alt"></i>Share</div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!-- End share-tags -->
 
-                    <article id="post-9596" class="post-9596 plugin type-plugin status-publish hentry plugin_category-discussion-and-community plugin_contributors-trevorpythag plugin_committers-trevorpythag plugin_tags-answers plugin_tags-forum plugin_tags-questions">
+                                <div class="about-author clearfix">
+                                    <div class="author-image">
+                                        <a href="javascript:" original-title="<%=data.challengedetails[0].user_name%>" class="tooltip-n">
+                                            <img alt="" src="http://placehold.it/60x60/FFF/444">
+                                        </a>
+                                    </div>
+                                    <div class="author-bio">
+                                        <h4>About the Author</h4>
+                                        Author Description will be given here.
+                                    </div>
+                                </div>
+                                <!-- End about-author -->
 
-                        <header class="plugin-header">
+                                <!-- related question part will be developed later -->
+                                <!-- <div id="related-posts">
+                                    <h2>Related questions</h2>
+                                    <ul class="related-posts">
+                                        <li class="related-item">
+                                            <h3>
+                                                <a href="#">
+                                                    <i class="icon-double-angle-right"></i>This Is My Second Poll Question</a>
+                                            </h3>
+                                        </li>
+                                        <li class="related-item">
+                                            <h3>
+                                                <a href="#">
+                                                    <i class="icon-double-angle-right"></i>This is my third Question</a>
+                                            </h3>
+                                        </li>
+                                        <li class="related-item">
+                                            <h3>
+                                                <a href="#">
+                                                    <i class="icon-double-angle-right"></i>This is my fourth Question</a>
+                                            </h3>
+                                        </li>
+                                        <li class="related-item">
+                                            <h3>
+                                                <a href="#">
+                                                    <i class="icon-double-angle-right"></i>This is my fifth Question</a>
+                                            </h3>
+                                        </li>
+                                    </ul>
+                                </div> -->
+                                <!-- End related-posts -->
 
-                            <h1 class="plugin-title">
-                                <%=data.challengedetails[0].title%>
-                            </h1>
-
-                            <span class="byline">By
-                                <span class="author vcard">
-                                    <a class="url fn n" rel="nofollow" href="javascript">
-                                        <%=data.challengedetails[0].user_name%>
-                                    </a>
-                                </span>
-                            </span>
-                        </header>
-                        <!-- .entry-header -->
-
-
-                        <div id="tab-description" class="plugin-description section">
-
-                            <div class="main-questions-list">
-                                <ul id="main_questions_list">
-                                    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="question-item post-2341 question type-question status-publish hentry question_category-business qa_tag-business-2 qa_tag-technology-2"
-                                        data-id="2341">
-                                        <div itemprop="item" itemscope="" itemtype="http://schema.org/Question">
-                                            <div class="col-md-8 col-xs-8 q-left-content">
-                                                <div class="q-ltop-content">
-                                                    <h2 itemprop="name">
-                                                        <a itemprop="url" href="http://localhost:8080/getChallengebyID/<%=data.challengedetails[0].challenge_id%>" class="question-title">
-                                                            <%=data.challengedetails[0].title%>
-                                                        </a>
-                                                    </h2>
+                                <div id="commentlist" class="page-content">
+                                    <div class="boxedtitle page-title">
+                                        <h2>Answers (
+                                            <span class="color"><%=data.challengedetails[0].total_answers%></span> )</h2>
+                                    </div>
+                                    <ol class="commentlist clearfix">
+                                            <% if(data.answers.length){ 
+                                                for(var i = 0;i < data.answers.length;i++) { %>
+                                        <li class="comment">
+                                            <div class="comment-body comment-body-answered clearfix">
+                                                <div class="avatar">
+                                                    <img alt="" src="http://placehold.it/60x60/FFF/444">
                                                 </div>
-                                                <div class="q-lbtm-content">
-                                                    <div itemprop="text" class="question-excerpt">
+                                                <div class="comment-text">
+                                                    <div class="author clearfix">
+                                                        <div class="comment-author">
+                                                            <a href="javascript:"><%=data.answers[i].user_name%></a>
+                                                        </div>
+                                                        <div class="comment-vote">
+                                                            <ul class="question-vote">
+                                                                <li>
+                                                                    <a href="javascript:" class="question-vote-up" title="Like"></a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="javascript:" class="question-vote-down" title="Dislike"></a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="question-vote-result"><%=data.answers[i].upvote_count - data.answers[i].downvote_count%></span>
+                                                        <div class="comment-meta">
+                                                            <div class="date">
+                                                                <i class="icon-time"></i><%=data.answers[i].posting_date%></div>
+                                                        </div>
+                                                        <!-- we will develop the reply feature later -->
+                                                        <!-- <a class="comment-reply" href="#">
+                                                            <i class="icon-reply"></i>Reply</a> -->
+                                                    </div>
+                                                    <div class="text">
                                                         <p>
-                                                            <%=data.challengedetails[0].description%>
+                                                                <%=data.answers[i].description%>
                                                         </p>
                                                     </div>
-                                                    <div class="question-cat">
-                                                        <ul class="question-tags">
-                                                            <li>
-                                                                <a class="q-tag" href="javascript:">
-                                                                    <%=data.challengedetails[0].category%>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="q-tag" href="javascript: ">
-                                                                    <%=data.challengedetails[0].level%>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="clearfix"></div>
-
-                                                        <span title="90" class="user-badge" style="background-color:#04aad4;">Asked By
-                                                            <%=data.challengedetails[0].user_name%>
-                                                        </span>
-                                                        <span itemprop="dateCreated" datetime="on July 14, 2016" class="question-time">
-                                                            Asked on
-                                                            <%=data.challengedetails[0].posting_date%>
-                                                        </span>
-                                                        <!-- <span class="question-category">
-                                                                <a href="https://qaengine.enginethemes.com/blog/question-category/business/">Business.</a>
-                                                            </span> -->
-                                                    </div>
+                                                    <div class="question-answered question-answered-done">
+                                                        <i class="icon-ok"></i>Best Answer</div>
                                                 </div>
-                                            </div>
-                                            <!-- end left content -->
-                                            <div class="col-md-4 col-xs-4 q-right-content">
-                                                <ul class="question-statistic">
-                                                    <li>
-                                                        <span class="question-views">
-                                                            <%=data.challengedetails[0].view_count%>
-                                                        </span>
-                                                        views </li>
-                                                    <li class="active">
-                                                        <span itemprop="answerCount" class="question-answers">
-                                                            <%=data.challengedetails[0].total_answers%>
-                                                        </span>
-                                                        answers </li>
-                                                    <li>
-                                                        <span itemprop="upvoteCount" class="question-votes">
-                                                            <%=data.challengedetails[0].upvote_count + data.challengedetails[0].downvote_count%>
-                                                        </span>
-                                                        votes </li>
-                                                </ul>
-                                                <div class="pumping">
-                                                </div>
-                                            </div>
-                                            <!-- end right content -->
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </li>
-                                    <h3 itemprop="name">
-                                        Answers::
-                                    </h3>
-                                    <% if(data.answers.length){ 
-                                            for(var i = 0;i < data.answers.length;i++) { %>
-                                        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="question-item post-2341 question type-question status-publish hentry question_category-business qa_tag-business-2 qa_tag-technology-2"
-                                            data-id="2341">
-                                            <div itemprop="item" itemscope="" itemtype="http://schema.org/Question">
-                                                <div class="col-md-8 col-xs-8 q-left-content">
-                                                    <div class="q-lbtm-content">
-                                                        <div itemprop="text" class="question-excerpt">
-                                                            <p>
-                                                                <%=data.answers[i].description%>
-                                                            </p>
-                                                        </div>
-                                                        <div class="question-cat">
-                                                            <div class="clearfix"></div>
-
-                                                            <span title="90" class="user-badge" style="background-color:#04aad4;">Answered By
-                                                                <%=data.answers[i].user_name%>
-                                                            </span>
-                                                            <span itemprop="dateCreated" datetime="on July 14, 2016" class="question-time">
-                                                                Answered on
-                                                                <%=data.answers[i].posting_date%>
-                                                            </span>
-                                                            <!-- <span class="question-category">
-                                                            <a href="https://qaengine.enginethemes.com/blog/question-category/business/">Business.</a>
-                                                        </span> -->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- end left content -->
-                                                <div class="col-md-4 col-xs-4 q-right-content">
-                                                    <ul class="question-statistic">
-                                                        <li>
-                                                            <span class="question-views">
-                                                                <%=data.answers[i].view_count%>
-                                                            </span>
-                                                            views </li>
-                                                        <li class="active">
-                                                            <span itemprop="answerCount" class="question-answers">
-                                                                <%=data.answers[i].total_answers%>
-                                                            </span>
-                                                            answers </li>
-                                                        <li>
-                                                            <span itemprop="upvoteCount" class="question-votes">
-                                                                <%=data.answers[i].upvote_count + data.answers[i].downvote_count%>
-                                                            </span>
-                                                            votes </li>
-                                                    </ul>
-                                                    <div class="pumping">
-                                                    </div>
-                                                </div>
-                                                <!-- end right content -->
-                                                <div class="clearfix"></div>
                                             </div>
                                         </li>
                                         <% }} %>
-                                </ul>
-                                <button type="button" class="btn btn-primary" data-target="#answer-modal" data-toggle="modal">Post a Answer</button>
-                            </div>
-                        </div>
+                                    </ol>
+                                    <!-- End commentlist -->
+                                </div>
+                                <!-- End page-content -->
 
-                    </article>
-                    <!-- #post-## -->
-
-                </main>
-                <!-- #main -->
-
-
-            </div>
-            <!-- #content -->
-
-
-            <!-- model window for posting an answer of a question -->
-
-            <!-- Modal Posting question modal window-->
-            <div class="modal fade" id="answer-modal" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">
-                                <span aria-hidden="true">&times;</span>
-                                <span class="sr-only">Close</span>
-                            </button>
-                            <h4 class="modal-title" id="myModalLabel">
-                                Post an answer of the Challenge
-                            </h4>
-                        </div>
-                        <div class="modal-body">
-                            <form class="form-horizontal" role="form">
-
-                                <div class="form-group">
-                                    <label for="position">Answer</label>
-                                    <textarea class="form-control" rows="10" id="answer" name="answer"></textarea>
+                                <div id="respond" class="comment-respond page-content clearfix">
+                                    <div class="boxedtitle page-title">
+                                        <h2>Leave an answer</h2>
+                                    </div>
+                                    <form action="javascript:" method="post" id="commentform" class="comment-form">
+                                        <div id="respond-textarea">
+                                            <p>
+                                                <label class="required" for="comment">Answer
+                                                    <span>*</span>
+                                                </label>
+                                                <textarea id="answer" name="answer" aria-required="true" cols="58" rows="8"></textarea>
+                                            </p>
+                                        </div>
+                                        <p class="form-submit">
+                                            <input name="submit" type="submit" id="submit" value="Post your answer" class="button small color" onclick="getvaluesToAnswer('<%=data.challengedetails[0].challenge_id%>');">
+                                        </p>
+                                    </form>
                                 </div>
 
-                            </form>
+                                <div class="post-next-prev clearfix">
+                                    <p class="prev-post">
+                                        <a href="#">
+                                            <i class="icon-double-angle-left"></i>&nbsp;Prev question</a>
+                                    </p>
+                                    <p class="next-post">
+                                        <a href="#">Next question&nbsp;
+                                            <i class="icon-double-angle-right"></i>
+                                        </a>
+                                    </p>
+                                </div>
+                                <!-- End post-next-prev -->
+                            </div>
+                            <!-- End main -->
+                            <% include ./partials/sidebar %>
+                            <!-- End sidebar -->
                         </div>
-                        <!-- Modal Footer -->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" onclick="getvaluesToAnswer('<%=data.challengedetails[0].challenge_id%>');">Save changes</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- List Add modal window end -->
+                        <!-- End row -->
+                    </section>
+                    <!-- End container -->
 
-            <!-- modal window end for posting an answer of a question -->
+                                        <!-- body footer start -->
+                                        <% include ./partials/body_footer %>
+                                        <!-- body footer end -->
+        </div>
+        <!-- End wrap -->
 
-
-
-            <% include ./partials/footer %>
-                <script type="text/javascript">
-                    function getvaluesToAnswer(challenge_id) {
-                        var url = "/postanswer";
-                        var answer = $("#answer").val();
-                        $.ajax({
-                            type: 'POST',
-                            url: url,
-                            data: {
-                                description: answer,
-                                challenge_id: challenge_id
-                            },
-                            async: false,
-                            success: function (data) {
-                                window.location.reload();
-                            },
-                            error: function () {
-                                alert('Error occured');
-                            }
-                        });
-                    }
-                </script>
-</body>
-
+        <!-- footer started -->
+        <% include ./partials/footer_js %>
+            <!-- footer end -->
+            <script type="text/javascript">
+                function getvaluesToAnswer(challenge_id) {
+                    var url = "/postanswer";
+                    var answer = $("#answer").val();
+                    $.ajax({
+                        type: 'POST',
+                        url: url,
+                        data: {
+                            description: answer,
+                            challenge_id: challenge_id
+                        },
+                        async: false,
+                        success: function (data) {
+                            window.location.reload();
+                        },
+                        error: function () {
+                            alert('Error occured');
+                        }
+                    });
+                }
+            </script>
+    </body>
+    <!-- body part end -->
 </html>
