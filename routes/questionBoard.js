@@ -1,22 +1,22 @@
 
 var mysql = require('mysql');
 // var step = require('step');
-
-var db_config = {
-   host     : 'localhost',
-   user     : 'root',
-   password : '',
-   database : 'cmpdb'
-};
-
 /*
 var db_config = {
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'chainmap'
+};
+*/
+
+var db_config = {
+
   host: '107.181.170.169',
   user: 'dbuser',
   password: 'telenav123',
   database: 'cmpdb'
-};
-*/
+}
 
 
 
@@ -73,7 +73,7 @@ exports.postChallenge = function (req, res) {
 
     } else {
       console.log('The information saved successfully', results);
-      res.send('success');
+      res.redirect('questionBoard');
 
     }
   });
@@ -145,7 +145,7 @@ exports.getDetailsChallenge = function (req, res) {
 	**/
   var resultObj = {};
 
-  connection.query("select challenge.*, `user`.user_name  from challenge join `user` on challenge.post_user_id = `user`.user_id where challenge_id=?", [challenge_id], function (error, results, fields) {
+  connection.query("select challenge.*, `user`.user_name,(SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers  from challenge join `user` on challenge.post_user_id = `user`.user_id where challenge_id=?", [challenge_id], function (error, results, fields) {
     if (error) {
       console.log("error ocurred", { title: 'Error on handling challenge events 1' });
       res.send({

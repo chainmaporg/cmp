@@ -1,0 +1,291 @@
+<div class="login-panel">
+    <section class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="page-content">
+                    <h2>Login</h2>
+                    <div class="form-style form-style-3">
+                        <form>
+                            <div class="form-inputs clearfix">
+                                <p class="login-text">
+                                    <input type="text" value="Username" onfocus="if (this.value == 'Username') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Username';}">
+                                    <i class="icon-user"></i>
+                                </p>
+                                <p class="login-password">
+                                    <input type="password" value="Password" onfocus="if (this.value == 'Password') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Password';}">
+                                    <i class="icon-lock"></i>
+                                    <a href="#">Forget</a>
+                                </p>
+                            </div>
+                            <p class="form-submit login-submit">
+                                <input type="submit" value="Log in" class="button color small login-submit submit">
+                            </p>
+                            <div class="rememberme">
+                                <label>
+                                    <input type="checkbox" checked="checked"> Remember Me</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- End page-content -->
+            </div>
+            <!-- End col-md-6 -->
+            <div class="col-md-6">
+                <div class="page-content Register">
+                    <h2>Register Now</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi adipiscing gravdio, sit amet suscipit
+                        risus ultrices eu. Fusce viverra neque at purus laoreet consequa. Vivamus vulputate posuere nisl
+                        quis consequat.</p>
+                    <a class="button color small signup">Create an account</a>
+                </div>
+                <!-- End page-content -->
+            </div>
+            <!-- End col-md-6 -->
+        </div>
+    </section>
+</div>
+<!-- End login-panel -->
+
+<div class="panel-pop" id="signup">
+    <h2>Register Now
+        <i class="icon-remove"></i>
+    </h2>
+    <div class="form-style form-style-3">
+        <form action="javascript:">
+            <div class="form-inputs clearfix">
+                <p>
+                    <label class="required">Select an Employer from the dropdown or create your own company
+                        <span>*</span>
+                    </label>
+                    <label class="radio-inline" style="display: inline-block">
+                        <input type="radio" name="mode" value="select" onclick="selectMode('select')" checked>Select an Employer</label>
+                    <label class="radio-inline" style="display: inline-block">
+                        <input type="radio" name="mode" value="create" onclick="selectMode('create')">Create Company</label>
+
+                </p>
+                <div class="employerFields">
+                    <p>
+                        <label class="required">Select Employer
+                            <span>*</span>
+                        </label>
+                        <span class="styled-select">
+                            <select required id="employer" name="company_id" required>
+                                <option value="">Please select an Employer</option>
+
+                            </select>
+                        </span>
+                    </p>
+                </div>
+                <div class="companyFields" style="display: none">
+                    <p>
+                        <label class="required">Company Name
+                            <span>*</span>
+                        </label>
+                        <input type="text" name="company_name" required id="companyName">
+                    </p>
+                    <p>
+                        <label class="required">Company Information
+                            <span>*</span>
+                        </label>
+                        <input type="text" name="company_info" required id="companyInfo">
+                    </p>
+                    <p>
+                        <label class="required">Company Email
+                            <span>*</span>
+                        </label>
+                        <input type="email" name="company_email" required id="companyEmail">
+                    </p>
+                    <p>
+                        <label class="required">Company Phone
+                            <span>*</span>
+                        </label>
+                        <input type="text" name="company_phone" required id="companyPhone">
+                    </p>
+                    <p>
+                        <label class="required">Company Website
+                            <span>*</span>
+                        </label>
+                        <input type="text" name="company_site" required id="companyweb">
+                    </p>
+                </div>
+
+                <p>
+                    <label class="required">User First Name
+                        <span>*</span>
+                    </label>
+                    <input type="text" name="firstname" id="firstName" required>
+                </p>
+                <p>
+                    <label class="required">User Last Name
+                        <span>*</span>
+                    </label>
+                    <input type="text" name="lastname" id="lastName" required>
+                </p>
+                <p>
+                    <label class="required">User Name
+                        <span>*</span>
+                    </label>
+                    <input type="text" name="user_name" id="userName" required>
+                </p>
+                <p>
+                    <label class="required">User Email
+                        <span>*</span>
+                    </label>
+                    <input type="email" name="user_email" id="userEmail" required>
+                </p>
+                <p>
+                    <label class="required">User Phone
+                        <span>*</span>
+                    </label>
+                    <input type="text" name="user_phone" id="userPhone" required>
+                </p>
+                <p>
+                    <label class="required">User Password
+                        <span>*</span>
+                    </label>
+                    <input type="password" name="password" id="userPasswd" required>
+                </p>
+                <p>
+                    <label class="required">User Payment Address
+                    </label>
+                    <input type="text" name="payment_address" id="userPAddress">
+                </p>
+                <p>
+                    <label class="required">Do you want to be reviewer?
+                        <span>*</span>
+                    </label>
+                    <label class="radio-inline" style="display: inline-block">
+                        <input type="radio" name="is_reviewer" value="1"  required>Yes</label>
+                    <label class="radio-inline" style="display: inline-block">
+                        <input type="radio" name="is_reviewer" value="0" checked>No</label>
+
+                </p>
+            </div>
+            <p class="form-submit">
+                <input type="submit" value="Signup" class="button color small submit" onclick="getvaluesToRegisterUser()">
+            </p>
+        </form>
+    </div>
+</div>
+<!-- End signup -->
+
+<div class="panel-pop" id="lost-password">
+    <h2>Lost Password
+        <i class="icon-remove"></i>
+    </h2>
+    <div class="form-style form-style-3">
+        <p>Lost your password? Please enter your username and email address. You will receive a link to create a new password
+            via email.</p>
+        <form>
+            <div class="form-inputs clearfix">
+                <p>
+                    <label class="required">Username
+                        <span>*</span>
+                    </label>
+                    <input type="text">
+                </p>
+                <p>
+                    <label class="required">E-Mail
+                        <span>*</span>
+                    </label>
+                    <input type="email">
+                </p>
+            </div>
+            <p class="form-submit">
+                <input type="submit" value="Reset" class="button color small submit">
+            </p>
+        </form>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    var gMode = "select";
+    function selectMode(mode) {
+        if (mode == "select") {
+            $(".companyFields").hide();
+            clear_form_elements('companyFields')
+            $(".employerFields").show();
+            gMode = "select"
+        }
+        else if (mode == "create") {
+            $(".employerFields").hide();
+            clear_form_elements('employerFields')
+            $(".companyFields").show();
+            gMode = "create"
+        }
+    }
+
+    function clear_form_elements(class_name) {
+        $("." + class_name).find(':input').each(function () {
+            switch (this.type) {
+                case 'password':
+                case 'text':
+                case 'textarea':
+                case 'file':
+                case 'select-one':
+                case 'select-multiple':
+                case 'date':
+                case 'number':
+                case 'tel':
+                case 'email':
+                    jQuery(this).val('');
+                    break;
+                case 'checkbox':
+                case 'radio':
+                    this.checked = false;
+                    break;
+            }
+        });
+    }
+    function getvaluesToRegisterUser() {
+        var url = "/userRegister";
+        if (gMode == "select") {
+            data = {
+                'mode': gMode,
+                'company_id': $("#employer").val(),
+                'firstname': $("#firstName").val(),
+                'lastname': $("#lastName").val(),
+                'user_name': $("#userName").val(),
+                'user_email': $("#userEmail").val(),
+                'user_phone': $("#userPhone").val(),
+                'password': $("#userPasswd").val(),
+                'payment_address': $("#userPAddress").val(),
+                'is_reviewer': $('input[name="is_reviewer"]:checked').val()
+            };
+        }
+        else if (gMode == "create") {
+            data = {
+                'mode': gMode,
+                'company_name': $("#companyName").val(),
+                'company_info': $("#companyInfo").val(),
+                'company_email': $("#companyEmail").val(),
+                'company_phone': $("#companyPhone").val(),
+                'company_site': $("#companyweb").val(),
+                'firstname': $("#firstName").val(),
+                'lastname': $("#lastName").val(),
+                'user_name': $("#userName").val(),
+                'user_email': $("#userEmail").val(),
+                'user_phone': $("#userPhone").val(),
+                'password': $("#userPasswd").val(),
+                'payment_address': $("#userPAddress").val(),
+                'is_reviewer': $('input[name="is_reviewer"]:checked').val()
+            };
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: data,
+            async: false,
+            success: function (data) {
+                window.location.reload();
+            },
+            error: function () {
+                alert('Error occured');
+            }
+        });
+    }
+
+    
+</script>
+<!-- End lost-password -->

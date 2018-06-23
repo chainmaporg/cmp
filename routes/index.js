@@ -75,6 +75,8 @@ router.get('/login', function(req, res) {
 var login = require('../routes/login');
 var users = require('../routes/users');
 var questionBoard = require("../routes/questionBoard");
+// global.environment = "local";
+global.environment = "production";
 
 
 router.post('/login',login.login)
@@ -89,16 +91,21 @@ router.get('/logout',function(req,res){
 	});
 })
 
-
 router.get('/', function(req, res) {
     res.render('home', { title: 'Home' });
 });
 
+router.get('/askQuestion', function(req, res) {
+  res.render('askQuestion', { title: 'Post a Challenge' });
+});
 router.get('/questionBoard', questionBoard.getAllChallenge);
 router.get('/getChallengebyID/:challenge_id', questionBoard.getDetailsChallenge);
 router.post('/postChallenge', questionBoard.postChallenge);
 router.post('/postanswer', questionBoard.postanswer);
 router.post('/userRegister', users.userRegister);
+router.get('/loginRegister', function(req, res) {
+  res.render('loginRegister', { title: 'Login/Register' });
+});
 router.post('/getCompanies', users.getCompanies);
 
 

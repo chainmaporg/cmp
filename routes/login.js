@@ -1,13 +1,26 @@
+
 var md5 = require('md5');
 var mysql      = require('mysql');
 
+require('../routes/index');
+/*
+var db_config = {
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'chainmap'
+};
+*/
 
 var db_config = {
-   host     : 'localhost',
-   user     : 'root',
-   password : '',
-   database : 'cmpdb'
-};
+
+  host: '107.181.170.169',
+  user: 'dbuser',
+  password: 'telenav123',
+  database: 'cmpdb'
+}
+
+
 
 /*
 var db_config = {
@@ -23,30 +36,28 @@ var connection;
 
 function handleDisconnect() {
   // Recreate the connection, since
-  connection = mysql.createConnection(db_config); 
-                                                 
+  connection = mysql.createConnection(db_config);
 
-  connection.connect(function(err) {              
-    if(err) {                                     
+
+  connection.connect(function (err) {
+    if (err) {
       console.log('error when connecting to db:', err);
       // We introduce a delay before attempting to reconnect,
-      setTimeout(handleDisconnect, 2000); 
-    }                                     
-  });                                     
-                                         
-  connection.on('error', function(err) {
+      setTimeout(handleDisconnect, 2000);
+    }
+  });
+
+  connection.on('error', function (err) {
     console.log('db error', err);
-    if(err.code === 'PROTOCOL_CONNECTION_LOST') { 
-      handleDisconnect();                         
-    } else {                                     
-      throw err;                                 
+    if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+      handleDisconnect();
+    } else {
+      throw err;
     }
   });
 }
 
 handleDisconnect();
-
-
 
 exports.login = function(req,res){
   var email= req.body.email;
@@ -62,19 +73,14 @@ exports.login = function(req,res){
     if(results.length >0){
       if(results[0].password == password){
         session = req.session;
-		session.email = req.body.email
+		    session.email = req.body.email
 		
         res.redirect('questionBoard');
       }
-      else{
-        console.log("password=",password);
-        res.render("error", {errorMsg: "Email and password does not match"})
+      else {
+        res.render("error", { errorMsg: "Email does not exits" })
       }
     }
-    else{
-    	res.render("error", {errorMsg: "Email does not exits"})
-     }
-  }
   });
 }
 

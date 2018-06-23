@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!-- header part start -->
+<% include ./partials/header %>
+    <!-- header part end -->
+<body>
+
+<div class="loader"><div class="loader_html"></div></div>
+
+<div id="wrap" class="grid_1200">
+	
+	
+	
+	
+	
+	
+	
+	
+		<% include ./partials/header_login %>
+
+		<% include ./partials/body_header %>
+	
+	<div class="breadcrumbs">
+		<section class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Ask Question</h1>
+				</div>
+				<div class="col-md-12">
+					<div class="crumbs">
+						<a href="/">Home</a>
+						<span class="crumbs-span">/</span>
+						<span class="current">Post a Challenge</span>
+					</div>
+				</div>
+			</div><!-- End row -->
+		</section><!-- End container -->
+	</div><!-- End breadcrumbs -->
+	
+	<section class="container main-content">
+		<div class="row">
+			<div class="col-md-9">
+				
+				<div class="page-content ask-question">
+					<div class="boxedtitle page-title"><h2>Post a Challenge</h2></div>
+					
+					<!-- <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis. Curabitur vitae velit in neque dictum blandit. Proin in iaculis neque.</p> -->
+					
+					<div class="form-style form-style-3" id="question-submit">
+						<form action="/postChallenge" method="POST">
+							<div class="form-inputs clearfix">
+								<p>
+									<label class="required">Challenge Title<span>*</span></label>
+									<input type="text" id="question-title" required name="ChallengeHeader">
+									<span class="form-description">Please choose an appropriate title for the Challenge to answer it even easier .</span>
+								</p>
+								
+								<p>
+									<label class="required">Category<span>*</span></label>
+									<span class="styled-select">
+										<select required id="category" name="category">
+											<option value="">Please select a Category</option>
+                            <option value="Public Chain Infrastructure, consensus">Public Chain Infrastructure, consensus</option>
+                            <option value="Smart Contract">Smart Contract</option>
+                            <option value="dApp Backend">dApp Backend</option>
+                            <option value="dApp Frontend">dApp Frontend</option>
+                            <option value="IPFS/Storage/Network">IPFS/Storage/Network</option>
+                            <option value="Industry Use Cases">Industry Use Cases</option>
+										</select>
+									</span>
+									<span class="form-description">Please choose the appropriate section so easily search for your Challenge .</span>
+								</p>
+								<p>
+                                        <label class="required">Level<span>*</span></label>
+                                        <span class="styled-select">
+                                            <select required id="level" name="level">
+                                                <option value="">Please select a Level</option>
+                                                <option value="Diamond (need >2 hrs)">Diamond (need >2 hrs)</option>
+                            <option value="Gold (need >30 mins)">Gold (need >30 mins)</option>
+                            <option value="Silver (need >5 mins)">Silver (need >5 mins)</option>
+                            <option value="Brozen (<5 mins)">Brozen (<5 mins)</option>
+                                            </select>
+                                        </span>
+                                        <span class="form-description">Please choose the appropriate level so easily search for your Challenge .</span>
+                                    </p>
+								<div class="clearfix"></div>
+								
+								
+								
+								
+							</div>
+							<div id="form-textarea">
+								<p>
+									<label class="required">Details<span>*</span></label>
+									<textarea id="question-details" aria-required="true" cols="58" rows="8" required name="ChallengeQuestion"></textarea>
+									<span class="form-description">Type the description thoroughly and in detail .</span>
+								</p>
+							</div>
+							<p class="form-submit">
+								<input type="submit" id="publish-question" value="Publish Your Challenge" class="button color small submit" >
+							</p>
+						</form>
+					</div>
+				</div><!-- End page-content -->
+			</div><!-- End main -->
+			<% include ./partials/sidebar %>
+		</div><!-- End row -->
+	</section><!-- End container -->
+	 <!-- body footer start -->
+     <% include ./partials/body_footer %>
+     <!-- body footer end -->
+	
+</div><!-- End wrap -->
+
+<!-- footer started -->
+<% include ./partials/footer_js %>
+<!-- footer end -->
+<script type="text/javascript">
+    function getvaluesToPostChallenge() {
+        var url = "/postChallenge";
+        var ChallengeHeader = $("#question-title").val();
+        var ChallengeQuestion = $("#question-details").val();
+        var category = $("#category").val();
+        var level = $("#level").val();
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+                ChallengeHeader: ChallengeHeader,
+                ChallengeQuestion: ChallengeQuestion,
+                category: category,
+                level: level
+            },
+            async: false,
+            success: function (data) {
+                alert(data)
+                window.location.href = "/questionBoard";
+            },
+            error: function () {
+                alert('Error occured');
+            }
+        });
+    }
+</script>
+
+
+
+</body>
+</html>
