@@ -1,15 +1,14 @@
 
 var mysql = require('mysql');
 // var step = require('step');
-/*
 var db_config = {
   host: 'localhost',
   user: 'root',
   password: '',
   database: 'chainmap'
 };
-*/
 
+/*
 var db_config = {
 
   host: '107.181.170.169',
@@ -17,6 +16,7 @@ var db_config = {
   password: 'telenav123',
   database: 'cmpdb'
 }
+*/
 
 
 

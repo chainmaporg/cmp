@@ -1,17 +1,17 @@
 
 var md5 = require('md5');
-var mysql      = require('mysql');
+var mysql = require('mysql');
 
 require('../routes/index');
-/*
+
 var db_config = {
   host: 'localhost',
   user: 'root',
   password: '',
   database: 'chainmap'
 };
-*/
 
+/*
 var db_config = {
 
   host: '107.181.170.169',
@@ -19,6 +19,7 @@ var db_config = {
   password: 'telenav123',
   database: 'cmpdb'
 }
+*/
 
 
 
@@ -59,27 +60,32 @@ function handleDisconnect() {
 
 handleDisconnect();
 
-exports.login = function(req,res){
-  var email= req.body.email;
+exports.login = function (req, res) {
+  var email = req.body.email;
   var password = md5(req.body.password);
-  console.log("login info-", email,"/", password);
-  connection.query('SELECT * FROM user WHERE user_email = ?',[email], function (error, results, fields) {
-  if (error) {
-    console.log("error ocurred",error);
-    res.render("error", {errorMsg: "Error on selecting from DB Users"})
-  }else{
-    console.log('The solution is: ', results);
-    console.log('[0]=',[0]);
-    if(results.length >0){
-      if(results[0].password == password){
-        session = req.session;
-		    session.email = req.body.email
-		
-        res.redirect('questionBoard');
+  console.log("login info-", email, "/", password);
+  connection.query('SELECT * FROM user WHERE user_email = ?', [email], function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on selecting from DB Users" })
+    } else {
+      console.log('The solution is: ', results);
+      console.log('[0]=', [0]);
+      if (results.length > 0) {
+        if (results[0].password == password) {
+          session = req.session;
+          session.email = req.body.email
+          console.log("logged in ");
+          res.redirect('questionBoard');
+        }
+        else {
+          console.log("Not successful");
+          res.render("error", { errorMsg: "Email does not exits" })
+        }
+      }else{
+        console.log("Problem");
       }
-      else {
-        res.render("error", { errorMsg: "Email does not exits" })
-      }
+      
     }
   });
 }
