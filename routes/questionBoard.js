@@ -1,22 +1,22 @@
 
 var mysql = require('mysql');
 // var step = require('step');
-require('../routes/index');
+/*
 var db_config = {
   host: 'localhost',
   user: 'root',
   password: '',
   database: 'chainmap'
 };
-// console.log(environment)
-if (global.environment =="production"){
-  var db_config = {
-    host: '107.181.170.169',
-    user: 'dbuser',
-    password: 'telenav123',
-    database: 'cmpdb'
-  };
-  }
+*/
+
+var db_config = {
+
+  host: '107.181.170.169',
+  user: 'dbuser',
+  password: 'telenav123',
+  database: 'cmpdb'
+}
 
 
 

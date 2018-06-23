@@ -62,9 +62,6 @@ router.get('/about', function(req, res) {
     res.render('about', { title: 'About' });
 });
 
-router.get('/signup', function(req, res) {
-    res.render('signup', { title: 'Signup' });
-});
 
 router.get('/login', function(req, res) {
     res.render('login', { title: 'Login' });
@@ -76,15 +73,12 @@ router.get('/login', function(req, res) {
 
 //route to handle user registration
 var login = require('../routes/login');
-// var challenge = require('../routes/challenge');
 var users = require('../routes/users');
 var questionBoard = require("../routes/questionBoard");
 // global.environment = "local";
 global.environment = "production";
 
 
-router.get('/register', login.register)
-router.post('/register', login.register)
 router.post('/login',login.login)
 
 router.get('/logout',function(req,res){
@@ -96,8 +90,6 @@ router.get('/logout',function(req,res){
  	 }
 	});
 })
-
-// router.get('/challenge',challenge.challenge)
 
 router.get('/', function(req, res) {
     res.render('home', { title: 'Home' });

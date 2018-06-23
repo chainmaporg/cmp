@@ -1,24 +1,35 @@
 
-var mysql = require('mysql');
+var md5 = require('md5');
+var mysql      = require('mysql');
 
 require('../routes/index');
+/*
 var db_config = {
   host: 'localhost',
   user: 'root',
   password: '',
   database: 'chainmap'
 };
-if (global.environment =="production"){
+*/
+
 var db_config = {
+
   host: '107.181.170.169',
   user: 'dbuser',
   password: 'telenav123',
   database: 'cmpdb'
-};
 }
 
 
 
+/*
+var db_config = {
+   host     : '107.181.170.169 ',
+   user     : 'dbuser',
+   password : 'telenav123',
+   database : 'rsdb'
+};
+*/
 
 
 var connection;
@@ -48,65 +59,23 @@ function handleDisconnect() {
 
 handleDisconnect();
 
-exports.register = function (req, res) {
-  // console.log("req",req.body);
-  var today = new Date();
-  var users = {
-    "email": req.body.email,
-    "password": req.body.password,
-    "primarycat": req.body.primarycat,
-    "partneryes": req.body.partneryes,
-    "teamneeds": req.body.teamneeds,
-    "location": req.body.location,
-    "created": today,
-    "modified": today
-  }
-  connection.query('INSERT INTO users SET ?', users, function (error, results, fields) {
-    if (error) {
-      console.log("error ocurred", error);
-      res.render("error", { errorMsg: "Error on insertion into DB Users" })
-
-    } else {
-      console.log('The solution is: ', results);
-      //res.render('challenge', { title: 'Challenge' });
-      session = req.session;
-      session.email = req.body.email
-
-      res.redirect('challenge');
-
-    }
-  });
-
-}
-
-
-exports.login = function (req, res) {
-  var email = req.body.email;
-  var password = req.body.password.trim();
-  connection.query('SELECT * FROM users WHERE email = ?', [email], function (error, results, fields) {
-    if (error) {
-      console.log("error ocurred", error);
-      res.render("error", { errorMsg: "Error on selecting from DB Users" })
-    } else {
-      console.log('The solution is: ', results);
-      console.log('[0]=', [0]);
-      if (results.length > 0) {
-        if (results[0].password == password) {
-          //res.render('challenge', { title: 'Challenge' });
-          session = req.session;
-          session.email = req.body.email
-
-          res.redirect('challenge');
-
-          //res.send({
-          //  "code":200,
-          //  "success":"login sucessfull"
-          //    });
-        }
-        else {
-          console.log("password=", password);
-          res.render("error", { errorMsg: "Email and password does not match" })
-        }
+exports.login = function(req,res){
+  var email= req.body.email;
+  var password = md5(req.body.password);
+  console.log("login info-", email,"/", password);
+  connection.query('SELECT * FROM user WHERE user_email = ?',[email], function (error, results, fields) {
+  if (error) {
+    console.log("error ocurred",error);
+    res.render("error", {errorMsg: "Error on selecting from DB Users"})
+  }else{
+    console.log('The solution is: ', results);
+    console.log('[0]=',[0]);
+    if(results.length >0){
+      if(results[0].password == password){
+        session = req.session;
+		    session.email = req.body.email
+		
+        res.redirect('questionBoard');
       }
       else {
         res.render("error", { errorMsg: "Email does not exits" })

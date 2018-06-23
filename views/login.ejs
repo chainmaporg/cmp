@@ -13,26 +13,29 @@
 <h1>Login</h1>
 <br>
 <br>
-<form method="post" action="/login">
-  
-  <table>
-    <tr><td>
-    <label>Username(Email):</label>
-    </td><td>
-    <input type="text" name="email" size="60">
-    </td></tr>
+		<form name="loginform" id="loginform" action="/login" method="post">
+			
+			<p>
+				<label>Email Address</label><br>
+				<input type="text" name="email" id="email" size="30" />
+			</p>
+			<p>
+				<label>Password</label><br>
+				<input type="password" name="password" id="password" size="30" />
+			</p>
+			
+			<p>
+				<input type="submit" name="cmp-submit"  value="Log In" />
+			</p>
+			
+		</form>
+<p>
+	<a href="/userRegister" title="Create an account">Create an account</a>
+</p>
 
-    <tr><td>
-    <label>Password:</label>
-    </td><td>
-    <input type="password" name="password" size="60">
-    </td></tr>
-  </table>
-    <br>
 
-    <input type="submit" value="Login">
-  </p>
-</form>
+
+
 
 
 </main>
