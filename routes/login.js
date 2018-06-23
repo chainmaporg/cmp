@@ -2,35 +2,9 @@
 var md5 = require('md5');
 var mysql      = require('mysql');
 
-require('../routes/index');
-/*
-var db_config = {
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'chainmap'
-};
-*/
+var index = require('../routes/index');
 
-var db_config = {
-
-  host: '107.181.170.169',
-  user: 'dbuser',
-  password: 'telenav123',
-  database: 'cmpdb'
-}
-
-
-
-/*
-var db_config = {
-   host     : '107.181.170.169 ',
-   user     : 'dbuser',
-   password : 'telenav123',
-   database : 'rsdb'
-};
-*/
-
+var db_config = index.db_config
 
 var connection;
 
@@ -80,6 +54,7 @@ exports.login = function(req,res){
       else {
         res.render("error", { errorMsg: "Email does not exits" })
       }
+    }
     }
   });
 }
