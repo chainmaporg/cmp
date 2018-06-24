@@ -10,10 +10,14 @@
                     <a href="javascript:">
                         <i class="icon-headphones"></i>Support</a>
                 </li>
+                <%
+                if (typeof session === 'undefined' || typeof session.email === 'undefined'){
+                    %>
                 <li>
                     <a href="login.html" id="login-panel">
                         <i class="icon-user"></i>Login Area</a>
                 </li>
+                <% } %>
             </ul>
         </nav>
         <div class="header-search">
@@ -30,7 +34,7 @@
     <section class="container clearfix">
         <div class="logo">
             <a href="/">
-                <img alt="" src="image/cm-logo-w.jpg" height="57" width="176">
+                <img alt="" src="image/cm-logo-b.jpg" height="57" width="176">
             </a>
         </div>
         <nav class="navigation">
@@ -72,30 +76,34 @@
                         </li>
                     </ul> -->
                 </li>
-                <li>
-                    <a href="user_profile.html">User</a>
-                    <ul>
-                        <li>
-                            <a href="user_profile.html">User Profile</a>
-                        </li>
-                        <li>
-                            <a href="user_questions.html">User Questions</a>
-                        </li>
-                        <li>
-                            <a href="user_answers.html">User Answers</a>
-                        </li>
-                        <li>
-                            <a href="user_favorite_questions.html">User Favorite Questions</a>
-                        </li>
-                        <li>
-                            <a href="user_points.html">User Points</a>
-                        </li>
-                        <li>
-                            <a href="edit_profile.html">Edit Profile</a>
-                        </li>
-                    </ul>
-                </li>
-                <!-- <li>
+                <%
+                if (typeof session !== 'undefined' && typeof session.email !== 'undefined'){
+                    %>
+                    <li>
+                        <a href="user_profile.html">User</a>
+                        <ul>
+                            <li>
+                                <a href="user_profile.html">User Profile</a>
+                            </li>
+                            <li>
+                                <a href="user_questions.html">User Questions</a>
+                            </li>
+                            <li>
+                                <a href="user_answers.html">User Answers</a>
+                            </li>
+                            <li>
+                                <a href="user_favorite_questions.html">User Favorite Questions</a>
+                            </li>
+                            <li>
+                                <a href="user_points.html">User Points</a>
+                            </li>
+                            <li>
+                                <a href="edit_profile.html">Edit Profile</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <% } %>
+                        <!-- <li>
                     <a href="blog_1.html">Blog</a>
                     <ul>
                         <li>
@@ -142,9 +150,19 @@
                         </li>
                     </ul>
                 </li> -->
-                <li>
-                    <a href="/loginRegister">Login/Register</a>
-                    <!-- <ul>
+                        <%
+                if (typeof session !== 'undefined' && typeof session.email !== 'undefined'){
+                    
+                    %>
+                            <li>
+                                <a href="/logOut">Log out</a>
+                            </li>
+                            <%       
+                } else{
+                %>
+                                <li>
+                                    <a href="/loginRegister">Login/Register</a>
+                                    <!-- <ul>
                         <li>
                             <a href="login.html">Login</a>
                         </li>
@@ -167,7 +185,8 @@
                             <a href="404.html">404</a>
                         </li>
                     </ul> -->
-                </li>
+                                </li>
+                                <% } %>
             </ul>
         </nav>
     </section>

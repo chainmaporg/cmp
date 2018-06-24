@@ -1,23 +1,8 @@
 
 var mysql = require('mysql');
-// var step = require('step');
-/*
-var db_config = {
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'chainmap'
-};
-*/
+var index = require('../routes/index');
 
-var db_config = {
-
-  host: '107.181.170.169',
-  user: 'dbuser',
-  password: 'telenav123',
-  database: 'cmpdb'
-}
-
+var db_config = index.db_config
 
 
 var connection;
@@ -53,6 +38,7 @@ handleDisconnect();
 
 exports.postChallenge = function (req, res) {
   console.log("req", req.body);
+
   var today = new Date();
   var ChallengeQuestionInfo = {
     "post_user_id": 1,
@@ -169,6 +155,9 @@ exports.getDetailsChallenge = function (req, res) {
             console.log('The solution is: ', results);
             if (results.length > 0) {
               resultObj['answers'] = results
+
+              connection.query()
+
               // console.log(resultObj);
             }else{
               resultObj['answers'] = []
