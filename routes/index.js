@@ -8,6 +8,7 @@ var chainmap_env = "local";
 var db_config
 
 //Let us all use cmpdb in all instances
+
 if (chainmap_env == "local") (
   db_config = {
     host: 'localhost',
@@ -23,6 +24,7 @@ else {
     password: 'telenav123',
     database: 'cmpdb'
   }
+
 }
 exports.db_config = db_config
 
@@ -106,6 +108,7 @@ global.environment = "production";
 
 router.post('/login', login.login)
 
+
 // router.get('/logOut',function(req,res){
 //   console.log("logged out");
 // 	req.session.destroy(function(err) {
@@ -118,12 +121,12 @@ router.post('/login', login.login)
 // })
 
 router.get('/logOut', function (req, res) {
+
   req.session.destroy();
   req.session = null;
   // res.send("logout success!");
   res.redirect('/questionBoard');
 })
-
 
 router.get('/', function (req, res) {
   res.render('home', { title: 'Home' });
