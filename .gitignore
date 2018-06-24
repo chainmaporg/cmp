@@ -1,0 +1,9 @@
+node_modules
+build
+.env
+.DS_Store
+routes/.DS_Store
+*.pdf
+*.PDF
+*.log
+.vscode

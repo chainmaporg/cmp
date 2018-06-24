@@ -1,0 +1,42 @@
+(1) git checkout: 
+
+git checkout master
+git pull origin master
+
+(2) See branches
+Georges-MacBook-Pro:cmp gzhao$ git branch
+* feature-10-11
+  master
+  
+(3) Create new branch
+git checkout -b <branchName>
+
+(4) Create database (mysql)
+
+mysql -u root -p
+
+mysql> create database cmpdb;
+ 
+
+(5) Run see data
+
+mysql> source /<path>/cmpdb.sql;
+
+(6) Change the code in branch and test
+
+Georges-MacBook-Pro:cmp gzhao$ sh startNode.sh 
+Georges-MacBook-Pro:cmp gzhao$ tail -f mynode.log 
+Wed, 20 Jun 2018 23:17:29 GMT express-session deprecated undefined resave option; provide resave option at app.js:18:9
+Wed, 20 Jun 2018 23:17:29 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:18:9
+
+
+(7) Run testing:
+http://localhost/
+
+
+(8) Stop the server
+sudo sh stopNode.sh 
+
+(9) Check in the feature branch (git add, git commit, and git push origin <branchname>)
+
+(10) generate git pull request (from git web: https://github.com/chainmaporg/cmp)
