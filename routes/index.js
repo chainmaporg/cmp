@@ -2,6 +2,31 @@ var express = require('express');
 var SolrNode = require('solr-node');
 var router = express.Router();
 
+//Change based on env
+var chainmap_env = "local";
+
+var db_config
+
+//Let us all use cmpdb in all instances
+if(chainmap_env=="local") (
+	db_config = {
+  		host: 'localhost',
+  		user: 'root',
+  		password: '',
+  		database: 'cmpdb'
+  	}
+)
+else {
+	db_config = {
+  		host: '107.181.170.169',
+ 		 user: 'dbuser',
+  		password: 'telenav123',
+  		database: 'cmpdb'
+	}
+}
+exports.db_config = db_config
+
+
 
 // var client = new SolrNode({
 //     host: 'localhost',
@@ -81,15 +106,24 @@ global.environment = "production";
 
 router.post('/login',login.login)
 
-router.get('/logout',function(req,res){
-	req.session.destroy(function(err) {
-  	if(err) {
-    	console.log(err);
- 	 } else {
-  	  res.redirect('/');
- 	 }
-	});
+// router.get('/logOut',function(req,res){
+//   console.log("logged out");
+// 	req.session.destroy(function(err) {
+//   	if(err) {
+//     	console.log(err);
+//  	 } else {
+//   	  res.redirect('/');
+//  	 }
+// 	});
+// })
+
+router.get('/logOut',function(req,res){
+  req.session.destroy();
+  req.session = null;
+  // res.send("logout success!");
+  res.redirect('/questionBoard');
 })
+
 
 router.get('/', function(req, res) {
     res.render('home', { title: 'Home' });

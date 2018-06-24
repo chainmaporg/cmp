@@ -72,30 +72,34 @@
                         </li>
                     </ul> -->
                 </li>
-                <li>
-                    <a href="user_profile.html">User</a>
-                    <ul>
-                        <li>
-                            <a href="user_profile.html">User Profile</a>
-                        </li>
-                        <li>
-                            <a href="user_questions.html">User Questions</a>
-                        </li>
-                        <li>
-                            <a href="user_answers.html">User Answers</a>
-                        </li>
-                        <li>
-                            <a href="user_favorite_questions.html">User Favorite Questions</a>
-                        </li>
-                        <li>
-                            <a href="user_points.html">User Points</a>
-                        </li>
-                        <li>
-                            <a href="edit_profile.html">Edit Profile</a>
-                        </li>
-                    </ul>
-                </li>
-                <!-- <li>
+                <%
+                if (session.email){
+                    %>
+                    <li>
+                        <a href="user_profile.html">User</a>
+                        <ul>
+                            <li>
+                                <a href="user_profile.html">User Profile</a>
+                            </li>
+                            <li>
+                                <a href="user_questions.html">User Questions</a>
+                            </li>
+                            <li>
+                                <a href="user_answers.html">User Answers</a>
+                            </li>
+                            <li>
+                                <a href="user_favorite_questions.html">User Favorite Questions</a>
+                            </li>
+                            <li>
+                                <a href="user_points.html">User Points</a>
+                            </li>
+                            <li>
+                                <a href="edit_profile.html">Edit Profile</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <% } %>
+                        <!-- <li>
                     <a href="blog_1.html">Blog</a>
                     <ul>
                         <li>
@@ -142,9 +146,19 @@
                         </li>
                     </ul>
                 </li> -->
-                <li>
-                    <a href="/loginRegister">Login/Register</a>
-                    <!-- <ul>
+                        <%
+                if (typeof session.email !== 'undefined'){
+                    
+                    %>
+                            <li>
+                                <a href="/logOut">Log out  email: <%= session.email %></a>
+                            </li>
+                            <%       
+                } else{
+                %>
+                                <li>
+                                    <a href="/loginRegister">Login/Register</a>
+                                    <!-- <ul>
                         <li>
                             <a href="login.html">Login</a>
                         </li>
@@ -167,7 +181,8 @@
                             <a href="404.html">404</a>
                         </li>
                     </ul> -->
-                </li>
+                                </li>
+                                <% } %>
             </ul>
         </nav>
     </section>

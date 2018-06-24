@@ -2,36 +2,9 @@
 var md5 = require('md5');
 var mysql = require('mysql');
 
-require('../routes/index');
+var index = require('../routes/index');
 
-var db_config = {
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'chainmap'
-};
-
-/*
-var db_config = {
-
-  host: '107.181.170.169',
-  user: 'dbuser',
-  password: 'telenav123',
-  database: 'cmpdb'
-}
-*/
-
-
-
-/*
-var db_config = {
-   host     : '107.181.170.169 ',
-   user     : 'dbuser',
-   password : 'telenav123',
-   database : 'rsdb'
-};
-*/
-
+var db_config = index.db_config
 
 var connection;
 
@@ -75,17 +48,19 @@ exports.login = function (req, res) {
         if (results[0].password == password) {
           session = req.session;
           session.email = req.body.email
+          session.user_id = results[0].user_id
           console.log("logged in ");
           res.redirect('questionBoard');
         }
         else {
           console.log("Not successful");
-          res.render("error", { errorMsg: "Email does not exits" })
+          res.render("loginRegister", { errorMsg: "Password did not match" })
         }
-      }else{
-        console.log("Problem");
+      } else {
+        console.log("Not successful");
+          res.render("loginRegister", { errorMsg: "Email does not exist" })
       }
-      
+
     }
   });
 }
