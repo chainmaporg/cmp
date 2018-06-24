@@ -10,10 +10,14 @@
                     <a href="javascript:">
                         <i class="icon-headphones"></i>Support</a>
                 </li>
+                <%
+                if (typeof session === 'undefined' || typeof session.email === 'undefined'){
+                    %>
                 <li>
                     <a href="login.html" id="login-panel">
                         <i class="icon-user"></i>Login Area</a>
                 </li>
+                <% } %>
             </ul>
         </nav>
         <div class="header-search">
@@ -73,7 +77,9 @@
                     </ul> -->
                 </li>
                 <%
-                if (session.email){
+                
+                if (typeof session !== 'undefined' && typeof session.email !== 'undefined'){
+
                     %>
                     <li>
                         <a href="user_profile.html">User</a>
@@ -147,11 +153,12 @@
                     </ul>
                 </li> -->
                         <%
-                if (typeof session.email !== 'undefined'){
+
+                if (typeof session !== 'undefined' && typeof session.email !== 'undefined'){
                     
                     %>
                             <li>
-                                <a href="/logOut">Log out  email: <%= session.email %></a>
+                                <a href="/logOut">Log out</a>
                             </li>
                             <%       
                 } else{
