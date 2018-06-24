@@ -106,15 +106,24 @@ global.environment = "production";
 
 router.post('/login',login.login)
 
-router.get('/logout',function(req,res){
-	req.session.destroy(function(err) {
-  	if(err) {
-    	console.log(err);
- 	 } else {
-  	  res.redirect('/');
- 	 }
-	});
+// router.get('/logOut',function(req,res){
+//   console.log("logged out");
+// 	req.session.destroy(function(err) {
+//   	if(err) {
+//     	console.log(err);
+//  	 } else {
+//   	  res.redirect('/');
+//  	 }
+// 	});
+// })
+
+router.get('/logOut',function(req,res){
+  req.session.destroy();
+  req.session = null;
+  // res.send("logout success!");
+  res.redirect('/questionBoard');
 })
+
 
 router.get('/', function(req, res) {
     res.render('home', { title: 'Home' });
