@@ -38,6 +38,7 @@ handleDisconnect();
 
 exports.postChallenge = function (req, res) {
   console.log("req", req.body);
+
   var today = new Date();
   var ChallengeQuestionInfo = {
     "post_user_id": 1,
@@ -154,6 +155,9 @@ exports.getDetailsChallenge = function (req, res) {
             console.log('The solution is: ', results);
             if (results.length > 0) {
               resultObj['answers'] = results
+
+              connection.query()
+
               // console.log(resultObj);
             }else{
               resultObj['answers'] = []
