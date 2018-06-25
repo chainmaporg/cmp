@@ -33,7 +33,7 @@
                                     <div class="crumbs">
                                         <a href="/">Home</a>
                                         <span class="crumbs-span">/</span>
-                                        <a href="/questionBoard">Questions</a>
+                                        <a href="/questionBoard">Challenges</a>
                                         <span class="crumbs-span">/</span>
                                         <span class="current"><%=data.challengedetails[0].title%></span>
                                     </div>
@@ -52,9 +52,14 @@
                                     <h2>
                                         <a href="/getChallengebyID/<%=data.challengedetails[0].challenge_id%>"><%=data.challengedetails[0].title%></a>
                                     </h2>
-                                    <a class="question-report" href="javascript:">Report</a>
-                                    <div class="question-type-main">
-                                        <i class="icon-question-sign"></i>Question</div>
+                                    
+                                    <%
+                                        if (session.user_id == data.challengedetails[0].user_id && data.challengedetails[0].is_closed == 0){
+                                        %>
+                                                                            <div class="question-type-main" style="background-color: white">
+                                                                                <a href="/closeChallenge/<%=data.challengedetails[0].challenge_id%>" class="button small green-button custom-button">Close Challenge</a>
+                                                                            </div>
+                                                                            <% } %>
                                     <div class="question-inner">
                                         <div class="clearfix"></div>
                                         <div class="question-desc">
@@ -63,10 +68,14 @@
                                             </p>
                                         </div>
                                         <div class="question-details">
+                                                <%
+                                                if (data.challengedetails[0].is_closed == 1){
+                                                %>
                                             <span class="question-answered question-answered-done">
-                                                <i class="icon-ok"></i>solved</span>
-                                            <span class="question-favorite">
-                                                <i class="icon-star"></i>5</span>
+                                                <i class="icon-ok"></i>Closed</span>
+                                                <% } %>
+                                            <!-- <span class="question-favorite">
+                                                <i class="icon-star"></i>5</span> -->
                                         </div>
                                         <span class="question-category">
                                             <a href="javascript:">
@@ -83,12 +92,12 @@
                                         <span class="single-question-vote-result"><%=data.challengedetails[0].upvote_count - data.challengedetails[0].downvote_count%></span>
                                         <ul class="single-question-vote">
                                             <li>
-                                                <a href="javascript:" class="single-question-vote-down" title="Dislike">
+                                                <a href="/dislikeChallenge/<%=data.challengedetails[0].challenge_id%>" class="single-question-vote-down" title="Dislike">
                                                     <i class="icon-thumbs-down"></i>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="javascript:" class="single-question-vote-up" title="Like">
+                                                <a href="/likeChallenge/<%=data.challengedetails[0].challenge_id%>" class="single-question-vote-up" title="Like">
                                                     <i class="icon-thumbs-up"></i>
                                                 </a>
                                             </li>
@@ -97,7 +106,7 @@
                                     </div>
                                 </article>
 
-                                <div class="share-tags page-content">
+                                <!-- <div class="share-tags page-content">
                                     <div class="question-tags">
                                         <i class="icon-tags"></i>
                                         <a href="#">wordpress</a>,
@@ -160,14 +169,14 @@
                                         <span class="share-inside-f-arrow"></span>
                                         <span class="share-inside-l-arrow"></span>
                                     </div>
-                                    <!-- End share-inside-warp -->
-                                    <div class="share-inside">
+                                     End share-inside-warp 
+                                     <div class="share-inside">
                                         <i class="icon-share-alt"></i>Share</div>
                                     <div class="clearfix"></div>
-                                </div>
+                                </div> -->
                                 <!-- End share-tags -->
 
-                                <div class="about-author clearfix">
+                                <!-- <div class="about-author clearfix">
                                     <div class="author-image">
                                         <a href="javascript:" original-title="<%=data.challengedetails[0].user_name%>" class="tooltip-n">
                                             <img alt="" src="http://placehold.it/60x60/FFF/444">
@@ -177,7 +186,7 @@
                                         <h4>About the Author</h4>
                                         Author Description will be given here.
                                     </div>
-                                </div>
+                                </div> -->
                                 <!-- End about-author -->
 
                                 <!-- related question part will be developed later -->
@@ -233,10 +242,10 @@
                                                         <div class="comment-vote">
                                                             <ul class="question-vote">
                                                                 <li>
-                                                                    <a href="javascript:" class="question-vote-up" title="Like"></a>
+                                                                    <a href="/likeAnswer/<%=data.challengedetails[0].challenge_id%>/<%=data.answers[i].answer_id%>" class="question-vote-up" title="Like"></a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="javascript:" class="question-vote-down" title="Dislike"></a>
+                                                                    <a href="/dislikeAnswer/<%=data.challengedetails[0].challenge_id%>/<%=data.answers[i].answer_id%>" class="question-vote-down" title="Dislike"></a>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -264,7 +273,9 @@
                                     <!-- End commentlist -->
                                 </div>
                                 <!-- End page-content -->
-
+                                <%
+                                        if (data.challengedetails[0].is_closed == 0){
+                                        %>
                                 <div id="respond" class="comment-respond page-content clearfix">
                                     <div class="boxedtitle page-title">
                                         <h2>Leave an answer</h2>
@@ -283,7 +294,7 @@
                                         </p>
                                     </form>
                                 </div>
-
+                                <% } %>
                                 <div class="post-next-prev clearfix">
                                     <p class="prev-post">
                                         <a href="#">

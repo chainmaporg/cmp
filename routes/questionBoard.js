@@ -75,7 +75,7 @@ exports.postanswer = function (req, res) {
     "challenge_id": req.body.challenge_id,
     "downvote_count": 0,
     "view_count": 0,
-    "upvote_count":0,
+    "upvote_count": 0,
     "posting_date": today
   }
 
@@ -102,8 +102,8 @@ exports.getAllChallenge = function (req, res) {
 		req.session.error="need to login first"
 	}
 	**/
-
-  connection.query('select challenge.*, `user`.user_name, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers from challenge join `user` on challenge.post_user_id = `user`.user_id', [], function (error, results, fields) {
+  var resultObj = {};
+  connection.query('select challenge.*, `user`.user_name, `user`.user_id, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers from challenge join `user` on challenge.post_user_id = `user`.user_id ORDER BY posting_date DESC', [], function (error, results, fields) {
     if (error) {
       console.log("error ocurred", { title: 'Error on handling challenge events' });
       res.send({
@@ -112,184 +112,206 @@ exports.getAllChallenge = function (req, res) {
       })
       //res.render('error');
     } else {
-      console.log('The solution is: ', results);
-      res.render('questionBoard', { data: results });
+      resultObj['mostRecent'] = results;
+      console.log('The recent challenges are: ', results);
+      connection.query('select challenge.*, `user`.user_name, `user`.user_id, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers from challenge join `user` on challenge.post_user_id = `user`.user_id ORDER BY view_count+upvote_count-downvote_count DESC', [], function (error, results, fields) {
+        if (error) {
+          console.log("error ocurred", { title: 'Error on handling challenge events' });
+          res.send({
+            "code": 400,
+            "failed": "error ocurred"
+          })
+          //res.render('error');
+        } else {
+          resultObj['mostResponse'] = results;
+          console.log('The Most response challenges are: ', results);
+          connection.query('select * from (select challenge.*, `user`.user_name, `user`.user_id, (SELECT max(answer.posting_date) as maximum FROM answer WHERE answer.challenge_id = challenge.challenge_id) as recent_answer, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answer from challenge join `user` on challenge.post_user_id = `user`.user_id) as innerTable where innerTable.recent_answer is not null', [], function (error, results, fields) {
+            if (error) {
+              console.log("error ocurred", { title: 'Error on handling challenge events' });
+              res.send({
+                "code": 400,
+                "failed": "error ocurred"
+              })
+              //res.render('error');
+            } else {
+              resultObj['mostRecentAnswered'] = results;
+              console.log('The Most recent answered challenges are: ', results);
+              connection.query('select * from (select challenge.*, `user`.user_name, `user`.user_id, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answer from challenge join `user` on challenge.post_user_id = `user`.user_id) as innerTable where total_answer = 0', [], function (error, results, fields) {
+                if (error) {
+                  console.log("error ocurred", { title: 'Error on handling challenge events' });
+                  res.send({
+                    "code": 400,
+                    "failed": "error ocurred"
+                  })
+                  //res.render('error');
+                } else {
+                  resultObj['NoAnswers'] = results;
+                  console.log('Not answered challenges are: ', results);
+                  res.render('questionBoard', { data: resultObj });
+                }
+              });
+            }
+          });
+        }
+      });
     }
   });
 }
 
 exports.likeAnswer = function (req, res) {
   answer_id = req.params.answer_id;
-  connection.query("update answer set upvote_count=upvote_count+1 where answer_id="+answer_id, [answer_id], function (error, results, fields) {
-      if (error) {
-      	console.log("error ocurred", error);
-      	res.render("error", { errorMsg: "Error on selecting from DB Users" })
-      } 
-      else {
-      	console.log('Update Up Votes successfully for answer:'+answer_id, results);
-        res.render('questionDetails', { data: resultObj });
-      }
-
-   }
-});
-
-exports.dislikeAnswer = function (req, res) {
-  answer_id = req.params.answer_id;
-  connection.query("update answer set downvote_count=downvote_count+1 where answer_id="+answer_id, [answer_id], function (error, results, fields) {
-      if (error) {
-      	console.log("error ocurred", error);
-      	res.render("error", { errorMsg: "Error on selecting from DB Users" })
-      } 
-      else {
-      	console.log('Update Down Votes successfully for answer:'+answer_id, results);
-        res.render('questionDetails', { data: resultObj });
-      }
-
-   }
-});
-
-exports.getDetailsChallenge = function (req, res) {
-
   challenge_id = req.params.challenge_id;
-  console.log("Get details information of a specific challenge. Challenge Id is " + challenge_id);
-  session = req.session;
-	/**GZ: no session management for now
-	if(!session.email) {
-		return res.redirect("/")
-		req.session.error="need to login first"
-	}
-	**/
-  var resultObj = {};
-
-  connection.query("select challenge.*, `user`.user_name,(SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers  from challenge join `user` on challenge.post_user_id = `user`.user_id where challenge_id=?", [challenge_id], function (error, results, fields) {
+  connection.query("update answer set upvote_count=upvote_count+1 where answer_id=?", [answer_id], function (error, results, fields) {
     if (error) {
-      console.log("error ocurred", { title: 'Error on handling challenge events 1' });
-      res.send({
-        "code": 400,
-        "failed": "error ocurred"
-      })
-      res.render('error');
-    } else {
-      console.log('The solution is: ', results);
-      if (results.length > 0) {
-        resultObj['challengedetails'] = results
-        connection.query('select * from answer where challenge_id=? ', [challenge_id], function (error, results, fields) {
-          if (error) {
-            console.log("error ocurred", { title: 'Error on handling challenge events 2' });
-            res.send({
-              "code": 400,
-              "failed": "error ocurred"
-            })
-            res.render('error');
-          } else {
-            console.log('The solution is: ', results);
-            if (results.length > 0) {
-              resultObj['answers'] = results
-
-              connection.query()
-
-              // console.log(resultObj);
-            }else{
-              resultObj['answers'] = []
-            }
-            console.log(JSON.stringify(resultObj));
-            res.render('questionDetails', { data: resultObj });
-          }
-        });
-        
-      }
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on selecting from DB Users" })
+    }
+    else {
+      console.log('Update Up Votes successfully for answer:' + answer_id, results);
+      res.redirect('/getChallengebyID/' + challenge_id);
     }
   });
 }
 
+exports.dislikeAnswer = function (req, res) {
+  answer_id = req.params.answer_id;
+  challenge_id = req.params.challenge_id;
+  connection.query("update answer set downvote_count=downvote_count+1 where answer_id=?", [answer_id], function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on selecting from DB Users" })
+    }
+    else {
+      console.log('Update Down Votes successfully for answer:' + answer_id, results);
+      res.redirect('/getChallengebyID/' + challenge_id);
+    }
+  });
+}
+
+exports.likeChallenge = function (req, res) {
+  challenge_id = req.params.challenge_id;
+  connection.query("update challenge set upvote_count=upvote_count+1 where challenge_id=?", [challenge_id], function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on selecting from DB Users" })
+    }
+    else {
+      console.log('Update Up Votes successfully for challenge:' + challenge_id, results);
+      res.redirect('/getChallengebyID/' + challenge_id);
+    }
+  });
+}
+
+exports.dislikeChallenge = function (req, res) {
+  challenge_id = req.params.challenge_id;
+  connection.query("update challenge set downvote_count=downvote_count+1 where challenge_id=?", [challenge_id], function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on selecting from DB Users" })
+    }
+    else {
+      console.log('Update Up Votes successfully for challenge:' + challenge_id, results);
+      res.redirect('/getChallengebyID/' + challenge_id);
+    }
+  });
+}
+
+exports.closeChallenge = function (req, res) {
+  challenge_id = req.params.challenge_id;
+  connection.query("update challenge set is_closed=1 where challenge_id=?", [challenge_id], function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on selecting from DB Users" })
+    }
+    else {
+      console.log('Update Up Votes successfully for challenge:' + challenge_id, results);
+      res.redirect('/getChallengebyID/' + challenge_id);
+    }
+  });
+}
+
+exports.getDetailsChallenge = function (req, res) {
+
+  session = req.session
+  console.log("printing user ID");
+  console.log(session);
+
+  if (typeof session.user_id === "undefined") {
+    console.log("You are not logged in");
+    res.redirect('/loginRegister');
+  } else {
+    challenge_id = req.params.challenge_id;
+    console.log("Get details information of a specific challenge. Challenge Id is " + challenge_id);
+    session = req.session;
+    /**GZ: no session management for now
+    if(!session.email) {
+      return res.redirect("/")
+      req.session.error="need to login first"
+    }
+    **/
+    var resultObj = {};
+
+    connection.query("select challenge.*, `user`.user_name, `user`.user_id, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers  from challenge join `user` on challenge.post_user_id = `user`.user_id where challenge_id=?", [challenge_id], function (error, results, fields) {
+      if (error) {
+        console.log("error ocurred", { title: 'Error on handling challenge events 1' });
+        res.send({
+          "code": 400,
+          "failed": "error ocurred"
+        })
+        res.render('error');
+      } else {
+        console.log('Challenge Details: ', results);
+        if (results.length > 0) {
+          resultObj['challengedetails'] = results
+          connection.query('select * from answer where challenge_id=? ', [challenge_id], function (error, results, fields) {
+            if (error) {
+              console.log("error ocurred", { title: 'Error on handling challenge events 2' });
+              res.send({
+                "code": 400,
+                "failed": "error ocurred"
+              })
+              res.render('error');
+            } else {
+              console.log('Answer details of that challenge: ', results);
+              if (results.length > 0) {
+                resultObj['answers'] = results
+                // console.log(resultObj);
+              } else {
+                resultObj['answers'] = []
+              }
+              connection.query("update challenge set view_count=view_count+1 where challenge_id=?", [challenge_id], function (error, results, fields) {
+                if (error) {
+                  console.log("error ocurred", error);
+                  res.render("error", { errorMsg: "Error on selecting from DB Users" })
+                }
+                else {
+                  console.log('update view count for challenge:' + challenge_id, results);
+                }
+              });
+              console.log(JSON.stringify(resultObj));
+              res.render('questionDetails', { data: resultObj });
+            }
+          });
+
+        }
+      }
+    });
+  }
 
 
-
-// exports.getDetailsChallenge = function (req, res) {
-//   var resultObj = {};
-//   challenge_id = req.params.challenge_id;
-//   console.log("Get details information of a specific challenge. Challenge Id is " + challenge_id);
-//   session = req.session;
-// 	/**GZ: no session management for now
-// 	if(!session.email) {
-// 		return res.redirect("/")
-// 		req.session.error="need to login first"
-// 	}
-// 	**/
-//   step(
-//     function getChallengeDetails() {
-//       connection.query("select challenge.*, `user`.user_name  from challenge join `user` on challenge.post_user_id = `user`.user_id where challenge_id=?", [challenge_id], function (error, results, fields) {
-//         if (error) {
-//           console.log("error ocurred", { title: 'Error on handling challenge events 1' });
-//           res.send({
-//             "code": 400,
-//             "failed": "error ocurred"
-//           })
-//           res.render('error');
-//         } else {
-//           if (results.length > 0) {
-//             resultObj['challengedetails'] = results
-//           }
-//           else {
-//             res.send({
-//               "code": 400,
-//               "failed": "Challenge Not Found"
-//             })
-//             res.render('Challenge Not Found');
-//           }
-//         }
-//       })
-//     },
-//     function checkChallengeDetails(error, rows) {
-//       connection.query("select * from answer where challenge_id=? ", [challenge_id], function (error, results, fields) {
-//         if (error) {
-//           console.log("error ocurred", { title: 'Error on handling challenge events 1' });
-//           res.send({
-//             "code": 400,
-//             "failed": "error ocurred"
-//           })
-//           res.render('error');
-//         } else {
-//           if (results.length > 0) {
-//             resultObj['answers'] = results
-//           }
-//           res.render('questionDetails', { data: resultObj });
-//         }
-//       })
-//     }
-//   );
-
-  // connection.query("select challenge.*, `user`.user_name  from challenge join `user` on challenge.post_user_id = `user`.user_id where challenge_id=?", [challenge_id], function (error, results, fields) {
-  //   if (error) {
-  //     console.log("error ocurred", { title: 'Error on handling challenge events 1' });
-  //     res.send({
-  //       "code": 400,
-  //       "failed": "error ocurred"
-  //     })
-  //     res.render('error');
-  //   }
-  // }).then(results => {
-  //   challengeRows = results;
-  //   return database.query("select challenge.*, `user`.user_name  from challenge join `user` on challenge.post_user_id = `user`.user_id where challenge_id=?", [challenge_id], function (error, results, fields) {
-  //     if (error) {
-  //       console.log("error ocurred", { title: 'Error on handling challenge events 1' });
-  //       res.send({
-  //         "code": 400,
-  //         "failed": "error ocurred"
-  //       })
-  //       res.render('error');
-  //     }
-  //   })
-  // }).then(
-  //   results => {
-  //     otherRows = results;
-  //     return database.close();
-  //   }, err => {
-  //     return database.close().then(() => { throw err; })
-  //   }).then(() => {
-  //     resultObj['challengedetails'] = challengeRows
-  //     resultObj['answers'] = answerRows
-  //     res.render('questionDetails', { data: resultObj });
-  //   });
-
-// }
+}
+exports.totalQuestionAnswer = function (req, res) {
+  connection.query("SELECT (select count(*) from challenge) as total_challenge, (select COUNT(*) FROM answer) as total_answer", function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on selecting from DB Users" })
+    }
+    else {
+      console.log('GET total answers and questions', results);
+      res.send({
+        "Questions": results[0].total_challenge,
+        "Answers": results[0].total_answer,
+      })
+    }
+  });
+}

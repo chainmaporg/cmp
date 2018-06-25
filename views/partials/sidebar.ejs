@@ -1,16 +1,20 @@
 <aside class="col-md-3 sidebar">
-        <div class="widget widget_stats">
-            <h3 class="widget_title">Stats</h3>
-            <div class="ul_list ul_list-icon-ok">
-                <ul>
-                    <li><i class="icon-question-sign"></i>Questions ( <span>20</span> )</li>
-                    <li><i class="icon-comment"></i>Answers ( <span>50</span> )</li>
-                </ul>
-            </div>
+    <div class="widget widget_stats">
+        <h3 class="widget_title">Stats</h3>
+        <div class="ul_list ul_list-icon-ok">
+            <ul>
+                <li>
+                    <i class="icon-question-sign"></i>Questions (
+                    <span id="QuestionCount"></span> )</li>
+                <li>
+                    <i class="icon-comment"></i>Answers (
+                    <span id="AnswerCount"></span> )</li>
+            </ul>
         </div>
-        
-        <!-- we will develop this feature later -->
-        <!-- <div class="widget widget_social">
+    </div>
+
+    <!-- we will develop this feature later -->
+    <!-- <div class="widget widget_social">
             <h3 class="widget_title">Find Us</h3>
             <ul>
                 <li class="rss-subscribers">
@@ -51,9 +55,9 @@
                 </li>
             </ul>
         </div> -->
-        
-        <!-- we will develop this feature later -->
-        <!-- <div class="widget widget_login">
+
+    <!-- we will develop this feature later -->
+    <!-- <div class="widget widget_login">
             <h3 class="widget_title">Login</h3>
             <div class="form-style form-style-2">
                 <form>
@@ -81,36 +85,48 @@
                 <div class="clearfix"></div>
             </div>
         </div> -->
-        
-        <div class="widget widget_highest_points">
-            <h3 class="widget_title">Highest points</h3>
-            <ul>
-                <li>
-                    <div class="author-img">
-                        <a href="#"><img width="60" height="60" src="http://placehold.it/60x60/FFF/444" alt=""></a>
-                    </div> 
-                    <h6><a href="#">admin</a></h6>
-                    <span class="comment">12 Points</span>
-                </li>
-                <li>
-                    <div class="author-img">
-                        <a href="#"><img width="60" height="60" src="http://placehold.it/60x60/FFF/444" alt=""></a>
-                    </div> 
-                    <h6><a href="#">vbegy</a></h6>
-                    <span class="comment">10 Points</span>
-                </li>
-                <li>
-                    <div class="author-img">
-                        <a href="#"><img width="60" height="60" src="http://placehold.it/60x60/FFF/444" alt=""></a>
-                    </div> 
-                    <h6><a href="#">ahmed</a></h6>
-                    <span class="comment">5 Points</span>
-                </li>
-            </ul>
-        </div>
-        
-        <!-- we will develop this feature later -->
-        <!-- <div class="widget widget_tag_cloud">
+
+    <div class="widget widget_highest_points">
+        <h3 class="widget_title">Highest points</h3>
+        <ul>
+            <li>
+                <div class="author-img">
+                    <a href="#">
+                        <img width="60" height="60" src="http://placehold.it/60x60/FFF/444" alt="">
+                    </a>
+                </div>
+                <h6>
+                    <a href="#">admin</a>
+                </h6>
+                <span class="comment">12 Points</span>
+            </li>
+            <li>
+                <div class="author-img">
+                    <a href="#">
+                        <img width="60" height="60" src="http://placehold.it/60x60/FFF/444" alt="">
+                    </a>
+                </div>
+                <h6>
+                    <a href="#">vbegy</a>
+                </h6>
+                <span class="comment">10 Points</span>
+            </li>
+            <li>
+                <div class="author-img">
+                    <a href="#">
+                        <img width="60" height="60" src="http://placehold.it/60x60/FFF/444" alt="">
+                    </a>
+                </div>
+                <h6>
+                    <a href="#">ahmed</a>
+                </h6>
+                <span class="comment">5 Points</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- we will develop this feature later -->
+    <!-- <div class="widget widget_tag_cloud">
             <h3 class="widget_title">Tags</h3>
             <a href="#">projects</a>
             <a href="#">Portfolio</a>
@@ -121,9 +137,9 @@
             <a href="#">2code</a>
             <a href="#">vbegy</a>
         </div> -->
-        
-        <!-- we will develop this feature later -->
-        <!-- <div class="widget">
+
+    <!-- we will develop this feature later -->
+    <!-- <div class="widget">
             <h3 class="widget_title">Recent Questions</h3>
             <ul class="related-posts">
                 <li class="related-item">
@@ -138,5 +154,23 @@
                 </li>
             </ul>
         </div> -->
-        
-    </aside><!-- End sidebar -->
+
+</aside>
+<!-- End sidebar -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        var sidebarurl = "/totalQuestionAnswer";
+        $.ajax({
+            type: 'POST',
+            url: sidebarurl,
+            async: false,
+            success: function (data) {
+                $("#QuestionCount").html(data.Questions);
+                $("#AnswerCount").html(data.Answers);
+            },
+            error: function () {
+                alert('Error occured');
+            }
+        });
+    });
+</script>

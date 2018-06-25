@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
 
 <!-- header part start -->
@@ -26,26 +28,16 @@
                         <div class="container clearfix">
                             <div class="box_icon box_warp box_no_border box_no_background" box_border="transparent" box_background="transparent" box_color="#FFF">
                                 <div class="row">
-                                    <div class="col-md-3">
-                                        <h2>Welcome to Ask me</h2>
-                                        <p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna
-                                            adipiscing iaculis. Curabitur vitae velit in neque dictum blandit. Proin in iaculis
-                                            neque.
+                                    <div class="col-md-12">
+                                        <h2>Welcome to the Chainmap Question board</h2>
+                                        <p>
+                                            We need to add some content here for the developer. (work to do)
                                         </p>
                                         <div class="clearfix"></div>
-                                        <a class="color button dark_button medium" href="#">About Us</a>
-                                        <a class="color button dark_button medium" href="#">Join Now</a>
+                                        <!-- <a class="color button dark_button medium" href="#">About Us</a>
+                                        <a class="color button dark_button medium" href="#">Join Now</a> -->
                                     </div>
-                                    <div class="col-md-9">
-                                        <form class="form-style form-style-2">
-                                            <p>
-                                                <textarea rows="4" id="question_title" onfocus="if(this.value=='Ask any question and you be sure find your answer ?')this.value='';"
-                                                    onblur="if(this.value=='')this.value='Ask any question and you be sure find your answer ?';">Ask any question and you be sure find your answer ?</textarea>
-                                                <i class="icon-pencil"></i>
-                                                <span class="color button small publish-question">Ask Now</span>
-                                            </p>
-                                        </form>
-                                    </div>
+                                    
                                 </div>
                                 <!-- End row -->
                             </div>
@@ -62,7 +54,7 @@
                                 <div class="tabs-warp question-tab">
                                     <ul class="tabs">
                                         <li class="tab">
-                                            <a href="#" class="current">Recent Questions</a>
+                                            <a href="#" class="current">Recent Challenges</a>
                                         </li>
                                         <li class="tab">
                                             <a href="#">Most Responses</a>
@@ -76,50 +68,58 @@
                                     </ul>
                                     <div class="tab-inner-warp">
                                         <div class="tab-inner">
-                                            <% if(data.length){ 
-                                            for(var i = 0;i < data.length;i++) { %>
+                                            <% if(data.mostRecent.length){ 
+                                            for(var i = 0;i < data.mostRecent.length;i++) { %>
                                                 <article class="question question-type-normal">
                                                     <h2>
-                                                        <a href="/getChallengebyID/<%=data[i].challenge_id%>">
-                                                            <%=data[i].title%>
+                                                        <a href="/getChallengebyID/<%=data.mostRecent[i].challenge_id%>">
+                                                            <%=data.mostRecent[i].title%>
                                                         </a>
                                                     </h2>
-                                                    <a class="question-report" href="javascript:">Report</a>
-                                                    <div class="question-type-main">
-                                                        <i class="icon-question-sign"></i>Question</div>
-                                                    <div class="question-author">
-                                                        <a href="javascript:" original-title="<%=data[i].user_name%>" class="question-author-img tooltip-n">
-                                                            <span>
-                                                                <%=data[i].user_name%>
-                                                            </span>
-                                                            <img alt="" src="http://placehold.it/60x60/FFF/444" />
-                                                        </a>
-                                                    </div>
-                                                    <div class="question-inner">
-                                                        <div class="clearfix"></div>
-                                                        <p class="question-desc">
-                                                            <%=data[i].description%>
-                                                        </p>
-                                                        <div class="question-details">
-                                                            <span class="question-answered question-answered-done">
-                                                                <i class="icon-ok"></i>solved</span>
-                                                            <span class="question-favorite">
-                                                                <i class="icon-star"></i>5</span>
-                                                        </div>
-                                                        <span class="question-category">
-                                                            <a href="javascript:">
-                                                                <i class="icon-folder-close"></i><%=data[i].category%></a>
-                                                        </span>
-                                                        <span class="question-date">
-                                                            <i class="icon-time"></i><%=data[i].posting_date%></span>
-                                                        <span class="question-comment">
-                                                            <a href="#">
-                                                                <i class="icon-comment"></i><%=data[i].total_answers%> Answer</a>
-                                                        </span>
-                                                        <span class="question-view">
-                                                            <i class="icon-user"></i><%=data[i].view_count%> views</span>
-                                                        <div class="clearfix"></div>
-                                                    </div>
+
+                                                            <div class="question-author">
+                                                                <a href="javascript:" original-title="<%=data.mostRecent[i].user_name%>" class="question-author-img tooltip-n">
+                                                                    <span>
+                                                                        <%=data.mostRecent[i].user_name%>
+                                                                    </span>
+                                                                    <img alt="" src="/image/111.png" />
+                                                                </a>
+                                                            </div>
+                                                            <div class="question-inner">
+                                                                <div class="clearfix"></div>
+                                                                <p class="question-desc">
+                                                                    <%=data.mostRecent[i].description%>
+                                                                </p>
+                                                                <div class="question-details">
+                                                                        <%
+                                                                        if (data.mostRecent[i].is_closed == 1){
+                                                                        %>
+                                                                    <span class="question-answered question-answered-done">
+                                                                        <i class="icon-ok"></i>Closed</span>
+                                                                        <% } %>
+                                                                    <!-- <span class="question-favorite">
+                                                                        <i class="icon-star"></i>5</span> -->
+                                                                </div>
+                                                                <span class="question-category">
+                                                                    <a href="javascript:">
+                                                                        <i class="icon-folder-close"></i>
+                                                                        <%=data.mostRecent[i].category%>
+                                                                    </a>
+                                                                </span>
+                                                                <span class="question-date">
+                                                                    <i class="icon-time"></i>
+                                                                    <%=data.mostRecent[i].posting_date%>
+                                                                </span>
+                                                                <span class="question-comment">
+                                                                    <a href="#">
+                                                                        <i class="icon-comment"></i>
+                                                                        <%=data.mostRecent[i].total_answers %> Answer</a>
+                                                                </span>
+                                                                <span class="question-view">
+                                                                    <i class="icon-user"></i>
+                                                                    <%=data.mostRecent[i].view_count%> views</span>
+                                                                <div class="clearfix"></div>
+                                                            </div>
                                                 </article>
                                                 <% }} %>
                                                     <a href="#" class="load-questions">
@@ -128,48 +128,60 @@
                                     </div>
                                     <div class="tab-inner-warp">
                                         <div class="tab-inner">
-                                            <article class="question question-type-normal">
-                                                <h2>
-                                                    <a href="single_question.html">This is my first Question</a>
-                                                </h2>
-                                                <a class="question-report" href="#">Report</a>
-                                                <div class="question-type-main">
-                                                    <i class="icon-question-sign"></i>Question</div>
-                                                <div class="question-author">
-                                                    <a href="#" original-title="ahmed" class="question-author-img tooltip-n">
-                                                        <span></span>
-                                                        <img alt="" src="http://placehold.it/60x60/FFF/444">
-                                                    </a>
-                                                </div>
-                                                <div class="question-inner">
-                                                    <div class="clearfix"></div>
-                                                    <p class="question-desc">Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at
-                                                        elit quis urna adipiscing iaculis. Curabitur vitae velit in neque
-                                                        dictum blandit. Proin in iaculis neque. Pellentesque habitant morbi
-                                                        tristique senectus et netus et malesuada fames ac turpis egestas.
-                                                        Curabitur vitae velit in neque dictum blandit.
-                                                    </p>
-                                                    <div class="question-details">
-                                                        <span class="question-answered question-answered-done">
-                                                            <i class="icon-ok"></i>solved</span>
-                                                        <span class="question-favorite">
-                                                            <i class="icon-star"></i>5</span>
-                                                    </div>
-                                                    <span class="question-category">
-                                                        <a href="#">
-                                                            <i class="icon-folder-close"></i>wordpress</a>
-                                                    </span>
-                                                    <span class="question-date">
-                                                        <i class="icon-time"></i>4 mins ago</span>
-                                                    <span class="question-comment">
-                                                        <a href="#">
-                                                            <i class="icon-comment"></i>5 Answer</a>
-                                                    </span>
-                                                    <span class="question-view">
-                                                        <i class="icon-user"></i>70 views</span>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                            </article>
+                                                <% if(data.mostResponse.length){ 
+                                                    for(var i = 0;i < data.mostResponse.length;i++) { %>
+                                                        <article class="question question-type-normal">
+                                                            <h2>
+                                                                <a href="/getChallengebyID/<%=data.mostResponse[i].challenge_id%>">
+                                                                    <%=data.mostResponse[i].title%>
+                                                                </a>
+                                                            </h2>
+        
+                                                                    <div class="question-author">
+                                                                        <a href="javascript:" original-title="<%=data.mostResponse[i].user_name%>" class="question-author-img tooltip-n">
+                                                                            <span>
+                                                                                <%=data.mostResponse[i].user_name%>
+                                                                            </span>
+                                                                            <img alt="" src="/image/111.png" />
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="question-inner">
+                                                                        <div class="clearfix"></div>
+                                                                        <p class="question-desc">
+                                                                            <%=data.mostResponse[i].description%>
+                                                                        </p>
+                                                                        <div class="question-details">
+                                                                                <%
+                                                                                if (data.mostResponse[i].is_closed == 1){
+                                                                                %>
+                                                                            <span class="question-answered question-answered-done">
+                                                                                <i class="icon-ok"></i>Closed</span>
+                                                                                <% } %>
+                                                                            <!-- <span class="question-favorite">
+                                                                                <i class="icon-star"></i>5</span> -->
+                                                                        </div>
+                                                                        <span class="question-category">
+                                                                            <a href="javascript:">
+                                                                                <i class="icon-folder-close"></i>
+                                                                                <%=data.mostResponse[i].category%>
+                                                                            </a>
+                                                                        </span>
+                                                                        <span class="question-date">
+                                                                            <i class="icon-time"></i>
+                                                                            <%=data.mostResponse[i].posting_date%>
+                                                                        </span>
+                                                                        <span class="question-comment">
+                                                                            <a href="#">
+                                                                                <i class="icon-comment"></i>
+                                                                                <%=data.mostResponse[i].total_answers %> Answer</a>
+                                                                        </span>
+                                                                        <span class="question-view">
+                                                                            <i class="icon-user"></i>
+                                                                            <%=data.mostResponse[i].view_count%> views</span>
+                                                                        <div class="clearfix"></div>
+                                                                    </div>
+                                                        </article>
+                                                        <% }} %>
 
                                             <a href="#" class="load-questions">
                                                 <i class="icon-refresh"></i>Load More Questions</a>
@@ -177,48 +189,60 @@
                                     </div>
                                     <div class="tab-inner-warp">
                                         <div class="tab-inner">
-                                            <article class="question question-type-normal">
-                                                <h2>
-                                                    <a href="single_question.html">This is my first Question</a>
-                                                </h2>
-                                                <a class="question-report" href="#">Report</a>
-                                                <div class="question-type-main">
-                                                    <i class="icon-question-sign"></i>Question</div>
-                                                <div class="question-author">
-                                                    <a href="#" original-title="ahmed" class="question-author-img tooltip-n">
-                                                        <span></span>
-                                                        <img alt="" src="http://placehold.it/60x60/FFF/444">
-                                                    </a>
-                                                </div>
-                                                <div class="question-inner">
-                                                    <div class="clearfix"></div>
-                                                    <p class="question-desc">Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at
-                                                        elit quis urna adipiscing iaculis. Curabitur vitae velit in neque
-                                                        dictum blandit. Proin in iaculis neque. Pellentesque habitant morbi
-                                                        tristique senectus et netus et malesuada fames ac turpis egestas.
-                                                        Curabitur vitae velit in neque dictum blandit.
-                                                    </p>
-                                                    <div class="question-details">
-                                                        <span class="question-answered question-answered-done">
-                                                            <i class="icon-ok"></i>solved</span>
-                                                        <span class="question-favorite">
-                                                            <i class="icon-star"></i>5</span>
-                                                    </div>
-                                                    <span class="question-category">
-                                                        <a href="#">
-                                                            <i class="icon-folder-close"></i>wordpress</a>
-                                                    </span>
-                                                    <span class="question-date">
-                                                        <i class="icon-time"></i>4 mins ago</span>
-                                                    <span class="question-comment">
-                                                        <a href="#">
-                                                            <i class="icon-comment"></i>5 Answer</a>
-                                                    </span>
-                                                    <span class="question-view">
-                                                        <i class="icon-user"></i>70 views</span>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                            </article>
+                                                <% if(data.mostRecentAnswered.length){ 
+                                                    for(var i = 0;i < data.mostRecentAnswered.length;i++) { %>
+                                                        <article class="question question-type-normal">
+                                                            <h2>
+                                                                <a href="/getChallengebyID/<%=data.mostRecentAnswered[i].challenge_id%>">
+                                                                    <%=data.mostRecentAnswered[i].title%>
+                                                                </a>
+                                                            </h2>
+        
+                                                                    <div class="question-author">
+                                                                        <a href="javascript:" original-title="<%=data.mostRecentAnswered[i].user_name%>" class="question-author-img tooltip-n">
+                                                                            <span>
+                                                                                <%=data.mostRecentAnswered[i].user_name%>
+                                                                            </span>
+                                                                            <img alt="" src="/image/111.png" />
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="question-inner">
+                                                                        <div class="clearfix"></div>
+                                                                        <p class="question-desc">
+                                                                            <%=data.mostRecentAnswered[i].description%>
+                                                                        </p>
+                                                                        <div class="question-details">
+                                                                                <%
+                                                                                if (data.mostRecentAnswered[i].is_closed == 1){
+                                                                                %>
+                                                                            <span class="question-answered question-answered-done">
+                                                                                <i class="icon-ok"></i>Closed</span>
+                                                                                <% } %>
+                                                                            <!-- <span class="question-favorite">
+                                                                                <i class="icon-star"></i>5</span> -->
+                                                                        </div>
+                                                                        <span class="question-category">
+                                                                            <a href="javascript:">
+                                                                                <i class="icon-folder-close"></i>
+                                                                                <%=data.mostRecentAnswered[i].category%>
+                                                                            </a>
+                                                                        </span>
+                                                                        <span class="question-date">
+                                                                            <i class="icon-time"></i>
+                                                                            <%=data.mostRecentAnswered[i].posting_date%>
+                                                                        </span>
+                                                                        <span class="question-comment">
+                                                                            <a href="#">
+                                                                                <i class="icon-comment"></i>
+                                                                                <%=data.mostRecentAnswered[i].total_answers %> Answer</a>
+                                                                        </span>
+                                                                        <span class="question-view">
+                                                                            <i class="icon-user"></i>
+                                                                            <%=data.mostRecentAnswered[i].view_count%> views</span>
+                                                                        <div class="clearfix"></div>
+                                                                    </div>
+                                                        </article>
+                                                        <% }} %>
 
                                             <a href="#" class="load-questions">
                                                 <i class="icon-refresh"></i>Load More Questions</a>
@@ -226,48 +250,60 @@
                                     </div>
                                     <div class="tab-inner-warp">
                                         <div class="tab-inner">
-                                            <article class="question question-type-normal">
-                                                <h2>
-                                                    <a href="single_question.html">This is my first Question</a>
-                                                </h2>
-                                                <a class="question-report" href="#">Report</a>
-                                                <div class="question-type-main">
-                                                    <i class="icon-question-sign"></i>Question</div>
-                                                <div class="question-author">
-                                                    <a href="#" original-title="ahmed" class="question-author-img tooltip-n">
-                                                        <span></span>
-                                                        <img alt="" src="http://placehold.it/60x60/FFF/444">
-                                                    </a>
-                                                </div>
-                                                <div class="question-inner">
-                                                    <div class="clearfix"></div>
-                                                    <p class="question-desc">Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at
-                                                        elit quis urna adipiscing iaculis. Curabitur vitae velit in neque
-                                                        dictum blandit. Proin in iaculis neque. Pellentesque habitant morbi
-                                                        tristique senectus et netus et malesuada fames ac turpis egestas.
-                                                        Curabitur vitae velit in neque dictum blandit.
-                                                    </p>
-                                                    <div class="question-details">
-                                                        <span class="question-answered question-answered-done">
-                                                            <i class="icon-ok"></i>solved</span>
-                                                        <span class="question-favorite">
-                                                            <i class="icon-star"></i>5</span>
-                                                    </div>
-                                                    <span class="question-category">
-                                                        <a href="javascript:">
-                                                            <i class="icon-folder-close"></i></a>
-                                                    </span>
-                                                    <span class="question-date">
-                                                        <i class="icon-time"></i></span>
-                                                    <span class="question-comment">
-                                                        <a href="#">
-                                                            <i class="icon-comment"></i> Answer</a>
-                                                    </span>
-                                                    <span class="question-view">
-                                                        <i class="icon-user"></i> views</span>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                            </article>
+                                                <% if(data.NoAnswers.length){ 
+                                                    for(var i = 0;i < data.NoAnswers.length;i++) { %>
+                                                        <article class="question question-type-normal">
+                                                            <h2>
+                                                                <a href="/getChallengebyID/<%=data.NoAnswers[i].challenge_id%>">
+                                                                    <%=data.NoAnswers[i].title%>
+                                                                </a>
+                                                            </h2>
+        
+                                                                    <div class="question-author">
+                                                                        <a href="javascript:" original-title="<%=data.NoAnswers[i].user_name%>" class="question-author-img tooltip-n">
+                                                                            <span>
+                                                                                <%=data.NoAnswers[i].user_name%>
+                                                                            </span>
+                                                                            <img alt="<%=data.NoAnswers[i].user_name%>" src="/image/111.png" />
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="question-inner">
+                                                                        <div class="clearfix"></div>
+                                                                        <p class="question-desc">
+                                                                            <%=data.NoAnswers[i].description%>
+                                                                        </p>
+                                                                        <div class="question-details">
+                                                                                <%
+                                                                                if (data.NoAnswers[i].is_closed == 1){
+                                                                                %>
+                                                                            <span class="question-answered question-answered-done">
+                                                                                <i class="icon-ok"></i>Closed</span>
+                                                                                <% } %>
+                                                                            <!-- <span class="question-favorite">
+                                                                                <i class="icon-star"></i>5</span> -->
+                                                                        </div>
+                                                                        <span class="question-category">
+                                                                            <a href="javascript:">
+                                                                                <i class="icon-folder-close"></i>
+                                                                                <%=data.NoAnswers[i].category%>
+                                                                            </a>
+                                                                        </span>
+                                                                        <span class="question-date">
+                                                                            <i class="icon-time"></i>
+                                                                            <%=data.NoAnswers[i].posting_date%>
+                                                                        </span>
+                                                                        <span class="question-comment">
+                                                                            <a href="#">
+                                                                                <i class="icon-comment"></i>
+                                                                                <%=data.NoAnswers[i].total_answers %> Answer</a>
+                                                                        </span>
+                                                                        <span class="question-view">
+                                                                            <i class="icon-user"></i>
+                                                                            <%=data.NoAnswers[i].view_count%> views</span>
+                                                                        <div class="clearfix"></div>
+                                                                    </div>
+                                                        </article>
+                                                        <% }} %>
 
                                             <a href="#" class="load-questions">
                                                 <i class="icon-refresh"></i>Load More Questions</a>
