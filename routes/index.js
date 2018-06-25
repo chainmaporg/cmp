@@ -147,6 +147,11 @@ router.get('/askQuestion', function (req, res) {
 });
 router.get('/questionBoard', questionBoard.getAllChallenge);
 router.get('/getChallengebyID/:challenge_id', questionBoard.getDetailsChallenge);
+router.get('/likeAnswer/:challenge_id/:answer_id', questionBoard.likeAnswer);
+router.get('/dislikeAnswer/:challenge_id/:answer_id', questionBoard.dislikeAnswer);
+router.get('/likeChallenge/:challenge_id', questionBoard.likeChallenge);
+router.get('/dislikeChallenge/:challenge_id', questionBoard.dislikeChallenge);
+router.get('/closeChallenge/:challenge_id', questionBoard.closeChallenge);
 router.post('/postChallenge', questionBoard.postChallenge);
 router.post('/postanswer', questionBoard.postanswer);
 router.post('/userRegister', users.userRegister);
@@ -154,7 +159,7 @@ router.get('/loginRegister', function (req, res) {
   res.render('loginRegister', { title: 'Login/Register' });
 });
 router.post('/getCompanies', users.getCompanies);
-
+router.post('/totalQuestionAnswer', questionBoard.totalQuestionAnswer)
 
 
 module.exports = router;
