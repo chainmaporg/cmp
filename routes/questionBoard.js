@@ -118,6 +118,36 @@ exports.getAllChallenge = function (req, res) {
   });
 }
 
+exports.likeAnswer = function (req, res) {
+  answer_id = req.params.answer_id;
+  connection.query("update answer set upvote_count=upvote_count+1 where answer_id="+answer_id, [answer_id], function (error, results, fields) {
+      if (error) {
+      	console.log("error ocurred", error);
+      	res.render("error", { errorMsg: "Error on selecting from DB Users" })
+      } 
+      else {
+      	console.log('Update Up Votes successfully for answer:'+answer_id, results);
+        res.render('questionDetails', { data: resultObj });
+      }
+
+   }
+});
+
+exports.dislikeAnswer = function (req, res) {
+  answer_id = req.params.answer_id;
+  connection.query("update answer set downvote_count=downvote_count+1 where answer_id="+answer_id, [answer_id], function (error, results, fields) {
+      if (error) {
+      	console.log("error ocurred", error);
+      	res.render("error", { errorMsg: "Error on selecting from DB Users" })
+      } 
+      else {
+      	console.log('Update Down Votes successfully for answer:'+answer_id, results);
+        res.render('questionDetails', { data: resultObj });
+      }
+
+   }
+});
+
 exports.getDetailsChallenge = function (req, res) {
 
   challenge_id = req.params.challenge_id;
