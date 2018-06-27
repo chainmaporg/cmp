@@ -92,21 +92,23 @@ exports.userRegister = function (req, res) {
   connection.query('select COUNT(*) as number from user where `user`.user_email = ?', req.body.user_email, function (error, results, fields) {
     if (error) {
       console.log("error ocurred", error);
-      res.render("error", { errorMsg: "Error on insertion into DB Users" })
+      res.status(500).send({error: 'you have an error'}); 
 
     } else {
       if (results[0].number == 0) {
         connection.query('select COUNT(*) as number from user where `user`.user_name = ?', req.body.user_name, function (error, results, fields) {
           if (error) {
             console.log("error ocurred", error);
-            res.render("error", { errorMsg: "Error on insertion into DB Users" })
+            // res.redirect('/error');
+            res.status(500).send({error: 'you have an error'}); 
 
           } else {
             if (results[0].number == 0) {
               connection.query('INSERT INTO user SET ?', userInfo, function (error, results, fields) {
                 if (error) {
-                  console.log("error ocurred", error);
-                  res.render("error", { errorMsg: "Error on insertion into DB Users" })
+                  // res.render("error", { errorMsg: "Error on insertion into DB Users code " })
+                  console.log("error ocurred changes", error);
+                  res.status(500).send({error: 'you have an error'}); 
 
                 } else {
                   console.log('The information saved successfully', results);
