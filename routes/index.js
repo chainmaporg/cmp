@@ -163,6 +163,6 @@ router.post('/totalQuestionAnswer', questionBoard.totalQuestionAnswer)
 router.get('/error', function (req, res) {
   res.render('error', { title: 'Error' });
 });
-
+router.get('/userProfile/:user_id', users.userProfile);
 
 module.exports = router;
