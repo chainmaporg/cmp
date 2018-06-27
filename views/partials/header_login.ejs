@@ -272,20 +272,21 @@
                 data: data,
                 async: false,
                 success: function (data) {
+                    alert(data);
                     if (data.msg == "duplicateUserEmail") {
                         alert("Email is duplicate.");
                     }
                     else if (data.msg == "duplicateUserName") {
                         alert("User Name is duplicate.");
                     }
-                    else {
+                    else if (data.msg == "success"){
                         alert("User information saved successfully. You can login now.");
                         window.location.reload();
                     }
 
                 },
                 error: function () {
-                    alert('Error occured');
+                    alert('An error occured. Please try again later or contact with us.');
                 }
             });
         }
