@@ -55,7 +55,7 @@ exports.postChallenge = function (req, res) {
   connection.query('INSERT INTO challenge SET ?', ChallengeQuestionInfo, function (error, results, fields) {
     if (error) {
       console.log("error ocurred", error);
-      res.render("error", { errorMsg: "Error on insertion into DB Users" })
+      res.render("error", { errorMsg: "Error on insertion into Db challenges" })
 
     } else {
       console.log('The information saved successfully', results);

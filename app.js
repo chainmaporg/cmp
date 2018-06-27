@@ -55,4 +55,8 @@ app.use(function(err, req, res, next) {
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(function(req, res, next){
+  res.status(404).render('notFound', {title: "Sorry, page not found"});
+});
 module.exports = app;
