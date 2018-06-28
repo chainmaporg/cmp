@@ -88,40 +88,7 @@
 
     <div class="widget widget_highest_points">
         <h3 class="widget_title">Highest points</h3>
-        <ul>
-            <li>
-                <div class="author-img">
-                    <a href="#">
-                        <img width="60" height="60" src="http://placehold.it/60x60/FFF/444" alt="">
-                    </a>
-                </div>
-                <h6>
-                    <a href="#">admin</a>
-                </h6>
-                <span class="comment">12 Points</span>
-            </li>
-            <li>
-                <div class="author-img">
-                    <a href="#">
-                        <img width="60" height="60" src="http://placehold.it/60x60/FFF/444" alt="">
-                    </a>
-                </div>
-                <h6>
-                    <a href="#">vbegy</a>
-                </h6>
-                <span class="comment">10 Points</span>
-            </li>
-            <li>
-                <div class="author-img">
-                    <a href="#">
-                        <img width="60" height="60" src="http://placehold.it/60x60/FFF/444" alt="">
-                    </a>
-                </div>
-                <h6>
-                    <a href="#">ahmed</a>
-                </h6>
-                <span class="comment">5 Points</span>
-            </li>
+        <ul id="tokenPoints">
         </ul>
     </div>
 
@@ -167,6 +134,28 @@
             success: function (data) {
                 $("#QuestionCount").html(data.Questions);
                 $("#AnswerCount").html(data.Answers);
+            },
+            error: function () {
+                alert('Error occured');
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        var sidebarurl = "/tokenRanking";
+        $.ajax({
+            type: 'POST',
+            url: sidebarurl,
+            async: false,
+            success: function (data) {
+                let liStr = ""
+                if (data.users.length > 0) {
+                    for (var i = 0; i < data.users.length; i++) {
+                        liStr = liStr + '<li><div class="author-img"><a href="/userProfile/'+ data.users[i].user_id +'"><img width="60" height="60" src="/image/111.png" alt=""></a></div>';
+                        liStr = liStr + '<h6><a href="/userProfile/'+ data.users[i].user_id +'">'+ data.users[i].user_name +'</a></h6><span class="comment">'+ data.users[i].token +' Points</span></li>';
+                    }
+                }
+                $("#tokenPoints").append(liStr);
             },
             error: function () {
                 alert('Error occured');

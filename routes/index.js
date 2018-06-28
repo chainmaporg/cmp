@@ -160,6 +160,7 @@ router.get('/loginRegister', function (req, res) {
   res.render('loginRegister', { title: 'Login/Register' });
 });
 router.post('/getCompanies', users.getCompanies);
+router.post('/tokenRanking', users.tokenRanking)
 router.post('/totalQuestionAnswer', questionBoard.totalQuestionAnswer)
 router.get('/error', function (req, res) {
   res.render('error', { title: 'Error' });
