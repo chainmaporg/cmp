@@ -186,4 +186,17 @@ exports.userProfile = function (req, res) {
   });
 }
 
+exports.tokenRanking = function (req, res) {
+  connection.query('select * from user order by token desc limit 5', function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+    } else {
+      console.log(results)
+      res.send({'users':results});
+    }
+  });
+}
+
 // module.exports = router;
