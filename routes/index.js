@@ -102,6 +102,7 @@ router.get('/login', function (req, res) {
 var login = require('../routes/login');
 var users = require('../routes/users');
 var questionBoard = require("../routes/questionBoard");
+var trainingMaterial = require("../routes/trainingMaterial");
 // global.environment = "local";
 global.environment = "production";
 
@@ -164,5 +165,8 @@ router.get('/error', function (req, res) {
   res.render('error', { title: 'Error' });
 });
 router.get('/userProfile/:user_id', users.userProfile);
-
+router.get('/trainingMaterial', trainingMaterial.getAllTrainingMaterial);
+// router.get('/trainingMaterial', function (req, res) {
+//   res.render('trainingMaterial', { title: 'Home' });
+// });
 module.exports = router;
