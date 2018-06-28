@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- header part start -->
+<% include ./partials/header %>
+    <!-- header part end -->
+
+    <!-- body part start -->
+
+    <body>
+
+        <div class="loader">
+            <div class="loader_html"></div>
+        </div>
+
+        <div id="wrap" class="grid_1200">
+
+            <% include ./partials/header_login %>
+
+                <% include ./partials/body_header %>
+
+                    <div class="section-warp ask-me">
+                        <div class="container clearfix">
+                            <div class="box_icon box_warp box_no_border box_no_background" box_border="transparent" box_background="transparent" box_color="#FFF">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h2>Welcome to the Chainmap Training Material</h2>
+                                        <p>
+                                            You will find all our trainig material here. (Work to do)
+                                        </p>
+                                        <div class="clearfix"></div>
+                                        <!-- <a class="color button dark_button medium" href="#">About Us</a>
+                                        <a class="color button dark_button medium" href="#">Join Now</a> -->
+                                    </div>
+
+                                </div>
+                                <!-- End row -->
+                            </div>
+                            <!-- End box_icon -->
+                        </div>
+                        <!-- End container -->
+                    </div>
+                    <!-- End section-warp -->
+
+                    <section class="container main-content">
+                        <div class="row">
+                            <div class="col-md-9">
+
+                                <div class="tabs-warp question-tab">
+                                    <ul class="tabs">
+                                        <li class="tab">
+                                            <a href="#" class="current">Infrastructure</a>
+                                        </li>
+                                        <li class="tab">
+                                            <a href="#">General</a>
+                                        </li>
+                                        <li class="tab">
+                                            <a href="#">Recently Answered</a>
+                                        </li>
+                                        <li class="tab">
+                                            <a href="#">No answers</a>
+                                        </li>
+                                        <li class="tab">
+                                            <a href="#">No answers</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-inner-warp">
+                                        <div class="tab-inner">
+                                            <% if(data.Infrastructure.length){ 
+                                                    for(var i = 0;i < data.Infrastructure.length;i++) { %>
+                                                <article class="post blog_2 clearfix">
+                                                    <div class="post-inner">
+                                                        <h2 class="post-title">
+                                                            <a href="javascript:"><%=data.Infrastructure[i].name%></a>
+                                                        </h2>
+                                                        <!-- <div class="post-img"><a href="single_post.html"><img src="http://placehold.it/250x160/222/FFF" alt=""></a></div> -->
+                                                        <div class="post-meta">
+                                                            <span class="meta-author">
+                                                                <i class="icon-user"></i>
+                                                                <a href="javascript:"><%=data.Infrastructure[i].created%></a>
+                                                            </span>
+                                                        </div>
+                                                        <div class="post-content">
+                                                            <p></p>
+                                                            <a href="<%=data.Infrastructure[i].link%>" class="post-read-more button color small" target="_blank">Continue reading</a>
+                                                        </div>
+                                                        <!-- End post-content -->
+                                                    </div>
+                                                    <!-- End post-inner -->
+                                                </article>
+                                                <!-- <a href="#" class="load-questions">
+                                                        <i class="icon-refresh"></i>Load More Questions</a> -->
+                                                <% }} %>
+                                        </div>
+                                    </div>
+                                    <div class="tab-inner-warp">
+                                        <div class="tab-inner">
+
+                                                <% if(data.General.length){ 
+                                                    for(var i = 0;i < data.General.length;i++) { %>
+                                                <article class="post blog_2 clearfix">
+                                                    <div class="post-inner">
+                                                        <h2 class="post-title">
+                                                            <a href="javascript:"><%=data.General[i].name%></a>
+                                                        </h2>
+                                                        <!-- <div class="post-img"><a href="single_post.html"><img src="http://placehold.it/250x160/222/FFF" alt=""></a></div> -->
+                                                        <div class="post-meta">
+                                                            <span class="meta-author">
+                                                                <i class="icon-user"></i>
+                                                                <a href="javascript:"><%=data.General[i].created%></a>
+                                                            </span>
+                                                        </div>
+                                                        <div class="post-content">
+                                                            <p></p>
+                                                            <a href="<%=data.General[i].link%>" class="post-read-more button color small" target="_blank">Continue reading</a>
+                                                        </div>
+                                                        <!-- End post-content -->
+                                                    </div>
+                                                    <!-- End post-inner -->
+                                                </article>
+                                                <!-- <a href="#" class="load-questions">
+                                                        <i class="icon-refresh"></i>Load More Questions</a> -->
+                                                <% }} %>
+                                            <!-- <a href="#" class="load-questions">
+                                                <i class="icon-refresh"></i>Load More Questions</a> -->
+                                        </div>
+                                    </div>
+                                    <div class="tab-inner-warp">
+                                        <div class="tab-inner">
+                                            <article class="post blog_2 clearfix">
+                                                <div class="post-inner">
+                                                    <h2 class="post-title">
+                                                        <a href="javascript:">This is a Standard Post.</a>
+                                                    </h2>
+                                                    <!-- <div class="post-img"><a href="single_post.html"><img src="http://placehold.it/250x160/222/FFF" alt=""></a></div> -->
+                                                    <div class="post-meta">
+                                                        <span class="meta-author">
+                                                            <i class="icon-user"></i>
+                                                            <a href="#">Administrator</a>
+                                                        </span>
+                                                    </div>
+                                                    <div class="post-content">
+                                                        <p></p>
+                                                        <a href="single_post.html" class="post-read-more button color small" style="">Continue reading</a>
+                                                    </div>
+                                                    <!-- End post-content -->
+                                                </div>
+                                                <!-- End post-inner -->
+                                            </article>
+
+                                            <!-- <a href="#" class="load-questions">
+                                                <i class="icon-refresh"></i>Load More Questions</a> -->
+                                        </div>
+                                    </div>
+                                    <div class="tab-inner-warp">
+                                        <div class="tab-inner">
+
+                                            <article class="post blog_2 clearfix">
+                                                <div class="post-inner">
+                                                    <h2 class="post-title">
+                                                        <a href="javascript:">This is a Standard Post.</a>
+                                                    </h2>
+                                                    <!-- <div class="post-img"><a href="single_post.html"><img src="http://placehold.it/250x160/222/FFF" alt=""></a></div> -->
+                                                    <div class="post-meta">
+                                                        <span class="meta-author">
+                                                            <i class="icon-user"></i>
+                                                            <a href="#">Administrator</a>
+                                                        </span>
+                                                    </div>
+                                                    <div class="post-content">
+                                                        <p></p>
+                                                        <a href="single_post.html" class="post-read-more button color small" style="">Continue reading</a>
+                                                    </div>
+                                                    <!-- End post-content -->
+                                                </div>
+                                                <!-- End post-inner -->
+                                            </article>
+                                            <!-- <a href="#" class="load-questions">
+                                                <i class="icon-refresh"></i>Load More Questions</a> -->
+                                        </div>
+                                    </div>
+                                    <div class="tab-inner-warp">
+                                        <div class="tab-inner">
+                                            <article class="post blog_2 clearfix">
+                                                <div class="post-inner">
+                                                    <h2 class="post-title">
+                                                        <a href="javascript:">This is a Standard Post.</a>
+                                                    </h2>
+                                                    <!-- <div class="post-img"><a href="single_post.html"><img src="http://placehold.it/250x160/222/FFF" alt=""></a></div> -->
+                                                    <div class="post-meta">
+                                                        <span class="meta-author">
+                                                            <i class="icon-user"></i>
+                                                            <a href="#">Administrator</a>
+                                                        </span>
+                                                    </div>
+                                                    <div class="post-content">
+                                                        <p></p>
+                                                        <a href="single_post.html" class="post-read-more button color small" style="">Continue reading</a>
+                                                    </div>
+                                                    <!-- End post-content -->
+                                                </div>
+                                                <!-- End post-inner -->
+                                            </article>
+                                            <!-- <a href="#" class="load-questions">
+                                                        <i class="icon-refresh"></i>Load More Questions</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End page-content -->
+                            </div>
+                            <!-- End main -->
+                            <% include ./partials/sidebar %>
+                        </div>
+                        <!-- End row -->
+                    </section>
+                    <!-- End container -->
+
+                    <!-- body footer start -->
+                    <% include ./partials/body_footer %>
+                        <!-- body footer end -->
+        </div>
+        <!-- End wrap -->
+        <!-- footer started -->
+        <% include ./partials/footer_js %>
+            <!-- footer end -->
+
+
+
+
+    </body>
+    <!-- body part end -->
+
+</html>
