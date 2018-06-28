@@ -52,7 +52,7 @@ exports.getAllTrainingMaterial = function (req, res) {
         } else {
             resultObj['Infrastructure'] = results;
             console.log('The Infrastructure materials are: ', results);
-            connection.query('select * from materials  WHERE materials.type = ?', ['General'], function (error, results, fields) {
+            connection.query('select * from materials  WHERE materials.type = ?', ['Collection'], function (error, results, fields) {
                 if (error) {
                     console.log("error ocurred", { title: 'Error on handling challenge events' });
                     res.send({
@@ -61,7 +61,7 @@ exports.getAllTrainingMaterial = function (req, res) {
                     })
                     //res.render('error');
                 } else {
-                    resultObj['General'] = results;
+                    resultObj['Collection'] = results;
                     console.log('The General materials are: ', results);
                     res.render('trainingMaterial', { data: resultObj });
                     // connection.query('select * from (select challenge.*, `user`.user_name, `user`.user_id, (SELECT max(answer.posting_date) as maximum FROM answer WHERE answer.challenge_id = challenge.challenge_id) as recent_answer, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answer from challenge join `user` on challenge.post_user_id = `user`.user_id) as innerTable where innerTable.recent_answer is not null', [], function (error, results, fields) {
