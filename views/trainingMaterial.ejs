@@ -57,17 +57,15 @@
                                             <a href="#" class="current">Infrastructure</a>
                                         </li>
                                         <li class="tab">
-                                            <a href="#">General</a>
+                                            <a href="#">Collection</a>
                                         </li>
                                         <li class="tab">
-                                            <a href="#">Recently Answered</a>
+                                            <a href="#">Use Case/App</a>
                                         </li>
                                         <li class="tab">
-                                            <a href="#">No answers</a>
+                                            <a href="#">Developer Guide</a>
                                         </li>
-                                        <li class="tab">
-                                            <a href="#">No answers</a>
-                                        </li>
+                                        
                                     </ul>
                                     <div class="tab-inner-warp">
                                         <div class="tab-inner">
@@ -86,7 +84,7 @@
                                                             </span>
                                                         </div>
                                                         <div class="post-content">
-                                                            <p></p>
+                                                            <p><%=data.Infrastructure[i].description%></p>
                                                             <a href="<%=data.Infrastructure[i].link%>" class="post-read-more button color small" target="_blank">Continue reading</a>
                                                         </div>
                                                         <!-- End post-content -->
@@ -116,7 +114,7 @@
                                                             </span>
                                                         </div>
                                                         <div class="post-content">
-                                                            <p></p>
+                                                            <p><%=data.Collection[i].description%></p>
                                                             <a href="<%=data.Collection[i].link%>" class="post-read-more button color small" target="_blank">Continue reading</a>
                                                         </div>
                                                         <!-- End post-content -->
@@ -132,26 +130,31 @@
                                     </div>
                                     <div class="tab-inner-warp">
                                         <div class="tab-inner">
+                                            <% if(data.Usecase.length){ 
+                                                for(var i = 0;i < data.Usecase.length;i++) { %>
                                             <article class="post blog_2 clearfix">
                                                 <div class="post-inner">
                                                     <h2 class="post-title">
-                                                        <a href="javascript:">This is a Standard Post.</a>
+                                                        <a href="javascript:"><%=data.Usecase[i].name%></a>
                                                     </h2>
                                                     <!-- <div class="post-img"><a href="single_post.html"><img src="http://placehold.it/250x160/222/FFF" alt=""></a></div> -->
                                                     <div class="post-meta">
                                                         <span class="meta-author">
                                                             <i class="icon-user"></i>
-                                                            <a href="#">Administrator</a>
+                                                            <a href="javascript:"><%=data.Usecase[i].created%></a>
                                                         </span>
                                                     </div>
                                                     <div class="post-content">
-                                                        <p></p>
-                                                        <a href="single_post.html" class="post-read-more button color small" style="">Continue reading</a>
+                                                        <p><%=data.Usecase[i].description%></p>
+                                                        <a href="<%=data.Usecase[i].link%>" class="post-read-more button color small" target="_blank">Continue reading</a>
                                                     </div>
                                                     <!-- End post-content -->
                                                 </div>
                                                 <!-- End post-inner -->
                                             </article>
+                                            <!-- <a href="#" class="load-questions">
+                                                    <i class="icon-refresh"></i>Load More Questions</a> -->
+                                            <% }} %>
 
                                             <!-- <a href="#" class="load-questions">
                                                 <i class="icon-refresh"></i>Load More Questions</a> -->
@@ -160,56 +163,36 @@
                                     <div class="tab-inner-warp">
                                         <div class="tab-inner">
 
+                                            <% if(data.DevGuide.length){ 
+                                                for(var i = 0;i < data.DevGuide.length;i++) { %>
                                             <article class="post blog_2 clearfix">
                                                 <div class="post-inner">
                                                     <h2 class="post-title">
-                                                        <a href="javascript:">This is a Standard Post.</a>
+                                                        <a href="javascript:"><%=data.DevGuide[i].name%></a>
                                                     </h2>
                                                     <!-- <div class="post-img"><a href="single_post.html"><img src="http://placehold.it/250x160/222/FFF" alt=""></a></div> -->
                                                     <div class="post-meta">
                                                         <span class="meta-author">
                                                             <i class="icon-user"></i>
-                                                            <a href="#">Administrator</a>
+                                                            <a href="javascript:"><%=data.DevGuide[i].created%></a>
                                                         </span>
                                                     </div>
                                                     <div class="post-content">
-                                                        <p></p>
-                                                        <a href="single_post.html" class="post-read-more button color small" style="">Continue reading</a>
+                                                        <p><%=data.DevGuide[i].description%></p>
+                                                        <a href="<%=data.DevGuide[i].link%>" class="post-read-more button color small" target="_blank">Continue reading</a>
                                                     </div>
                                                     <!-- End post-content -->
                                                 </div>
                                                 <!-- End post-inner -->
                                             </article>
+                                            <!-- <a href="#" class="load-questions">
+                                                    <i class="icon-refresh"></i>Load More Questions</a> -->
+                                            <% }} %>
                                             <!-- <a href="#" class="load-questions">
                                                 <i class="icon-refresh"></i>Load More Questions</a> -->
                                         </div>
                                     </div>
-                                    <div class="tab-inner-warp">
-                                        <div class="tab-inner">
-                                            <article class="post blog_2 clearfix">
-                                                <div class="post-inner">
-                                                    <h2 class="post-title">
-                                                        <a href="javascript:">This is a Standard Post.</a>
-                                                    </h2>
-                                                    <!-- <div class="post-img"><a href="single_post.html"><img src="http://placehold.it/250x160/222/FFF" alt=""></a></div> -->
-                                                    <div class="post-meta">
-                                                        <span class="meta-author">
-                                                            <i class="icon-user"></i>
-                                                            <a href="#">Administrator</a>
-                                                        </span>
-                                                    </div>
-                                                    <div class="post-content">
-                                                        <p></p>
-                                                        <a href="single_post.html" class="post-read-more button color small" style="">Continue reading</a>
-                                                    </div>
-                                                    <!-- End post-content -->
-                                                </div>
-                                                <!-- End post-inner -->
-                                            </article>
-                                            <!-- <a href="#" class="load-questions">
-                                                        <i class="icon-refresh"></i>Load More Questions</a> -->
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                                 <!-- End page-content -->
                             </div>
