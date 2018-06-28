@@ -101,23 +101,23 @@
                                     <div class="tab-inner-warp">
                                         <div class="tab-inner">
 
-                                                <% if(data.General.length){ 
-                                                    for(var i = 0;i < data.General.length;i++) { %>
+                                                <% if(data.Collection.length){ 
+                                                    for(var i = 0;i < data.Collection.length;i++) { %>
                                                 <article class="post blog_2 clearfix">
                                                     <div class="post-inner">
                                                         <h2 class="post-title">
-                                                            <a href="javascript:"><%=data.General[i].name%></a>
+                                                            <a href="javascript:"><%=data.Collection[i].name%></a>
                                                         </h2>
                                                         <!-- <div class="post-img"><a href="single_post.html"><img src="http://placehold.it/250x160/222/FFF" alt=""></a></div> -->
                                                         <div class="post-meta">
                                                             <span class="meta-author">
                                                                 <i class="icon-user"></i>
-                                                                <a href="javascript:"><%=data.General[i].created%></a>
+                                                                <a href="javascript:"><%=data.Collection[i].created%></a>
                                                             </span>
                                                         </div>
                                                         <div class="post-content">
                                                             <p></p>
-                                                            <a href="<%=data.General[i].link%>" class="post-read-more button color small" target="_blank">Continue reading</a>
+                                                            <a href="<%=data.Collection[i].link%>" class="post-read-more button color small" target="_blank">Continue reading</a>
                                                         </div>
                                                         <!-- End post-content -->
                                                     </div>
