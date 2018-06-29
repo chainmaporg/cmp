@@ -14,6 +14,17 @@ CREATE TABLE `challenge` (
   PRIMARY KEY (`challenge_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `materials`;
+CREATE TABLE `materials` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`type` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+	`description` text COLLATE utf8_unicode_ci NOT NULL,
+	`link` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+	`name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,       
+	`created` datetime NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 DROP TABLE IF EXISTS `answer`;
 CREATE TABLE `answer` (
  `answer_id` int(15) NOT NULL AUTO_INCREMENT,

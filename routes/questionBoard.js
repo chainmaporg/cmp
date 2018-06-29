@@ -55,7 +55,7 @@ exports.postChallenge = function (req, res) {
   connection.query('INSERT INTO challenge SET ?', ChallengeQuestionInfo, function (error, results, fields) {
     if (error) {
       console.log("error ocurred", error);
-      res.render("error", { errorMsg: "Error on insertion into DB Users" })
+      res.render("error", { errorMsg: "Error on insertion into Db challenges" })
 
     } else {
       console.log('The information saved successfully', results);
@@ -263,7 +263,7 @@ exports.getDetailsChallenge = function (req, res) {
         console.log('Challenge Details: ', results);
         if (results.length > 0) {
           resultObj['challengedetails'] = results
-          connection.query('select * from answer where challenge_id=? ', [challenge_id], function (error, results, fields) {
+          connection.query('select answer.*, `user`.user_name, `user`.user_id  from answer join `user` on answer.post_user_id = `user`.user_id where answer.challenge_id=?', [challenge_id], function (error, results, fields) {
             if (error) {
               console.log("error ocurred", { title: 'Error on handling challenge events 2' });
               res.send({

@@ -53,7 +53,7 @@
     <div class="form-style form-style-3">
         <form action="javascript:">
             <div class="form-inputs clearfix">
-                <p>
+                <!-- <p>
                     <label class="required">Select an Employer from the dropdown or create your own company
                         <span>*</span>
                     </label>
@@ -62,8 +62,8 @@
                     <label class="radio-inline" style="display: inline-block">
                         <input type="radio" name="mode" value="create" onclick="selectMode('create')">Create Company</label>
 
-                </p>
-                <div class="employerFields">
+                </p> -->
+                <!-- <div class="employerFields">
                     <p>
                         <label class="required">Select Employer
                             <span>*</span>
@@ -75,8 +75,8 @@
                             </select>
                         </span>
                     </p>
-                </div>
-                <div class="companyFields" style="display: none">
+                </div> -->
+                <!-- <div class="companyFields" style="display: none">
                     <p>
                         <label class="required">Company Name
                             <span>*</span>
@@ -107,16 +107,16 @@
                         </label>
                         <input type="text" name="company_site" required id="companyweb">
                     </p>
-                </div>
+                </div> -->
 
                 <p>
-                    <label class="required">User First Name
+                    <label class="required">First Name
                         <span>*</span>
                     </label>
                     <input type="text" name="firstname" id="firstName" required>
                 </p>
                 <p>
-                    <label class="required">User Last Name
+                    <label class="required">Last Name
                         <span>*</span>
                     </label>
                     <input type="text" name="lastname" id="lastName" required>
@@ -134,12 +134,6 @@
                     <input type="email" name="user_email" id="userEmail" required>
                 </p>
                 <p>
-                    <label class="required">User Phone
-                        <span>*</span>
-                    </label>
-                    <input type="text" name="user_phone" id="userPhone" required>
-                </p>
-                <p>
                     <label class="required">User Password
                         <span>*</span>
                     </label>
@@ -149,16 +143,6 @@
                     <label class="required">User Payment Address
                     </label>
                     <input type="text" name="payment_address" id="userPAddress">
-                </p>
-                <p>
-                    <label class="required">Do you want to be reviewer?
-                        <span>*</span>
-                    </label>
-                    <label class="radio-inline" style="display: inline-block">
-                        <input type="radio" name="is_reviewer" value="1"  required>Yes</label>
-                    <label class="radio-inline" style="display: inline-block">
-                        <input type="radio" name="is_reviewer" value="0" checked>No</label>
-
                 </p>
             </div>
             <p class="form-submit">
@@ -199,93 +183,115 @@
     </div>
 </div>
 <script type="text/javascript">
-    var gMode = "select";
-    function selectMode(mode) {
-        if (mode == "select") {
-            $(".companyFields").hide();
-            clear_form_elements('companyFields')
-            $(".employerFields").show();
-            gMode = "select"
-        }
-        else if (mode == "create") {
-            $(".employerFields").hide();
-            clear_form_elements('employerFields')
-            $(".companyFields").show();
-            gMode = "create"
-        }
-    }
+    // var gMode = "select";
+    // function selectMode(mode) {
+    //     if (mode == "select") {
+    //         $(".companyFields").hide();
+    //         clear_form_elements('companyFields')
+    //         $(".employerFields").show();
+    //         gMode = "select"
+    //     }
+    //     else if (mode == "create") {
+    //         $(".employerFields").hide();
+    //         clear_form_elements('employerFields')
+    //         $(".companyFields").show();
+    //         gMode = "create"
+    //     }
+    // }
 
-    function clear_form_elements(class_name) {
-        $("." + class_name).find(':input').each(function () {
-            switch (this.type) {
-                case 'password':
-                case 'text':
-                case 'textarea':
-                case 'file':
-                case 'select-one':
-                case 'select-multiple':
-                case 'date':
-                case 'number':
-                case 'tel':
-                case 'email':
-                    jQuery(this).val('');
-                    break;
-                case 'checkbox':
-                case 'radio':
-                    this.checked = false;
-                    break;
-            }
-        });
-    }
+    // function clear_form_elements(class_name) {
+    //     $("." + class_name).find(':input').each(function () {
+    //         switch (this.type) {
+    //             case 'password':
+    //             case 'text':
+    //             case 'textarea':
+    //             case 'file':
+    //             case 'select-one':
+    //             case 'select-multiple':
+    //             case 'date':
+    //             case 'number':
+    //             case 'tel':
+    //             case 'email':
+    //                 jQuery(this).val('');
+    //                 break;
+    //             case 'checkbox':
+    //             case 'radio':
+    //                 this.checked = false;
+    //                 break;
+    //         }
+    //     });
+    // }
     function getvaluesToRegisterUser() {
         var url = "/userRegister";
-        if (gMode == "select") {
+        // if (gMode == "select") {
+        //     data = {
+        //         'mode': gMode,
+        //         'company_id': $("#employer").val(),
+        //         'firstname': $("#firstName").val(),
+        //         'lastname': $("#lastName").val(),
+        //         'user_name': $("#userName").val(),
+        //         'user_email': $("#userEmail").val(),
+        //         'user_phone': $("#userPhone").val(),
+        //         'password': $("#userPasswd").val(),
+        //         'payment_address': $("#userPAddress").val(),
+        //         'is_reviewer': $('input[name="is_reviewer"]:checked').val()
+        //     };
+        // }
+        // else if (gMode == "create") {
+        if ($("#firstName").val() == "") {
+            // alert("Please insert First Name");
+        } else if ($("#lastName").val() == "") {
+            // alert("Please insert Last Name");
+        } else if ($("#userName").val() == "") {
+            // alert("Please insert User Name");
+        } else if ($("#userEmail").val() == "") {
+            // alert("Please insert User Email");
+        } else if ($("#userPasswd").val() == "") {
+            // alert("Please insert User Password");
+        } else {
             data = {
-                'mode': gMode,
-                'company_id': $("#employer").val(),
+                // 'mode': gMode,
+                // 'company_name': 0,
+                // 'company_info': $("#companyInfo").val(),
+                // 'company_email': $("#companyEmail").val(),
+                // 'company_phone': $("#companyPhone").val(),
+                // 'company_site': $("#companyweb").val(),
                 'firstname': $("#firstName").val(),
                 'lastname': $("#lastName").val(),
                 'user_name': $("#userName").val(),
                 'user_email': $("#userEmail").val(),
-                'user_phone': $("#userPhone").val(),
+                'user_phone': 0,
                 'password': $("#userPasswd").val(),
                 'payment_address': $("#userPAddress").val(),
-                'is_reviewer': $('input[name="is_reviewer"]:checked').val()
+                'is_reviewer': 0
             };
-        }
-        else if (gMode == "create") {
-            data = {
-                'mode': gMode,
-                'company_name': $("#companyName").val(),
-                'company_info': $("#companyInfo").val(),
-                'company_email': $("#companyEmail").val(),
-                'company_phone': $("#companyPhone").val(),
-                'company_site': $("#companyweb").val(),
-                'firstname': $("#firstName").val(),
-                'lastname': $("#lastName").val(),
-                'user_name': $("#userName").val(),
-                'user_email': $("#userEmail").val(),
-                'user_phone': $("#userPhone").val(),
-                'password': $("#userPasswd").val(),
-                'payment_address': $("#userPAddress").val(),
-                'is_reviewer': $('input[name="is_reviewer"]:checked').val()
-            };
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: data,
+                async: false,
+                success: function (data) {
+                    if (data.msg == "duplicateUserEmail") {
+                        alert("Email is duplicate.");
+                    }
+                    else if (data.msg == "duplicateUserName") {
+                        alert("User Name is duplicate.");
+                    }
+                    else if (data.msg == "success"){
+                        alert("User information saved successfully. You can login now.");
+                        window.location.reload();
+                    }
+
+                },
+                error: function () {
+                    alert('An error occured. Please try again later or contact with us.');
+                }
+            });
         }
 
-        $.ajax({
-            type: 'POST',
-            url: url,
-            data: data,
-            async: false,
-            success: function (data) {
-                window.location.reload();
-            },
-            error: function () {
-                alert('Error occured');
-            }
-        });
     }
 
-    
+
 </script>
 <!-- End lost-password -->

@@ -50,7 +50,7 @@ exports.login = function (req, res) {
           session.email = req.body.email
           session.user_id = results[0].user_id
           console.log("logged in ");
-          res.redirect('questionBoard');
+          res.redirect('/questionBoard');
         }
         else {
           console.log("Not successful");

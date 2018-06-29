@@ -77,14 +77,17 @@
                         </li>
                     </ul> -->
                 </li>
-                <%
+                <li>
+                    <a href="/trainingMaterial">Training Materials</a>
+                </li>
+                 <%
                 
                 if (typeof session !== 'undefined' && typeof session.email !== 'undefined'){
 
                     %>
-                    <li>
-                        <a href="user_profile.html">User</a>
-                        <ul>
+                     <li>
+                        <a href="/userProfile/<%=session.user_id%>">User</a>
+                        <!-- <ul>
                             <li>
                                 <a href="user_profile.html">User Profile</a>
                             </li>
@@ -103,9 +106,9 @@
                             <li>
                                 <a href="edit_profile.html">Edit Profile</a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </li>
-                    <% } %>
+                    <% } %> -->
                         <!-- <li>
                     <a href="blog_1.html">Blog</a>
                     <ul>
