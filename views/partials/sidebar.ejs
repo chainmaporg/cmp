@@ -152,7 +152,7 @@
                 if (data.users.length > 0) {
                     for (var i = 0; i < data.users.length; i++) {
                         liStr = liStr + '<li><div class="author-img"><a href="/userProfile/'+ data.users[i].user_id +'"><img width="60" height="60" src="/image/111.png" alt=""></a></div>';
-                        liStr = liStr + '<h6><a href="/userProfile/'+ data.users[i].user_id +'">'+ data.users[i].user_name +'</a></h6><span class="comment">'+ data.users[i].token +' Points</span></li>';
+                        liStr = liStr + '<h6><a href="/userProfile/'+ data.users[i].user_id +'">'+ data.users[i].user_name +'</a></h6><span class="comment">'+ data.users[i].total +' Points</span></li>';
                     }
                 }
                 $("#tokenPoints").append(liStr);
