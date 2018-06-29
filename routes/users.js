@@ -187,13 +187,7 @@ exports.userProfile = function (req, res) {
 }
 
 exports.tokenRanking = function (req, res) {
-  connection.query('select user.*, top.trans from \n' +
-      '(select tmp.post_user_id, sum(tmp.count) as trans from \n' +
-      '(select post_user_id, count(*) as count from challenge group by post_user_id\n' +
-      'union all\n' +
-      'select post_user_id, count(*) as count from answer group by post_user_id) as tmp\n' +
-      'group by post_user_id order by trans desc limit 5) top\n' +
-      'left join user on top.post_user_id = user.user_id;', function (error, results, fields) {
+  connection.query('select `user`.*, ((select count(*) as total from challenge where post_user_id = `user`.user_id) + (select count(*) as total from answer where post_user_id = `user`.user_id)) as total from `user` ORDER BY total DESC limit 5', function (error, results, fields) {
     if (error) {
       console.log("error ocurred", error);
       res.render("error", { errorMsg: "Error on insertion into DB Users" })
