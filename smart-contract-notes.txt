@@ -1,0 +1,54 @@
+API:
+
+https://nebulasio.github.io/neb.js/API.html
+
+Neblearn:
+
+https://nebulearn.com/api/neb/account
+
+
+Interesting:
+https://nebide.block2100.com/
+
+Still the best:
+https://github.com/nebulasio/wiki/blob/master/tutorials/%5BEnglish%5D%20Nebulas%20101%20-%2003%20Smart%20Contracts%20JavaScript.md
+
+ChainMap:
+
+
+
+
+Q1: Where is testnet information?
+Q2: What is the gas prices
+Q3: What is the gas limit
+Q4: What is Neouce
+Q5: How to see TestNet Status
+Q6: How to check smart contract status
+Q7: How to call smart contract through neb.js
+Q8: Where is the chainmap smart contract code
+Q9: Code: How to define a challenge level
+Q10: Code: Why do we need to use Nas Wallet
+Q11: How to use NebPay API to see balance:.simulateCall(addressOfNrc20, "balanceOf", {args: {"users wallet address"}})
+Q12:  
+
+
+var tx = new Nebulas.Transaction({
+                        chainID: 1,
+                        from: tempAccount,
+                        to: "xxyyzz",
+                        value: 0,
+                        nonce: nonce + no,
+                        gasPrice: 1000000,
+                        gasLimit: gasLimit,
+                        contract: {
+                            function: "RewardAll",
+                            args: JSON.stringify([challengeId])
+                        }
+                    });
+                    no++;
+                    tx.signTransaction();
+
+                    //send a transfer request to the NAS node
+                    neb.api.sendRawTransaction({
+                        data: tx.toProtoString()
+                    }).then(..)

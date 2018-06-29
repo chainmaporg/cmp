@@ -1,9 +1,29 @@
+//Env related changes
+var chainmap_env = "local";
+var chainUrl = "https://testnet.nebulas.io";
+var smartcontract_address = "n1hUzRN5otB4CS3zUH97Xa3ob8UT82yGw97";
+var ChainId = 1001; //1:mainNet 100:local; 1001:testnet
+
+
+var Nebulas = require("../neb/nebindex");
+
+
+
+var Neb = Nebulas.Neb;
+var neb = new Neb();
+neb.setRequest(new Nebulas.HttpRequest(chainUrl))
+var Account = Nebulas.Account;
+var cmAccount = Account.NewAccount();
+
+//Export to make other function access
+exports.envChainId= envChainId
+exports.Nebulas = Nebulas
+exports.cmAccount = cmAccount
+exports.smartcontract_address = smartcontract_address
+
 var express = require('express');
 var SolrNode = require('solr-node');
 var router = express.Router();
-
-//Change based on env
-var chainmap_env = "local";
 
 var db_config
 

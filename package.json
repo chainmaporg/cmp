@@ -17,8 +17,11 @@
     "md5": "^2.2.1",
     "morgan": "~1.9.0",
     "mysql": "^2.13.0",
+    "nebpay": "0.0.6",
+    "nebulas": "^0.5.2",
     "node-rest-client": "^3.1.0",
     "pug": "2.0.0-beta11",
-    "solr-node": "^1.0.13"
+    "solr-node": "^1.0.13",
+    "webpack": "^4.13.0"
   }
 }
