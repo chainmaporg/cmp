@@ -24,7 +24,9 @@
                         <section class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h1>User Profile : <%=data.userProfile[0].user_name%></h1>
+                                    <h1>User Profile :
+                                        <%=data.userProfile[0].user_name%>
+                                    </h1>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="crumbs">
@@ -149,7 +151,7 @@
                                                         <ul>
                                                             <li>
                                                                 <i class="icon-question-sign"></i>
-                                                                <a href="javascript:">Questions
+                                                                <a href="javascript:">Challenges
                                                                     <span> (
                                                                         <span>
                                                                             <%=data.questions%>
@@ -192,53 +194,151 @@
                                             <!-- End page-content -->
                                         </div>
                                         <!-- End col-md-12 -->
-                                    </div>
-                                    <!-- End user-profile -->
-                                </div>
-                                <!-- End row -->
-                                <div class="clearfix"></div>
-                                <div class="page-content">
-                                    <div class="user-questions">
-                                            <% if(data.allQuestions.length){ 
-                                                for(var i = 0;i < data.allQuestions.length;i++) { %>
-                                        <article class="question user-question">
-                                            <h3>
-                                                <a href="/getChallengebyID/<%=data.allQuestions[i].challenge_id%>"><%=data.allQuestions[i].title%></a>
-                                            </h3>
-                                            <div class="question-type-main">
-                                                <i class="icon-question-sign"></i><%=data.allQuestions[i].level%></div>
-                                            <div class="question-content">
-                                                <div class="question-bottom">
-                                                    <div class="question-answered">
-                                                        <!-- <i class="icon-ok"></i>in progress</div> -->
-                                                    <!-- <span class="question-favorite">
-                                                        <i class="icon-star"></i>5</span> -->
-                                                        <%
-                                                                        if (data.allQuestions[i].is_closed == 1){
-                                                                        %>
-                                                                    <span class="question-answered question-answered-done">
-                                                                        <i class="icon-ok"></i>Closed</span>
-                                                                        <% } %>
-                                                    <span class="question-category">
-                                                        <a href="javascript:">
-                                                            <i class="icon-folder-close"></i><%=data.allQuestions[i].category%></a>
-                                                    </span>
-                                                    <span class="question-date">
-                                                        <i class="icon-time"></i><%=data.allQuestions[i].posting_date%></span>
-                                                    <span class="question-comment">
-                                                        <a href="javascript:">
-                                                            <i class="icon-comment"></i><%=data.allQuestions[i].total_answers %> Answers</a>
-                                                    </span>
-                                                    <!-- <a class="question-reply" href="#">
-                                                        <i class="icon-reply"></i>Reply</a> -->
-                                                    <span class="question-view">
-                                                        <i class="icon-user"></i><%=data.allQuestions[i].view_count%> views</span>
+
+
+                                        <div class="col-md-12">
+                                            <div class="page-content page-content-user-profile">
+                                                <div class="user-profile-widget">
+                                                    <h2>Challenges Posted by the User</h2>
+
+                                                    <div class="user-questions">
+
+                                                        <% if(data.allQuestions.length){ 
+                                                                        for(var i = 0;i < data.allQuestions.length;i++) { %>
+                                                            <article class="question user-question">
+                                                                <h3>
+                                                                    <a href="/getChallengebyID/<%=data.allQuestions[i].challenge_id%>">
+                                                                        <%=data.allQuestions[i].title%>
+                                                                    </a>
+                                                                </h3>
+                                                                <div class="question-type-main">
+                                                                    <i class="icon-question-sign"></i>
+                                                                    <%=data.allQuestions[i].level%>
+                                                                </div>
+                                                                <div class="question-content">
+                                                                    <div class="question-bottom">
+                                                                        <div class="question-answered">
+                                                                            <!-- <i class="icon-ok"></i>in progress</div> -->
+                                                                            <!-- <span class="question-favorite">
+                                                                                <i class="icon-star"></i>5</span> -->
+                                                                            <%
+                                                                                                if (data.allQuestions[i].is_closed == 1){
+                                                                                                %>
+                                                                                <span class="question-answered question-answered-done">
+                                                                                    <i class="icon-ok"></i>Closed</span>
+                                                                                <% } %>
+                                                                                    <span class="question-category">
+                                                                                        <a href="javascript:">
+                                                                                            <i class="icon-folder-close"></i>
+                                                                                            <%=data.allQuestions[i].category%>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                    <span class="question-date">
+                                                                                        <i class="icon-time"></i>
+                                                                                        <%=data.allQuestions[i].posting_date%>
+                                                                                    </span>
+                                                                                    <span class="question-comment">
+                                                                                        <a href="javascript:">
+                                                                                            <i class="icon-comment"></i>
+                                                                                            <%=data.allQuestions[i].total_answers %> Answers</a>
+                                                                                    </span>
+                                                                                    <!-- <a class="question-reply" href="#">
+                                                                                <i class="icon-reply"></i>Reply</a> -->
+                                                                                    <span class="question-view">
+                                                                                        <i class="icon-user"></i>
+                                                                                        <%=data.allQuestions[i].view_count%> views</span>
+                                                                        </div>
+                                                                    </div>
+                                                            </article>
+                                                            <% }} %>
+                                                                </div>
+
+
+                                                    </div>
+                                                    <!-- End user-profile-widget -->
                                                 </div>
+                                                <!-- End page-content -->
                                             </div>
-                                        </article>
-                                        <% }} %>
-                                    </div>
-                                    <!-- <div class="user-stats">
+                                            <!-- End col-md-12 -->
+
+
+
+                                            <div class="col-md-12">
+                                                <div class="page-content page-content-user-profile">
+                                                    <div class="user-profile-widget">
+                                                        <h2>Challenges Answered by the User</h2>
+
+                                                        <div class="user-questions">
+
+                                                            <% if(data.allansweredQuestions.length){ 
+                                                                                for(var i = 0;i < data.allansweredQuestions.length;i++) { %>
+                                                                <article class="question user-question">
+                                                                    <h3>
+                                                                        <a href="/getChallengebyID/<%=data.allQuestions[i].challenge_id%>">
+                                                                            <%=data.allansweredQuestions[i].title%>
+                                                                        </a>
+                                                                    </h3>
+                                                                    <div class="question-type-main">
+                                                                        <i class="icon-question-sign"></i>
+                                                                        <%=data.allansweredQuestions[i].level%>
+                                                                    </div>
+                                                                    <div class="question-content">
+                                                                        <div class="question-bottom">
+                                                                            <div class="question-answered">
+                                                                                <!-- <i class="icon-ok"></i>in progress</div> -->
+                                                                                <!-- <span class="question-favorite">
+                                                                                        <i class="icon-star"></i>5</span> -->
+                                                                                <%
+                                                                                                        if (data.allansweredQuestions[i].is_closed == 1){
+                                                                                                        %>
+                                                                                    <span class="question-answered question-answered-done">
+                                                                                        <i class="icon-ok"></i>Closed</span>
+                                                                                    <% } %>
+                                                                                        <span class="question-category">
+                                                                                            <a href="javascript:">
+                                                                                                <i class="icon-folder-close"></i>
+                                                                                                <%=data.allansweredQuestions[i].category%>
+                                                                                            </a>
+                                                                                        </span>
+                                                                                        <span class="question-date">
+                                                                                            <i class="icon-time"></i>
+                                                                                            <%=data.allansweredQuestions[i].posting_date%>
+                                                                                        </span>
+                                                                                        <span class="question-comment">
+                                                                                            <a href="javascript:">
+                                                                                                <i class="icon-comment"></i>
+                                                                                                <%=data.allansweredQuestions[i].total_answer %> Answers</a>
+                                                                                        </span>
+                                                                                        <!-- <a class="question-reply" href="#">
+                                                                                        <i class="icon-reply"></i>Reply</a> -->
+                                                                                        <span class="question-view">
+                                                                                            <i class="icon-user"></i>
+                                                                                            <%=data.allansweredQuestions[i].view_count%> views</span>
+                                                                            </div>
+                                                                        </div>
+                                                                </article>
+                                                                <% }} %>
+                                                                    </div>
+
+
+                                                        </div>
+                                                        <!-- End user-profile-widget -->
+                                                    </div>
+                                                    <!-- End page-content -->
+                                                </div>
+
+
+
+
+
+                                            </div>
+                                            <!-- End user-profile -->
+                                        </div>
+                                        <!-- End row -->
+                                        <div class="clearfix"></div>
+
+
+                                        <!-- <div class="user-stats">
                                         <div class="user-stats-head">
                                             <div class="block-stats-1 stats-head">#</div>
                                             <div class="block-stats-2 stats-head">Today</div>
@@ -264,15 +364,15 @@
                                             <div class="block-stats-4">5000</div>
                                         </div>
                                     </div> -->
-                                    <!-- End user-stats -->
+                                        <!-- End user-stats -->
+
+                                        <!-- End page-content -->
+                                    </div>
+                                    <!-- End main -->
+                                    <% include ./partials/sidebar %>
+                                        <!-- End sidebar -->
                                 </div>
-                                <!-- End page-content -->
-                            </div>
-                            <!-- End main -->
-                            <% include ./partials/sidebar %>
-                                <!-- End sidebar -->
-                        </div>
-                        <!-- End row -->
+                                <!-- End row -->
                     </section>
                     <!-- End container -->
 
@@ -280,12 +380,12 @@
                     <% include ./partials/body_footer %>
                         <!-- body footer end -->
                         <!-- End footer-bottom -->
-        </div>
-        <!-- End wrap -->
+                        </div>
+                        <!-- End wrap -->
 
-        <!-- footer started -->
-        <% include ./partials/footer_js %>
-            <!-- footer end -->
+                        <!-- footer started -->
+                        <% include ./partials/footer_js %>
+                            <!-- footer end -->
 
     </body>
 

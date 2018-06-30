@@ -92,7 +92,7 @@ exports.userRegister = function (req, res) {
   connection.query('select COUNT(*) as number from user where `user`.user_email = ?', req.body.user_email, function (error, results, fields) {
     if (error) {
       console.log("error ocurred", error);
-      res.status(500).send({error: 'you have an error'}); 
+      res.status(500).send({ error: 'you have an error' });
 
     } else {
       if (results[0].number == 0) {
@@ -100,7 +100,7 @@ exports.userRegister = function (req, res) {
           if (error) {
             console.log("error ocurred", error);
             // res.redirect('/error');
-            res.status(500).send({error: 'you have an error'}); 
+            res.status(500).send({ error: 'you have an error' });
 
           } else {
             if (results[0].number == 0) {
@@ -108,7 +108,7 @@ exports.userRegister = function (req, res) {
                 if (error) {
                   // res.render("error", { errorMsg: "Error on insertion into DB Users code " })
                   console.log("error ocurred changes", error);
-                  res.status(500).send({error: 'you have an error'}); 
+                  res.status(500).send({ error: 'you have an error' });
 
                 } else {
                   console.log('The information saved successfully', results);
@@ -117,7 +117,7 @@ exports.userRegister = function (req, res) {
                   })
                 }
               });
-            }else{
+            } else {
               console.log('duplicate user name', req.body.user_name);
               res.send({
                 "msg": "duplicateUserName"
@@ -125,7 +125,7 @@ exports.userRegister = function (req, res) {
             }
           }
         });
-      } else{
+      } else {
         console.log('duplicate user Email', req.body.user_email);
         res.send({
           "msg": "duplicateUserEmail"
@@ -154,30 +154,42 @@ exports.getCompanies = function (req, res) {
 exports.userProfile = function (req, res) {
   userID = req.params.user_id;
   resultObj = {}
-  connection.query('select * from user where user_id=?',[userID], function (error, results, fields) {
+  connection.query('select * from user where user_id=?', [userID], function (error, results, fields) {
     if (error) {
       console.log("error ocurred", error);
       res.render("error", { errorMsg: "Error on insertion into DB Users" })
 
     } else {
       resultObj['userProfile'] = results;
-      connection.query('SELECT (select count(*) from challenge where challenge.post_user_id = ?) as total_challenge, (select COUNT(*) FROM answer where answer.post_user_id = ?) as total_answer',[userID, userID], function (error, results, fields) {
+      connection.query('SELECT (select count(*) from challenge where challenge.post_user_id = ?) as total_challenge, (select COUNT(*) FROM answer where answer.post_user_id = ?) as total_answer', [userID, userID], function (error, results, fields) {
         if (error) {
           console.log("error ocurred", error);
           res.render("error", { errorMsg: "Error on insertion into DB Users" })
-    
+
         } else {
           resultObj['questions'] = results[0].total_challenge;
           resultObj['answers'] = results[0].total_answer;
-          connection.query('select challenge.*, `user`.user_name, `user`.user_id, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers from challenge join `user` on challenge.post_user_id = `user`.user_id where `user`.user_id = ? ORDER BY posting_date DESC',[userID], function (error, results, fields) {
+          connection.query('select challenge.*, `user`.user_name, `user`.user_id, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers from challenge join `user` on challenge.post_user_id = `user`.user_id where `user`.user_id = ? ORDER BY posting_date DESC', [userID], function (error, results, fields) {
             if (error) {
               console.log("error ocurred", error);
               res.render("error", { errorMsg: "Error on insertion into DB Users" })
-        
+
             } else {
               resultObj['allQuestions'] = results;
-              console.log('Total data from the userProfile request: ', resultObj);
-              res.render('userProfile', { data: resultObj });              
+              // console.log('Total data from the userProfile request: ', resultObj);
+              connection.query('select challenge.*, (select count(*) from answer where answer.challenge_id = challenge.challenge_id) as total_answer  from challenge join answer on challenge.challenge_id = answer.challenge_id where answer.post_user_id = ? GROUP BY challenge_id ORDER BY posting_date', [userID], function (error, results, fields) {
+                if (error) {
+                  console.log("error ocurred", error);
+                  res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+                } else {
+                  resultObj['allansweredQuestions'] = results;
+                  console.log('Total data from the userProfile request: ', resultObj);
+
+                  res.render('userProfile', { data: resultObj });
+                }
+              });
+              // res.render('userProfile', { data: resultObj });
             }
           });
         }
@@ -194,7 +206,7 @@ exports.tokenRanking = function (req, res) {
 
     } else {
       console.log(results)
-      res.send({'users':results});
+      res.send({ 'users': results });
     }
   });
 }
