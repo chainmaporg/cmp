@@ -98,8 +98,21 @@ function handleAnswerSmartContract(address, challengeId, answerId, answer) {
 function handleVoteSmartContract(address, challengeId,answerId,result) {
 	console.log("VoteAnswer--", address, challengeId,answerId,result);
 	contractParms = {
-        function: "Vo dteAnswer",
+        function: "VoteAnswer",
         args: JSON.stringify([address, challengeId,answerId,result])
+    }
+    neb.api.getAccountState(fromAddress).then((accstate) => {
+        console.log(JSON.stringify(accstate));
+        let _nonce = parseInt(accstate.nonce) + 1;
+        handSmartContract(_nonce, contractParms);     
+    });
+}
+
+function handleRewardAllSmartContract(challengeId) {
+	console.log("RewardAll--", challengeId;
+	contractParms = {
+        function: "RewardAll",
+        args: JSON.stringify([challengeId])
     }
     neb.api.getAccountState(fromAddress).then((accstate) => {
         console.log(JSON.stringify(accstate));
@@ -357,6 +370,9 @@ exports.closeChallenge = function (req, res) {
     }
     else {
       console.log('Update Up Votes successfully for challenge:' + challenge_id, results);
+      
+      // RewardAll: function (challengeId)
+      handleRewardAllSmartContract(challenge_id)
       res.redirect('/getChallengebyID/' + challenge_id);
     }
   });
