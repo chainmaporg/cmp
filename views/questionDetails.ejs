@@ -90,6 +90,9 @@
                                         <span class="question-view">
                                             <i class="icon-user"></i><%=data.challengedetails[0].view_count%> views</span>
                                         <span class="single-question-vote-result"><%=data.challengedetails[0].upvote_count - data.challengedetails[0].downvote_count%></span>
+                                        <%
+                                        if (data.challengedetails[0].is_closed == 0){
+                                        %>
                                         <ul class="single-question-vote">
                                             <li>
                                                 <a href="/dislikeChallenge/<%=data.challengedetails[0].challenge_id%>" class="single-question-vote-down" title="Dislike">
@@ -102,6 +105,7 @@
                                                 </a>
                                             </li>
                                         </ul>
+                                    <% } %>
                                         <div class="clearfix"></div>
                                     </div>
                                 </article>
@@ -239,6 +243,9 @@
                                                         <div class="comment-author">
                                                             <a href="/userProfile/<%=data.answers[i].user_id%>"><%=data.answers[i].user_name%></a>
                                                         </div>
+                                                        <%
+                                        if (data.challengedetails[0].is_closed == 0){
+                                        %>
                                                         <div class="comment-vote">
                                                             <ul class="question-vote">
                                                                 <li>
@@ -249,6 +256,7 @@
                                                                 </li>
                                                             </ul>
                                                         </div>
+                                                        <% } %>
                                                         <span class="question-vote-result"><%=data.answers[i].upvote_count - data.answers[i].downvote_count%></span>
                                                         <div class="comment-meta">
                                                             <div class="date">
