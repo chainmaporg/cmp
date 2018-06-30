@@ -49,6 +49,7 @@ exports.login = function (req, res) {
           session = req.session;
           session.email = req.body.email
           session.user_id = results[0].user_id
+          session.wallet = results[0].payment_address.trim()
           console.log("logged in ");
           res.redirect('/questionBoard');
         }

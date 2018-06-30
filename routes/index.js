@@ -1,8 +1,10 @@
 //Env related changes
 var chainmap_env = "local";
 var chainUrl = "https://testnet.nebulas.io";
-var smartcontract_address = "n1hUzRN5otB4CS3zUH97Xa3ob8UT82yGw97";
+//var smartContract_address = "n1hUzRN5otB4CS3zUH97Xa3ob8UT82yGw97";
+var smartContract_address = "n1eP44t9cXuZz2CLbCF6qdHdZVkCvBMN5sE"
 var ChainId = 1001; //1:mainNet 100:local; 1001:testnet
+var chainmapServerWallet = "n1GvvvstiCXUKBaeYniqRGeoAdMkMHoipvc"
 
 
 var Nebulas = require("../neb/nebindex");
@@ -13,13 +15,18 @@ var Neb = Nebulas.Neb;
 var neb = new Neb();
 neb.setRequest(new Nebulas.HttpRequest(chainUrl))
 var Account = Nebulas.Account;
+
 var cmAccount = Account.NewAccount();
+cmAccount.fromKey('{"version":4,"id":"036bc2ad-a5f6-4c97-858a-f789a65e9e62","address":"n1GvvvstiCXUKBaeYniqRGeoAdMkMHoipvc","crypto":{"ciphertext":"f4ec07ed03ac7a31700006a3435ef77aded9e26cf9474717ed736b2f526f55a3","cipherparams":{"iv":"2ed05d457a5b2fe017d91e822ce16721"},"cipher":"aes-128-ctr","kdf":"scrypt","kdfparams":{"dklen":32,"salt":"50d4c9e29696acd616774891da23035d4ac7e7464eb9b2e32e0832cd8c040a81","n":4096,"r":8,"p":1},"mac":"c415adcad092d54135a9975eafe844b1af170fc637e7dfb910836fc6649c48c3","machash":"sha3256"}}', 'MyDongFangHong_05', false)
+
 
 //Export to make other function access
-exports.envChainId= envChainId
+exports.envChainId= ChainId
 exports.Nebulas = Nebulas
 exports.cmAccount = cmAccount
-exports.smartcontract_address = smartcontract_address
+exports.smartContract_address = smartContract_address
+exports.chainUrl = chainUrl
+exports.chainmapServerWallet = chainmapServerWallet
 
 var express = require('express');
 var SolrNode = require('solr-node');
