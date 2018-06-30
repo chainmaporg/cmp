@@ -232,12 +232,12 @@
                                         <li class="comment">
                                             <div class="comment-body comment-body-answered clearfix">
                                                 <div class="avatar">
-                                                    <img alt="" src="http://placehold.it/60x60/FFF/444">
+                                                    <img alt="" src="/image/111.png">
                                                 </div>
                                                 <div class="comment-text">
                                                     <div class="author clearfix">
                                                         <div class="comment-author">
-                                                            <a href="javascript:"><%=data.answers[i].user_name%></a>
+                                                            <a href="/userProfile/<%=data.answers[i].user_id%>"><%=data.answers[i].user_name%></a>
                                                         </div>
                                                         <div class="comment-vote">
                                                             <ul class="question-vote">
@@ -263,8 +263,8 @@
                                                                 <%=data.answers[i].description%>
                                                         </p>
                                                     </div>
-                                                    <div class="question-answered question-answered-done">
-                                                        <i class="icon-ok"></i>Best Answer</div>
+                                                    <!-- <div class="question-answered question-answered-done">
+                                                        <i class="icon-ok"></i>Best Answer</div> -->
                                                 </div>
                                             </div>
                                         </li>
@@ -295,7 +295,7 @@
                                     </form>
                                 </div>
                                 <% } %>
-                                <div class="post-next-prev clearfix">
+                                <!-- <div class="post-next-prev clearfix">
                                     <p class="prev-post">
                                         <a href="#">
                                             <i class="icon-double-angle-left"></i>&nbsp;Prev question</a>
@@ -305,7 +305,7 @@
                                             <i class="icon-double-angle-right"></i>
                                         </a>
                                     </p>
-                                </div>
+                                </div> -->
                                 <!-- End post-next-prev -->
                             </div>
                             <!-- End main -->

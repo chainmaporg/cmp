@@ -7,3 +7,4 @@ routes/.DS_Store
 *.PDF
 *.log
 .vscode
+.idea

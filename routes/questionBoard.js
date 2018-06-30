@@ -143,14 +143,14 @@ handleDisconnect();
 
 exports.postChallenge = function (req, res) {
   console.log("req", req.body);
-
+  session = req.session;
   var today = new Date();
   var session = req.session;
   var address = session.wallet;
   
   
   var ChallengeQuestionInfo = {
-    "post_user_id": 1,
+    "post_user_id": session.user_id,
     "description": req.body.ChallengeQuestion,
     "upvote_count": 0,
     "downvote_count": 0,
@@ -181,12 +181,13 @@ exports.postChallenge = function (req, res) {
 
 exports.postanswer = function (req, res) {
   console.log("req", req.body);
+  session = req.session;
   var today = new Date();
   var session = req.session;
   var address = session.wallet;
   
   var ChallengeAnswerInfo = {
-    "post_user_id": 2,
+    "post_user_id": session.user_id,
     "description": req.body.description,
     "challenge_id": req.body.challenge_id,
     "downvote_count": 0,

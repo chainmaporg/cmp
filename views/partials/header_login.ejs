@@ -33,9 +33,7 @@
             <div class="col-md-6">
                 <div class="page-content Register">
                     <h2>Register Now</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi adipiscing gravdio, sit amet suscipit
-                        risus ultrices eu. Fusce viverra neque at purus laoreet consequa. Vivamus vulputate posuere nisl
-                        quis consequat.</p>
+                    <p></p>
                     <a class="button color small signup">Create an account</a>
                 </div>
                 <!-- End page-content -->
@@ -138,6 +136,12 @@
                         <span>*</span>
                     </label>
                     <input type="password" name="password" id="userPasswd" required>
+                </p>
+                <p>
+                    <label class="required">Confirm Password
+                        <span>*</span>
+                    </label>
+                    <input type="password" name="confirmPassword" id="confirmPassword" required>
                 </p>
                 <p>
                     <label class="required">User Payment Address
@@ -248,6 +252,8 @@
             // alert("Please insert User Email");
         } else if ($("#userPasswd").val() == "") {
             // alert("Please insert User Password");
+        }else if ($("#userPasswd").val() != $("#confirmPassword").val()) {
+             alert("Password do not match. Please check again.");
         } else {
             data = {
                 // 'mode': gMode,
@@ -272,7 +278,6 @@
                 data: data,
                 async: false,
                 success: function (data) {
-                    alert(data);
                     if (data.msg == "duplicateUserEmail") {
                         alert("Email is duplicate.");
                     }

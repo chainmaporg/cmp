@@ -151,4 +151,52 @@ exports.getCompanies = function (req, res) {
   });
 }
 
+exports.userProfile = function (req, res) {
+  userID = req.params.user_id;
+  resultObj = {}
+  connection.query('select * from user where user_id=?',[userID], function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+    } else {
+      resultObj['userProfile'] = results;
+      connection.query('SELECT (select count(*) from challenge where challenge.post_user_id = ?) as total_challenge, (select COUNT(*) FROM answer where answer.post_user_id = ?) as total_answer',[userID, userID], function (error, results, fields) {
+        if (error) {
+          console.log("error ocurred", error);
+          res.render("error", { errorMsg: "Error on insertion into DB Users" })
+    
+        } else {
+          resultObj['questions'] = results[0].total_challenge;
+          resultObj['answers'] = results[0].total_answer;
+          connection.query('select challenge.*, `user`.user_name, `user`.user_id, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers from challenge join `user` on challenge.post_user_id = `user`.user_id where `user`.user_id = ? ORDER BY posting_date DESC',[userID], function (error, results, fields) {
+            if (error) {
+              console.log("error ocurred", error);
+              res.render("error", { errorMsg: "Error on insertion into DB Users" })
+        
+            } else {
+              resultObj['allQuestions'] = results;
+              console.log('Total data from the userProfile request: ', resultObj);
+              res.render('userProfile', { data: resultObj });              
+            }
+          });
+        }
+      });
+    }
+  });
+}
+
+exports.tokenRanking = function (req, res) {
+  connection.query('select `user`.*, ((select count(*) as total from challenge where post_user_id = `user`.user_id) + (select count(*) as total from answer where post_user_id = `user`.user_id)) as total from `user` ORDER BY total DESC limit 5', function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+    } else {
+      console.log(results)
+      res.send({'users':results});
+    }
+  });
+}
+
 // module.exports = router;
