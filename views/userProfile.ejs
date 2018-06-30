@@ -85,11 +85,12 @@
                                                             </span>
                                                         </li>
                                                         <%
-                                        if (typeof data.userProfile[0].payment_address !== 'undefined'){
+                                        if (data.userProfile[0].payment_address.length > 0 ){
                                         %>
                                                             <li>
                                                                 <i class="icon-plus"></i>Payment address :
                                                                 <span>
+                                                                    
                                                                     <%=data.userProfile[0].payment_address%>
                                                                 </span>
                                                             </li>
@@ -211,10 +212,7 @@
                                                                         <%=data.allQuestions[i].title%>
                                                                     </a>
                                                                 </h3>
-                                                                <div class="question-type-main">
-                                                                    <i class="icon-question-sign"></i>
-                                                                    <%=data.allQuestions[i].level%>
-                                                                </div>
+
                                                                 <div class="question-content">
                                                                     <div class="question-bottom">
                                                                         <div class="question-answered">
@@ -233,6 +231,11 @@
                                                                                             <%=data.allQuestions[i].category%>
                                                                                         </a>
                                                                                     </span>
+                                                                                    <span>
+                                                                                        <i class="icon-lightbulb"></i>
+                                                                                        <%=data.allQuestions[i].level%>
+                                                                                    </span>
+
                                                                                     <span class="question-date">
                                                                                         <i class="icon-time"></i>
                                                                                         <%=data.allQuestions[i].posting_date%>
@@ -278,10 +281,7 @@
                                                                             <%=data.allansweredQuestions[i].title%>
                                                                         </a>
                                                                     </h3>
-                                                                    <div class="question-type-main">
-                                                                        <i class="icon-question-sign"></i>
-                                                                        <%=data.allansweredQuestions[i].level%>
-                                                                    </div>
+
                                                                     <div class="question-content">
                                                                         <div class="question-bottom">
                                                                             <div class="question-answered">
@@ -303,6 +303,10 @@
                                                                                         <span class="question-date">
                                                                                             <i class="icon-time"></i>
                                                                                             <%=data.allansweredQuestions[i].posting_date%>
+                                                                                        </span>
+                                                                                        <span>
+                                                                                            <i class="icon-lightbulb"></i>
+                                                                                            <%=data.allansweredQuestions[i].level%>
                                                                                         </span>
                                                                                         <span class="question-comment">
                                                                                             <a href="javascript:">

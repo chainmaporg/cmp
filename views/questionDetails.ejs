@@ -27,7 +27,9 @@
                         <section class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h1><%=data.challengedetails[0].title%></h1>
+                                    <h1>
+                                        <%=data.challengedetails[0].title%>
+                                    </h1>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="crumbs">
@@ -35,7 +37,9 @@
                                         <span class="crumbs-span">/</span>
                                         <a href="/questionBoard">Challenges</a>
                                         <span class="crumbs-span">/</span>
-                                        <span class="current"><%=data.challengedetails[0].title%></span>
+                                        <span class="current">
+                                            <%=data.challengedetails[0].title%>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -50,64 +54,78 @@
                             <div class="col-md-9">
                                 <article class="question single-question question-type-normal">
                                     <h2>
-                                        <a href="/getChallengebyID/<%=data.challengedetails[0].challenge_id%>"><%=data.challengedetails[0].title%></a>
+                                        <a href="/getChallengebyID/<%=data.challengedetails[0].challenge_id%>">
+                                            <%=data.challengedetails[0].title%>
+                                        </a>
                                     </h2>
-                                    
+
                                     <%
                                         if (session.user_id == data.challengedetails[0].user_id && data.challengedetails[0].is_closed == 0){
                                         %>
-                                                                            <div class="question-type-main" style="background-color: white">
-                                                                                <a href="/closeChallenge/<%=data.challengedetails[0].challenge_id%>" class="button small green-button custom-button">Close Challenge</a>
-                                                                            </div>
-                                                                            <% } %>
-                                    <div class="question-inner">
-                                        <div class="clearfix"></div>
-                                        <div class="question-desc">
-                                            <p>
-                                                <%=data.challengedetails[0].description%>
-                                            </p>
+                                        <div class="question-type-main" style="background-color: white">
+                                            <a href="/closeChallenge/<%=data.challengedetails[0].challenge_id%>" class="button small green-button custom-button">Close Challenge</a>
                                         </div>
-                                        <div class="question-details">
-                                                <%
+                                        <% } %>
+                                            <div class="question-inner">
+                                                <div class="clearfix"></div>
+                                                <div class="question-desc">
+                                                    <p>
+                                                        <%=data.challengedetails[0].description%>
+                                                    </p>
+                                                </div>
+                                                <div class="question-details">
+                                                    <%
                                                 if (data.challengedetails[0].is_closed == 1){
                                                 %>
-                                            <span class="question-answered question-answered-done">
-                                                <i class="icon-ok"></i>Closed</span>
-                                                <% } %>
-                                            <!-- <span class="question-favorite">
+                                                        <span class="question-answered question-answered-done">
+                                                            <i class="icon-ok"></i>Closed</span>
+                                                        <% } %>
+                                                            <!-- <span class="question-favorite">
                                                 <i class="icon-star"></i>5</span> -->
-                                        </div>
-                                        <span class="question-category">
-                                            <a href="javascript:">
-                                                <i class="icon-folder-close"></i><%=data.challengedetails[0].category%></a>
-                                        </span>
-                                        <span class="question-date">
-                                            <i class="icon-time"></i><%=data.challengedetails[0].posting_date%></span>
-                                        <span class="question-comment">
-                                            <a href="javascript:">
-                                                <i class="icon-comment"></i><%=data.challengedetails[0].total_answers%> Answer</a>
-                                        </span>
-                                        <span class="question-view">
-                                            <i class="icon-user"></i><%=data.challengedetails[0].view_count%> views</span>
-                                        <span class="single-question-vote-result"><%=data.challengedetails[0].upvote_count - data.challengedetails[0].downvote_count%></span>
-                                        <%
+                                                </div>
+                                                <span class="question-category">
+                                                    <a href="javascript:">
+                                                        <i class="icon-folder-close"></i>
+                                                        <%=data.challengedetails[0].category%>
+                                                    </a>
+                                                </span>
+                                                <span>
+                                                    <i class="icon-lightbulb"></i>
+                                                    <%=data.challengedetails[0].level%>
+                                                </span>
+                                                <span class="question-date">
+                                                    <i class="icon-time"></i>
+                                                    <%=data.challengedetails[0].posting_date%>
+                                                </span>
+                                                <span class="question-comment">
+                                                    <a href="javascript:">
+                                                        <i class="icon-comment"></i>
+                                                        <%=data.challengedetails[0].total_answers%> Answer</a>
+                                                </span>
+                                                <span class="question-view">
+                                                    <i class="icon-user"></i>
+                                                    <%=data.challengedetails[0].view_count%> views</span>
+                                                <span class="single-question-vote-result">
+                                                    <%=data.challengedetails[0].upvote_count - data.challengedetails[0].downvote_count%>
+                                                </span>
+                                                <%
                                         if (data.challengedetails[0].is_closed == 0){
                                         %>
-                                        <ul class="single-question-vote">
-                                            <li>
-                                                <a href="/dislikeChallenge/<%=data.challengedetails[0].challenge_id%>" class="single-question-vote-down" title="Dislike">
-                                                    <i class="icon-thumbs-down"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="/likeChallenge/<%=data.challengedetails[0].challenge_id%>" class="single-question-vote-up" title="Like">
-                                                    <i class="icon-thumbs-up"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    <% } %>
-                                        <div class="clearfix"></div>
-                                    </div>
+                                                    <ul class="single-question-vote">
+                                                        <li>
+                                                            <a href="/dislikeChallenge/<%=data.challengedetails[0].challenge_id%>" class="single-question-vote-down" title="Dislike">
+                                                                <i class="icon-thumbs-down"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/likeChallenge/<%=data.challengedetails[0].challenge_id%>" class="single-question-vote-up" title="Like">
+                                                                <i class="icon-thumbs-up"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                    <% } %>
+                                                        <div class="clearfix"></div>
+                                            </div>
                                 </article>
 
                                 <!-- <div class="share-tags page-content">
@@ -228,55 +246,65 @@
                                 <div id="commentlist" class="page-content">
                                     <div class="boxedtitle page-title">
                                         <h2>Answers (
-                                            <span class="color"><%=data.challengedetails[0].total_answers%></span> )</h2>
+                                            <span class="color">
+                                                <%=data.challengedetails[0].total_answers%>
+                                            </span> )</h2>
                                     </div>
                                     <ol class="commentlist clearfix">
-                                            <% if(data.answers.length){ 
+                                        <% if(data.answers.length){ 
                                                 for(var i = 0;i < data.answers.length;i++) { %>
-                                        <li class="comment">
-                                            <div class="comment-body comment-body-answered clearfix">
-                                                <div class="avatar">
-                                                    <img alt="" src="/image/111.png">
-                                                </div>
-                                                <div class="comment-text">
-                                                    <div class="author clearfix">
-                                                        <div class="comment-author">
-                                                            <a href="/userProfile/<%=data.answers[i].user_id%>"><%=data.answers[i].user_name%></a>
-                                                        </div>
-                                                        <%
+                                            <li class="comment">
+                                                <div class="comment-body comment-body-answered clearfix">
+                                                    <div class="avatar">
+                                                        <img alt="" src="/image/111.png">
+                                                    </div>
+                                                    <div class="comment-text">
+                                                        <div class="author clearfix">
+                                                            <div class="comment-author">
+                                                                <a href="/userProfile/<%=data.answers[i].user_id%>">
+                                                                    <%=data.answers[i].user_name%>
+                                                                </a>
+                                                            </div>
+                                                            <%
                                         if (data.challengedetails[0].is_closed == 0){
                                         %>
-                                                        <div class="comment-vote">
-                                                            <ul class="question-vote">
-                                                                <li>
-                                                                    <a href="/likeAnswer/<%=data.challengedetails[0].challenge_id%>/<%=data.answers[i].answer_id%>" class="question-vote-up" title="Like"></a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="/dislikeAnswer/<%=data.challengedetails[0].challenge_id%>/<%=data.answers[i].answer_id%>" class="question-vote-down" title="Dislike"></a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <% } %>
-                                                        <span class="question-vote-result"><%=data.answers[i].upvote_count - data.answers[i].downvote_count%></span>
-                                                        <div class="comment-meta">
-                                                            <div class="date">
-                                                                <i class="icon-time"></i><%=data.answers[i].posting_date%></div>
-                                                        </div>
-                                                        <!-- we will develop the reply feature later -->
-                                                        <!-- <a class="comment-reply" href="#">
+                                                                <div class="comment-vote">
+                                                                    <ul class="question-vote">
+                                                                        <li>
+                                                                            <a href="/likeAnswer/<%=data.challengedetails[0].challenge_id%>/<%=data.answers[i].answer_id%>" class="question-vote-up"
+                                                                                title="Like"></a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="/dislikeAnswer/<%=data.challengedetails[0].challenge_id%>/<%=data.answers[i].answer_id%>" class="question-vote-down"
+                                                                                title="Dislike"></a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <% } %>
+                                                                    <span class="question-vote-result">
+                                                                        <%=data.answers[i].upvote_count - data.answers[i].downvote_count%>
+                                                                    </span>
+                                                                    <div class="comment-meta">
+                                                                        <div class="date">
+                                                                            <i class="icon-time"></i>
+                                                                            <%=data.answers[i].posting_date%>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- we will develop the reply feature later -->
+                                                                    <!-- <a class="comment-reply" href="#">
                                                             <i class="icon-reply"></i>Reply</a> -->
-                                                    </div>
-                                                    <div class="text">
-                                                        <p>
+                                                        </div>
+                                                        <div class="text">
+                                                            <p>
                                                                 <%=data.answers[i].description%>
-                                                        </p>
-                                                    </div>
-                                                    <!-- <div class="question-answered question-answered-done">
+                                                            </p>
+                                                        </div>
+                                                        <!-- <div class="question-answered question-answered-done">
                                                         <i class="icon-ok"></i>Best Answer</div> -->
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </li>
-                                        <% }} %>
+                                            </li>
+                                            <% }} %>
                                     </ol>
                                     <!-- End commentlist -->
                                 </div>
@@ -284,26 +312,26 @@
                                 <%
                                         if (data.challengedetails[0].is_closed == 0){
                                         %>
-                                <div id="respond" class="comment-respond page-content clearfix">
-                                    <div class="boxedtitle page-title">
-                                        <h2>Leave an answer</h2>
-                                    </div>
-                                    <form action="javascript:" method="post" id="commentform" class="comment-form">
-                                        <div id="respond-textarea">
-                                            <p>
-                                                <label class="required" for="comment">Answer
-                                                    <span>*</span>
-                                                </label>
-                                                <textarea id="answer" name="answer" aria-required="true" cols="58" rows="8"></textarea>
-                                            </p>
+                                    <div id="respond" class="comment-respond page-content clearfix">
+                                        <div class="boxedtitle page-title">
+                                            <h2>Leave an answer</h2>
                                         </div>
-                                        <p class="form-submit">
-                                            <input name="submit" type="submit" id="submit" value="Post your answer" class="button small color" onclick="getvaluesToAnswer('<%=data.challengedetails[0].challenge_id%>');">
-                                        </p>
-                                    </form>
-                                </div>
-                                <% } %>
-                                <!-- <div class="post-next-prev clearfix">
+                                        <form action="javascript:" method="post" id="commentform" class="comment-form">
+                                            <div id="respond-textarea">
+                                                <p>
+                                                    <label class="required" for="comment">Answer
+                                                        <span>*</span>
+                                                    </label>
+                                                    <textarea id="answer" name="answer" aria-required="true" cols="58" rows="8"></textarea>
+                                                </p>
+                                            </div>
+                                            <p class="form-submit">
+                                                <input name="submit" type="submit" id="submit" value="Post your answer" class="button small color" onclick="getvaluesToAnswer('<%=data.challengedetails[0].challenge_id%>');">
+                                            </p>
+                                        </form>
+                                    </div>
+                                    <% } %>
+                                        <!-- <div class="post-next-prev clearfix">
                                     <p class="prev-post">
                                         <a href="#">
                                             <i class="icon-double-angle-left"></i>&nbsp;Prev question</a>
@@ -314,19 +342,19 @@
                                         </a>
                                     </p>
                                 </div> -->
-                                <!-- End post-next-prev -->
+                                        <!-- End post-next-prev -->
                             </div>
                             <!-- End main -->
                             <% include ./partials/sidebar %>
-                            <!-- End sidebar -->
+                                <!-- End sidebar -->
                         </div>
                         <!-- End row -->
                     </section>
                     <!-- End container -->
 
-                                        <!-- body footer start -->
-                                        <% include ./partials/body_footer %>
-                                        <!-- body footer end -->
+                    <!-- body footer start -->
+                    <% include ./partials/body_footer %>
+                        <!-- body footer end -->
         </div>
         <!-- End wrap -->
 
@@ -356,4 +384,5 @@
             </script>
     </body>
     <!-- body part end -->
+
 </html>
