@@ -217,7 +217,7 @@ exports.postanswer = function (req, res) {
     } else {
       console.log('The information saved successfully', results);
  	  //Handle the answer
-      handleAnswerSmartContract(address,challengeId, results.insertId, ChallengeAnswerInfo.description)
+      handleAnswerSmartContract(address,ChallengeAnswerInfo.challenge_id, results.insertId, ChallengeAnswerInfo.description)
 
       res.send('success');
 
