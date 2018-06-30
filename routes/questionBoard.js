@@ -2,7 +2,125 @@
 var mysql = require('mysql');
 var index = require('../routes/index');
 
-var db_config = index.db_config
+var db_config = index.db_config;
+var Nebulas = index.Nebulas;
+var cmAccount = index.cmAccount;
+var fromAddress = cmAccount.getAddressString();
+var envChainId = index.envChainId;
+var smartContract_address = index.smartContract_address; 
+var Neb = Nebulas.Neb;
+var neb = new Neb();
+var chainmapServerWallet = index.chainmapServerWallet;
+
+neb.setRequest(new Nebulas.HttpRequest(index.chainUrl))
+
+//   PostChallenge: function(address, challengeId, challengeLevel, challenge, timeEstimation){
+//   AnswerChallenge: function(address,challengeId, answerId, answer){
+//   VoteAnswer: function(address,challengeId,answerId,result){
+
+
+function handSmartContract(nonce, contractParms) {
+	console.log(contractParms)
+	var tx = new Nebulas.Transaction({
+        chainID: envChainId,
+        from: cmAccount,
+        to: smartContract_address,
+        value: 0,
+        nonce: nonce,
+        gasPrice: 1000000,
+        gasLimit: 1000000,
+        contract: contractParms,
+        });
+ 
+	console.log("working...signTransaction()")                
+	tx.signTransaction();
+	console.log("working...sendTx")
+	waitSmartContractReceipt(neb, tx)
+	console.log("Finishing waiting!")
+}
+
+
+function waitSmartContractReceipt(neb, tx) {
+	//send a transfer request to the NAS node
+	neb.api.sendRawTransaction({
+            data: tx.toProtoString()
+        }).then((result) => {
+            let txhash = result.txhash;
+            let trigger = setInterval(() => {
+                neb.api.getTransactionReceipt({ hash: txhash }).then((receipt) => {
+                    console.log("txhash:", txhash)
+                    console.log('status', receipt.status);
+                    if (receipt.status != 2) //not in pending
+                    {
+                        console.log(JSON.stringify(receipt));
+                        clearInterval(trigger);
+                    }
+                });
+            }, 2000);
+
+        });
+}
+
+
+
+
+function handChallengeSmartContract(address,challengeId, challengeLevel, challenge, timeEstimation) {
+	console.log("PostChallenge--", address, challengeId,challengeLevel,challenge,timeEstimation);
+	contractParms = {
+        function: "PostChallenge",
+        args: JSON.stringify([address, challengeId, challengeLevel,challenge,timeEstimation])
+    }
+    neb.api.getAccountState(fromAddress).then((accstate) => {
+        console.log(JSON.stringify(accstate));
+        let _nonce = parseInt(accstate.nonce) + 1;
+        handSmartContract(_nonce, contractParms);     
+    });
+}
+
+    
+    
+function handleAnswerSmartContract(address, challengeId, answerId, answer) {
+	console.log("AnswerChallenge--", address, challengeId, answerId, answer);
+	contractParms = {
+        function: "AnswerChallenge",
+        args: JSON.stringify([address, challengeId, answerId, answer])
+    }
+    
+    
+    neb.api.getAccountState(fromAddress).then((accstate) => {
+        console.log(JSON.stringify(accstate));
+        let _nonce = parseInt(accstate.nonce) + 1;
+        handSmartContract(_nonce, contractParms);     
+    });
+
+}
+
+function handleVoteSmartContract(address, challengeId,answerId,result) {
+	console.log("VoteAnswer--", address, challengeId,answerId,result);
+	contractParms = {
+        function: "VoteAnswer",
+        args: JSON.stringify([address, challengeId,answerId,result])
+    }
+    neb.api.getAccountState(fromAddress).then((accstate) => {
+        console.log(JSON.stringify(accstate));
+        let _nonce = parseInt(accstate.nonce) + 1;
+        handSmartContract(_nonce, contractParms);     
+    });
+}
+
+function handleRewardAllSmartContract(challengeId) {
+	console.log("RewardAll--", challengeId);
+	contractParms = {
+        function: "RewardAll",
+        args: JSON.stringify([challengeId])
+    }
+    neb.api.getAccountState(fromAddress).then((accstate) => {
+        console.log(JSON.stringify(accstate));
+        let _nonce = parseInt(accstate.nonce) + 1;
+        handSmartContract(_nonce, contractParms);     
+    });
+}
+
 
 
 var connection;
@@ -40,6 +158,10 @@ exports.postChallenge = function (req, res) {
   console.log("req", req.body);
   session = req.session;
   var today = new Date();
+  var session = req.session;
+  var address = session.wallet;
+  
+  
   var ChallengeQuestionInfo = {
     "post_user_id": session.user_id,
     "description": req.body.ChallengeQuestion,
@@ -59,17 +181,24 @@ exports.postChallenge = function (req, res) {
 
     } else {
       console.log('The information saved successfully', results);
+      insertId = results.insertId;
+      //Handle the challenge
+      handChallengeSmartContract(address, insertId, ChallengeQuestionInfo.level, ChallengeQuestionInfo.description, 0);
       res.redirect('questionBoard');
 
     }
   });
-
+  
+  
 }
 
 exports.postanswer = function (req, res) {
   console.log("req", req.body);
   session = req.session;
   var today = new Date();
+  var session = req.session;
+  var address = session.wallet;
+  
   var ChallengeAnswerInfo = {
     "post_user_id": session.user_id,
     "description": req.body.description,
@@ -87,11 +216,15 @@ exports.postanswer = function (req, res) {
 
     } else {
       console.log('The information saved successfully', results);
+ 	  //Handle the answer
+      handleAnswerSmartContract(address,ChallengeAnswerInfo.challenge_id, results.insertId, ChallengeAnswerInfo.description)
+
       res.send('success');
 
     }
   });
-
+  
+ 
 }
 
 exports.getAllChallenge = function (req, res) {
@@ -162,6 +295,9 @@ exports.getAllChallenge = function (req, res) {
 exports.likeAnswer = function (req, res) {
   answer_id = req.params.answer_id;
   challenge_id = req.params.challenge_id;
+  var session = req.session;
+  var address = session.wallet;
+  
   connection.query("update answer set upvote_count=upvote_count+1 where answer_id=?", [answer_id], function (error, results, fields) {
     if (error) {
       console.log("error ocurred", error);
@@ -169,14 +305,20 @@ exports.likeAnswer = function (req, res) {
     }
     else {
       console.log('Update Up Votes successfully for answer:' + answer_id, results);
+      handleVoteSmartContract(address, challenge_id, answer_id, true);
+
       res.redirect('/getChallengebyID/' + challenge_id);
     }
   });
+  
+
 }
 
 exports.dislikeAnswer = function (req, res) {
   answer_id = req.params.answer_id;
   challenge_id = req.params.challenge_id;
+  var session = req.session;
+  var address = session.wallet;
   connection.query("update answer set downvote_count=downvote_count+1 where answer_id=?", [answer_id], function (error, results, fields) {
     if (error) {
       console.log("error ocurred", error);
@@ -184,9 +326,11 @@ exports.dislikeAnswer = function (req, res) {
     }
     else {
       console.log('Update Down Votes successfully for answer:' + answer_id, results);
+      handleVoteSmartContract(address, challenge_id, answer_id, false);
       res.redirect('/getChallengebyID/' + challenge_id);
     }
   });
+
 }
 
 exports.likeChallenge = function (req, res) {
@@ -226,6 +370,9 @@ exports.closeChallenge = function (req, res) {
     }
     else {
       console.log('Update Up Votes successfully for challenge:' + challenge_id, results);
+      
+      // RewardAll: function (challengeId)
+      handleRewardAllSmartContract(challenge_id)
       res.redirect('/getChallengebyID/' + challenge_id);
     }
   });
