@@ -9,7 +9,7 @@ hosts=("107.182.235.108")
 
 target=/home/deploy
 user=gezhao
-tarname=cmp-0.2.tar
+tarname=cmp-06-29.tar
 
 tar --exclude='./.git/' -cvf ../$tarname .
 
@@ -21,7 +21,7 @@ do
 
 
     echo "run command  ${cmds[$ix]} ..."
-    ssh $user@${hosts[$ix]} "cd $target; tar -xvf $tarname -C cmp; cd cmp; pwd; sh stopNode.sh; sh startNode.sh"
+    ssh $user@${hosts[$ix]} "cd $target; tar -xvf $tarname -C cmp; cd cmp; pwd; sudo sh stopNode.sh; sudo sh startNode.sh"
 done
 
 echo "deploy is done!"

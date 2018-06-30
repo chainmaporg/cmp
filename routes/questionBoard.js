@@ -217,7 +217,7 @@ exports.postanswer = function (req, res) {
     } else {
       console.log('The information saved successfully', results);
  	  //Handle the answer
-      handleAnswerSmartContract(address,challengeId, results.insertId, ChallengeAnswerInfo.description)
+      handleAnswerSmartContract(address,ChallengeAnswerInfo.challenge_id, results.insertId, ChallengeAnswerInfo.description)
 
       res.send('success');
 
@@ -305,7 +305,7 @@ exports.likeAnswer = function (req, res) {
     }
     else {
       console.log('Update Up Votes successfully for answer:' + answer_id, results);
-      handleVoteSmartContract(address, challengeId, answer_id, TRUE);
+      handleVoteSmartContract(address, challenge_id, answer_id, true);
 
       res.redirect('/getChallengebyID/' + challenge_id);
     }
@@ -326,7 +326,7 @@ exports.dislikeAnswer = function (req, res) {
     }
     else {
       console.log('Update Down Votes successfully for answer:' + answer_id, results);
-      handleVoteSmartContract(address, challengeId, answer_id, FALSE);
+      handleVoteSmartContract(address, challenge_id, answer_id, false);
       res.redirect('/getChallengebyID/' + challenge_id);
     }
   });
