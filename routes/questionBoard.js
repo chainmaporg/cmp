@@ -109,7 +109,7 @@ function handleVoteSmartContract(address, challengeId,answerId,result) {
 }
 
 function handleRewardAllSmartContract(challengeId) {
-	console.log("RewardAll--", challengeId;
+	console.log("RewardAll--", challengeId);
 	contractParms = {
         function: "RewardAll",
         args: JSON.stringify([challengeId])
