@@ -2,7 +2,8 @@
 var chainmap_env = "local";
 var chainUrl = "https://testnet.nebulas.io";
 //var smartContract_address = "n1hUzRN5otB4CS3zUH97Xa3ob8UT82yGw97";
-var smartContract_address = "n1eP44t9cXuZz2CLbCF6qdHdZVkCvBMN5sE"
+//var smartContract_address = "n1eP44t9cXuZz2CLbCF6qdHdZVkCvBMN5sE"
+var smartContract_address = "n225nUdyMcX5buQZpF4Zk5jZbYCdvkCv5gb"
 var ChainId = 1001; //1:mainNet 100:local; 1001:testnet
 var chainmapServerWallet = "n1GvvvstiCXUKBaeYniqRGeoAdMkMHoipvc"
 

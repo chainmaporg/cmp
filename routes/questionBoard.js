@@ -305,7 +305,7 @@ exports.likeAnswer = function (req, res) {
     }
     else {
       console.log('Update Up Votes successfully for answer:' + answer_id, results);
-      handleVoteSmartContract(address, challengeId, answer_id, TRUE);
+      handleVoteSmartContract(address, challenge_id, answer_id, true);
 
       res.redirect('/getChallengebyID/' + challenge_id);
     }
@@ -326,7 +326,7 @@ exports.dislikeAnswer = function (req, res) {
     }
     else {
       console.log('Update Down Votes successfully for answer:' + answer_id, results);
-      handleVoteSmartContract(address, challengeId, answer_id, FALSE);
+      handleVoteSmartContract(address, challenge_id, answer_id, false);
       res.redirect('/getChallengebyID/' + challenge_id);
     }
   });
