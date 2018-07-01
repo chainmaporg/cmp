@@ -365,21 +365,27 @@
                 function getvaluesToAnswer(challenge_id) {
                     var url = "/postanswer";
                     var answer = $("#answer").val();
-                    $.ajax({
-                        type: 'POST',
-                        url: url,
-                        data: {
-                            description: answer,
-                            challenge_id: challenge_id
-                        },
-                        async: false,
-                        success: function (data) {
-                            window.location.reload();
-                        },
-                        error: function () {
-                            alert('Error occured');
-                        }
-                    });
+                    if (answer.length <= 2) {
+                        alert('Please post some valid answer')
+                    }
+                    else {
+                        $.ajax({
+                            type: 'POST',
+                            url: url,
+                            data: {
+                                description: answer,
+                                challenge_id: challenge_id
+                            },
+                            async: false,
+                            success: function (data) {
+                                window.location.reload();
+                            },
+                            error: function () {
+                                alert('Error occured');
+                            }
+                        });
+                    }
+
                 }
             </script>
     </body>
