@@ -183,7 +183,8 @@ exports.postChallenge = function (req, res) {
       console.log('The information saved successfully', results);
       insertId = results.insertId;
       //Handle the challenge
-      handChallengeSmartContract(address, insertId, ChallengeQuestionInfo.level, ChallengeQuestionInfo.description, 0);
+      insertIdStr = insertId.toString();
+      handChallengeSmartContract(address, insertIdStr, ChallengeQuestionInfo.level, ChallengeQuestionInfo.description, 0);
       res.redirect('questionBoard');
 
     }
@@ -217,7 +218,10 @@ exports.postanswer = function (req, res) {
     } else {
       console.log('The information saved successfully', results);
  	  //Handle the answer
-      handleAnswerSmartContract(address,ChallengeAnswerInfo.challenge_id, results.insertId, ChallengeAnswerInfo.description)
+ 	  
+ 	  id= results.insertId;
+ 	  idStr = id.toString();
+      handleAnswerSmartContract(address,ChallengeAnswerInfo.challenge_id, idStr, ChallengeAnswerInfo.description)
 
       res.send('success');
 
@@ -247,7 +251,8 @@ exports.getAllChallenge = function (req, res) {
       //res.render('error');
     } else {
       resultObj['mostRecent'] = results;
-      console.log('The recent challenges are: ', results);
+      //This line can cause lots of logs
+      //console.log('The recent challenges are: ', results);
       connection.query('select challenge.*, `user`.user_name, `user`.user_id, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers from challenge join `user` on challenge.post_user_id = `user`.user_id ORDER BY view_count+upvote_count-downvote_count DESC', [], function (error, results, fields) {
         if (error) {
           console.log("error ocurred", { title: 'Error on handling challenge events' });
@@ -305,6 +310,7 @@ exports.likeAnswer = function (req, res) {
     }
     else {
       console.log('Update Up Votes successfully for answer:' + answer_id, results);
+      
       handleVoteSmartContract(address, challenge_id, answer_id, true);
 
       res.redirect('/getChallengebyID/' + challenge_id);

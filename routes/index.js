@@ -1,16 +1,12 @@
-//Env related changes
-var chainmap_env = "local";
-var chainUrl = "https://testnet.nebulas.io";
-//var smartContract_address = "n1hUzRN5otB4CS3zUH97Xa3ob8UT82yGw97";
-//var smartContract_address = "n1eP44t9cXuZz2CLbCF6qdHdZVkCvBMN5sE"
-var smartContract_address = "n225nUdyMcX5buQZpF4Zk5jZbYCdvkCv5gb"
-var ChainId = 1001; //1:mainNet 100:local; 1001:testnet
-var chainmapServerWallet = "n1GvvvstiCXUKBaeYniqRGeoAdMkMHoipvc"
+var deploy = require("../deploy_env");
+chainmap_env=deploy.chainmap_env
+chainUrl=deploy.chainUrl
+smartContract_address=deploy.smartContract_address
+ChainId=deploy.ChainId
+chainmapServerWallet=deploy.chainmapServerWallet
 
 
-var Nebulas = require("../neb/nebindex");
-
-
+var Nebulas = require("nebulas")
 
 var Neb = Nebulas.Neb;
 var neb = new Neb();
@@ -19,6 +15,8 @@ var Account = Nebulas.Account;
 
 var cmAccount = Account.NewAccount();
 cmAccount.fromKey('{"version":4,"id":"036bc2ad-a5f6-4c97-858a-f789a65e9e62","address":"n1GvvvstiCXUKBaeYniqRGeoAdMkMHoipvc","crypto":{"ciphertext":"f4ec07ed03ac7a31700006a3435ef77aded9e26cf9474717ed736b2f526f55a3","cipherparams":{"iv":"2ed05d457a5b2fe017d91e822ce16721"},"cipher":"aes-128-ctr","kdf":"scrypt","kdfparams":{"dklen":32,"salt":"50d4c9e29696acd616774891da23035d4ac7e7464eb9b2e32e0832cd8c040a81","n":4096,"r":8,"p":1},"mac":"c415adcad092d54135a9975eafe844b1af170fc637e7dfb910836fc6649c48c3","machash":"sha3256"}}', 'MyDongFangHong_05', false)
+
+cmAccount.fromKey('{"version":4,"id":"ff383f96-e822-4c58-a788-2a9270bb710b","address":"n1WzaxzW3yFVtJdj2udk53UDF5KopMV4E9x","crypto":{"ciphertext":"17ca7cea9184e4011fb209869a6155db806f62368370b3e2e48bd5a3f4d8a10f","cipherparams":{"iv":"e9a606ff705f4548934d20843d46fdcd"},"cipher":"aes-128-ctr","kdf":"scrypt","kdfparams":{"dklen":32,"salt":"940aaad84fc07e0b165afae34bab75b5bc4bdd6fb837e68de4b5c6f537c89a37","n":4096,"r":8,"p":1},"mac":"a1a4fcb577dc730dd57531f6cbe52614a45895d2fa7838f2515572b3d658a3e9","machash":"sha3256"}}', 'MyChainMapProduction', false)
 
 
 //Export to make other function access
@@ -55,7 +53,7 @@ else {
 
 }
 exports.db_config = db_config
-
+console.log("DB connection:",db_config)
 
 
 // var client = new SolrNode({
@@ -75,15 +73,22 @@ var client = new Client();
 // var objQuery = client.query().q({text:'test', title:'test'});
 // var myStrQuery = 'q=text:test&wt=json';
 
+
+var solr_host = deploy.search_solr_host;
+var engine_host = deploy.search_engine_host;
+
+
 router.get('/query/:category/:content', function (req, res, next) {
 
   var url = '';
   if (req.params.category == 'All') {
-    url = 'http://chainmap.org:8983/solr/chainmap/select?fl=title,%20summary,%20category&q=search_content:' + encodeURI(req.params.content) + '&wt=json';
+    url = solr_host + '/select?fl=title,%20summary,%20category&q=search_content:' + encodeURI(req.params.content) + '&wt=json';
   } else {
-    url = 'http://chainmap.org:8983/solr/chainmap/select?fl=title,%20summary,%20category&q=category:' + encodeURI(req.params.category) + '%20AND%20search_content:' + encodeURI(req.params.content) + '&wt=json';
+    url = solr_host + '/select?fl=title,%20summary,%20category&q=category:' + encodeURI(req.params.category) + '%20AND%20search_content:' + encodeURI(req.params.content) + '&wt=json';
   }
 
+  console.log("chainmap_search:",url)
+  
   client.get(url, function (data, response) {
     var obj = JSON.parse(data);
     res.send(obj);
@@ -91,22 +96,22 @@ router.get('/query/:category/:content', function (req, res, next) {
 });
 
 router.get('/resource/company/:name', function (req, res) {
-  res.redirect('http://chainmap.org/resource/company/' + req.params.name)
+  res.redirect(engine_host+'/resource/company/' + req.params.name)
 });
 
 router.get('/resource/ico/:name', function (req, res) {
   //http://chainmap.org/resource/ICO/Bitcoin%20Green
-  res.redirect('http://chainmap.org/resource/ICO/' + req.params.name)
+  res.redirect(engine_host+'/resource/ICO/' + req.params.name)
 });
 
 
 router.get('/resource/event/:name', function (req, res) {
-  res.redirect('http://chainmap.org/resource/event/' + req.params.name);
+  res.redirect(engine_host+'/resource/event/' + req.params.name);
 });
 
 
 router.get('/resource/white_paper/:name', function (req, res, next) {
-  res.redirect('http://chainmap.org/resource/white_paper/' + req.params.name);
+  res.redirect(engine_host+'/resource/white_paper/' + req.params.name);
 });
 
 router.get('/page', function (req, res) {
