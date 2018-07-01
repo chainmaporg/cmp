@@ -75,19 +75,13 @@ var client = new Client();
 // var objQuery = client.query().q({text:'test', title:'test'});
 // var myStrQuery = 'q=text:test&wt=json';
 
-var host = "107.181.170.169";
-
-var solr_host = 'http://' + host + ':8983/solr/chainmap';
-
-var engine_host = 'http://' + host + ':3000';
-
 router.get('/query/:category/:content', function (req, res, next) {
 
   var url = '';
   if (req.params.category == 'All') {
-    url = solr_host + '/select?fl=title,%20summary,%20category&q=search_content:' + encodeURI(req.params.content) + '&wt=json';
+    url = 'http://chainmap.org:8983/solr/chainmap/select?fl=title,%20summary,%20category&q=search_content:' + encodeURI(req.params.content) + '&wt=json';
   } else {
-    url = solr_host + '/select?fl=title,%20summary,%20category&q=category:' + encodeURI(req.params.category) + '%20AND%20search_content:' + encodeURI(req.params.content) + '&wt=json';
+    url = 'http://chainmap.org:8983/solr/chainmap/select?fl=title,%20summary,%20category&q=category:' + encodeURI(req.params.category) + '%20AND%20search_content:' + encodeURI(req.params.content) + '&wt=json';
   }
 
   client.get(url, function (data, response) {
@@ -97,22 +91,22 @@ router.get('/query/:category/:content', function (req, res, next) {
 });
 
 router.get('/resource/company/:name', function (req, res) {
-  res.redirect(engine_host + '/resource/company/' + req.params.name)
+  res.redirect('http://chainmap.org/resource/company/' + req.params.name)
 });
 
 router.get('/resource/ico/:name', function (req, res) {
   //http://chainmap.org/resource/ICO/Bitcoin%20Green
-  res.redirect(engine_host + '/resource/ICO/' + req.params.name)
+  res.redirect('http://chainmap.org/resource/ICO/' + req.params.name)
 });
 
 
 router.get('/resource/event/:name', function (req, res) {
-  res.redirect(engine_host + '/resource/event/' + req.params.name);
+  res.redirect('http://chainmap.org/resource/event/' + req.params.name);
 });
 
 
 router.get('/resource/white_paper/:name', function (req, res, next) {
-  res.redirect(engine_host + '/resource/white_paper/' + req.params.name);
+  res.redirect('http://chainmap.org/resource/white_paper/' + req.params.name);
 });
 
 router.get('/page', function (req, res) {
