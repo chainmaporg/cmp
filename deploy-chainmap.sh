@@ -5,11 +5,14 @@
 #Copy the artifacts over and start the process
 #Note: When folder is changing, then need to manual change
 
-hosts=("107.181.170.169")
+hosts=("107.182.235.108")
+
+cp deploy_env.js deploy_env.js.local
+cp ./deployment/production/deploy_env.js .
 
 target=/home/deploy
-user=root
-tarname=cmp-0.2.tar
+user=gezhao
+tarname=cmp-1.0.tar
 
 tar --exclude='./.git/' -cvf ../$tarname .
 
@@ -21,7 +24,7 @@ do
 
 
     echo "run command  ${cmds[$ix]} ..."
-    ssh $user@${hosts[$ix]} "cd $target; tar -xvf $tarname -C cmp; cd cmp; pwd; sh stopNode.sh; sh startNode.sh"
+    ssh $user@${hosts[$ix]} "cd $target; tar -xvf $tarname -C cmp; cd cmp; pwd; sudo sh stopNode.sh; sudo sh startNode.sh"
 done
 
 echo "deploy is done!"
