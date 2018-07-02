@@ -51,17 +51,15 @@
 					<div class="form-style form-style-3" id="question-submit">
 						<form action="/postChallenge" method="POST">
 							<div class="form-inputs clearfix">
-								<p>
-									<label class="required">Challenge Title<span>*</span></label>
-									<input type="text" id="question-title" required name="ChallengeHeader">
-									<span class="form-description">Please choose an appropriate title for the Challenge to answer it even easier .</span>
-								</p>
 								
 								<p>
 									<label class="required">Category<span>*</span></label>
 									<span class="styled-select">
 										<select required id="category" name="category">
 											<option value="">Please select a Category</option>
+                            <option value="Nebulas">Nebulas</option>
+                            <option value="Ethereum">Ethereum</option>
+                            <option value="Hyperledger">Hyperledger</option>											
                             <option value="Public Chain Infrastructure, consensus">Public Chain Infrastructure, consensus</option>
                             <option value="Smart Contract">Smart Contract</option>
                             <option value="dApp Backend">dApp Backend</option>
@@ -72,6 +70,14 @@
 									</span>
 									<span class="form-description">Please choose the appropriate section so easily search for your Challenge .</span>
 								</p>
+								
+								<p>
+									<label class="required">Challenge Title<span>*</span></label>
+									<input type="text" id="question-title" required name="ChallengeHeader">
+									<span class="form-description">Please choose an appropriate title for the Challenge to answer it even easier .</span>
+								</p>
+
+								
 								<p>
                                         <label class="required">Level<span>*</span></label>
                                         <span class="styled-select">
