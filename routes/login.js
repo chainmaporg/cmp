@@ -1,9 +1,6 @@
 
 var md5 = require('md5');
 
-var connection;
-
-
 exports.login = function (req, res) {
   var email = req.body.email;
   var password = md5(req.body.password);
