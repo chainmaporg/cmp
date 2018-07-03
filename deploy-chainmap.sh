@@ -14,7 +14,7 @@ target=/home/deploy
 user=gezhao
 tarname=cmp-1.0.tar
 
-tar --exclude='./.git/' -cvf ../$tarname .
+tar --exclude='./.git/' --exclude='./node_modules' -cvf ../$tarname .
 
 for ix in ${!hosts[*]}
 do
