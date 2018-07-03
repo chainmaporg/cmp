@@ -31,29 +31,7 @@ var express = require('express');
 var SolrNode = require('solr-node');
 var router = express.Router();
 
-var db_config
 
-//Let us all use cmpdb in all instances
-
-if (chainmap_env == "local") (
-  db_config = {
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'cmpdb'
-  }
-)
-else {
-  db_config = {
-    host: '107.181.170.169',
-    user: 'dbuser',
-    password: 'telenav123',
-    database: 'cmpdb'
-  }
-
-}
-exports.db_config = db_config
-console.log("DB connection:",db_config)
 
 
 // var client = new SolrNode({
