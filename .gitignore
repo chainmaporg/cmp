@@ -8,3 +8,4 @@ routes/.DS_Store
 *.log
 .vscode
 .idea
+env/*js
