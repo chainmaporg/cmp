@@ -89,15 +89,17 @@
                                                             <i class="icon-plus"></i>Payment address :
                                                             <span>
                                                                 <%
-                                        if (data.userProfile[0].payment_address.length > 0 ){
+                                        if (data.userProfile[0].payment_address.length > 0){
                                         %>
                                                                     <%=data.userProfile[0].payment_address%>
+                                                                    <% if (data.userProfile[0].user_id == session.user_id){ %>
                                                                         <span>
                                                                             <a href="javascript" id="EditPaymentAddressClick" class="button small blue-button custom-button">
                                                                                 <i class="icon-edit">Edit payment address</i>
                                                                             </a>
                                                                         </span>
-                                                                        <% } else {%>
+                                                                        <% }} else {%>
+                                                                            <% if (data.userProfile[0].user_id == session.user_id){ %>
                                                                             <blockquote>
                                                                                 <p>Payment address is not set.
                                                                                     <a href="https://medium.com/nebulasio/creating-a-nas-wallet-9d01b5fa2df6" target="_blank">You can check here to set up payment
@@ -110,7 +112,7 @@
                                                                                     </a>
                                                                                 </span>
                                                                             </blockquote>
-                                                                            <% } %>
+                                                                            <% }} %>
                                                             </span>
                                                         </li>
 
