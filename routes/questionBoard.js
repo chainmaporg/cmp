@@ -236,7 +236,7 @@ exports.getAllChallenge = function (req, res) {
         } else {
           resultObj['mostResponse'] = results;
           console.log('The Most response challenges are: ', results);
-          connection.query('select * from (select challenge.*, `user`.user_name, `user`.user_id, (SELECT max(answer.posting_date) as maximum FROM answer WHERE answer.challenge_id = challenge.challenge_id) as recent_answer, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answer from challenge join `user` on challenge.post_user_id = `user`.user_id) as innerTable where innerTable.recent_answer is not null', [], function (error, results, fields) {
+          connection.query('select * from (select challenge.*, `user`.user_name, `user`.user_id, (SELECT max(answer.posting_date) as maximum FROM answer WHERE answer.challenge_id = challenge.challenge_id) as recent_answer, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers from challenge join `user` on challenge.post_user_id = `user`.user_id) as innerTable where innerTable.recent_answer is not null', [], function (error, results, fields) {
             if (error) {
               console.log("error ocurred", { title: 'Error on handling challenge events' });
               res.send({
@@ -247,7 +247,7 @@ exports.getAllChallenge = function (req, res) {
             } else {
               resultObj['mostRecentAnswered'] = results;
               console.log('The Most recent answered challenges are: ', results);
-              connection.query('select * from (select challenge.*, `user`.user_name, `user`.user_id, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answer from challenge join `user` on challenge.post_user_id = `user`.user_id) as innerTable where total_answer = 0', [], function (error, results, fields) {
+              connection.query('select * from (select challenge.*, `user`.user_name, `user`.user_id, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers from challenge join `user` on challenge.post_user_id = `user`.user_id) as innerTable where total_answers = 0', [], function (error, results, fields) {
                 if (error) {
                   console.log("error ocurred", { title: 'Error on handling challenge events' });
                   res.send({
