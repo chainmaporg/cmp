@@ -154,7 +154,7 @@ exports.userProfile = function (req, res) {
 
                 } else {
                   resultObj['allansweredQuestions'] = results;
-                  console.log('Total data from the userProfile request: ', resultObj);
+                  // console.log('Total data from the userProfile request: ', resultObj);
 
                   res.render('userProfile', { data: resultObj });
                 }
@@ -177,6 +177,24 @@ exports.tokenRanking = function (req, res) {
     } else {
       console.log(results)
       res.send({ 'users': results });
+    }
+  });
+}
+
+exports.updatePaymentaddress = function (req, res) {
+  let session = req.session;
+  userID = session.user_id;
+  paymentAddress = req.body.paymentAddress;
+  console.log("User ID", userID)
+  console.log("payment Address", paymentAddress)
+  connection.query('update `user` set `user`.payment_address = ? WHERE user_id = ?',[paymentAddress,userID], function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+    } else {
+      console.log(results)
+      res.redirect('/userProfile/' + userID);
     }
   });
 }

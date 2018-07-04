@@ -84,17 +84,36 @@
                                                                 <%=data.userProfile[0].user_email%>
                                                             </span>
                                                         </li>
-                                                        <%
+
+                                                        <li>
+                                                            <i class="icon-plus"></i>Payment address :
+                                                            <span>
+                                                                <%
                                         if (data.userProfile[0].payment_address.length > 0 ){
                                         %>
-                                                            <li>
-                                                                <i class="icon-plus"></i>Payment address :
-                                                                <span>
-                                                                    
                                                                     <%=data.userProfile[0].payment_address%>
-                                                                </span>
-                                                            </li>
-                                                            <% } %>
+                                                                        <span>
+                                                                            <a href="javascript" id="EditPaymentAddressClick" class="button small blue-button custom-button">
+                                                                                <i class="icon-edit">Edit payment address</i>
+                                                                            </a>
+                                                                        </span>
+                                                                        <% } else {%>
+                                                                            <blockquote>
+                                                                                <p>Payment address is not set.
+                                                                                    <a href="https://medium.com/nebulasio/creating-a-nas-wallet-9d01b5fa2df6" target="_blank">You can check here to set up payment
+                                                                                        address.
+                                                                                    </a>
+                                                                                </p>
+                                                                                <span>
+                                                                                    <a href="javascript" id="EditPaymentAddressClick" class="button small blue-button custom-button">
+                                                                                        <i class="icon-edit">Add payment address</i>
+                                                                                    </a>
+                                                                                </span>
+                                                                            </blockquote>
+                                                                            <% } %>
+                                                            </span>
+                                                        </li>
+
                                                     </ul>
                                                 </div>
                                                 <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi adipiscing
@@ -196,7 +215,7 @@
                                         </div>
                                         <!-- End col-md-12 -->
 
-
+                                        <% if(data.allansweredQuestions.length){  %>
                                         <div class="col-md-12">
                                             <div class="page-content page-content-user-profile">
                                                 <div class="user-profile-widget">
@@ -204,7 +223,7 @@
 
                                                     <div class="user-questions">
 
-                                                        <% if(data.allQuestions.length){ 
+                                                        <% 
                                                                         for(var i = 0;i < data.allQuestions.length;i++) { %>
                                                             <article class="question user-question">
                                                                 <h3>
@@ -231,7 +250,7 @@
                                                                                             <%=data.allQuestions[i].category%>
                                                                                         </a>
                                                                                     </span>
-                                                                                    <span>
+                                                                                    <span class="question-category">
                                                                                         <i class="icon-lightbulb"></i>
                                                                                         <%=data.allQuestions[i].level%>
                                                                                     </span>
@@ -253,7 +272,7 @@
                                                                         </div>
                                                                     </div>
                                                             </article>
-                                                            <% }} %>
+                                                            <% } %>
                                                                 </div>
 
 
@@ -262,10 +281,11 @@
                                                 </div>
                                                 <!-- End page-content -->
                                             </div>
+                                            <% } %>
                                             <!-- End col-md-12 -->
 
 
-
+                                            <% if(data.allansweredQuestions.length){  %>
                                             <div class="col-md-12">
                                                 <div class="page-content page-content-user-profile">
                                                     <div class="user-profile-widget">
@@ -273,7 +293,7 @@
 
                                                         <div class="user-questions">
 
-                                                            <% if(data.allansweredQuestions.length){ 
+                                                            <% 
                                                                                 for(var i = 0;i < data.allansweredQuestions.length;i++) { %>
                                                                 <article class="question user-question">
                                                                     <h3>
@@ -300,14 +320,15 @@
                                                                                                 <%=data.allansweredQuestions[i].category%>
                                                                                             </a>
                                                                                         </span>
+                                                                                        <span class="question-category">
+                                                                                            <i class="icon-lightbulb"></i>
+                                                                                            <%=data.allansweredQuestions[i].level%>
+                                                                                        </span>
                                                                                         <span class="question-date">
                                                                                             <i class="icon-time"></i>
                                                                                             <%=data.allansweredQuestions[i].posting_date%>
                                                                                         </span>
-                                                                                        <span>
-                                                                                            <i class="icon-lightbulb"></i>
-                                                                                            <%=data.allansweredQuestions[i].level%>
-                                                                                        </span>
+                                                                                        
                                                                                         <span class="question-comment">
                                                                                             <a href="javascript:">
                                                                                                 <i class="icon-comment"></i>
@@ -321,7 +342,7 @@
                                                                             </div>
                                                                         </div>
                                                                 </article>
-                                                                <% }} %>
+                                                                <% } %>
                                                                     </div>
 
 
@@ -330,7 +351,7 @@
                                                     </div>
                                                     <!-- End page-content -->
                                                 </div>
-
+                                                <% } %>
 
 
 
@@ -376,6 +397,12 @@
                                     <% include ./partials/sidebar %>
                                         <!-- End sidebar -->
                                 </div>
+
+
+
+
+
+
                                 <!-- End row -->
                     </section>
                     <!-- End container -->
