@@ -1,7 +1,7 @@
 //Env related changes
 var chainmap_env = "server";
 var chainUrl = "https://mainnet.nebulas.io";
-var smartContract_address = "n1k1hgNMHgSpWBHgHt3oW5n5N2TZ7PjQmEm";
+var smartContract_address = "n1pqPcjubijPTCLV4UhvrLtt8RkpPQLv9RD";
 var ChainId = 1; //1:mainNet 100:local; 1001:testnet
 var chainmapServerWallet = "n1WzaxzW3yFVtJdj2udk53UDF5KopMV4E9x";
 
