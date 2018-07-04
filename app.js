@@ -11,6 +11,7 @@ var mysql = require('mysql');
 
 var configFile = './env/' + require('os').hostname() + '.js';
 configFile = fs.existsSync(configFile) ? configFile : '../server.js';
+console.log("In local, looking for:",  configFile)
 var config = require(configFile);
 global.config = config;
 
