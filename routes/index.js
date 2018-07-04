@@ -178,7 +178,5 @@ router.get('/error', function (req, res) {
 });
 router.get('/userProfile/:user_id', users.userProfile);
 router.get('/trainingMaterial', trainingMaterial.getAllTrainingMaterial);
-// router.get('/trainingMaterial', function (req, res) {
-//   res.render('trainingMaterial', { title: 'Home' });
-// });
+router.post('/updatePaymentaddress', users.updatePaymentaddress);
 module.exports = router;

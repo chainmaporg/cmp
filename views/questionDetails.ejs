@@ -89,7 +89,7 @@
                                                         <%=data.challengedetails[0].category%>
                                                     </a>
                                                 </span>
-                                                <span>
+                                                <span class="question-category">
                                                     <i class="icon-lightbulb"></i>
                                                     <%=data.challengedetails[0].level%>
                                                 </span>
@@ -268,22 +268,24 @@
                                                             <%
                                         if (data.challengedetails[0].is_closed == 0){
                                         %>
-                                                                <div class="comment-vote">
-                                                                    <ul class="question-vote">
-                                                                        <li>
-                                                                            <a href="/likeAnswer/<%=data.challengedetails[0].challenge_id%>/<%=data.answers[i].answer_id%>" class="question-vote-up"
-                                                                                title="Like"></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="/dislikeAnswer/<%=data.challengedetails[0].challenge_id%>/<%=data.answers[i].answer_id%>" class="question-vote-down"
-                                                                                title="Dislike"></a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
+
+                                                                <span class="single-question-vote-result">
+                                                                    <%=data.answers[i].upvote_count - data.answers[i].downvote_count%>
+                                                                </span>
+                                                                <ul class="single-question-vote">
+                                                                    <li>
+                                                                        <a href="/dislikeAnswer/<%=data.challengedetails[0].challenge_id%>/<%=data.answers[i].answer_id%>" class="single-question-vote-down" title="Dislike">
+                                                                            <i class="icon-thumbs-down"></i>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="/likeAnswer/<%=data.challengedetails[0].challenge_id%>/<%=data.answers[i].answer_id %>" class="single-question-vote-up" title="Like">
+                                                                            <i class="icon-thumbs-up"></i>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+
                                                                 <% } %>
-                                                                    <span class="question-vote-result">
-                                                                        <%=data.answers[i].upvote_count - data.answers[i].downvote_count%>
-                                                                    </span>
                                                                     <div class="comment-meta">
                                                                         <div class="date">
                                                                             <i class="icon-time"></i>
