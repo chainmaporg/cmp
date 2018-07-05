@@ -19,8 +19,9 @@ global.config = config;
 
 //load chain service
 require('./libs/ChainService');
-setInterval(()=>{
-	var a=chainService.builder().to('n1JVPC9AASsVQQVUEJQARZZzaaAfCSu9yLb').value(1).send((err,data)=>{
+
+setTimeout(()=>{
+	chainService.builder().to('n1JVPC9AASsVQQVUEJQARZZzaaAfCSu9yLb').value(1).send((err,data)=>{
 		console.log(err,data);
 	});
 },2000)
