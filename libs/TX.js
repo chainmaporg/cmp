@@ -15,7 +15,9 @@ const TX = function () {
 	 * @param {number} nonce nonce
 	 */
 	this.start = function (account, nonce) {
-		this.txData.chainID = global.config.wallet.net != 'test' ? 1 : 1001;
+		if(global.config.wallet != undefined){
+			this.txData.chainID = global.config.wallet.net != 'test' ? 1 : 1001;
+		}
 		if (account != undefined) {
 			this.from(account, nonce);
 		}

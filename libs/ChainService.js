@@ -19,6 +19,8 @@ var ChainService = function () {
 
 	this.txQueue = null;
 
+	this.chainId = 1;
+
 	/**
 	 * 
 	 * sets debug status
@@ -144,9 +146,14 @@ var ChainService = function () {
 	 */
 	this.txPush = function (txData, callback, times, timer) {
 
+		if (this.chainId == -1) {
+
+			console.error('No wallet information on config');
+			return;
+		}
 		//create data
 		let data = {
-			chainID: global.config.wallet.net != 'test' ? 1 : 1001,
+			chainID: this.chainId,
 			value: 0,
 			gasPrice: 1000000,
 			gasLimit: 200000,
@@ -235,18 +242,25 @@ var ChainService = function () {
 			}
 		})
 		this.neb = new Nebulas.Neb();
-		this.neb.setRequest(new Nebulas.HttpRequest(global.config.wallet.net == 'test' ? "https://testnet.nebulas.io" : "https://mainnet.nebulas.io"));
-		this.globalAccount = this.unlock(global.config.wallet.json, global.config.wallet.pass);
-		this.getState(global.config.wallet.json.address).then((state) => {
-			this.globalState = state;
-			console.log('contract data loaded')
-			this.txQueue.start(function (err) {
-				if (err) {
-					throw err
-				}
-				console.log('queue finished')
+		if (global.config.wallet != undefined) {
+			this.chainId = global.config.wallet.net == 'test' ? 1001 : 1;
+			this.neb.setRequest(new Nebulas.HttpRequest(this.chainId == 1001 ? "https://testnet.nebulas.io" : "https://mainnet.nebulas.io"));
+			this.globalAccount = this.unlock(global.config.wallet.json, global.config.wallet.pass);
+			this.getState(global.config.wallet.json.address).then((state) => {
+				this.globalState = state;
+				console.log('contract data loaded')
+				this.txQueue.start(function (err) {
+					if (err) {
+						throw err
+					}
+					console.log('queue finished')
+				})
 			})
-		})
+		} else {
+			console.error('No wallet information on config');
+			this.chainId = -1;
+		}
+
 
 	}
 
