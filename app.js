@@ -7,6 +7,8 @@ var logger = require('morgan');
 
 var fs = require('fs');
 var mysql = require('mysql');
+
+
 // var usersRouter = require('./routes/users');
 
 var configFile = './env/' + require('os').hostname() + '.js';
@@ -14,6 +16,12 @@ configFile = fs.existsSync(configFile) ? configFile : '../server.js';
 console.log("In local, looking for:",  configFile)
 var config = require(configFile);
 global.config = config;
+
+//load chain service
+require('./libs/ChainService');
+
+
+
 
 //create db connection one time
 var startMysqlConnection=function(){

@@ -21,6 +21,7 @@
     "nebulas": "^0.5.2",
     "node-rest-client": "^3.1.0",
     "pug": "2.0.0-beta11",
+    "queue": "^4.4.2",
     "solr-node": "^1.0.13",
     "webpack": "^4.14.0"
   }
