@@ -7,8 +7,6 @@
 
 hosts=("107.182.235.108")
 
-cp deploy_env.js deploy_env.js.local
-cp ./deployment/production/deploy_env.js .
 
 target=/home/deploy
 user=gezhao
