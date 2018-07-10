@@ -11,6 +11,7 @@ CREATE TABLE `challenge` (
   `level` varchar(20) NOT NULL,
   `time_estimation` varchar(20) NOT NULL,
   `posting_date` datetime NOT NULL,
+  `is_closed` tinyint(1) NOT NULL DEFAULT '0'
   PRIMARY KEY (`challenge_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

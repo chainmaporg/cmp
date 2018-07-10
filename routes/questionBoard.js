@@ -1,77 +1,14 @@
 var index = require('../routes/index');
 
 var Nebulas = index.Nebulas;
-var cmAccount = index.cmAccount;
-var fromAddress = cmAccount.getAddressString();
-var envChainId = index.envChainId;
 var smartContract_address = index.smartContract_address;
-var Neb = Nebulas.Neb;
-var neb = new Neb();
 var chainmapServerWallet = index.chainmapServerWallet;
-
-neb.setRequest(new Nebulas.HttpRequest(index.chainUrl))
-
-//   PostChallenge: function(address, challengeId, challengeLevel, challenge, timeEstimation){
-//   AnswerChallenge: function(address,challengeId, answerId, answer){
-//   VoteAnswer: function(address,challengeId,answerId,result){
-
-
-function handSmartContract(nonce, contractParms) {
-	console.log(contractParms)
-	var tx = new Nebulas.Transaction({
-		chainID: envChainId,
-		from: cmAccount,
-		to: smartContract_address,
-		value: 0,
-		nonce: nonce,
-		gasPrice: 1000000,
-		gasLimit: 1000000,
-		contract: contractParms,
-	});
-
-	console.log("working...signTransaction()")
-	tx.signTransaction();
-	console.log("working...sendTx")
-	waitSmartContractReceipt(neb, tx)
-	console.log("Finishing waiting!")
-}
-
-
-function waitSmartContractReceipt(neb, tx) {
-	//send a transfer request to the NAS node
-	neb.api.sendRawTransaction({
-		data: tx.toProtoString()
-	}).then((result) => {
-		let txhash = result.txhash;
-		let trigger = setInterval(() => {
-			neb.api.getTransactionReceipt({ hash: txhash }).then((receipt) => {
-				console.log("txhash:", txhash)
-				console.log('status', receipt.status);
-				if (receipt.status != 2) //not in pending
-				{
-					console.log(JSON.stringify(receipt));
-					clearInterval(trigger);
-				}
-			});
-		}, 2000);
-
-	});
-}
 
 
 
 
 function handChallengeSmartContract(address, challengeId, challengeLevel, challenge, timeEstimation) {
 	console.log("PostChallenge--", address, challengeId, challengeLevel, challenge, timeEstimation);
-	/*contractParms = {
-		function: "PostChallenge",
-		args: JSON.stringify([address, challengeId, challengeLevel, challenge, timeEstimation])
-	}
-	neb.api.getAccountState(fromAddress).then((accstate) => {
-		console.log(JSON.stringify(accstate));
-		let _nonce = parseInt(accstate.nonce) + 1;
-		handSmartContract(_nonce, contractParms);
-	});*/
 	chainService.builder().
 		to(smartContract_address).
 		contractCall('PostChallenge', address, challengeId, challengeLevel, challenge, timeEstimation).
@@ -94,17 +31,6 @@ function handChallengeSmartContract(address, challengeId, challengeLevel, challe
 
 function handleAnswerSmartContract(address, challengeId, answerId, answer) {
 	console.log("AnswerChallenge--", address, challengeId, answerId, answer);
-	/*	contractParms = {
-			function: "AnswerChallenge",
-			args: JSON.stringify([address, challengeId, answerId, answer])
-		}
-	
-	
-		neb.api.getAccountState(fromAddress).then((accstate) => {
-			console.log(JSON.stringify(accstate));
-			let _nonce = parseInt(accstate.nonce) + 1;
-			handSmartContract(_nonce, contractParms);
-		});*/
 
 	chainService.builder().
 		to(smartContract_address).
@@ -127,15 +53,6 @@ function handleAnswerSmartContract(address, challengeId, answerId, answer) {
 
 function handleVoteSmartContract(address, challengeId, answerId, result) {
 	console.log("VoteAnswer--", address, challengeId, answerId, result);
-	/*contractParms = {
-		function: "VoteAnswer",
-		args: JSON.stringify([address, challengeId, answerId, result])
-	}
-	neb.api.getAccountState(fromAddress).then((accstate) => {
-		console.log(JSON.stringify(accstate));
-		let _nonce = parseInt(accstate.nonce) + 1;
-		handSmartContract(_nonce, contractParms);
-	});*/
 	chainService.builder().
 		to(smartContract_address).
 		contractCall('VoteAnswer', address, challengeId, answerId, result).
@@ -158,15 +75,23 @@ function handleVoteSmartContract(address, challengeId, answerId, result) {
 
 function handleRewardAllSmartContract(challengeId, callback) {
 	console.log("RewardAll--", challengeId);
-	/*contractParms = {
-		function: "RewardAll",
-		args: JSON.stringify([challengeId])
-	}
-	neb.api.getAccountState(fromAddress).then((accstate) => {
-		console.log(JSON.stringify(accstate));
-		let _nonce = parseInt(accstate.nonce) + 1;
-		handSmartContract(_nonce, contractParms);
-	});*/
+
+	chainService.builder().
+		to(smartContract_address).
+		contractCall('RewardAll', address, challengeId).
+		send((err, data) => {
+			if (err) {
+				//sending error
+				return console.error(err);
+			}
+			chainService.txStatus(data.txhash).then((data) => {
+				//transaction accepted
+				console.log(data);
+			}).catch((err) => {
+				//error
+				console.error(err);
+			})
+		});
 
 }
 
