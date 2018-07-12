@@ -107,18 +107,18 @@
                     </p>
                 </div> -->
 
-                <p>
+                <!-- <p>
                     <label class="required">First Name
                         <span>*</span>
                     </label>
                     <input type="text" name="firstname" id="firstName" required>
-                </p>
-                <p>
+                </p> -->
+                <!-- <p>
                     <label class="required">Last Name
                         <span>*</span>
                     </label>
                     <input type="text" name="lastname" id="lastName" required>
-                </p>
+                </p> -->
                 <p>
                     <label class="required">User Name
                         <span>*</span>
@@ -143,11 +143,11 @@
                     </label>
                     <input type="password" name="confirmPassword" id="confirmPassword" required>
                 </p>
-                <p>
+                <!-- <p>
                     <label class="required">User Wallet Address (e.g. n1GvvvstiCXUKBaeYniqRGeoAdMkMHoipvc):
                     </label>
                     <input type="text" name="payment_address" id="userPAddress">
-                </p>
+                </p> -->
             </div>
             <p class="form-submit">
                 <input type="submit" value="Signup" class="button color small submit" onclick="getvaluesToRegisterUser()">
@@ -187,20 +187,49 @@
     </div>
 </div>
 
+<!-- this block was previous used to update payment address. But currently we are using it to update the whole user profile,
+not only the payment address. So please don't get confused with the naming. To save time, we did not change the name of the funcitons and 
+the html attributes. -->
 <div class="panel-pop" id="edit-paymentAddress">
-    <h2>Edit Payment Address
+    <h2>Update Profile
         <i class="icon-remove"></i>
     </h2>
     <div class="form-style form-style-3">
-        
+
         <form action="/updatePaymentaddress" method="POST">
             <div class="form-inputs clearfix">
+                <div id="profile_interest">
+                    <div class="profile_interest">
+                        <input id="poll-1" name="interest[]" type="checkbox">
+                        <label for="poll-1">The first option</label>
+                    </div>
+                    <div class="profile_interest">
+
+                        <select required="" id="level" name="level">
+                            <option value="">Please select a Level</option>
+                            <option value="Diamond">Diamond</option>
+                            <option value="Gold">Gold</option>
+                            <option value="Silver">Silver</option>
+                            <option value="Brozen">Brozen</option>
+                        </select>
+
+
+                    </div>
+
+                </div>
                 <p>
-                    <label class="required">Payment Address
-                        <span>*</span>
-                    </label>
-                    <input type="text" name="paymentAddress" id="paymentAddress" required>
+                    <label class="required">Headline</label>
+                    <input type="text" name="headline" id="headline">
                 </p>
+                <p>
+                    <label class="required">Payment Address</label>
+                    <input type="text" name="paymentAddress" id="paymentAddress">
+                </p>
+
+            </div>
+
+            <div class="form-inputs clearfix">
+
             </div>
             <p class="form-submit">
                 <input type="submit" value="Submit Payment Address" class="button color small submit">
@@ -267,18 +296,19 @@
         //     };
         // }
         // else if (gMode == "create") {
-        if ($("#firstName").val() == "") {
-            // alert("Please insert First Name");
-        } else if ($("#lastName").val() == "") {
-            // alert("Please insert Last Name");
-        } else if ($("#userName").val() == "") {
+        // if ($("#firstName").val() == "") {
+        //     // alert("Please insert First Name");
+        // } else if ($("#lastName").val() == "") {
+        //     // alert("Please insert Last Name");
+        // } else 
+        if ($("#userName").val() == "") {
             // alert("Please insert User Name");
         } else if ($("#userEmail").val() == "") {
             // alert("Please insert User Email");
         } else if ($("#userPasswd").val() == "") {
             // alert("Please insert User Password");
-        }else if ($("#userPasswd").val() != $("#confirmPassword").val()) {
-             alert("Password do not match. Please check again.");
+        } else if ($("#userPasswd").val() != $("#confirmPassword").val()) {
+            alert("Password do not match. Please check again.");
         } else {
             data = {
                 // 'mode': gMode,
@@ -287,13 +317,13 @@
                 // 'company_email': $("#companyEmail").val(),
                 // 'company_phone': $("#companyPhone").val(),
                 // 'company_site': $("#companyweb").val(),
-                'firstname': $("#firstName").val(),
-                'lastname': $("#lastName").val(),
+                // 'firstname': $("#firstName").val(),
+                // 'lastname': $("#lastName").val(),
                 'user_name': $("#userName").val(),
                 'user_email': $("#userEmail").val(),
                 'user_phone': 0,
                 'password': $("#userPasswd").val(),
-                'payment_address': $("#userPAddress").val(),
+                // 'payment_address': $("#userPAddress").val(),
                 'is_reviewer': 0
             };
 
@@ -309,7 +339,7 @@
                     else if (data.msg == "duplicateUserName") {
                         alert("User Name is duplicate.");
                     }
-                    else if (data.msg == "success"){
+                    else if (data.msg == "success") {
                         alert("User information saved successfully. You can login now.");
                         window.location.reload();
                     }

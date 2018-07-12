@@ -164,4 +164,7 @@ router.get('/error', function (req, res) {
 router.get('/userProfile/:user_id', users.userProfile);
 router.get('/trainingMaterial', trainingMaterial.getAllTrainingMaterial);
 router.post('/updatePaymentaddress', users.updatePaymentaddress);
+router.get('/aboutUs', function (req, res) {
+  res.render('aboutUs', { title: 'About Us' });
+});
 module.exports = router;

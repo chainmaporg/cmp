@@ -19,7 +19,7 @@ exports.login = function (req, res) {
           session.user_id = results[0].user_id
           session.wallet = results[0].payment_address.trim()
           console.log("logged in ");
-          res.redirect('/questionBoard');
+          res.redirect('/userProfile/' + session.user_id);
         }
         else {
           console.log("Not successful");
