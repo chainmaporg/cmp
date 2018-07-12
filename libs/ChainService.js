@@ -144,6 +144,41 @@ var ChainService = function () {
 	 * @param {number} times try times
 	 * @param {number} timer interval
 	 */
+	this.callPush = function (txData, callback, times, timer) {
+		var self=this;
+		if (this.chainId == -1) {
+			console.error('No wallet information on config');
+			return;
+		}
+		//create data
+		let data = {
+			chainID: this.chainId,
+			value: 0,
+			gasPrice: 1000000,
+			gasLimit: 200000,
+			nonce:0
+		};
+		//merge it
+		Object.assign(data, txData);
+		//push to que
+		this.txQueue.push(() => {
+			return self.neb.api.call(data).then(function (data) {
+				//code
+				callback(null, data)
+			}).catch((err) => {
+				callback(err)
+			});
+		})
+	}
+
+
+	/**
+	 * push tx to queue
+	 * @param {object} txData txdata
+	 * @param {closure} callback callback on send action
+	 * @param {number} times try times
+	 * @param {number} timer interval
+	 */
 	this.txPush = function (txData, callback, times, timer) {
 
 		if (this.chainId == -1) {
@@ -248,7 +283,7 @@ var ChainService = function () {
 			this.globalAccount = this.unlock(global.config.wallet.json, global.config.wallet.pass);
 			this.getState(global.config.wallet.json.address).then((state) => {
 				this.globalState = state;
-				console.log('contract data loaded')
+				console.log('contract data loaded',)
 				this.txQueue.start(function (err) {
 					if (err) {
 						throw err
