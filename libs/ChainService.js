@@ -283,7 +283,7 @@ var ChainService = function () {
 			this.globalAccount = this.unlock(global.config.wallet.json, global.config.wallet.pass);
 			this.getState(global.config.wallet.json.address).then((state) => {
 				this.globalState = state;
-				console.log('contract data loaded',)
+				console.log('contract data loaded')
 				this.txQueue.start(function (err) {
 					if (err) {
 						throw err
