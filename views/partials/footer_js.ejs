@@ -29,6 +29,7 @@ $(document).ready(function(){
         if(path == href){
             $('#NavMenu li').removeClass("current_page_item");
             $(this).parent().addClass("current_page_item");
+            $(this).parent().parent().parent().addClass("current_page_item");
         }
     });
 });

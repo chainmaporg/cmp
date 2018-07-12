@@ -49,13 +49,13 @@ exports.userRegister = function (req, res) {
   // else if (req.body.mode == "select") {
   var userInfo = {
     'company_id': 0,
-    'firstname': req.body.firstname,
-    'lastname': req.body.lastname,
+    'firstname': "",
+    'lastname': "",
     'user_name': req.body.user_name,
     'user_email': req.body.user_email,
     'user_phone': req.body.user_phone,
     'password': md5(req.body.password),
-    'payment_address': req.body.payment_address,
+    'payment_address': "",
     'is_reviewer': 0
   };
 

@@ -61,31 +61,41 @@
                     </ul> -->
                 </li>
                 <li class="">
-                    <a href="/questionBoard">Challenge Board</a>
-                </li>
-                <li>
-                    <a href="/askQuestion">Post Challenge</a>
-                    <!-- <ul>
-                        <li>
-                            <a href="cat_question.html">Questions Category</a>
-                        </li>
-                        <li>
-                            <a href="single_question.html">Question Single</a>
-                        </li>
-                        <li>
-                            <a href="single_question_poll.html">Poll Question Single</a>
-                        </li>
-                    </ul> -->
+                    <a href="/aboutUs">About Us</a>
                 </li>
                 <li>
                     <a href="/trainingMaterial">Knowledge Center</a>
+                    <ul>
+                        <li>
+                            <a href="/trainingMaterial">Training Materials</a>
+                        </li>
+                        <li>
+                            <a href="javascript:">Search</a>
+                        </li>
+                        <li>
+                            <a href="javascript:">Share Links</a>
+                        </li>
+                    </ul>
                 </li>
-                 <%
+                <li class="">
+                    <a href="/questionBoard">Challenge</a>
+                    <ul>
+                            <li>
+                                <a href="/questionBoard">Challenge Board</a>
+                            </li>
+                            <li>
+                                <a href="/askQuestion">Post Challenge</a>
+                            </li>
+                        </ul>
+                </li>
+                
+                
+                <%
                 
                 if (typeof session !== 'undefined' && typeof session.email !== 'undefined'){
 
                     %>
-                     <li>
+                    <li>
                         <a href="/userProfile/<%=session.user_id%>">User</a>
                         <!-- <ul>
                             <li>

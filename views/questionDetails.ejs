@@ -69,9 +69,12 @@
                                             <div class="question-inner">
                                                 <div class="clearfix"></div>
                                                 <div class="question-desc">
-                                                    <p>
-                                                        <%=data.challengedetails[0].description%>
-                                                    </p>
+
+                                                        <% 
+                                                            var value = data.challengedetails[0].description.replace(/[\r\n]+/g," <br/> ").replace(/\s/g, '&nbsp;');
+                                                            
+                                                        %>
+                                                        <%- value %>
                                                 </div>
                                                 <div class="question-details">
                                                     <%
@@ -296,10 +299,17 @@
                                                                     <!-- <a class="comment-reply" href="#">
                                                             <i class="icon-reply"></i>Reply</a> -->
                                                         </div>
-                                                        <div class="text">
-                                                            <p>
-                                                                <%=data.answers[i].description%>
-                                                            </p>
+                                                        <div class="text" >
+                                                            <br/>
+                                                            <br/>
+                                                                
+                                                                <%  description = data.answers[i].description.replace(/[\r\n]+/g," <br/> ").replace(/\s/g, '&nbsp;');%>
+                                                                <%-description%>
+                                                            
+                                                                
+                                                            
+                                                                
+                                                            
                                                         </div>
                                                         <!-- <div class="question-answered question-answered-done">
                                                         <i class="icon-ok"></i>Best Answer</div> -->
@@ -367,6 +377,7 @@
                 function getvaluesToAnswer(challenge_id) {
                     var url = "/postanswer";
                     var answer = $("#answer").val();
+                    // answer = answer.replace(/\n/g, '<br>\n');
                     if (answer.length <= 2) {
                         alert('Please post some valid answer')
                     }

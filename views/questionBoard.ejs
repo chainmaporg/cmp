@@ -88,7 +88,11 @@
                                                             <div class="question-inner">
                                                                 <div class="clearfix"></div>
                                                                 <p class="question-desc">
-                                                                    <%=data.mostRecent[i].description%>
+                                                                        <% 
+                                                                        var value = data.mostRecent[i].description.replace(/[\r\n]+/g," <br/> ").replace(/\s/g, '&nbsp;');
+                                                                        
+                                                                    %>
+                                                                    <%- value %>
                                                                 </p>
                                                                 <div class="question-details">
                                                                         <%
@@ -282,7 +286,7 @@
                                                                     <div class="question-inner">
                                                                         <div class="clearfix"></div>
                                                                         <p class="question-desc">
-                                                                            <%=data.NoAnswers[i].description%>
+                                                                            <%-data.NoAnswers[i].description%>
                                                                         </p>
                                                                         <div class="question-details">
                                                                                 <%
