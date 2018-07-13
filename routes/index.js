@@ -43,12 +43,12 @@ var engine_host = global.config.search_engine_host;
 
 router.get('/query/:category/:content', function (req, res, next) {
 
-  var url = '';
-  if (req.params.category == 'All') {
-    url = solr_host + '/select?fl=title,%20summary,%20category&q=search_content:' + encodeURI(req.params.content) + '&wt=json';
-  } else {
-    url = solr_host + '/select?fl=title,%20summary,%20category&q=category:' + encodeURI(req.params.category) + '%20AND%20search_content:' + encodeURI(req.params.content) + '&wt=json';
-  }
+    var url = '';
+    if (req.params.category == 'All') {
+        url = 'http://localhost:8983/solr/chainmap/select?fl=title,%20url,%20summary,%20category&q=search_content:'+ encodeURI(req.params.content) +'&wt=json';
+    } else {
+        url = 'http://localhost:8983/solr/chainmap/select?fl=title,%20url,%20summary,%20category&q=category:'+ encodeURI(req.params.category) + '%20AND%20search_content:'+ encodeURI(req.params.content) +'&wt=json';
+    }
 
   console.log("chainmap_search:",url)
   
