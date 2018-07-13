@@ -118,6 +118,18 @@ const TX = function () {
 	}
 
 
+	/**
+	 * sends tx to chainService
+	 * @param {closure} callback callback
+	 * @param {number} times repeat times before success
+	 * @param {number} timer interval between tries
+	 */
+	this.call = function (callback, times, timer) {
+		//push it to queue
+		return global.chainService.callPush(this.data(),callback, times, timer)
+	}
+
+
 }
 TX.type = 'main';
 module.exports = TX;
