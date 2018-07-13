@@ -5259,3 +5259,5 @@ html[xmlns] .slides {
 	width: 50%;
 	float: left;
 }
+
+.clear { clear:both; display:block; overflow:hidden; visibility:hidden; height:0px;}

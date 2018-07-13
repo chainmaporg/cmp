@@ -808,15 +808,72 @@ jQuery(document).ready(function ($) {
 
 	jQuery("#EditPaymentAddressClick").click(function () {
 		jQuery(".panel-pop").animate({ "top": "-100%" }, 10).hide();
-		jQuery("#edit-paymentAddress").show().animate({ "top": "50%" }, 500);
+		jQuery("#edit-paymentAddress").show().animate({ "top": "30%" }, 500);
 		jQuery("body").prepend("<div class='wrap-pop'></div>");
 
-		
+
 		wrap_pop();
+
 		$("body").addClass("modal-open");
+		$.ajaxSetup({ async: false });
+		getCategorieswithUserCat();
+		$.ajaxSetup({ async: true });
 		return false;
 	});
 
+	function getCategorieswithUserCat() {
+		var url = "/getAllCategoryWithUserCat";
+		$.ajax({
+			type: 'POST',
+			url: url,
+			async: false,
+			success: function (data) {
+				var divElement = "<div>";
+				if (data.allCategories.length > 0) {
+					for (var i = 0; i < data.allCategories.length; i++) {
+						var checked = "";
+						var diamonCheck = "";
+						var goldCheck = "";
+						var silverCheck = "";
+						var bronzeCheck = ""
+						if (data.userCategories.length > 0) {
+							for (var j = 0; j < data.userCategories.length; j++) {
+								if (data.allCategories[i].id == data.userCategories[j].category_id) {
+									checked = "checked";
+									if (data.userCategories[j].level == "Diamond"){
+										diamonCheck = "selected";
+									}
+									else if (data.userCategories[j].level == "Gold"){
+										goldCheck = "selected";
+									}
+									else if (data.userCategories[j].level == "Silver"){
+										silverCheck = "selected";
+									}
+									else if (data.userCategories[j].level == "Brozen") {
+										bronzeCheck = "selected";
+									}
+									break;
+								}
+							}
+						}
+
+
+						divElement = divElement + "<div class='profile_interest'>" + "<input id='poll-" + i + "' name='interest' type='checkbox' " + checked + " value='" + data.allCategories[i].id + "'>";
+						divElement = divElement + '<label for="poll-' + i + '">' + data.allCategories[i].category_name + '</label></div>';
+						divElement = divElement + '<div class="profile_interest"><select id="level" name="level">';
+						divElement = divElement + '<option value="">Select your Proficiency Level</option><option value="Diamond" '+diamonCheck+'>Diamond</option>';
+						divElement = divElement + '<option value="Gold" '+goldCheck+'>Gold</option><option value="Silver" '+silverCheck+'>Silver</option><option value="Brozen" '+bronzeCheck+'>Brozen</option></select></div><div class="clear"></div></div>';
+					}
+				}
+				$("#profile_interest").html(divElement);
+				$("#paymentAddress").val($("#paymentAddressSpan").html().trim())
+				$("#headline").val($("#headlineSpan").html().trim())
+			},
+			error: function () {
+				alert('An error occured. Please try again later or contact with us.');
+			}
+		});
+	}
 
 	/* Lost password */
 

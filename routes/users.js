@@ -155,11 +155,20 @@ exports.userProfile = function (req, res) {
                 } else {
                   resultObj['allansweredQuestions'] = results;
                   // console.log('Total data from the userProfile request: ', resultObj);
+                  connection.query('select user_category.category_id, user_category.`level`, category.category_name from user_category join category on user_category.category_id = category.id where user_id = ?', [userID], function (error, results, fields) {
+                    if (error) {
+                      console.log("error ocurred", error);
+                      res.render("error", { errorMsg: "Error on insertion into DB Users" })
 
-                  res.render('userProfile', { data: resultObj });
+                    } else {
+                      resultObj['userCategory'] = results;
+                      console.log('user category from userProfile request: ', results);
+
+                      res.render('userProfile', { data: resultObj });
+                    }
+                  });
                 }
               });
-              // res.render('userProfile', { data: resultObj });
             }
           });
         }
@@ -187,7 +196,7 @@ exports.updatePaymentaddress = function (req, res) {
   paymentAddress = req.body.paymentAddress;
   console.log("User ID", userID)
   console.log("payment Address", paymentAddress)
-  connection.query('update `user` set `user`.payment_address = ? WHERE user_id = ?',[paymentAddress,userID], function (error, results, fields) {
+  connection.query('update `user` set `user`.payment_address = ? WHERE user_id = ?', [paymentAddress, userID], function (error, results, fields) {
     if (error) {
       console.log("error ocurred", error);
       res.render("error", { errorMsg: "Error on insertion into DB Users" })
@@ -195,6 +204,110 @@ exports.updatePaymentaddress = function (req, res) {
     } else {
       console.log(results)
       res.redirect('/userProfile/' + userID);
+    }
+  });
+}
+
+exports.updateUserProfile = function (req, res) {
+  console.log("total Input", req.body);
+  var session = req.session;
+  var userID = session.user_id;
+  var interests = req.body.interest;
+  var levels = req.body.level;
+  var userCategoryInterest = [];
+  if (typeof interests !== 'undefined') {
+    for (let i = 0; i < interests.length; i++) {
+      var row = []
+      row.push(interests[i])
+      row.push(userID)
+      row.push(levels[interests[i] - 1])
+
+      userCategoryInterest.push(row)
+    }
+  }
+
+  connection.query('delete from user_category WHERE user_id = ?', [userID], function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+    } else {
+      if (userCategoryInterest.length > 0) {
+        connection.query('INSERT INTO user_category (category_id, user_id, level) VALUES ?', [userCategoryInterest], function (error, results, fields) {
+          if (error) {
+            console.log("error ocurred", error);
+            res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+          } else {
+            connection.query('update `user` set `user`.payment_address = ?, `user`.headline = ? WHERE user_id = ?', [req.body.paymentAddress, req.body.headline, userID], function (error, results, fields) {
+              if (error) {
+                console.log("error ocurred", error);
+                res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+              } else {
+                console.log(results)
+                res.redirect('/userProfile/' + userID);
+              }
+            });
+          }
+        });
+      } else {
+        connection.query('update `user` set `user`.payment_address = ?, `user`.headline = ? WHERE user_id = ?', [req.body.paymentAddress, req.body.headline, userID], function (error, results, fields) {
+          if (error) {
+            console.log("error ocurred", error);
+            res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+          } else {
+            console.log(results)
+            res.redirect('/userProfile/' + userID);
+          }
+        });
+      }
+
+    }
+  });
+}
+
+
+exports.getAllCategory = function (req, res) {
+
+  connection.query('select * from category', function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+    } else {
+      console.log(results)
+      res.send({ 'categories': results });
+    }
+  });
+}
+
+exports.getAllCategoryWithUserCat = function (req, res) {
+  var category;
+  var userCategory;
+  var session = req.session;
+  var userID = session.user_id;
+  connection.query('select * from category', function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+    } else {
+      category = results;
+      connection.query('select * from user_category where user_id = ?', [userID], function (error, results, fields) {
+        if (error) {
+          console.log("error ocurred", error);
+          res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+        } else {
+          userCategory = results;
+          res.send({
+            "allCategories": category,
+            "userCategories": userCategory,
+          })
+        }
+      });
     }
   });
 }
