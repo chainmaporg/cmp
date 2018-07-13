@@ -11,11 +11,14 @@ var mysql = require('mysql');
 
 // var usersRouter = require('./routes/users');
 
-//var configFile = './env/' + require('os').hostname() + '.js';
-configFile = './env/local-deploy.js';
+//var configFile = '../' + require('os').hostname() + '.js';
+configFile = '../local-deploy.js';
+console.log(">>Check your local deploy env loca and file for deployment (see template in env/local-deploy.js.sample)",  configFile)
 
 configFile = fs.existsSync(configFile) ? configFile : '../server.js';
-console.log("=====Check your local deploy env file for correctness:",  configFile)
+
+console.log(">>The server is picking this configuration:",  configFile)
+
 var config = require(configFile);
 global.config = config;
 
