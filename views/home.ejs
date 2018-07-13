@@ -103,6 +103,8 @@
                                                             <option value="company">Company</option>
                                                             <option value="event">Event</option>
                                                             <option value="ICO">ICO</option>
+                                                            <option value="article">Article</option>
+                                                            <option value="job">Jobs</option>
                                                             <option value="Others">Others</option>
 
                                                         </select>
@@ -175,13 +177,20 @@
 
                         $.each(docs, function (index, value) {
                             var img = value.category + ".png";
+                            var url = String(value.url);
+                            //alert(url.length);
+                            if(url.startsWith("http")) {
+                                //alert(url);
+                            } else {
+                                url = "/resource/"+value.category+"/"+value.title;
+                            }
                             document.getElementById("foundResults").innerHTML += (
                                 '<div class="row" margin-bottom: 4px>' +
                                 '<div class="col-sm-2"> ' +
                                 '<img src="image/' + img + '" class="img-rounded" alt="" width="40" height="40" align="right">' +
                                 '</div>' +
                                 '<div class="col-sm-10"> ' +
-                                '<a href="/resource/' + value.category + '/' + value.title + '" target="_blank" class="list-group-item" style="border: none">' +
+                                '<a href="'+url+'" target="_blank" class="list-group-item" style="border: none">' +
                                 '<h4 class="list-group-item-heading" style="color:DodgerBlue;">' + value.title + '</h4>' +
                                 '<p class="list-group-item-text">' + value.summary + ' </p>' +
                                 '<p class="list-group-item-text_small"> Category: ' + value.category + '</p>' +
