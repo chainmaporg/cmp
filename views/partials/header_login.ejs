@@ -196,25 +196,32 @@ the html attributes. -->
     </h2>
     <div class="form-style form-style-3">
 
-        <form action="/updatePaymentaddress" method="POST">
+        <form action="/updateUserProfile" method="POST">
             <div class="form-inputs clearfix">
+                <p>
+                    Please select your topic interest and proficieny level on that topic. This will be helpful for us to 
+                    recommend our courses for you.
+                </p>
                 <div id="profile_interest">
-                    <div class="profile_interest">
-                        <input id="poll-1" name="interest[]" type="checkbox">
-                        <label for="poll-1">The first option</label>
+                    <div>
+                        <div class="profile_interest">
+                            <input id="poll-1" name="interest" type="checkbox">
+                            <label for="poll-1">The first option</label>
+                        </div>
+                        <div class="profile_interest">
+
+                            <select required="" id="level" name="level">
+                                <option value="Diamond">Diamond</option>
+                                <option value="Gold">Gold</option>
+                                <option value="Silver">Silver</option>
+                                <option value="Brozen">Brozen</option>
+                            </select>
+
+
+                        </div>
+                        <div class="clear"></div> 
                     </div>
-                    <div class="profile_interest">
 
-                        <select required="" id="level" name="level">
-                            <option value="">Please select a Level</option>
-                            <option value="Diamond">Diamond</option>
-                            <option value="Gold">Gold</option>
-                            <option value="Silver">Silver</option>
-                            <option value="Brozen">Brozen</option>
-                        </select>
-
-
-                    </div>
 
                 </div>
                 <p>
@@ -222,7 +229,8 @@ the html attributes. -->
                     <input type="text" name="headline" id="headline">
                 </p>
                 <p>
-                    <label class="required">Payment Address</label>
+                    <label class="required">Payment Address <a href="https://medium.com/nebulasio/creating-a-nas-wallet-9d01b5fa2df6" target="_blank">(NAS Wallet)
+                    </a></label>
                     <input type="text" name="paymentAddress" id="paymentAddress">
                 </p>
 
@@ -232,7 +240,7 @@ the html attributes. -->
 
             </div>
             <p class="form-submit">
-                <input type="submit" value="Submit Payment Address" class="button color small submit">
+                <input type="submit" value="Update Profile" class="button color small submit">
             </p>
         </form>
         <div class="clearfix"></div>

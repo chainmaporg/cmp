@@ -178,8 +178,10 @@ router.get('/error', function (req, res) {
 });
 router.get('/userProfile/:user_id', users.userProfile);
 router.get('/trainingMaterial', trainingMaterial.getAllTrainingMaterial);
-router.post('/updatePaymentaddress', users.updatePaymentaddress);
+router.post('/updateUserProfile', users.updateUserProfile);
 router.get('/aboutUs', function (req, res) {
   res.render('aboutUs', { title: 'About Us' });
 });
+router.post('/getAllCategory', users.getAllCategory);
+router.post('/getAllCategoryWithUserCat', users.getAllCategoryWithUserCat);
 module.exports = router;

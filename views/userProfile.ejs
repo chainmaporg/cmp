@@ -91,30 +91,56 @@
                                                                 <%
                                         if (data.userProfile[0].payment_address.length > 0){
                                         %>
-                                                                    <%=data.userProfile[0].payment_address%>
+                                                                    <span id="paymentAddressSpan">
+                                                                        <%=data.userProfile[0].payment_address%>
+                                                                    </span>
+                                                                    <% } else {%>
 
-                                                                        <% } else {%>
+                                                                        <blockquote>
+                                                                            <p>Payment address is not set.
+                                                                                <a href="https://medium.com/nebulasio/creating-a-nas-wallet-9d01b5fa2df6" target="_blank">You can check here to set up payment address.
+                                                                                </a>
+                                                                            </p>
 
-                                                                            <blockquote>
-                                                                                <p>Payment address is not set.
-                                                                                    <a href="https://medium.com/nebulasio/creating-a-nas-wallet-9d01b5fa2df6" target="_blank">You can check here to set up payment
-                                                                                        address.
-                                                                                    </a>
-                                                                                </p>
-
-                                                                            </blockquote>
-                                                                            <% } %>
+                                                                        </blockquote>
+                                                                        <% } %>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icon-map-marker"></i>Headline :
+                                                            <span id="headlineSpan">
+                                                                <%=data.userProfile[0].headline%>
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="icon-map-marker"></i>Topic Interest :
+                                                            <span id="headlineSpan">
+                                                                <% 
+                                                                    var categoryStr = "";
+                                                                    if (data.userCategory.length > 0){
+                                                                        for (i = 0; i < data.userCategory.length; i++){
+                                                                            level = "Proficiency level is not specified.";
+                                                                            if (data.userCategory[i].level != ""){
+                                                                                level = data.userCategory[i].level;
+                                                                            }
+                                                                            categoryStr = categoryStr + data.userCategory[i].category_name + '(' + level + ')' + ', '
+                                                                        }
+                                                                    }
+                                                                    categoryStr = categoryStr.slice(0, -2);
+                                                                %>
+                                                                    <%=categoryStr%>
                                                             </span>
                                                         </li>
                                                         <li>
                                                             <% if (data.userProfile[0].user_id == session.user_id){ %>
                                                                 <span>
-                                                                    <a href="javascript" id="EditPaymentAddressClick" class="button small blue-button custom-button">
+                                                                    <a href="javascript:" id="EditPaymentAddressClick" class="button small blue-button custom-button">
                                                                         <i class="icon-edit">Update Profile</i>
                                                                     </a>
                                                                 </span>
                                                                 <% } %>
                                                         </li>
+
 
                                                     </ul>
                                                 </div>
