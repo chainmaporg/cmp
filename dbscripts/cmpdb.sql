@@ -50,8 +50,9 @@ CREATE TABLE `user` (
   `password` varchar(32) NOT NULL,
   `payment_address` varchar(255) NOT NULL DEFAULT '' COMMENT 'Not sure what should be the length of the payment address field.',
   `is_reviewer` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0 => Not a reviewer, 1 => This developer is a reviewer also.',
+  `headline` varchar(255) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for `company`
@@ -67,3 +68,24 @@ CREATE TABLE `company` (
   PRIMARY KEY (`company_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
+
+-- ----------------------------
+-- Table structure for `category`
+-- ----------------------------
+DROP TABLE IF EXISTS `category`;
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL,
+  `category_name` varchar(80) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for `user_category`
+-- ----------------------------
+DROP TABLE IF EXISTS `user_category`;
+CREATE TABLE `user_category` (
+  `category_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `level` char(50) NOT NULL,
+  PRIMARY KEY (`category_id`,`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
