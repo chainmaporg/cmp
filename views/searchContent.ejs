@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- header part start -->
+<% include ./partials/header %>
+    <!-- header part end -->
+    <!-- body part start -->
+
+    <body>
+
+        <div class="loader">
+            <div class="loader_html"></div>
+        </div>
+
+        <div id="wrap" class="grid_1200">
+
+
+
+
+
+
+
+
+            <% include ./partials/header_login %>
+
+                <% include ./partials/body_header %>
+
+                    <div class="section-warp ask-me">
+                        <div class="container clearfix">
+                            <div class="box_icon box_warp box_no_border box_no_background" box_border="transparent" box_background="transparent" box_color="#FFF">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                       <h2>ChainMap</h2>
+                                        <p style="font-size: 26px !important">
+                                            Blockchain Developers' Platform
+                                        </p>
+                                        <p style="font-size: 26px !important">
+                                        You learn, grow, and get rewarded!
+                                       </p>
+                                        <p>
+                                            <a href="/loginRegister" class="button small green-button custom-button">Register Now</a>
+                                        </p>
+                                        
+                                        <div class="clearfix"></div>
+                                        <!-- <a class="color button dark_button medium" href="#">About Us</a>
+                                    <a class="color button dark_button medium" href="#">Join Now</a> -->
+                                    </div>
+
+                                </div>
+                                <!-- End row -->
+                            </div>
+                            <!-- End box_icon -->
+                        </div>
+                        <!-- End container -->
+                    </div>
+
+                    <!-- <div class="breadcrumbs">
+                        <section class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <center><h1>ChainMap</h1></center>
+        
+									<br>
+                                    <h3>The best community and learning path for blockchain developers</h3>
+
+                                    <h4> The community enables you contributing to the society and help others and also build reputations and earn community tokens</h4>
+                                </div>
+                
+                                <div class="col-md-12">
+                                    <div class="crumbs">
+                                        <a href="/loginRegister"><b>Register Today</b></a>
+                                    </div>
+                                </div>
+                        
+                            </div>
+                            <!-- End row -->
+                    </section>
+                    <!-- End container -->
+                    <!-- </div> -->
+                    <!-- End breadcrumbs -->
+
+                    <section class="container main-content page-full-width">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="page-content">
+                                    <div class="boxedtitle page-title">
+                                        <h2>BlockChain Space Finding</h2>
+                                    </div>
+                                    <div class="page-content">
+                                        <form class="form-style form-style-3 form-style-5" action="javascript:">
+                                            <div class="form-inputs clearfix">
+                                                <p>
+                                                    <label class="required">Select Category
+                                                        <span>*</span>
+                                                    </label>
+                                                    <span class="styled-select">
+                                                        <select required id="category" name="category" required>
+                                                            <option value="All">All</option>
+                                                            <option value="White_Paper">White Papers</option>
+                                                            <option value="company">Company</option>
+                                                            <option value="event">Event</option>
+                                                            <option value="ICO">ICO</option>
+                                                            <option value="article">Article</option>
+                                                            <option value="job">Jobs</option>
+                                                            <option value="Others">Others</option>
+
+                                                        </select>
+                                                    </span>
+                                                </p>
+                                                <p>
+                                                    <label class="required">Keyword
+                                                    </label>
+                                                    <input id="querybox" type="text" aria-required="true" placeholder="Block chain" required>
+                                                </p>
+
+                                            </div>
+
+                                            <p class="form-submit">
+                                                <input name="submit" value="Search" class="submit button medium color" type="submit" onclick="search()">
+                                            </p>
+                                        </form>
+                                    </div>
+                                    <div class="row" id="result_display">
+                                        <p id="numResults"></p>
+
+
+                                        <!-- <p id="foundResults"></p> -->
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="list-group" id="foundResults">
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <!-- End page-content -->
+                            </div>
+                            <!-- End main -->
+                        </div>
+                        <!-- End row -->
+                    </section>
+                    <!-- End container -->
+
+                    <!-- body footer start -->
+                    <% include ./partials/body_footer %>
+                        <!-- body footer end -->
+        </div>
+        <!-- End wrap -->
+
+        <!-- footer started -->
+        <% include ./partials/footer_js %>
+            <!-- footer end -->
+
+            <script type="text/javascript">
+                function search() {
+                    var query = document.getElementById("querybox").value;
+
+                    //http://chainmap.org/query/All/bitcoin
+                    var reqUrl = "./query/" + document.getElementById("category").value + "/" + encodeURI(query);
+
+
+                    $.get(reqUrl, function (data) {
+
+                        document.getElementById("numResults").innerHTML = "Found " + data.response.numFound + " results in category " + document.getElementById("category").value;;
+                        var docs = data.response.docs;
+
+                        // document.getElementById("results1").innerHTML = docs[1].title;
+                        var resultsNode = document.getElementById("foundResults");
+                        while (resultsNode.firstChild) {
+                            resultsNode.removeChild(resultsNode.firstChild);
+                        };
+
+                        $.each(docs, function (index, value) {
+                            var img = value.category + ".png";
+                            var url = String(value.url);
+                            //alert(url.length);
+                            if(url.startsWith("http")) {
+                                //alert(url);
+                            } else {
+                                url = "/resource/"+value.category+"/"+value.title;
+                            }
+                            document.getElementById("foundResults").innerHTML += (
+                                '<div class="row" margin-bottom: 4px>' +
+                                '<div class="col-sm-2"> ' +
+                                '<img src="image/' + img + '" class="img-rounded" alt="" width="40" height="40" align="right">' +
+                                '</div>' +
+                                '<div class="col-sm-10"> ' +
+                                '<a href="'+url+'" target="_blank" class="list-group-item" style="border: none">' +
+                                '<h4 class="list-group-item-heading" style="color:DodgerBlue;">' + value.title + '</h4>' +
+                                '<p class="list-group-item-text">' + value.summary + ' </p>' +
+                                '<p class="list-group-item-text_small"> Category: ' + value.category + '</p>' +
+
+                                '</a>' +
+                                '</div>' +
+                                '</div>'
+                            )
+                        });
+
+                    }); //end jquery get
+                };
+
+            </script>
+
+    </body>
+
+</html>
