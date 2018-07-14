@@ -130,7 +130,7 @@ router.get('/', function (req, res) {
 });
 
 router.get('/searchContent', function (req, res) {
-  res.render('searchContent', { title: 'Search Block Chain related Content' });
+  res.render('searchContent', { title: 'Search Blockchain related Content' });
 });
 
 router.get('/askQuestion', function (req, res) {
