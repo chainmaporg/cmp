@@ -18,7 +18,7 @@
     "morgan": "~1.9.0",
     "mysql": "^2.13.0",
     "nebpay": "0.0.6",
-    "nebulas": "^0.5.2",
+    "nebulas": "^0.5.5",
     "node-rest-client": "^3.1.0",
     "pug": "2.0.0-beta11",
     "queue": "^4.4.2",
