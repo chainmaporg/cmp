@@ -86,7 +86,7 @@ var UserBalaceService = function () {
 	}
 
 	this.start = function () {
-		this.set(1);
+		this.set(20);
 	}
 
 	this.user = function (userId, limit) {
