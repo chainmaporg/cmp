@@ -102,3 +102,15 @@ CREATE TABLE `user_category` (
   `level` char(50) NOT NULL,
   PRIMARY KEY (`category_id`,`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `user_balance`;
+CREATE TABLE `user_balance` (
+  `balance_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `timestamp` int(10) unsigned DEFAULT NULL,
+  `balance` float(20,10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`balance_id`),
+  KEY `fk_user_balance_1_idx` (`user_id`),
+  CONSTRAINT `fk_user_balance_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

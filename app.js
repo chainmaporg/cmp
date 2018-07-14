@@ -26,9 +26,6 @@ global.config = config;
 //load chain service
 require('./libs/ChainService');
 
-
-
-
 //create db connection one time
 var startMysqlConnection=function(){
 	global.connection = mysql.createConnection(config.db);
@@ -50,6 +47,8 @@ var startMysqlConnection=function(){
 }
 startMysqlConnection();
 
+
+require('./libs/UserBalanceService');
 
 var app = express();
 app.use(session({
