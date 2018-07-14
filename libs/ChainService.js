@@ -164,6 +164,7 @@ var ChainService = function () {
 		this.txQueue.push(() => {
 			return self.neb.api.call(data).then(function (data) {
 				//code
+				data.result=JSON.parse(data.result)
 				callback(null, data)
 			}).catch((err) => {
 				callback(err)
