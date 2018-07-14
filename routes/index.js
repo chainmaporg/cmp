@@ -129,6 +129,10 @@ router.get('/', function (req, res) {
   res.render('home', { title: 'Home' });
 });
 
+router.get('/searchContent', function (req, res) {
+  res.render('searchContent', { title: 'Search Block Chain related Content' });
+});
+
 router.get('/askQuestion', function (req, res) {
   session = req.session
   console.log("printing user ID");
