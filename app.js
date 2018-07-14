@@ -49,6 +49,14 @@ startMysqlConnection();
 
 
 require('./libs/UserBalanceService');
+userBalanceService.user(18).then((data)=>{
+	console.log(18+' wallet balance is ',data);
+})
+
+userBalanceService.user(1).then((data)=>{
+	console.log(1+' wallet balance is ',data);
+})
+
 
 var app = express();
 app.use(session({
