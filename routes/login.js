@@ -14,7 +14,7 @@ exports.login = function (req, res) {
       console.log('[0]=', [0]);
       if (results.length > 0) {
         if (results[0].password == password) {
-          session = req.session;
+          var session = req.session;
           session.email = req.body.email
           session.user_id = results[0].user_id
           session.wallet = results[0].payment_address.trim()

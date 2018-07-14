@@ -58,6 +58,13 @@ app.use(session({
 	saveUninitialized: true
 }));
 
+// middleware to make 'user' available to all templates
+
+app.use(function(req, res, next) {
+  res.locals.session = req.session;
+  next();
+});
+
 // app.set('view engine', 'pug');
 app.set('view engine', 'ejs');
 // app.use(express.static('public'))
