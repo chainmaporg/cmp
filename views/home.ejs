@@ -90,53 +90,9 @@
                                         <h2>BlockChain Space Finding</h2>
                                     </div>
                                     <div class="page-content">
-                                        <form class="form-style form-style-3 form-style-5" action="javascript:">
-                                            <div class="form-inputs clearfix">
-                                                <p>
-                                                    <label class="required">Select Category
-                                                        <span>*</span>
-                                                    </label>
-                                                    <span class="styled-select">
-                                                        <select required id="category" name="category" required>
-                                                            <option value="All">All</option>
-                                                            <option value="White_Paper">White Papers</option>
-                                                            <option value="company">Company</option>
-                                                            <option value="event">Event</option>
-                                                            <option value="ICO">ICO</option>
-                                                            <option value="article">Article</option>
-                                                            <option value="job">Jobs</option>
-                                                            <option value="Others">Others</option>
-
-                                                        </select>
-                                                    </span>
-                                                </p>
-                                                <p>
-                                                    <label class="required">Keyword
-                                                    </label>
-                                                    <input id="querybox" type="text" aria-required="true" placeholder="Block chain" required>
-                                                </p>
-
-                                            </div>
-
-                                            <p class="form-submit">
-                                                <input name="submit" value="Search" class="submit button medium color" type="submit" onclick="search()">
-                                            </p>
-                                        </form>
+                                        
                                     </div>
-                                    <div class="row" id="result_display">
-                                        <p id="numResults"></p>
-
-
-                                        <!-- <p id="foundResults"></p> -->
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="list-group" id="foundResults">
-
-                                        </div>
-                                    </div>
-
-
+                                    
                                 </div>
                                 <!-- End page-content -->
                             </div>
@@ -155,57 +111,6 @@
         <!-- footer started -->
         <% include ./partials/footer_js %>
             <!-- footer end -->
-
-            <script type="text/javascript">
-                function search() {
-                    var query = document.getElementById("querybox").value;
-
-                    //http://chainmap.org/query/All/bitcoin
-                    var reqUrl = "./query/" + document.getElementById("category").value + "/" + encodeURI(query);
-
-
-                    $.get(reqUrl, function (data) {
-
-                        document.getElementById("numResults").innerHTML = "Found " + data.response.numFound + " results in category " + document.getElementById("category").value;;
-                        var docs = data.response.docs;
-
-                        // document.getElementById("results1").innerHTML = docs[1].title;
-                        var resultsNode = document.getElementById("foundResults");
-                        while (resultsNode.firstChild) {
-                            resultsNode.removeChild(resultsNode.firstChild);
-                        };
-
-                        $.each(docs, function (index, value) {
-                            var img = value.category + ".png";
-                            var url = String(value.url);
-                            //alert(url.length);
-                            if(url.startsWith("http")) {
-                                //alert(url);
-                            } else {
-                                url = "/resource/"+value.category+"/"+value.title;
-                            }
-                            document.getElementById("foundResults").innerHTML += (
-                                '<div class="row" margin-bottom: 4px>' +
-                                '<div class="col-sm-2"> ' +
-                                '<img src="image/' + img + '" class="img-rounded" alt="" width="40" height="40" align="right">' +
-                                '</div>' +
-                                '<div class="col-sm-10"> ' +
-                                '<a href="'+url+'" target="_blank" class="list-group-item" style="border: none">' +
-                                '<h4 class="list-group-item-heading" style="color:DodgerBlue;">' + value.title + '</h4>' +
-                                '<p class="list-group-item-text">' + value.summary + ' </p>' +
-                                '<p class="list-group-item-text_small"> Category: ' + value.category + '</p>' +
-
-                                '</a>' +
-                                '</div>' +
-                                '</div>'
-                            )
-                        });
-
-                    }); //end jquery get
-                };
-
-            </script>
-
     </body>
 
 </html>
