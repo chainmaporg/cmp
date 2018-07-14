@@ -133,6 +133,16 @@ router.get('/searchContent', function (req, res) {
   res.render('searchContent', { title: 'Search Blockchain related Content' });
 });
 
+router.get('/connectJob', function (req, res) {
+  res.render('connectJob', { title: 'Find jobs' });
+});
+
+router.get('/connectGroup', function (req, res) {
+  res.render('connectGroup', { title: 'Connect with social media' });
+});
+
+
+
 router.get('/askQuestion', function (req, res) {
   session = req.session
   console.log("printing user ID");
