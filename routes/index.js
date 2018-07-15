@@ -99,6 +99,7 @@ var login = require('../routes/login');
 var users = require('../routes/users');
 var questionBoard = require("../routes/questionBoard");
 var trainingMaterial = require("../routes/trainingMaterial");
+var socialgroup = require('../routes/socialgroup');
 // global.environment = "local";
 global.environment = "production";
 
@@ -137,10 +138,11 @@ router.get('/connectJob', function (req, res) {
   res.render('connectJob', { title: 'Find jobs' });
 });
 
-router.get('/connectGroup', function (req, res) {
-  res.render('connectGroup', { title: 'Connect with social media' });
+router.get('/connectSmartContract', function (req, res) {
+  res.render('connectSmartContract', { title: 'Connect to do smart contract' });
 });
 
+router.get('/connectGroup', socialgroup.getSocialGroup);
 
 
 router.get('/askQuestion', function (req, res) {
