@@ -2,7 +2,7 @@ var host = "107.181.170.169";
 var search_solr_host = 'http://' + host + ':8983/solr/chainmap';
 var search_engine_host = 'http://' + host + ':3000';
 var chainmap_env = "local";
-var smartContract_address = "n1zmcenCUrTWraZ4jvvaawYZRV33MhebKF2";
+var smartContract_address = "n1ye4HubRMShQtvJE6QK7smMbGSbs7Y9RC3";
 var chainmapServerWallet = "n1GvvvstiCXUKBaeYniqRGeoAdMkMHoipvc";
 
 module.exports = {
