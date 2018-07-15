@@ -10,7 +10,7 @@ hosts=("107.182.235.108")
 
 target=/home/deploy
 user=gezhao
-tarname=cmp-1.0.tar
+tarname=cmp-1.1.tar
 
 tar --exclude='./.git/' --exclude='./node_modules' -cvf ../$tarname .
 
