@@ -54,15 +54,100 @@
                             <div class="col-md-12">
                                 <div class="page-content">
                                     <div class="boxedtitle page-title">
-                                        <h2>BlockChain Space Finding</h2>
+                                        <h2>Top Groups Sorted by Followers</h2>
                                     </div>
                                     <div class="page-content">
-									<p> Telegram Groups </p>
-									
-									<p> Facebook Groups </p>
-									
-									<p> Reddit Groups </p>
-									
+							
+									<table>
+    							    <tr>
+									    <td width="300"><h2></h2></td>
+									    <td width="200"></td>
+									</tr>							
+								    <tr>
+									    <td width="300"><h2>Top 30 Telegram Groups</h2></td>
+									    <td width="200"></td>
+									</tr>							
+									<tr>
+									    <td width="300"><h2>Description</h2></td>
+									    <td width="200"><h2>Followers</h2></td>
+									</tr>
+								    <% 
+								    		count=0
+								    		for(let i = 0; i < data.length; i++) {
+							
+									    		if(data[i].grouptype!="telegram") {
+									    			continue;
+									    		}
+									    		count=count+1
+									    		if(count>30) {
+									    			break;
+									    		}
+									            %>
+								             <tr>
+								             	<td><a href="<%= data[i].link%>"><%= data[i].description%></a></td>
+									    		<td><%= data[i].followers %></td>
+           									 </tr>
+    								<% } %>
+    							    <tr>
+									    <td width="300"><h2></h2></td>
+									    <td width="200"></td>
+									</tr>
+									<tr>
+									    <td width="300"><h2>Top 30 Facebook Groups</h2></td>
+									    <td width="200"></td>
+									</tr>
+									<tr>
+									    <td width="300"><h2>Description</h2></td>
+									    <td width="200"><h2>Followers</h2></td>
+									</tr>
+							        <% 
+								    		count=0
+								    		for(let i = 0; i < data.length; i++) {
+									    		if(data[i].grouptype!="facebook") {
+									    			continue;
+									    		}
+									    		count=count+1
+									    		if(count>30) {
+									    			break;
+									    		}	
+									%>		    		
+								             <tr>
+								             	<td><a href="<%= data[i].link%>"><%= data[i].link%></a></td>
+									    		<td><%= data[i].followers %></td>
+           									 </tr>
+    								<% } %>
+    							    <tr>
+									    <td width="300"><h2></h2></td>
+									    <td width="200"></td>
+									</tr>
+									<tr>
+									    <td width="300"><h2>Top 30 Reddit groups</h2></td>
+									    <td width="200"></td>
+									</tr>
+									<tr>
+									    <td width="300"><h2>Description</h2></td>
+									    <td width="200"><h2>Followers</h2></td>
+									</tr>
+						            <% 
+								    		count=0
+								    		for(let i = 0; i < data.length; i++) {
+				                                
+									    		if(data[i].grouptype!="reddit") {
+									    			continue;
+									    		}
+									    		count=count+1
+									    		if(count>30) {
+									    			break;
+									    		}
+									    	    
+									%>			    		
+								             <tr>
+								             	<td><a href="<%= data[i].link%>"><%= data[i].link%></a></td>
+									    		<td><%= data[i].followers %></td>
+           									 </tr>
+    								<% } %>
+									</table>
+
                                     </div>
 
 

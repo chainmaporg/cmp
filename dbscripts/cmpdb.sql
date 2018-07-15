@@ -103,7 +103,6 @@ CREATE TABLE `user_category` (
   PRIMARY KEY (`category_id`,`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
 DROP TABLE IF EXISTS `user_balance`;
 CREATE TABLE `user_balance` (
   `balance_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -114,3 +113,15 @@ CREATE TABLE `user_balance` (
   KEY `fk_user_balance_1_idx` (`user_id`),
   CONSTRAINT `fk_user_balance_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `socialgroup`;
+CREATE TABLE `socialgroup` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`grouptype` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+	`description` text COLLATE utf8_unicode_ci NOT NULL,
+	`link` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+    `followers` int(11) NOT NULL,   
+	`created` datetime NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
