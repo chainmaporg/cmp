@@ -102,3 +102,16 @@ CREATE TABLE `user_category` (
   `level` char(50) NOT NULL,
   PRIMARY KEY (`category_id`,`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `socialgroup`;
+CREATE TABLE `socialgroup` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`grouptype` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+	`description` text COLLATE utf8_unicode_ci NOT NULL,
+	`link` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+    `followers` int(11) NOT NULL,   
+	`created` datetime NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
