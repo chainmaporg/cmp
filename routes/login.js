@@ -5,7 +5,18 @@ exports.login = function (req, res) {
   var email = req.body.email;
   var password = md5(req.body.password);
   console.log("login info-", email, "/", password);
-  connection.query('SELECT * FROM user WHERE user_email = ?', [email], function (error, results, fields) {
+  
+  qry='';
+  if(email.includes("@")) {
+  	 qry = 'SELECT * FROM user WHERE (user_email = ?) ';
+  }
+  else {
+  	 qry = 'SELECT * FROM user WHERE (user_name = ?) ';
+  }  
+  	
+  console.log("login query=",qry);
+  
+  connection.query(qry, [email], function (error, results, fields) {
     if (error) {
       console.log("error ocurred", error);
       res.render("error", { errorMsg: "Error on selecting from DB Users" })
