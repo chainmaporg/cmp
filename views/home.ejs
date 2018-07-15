@@ -18,12 +18,6 @@
         <div id="wrap" class="grid_1200">
 
 
-
-
-
-
-
-
             <% include ./partials/header_login %>
 
                 <% include ./partials/body_header %>
@@ -32,7 +26,7 @@
                             <div class="box_icon box_warp box_no_border box_no_background" box_border="transparent" box_background="transparent" box_color="#FFF">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <h2>ChainMap <a href="/loginRegister" class="button small green-button custom-button">Register Now</a></h2> 
+                                        <h2>ChainMap <a href="/loginRegister" class="button small green-button custom-button">Register/Login Now</a></h2> 
                                         <p style="font-size: 26px !important">
                                             A blockchain developer growth platform supporting the community and ecosystem.
                                         </p>
@@ -56,79 +50,14 @@
                     <section class="container main-content page-full-width">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="page-content">
-                                <!--
-                                    <div class="boxedtitle page-title">
-                                        <h2>BlockChain Space Finding</h2>
-                                    </div>
-                                -->
-                                    <div class="page-content">
-                                        <form class="form-style form-style-3 form-style-5" action="javascript:">
-                                            <div class="form-inputs clearfix">
-                                                <p>
-                                                    <label class="required">Select Category
-                                                        <span>*</span>
-                                                    </label>
-                                                    <span class="styled-select">
-                                                        <select required id="category" name="category" required>
-                                                            <option value="White_Paper">White Papers</option>                                                      
-                                                            <option value="article">Article</option>
-                                                            <option value="company">Company</option>
-                                                            <option value="event">Event</option>
-                                                            <option value="ICO">ICO</option>
-                                                            <option value="All">All</option>
-
-                                                        </select>
-                                                    </span>
-                                                </p>
-                                                <p>
-                                                    <label class="required">Keyword
-                                                    </label>
-                                                    <input id="querybox" type="text" aria-required="true" placeholder="Blockchain" required>
-                                                </p>
-
-                                            </div>
-
-                                            <p class="form-submit">
-                                                <input name="submit" value="Search" class="submit button medium color" type="submit" onclick="search()">
-                                            </p>
-                                        </form>
-                                    </div>
-                                    <div class="row" id="result_display">
-                                        <p id="numResults"></p>
-
-
-                                        <!-- <p id="foundResults"></p> -->
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="list-group" id="foundResults">
-
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                                <!-- End page-content -->
-                            </div>
-                            <!-- End main -->
-                        </div>
-                        <!-- End row -->
-                    </section>
-                    <!-- End container -->
-
- 
-                    <section class="container main-content page-full-width">
-                        <div class="row">
-                            <div class="col-md-12">
                                 <div id="columns" class="row">
-                                    <!--
-                                    <div class="col-md-12">
+                                    
+                                    <!-- <div class="col-md-12">
                                         <div class="boxedtitle page-title">
                                             <h2>ChainMap Contribution for Developers</h2>
                                         </div>
-                                    </div>
-                                    -->
+                                    </div> -->
+                                   
                                     <div class="col-md-12">
                                         <p>
                                             <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/trainingMaterial">Knowledge Center</a> - Find some of the best blockchain training material out there. <a href="/searchContent">Search White Papers(including Chinese)</a>
@@ -167,93 +96,163 @@
                                     </div> -->
 
                                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                 <div id="columns" class="row">
-                                    <div class="col-md-12">
-                                    <!--
+                                    <!-- <div class="col-md-12">
                                         <div class="boxedtitle page-title">
-                                            <h2>Featured Links</h2>
+                                            <h2>Search your necessary content.</h2>
                                         </div>
-                                    -->
-                                        <div class="bx-wrapper">
-                                            <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 150px;">
-                                                <!-- <div class="bxslider" style="width: 1015%; position: relative; transition-duration: 0s; transform: translate3d(-1756px, 0px, 0px);"> -->
-                                                    <div class="slide bx-clone" style="float: left; list-style: outside none none; position: relative; margin-right: 30px; width: 189.5px;">
-                                                        <div class="grid-bxslider">
-                                                            <div class="bxslider-overlay t_center">
-                                                                <a href="https://consensys.net/academy/resources/" class="bxslider-title" target="_blank">
-                                                                    <h4>Ethereum and Blockchain Resources</h4>
-                                                                    
-                                                                </a>
-                                                                
-                                                            </div>
-                                                            <img src="/image/homepagelinks/blockChainBasics.PNG" alt="" height="120" width="190">
-                                                        </div>
-                                                    </div>
-                                                    <div class="slide bx-clone" style="float: left; list-style: outside none none; position: relative; margin-right: 30px; width: 189.5px;">
-                                                        <div class="grid-bxslider">
-                                                            <div class="bxslider-overlay t_center">
-                                                                <a href="https://medium.com/coinmonks/top-dapp-tutorial-series-2e70c0d79782" class="bxslider-title" target="_blank">
-                                                                    <h4>Top Dapp tutorials Series – Coinmonks – Medium</h4>
-                                                                    
-                                                                </a>
-                                                                
-                                                                
-                                                            </div>
-                                                            <img src="/image/homepagelinks/1 YWZEVCk8u4xlwyGhRe149g.jpeg" alt="" height="120" width="190">
-                                                        </div>
-                                                    </div>
-                                                    <div class="slide bx-clone" style="float: left; list-style: outside none none; position: relative; margin-right: 30px; width: 189.5px;">
-                                                        <div class="grid-bxslider">
-                                                            <div class="bxslider-overlay t_center">
-                                                                <a href="https://blockgeeks.com/guides/" class="bxslider-title" target="_blank">
-                                                                    <h4>Guides for Blockchain Geeks</h4>
-                                                                </a>
-                                                                
-                                                            </div>
-                                                            <img src="/image/homepagelinks/blockgeeks.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="slide bx-clone" style="float: left; list-style: outside none none; position: relative; margin-right: 30px; width: 189.5px;">
-                                                        <div class="grid-bxslider">
-                                                            <div class="bxslider-overlay t_center">
-                                                                <a href="https://bitcoin.org/bitcoin.pdf" class="bxslider-title" target="_blank">
-                                                                    <h4>What is Bitcoin? Learn More about Bitcoint</h4>
-                                                                    
-                                                                </a>
-                                                                
-                                                                
-                                                            </div>
-                                                            <img src="/image/homepagelinks/bitcoin-price-live-987029.jpg" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="slide" style="float: left; list-style: outside none none; position: relative; margin-right: 30px; width: 189.5px;">
-                                                        <div class="grid-bxslider">
-                                                            <div class="bxslider-overlay t_center">
-                                                                <a href="https://www-01.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=XIM12354USEN" class="bxslider-title" target="_blank">
-                                                                    <h4>E-Book: Blockchain for Dummies</h4>
-                                                                </a>
-                                                                
-                                                                
-                                                            </div>
-                                                            <img src="/image/homepagelinks/blockchaindummy.png" alt="">
-                                                        </div>
-                                                    </div>
-
-                                                <!-- </div> -->
-                                            </div>
+                                    </div> -->
+                                        <div class="page-content">
+                                            <form class="form-style form-style-3 form-style-5" action="javascript:">
+                                                <div class="form-inputs clearfix">
+                                                    <p style="display: block; float: left; width: 40% !important;">
+                                                        
+                                                        <span class="styled-select">
+                                                            <select required id="category" name="category" required>
+                                                                <option value="">Select Category (required)</option>
+                                                                <option value="White_Paper">White Papers</option>                                                      
+                                                                <option value="article">Article</option>
+                                                                <option value="company">Company</option>
+                                                                <option value="event">Event</option>
+                                                                <option value="ICO">ICO</option>
+                                                                <option value="All">All</option>
+    
+                                                            </select>
+                                                        </span>
+                                                    </p>
+                                                    <p style="display: block; float: left; width: 40% !important;">
+                                                        
+                                                        <input id="querybox" type="text" aria-required="true" placeholder="Enter your keyword *" required>
+                                                    </p>
+                                                    <p style="display: block; float: left; width: 20% !important;">
+                                                        <input name="submit" value="Search" class="submit button medium color" type="submit" onclick="search()">
+                                                    </p>
+    
+                                                </div>
+    
                                                 
+                                            </form>
                                         </div>
+                                        <div class="row" id="result_display">
+                                            <p id="numResults"></p>
+    
+    
+                                            <!-- <p id="foundResults"></p> -->
+                                        </div>
+    
+                                        <div class="row">
+                                            <div class="list-group" id="foundResults">
+    
+                                            </div>
+                                        </div>
+    
+    
                                     </div>
+                                    <!-- End page-content -->
 
 
-
-                                </div>
+                                    <div id="columns" class="row">
+                                        <div class="col-md-12">
+                                        
+                                            <!-- <div class="boxedtitle page-title">
+                                                <h2>Featured Links</h2>
+                                            </div> -->
+                                       
+                                            <div class="bx-wrapper">
+                                                <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 150px;">
+                                                    <!-- <div class="bxslider" style="width: 1015%; position: relative; transition-duration: 0s; transform: translate3d(-1756px, 0px, 0px);"> -->
+                                                        <div class="slide bx-clone" style="float: left; list-style: outside none none; position: relative; margin-right: 30px; width: 189.5px;">
+                                                            <div class="grid-bxslider">
+                                                                <div class="bxslider-overlay t_center">
+                                                                    <a href="https://consensys.net/academy/resources/" class="bxslider-title" target="_blank">
+                                                                        <h4>Ethereum and Blockchain Resources</h4>
+                                                                        
+                                                                    </a>
+                                                                    
+                                                                </div>
+                                                                <img src="/image/homepagelinks/blockChainBasics.PNG" alt="" height="120" width="190">
+                                                            </div>
+                                                        </div>
+                                                        <div class="slide bx-clone" style="float: left; list-style: outside none none; position: relative; margin-right: 30px; width: 189.5px;">
+                                                            <div class="grid-bxslider">
+                                                                <div class="bxslider-overlay t_center">
+                                                                    <a href="https://medium.com/coinmonks/top-dapp-tutorial-series-2e70c0d79782" class="bxslider-title" target="_blank">
+                                                                        <h4>Top Dapp tutorials Series – Coinmonks – Medium</h4>
+                                                                        
+                                                                    </a>
+                                                                    
+                                                                    
+                                                                </div>
+                                                                <img src="/image/homepagelinks/1 YWZEVCk8u4xlwyGhRe149g.jpeg" alt="" height="120" width="190">
+                                                            </div>
+                                                        </div>
+                                                        <div class="slide bx-clone" style="float: left; list-style: outside none none; position: relative; margin-right: 30px; width: 189.5px;">
+                                                            <div class="grid-bxslider">
+                                                                <div class="bxslider-overlay t_center">
+                                                                    <a href="https://blockgeeks.com/guides/" class="bxslider-title" target="_blank">
+                                                                        <h4>Guides for Blockchain Geeks</h4>
+                                                                    </a>
+                                                                    
+                                                                </div>
+                                                                <img src="/image/homepagelinks/blockgeeks.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="slide bx-clone" style="float: left; list-style: outside none none; position: relative; margin-right: 30px; width: 189.5px;">
+                                                            <div class="grid-bxslider">
+                                                                <div class="bxslider-overlay t_center">
+                                                                    <a href="https://bitcoin.org/bitcoin.pdf" class="bxslider-title" target="_blank">
+                                                                        <h4>What is Bitcoin? Learn More about Bitcoint</h4>
+                                                                        
+                                                                    </a>
+                                                                    
+                                                                    
+                                                                </div>
+                                                                <img src="/image/homepagelinks/bitcoin-price-live-987029.jpg" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="slide" style="float: left; list-style: outside none none; position: relative; margin-right: 30px; width: 189.5px;">
+                                                            <div class="grid-bxslider">
+                                                                <div class="bxslider-overlay t_center">
+                                                                    <a href="https://www-01.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=XIM12354USEN" class="bxslider-title" target="_blank">
+                                                                        <h4>E-Book: Blockchain for Dummies</h4>
+                                                                    </a>
+                                                                    
+                                                                    
+                                                                </div>
+                                                                <img src="/image/homepagelinks/blockchaindummy.png" alt="">
+                                                            </div>
+                                                        </div>
+    
+                                                    <!-- </div> -->
+                                                </div>
+                                                    
+                                            </div>
+                                        </div>
+    
+    
+    
+                                    </div>
                             </div>
                             <!-- End main -->
                         </div>
                         <!-- End row -->
                     </section>
                     <!-- End container -->
+
                     
 
 

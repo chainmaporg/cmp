@@ -524,7 +524,7 @@ div[class*="slider_shadow"]:before, div[class^="header_shadow"] {
 .ask-me {
 	padding-bottom: 0 !important;
 	height: auto;
-	margin-bottom: 70px !important;
+	/* margin-bottom: 70px !important; */
 }
 .ask-me .col-md-3 {
 	padding-top: 0;
@@ -3710,7 +3710,7 @@ h2 [class^="icons-"], h2 [class*=" icons-"] {
 }
 /* Sections */
 .section-warp {
-	padding: 30px 0;
+	/* padding: 30px 0; */
 	margin-bottom: 30px;
 	width: 100%;
 	position: relative;
