@@ -1,0 +1,20 @@
+Cryptocurrency Trading Bible Three: Winning In Sideways And Bear Markets (Seeking Alpha)
+Cryptocurrencies are one of the hottest investments of 2017.
+The excitement surrounding cryptocurrencies has more to do with the underlying technology that powers them than the idea of a digital currency. After all, credit cards, checks and wire transfers have transferred cash digitally for decades.
+What Is Blockchain?
+Bitcoin and other cryptocurrencies are powered by a system known as the blockchain. Each major digital currency has its own blockchain, but the general idea behind them is the same. Blockchains are typically defined as digitized, decentralized public ledgers of cryptocurrency transactions. The blockchain is a public ledger of every transfer the bitcoin community makes, and many different people can make entries into that ledger.
+Decentralization Is Key
+On the surface, the blockchain may seem a bit like Wikipedia in the sense that anyone can edit information and the entire community is in change of editing and policing content. But Wikipedia content is stored on a centralized server, and users use the internet to make changes to that centralized database. Wikipedia administrators have the ultimate say in what does or doesn’t get changed in the “master copy” that is stored on the servers.
+With the blockchain, every node in the network is updating the ledger independently, and the most popular record automatically becomes the official record. In other words, there is no “master copy” on the blockchain. In fact, there are many independent copies of the same record, all of which are used to verify one another.
+The Role Of Blocks
+Once a group of transactions is recorded and verified via consensus, it is added to the blockchain as a “block.” Once a block is completed, it is stored permanently and cannot be altered or deleted. In a sense, each block is like a page in the ledger of transactions. Each block is connected to the one before and after it, like links in a chain.
+Distributed, Authorized, Trasparent
+There are three attributes to blockchain systems that make them resistant to fraud or malicious manipulation. First, blockchain records are distributed to all the parties involved, providing each the opportunity to track and verify each transaction. Second, because each member of the network is authorized to access each new transaction, nothing can be added to the blockchain ledger without a consensus verification.
+Finally, the true power of blockchain technology is the transparency of the entire process. Frauds and hackers typically single out a weak point in a system to target. But with blockchain record-keeping, the entire network participates in every step of the process, providing a sort of real-time peer auditing system that makes blockchain extremely resistant to fraud.
+Implications Of Blockchain Technology
+Bitcoin was the first use for blockchain technology, but it’s easy to see how blockchain systems can be used to securely document anything from diamond sales to supply chain transactions or be instituted to verify and secure cloud-stored data. Some technology experts believe blockchain verification will be at the core of all digital security at some point in the future.
+Of course, the good news for cryptocurrency investors is that they don’t have to understand the nuances of the blockchain, the complicated process of cryptocurrency mining or the sophisticated software underlying the entire system to profit off of trading bitcoin. No matter how high the price of bitcoin goes, the true long-term value may be with the blockchain system rather than the currency itself.
+Related Links:
+
+
+Original link: https://www.benzinga.com/fintech/17/12/10859206/what-is-a-blockchain-and-what-does-it-do

@@ -1,0 +1,27 @@
+We seek an experienced software engineer to build the next generation of peer-to-peer networks. 
+Engineering at Protocol Labs
+Engineering at Protocol Labs is not just about writing world-class code. We create software systems that tackle significant challenges. We aim to solve those challenges with new technology breakthroughs and great user experience design.  We believe in an open-source approach to creation. We strike a balance between pragmatism (put it on a ship ⛴), deeply informed protocol design, and strict application of strong engineering principles. All of this happens in an environment defined by curiosity, passion, and a love for open source.
+As a Peer-to-Peer Networking Engineer at Protocol Labs you might...
+Build the next generation of peer-to-peer software, working on projects like libp2p, IPFS and Filecoin
+Participate in the design and implementation of performant and resilient distributed applications
+Create or maintain software libraries and programs depended on by other systems and applications
+Integrate research results into real programs
+Work alongside a cross-functional team including engineering, design, community, product, and business
+Engage and educate the community, from users to contributors
+Work on public open source repositories with broader communities
+You may be a fit for this role if you have...
+BA/BS degree in Computer Science, Computer Engineering, related field or equivalent practical experience 
+Experience programming in one or more of the following: Go, Javascript, Rust, C, C++, Haskell, Ocaml, Python
+Leadership experience building and maintaining large-scale distributed systems in production 
+Significant experience building peer-to-peer applications 
+Deep understanding of network protocols 
+Excellent written and verbal communication skills 
+Bonus Points
+Experience leading and guiding Open Source projects 
+Experience working with libp2p and/or IPFS 
+What’s it like to work at Protocol Labs?
+Protocol Labs mission is to improve humanity’s most important technology, the Internet. We build protocols, systems, and tools to improve how it works. Today, we are focused on how we store, locate, and move information. Our projects include IPFS, Filecoin, libp2p, and more.
+As a distributed team, we hire anywhere in the world, and at various levels of experience (entry, senior, staff). We look for people with unique perspectives and diverse backgrounds.
+
+
+Original link: https://jobs.lever.co/protocol/e4a469e4-c420-4ae5-acea-44c33a03dbd2

@@ -1,0 +1,43 @@
+The Independent Online
+For now, banks are largely on the sidelines with bitcoin (          Reuters          )
+The woes of an early bitcoin investor. Until recently, people who paid virtually nothing for the virtual currency and watched it soar had only one way to enjoy their new wealth -- sell. And many weren’t ready.
+Lenders on the fringe of the financial industry are now pitching a solution: loans using a digital hoard as collateral.
+While banks hang back, startups with names like Salt Lending, Nebeus, CoinLoan and EthLend are diving into the breach. Some lend -- or plan to lend -- directly, while others help borrowers get financing from third parties. Terms can be onerous compared with traditional loans. But the market is potentially huge.
+A third of millenials will be invested in bitcoin in 2018
+Bitcoin’s price hovered around $17,000 (£12,648) much of this week , giving the cryptocurrency a total market value of almost $300bn. Roughly 40 per cent of that is held by something like 1,000 users. That’s a lot of digital millionaires needing houses, yachts and $590 shearling eye masks.
+“I would be very interested in doing this with my own holdings, but I haven’t found a service to enable this yet,” said Roger Ver, widely known as “Bitcoin Jesus” for his proselytizing on behalf of the cryptocurrency, in which he in one of the largest holders.
+People controlling about 10 per cent of the digital currency would probably like to use it as collateral, estimates Aaron Brown, a former managing director at AQR Capital Management who invests in bitcoin and writes for Bloomberg Prophets. “So I can see a lending industry in the tens of billions of dollars,” he said.
+One problem is that bitcoin’s price swings violently, which can make it dangerous for lenders to hold. That means the terms can be steep.
+Someone looking to tap $100,000 in cash would probably need to put up $200,000 of bitcoin as collateral, and pay 12 per cent to 20 per cent in interest a year, according to David Lechner, the chief financial officer at Salt, which has arranged dozens of loans.
+That’s in line with interest rates for unsecured personal loans. The difference is that putting up bitcoin lets people borrow more.
+The new loans should be of particular interest to miners, whose computers solve complex math problems to obtain new coins and help confirm transactions, Mr Brown said. They have to pay for electricity and equipment. But, like many bitcoin believers, they don’t like to sell their crypto. Bitcoin startups also need cash to pay employees.
+Late last month, London-based startup Nebeus began helping third-party lenders offer loans backed by bitcoin and ether, another cryptocurrency. The firm arranged almost 100 such loans on the first day, according to Konstantin Zaripov, the company’s managing director. It has since done more than 1,000.
+Salt offers loans and plans to eventually help banks do so too. It’s talking with financial institutions and aims to strike a deal with at least one of them “within weeks,” Mr Lechner said.
+Some companies also require a second form of collateral. Terms can include maintenance calls, requiring borrowers to post more bitcoin if the price drops. That’s similar to the margin that a dozen or so cryptocurrency exchanges already offer clients so they can ramp up their trading bets.
+Business news: in pictures
+Business news: in pictures
+1/4
+Spotify traded publically for the first time on the New York Stock Exchange on Tuesday. However, the company isn't issuing shares, but rather, shares held by Spotify's private investors will be sold
+AFP/Getty
+2/4
+The deadline to award a contract to make blue British passports after Brexit has been extended by two weeks following a request by bidder De La Rue. The move comes after anger at the announcement British passports would be produced by Franco-Dutch firm Gemalto when De La Rue’s contract ends in July.  The British firm said Gemalto was chosen only because it undercut the competition, but the UK company also admitted that it was not the cheapest choice in the tendering process.
+3/4
+Phillip Rasmussen, finance chief of technology company IQE, was killed in an accident while on holiday over the weekend. The company confirmed the 47 year old man had died while cycling in Menorca. A 25-year-old American man was arrested on suspicion of drink driving, after failing a roadside breath test.
+4/4
+The Beast from the East wiped £4m off of Flybe’s revenues due to flight cancellations, airport closures and delays, according to the budget airline’s estimates.  Flybe said it cancelled 994 flights in the three months to 31 March, compared to 372 in the same period last year.
+1/4
+Spotify traded publically for the first time on the New York Stock Exchange on Tuesday. However, the company isn't issuing shares, but rather, shares held by Spotify's private investors will be sold
+AFP/Getty
+2/4
+The deadline to award a contract to make blue British passports after Brexit has been extended by two weeks following a request by bidder De La Rue. The move comes after anger at the announcement British passports would be produced by Franco-Dutch firm Gemalto when De La Rue’s contract ends in July.  The British firm said Gemalto was chosen only because it undercut the competition, but the UK company also admitted that it was not the cheapest choice in the tendering process.
+3/4
+Phillip Rasmussen, finance chief of technology company IQE, was killed in an accident while on holiday over the weekend. The company confirmed the 47 year old man had died while cycling in Menorca. A 25-year-old American man was arrested on suspicion of drink driving, after failing a roadside breath test.
+4/4
+The Beast from the East wiped £4m off of Flybe’s revenues due to flight cancellations, airport closures and delays, according to the budget airline’s estimates.  Flybe said it cancelled 994 flights in the three months to 31 March, compared to 372 in the same period last year.
+In a twist, some lenders are hoping to use blockchains -- digital ledgers akin to those underpinning bitcoin -- to facilitate lending. The idea is to stitch terms into a ledger to help automate the loan and collections. If they take off, the model could challenge peer-to-peer lenders -- such as LendingClub, Prosper Marketplace and Zopa -- by offering debt investors more reliable repayment, according to Lucas Nuzzi, a senior analyst at Digital Asset Research.
+“Although this has the potential of revolutionizing credit markets, we are still in the very early stages of development,” Nuzzi said. “No companies have been able to fully implement such a system.”
+For now, banks are largely on the sidelines, reluctant to offer services that could leave them holding bitcoins. Some firms don’t have a secure way to store cryptocurrency. And there’s no established model to account for it on a regulated balance sheet.
+Bloomberg
+
+
+Original link: http://www.independent.co.uk/news/business/news/bitocin-loans-digital-currency-collateral-ethlend-coinloan-nebeus-a8109991.html

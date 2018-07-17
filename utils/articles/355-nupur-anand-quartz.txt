@@ -1,0 +1,12 @@
+December 14, 2017 Quartz india
+The taxman is knocking on the doors of India’s bitcoin exchanges.
+Officials are investigating several bitcoin exchanges across the country, including in Mumbai, Bengaluru, Pune, Hyderabad, and New Delhi, Surabhi Ahluwalia, spokesperson for the tax department, told Reuters on Dec. 13. “We are looking at collecting information about (the) modus operandi of bitcoin exchanges, investors, their source of investment and possibility of collecting tax,” Ahluwalia said.
+Soaring bitcoin prices in recent months have had regulators worried. The price of a bitcoin, which on Nov. 01 stood at around Rs4.55lakh ($7,070), has skyrocketed to Rs13.80 lakh by Dec. 14. This has sparked investor interest, with several cryptocurrency exchanges seeing their buying volumes double within a month .
+In turn, the RBI issued a cautionary note again, reiterating its previous warnings. “In the wake of (a) significant spurt in the valuation of many VCs (virtual currencies) and rapid growth in initial coin offerings, RBI reiterates the concerns conveyed in the earlier press releases,” it said in a circular issued on Dec. 05, underlining the potential risks of dealing in such currencies.
+Meanwhile, India’s central government is concerned that these virtual currencies can be used to launder money and commit fraud. It has also set up a panel headed by economic affairs secretary Subhash Chandra Garg, which includes members from the stock market and the banking regulator, to determine India’s position on virtual currencies, Bloomberg reported . Yet, in spite of the government’s reservations, these currencies have not been clearly deemed illegal in India.
+Repeated attempts by Quartz to contact officials at various cryptocurrency exchanges including, Zebpay, Coinome, Unocoin, Coinsecure, and Koinex, remained unsuccessful.
+However, in earlier instances the bitcoin exchanges in the country had assured that they have rules and regulations in place to check money laundering or other illegal activities. “No cash or cheque is accepted, all transactions are routed via online bank transfer to ensure that there is a money trail,” Vivek Steve Francis, CEO of Coinome, a cryptocurrency trading exchange, had told Quartz late last month . “Moreover, we also follow the electronic know-your-customer procedure and also check the Aadhaar number to ensure that fraudulent transactions are avoided.”
+Most Popular
+
+
+Original link: https://qz.com/1156238/bitcoin-under-the-scanner-as-indias-tax-authorities-investigate-cryptocurrency-exchanges/

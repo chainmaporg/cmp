@@ -1,0 +1,26 @@
+Published: Dec 16, 2017 10:01 a.m. ET
+Share
+Blockchain can help combat corruption, Danish Minister of Foreign Affairs says
+Reuters
+Blockchain can be used to send money to the trouble spots of the world, new report from Denmark says.
+By
+SaraSjolin
+Markets reporter
+Blockchain has been catapulted into the limelight by the recent bitcoin frenzy, but now Denmark is putting the revolutionizing technology into a completely different arena: humanitarian aid.
+In a report released by the Danish Ministry of Foreign Affairs earlier this week, the Scandi country argues blockchain has the potential to improve human rights and ensure a faster and safer transfer of money to the troubled hot spots of the world. The report was written in collaboration with think tank Sustainia and blockchain currency platform Coinify.
+“There [are] huge opportunities in bringing the technological development into play in development cooperation. The use of blockchain and cryptocurrency is merely some of the technologies, which can give us new tools in the development cooperation toolbox,” said Danish Minister for Development Cooperation, Ulla Tørnæs, in a press release.
+“It is clear that if we are to succeed in relation to the sustainable development goals we need digital and technological solutions and some of these we do not know of, but we will help find them,” she added.
+Blockchain is a digital distributed ledger maintained by a network of computers that cannot be altered, making it completely secure and transparent, its proponents insist. Bitcoin BTCUSD, +0.20%  and other cryptocurrencies run on the blockchain technology.
+The “Hack the Future of Development Aid” report recommends using cryptocurrencies to send foreign aid directly from Denmark to recipients in poor countries, which takes out the costly middlemen and fees. That would make Denmark the first donor country in the world to transfer aid by using cryptocurrencies.
+Additionally, contracts and legal papers can be digitalized using blockchain, helping to “combat corruption and ensure a more effective development aid and better protection of the rights of marginalized groups,” according to report.
+“Crypto and crisis is a perfect match, and aid organizations will undeniably be able to respond quicker using blockchain-based digital money, which arrives at email-speed, safely and transparently,” said Marianne Haahr, project leader at Sustainia, in the statement.
+“The big challenge now is to disrupt the aid model. First step is to build trust in blockchain and its ability to facilitate all aspects of aid, next step is to disrupt the whole aid system,” she added.
+Cryptocurrencies have hit the headlines recently after bitcoin’s 1700% rally year-to-date. In November, a record 148 new currencies were launched, including such names as Trive, Karma, SwissBorg and, of course, Lordmancer II.
+Read: The voracious appetite for new cryptos, in one mesmerizing graphic
+Critics argue the cyber money should be banned as it’s not regulated and can be used for shady business such as buying drugs or illegal pornography, and promotes tax evasion.
+However, as cryptocurrencies and blockchain — their underlying technology — gather more traction, more uses start to spring up, such as the Danish report suggest. Earlier this year the United Nations’ World Food Program sent over 10,000 Syrian refugees cryptocurrency-based vouchers that could be redeemed in participating markets. The transfer was done using the Ethereum blockchain, according CoinDesk.
+Blockchain is also transforming the art industry where artists can distribute their work directly using the distributed ledger and bypass large, centralized companies that charge a fee.
+More from MarketWatch
+
+
+Original link: https://www.marketwatch.com/story/why-denmark-wants-use-blockchain-and-cryptos-to-fight-for-human-rights-2017-12-15

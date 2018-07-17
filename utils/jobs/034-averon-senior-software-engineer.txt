@@ -1,0 +1,32 @@
+at Averon (View all jobs)
+Anywhere
+Do you want a job where you stop bad guys and make the world a safer place? Want to develop a global scale system?
+Averon is looking for python developers (all levels) to help reduce cybercrime. Reporting to the CTO the software engineer will build a unique type of credentialing system using Averon's patented and proprietary technologies.
+Oh, and we've closed over $13M and have customers, so you get the upside of greenfield with the stability of funding and revenue.
+Responsibilities:
+Develop highly-available & scalable RESTful applications
+Consider and research emerging technologies to improve current applications, architectures and processes, specifically mobile and social technologies/applications
+Help with all system and cybersecurity architecture and planning
+Own or lead small/midsize projects (requirements, design, work planning, risk analysis, etc.)
+Kick ass and chew gum (gum chewing optional)
+Requirements:
+4+ years of development experience
+2+ years experience with Python
+Understanding of web applications, scalability, performance and reliability aspects
+Experience with web services and RESTful API’s
+Experience with SQL (ideally MySQL) and noSQL (ideally Mongo)
+Desire to work in an agile development culture
+Experience with design, coding and testing patterns
+Outstanding communication, interpersonal and collaboration skills
+Additional pluses:
+Work history or knowledge of cybersecurity
+Work history or knowledge of the telecom industry
+Why You'll Love It:
+How often do you get to stop bad guys?
+It's a greenfield opportunity you can help lead
+We believe in continuous learning
+Candidates only. No recruiters or Third Parties.
+Apply for this Job
+
+
+Original link: https://boards.greenhouse.io/averon/jobs/4023864002

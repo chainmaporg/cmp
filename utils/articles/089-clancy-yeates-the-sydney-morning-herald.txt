@@ -1,0 +1,16 @@
+Don't Play
+"You can do that now. But the truth is, when you look at the actual cost associated with making a payment with bitcoin, it costs more than the cup of coffee," Dr Lowe said.
+"If people in this audience want to use bitcoin to make payments they are perfectly free to do that. I'd suggest the cost of doing that is extraordinary, and do you really want to hold the value that you're using to make payments with in something where the price fluctuates 20 per cent in a day?"
+Dr Lowe's New Zealand counterpart, acting governor of the Reserve Bank of New Zealand Grant Spencer, also said bitcoin looked "remarkably like a bubble" on Sunday.
+Dr Lowe's comments came following a speech to the Australian Payment Summit in which he indicated the RBA was looking into the possibility of issuing "digital banknotes," though it was not currently convinced there was a case for doing so.
+With consumers using cash less frequently, Dr Lowe flagged further growth in electronic payments provided by banks, provided institutions provided low-cost payment systems.
+"It is likely that this shift to electronic payments will occur largely through products offered by the banking system. This is not a given, though. It will require financial institutions to offer customers low-cost solutions that meet their needs," Dr Lowe said.
+On RBA-issued digital money, he said it was possible the central bank would one day produce an "electronic banknote," which he described as "tokens" or "files" that could be stored in digital wallets, and used to make purchases.
+"It is possible that the RBA might, in time, issue a new form of digital money - a variation on exchange settlement accounts - perhaps using distributed ledger technology," Dr Lowe said.
+"The case for doing this has not yet been established, but we are open to the idea."
+Such currencies would operate in the same way as physical bank notes . They would be issued by a central bank, and co-exist with other forms of money such as cash or money held digitally in bank accounts.
+However, Dr Lowe said the RBA was not currently convinced there was a case for going down this path, as the $1 billion new payments platform (NPP), which will allow real-time money transfers, should provide an efficient way of making digital payments.
+The NPP is currently being used by staff within banks, and Dr Lowe said it was due to go live in February.
+
+
+Original link: http://www.smh.com.au/business/markets/bitcoin-fascination-feels-like-speculative-mania-rba-says-20171212-p4yxnh.html

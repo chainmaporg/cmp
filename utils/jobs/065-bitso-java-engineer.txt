@@ -1,0 +1,32 @@
+CDT
+Update - 6 DE JULIO 2018
+El 5 de julio de 2018 Bitso detectó un ataque cibernético. Nuestros protocolos de seguridad se activaron de inmediato y esto nos permitió mantener los fondos de todos los usuarios íntegros y seguros.
+Esta es una actualización a dicha contingencia.
+El protocolo de seguridad de Bitso contempla, entre otras acciones, suspender los depósitos y retiros de activos digitales, realizar una investigación forense del ataque y evaluar la integridad de los sistemas de Bitso - incluyendo trading, wallets y seguridad.
+Los equipos de ingeniería y seguridad de Bitso ya tienen un diagnóstico integral. Con base en este, y siguiendo nuestro protocolo, el plan de acción que ejecutaremos a lo largo del fin de semana incluye:
+•  Implementar mejoras técnicas a la plataforma
+•  Reforzar componentes de seguridad
+•  Restablecer de forma segura todas las funcionalidades de nuestro exchange
+El protocolo requiere que la plataforma esté fuera de línea por un periodo de tiempo. Estamos estimando la fecha y la duración de este mantenimiento, les avisaremos con antelación por este medio.
+Publicaremos al menos una vez al día una actualización del status mientras la contingencia esté vigente. Seguiremos atendiendo todas tus inquietudes mediante nuestro Canal de Telegram: https://t.me/soportebitso_2018 y el Centro de Ayuda: https://help.bitso.com/es-LA/support/tickets/new de 8am a 11pm durante el fin de semana. Si tienes preguntas o inquietudes, no dudes en contactarnos.
+Te recordamos que tus fondos están seguros y que los depósitos y retiros de activos digitales siguen suspendidos. Si tienes un retiro/depósito de activos digitales pendiente, éste será acreditado cuando se restablezca el sistema, pero te recomendamos no hacerlos durante la contingencia. Por ahora las funcionalidades que están activas son: fondeos y retiros de MXN vía SPEI,  fondeos vía OxxoPay, Bitso Transfer y trading en todos los libros.
+Agradecemos enormemente la paciencia y comprensión, pero sobre todo las muestras de apoyo y confianza que hemos recibido de nuestra comunidad.
+Seguimos en contacto,
+————
+JULY 6th, 2018
+On July 5th, 2018 Bitso detected a cyber attack. Our security protocols were activated immediately and this allowed us to keep all users’ funds safe and intact.
+The following is an update regarding this incident.
+Bitso’s security protocol considers, among other actions, halting crypto fundings and withdrawals, conducting a forensic investigation of the attack and a systems integrity evaluation - including trading, wallets and security.
+Our Engineering and Security teams have completed an integral assessment. Based on their findings and following our protocol, the action plan we will execute over the weekend includes:
+•  Implementing technical improvements to the platform
+•  Strengthening security components
+•  Re-establishing all exchange functionalities in a safe manner
+The restoration process requires the platform to be offline for a period of time. We are estimating the exact time and duration of this maintenance and we will inform you in advance through this channel.
+We will publish a status update at least once a day while we are in contingency mode. We are available to answer all your inquiries in our Telegram Channel: https://t.me/soportebitso_2018 and our Help Center: https://help.bitso.com/es-LA/support/tickets/new from 8am to 11pm during the weekend. If you have any questions, don’t hesitate to reach out.
+We remind you that your funds are safe and that crypto fundings and withdrawals are still disabled. If you have crypto fundings/withdrawals pending, these will be completed once we re-establish our system. However, we recommend you don’t make any additional crypto fundings/withdrawals while we’re still in contingency mode. At the moment, the following services are active: MXN fundings and withdrawals via SPEI, fundings via OxxoPay, Bitso Transfer and trading in all order books.
+We thank you for your patience and understanding, most of all we are thankful for the support and trust that we have received from you.
+We will keep in touch,
+The Bitso Team
+
+
+Original link: https://bitso.com/jobs/?job=2

@@ -1,0 +1,12 @@
+by Kevin O'Brien
+South Korean Bitcoin Exchange Fined By Government For Leaking Customer Data
+South Korea’s Communication Commission (KCC) told the operator of Bitcoin  (BTC/USD) exchange Bithumb on Tuesday they would be receiving a fine of 60 million Won (about US$ 55,200) for an alleged leak of private user data.
+Local media in the country were reporting the fine levied against operator BTCKorea.com would be the “first time that South Korea has taken punitive steps against an operator of a cryptocurrency exchange.” Bithumb has about 80% of the market share of Bitcoin trading in the country.
+The KCC said the exchange leaked the information of 31,506 customers in April and 3,434 in July. The regulatory agency said the operator did not take the proper steps to safeguard their data, and were vulnerable to hacks and leaks of personal data.
+In addition, BTCKorea.com allegedly were not able to detect some illegal hacking attempts, and did not update antivirus software. The KCC said they have recommended punishment for some people at the exchange and will ensure measures will be established so there will be no more problems in the future.
+They also said the fine amounts for companies leaking private information would go up in the future.
+Virtual currency exchanges in the country are, so far, unregulated, but that could change due to the rapid rise in cryptocurrency trade volume. The Ministry of Justice was just named as the leader of a task force last week that intends to spearhead cryptocurrency regulation in the country.
+Authorities said yesterday they were thinking about taxing capital gains from digital currency trading as well.
+
+
+Original link: https://investfeededge.com/south-korean-bitcoin-exchange-fined-government-leaking-customer-data/

@@ -1,0 +1,27 @@
+Job description
+Company Overview
+Digital Assets Data Inc. has raised $3m in capital and has begun building enterprise products for crypto-focused hedge funds and institutional investors through collection, processing, and aggregation of a variety of data points on individual cryptoassets and the overall ecosystem.
+ 
+Job Description
+As a Senior Software Engineer you will contribute to development and maintenance of a number of back-end systems supporting collection and presentation of crypto-related data. Depending on needs and strengths this may involve API connectors, website scraping, website back-end coding, server deployments, etc...
+ 
+Perks
+Join a well-funded and rapidly growing startup in an exciting field
+Work with an energetic, passionate, and knowledgeable team that has had previous experience building and successfully exiting an enterprise SaaS startup in another financial services vertical
+Make an outsized impact and grow your skills while wearing a variety of hats
+Learn about distributed ledger technology and the cryptocurrency ecosystem
+Receive competitive benefits (health, dental, and vision)
+Requirements
+5+ years overall software development experience with dynamic programming languages, preferably Python
+Experience with agile software development methodologies like Scrum
+Knowledge of a web framework/ORM such as Django
+Knowledge of VCS such as Git
+Knowledge of relational databases
+Interest in crypto and distributed ledger technology
+Ability to wear many hats
+Ability to dive in, get it done, and to know when to ask for help
+Willingness to write tests and code review
+Pragmatism
+
+
+Original link: https://digitalassetsdatainc.recruitee.com/o/senior-software-engineer

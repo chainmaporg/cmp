@@ -1,0 +1,35 @@
+5 Sectors Blockchain Is Disrupting That Are Not Cryptocurrency
+Cryptocurrency is just the start. Blockchain could make elections unhackable and provide flawless cybersecurity.
+5 min read
+Opinions expressed by Entrepreneur contributors are their own.
+For a few years now, "blockchain" and "cryptocurrency" have gone hand-in-hand. The blockchain concept is complicated, and involves constant-growth record lists linked together and secured through cryptography (think of the Cryptex from The Da Vinci Code). Each block of the chain envelops a hash pointer relating to the previous block, as well as transaction data and a timestamp.
+The idea of a blockchain isn't relegated to the infant-era cryptocurrency revolution. Massive worldwide corporations are beginning to incorporate blockchain technology into their systems. The technology behind the blockchain is far more valuable on a global scale than any market capitalization of cryptocurrencies. Here are five large sectors currently being disrupted by the potential of this technology:
+Related:  Why Bitcoin Is the MySpace of Cryptocurrencies, But the Blockchain Is Here to Stay
+1. Crybersecurity
+Although one of the main draws to the blockchain is the transparency of its public ledger, the data communication piece is verified via advanced cryptographic systems. This ensures the data arrived through the proper channels, without interception by a third party in the transmission process.
+This idea brings about the strong possibility that blockchain can provide severe reductions in cybersecurity risks. The removal of human interaction in the data communication process will severely lessen the threat of data corruption, human error, and hacking.
+Additional cybersecurity applications of the blockchain include large-scale authentication of data. A startup called Guardtime is currently experimenting with a blockchain-centric keyless signature infrastructure. This KSI works by tagging and verifying data transactions, providing crypto-level assurance of data authenticity and integrity.
+Related:  How Blockchain Is Creating a New Future for Digital Marketing
+2. Elections and voting
+Voting manipulation has become an active pain point in the election process at many levels. Elections require not only the authentication of the voters' identities, but also secured record-keeping, vote tracking, and win tallying.
+Looking to the future, blockchain technology could enable tools to serve as an infrastructure from start to finish. This could potentially eliminate the need for recounts, as it removes the human element involved in vote manipulation and voter fraud.
+Through the capture of votes as blockchain "transactions," government entities would have a public and verifiable trail of votes, ensuring none are changed or removed, and no illegitimate votes are added. A blockchain-based election focused startup called Follow My Vote is in the process of developing a beta version of their complete blockchain-centric voting solution.
+Related:  How Blockchain Is Enabling the New Era of Digital Financial Investmentment
+3. Transaction-based real estate
+The purchase and sale of property come with many pain points, including massive stacks of paperwork, an overall lack of transparency, public record errors, and the possibility of fraud throughout the process. Blockchain instead offers a method to reduce the need for paper recordkeeping, while simultaneously speeding up transaction times, helping those involved in the process reduce transaction costs and improve overall efficiency.
+Technology and finance startup Ubitquity has begun offering a SaaS platform centered around blockchain technology, geared toward mortgage, title, and financial companies. The service provider is working with various recordkeeping entities in foreign countries to gather property information and documents for their blockchain.
+Related:  From Expanded Uses of Blockchain to the Mainstreaming of Machine Learning, Here Are 5 Emerging Business Trends to Watch in 2018
+4. Analytics for forecasting
+As industries continue to embrace the concept of the blockchain, the power expands into the analytics and forecasting niche. With entirely accurate transaction records to support data analysis, forecasting technologies can adapt to a less error-prone foundation for things such as machine learning algorithms to develop more accurate insights and predictions based on blockchain data.
+Even in the current day and age, blockchain is in the process of allowing for a new market focused on predictions. A program called Augur has been developed using the Ethereum blockchain. Augur allows its users to forecast events, incorporating a reward system for accurate predictions. The parent company of the program claims that the full process will be decentralized, enabling their users to place bets on everything from stock market predictions to sports, to natural disaster occurrences.
+Related:  Just What the Heck Is Blockchain? Watch This Explainer Video.
+5. Ridesharing applications
+Lyft and Uber are definitions of centralization in business models. The companies, in essence, operate as cloud-based dispatch hubs, using algorithms to control fleets and dictate charges. Blockchain could allow new technologies into these dynamics. Decentralized and distributed ledgers could provide a more user-driven and value-oriented market environment.
+Related:  3 Ways Business Owners Can Prepare for Blockchain and Digital Payments
+Final thoughts
+While still relatively new technology, blockchain is easily poised to become one the most useful technological innovations of the 21st century. With massive corporations already incorporating blockchain into their systems, and hundreds of chain-centric startups pushing into the mainstream, the potential utilization of this cryptographic process is unfathomable.
+The above five sectors scratch the surface of the disruption blockchain has caused, and the technology is likely already an unbeknownst part of your daily life. Cryptocurrency platforms are only the beginning.
+Company
+
+
+Original link: https://www.entrepreneur.com/article/305009

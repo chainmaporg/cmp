@@ -1,0 +1,11 @@
+Rok ČERNEC — Board Member / Co-Founder of ARK.io
+Dec 16, 2017
+ARK.io Website Modularized & Internationalized
+ARK.io website has now been totally rewritten (from plain HTML/CSS) into a Vue.JS website to be prepared for what the future brings (hint, it’s a lot). This brings better and cleaner syntax, modularization, and of course easier management of additional languages (if you don’t see changes CTRL+F5 to clear local cache).
+ARK.io has been translated and is now available in 9 languages which include English, Chinese, Taiwanese, French, German, Dutch, Spanish, Italian and Korean (not fully done yet). Japanese & Swedish are in the works as we speak and more coming soon!
+Special thanks to Brian Faust, one of ARK’s community developers, for the massive help with transitioning to the new code base and all who provided translations for your preferred language.
+To switch languages on the website, simply hover your mouse arrow over the flag icons located at the top right of https://ark.io and choose your preferred language. The website automatically switches to your selection (without reload) and remembers your selection for the next time you visit.
+We have also created a GitHub repo for language files. If you spot any mistakes, see something that could be improved, or if you would like to submit a new language feel free to submit a PR. As we add to the website, we will also add new text to translate at the end of the translation files. This way you can easily see what hasn’t been translated yet.
+
+
+Original link: https://blog.ark.io/ark-io-website-modularized-internationalized-440b070d611c

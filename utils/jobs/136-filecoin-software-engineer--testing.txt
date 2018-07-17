@@ -1,0 +1,23 @@
+We seek an outstanding Software Engineer to design and build large-scale test environments for peer-to-peer applications.  
+Engineering at Protocol Labs
+Engineering at Protocol Labs is not just about writing world-class code. We create software systems that tackle significant challenges. We aim to solve those challenges with new technology breakthroughs and great user experience design.  We believe in an open-source approach to creation. We strike a balance between pragmatism (put it on a ship ⛴), deeply informed protocol design, and strict application of strong engineering principles. All of this happens in an environment defined by curiosity, passion, and a love for open source.
+As a Testing Engineer at Protocol Labs you will…
+Build the next generation of peer-to-peer software, working on projects like libp2p, IPFS and Filecoin
+Design and build large-scale test environments for peer-to-peer applications
+Help establish best practices for ensuring a high level of automated testing through the whole application
+Work alongside a cross-functional team including engineering, design, community, product, and business
+You may be a fit for this role if you have...
+BA/BS degree in Computer Science, Computer Engineering, related field or equivalent practical experience
+Leadership experience building and maintaining large-scale test environments
+Significant experience designing and building automated infrastructure
+Deep understanding of testing strategies and best practices 
+Experience programming in one or more of the following: Go, Javascript, Rust, C, C++, Haskell, Ocaml, Python
+Clear and succinct communication skills and ability to bridge the gap between product and technical groups
+Bonus points
+Experience working and contributing to Open Source projects 
+What’s it like to work at Protocol Labs?
+Protocol Labs mission is to improve humanity’s most important technology, the Internet. We build protocols, systems, and tools to improve how it works. Today, we are focused on how we store, locate, and move information. Our projects include IPFS, Filecoin, libp2p, and more.
+As a distributed team, we hire anywhere in the world, and at various levels of experience (entry, senior, staff). We look for people with unique perspectives and diverse backgrounds.
+
+
+Original link: https://jobs.lever.co/protocol/512e6178-f4b0-4b01-9e76-025b460bddac

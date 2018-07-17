@@ -1,0 +1,41 @@
+San Francisco, CA, USA
+Full Stack Engineer
+Civic’s mission is to provide every person on Earth with a digital identity that they can use to interact privately and securely with the world. We envision a world where people can decide who they want to share their personal information with and what information gets shared.
+Led by Vinny Lingham and Jonathan Smith, two visionary founders with entrepreneurial and cybersecurity experience, we have created a revolutionary platform to achieve this based on blockchain technology and have recently conducted one of the most well respected token sales in history!  We sold $33m worth of tokens that will allow us to deliver a Marketplace for transaction of trusted identities. This Marketplace will change both the economics and user experience of how trusted identity is used forever, opening up new use cases for how we  use identity.  For further reference on our token sale and how the ecosystem will work please click here and to read our whitepaper, click here . 
+The company and the international team are well positioned to create a Marketplace for transaction of trusted identities, changing both the economics and user experience of how trusted identity is used forever.
+This is a truly unique opportunity to join our team and shape the future of Civic as we begin a massive growth phase in the company.
+We are looking for an experienced Full-Stack Software Engineer with at least 3+ years experience to help develop and support our Secure Identity Platform and Marketplace. Experience with blockchain, security protocols and overall ID Management is a big plus.
+Role Description:
+ Design and implement REST APIs using a micro-service architecture powered by AWS infrastructure such as DynamoDB, Lambda (with Node.js, API Gateway, Kinesis and others; Design and Implement client-side Javascript libraries to Mobile and Web platforms)
+Design and implement web applications using (MongoDB, React, Angular2, Meteor, Express)
+Design and Implement Blockchain technology (Services, libraries, Algorithms) using Javascript, Python, C, solidity
+Design and Implement high security technology (Services, libraries, Algorithms).
+Minimum Requirements:
+Ability to breakdown complex problems into smaller tasks
+Ability to transform high-level requirements into working software
+Strong understanding of object-oriented design and development
+Ability to deliver a full web or mobile application from scratch
+Energetic and motivated; eager to learn
+Experience and passion for test driven development is a must
+Prefered Requirements:
+Minimum 5 years work experience
+Experience with multi-tenant reliable (with SLA) cloud applications
+Experience with full-stack web development using Javascript frameworks such as MEAN/MERN stacks or equivalent
+Strong written and verbal communication
+Fast learner
+Work well in small teams and groups
+Self-disciplined and with strong attention to quality and details
+Understatement of blockchain and Cryptographic
+Comfortable working in a fast changing entrepreneurial environment
+Experience with mobile technologies (iOS or Android) a plus
+Understanding or working experience with private/public keys, encryption/decryption, signature/verify
+ 
+Understanding of DevOps concepts and best practices
+Experience with other web development platforms like Java, Python, PHP, .Net 
+Remind me to apply later
+clear
+Type your email address below to receive a reminder
+Email
+
+
+Original link: https://hire.withgoogle.com/public/jobs/civiccom/view/P_AAAAAADAAADOKY0etcdqWK

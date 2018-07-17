@@ -1,0 +1,24 @@
+We seek an outstanding Software Engineer to help us build the next generation of blockchain technology.
+Engineering at Protocol Labs
+Engineering at Protocol Labs is not just about writing world-class code. We create software systems that tackle significant challenges. We aim to solve those challenges with new technology breakthroughs and great user experience design.  We believe in an open-source approach to creation. We strike a balance between pragmatism (put it on a ship ⛴), deeply informed protocol design, and strict application of strong engineering principles. All of this happens in an environment defined by curiosity, passion, and a love for open source.
+As a Software Engineer, Blockchain at Protocol Labs you might...
+Build the next generation of blockchain technology, developing projects like Filecoin
+Participate in the design of performant and resilient applications
+Integrate research results into real programs
+Work alongside a cross-functional team including engineering, design, community, product, and business
+Engage and educate the community, from users to contributors
+You may be a fit for this role if you have…
+Leadership experience building and maintaining large-scale distributed systems in production
+Significant experience building applications using Go, Rust, or similar languages
+Excellent understanding of blockchain technology
+Deep understanding of network protocols
+Experience working and contributing to Open Source projects
+Excellent written and verbal communication skills
+Experience leading and guiding Open Source projects (preferred)
+Experience with 1 or more of the following: Smart Contracts, storage platforms, VMs (preferred)
+What it's like to work at Protocol Labs?
+Protocol Labs mission is to improve humanity’s most important technology, the Internet. We build protocols, systems, and tools to improve how it works. Today, we are focused on how we store, locate, and move information. Our projects include IPFS, Filecoin, libp2p, and more.
+As a distributed team, we hire anywhere in the world, and at various levels of experience (entry, senior, staff). We look for people with unique perspectives and diverse backgrounds.
+
+
+Original link: https://jobs.lever.co/protocol/9bcb0a17-f97e-44f7-929f-10684d459e95

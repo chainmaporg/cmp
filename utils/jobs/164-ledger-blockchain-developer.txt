@@ -1,0 +1,24 @@
+Ledger Bounty Program
+Developer Blockchain
+As part of its strong growth, Ledger – a technological leader in digital asset and cryptographic security solutions – is looking for an engineer capable of working on multiple technologies in the field of blockchain and crypto-currencies.
+You are able to both develop high-performance server applications and have experience in developing Android mobile app and / or IOS? Join our team, one of the world’s leaders in one of the most innovative technology sectors!
+Required profile
+Eager to learn and practice many technologies ranging from backend development to mobile application design.
+Good knowledge of C ++.
+Good knowledge of * nix systems.
+Interested in blockchain technologies.
+Capable of self-training and technological watch.
+Missions
+Develop the business part of a portfolio managing funds in crypto-currencies (bitcoin, ethereum …).
+Develop server applications to effectively explore the blockchain.
+Develop in-house tools to quickly identify and resolve problems faced by users.
+Develop a mobile application on Android and / or iOS.
+Job Description
+Location: Paris 2nd (no telecommuting)
+Apply
+To apply, please send your CV (PDF only) as well as a short cover letter to [email protected]  with the subject [JOBS] Developer Blockchain.
+Founded in 2014, Ledger is a leader in security and infrastructure solutions for cryptocurrencies and blockchain applications. Headquartered in Paris, Vierzon and San Francisco, Ledger has a team of 80 professionals developing a variety of products and services to safeguard cryptocurrency assets for individuals and companies – including the Ledger hardware wallets line already sold in 165 countries.
+LINKS
+
+
+Original link: https://www.ledger.fr/join-us/developer-blockchain/

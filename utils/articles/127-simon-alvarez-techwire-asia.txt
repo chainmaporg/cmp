@@ -1,0 +1,22 @@
+Malware targeting computers to mine bitcoin could be slowing down systems everywhere. Source: Shutterstock
+Computer running slower than usual? You might be mining bitcoin for someone else
+By Simon Alvarez | 14 December, 2017
+COMPUTERS that are running strangely slower than usual might be infected by a new type of malware that is specifically designed to mine bitcoin.
+As the cryptocurrency becomes the new darling of online currency enthusiasts, hackers are turning to underhanded methods to get some fresh bitcoin for themselves. Their new MO? Using the public’s computers to help them mine digital currencies.
+A. Azim Idris | 7 December, 2017
+As noted in a recent report from The Straits Times , hackers are currently hard at work infecting computers and websites with a new, yet-to-be-named zombie mining army. Considering that it takes a massive number of machines to mine bitcoin adequately, hackers are using popular websites and the computers that visit them as a proxy mining army.
+Cybersecurity experts have dubbed the use of websites and unassuming users to mine bitcoin as “cryptojacking”. Cyptojacking works by infecting popular websites with a code that automatically prompts visitors’ computers to mine cryptocurrency when they access the infected site.
+— Reuters Top News (@Reuters) December 14, 2017
+Considering that popular websites get hundreds of thousands of visits a day, hackers could easily get a lot of mining done by using visitors’ machines as their unwilling assistants.
+This particular trend has been happening globally, with cybersecurity firm Fortinet stating that its Web filtering services have detected roughly 100,000 cyrptojacking incidents from Singapore over the past 30 days. Across the globe, Fortinet stated that around 60 million cryptojacking instances have happened over last month.
+Joe Green | 15 September, 2017
+Currently, several popular websites have been found to be infected by the new bitcoin mining malware. Even prolific websites such as Showtime, the official UFC streaming website, and popular soccer star Cristiano Ronaldo’s official webpage have been found to contain the malicious software.
+So far, the new bitcoin mining malware continues to spread. Just recently, Noah Dinkin, a Starbucks customer who used the coffee giant’s free Wifi at a store in Buenos Aires, found that his computer had been infected with a bitcoin mining code, as stated in a Motherboard report. When Dinkin brought the issue up on Twitter, however, Starbucks stated that they were not aware that such a code was in place in their wireless network.
+Ronaldo’s website was reported to have been infected with the bitcoin malware. Source: Shutterstock
+In a statement to The Straits Times, Vicky Ray, principal researcher at network security firm Palo Alto Networks, described the innate danger that is present in the current bitcoin mining malware. According to Ray, the effects of the malware are significant, and the risks it presents are very notable.
+Samantha Cheh | 21 November, 2017
+“Unauthorised mining is a new threat that can cause a user’s system to suddenly and unexpectedly slow down, sometimes significantly, when visiting a website,” she said to the ST. “In a worst-case scenario, the slowdown can be so severe that it can make a website basically unusable.”
+As cybersecurity firms continue to analyze how to best counterattack the new bitcoin mining malware, computer users are best advised to remain vigilant by keeping their security software up to date and running checks on a regular basis. Once a user detects a slowdown in their computers, it would be best to see if their machines are infected with a bitcoin mining code.
+
+
+Original link: http://techwireasia.com/2017/12/hackers-might-be-using-your-computer-to-mine-bitcoin/

@@ -108,6 +108,113 @@ exports.userRegister = function (req, res) {
   // }
 }
 
+exports.getRecommendations = function(req, res) {
+    userID = req.params.user_id
+    var keywords
+    connection.query(
+        "select category_id from user_category where user_id=?",
+        [userID],
+        function(error, results, fields) {
+            if (error) {
+                console.log("error ocurred", error)
+                res.render("error", {
+                    errorMsg: "Error on insertion into DB Users",
+                })
+            } else {
+                console.log(results)
+                connection.query(
+                    "select category_name from category where id = ?",
+                    results.join(" or id="),
+                    function(error, results, fields) {
+                        if (error) {
+                            console.log("user categories not found")
+                        } else {
+                            keywords = results
+                        }
+                    }
+                )
+            }
+        }
+    )
+
+    // some hard coded keywords if keywords can't be retrieved
+
+    if (!keywords) {
+        keywords = ["Bitcoin", "Blockchain", "P2P"]
+    }
+    var category = "article"
+
+    function getLink(keyword, num) {
+        url =
+            solr_host +
+            "/select?fl=title,%20url,%20summary,%20category&q=category:" +
+            encodeURI(category) +
+            "%20AND%20search_content:" +
+            encodeURI(keyword) +
+            "&rows=5&wt=json"
+        return url
+    }
+
+    var urls = keywords.map(function(current) {
+        return getLink(current, 5)
+    })
+
+    function makePromise(url) {
+        var p = new Promise((resolve, reject) => {
+            // request is asynchronous
+            var r = client.get(url, function(data, response) {
+                docs = JSON.parse(data).response.docs
+                resolve(docs)
+            })
+
+            r.on("requestTimeout", function(r) {
+                console.log("request expired.")
+                r.abort()
+                reject()
+            })
+
+            r.on("error", function(err) {
+                console.log("request error", error)
+                reject()
+            })
+        })
+        return p
+    }
+
+    var combined = urls.map(function(x) {
+        return makePromise(x)
+    }, [])
+
+    function shuffle(array) {
+        var counter = array.length
+        // While there are elements in the array
+        while (counter > 0) {
+            // Pick a random index
+            var index = Math.floor(Math.random() * counter)
+
+            // Decrease counter by 1
+            counter--
+
+            // And swap the last element with it
+            var temp = array[counter]
+            array[counter] = array[index]
+            array[index] = temp
+        }
+        return array
+    }
+
+    Promise.all(combined)
+        .then(function(values) {
+            var values = values.reduce(function(selected, current) {
+                return selected.concat(current)
+            }, [])
+            res.send(shuffle(values).slice(0, 5))
+        })
+        .catch(function(error) {
+            console.log(error)
+        })
+}
+
 exports.getCompanies = function (req, res) {
   connection.query('select company_id, company_name from company', function (error, results, fields) {
     if (error) {

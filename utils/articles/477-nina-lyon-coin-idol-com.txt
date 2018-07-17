@@ -1,0 +1,24 @@
+Five Russian Cryptocurrency Projects Everyone Should Know About
+Dec  18, 2017 at 12:50 // News
+Author
+Nina Lyon
+Russia has produced lots of prominent figures in the crypto industry, including Vitalik Buterin and Igor Barinov. These days, it’s almost impossible to come across some ICO landing page without seeing at least one Russian name on the team.
+While projects like Ethereum and Blocknotary went global and are hardly related to Russia itself, the country seems to have more prominent projects and people it could contribute to the expanding blockchain universe. Even though the regulatory environment in Russia remains ambiguous with controversial statements issued by government officials almost every week, these projects managed to not only to emerge but to truly flourish.
+Waves
+Waves , a Moscow-based project led by Sasha Ivanov , hit the headlines back in 2016 with their platform that offered nothing other than killing Kickstarter. Since then, it has become a global public blockchain platform providing shared infrastructure with highly functional and intuitive tools. The company has held one of the most successful ICOs ever, raising $16 million way before crowd sales became mainstream in the crypto community.
+While the company stresses that Waves is, first of all, a platform, and only then a token, the price of the WAVES token is currently at its all-time high near $7.45. Since its launch, Waves has partnered with Gazprombank Digital, Deloitte, and Microsoft Azure. It is one of the world’s best-known projects from Russia.
+BioCoin
+BioCoin was conceived by Russian farming network LavkaLavka that partners with small farming businesses to offer fresh and eco-friendly products at its network of stores and restaurants. Currently, it is the only cryptocurrency officially admitted to selling at government-backed platform Voskhod. BioCoin is intended as a platform bringing all eco-farmers and their customers together.
+LavkaLavka has a long history of being cryptocurrency-friendly. It is one of a handful of local companies accepting Bitcoin. With BioCoin, it hopes to make things easier for farmers who wish to develop their household but can’t afford a loan or to compete with major agricultural holdings. BioCoin is also intended as a means to reward, raise funds, and trade. Moreover, thanks to their involvement in government-backed programs, BioCoin might become one of the world’s first officially recognized digital assets.
+Sibcoin
+Sibcoin , a cryptocurrency positioned as one developed “by the people for the people” is essentially a Dash fork that employs certain innovative solutions. It uses the masternode infrastructure borrowed from its mother coin, however, unlike it, it is ASIC-resistant. Sibcoin also uses government-approved security algorithms that may potentially lead to the altcoin’s official recognition as a digital asset. It has also experienced a skyrocketing price upsurge this year from virtually nil to the current $2.43.
+What makes Sibcoin stand out is that it seeks to provide as many services demanded by regular people as possible. Even though it was conceived as a coin for Russian-speaking communities, Sibcoin has gone much further than that and appealed to other communities as well. It offers services like cross-border remittance of fiat money via Sibcoin, and withdrawal of funds to a plastic card. Finally, it partners with other cryptocurrency projects, most notably with BioCoin mentioned above.
+Golos
+Golos is a Russian-language offshoot of STEEM, the world’s first blockchain-based social network. Conceived and developed by Cyber.Fund, a renowned Russian cryptocurrency organization, it kicked off in late 2016. The team used Steem’s technology to create a separate website for the Russian-speaking community. Essentially, they forked Steem blockchain. Since then, Golos has become a reputable network destination for its target audience.
+Similar to Steem, Golos offers its users opportunity to vote for someone else’s posts with tokens instead of likes. Each token has a real value, so it incentivizes users to write high-quality content, and others to be responsible while assessing its quality.
+Kolionovo
+Kolionovo , a farm in the suburbs of Moscow , has blockchainized its operations using Emercoin solutions in early 2017. Later on, the platform partnered with Sibcoin and BioCoin.
+Using blockchain enabled the farm to sell products directly while cutting expenses and effecting instant remittances bypassing banks. After almost a year in operation, the farm claims that using blockchain let them cut their prices and establish numerous useful partnerships with their colleagues and neighbors.
+
+
+Original link: https://coinidol.com/russian-cryptocurrency-projects-everyone-should-know/

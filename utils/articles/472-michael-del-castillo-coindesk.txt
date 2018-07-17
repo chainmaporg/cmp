@@ -1,0 +1,42 @@
+Plan B? Ethereum Innovators Are Reviving the Fight for Net Neutrality
+FEATURE
+Michael del Castillo
+Dec 14, 2017 at 02:05 UTC  |  Updated  Dec 15, 2017 at 11:35 UTC
+A tech meetup at a dimly lit New York City bar – so far, nothing out of the ordinary.
+But what's peculiar about this particular meetup is that other locations throughout the East Village are being connected to the bar's Wi-Fi-enabled node, allowing anyone in the area to not only piggyback off all the signals but visit websites only accessible to others on the network.
+Called a mesh network, it's a decades-old technology allowing users to surf the internet without using a traditional internet service provider (ISP), and it could be finding new life among blockchain enthusiasts as the U.S. Federal Communications Commission (FCC) gears up to repeal "net neutrality" on Thursday.
+Net neutrality, or the rules that ensure equal access to the internet, have historically outlawed ISPs from charging internet users more for better service, and its repeal, in many people's eyes, would result in lower quality service for the average internet user.
+But, according to those at the event, the FCC decision could indirectly act as a tipping point that jump-starts a new wave of innovation for mesh networks.
+Karl Floersch, an ethereum developer and Casper researcher, told CoinDesk:
+"If we get some crazy net neutrality regulation, then they can expect a crazy mesh-network fire-back."
+And it's already started.
+After years of grassroots efforts, the donor-supported NYC Mesh network has organically growth to 70 nodes. But a significant number of the 50 meetup attendees were new to the scene and brought with them new ideas about how to incentivize the network's growth.
+Ethereum to the rescue
+Case in point, Floersch thinks ethereum, the world's second-largest blockchain by market size, could be of help.
+Floersch supports the idea that if net neutrality is abolished, blockchain technology could be used to disrupt the middlemen who currently provider service — Verizon, AT&T and Comcast, and the likes.
+He described an ethereum-based system that runs "in the background" of any mobile device. Using an interconnected series of smart contracts, the mobile device could theoretically be turned into a Wi-Fi enabled "node," helping expand the mesh network's reach.
+And all this could be incentivized with a blockchain-based "meshcoin."
+"Ethereum and mesh networks are a fantastic combination," Floersch said, adding:
+"Ethereum will allow for the kind of payment back-end which makes a mesh network scalable."
+While Floersch's interest remains more theoretical, ethereum programmer Hayden Adams, also at the event, said he's actively looking into how the meshcoin concept would operate.
+Founder of Ethereum Programming Services LLC, Adams told CoinDesk this is the perfect time for the concept to take off, since off-chain scaling solutions for ethereum are on the cusp, he believes, of making significant breakthroughs.
+While Floersch mentioned state channels , Adams added the recently announced Plasma scaling solution to the list of technologies that could help reinvent the NYC Mesh's incentive scheme, as well as those in mesh networks around the world.
+Of the countless mesh networks growing around the world, the largest among them, in Catalonia, now lists more than 37,000 active nodes. To pay for all this, most are donor supported, and some have set up foundations .
+For example, NYC Mesh is funded largely through donations, including a $30,000 grant from the non-profit Internet Society. But going forward, Adams believes either an ethereum-based token — or ether itself — could be used to allow users on the mesh network to pay peers for bandwidth.
+"If you wanted to take it to a broader scale, you'd need to add some sustainability to it, and I think that could come through a blockchain system," Adams said.
+Challenges ahead
+In spite of the all the promise though, one of NYC Mesh's most influential advocates remains skeptical about blockchain's usefulness.
+Since 2015, software engineer Brian Hall has been helping his neighbors install the hardware required to become a mesh node, and while he's read a handful of white papers detailing blockchain's promise for mesh, he's yet to see any hardware running on blockchain software.
+In a blog post earlier this month, Hall detailed a number of reasons why he believes the meshcoin concept, and seven other projects that are trying to blend blockchain and mesh, are misguided.
+He argues all these projects fail to adequately understand two things — first, mesh nodes have to be in geographically close proximity to one another, unlike blockchain nodes, and second, growing these networks requires huge amounts of social capital to gain adopters.
+"Ninety percent of the work is a social problem," he said. "And that's kind of left out of all these meshcoin ideas."
+Yet, Floersch and Adams argue that social component is exactly where crypto-token incentives could help.
+Mesh networks date all the way back to the late 1990s when the internet itself was beginning to gain widespread adoption. And since then small, committed communities have formed around the mesh network principles of decentralization and privacy, and even proven their ability to innovate in the face of competition.
+It's emergence and rise definitely feels similar to that of cryptocurrency, and Hall agrees, even though skepticism lingers.
+"Practically, all of the tech people interested in mesh have an interest in cryptocurrencies, and I do too," he said, concluding with ardent advice:
+"Forget the white papers, make a prototype, get three routers and get something running. We're over the white paper phase of this thing."
+NYC Mesh Meetup image via Michael del Castillo for CoinDesk
+The leader in blockchain news, CoinDesk is a media outlet that strives for the highest journalistic standards and abides by a strict set of editorial policies . CoinDesk is an independent operating subsidiary of Digital Currency Group, which invests in cryptocurrencies and blockchain startups.
+
+
+Original link: https://www.coindesk.com/plan-b-ethereum-innovators-reviving-fight-net-neutrality/

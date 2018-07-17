@@ -1,0 +1,42 @@
+job title, keywords or company
+city, state, or zip
+Engineering Director, Head of Platform Engineering
+Paxos - New York, NY
+About Paxos:
+Paxos is a financial technology company delivering pioneering blockchain solutions for global financial institutions. Its flagship service is BankchainTM, a next-generation blockchain settlement platform that is transforming post-trade across capital markets. Paxos’ management team is led by CEO and Co-Founder Charles Cascarilla and its board of directors includes former FDIC chair Sheila Bair, former Senator Bill Bradley, former chair of the Financial Accounting Standards Board Robert Herz, former chairman, president & CEO of Lotus Development Corporation Jim Manzi and former NYSE CEO Duncan Niederauer.
+We are looking for a Director of Engineering to head our Platform engineering team. The Platform engineering team includes Distributed Ledger Technology(DLT) Core, Exchange Core, Site Reliability Engineering and Test Engineering teams. The Director will oversee a team of Engineers and Engineering Managers and will have a significant impact on the future direction and delivery of the Platform.
+We hold ourselves to a very high hiring bar. To achieve this, we think of roles first and foremost as outcomes to be achieved, not simply a description of responsibilities. We have developed what we call a ‘Success Profile’ for this role, which has two sections:
+Outcomes: Meaningful and measurable work products that have a significant impact on the team and business over a defined timeframe
+How to Achieve Outcomes: We have a strong point of view on how this role will succeed in achieving outcomes at Paxos. So, we have taken the Operating System of Paxos - our values - and made it relevant to this role.
+Outcomes :
+Guide and coach a team of engineers and engineering leaders to design and build out the next-gen platform that will underpin our core DLT, Custody and Exchange Offerings. Success is measured by the delivery of high quality, highly available, scalable and secure systems that can achieve set business metrics.
+Collaborate with internal and external stakeholders to define and deliver the technical vision for the platform. Success is measured by the ability to surface intelligent insights on features and customer problems that lead to key decisions on the future of the platform and our ability to serve clients/customers.
+Strategically balance immediate vs. long-term infrastructure work by making thoughtful decisions on accumulating technical debt vs. longer term development. Success is measured by the right balance between feature completeness, polish and time-to-market to meet business outcomes.
+Build and develop a world-class engineering team. Success is defined by constantly giving timely feedback, rewarding and growing the best engineers and leaders, investing in development of leaders as well as quick/swift action on poor performance.
+How to achieve the Outcomes:Functional acumen required:
+Have a strong technical background and spend some of their time researching new technologies in the cryptocurrency, blockchain and reliability engineering space and stay abreast of trends in infrastructure engineering. Capable of jumping in to help debug and triage critical systems, and should understand the systems they oversee well enough to perform code reviews and help research problems as needed.
+Contribute to the architecture and design efforts primarily by serving as the technically-savvy voice that asks business and product questions of the engineers on their teams, ensuring that the code matches the business needs and can scale appropriately as those needs grow.
+Shared commitment to excellence:
+Have a very high bar for the platform as it impacts the end customer/client and relentlessly advocate for a infrastructural approach to solve persistent problems. Coach and develop your entire organization to hold the same bar in their interaction with cross-functional stakeholders.
+Partner with academia, visionaries and other external luminaries in the Distributed Ledger Technology space to come up with innovative ideas that give our Platform a significant advantage. This will involve coming up with new products that we may be able to launch to solve interesting problems in the financial technology space.
+Advocate for Paxos as a company of choice to potential candidates. Inspire potential recruits to join the company.
+Search for the truth:
+Be able to translate high level business goals for Paxos into a strategic operating plan for the platform engineering teams. This includes a plan to translate high level business goals into key objectives, milestones and results for every member of the team as well as develop a strong resourcing plan to meet those goals.
+Navigate a highly ambiguous and complex engineering infrastructure for Paxos between different products and make effective trade-offs between time to market versus long-term strategic build.
+Be an owner:
+Strong communicator and can simplify technical concepts in a way to explain them to non-technical partners, and take business direction and explain it to the technology team in a way that inspires and guides them.
+Leverage past experience and use strong communication skills to collaborate effectively with all stakeholders including customers, senior management and other business leaders.
+Demonstrate care for team members by showing a good understanding of the experiences that matter the most to each team member and leader during their time at Paxos.
+Recognize, celebrate and reward high impact work.
+Real time candor:
+Do not hesitate to voice ‘engineering truths’ at the right time, in front of the right audience, while making infrastructure decisions that affect the long term viability of the business or the products. Doing so in a way that leads to a better solution is paramount, even if it is inconvenient for others in the moment.
+Build strong trust with cross-functional partners, particularly in product and the business, by disagreeing with them in an open way when required, but working in earnest to activate a decision that has been made even if it goes against what you wanted to do.
+Desired Experience:
+A strong engineering background with progressive growth in role scope that has led to managing multiple engineering teams.
+Strong background in Distributed Systems/Blockchain/Cryptography/Infrastructure space.
+Startup experience is a huge plus.
+Experience in strategic decision making optimizing for product market fit in the short-term while having a long-term vision of building a strong technology platform.
+PAXOS IS AN EQUAL OPPORTUNITY EMPLOYER. IT DOES NOT DISCRIMINATE ON THE BASIS OF SEX, AGE, COLOR, RACE RELIGION, MARITAL STATUS, NATIONAL ORIGIN, ANCESTRY, SEXUAL ORIENTATION, PHYSICAL AND MENTAL DISABILITY, MEDICAL CONDITION, GENETIC INFORMATION, VETERAN STATUS OR ANY OTHER BASIS PROTECTED BY FEDERAL, STATE OR LOCAL LAW.
+
+
+Original link: https://www.indeed.com/viewjob?jk=490048e4a1115f79&tk=1cgdfpilm1fkk2je&from=serp&vjs=3

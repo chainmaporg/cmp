@@ -1,0 +1,41 @@
+job title, keywords or company
+city, state, or zip
+Ripple 5 reviews - San Francisco, CA
+Ripple is the world’s only enterprise blockchain solution for global payments. Today the world sends more than $155 trillion across borders. Yet, the underlying infrastructure is dated and flawed. Ripple connects banks, payment providers, corporates and digital asset exchanges via RippleNet to provide one frictionless experience to send money globally.
+Ripple is growing rapidly and we are looking for a results oriented, hands on Senior Software Engineering Manager(s) to help build the next generation of payment applications that enable banks to instantly settle cross-border payments to create the Internet of Value. Ripple’s distributed financial technology outperforms today’s banking infrastructure by driving down costs, increasing processing speeds and delivering end-to-end visibility into payment fees, timing and delivery.
+Check out our values ( https://ripple.com/company/careers/ )
+What you’ll do:
+Engineering leaders at Ripple are results driven and think strategically while balancing both short and long term
+You build & lead high performing engineering teams by motivating your team and leading by example to continuously innovate, improve and think differently
+You deliver outstanding results for our customers and are a role model for other engineers
+You have a bias towards action and make decisions quickly after considering competing viewpoints
+Create shared vision and build and maintain strong partnerships with Product Management, Ops, Security, Research, Customer Success and Business development teams
+Integrate with the XRP Ledger, a distributed ledger built on the principles of Blockchain and its native currency XRP, the fastest and most scalable digital asset
+Lead xRapid expansion from engineering by Integrating with digital exchanges around the globe
+Add capabilities to integrate/operate with several crypto currencies
+Responsible for entire software development life cycle of xRapid
+Design, build and maintain a highly secure, scalable cloud-based xRapid product for customers across the world
+Own and deliver your roadmap
+What you might look like:
+At least 12+ years of hands-on Software Development experience in at least one of the following technologies: Java, JavaScript, AWS / DB technologies etc.
+You are still hands-on in Java / JavaScript technologies and loves to spend at least 30% of your time in coding/code reviews
+Have managed engineering teams of 15+
+You have demonstrated success building highly scalable API’s / backend Platforms / distributed systems / Data access layers, etc.
+You have experience with Agile development
+Have experience in building full stack transactional systems (preferably in payments / banking / e-commerce domains)
+You have successfully recruited high performing teammates
+You thrive on autonomy and responsibility
+BS in Computer Science or similar
+What we offer:
+100% paid medical and dental insurance for employees; 65% paid for employee dependents
+Generous Health & Wellness program
+Industry-leading maternity & paternity leave policies
+Flexible vacation policy- work with your manager to take time off when you need
+Modern office in San Francisco’s Financial District
+Fully-stocked kitchen with organic snacks, beverages and coffee drinks
+Weekly lunches and breakfasts
+Team outings to sports games, happy hours, game nights and more
+A learning environment where you can dive deep into the latest technologies and make an impact
+
+
+Original link: https://www.indeed.com/viewjob?jk=4329b197ffab6b4c&q=Blockchain+Engineer&l=United+States&tk=1cgdfpilm1fkk2je&from=web&vjs=3

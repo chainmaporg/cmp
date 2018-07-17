@@ -1,0 +1,31 @@
+What's the Treasury doing about bitcoin? A senator wants to know
+by Jose Pagliery   @Jose_Pagliery December 14, 2017: 2:04 PM ET
+How to buy and sell Bitcoin
+A U.S. senator is asking the Treasury Department to explain its efforts to ensure that bitcoin is not being used by criminals and terrorists to evade bank regulations.
+Senator Ron Wyden sent his questions in a letter to the Treasury Department's Financial Crimes Enforcement Network on Thursday.
+FinCEN, as the unit is called, tracks money laundering and uses sensitive U.S. government intelligence to spy on illicit banking worldwide.
+CNN received an early copy of the letter. In it the senator says he worries the computerized currency "could be laundered through trades that occur outside the regulatory framework that applies to current financial transactions."
+Wyden is asking asked FinCEN to explain its "authority and capabilities to identify the... owners of virtual currencies," as well as its ability to "trace and seize" this digital money.
+FinCEN declined to comment to CNN about the letter Thursday morning. But the agency pointed to a previous statement by acting director Jamal El-Hindi that said: "We will hold accountable foreign-located money transmitters, including virtual currency exchangers, that do business in the United States when they willfully violate U.S. anti-money laundering laws."
+Related: Fed chair calls bitcoin 'highly speculative'
+Bitcoin (and other digital currencies like it) are independent, self-sustaining and not backed by any government. They do not identify users by name. And Bitcoin's groundbreaking technology for tracking transactions, a concept called the "blockchain," is quickly gaining recognition. Blockchain is the innovative way bitcoin creates new units of currency and keeps a decentralized, public, and secure record of all transactions.
+The value of a bitcoin has skyrocketed from $900 to more than $16,000 on some exchanges this year. And while it was already a preferred online currency for hackers and criminals, that rise in price has drawn additional attention from the underworld.
+Related: What is bitcoin?
+Hackers tied to the North Korean regime have been caught infecting computers and demanding bitcoin as ransom payments. Bitfinex, the world's largest online market for bitcoins, and several other website exchanges have been hit by cyberattacks seeking to steal bitcoin accounts.
+"I believe that we should look to support financial innovation, but that we should ensure new technology companies comply with existing [anti-money laundering and counter-terrorist financing] laws," Wyden wrote.
+Related: Regulators on bitcoin: buyer beware
+It's unclear what effect this news could have on the bitcoin market. Since its inception, interest in bitcoin has been largely limited to techno-libertarians who view it as an alternative to state-controlled inflationary currencies. To them, the specter of government regulation is viewed negatively. Whenever a government has moved to regulate or ban bitcoin, and fears have temporarily pushed down prices sharply.
+But current interest by major banks and industry into bitcoin's core technology could hold that back, as they welcome regulation that legitimizes this mysterious and volatile technological experiment.
+FinCEN has taken some action on bitcoin in the past.
+In 2016, it warned financial companies in the bitcoin exchange business that they're still required to follow the same "know your customer" and anti-money laundering rules as banks. It followed that up in July with its first major legal action against a "money services business," hitting the internet-based BTC-e exchange with a $110 million civil penalty for ignoring those rules.
+The senator expressed concern that Russia and Venezuela view digital currency as a way to circumvent U.S. economic sanctions put in place to punish them for their violent authoritarian behavior.
+Earlier this month Venezuela announced plans to launch its own digital currency, dubbed "the Petro" and backed by the nation's oil and gas, to specifically evade the blockade.
+"While this is unlikely to be a credible plot to evade U.S. sanctions, it is an example of how this promising new technology could be used for nefarious purposes," Wyden said in his letter.
+Wyden also asked FinCEN how it monitors a related phenomenon: the sudden rise of "initial coin offerings," in which startups are offering digital currencies in a sometimes dubious attempt to raise investor money.
+The Securities and Exchange Commission has warned the public about the potential for "ICO scams," and this week regulators stopped food review app Munchee from raising $15 million this way.
+The senator's letter, addressed to acting FinCEN director El-Hindi, asked for a public response by Dec. 29.
+Jose Pagliery is the author of Bitcoin - And the Future of Money (Triumph Books, Chicago).
+CNNMoney (New York) First published December 14, 2017: 10:00 AM ET
+
+
+Original link: http://money.cnn.com/2017/12/14/news/economy/senator-treasury-bitcoin/index.html

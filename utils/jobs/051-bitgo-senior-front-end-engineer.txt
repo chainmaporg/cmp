@@ -1,0 +1,35 @@
+All jobs → Senior Front-End Engineer
+Senior Front-End Engineer
+Palo Alto, California, United States · Engineering
+Description
+BitGo, a global leader in digital currency security, provides sophisticated digital wallets, offline vaults, single integration APIs, and private blockchains to financial institutions. BitGo supports Bitcoin, Ethereum, Ripple, Litecoin, Bitcoin Cash, Bitcoin Gold, RMG, and ERC20 tokens, with many more being continuously released. BitGo’s clients include the world’s largest cryptocurrency exchanges and financial enterprises conducting over $12 billion in monthly transactions: Bitstamp, The Royal Mint, The CME Group, Bitbank, BitBay, Brave, KCoin, Ripple, Bitcoin IRA, CoinPayments, Pantera, Genesis, Wirex, Bitso, and many more.
+BitGo Inc. was founded in 2013 in Palo Alto, CA and is led by CEO/Co-Founder Mike Belshe, creator of the world’s first multisig protocols for Bitcoin, and author of SPDY, and CTO Benedict Chan, creator of the world’s first Ethereum multisig web wallet. BitGo raised over $54.5 million in funding led by Valor Equity Partners, Redpoint Ventures, DRW, and David Sacks among other capital investors.
+BitGo is looking for an experienced Senior Front-End Engineer who will join our Engineering Team in Palo Alto. Main Responsibilities:
+Work as a Front-End/UI Engineer designing and implementing new user-facing features in BitGo’s products within the angular framework
+Collaborate with the design team to implement clean, elegant user experiences
+Specialize in building responsive and elegant web applications that are scalable
+Optimize web applications to maximize speed and scale
+Write client-side code for web-based applications, create fast, easy-to-use, high volume production applications, and develop prototypes quickly.
+Requirements
+Successful track record as a UI Engineer, Front-End Engineer
+5+ years of experience in front-end development using HTML, CSS, JavaScript, jQuery and AngularJS version 1.6
+You are detail-oriented with special attention to design
+You follow principles of good user experience design
+You write clean and maintainable code using engineering best practices (unit testing, automation, source control, design patterns, etc)
+You are an awesome team player and communicator
+You want to see BitGo succeed and have passion for bitcoins, altcoins or blockchain technology
+Benefits
+Opportunity to work for a true fast growing tech startup in one of the hottest industries
+Opportunity to work with an awesome team of unique and smart people
+Competitive salary, bonus, stock options and 401k matching
+Fully paid health insurance, including spouse and kids
+Unlimited paid time off and paid holidays
+Free catered lunches (order what you want online)
+Free parking and Caltrain passes
+Onsite fully stocked kitchen with healthy snacks, fruits and drinks
+Onsite espresso machine with freshly ground coffee (Philz, Verve, Stumptown)
+Work equipment of your choice (apple machines, standing desks)
+Great restaurants, bars and gyms right on California Avenue
+
+
+Original link: https://bitgo.workable.com/j/DAFC0FFB94

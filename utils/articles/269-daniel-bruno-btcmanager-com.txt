@@ -1,0 +1,15 @@
+by Daniel Bruno, Chartered Market Technician
+Finally! The cryptocurrency markets achieved another comprehensive advance on December 12, but — breaking from recent norms — the bitcoin price was not leading the rally. That honor belonged to the ether price and litecoin price, each of whom surged to all-time highs and helped catalyze a record day for the altcoin markets.
+Although ether has been in a sustained uptrend throughout the year, it has been unable to match bitcoin’s gains during the fourth quarter. Consequently, it has gradually lost market share, and at one point its corner of the market dropped below 10 percent.
+December 12 brought investors a welcome change.
+The price of ether leaped by 16 percent, punching through the $500 barrier and briefly extending as high as $627, a new record, before ebbing back to a present value of $607.99 at the time of writing. Ethereum now has a market cap of $57.1 billion, raising its market share to 11 percent.
+ETH caught up with BTC euphoria on rising volume.
+Advertisement
+Source: Coinmarketcap
+It was a long wait, the Parity problem still unresolved. A bug in Parity, a popular wallet for the cryptocurrency and decentralized application platform Ethereum , may have resulted in more than $150 million worth of ether being permanently frozen. The bug affects Parity multi-sig (multi signature) wallets, which require more than one owner to “sign” a transaction.
+The crypto coin community may feel intimidated by the CBOE bitcoin contract so money is rotating into the safe haven of altcoins.
+Look for exhaustion in December 12’s session before $640 and a test of $520 by December 24 on the Bitstamp exchange, probably sooner. BTCManager’s previous ether price analysis outlined a target of $651.62, after ETH-USD pushed above the previous all-time high at $404.99 on November 23.
+ 
+
+
+Original link: https://btcmanager.com/ethereum-price-peaks-627-move-520-next/

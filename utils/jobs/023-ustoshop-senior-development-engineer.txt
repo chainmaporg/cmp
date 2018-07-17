@@ -1,0 +1,21 @@
+job title, keywords or company
+city, state, or zip
+Blockchain Trading Platform Senior Development Engineer
+USTOSHOP.COM INC - West Covina, CA
+USTOSHOP.COM INC was established in January 2018, located in Los Angeles, CA. The business includes four divisions: E-commercial, global logistics service, electronic payment and digital currency. The company’s e-commercial division directly connects with other corporate businesses to provide a diverse selection for our customers, for the purpose of simplifying the purchasing process and cater to different needs.
+Our company set warehouses in Portland, OR, New Castle, DE and Shanghai China, which will provide our customers with a one package service from our shop to delivery. USTOSHOP.COM will also launch an e-payment platform and digital currency to make sure customers will enjoy a safe shopping environment and maximize the customers' benefit. USTOSHOP.COM has the most advanced logistics technology and experienced professional team members. Our aim is to complete the process according to customers demands and expand the market with innovative technology.
+Job Responsibilities:
+Responsible for the overall architecture design of the blockchain trading platform
+Responsible for database design of blockchain trading platform, security design, high availability design, API interface design
+For the corresponding blockchain trading platform, participate in the corresponding module development, business logic development and other work
+Job requirements:
+Bachelor degree or above, computer, mathematics, electronic engineering and related majors
+More than 3 years experience in Linux server software development, basic programming skills, good programming habits
+Familiar with multi-threaded programming and WebSocket, proficient in C/C++, familiar with the three-tier architecture model of web front-end interaction, familiar with mysql and other relational databases, and familiar with software engineering and testing methods
+Familiar with common data structures and algorithms and design patterns, familiar with distributed system architecture
+Familiar with web-side developed javascript, familiar with ajax, jquery or other asynchronous technology
+Those with relevant experience in the Internet finance industry or digital currency industry are preferred
+Job Type: Full-time
+
+
+Original link: https://www.indeed.com/cmp/USTOSHOP/jobs/Blockchain-Trading-Platform-Senior-Development-Engineer-fd5597983ad21d82?q=Blockchain+Engineer&vjs=3

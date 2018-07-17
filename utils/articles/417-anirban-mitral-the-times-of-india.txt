@@ -1,0 +1,19 @@
+Cryptocurrency rivalry: Bitcoin vs Litecoin
+Cryptocurrency rivalry: Bitcoin vs Litecoin
+| TIMESOFINDIA.COM | Updated: Dec 16, 2017, 12:57 IST
+Highlights
+Bitcoin is the world’s first and most popular form of virtual currency whereas Litecoin started its journey in October 2011
+Litecoin takes 2.5 minutes for creating, bitcoin makes the user wait four times longer
+Longer stint in the market has certainly helped Bitcoin to remain on top of the ladder
+Representative Image
+NEW DELHI: Off late, cryptocurrency has been the buzz word across the world, posing an alternative to institutional form of currency exchange and banking. Albeit, economic stalwart like JPMorgan Chase CEO Jamie Dimon calling it a "fraud", digital assets and platforms growing in numbers suggest the contrary.
+Bitcoin is the world’s first and most popular form of virtual currency that allowed people to buy products and services in exchange of money without really involving banks. Not just Bitcoin, other cryptocurrency platforms which followed the trend provide similar add-ons if not more.
+Litecoin started its journey in October 2011, two years after the rolling out of Bitcoin. The basics of virtual currency remain the same with Litecoin to the extent that they are both open source platforms.
+Mining holds the key for generating cryptocurrency for both. Litecoin has the extra yard in terms of generation time for a block. While Litecoin takes 2.5 minutes for creating, bitcoin makes the user wait four times longer. The quicker operation of Litecoin can be attributed to the simpler Scrypt algorithm as opposed to Bitcoin’s SHA-256 algorithm. Scrypt favours huge volume of high speed RAM, thus giving Litecoin the edge.
+On the outset, both deal in cryptocurrency, but Bitcoin and Litecoin differ in the total number of coins that can be traded with. The Bitcoin network has a transaction limit of 21 million coins, whereas the Litecoin allows 84 million coins.
+Cryptocurrency usage is overwhelmingly gaining worldwide acceptance. Longer stint in the market has certainly helped Bitcoin to remain on top of the ladder but the volatile dynamics of digital market remains the silver lining for Litecoin.
+Get latest news & live updates on the go on your pc with News App . Download The Times of India news app for your device. Read more Business news in English and other languages.
+RELATED
+
+
+Original link: https://timesofindia.indiatimes.com/business/india-business/cryptocurrency-rivalry-bitcoin-vs-litecoin/articleshow/62084076.cms

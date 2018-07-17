@@ -1,0 +1,51 @@
+Software Development Engineer in Test (SDET)
+New York, NY
+ABOUT ITBIT 
+ 
+itBit is a global exchange and custodian offering institutional and retail investors a regulated platform to buy, sell and hold crypto assets. In 2015, itBit obtained a New York State trust company charter and became the first regulated Bitcoin exchange in the U.S. As a regulated financial services company based in New York City, itBit is focused on meeting the sophisticated needs of institutions, active traders and other crypto asset trading professionals. In addition to New York City, itBit has an office and operational teams based in Singapore.
+ 
+We hold ourselves to a very high hiring bar. To achieve this, we think of roles first and foremost as outcomes to be achieved, not simply a description of responsibilities. We have developed what we call a ‘Success Profile’ for this role, which has two sections:
+Outcomes: Meaningful and measurable work products that have a significant impact on the team and business over a defined timeframe
+How to Achieve Outcomes: We have a strong point of view on how this role will succeed in achieving outcomes at itBit. So, we have taken the Operating System of itBit - our values - and made it relevant to this role.
+ 
+OUTCOMES
+Build high quality and robust test automation solutions for functional and regression testing that would reduce test cycle times and increase customer satisfaction. Customer satisfaction is measured by ensuring quality is within defined defect density.
+Build and maintain CI/CD pipeline that would provide a mean to check code quality, get faster feedback and reduce defects. Success is measured by the quality of deliverables and the speed of deployment to production.
+Identify and proactively tackle technical debt to avoid significant work that would be needed to resolve it.
+Active involvement and mentorship of junior engineers by doing code reviews resulting in leveling up of skill sets for the entire team.
+Find, isolate (root cause analysis), document, regress, and track defects through resolution across different environments. Success is measured by reduction in defect leakage.
+ 
+HOW TO ACHIEVE THE OUTCOMES
+Technical Acumen Required:
+Functional automation with Selenium in one or more languages, such as: Ruby(preferred), Python, Nodejs, JavaScript.
+API testing with tools such as SOAPUI, Postman, KarateDSL or REST-Assured.
+Proven experience in building and managing at least one test automation framework such as RSpec, Cucumber, Jasmine, Robot Framework.
+Experienced in Linux/Unix software, Shell or Perl scripting.
+Experience in fault injection and CI (using Jenkins) is a nice to have.
+ 
+Search for the truth:
+Communicates effectively, consistently and in a timely fashion, across functions and is able to work well with the Product, Development, UX, and business teams.
+Proactively identifies problems with requirements for their own work and adjacent work, and communicate these issues early to help course-correct.
+Interpret and report testing results, and be a vocal proponent for quality in every phase of the development process
+ 
+Be an Owner:
+Shows initiative beyond merely knocking tasks off a list. Identifies and suggests areas of future work for themselves and their teams.
+Work with software development engineers to understand the overall technical architecture and how each feature is implemented.
+Produce output by taking a complex user story, breaking it down into acceptance criteria, and complete testing of the acceptance criteria through automated tests.
+ 
+Shared Commitment to Excellence:
+Have the mentality of “Automation-First” and guide other team members in taking the automate everything approach.
+Able to work independently with very little oversight beyond high-level direction.
+Participates extensively in code reviews, mentors others via code reviews.
+ 
+Real-time Candor:
+Able to communicate effectively across functions. The ability to get work done across teams goes beyond mere proactive status updates (although that is expected as well).
+Play a leadership role in making the right trade-offs even when doing so might mean more work for themselves, as long as that is the right thing to do.
+ 
+ITBIT IS AN EQUAL OPPORTUNITY EMPLOYER. IT DOES NOT DISCRIMINATE ON THE BASIS OF SEX, AGE, COLOR, RACE RELIGION, MARITAL STATUS, NATIONAL ORIGIN, ANCESTRY, SEXUAL ORIENTATION, PHYSICAL AND MENTAL DISABILITY, MEDICAL CONDITION, GENETIC INFORMATION, VETERAN STATUS OR ANY OTHER BASIS PROTECTED BY FEDERAL, STATE OR LOCAL LAW. 
+Stellar Lumens
+Copyright © 2018 itBit Trust Company, LLC. All Rights Reserved.
+Crypto asset trading involves a high degree of risk. The crypto asset market is new and unproven and may                          not grow. Currently, there is relatively small use of crypto assets in the retail and commercial                          marketplace in comparison to relatively large use by speculators, thus contributing to                          price volatility that could adversely affect an investment in crypto assets. In order to                          participate in the trading of crypto assets, you should be capable of evaluating the                          merits and risks of the investment and be able to bear the economic risk of                          losing your entire investment. No material at this site should be considered                          as an offer by itBit to sell or solicitation by itBit of any offer to buy bitcoin or other crypto assets.
+
+
+Original link: https://www.itbit.com/h/careers/software-development-engineer-in-test-sdet

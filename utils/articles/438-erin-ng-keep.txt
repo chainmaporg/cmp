@@ -1,0 +1,13 @@
+Photo by Erik Odiin on  Unsplash
+Here at Keep, we’ve made the decision to make our site open source. Actually, that’s not the whole truth. We’ve always intended to be open source, but we’re just letting you guys know officially now.
+Why make our site open source?
+Transparency
+It’s true — privacy is the core of our product. Keep encrypts, stores, and securely transfers private data through the public blockchain. Yet, we want our users and our community to know how it’s done. Transparency helps us establish accountability and trust as the default way of doing things.
+Community
+Everyone gets the opportunity to contribute and engage. When anybody can contribute, every person is a potential new team member, collaborator and innovator. Engaged community members can also help bring blockchains further into the mainstream, while helping us build a better network.
+Quality, Security, and Innovation
+More eyes on our code translates into better code. Not only can bugs and vulnerabilities get spotted and fixed faster, but new features and more efficient code become the natural by-products of developing in the open.
+With all that said, we invite you to contribute, and would love to hear your thoughts on open-source development in the crypto space. We’ll be expanding the site as we grow with use cases, developer documentation and the latest news on our progress. Check out our codebase on Github or join our community on Slack .
+
+
+Original link: https://blog.keep.network/keeping-it-open-671baef4adf8

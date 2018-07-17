@@ -1,0 +1,23 @@
+RBC: Nvidia's crypto boom isn't dead, it's just getting started (NVDA)
+Seth Archer
+Dec. 13, 2017, 11:51 AM
+Ethan Miller / Getty Images
+Some have argued that the boost Nvidia has seen from cryptocurrency mining is over, but one analyst thinks differently.
+Alt-coins have been exploding in value and could provide another big boost to Nvidia's bottom line.
+Some analysts have already called for the end of the crypto boom for Nvidia , but Mitch Steves, an analyst at RBC Capital Markets, thinks differently.
+"While the Ethereum market opportunity could fade, we are confident the market will be open (at minimum)," Steves said.
+Steves argues that the bigger cryptocurrencies —  bitcoin and ethereum — aren't likely to add to Nvidia's bottom line in the coming year, but almost every other one can .
+Cryptocurrency miners were born alongside bitcoin in 2009, and soon figured out that the type of math required to mine the digital coins was made faster by introducing graphics cards initially used to improve video game graphics. Nvidia, as well as rival AMD, has profited massively from the trend.
+But, as the number of miners increased and the process of mining got harder, it lessened the impact of buying a graphics chip. Now, there are specially designed mining rigs that maximize the ratio of power consumption to processing power, as the cost of electricity can easily outweigh the benefits of inefficient mining.
+Ethereum, the second largest cryptocurrency as measured by market cap, is still mostly profitable to mine with a graphics processing unit (GPU), but will soon move to a "proof of stake" system for payment verification. This will greatly diminish the impact a GPU will have on the mining process. Ethereum payment verification will soon happen via a sort of voting system rather than a race to find the answer to a complicated math problem, which is the current verification method.
+It's because of this change that analysts had previously called for the end of the cryptocurrency golden days for chip makers. But, cryptocurrencies not named bitcoin or ethereum have been skyrocketing in recent weeks.  Litecoin’s record week keeps going , and ripple just surpassed litecoin to become the fourth-largest crypto by market cap.
+YouTube / Ripple
+Prices are likely moving higher in many of the alternative currencies because of a large number of new players in the industry, Steves said. Cboe started offering the first future contracts for bitcoin on Sunday, and CME is soon to follow.
+Iterations of bitcoin's technology that are faster, more liquid and less volatile are being tried out on the smaller cryptocurrencies, Steves said, which could also lead to a boost in confidence in all cryptos.
+"On a near-term basis we think it is quite difficult to make price statements, which is why we are flagging the move now in the case that it sustains," Steves wrote in a note to clients on Wednesday. "Longer term, we think crypto currencies are here to stay and will likely become a large market."
+Steves sees a long-term value of $10 trillion for the cryptocurrency market, which currently sits around the $500 billion mark.
+In the even longer term, the decentralized technology that drives all the cryptos could leak into other areas of the computing world and drive an increase in demand for chips from Nvidia and AMD.
+Steves rates Nvidia an outperform and has a price target of $250, which is 31% higher than its current share price.
+
+
+Original link: http://uk.businessinsider.com/nvidias-stock-bitcoin-crypto-boom-isnt-over-its-just-getting-started-2017-12

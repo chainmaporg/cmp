@@ -1,0 +1,33 @@
+All jobs → Senior Software Architect
+Senior Software Architect
+Melbourne, Victoria, Australia · Engineering · EN-B-SA
+Description
+CoinJar is one of Australia's fastest growing startups and a trusted market leader in the digital currency industry. We build consumer-friendly products with strong focus on security, scalability and usability.
+Our Engineering Team is a product-oriented cross-functional team with capabilities in Product Management, Design, Frontend, Backend and Mobile. At CoinJar, you can expect to take ownership in projects from inception and influence the future product directions based on your expertise.
+We are hiring a Senior Software Architect who will lead the development of the backend APIs and services. Our backend stack is primarily in Ruby, with some of the newer projects in Elixir.
+You will:
+Lead the effort to standardise our engineering processes and tools with a long-term vision.
+Design, implement and maintain external and internal APIs and services that are secure, reliable and scalable.
+Work with engineers, product manager and company management to deliver our product vision and roadmap.
+Make architectural decisions for current and future backend projects.
+Share the responsibility of DevOps with the entire engineering team, including database maintenance and deployment.
+Requirements
+Essential Requirements
+You have at least 5 years of experience in software engineering, preferably in Ruby and/or Elixir.
+You've previously designed and built production software with well thought-out architecture and meaningful scale.
+You have solid experience in TDD/BDD and implementing engineering best practices.
+You're passionate about building FinTech products for everyday consumers.
+Nice to have
+You have made contributions to open source projects.
+You've previously worked in an environment with strong security constraints, or you have other web security experience.
+You have extensive experience with MySQL, Postgres or Redis.
+You are very familiar with AWS and/or containerised deployments.
+Benefits
+We are a team of creative and passionate people working to solve challenging engineering problems. We listen to customers, and ship code frequently.
+You'll get a laptop on your first day with your preferred configuration. We use macOS or Linux.
+We have a flexible hours system and you also have the option to work from home 0-2 days a week.
+We offer employee equity in addition to your base salary, with some of the most generous terms in the market.
+Fee-free trading on CoinJar!
+
+
+Original link: https://coinjar.workable.com/j/E1894E5D66

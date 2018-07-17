@@ -1,0 +1,36 @@
+New York, NY or Remote
+Engineering
+Apply for this job
+Blockstack is a new internet for decentralized apps. With Blockstack, you own your data and maintain your privacy, security and freedom. Blockstack is open source project and a public benefit corporation. Learn more.
+Blockstack is looking for a passionate and experienced distributed systems engineer to help develop, build and deploy a soon-to-be launched blockchain for decentralized apps and Stacks cryptocurrency. This role will work with our back-end engineers and distributed systems experts to implement a new blockchain architecture suitable for Blockstack apps, by decreasing transaction time and cost for the Blockstack ecosystem. This role is ideal for engineers who are experts in peer-to-peer protocol development, familiar with the bitcoin blockchain, and keen to build a clean-slate system from the ground up. 
+Our engineering team builds software using JavaScript/ES6, React, Redux, and Swift on the frontend and Python 2, bash, and Bitcoin Core on the backend.
+You will:
+- Research, strategize and educate on methodology and best practices for blockchain design, implementation, and deployment
+- Collaborate with a team and open source community to build and implement a blockchain for Blockstack 
+- Instate monitoring systems for the blockchain’s health
+- Help design, implement, and monitor one or more testnets
+- Implement rigorous and thorough testing practices to ensure thesecurity and performance goals of  blockchain infrastructure
+Qualifications
+You have worked with a founding team building a blockchain, are an expert in decentralized solutions, and are passionate about our mission of building a new decentralized internet. 
+KPIs
+- Deliver upon goals for blockchain architecture and development for Blockstack  
+- Provide key features to be used across the blockstack ecosystem including: decreased transaction times and costs, programmable payment and name management systems, hybrid on-chain/off-chain programming models, protocols for enacting soft forks, deployment and monitor one or more blockchain testnets
+- Design and implementation of supporting tools and utilities, such as: a CLI client for the blockchain, a Web client for the blockchain, monitoring utilities, debugging utilities, facilities for checking and analyzing transactions, tools for exploring the blockchain
+    
+Skills 
+- Expert knowledge of peer-to-peer distributed system design and implementation, including familiarity with state-of-the-art academic literature on the subject and practical knowledge on engineering successful peer-to-peer systems.
+- Experience in the low-level implementation and protocol details of a widely-deployed public blockchain
+- Strong Linux engineering background required
+- Ability to build and maintain highly available infrastructure 
+- Competency in monitoring and quick response time in the event of an emergency 
+- Strong background in security-oriented system design, with a focus on applied cryptography
+- Must be able to identify and defend against plausible protocol-level and network-level attacks on the system.
+- Experience deploying Bitcoin infrastructure, like UTXO providers and block explorers
+Qualities + Traits 
+- Desire to build a new internet with Blockstack 
+- Strong problem solving skills, ability to think fast and thoroughly 
+- Excellent communication
+We get a lot of applicants, and have historically hired people who are proactively involved in our work and mission of decentralizing the internet. We hope you explore our  Whitepaper ,  Browser , Github , and  Slack  prior to submitting your resume.
+
+
+Original link: https://jobs.lever.co/blockstack/1f59fc67-e2db-4b4b-a188-3a40f27b6d25

@@ -1,0 +1,26 @@
+We seek an outstanding Software Engineer to help lay the foundation for a more resilient, more secure, distributed version of the web.
+Engineering at Protocol Labs
+Engineering at Protocol Labs is not just about writing world-class code. We create software systems that tackle significant challenges. We aim to solve those challenges with new technology breakthroughs and great user experience design.  We believe in an open-source approach to creation. We strike a balance between pragmatism (put it on a ship ⛴), deeply informed protocol design, and strict application of strong engineering principles. All of this happens in an environment defined by curiosity, passion, and a love for open source.
+As a Security Software Engineer at Protocol Labs you will…
+Build the next generation of peer-to-peer software, working on projects like libp2p, IPFS and Filecoin
+Participate in the design of secure and privacy protecting protocols and applications
+Integrate latest research results into widely used protocols and applications
+Fend off attacks on our team and infrastructure, and try our defenses
+Work alongside a cross-functional team including engineering, design, product, business, as well as an active open source community
+Advocate for and implement best practices across our teams and community
+Help conduct security audits of our protocols, applications, processes, and practices
+You may be a fit for this role if you have...
+Deep technical knowledge of security engineering, computer and network security, authentication and security protocols, and applied cryptography
+Significant experience building and monitoring application level security
+Significant experience designing and inspecting network protocols and applications
+Ability to analyze, criticize, and improve the design of complex protocol stacks
+Bonus Points
+Experience contributing to or leading open source projects
+Published about your work (code, presentations, papers, blog, etc) 
+Excellent written and verbal communication skills
+What’s it like to work at Protocol Labs?
+Protocol Labs mission is to improve humanity’s most important technology, the Internet. We build protocols, systems, and tools to improve how it works. Today, we are focused on how we store, locate, and move information. Our projects include IPFS, Filecoin, libp2p, and more.
+As a distributed team, we hire anywhere in the world, and at various levels of experience (entry, senior, staff). We look for people with unique perspectives and diverse backgrounds.
+
+
+Original link: https://jobs.lever.co/protocol/086405c2-69bf-4ea2-9d59-d24adeb501b3

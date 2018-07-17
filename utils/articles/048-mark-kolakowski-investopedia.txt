@@ -1,0 +1,20 @@
+7 Stocks To Ride The Bitcoin Wave: Fundstrat's Lee
+By Mark Kolakowski | December 12, 2017 — 1:00 PM EST
+Share
+As bitcoin mania propels the digital currency to stratospheric values, many investors are looking for stocks that might ride bitcoin's coattails to higher valuations. Veteran market strategist Tom Lee, currently head of research at Fundstrat Global Advisors LLC, has identified seven such stocks, CNBC reports .  In the area of cryptocurrency  trading, Lee names Goldman Sachs Group Inc. ( GS ), CME Group Inc. ( CME ), and CBOE Global Markets Inc. ( CBOE ). His picks among semiconductor manufacturers whose products are critical for mining it include Nvidia Corp. ( NVDA ) and Advanced Micro Devices Inc. ( AMD ). Finally, Lee also names Overstock.com Inc. ( OSTK ) and Square Inc. ( SQ ) as companies with key supporting roles.
+The rapid escalation in the value of digital currencies leads skeptics to conclude that this is a speculative bubble. If so, any gains in these stocks fueled by expectations about further gains in digital currency prices is bound to unravel. Meanwhile, Lee has a year-end price target of $25,000 for bitcoin, per CNBC's December 8 story. Its price as of 11:00 AM Tuesday was over $17,000,  per CoinDesk.com . (For more, see also: Is Bitcoin In Bubble Territory? )
+The Traders
+This is where Goldman, CME (the parent of the Chicago Mercantile Exchange) and CBOE (the parent of the Chicago Board Options Exchange) fit in. The CBOE has begun trading bitcoin futures, the CME has announced intentions to do the same, and Lee anticipates that Goldman will be "the first investment bank to be involved in bitcoin trading," as quoted by CNBC. The central involvement of these mainstream players in the bitcoin market could boost the credibility of digital currencies in general, and perhaps reduce their volatility. However, it is not immediately obvious that trading in cryptocurrencies will be a significant source of revenue for any of these players in the foreseeable future.
+The YTD price moves through December 11 and P/E ratios for these stocks are, per CNBC : Goldman, +6%, 13x; CME, +33%, 35x; CBOE, +73%, 69x. The earnings multiples on the CME and CBOE are quite rich, given that the S&P 500 has a recent P/E of 25x, per Birinyi Associates as reported by The Wall Street Journal .
+The Miners
+The mining of various digital currencies requires specialized high performance semiconductors known as graphics processing units (GPUs). Nvidia and AMD are among the leading producers of these chips. "As blockchain grows, and as transactions grow, mining will grow and therefore require more GPUs," Lee told CNBC. Nvidia is up 79% YTD and has a P/E of 48x, while the figures for AMD are -12% and -142x. per CNBC.
+The Others
+Overstock is best known as an online discount retailer, and became the first major retailer to accept bitcoin as payment back in 2014, per CNBC. The company also is an incubator of the blockchain technology that underpins key digital currencies, and through a subsidiary it has begun trading in digital coins, CNBC adds. Overtock's shares are up 225% YTD, and its P/E is -132x, per CNBC. Overstock's shares recently surged after the investment management division of Morgan Stanley ( MS ) reported taking an 11.4% position in the company, according to another CNBC report .
+Square focuses on developing point-of-sale solutions for merchants, facilitating transactions in which the customer pays via his or her mobile device. The company has announced that it will develop the means for customers to buy and sell digital currencies through its app, but not in the manner of a full cryptocurrency exchange, CNBC says. Square's stock is up 187% YTD, and its P/E is -234x, per CNBC.
+Risky Business
+Many of Lee's seven picks already are richly-priced, including three that have multiples greater than the S&P 500 average. Three others have negative earnings. 
+This suggests that big expectations already are built into these stocks.
+Trending
+
+
+Original link: https://www.investopedia.com/news/7-stocks-ride-bitcoin-wave-fundstrats-lee/?utm_campaign=rss_headlines&utm_source=rss_www&utm_medium=referral

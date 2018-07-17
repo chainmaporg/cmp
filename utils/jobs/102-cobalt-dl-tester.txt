@@ -1,0 +1,101 @@
+Signed, Sealed, Delivered
+Careers
+Cobalt is at the forefront of the changing landscape within FX Post Trade processing, delivering a private peer-to-peer network that significantly reduces post-trade cost and risk for financial market participants. As we continue to expand, so does our talent acquisition requirements. Cobalt is looking for bright and ambitious people to join our team.
+Marketing Associate
+This is a hands on Marketing Associate role. You will be responsible for brand and marketing campaigns (internally and externally), online, print media and third-party programs. You will be passionate, dynamic, adaptive, quick to understand the business and reimagine our approach to B2B marketing within the FinTech startup industry.  Willing and wanting to shake things up.
+Primary Responsibilities
+Support the Founders and Team to build, help define and execute the marketing / brand strategy and campaign plans in line with business objectives
+Contribute to the design and own the implementation of marketing campaigns (PR, social media, events, third party programs, design etc.)
+Ensure internal marketing and awareness building for objectives and campaigns
+Creation and management of sales and marketing content and collateral – mainly for web and electronic usage
+Ownership of a branded content and a social media plan
+Analysing potential strategic partner relationships for company marketing
+Work closely with the sales and product teams to ensure brand awareness and accurate messaging internally and to clients
+Management of website and / any other ‘owned’ digital channels
+Qualifications & Skills
+Experience
+Experience at a start-up, technology company or agency servicing either of the former in a similar role
+A degree or relevant experience in marketing, communications or project management (though not essential)
+Knowledge of Google Analytics, LinkedIn, Twitter, MailChimp, Salesforce and web-based marketing tools
+At least 3/4 years’ experience in a similar role
+Proven writing ability
+Any other relevant professional qualifications would be advantageous
+Comfortable working in a fast pace environment
+Excellent Microsoft Office skills
+Interest in FinTech and FX
+Experience focussed on B2B marketing, ideally within a start-up, smaller growing business or agency
+The ability to grasp new concepts quickly
+Impeccable verbal and written communication skills
+Excellent time and project management skills with the desire to see projects through from concept to delivery
+Strong knowledge of all digital marketing channels
+Proven performance working independently to ambitious deadlines
+Project management skills including the management of 3rd party vendors
+You have the ability to get things done in a fast-paced environment, you learn quickly and have a can-do approach
+Desired Skills
+Experience working in Fintech, FX, blockchain or financial services
+Understanding of SEO
+Able to create e-mail templates and campaigns
+Creative mindset with an understanding of how to communicate visually and bring ideas to life in a variety of mediums
+Location & Travel
+Minimal to no travel required
+ Support Desk Team Lead – L1/L2
+ As a member of the Cobalt Support Desk candidates will be primarily responsible with ensuring the smooth day to day running of the Cobalt product suite.
+Primary Responsibilities
+Monitoring and Support of the Cobalt product suite.
+Management and guidance of junior team members.
+First and second line support of application, server and network stack.
+Service desk management, including but not limited to:
+First point of contact via phone, email or self-service help service desk.
+Incident, problem and release management.
+Escalation and communication with internal and external stakeholders.
+Ensuring that SLA’s are met.
+ First point of escalation.
+Monitoring of Cobalt application suite.
+Service desk management.
+Issue/Change/Request management from conception to resolution.
+Application support.
+Liaison between internal and external stakeholders.
+Identify and report system bugs to product owners.
+Identify and report system enhancements to product owners.
+Assist clients during onboarding process.
+Any other ad hoc work as may be required by the Head of Support.
+Qualifications & Skills
+Computer Science related degree preferred
+At least 4 years’ experience in a similar role
+Any other relevant professional qualifications would be advantageous
+Essential Skills
+Previous team lead / desk lead experience.
+Knowledge of FX post trade processing
+Knowledge of the FIX protocol
+Experience using UNIX
+Proficiency in written and spoken English
+Excellent attention to detail and the ability to follow and give direction
+Self-starter and motivated to succeed
+Proven ability to be a team player, while retaining ability to work independently with little or no supervision
+Excellent interpersonal, written and verbal communication skills
+Aptitude for learning new software and IT applications
+Client facing skills
+Ability to apply a logical and analytical approach to work
+Ability to manage time, prioritise tasks and work under tight deadlines
+Excellent multi-tasking skills
+Lateral thinking to identify improvements in processes
+Ability to effectively prioritise
+Previous experience of KX dashboard-based UI / System.
+Previous Cisco / Network support experience.
+Previous Linux System Administration experience.
+Location & Travel
+Minimal to no travel required
+Tester
+The testing resource has to be able to thrive in a start-up environment. Upon joining the team the Tester will be primarily responsible for owning and driving the processes and execution of testing the Cobalt platforms. In addition, this role will be responsible to support the Head of Product with outlining test scenarios and ensuring product delivery. This is an exciting role for anyone looking to expand their skills sets and join a vibrant and exciting team.
+Primary Responsibilities
+Opportunity to own a new test function in a new and exciting company
+Testing all aspects of the Cobalt system from the GUI to various APIs (in and out)
+Build test plans, automating where possible
+Aid in the documentation and analysis of product enhancements
+Working closely with product and development teams
+Role Requirements
+Design and creation of automation framework
+Stress and performance testing
+
+
+Original link: http://www.cobaltdl.com/careers/?job=5#toggle-id-12-closed

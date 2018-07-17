@@ -1,0 +1,43 @@
+All jobs → Senior Quality Engineer
+Senior Quality Engineer
+Palo Alto, California, United States · Engineering
+Description
+BitGo, a global leader in digital currency security, provides sophisticated digital wallets, offline vaults, single integration APIs, and private blockchains to financial institutions. BitGo supports Bitcoin, Ethereum, Ripple, Litecoin, Bitcoin Cash, Bitcoin Gold, RMG, and ERC20 tokens, with many more being continuously released. BitGo’s clients include the world’s largest cryptocurrency exchanges and financial enterprises conducting over $12 billion in monthly transactions: Bitstamp, The Royal Mint, The CME Group, Bitbank, BitBay, Brave, KCoin, Ripple, Bitcoin IRA, CoinPayments, Pantera, Genesis, Wirex, Bitso, and many more.
+BitGo Inc. was founded in 2013 in Palo Alto, CA and is led by CEO/Co-Founder Mike Belshe, creator of the world’s first multisig protocols for Bitcoin, and author of SPDY, and CTO Benedict Chan, creator of the world’s first Ethereum multisig web wallet. BitGo raised over $54.5 million in funding led by Valor Equity Partners, Redpoint Ventures, DRW, and David Sacks among other capital investors.
+BitGo is looking for an experienced Senior Quality Engineer who will join our Quality Team in Palo Alto. Main Responsibilities include:
+Design and develop high value QA tests and automating them in Selenium or similar open source test framework.
+Review product requirements, specifications and technical design documents
+Collaborate with other function teams to understand and create detailed, comprehensive and well-structured test plans and test cases
+Estimate, prioritize, plan and execute QA test plans and activities
+Perform thorough acceptance and regression testing when bugs are resolved
+Work in a professional software engineering environment (with source control, dev/stage/prod release cycle, continuous deployment)
+As part of the test/quality process, provide assessments of release readiness using a risk-based approach
+Track quality assurance metrics, like bug densities and open bug counts
+Evaluate and introduce new and/or better testing tools and strategies
+Requirements
+BitGo is looking for people who are passionate about their craft, take full ownership for their work and projects, and believe in transparent and collaborative culture with the goal of making BitGo successful. Main requirements include:
+5+ years of experience as a QA Engineer, QA Automation Engineer, Integration Engineer designing and developing reliable, scalable, and maintainable test automation solutions for functional, integration, and performance testing using Selenium or similar open source test framework.
+5+ years of direct experience in software development and test in an online services / SaaS environment
+Knowledge of JavaScript, Java or similar programming languages
+Strong object-oriented design and coding skills
+Solid knowledge of all aspects of unit, functional, manual, and automated testing
+Strong experience with AWS, GitHub, Jenkins or other CI tool, TestRail, etc. as well as Continuous Integration and Deployment (CI/CD)
+Experience working in an Agile/Scrum development process, balancing multiple priorities, and advocating for quality across functional teams
+Start-up experience highly preferred
+A passion to see blockchain technology adopted by the world
+BS or MS in Computer Science / Engineering
+Benefits
+Opportunity to work for a true fast growing tech startup in one of the hottest industries
+Opportunity to work with an awesome team of unique and smart people
+Competitive salary, bonus, stock options and 401k matching
+Fully paid health insurance, including spouse and kids
+Unlimited paid time off and paid holidays
+Free catered lunches (order what you want online)
+Free parking and Caltrain passes
+Onsite fully stocked kitchen with healthy snacks, fruits and drinks
+Onsite espresso machine with freshly ground coffee (Philz, Verve, Stumptown)
+Work equipment of your choice (apple machines, standing desks)
+Great restaurants, bars and gyms right on California Avenue
+
+
+Original link: https://bitgo.workable.com/j/693C006515

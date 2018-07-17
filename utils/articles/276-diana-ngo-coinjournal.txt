@@ -1,0 +1,22 @@
+Google+
+eToro, a European social trading and multi-asset brokerage company, will assist CoinDash in the development and implementation of new crypto trading and portfolio management products.
+eToro is CoinDash’s largest investor. The company, which offers a social trading platform and counts seven million registered users, is known for being a cryptocurrency supporter , having added bitcoin trading in early 2014 as well as ether, ethereum classic, litecoin, dash, ripple and bitcoin cash later on.
+eToro founder and CEO Yoni Assia, has joined CoinDash’s advisory board and will advise CoinDash on a range of aspects of product development as the startup expands its offerings and customer base.
+CoinDash is building a blockchain-based platform that combines portfolio management and social trading functionalities. The platform will include a copy-trade feature, similar to what eToro is already offering on its own platform.
+Assia, a cryptocurrency enthusiast, is notably known for co-writing the Colored Coins whitepaper with Ethereum creator Vitalik Buterin back in 2013.
+With now thousands of new cryptocurrencies and crypto-tokens in the market, Assia said the CoinDash team is looking to provide investors with tools to help them better analyze their investments and navigate the rapidly evolving space.
+“Until this point, investors in cryptocurrencies have mostly been members of a niche community,” Assia said. “The learning curve is steep and the market moves quickly.”
+“I’ve been honored to serve as a mentor to CoinDash and its team since its inception. As CoinDash continues to grow and evolve as a business, I look forward to guiding the team as they provide much-needed tools for cryptocurrency investors.”
+Among the features that will be worked on, the eToro team will help CoinDash develop and implement portfolio tracking tools, a “CoinDash platform token model” as well as a social network for cryptocurrency investors leveraging eToro’s expertise on social trading and investment network.
+“The eToro team has had great success in developing and scaling social trading platforms, and pioneering innovative new ideas like Copy Trading,” said Alon Muroch, CEO of CoinDash.
+“Nothing makes more sense to CoinDash then partnering up with the global leader in social trading, today marks an important milestone for what’s to come in our product launch planned for Q1 2018.
+“We look forward to tapping the knowledge they have made available to us to ensure we can have the same great impact for our community.”
+CoinDash is developing a platform for cryptocurrency portfolio management designed for mainstream users. The platform will let investors manage, track and analyze their portfolio across multiple tokens, exchanges and wallets.
+The CoinDash web app, currently in Beta, is integrated with several services and trading platforms including Poloniex, Gatecoin, Bittrex and Kraken, enabling users to view their holdings from the Coindash dashboard.
+Part of the development roadmap is to build a “Trader Network” to enable users to view experienced traders’ portfolios, follow them to receive real time updates about their investments and allow them to manage others’ investments by using the so-called “Copy-ICO” tool.
+CoinDash, an Israeli startup. raised US$7.53 million in a much-hyped ICO in July. Shortly after the token sale began, a hacker compromised the campaign by replacing the Ethereum address on the company’s website.
+In the months that followed, the hacker, who managed to steal US$10 million worth of ether tokens, returned US$3 million of the funds to the company.
+TAGS
+
+
+Original link: https://coinjournal.net/etoro-assist-coindash-building-crypto-trading-products/

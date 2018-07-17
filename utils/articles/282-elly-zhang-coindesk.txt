@@ -1,0 +1,56 @@
+2018's Big Question: Can Bitcoin Forks Deliver Value?
+OPINION
+Elly Zhang
+Dec 13, 2017 at 23:00 UTC  |  Updated  Dec 14, 2017 at 17:10 UTC
+Elly Zhang is a London-based global marketing professional who leads Asia growth initiatives for bitcoin and ether wallet startup Blockchain.
+The following article is an exclusive contribution to CoinDesk's  2017 in Review .
+This year has been pivotal for digital assets like bitcoin and ether, resulting in unprecedented price increases, capital investment and general awareness.
+But despite these successes, one of the fundamental properties of all cryptocurrencies – their decentralized nature – has been under attack in 2017.
+With this in mind, it's worth remembering that a core value proposition of blockchains is that there is no one central intermediary or organization that controls them. Instead, these protocols are used to enable the network to come to a consensus on the validity of transactions and data.
+Bitcoin was the first digital payment system to function without a central repository, and the concept (fairly novel in 2009) is now widely accepted and becoming more ubiquitous . But the world's first blockchain has evolved since its humble beginnings, and today there are variations on the original – most notably, bitcoin cash and bitcoin gold .
+Forks have become so prevalent one might call the model an initial fork offering (IFO).
+Not just bitcoin gold and bitcoin cash, but more bitcoin variations initiated by Chinese companies such as "super bitcoin," "bitcoin diamond" and "bitcoin god" are on the way.
+And while all may be finding a market, it's worth asking the question, are these networks delivering on the promise of the technology? And should consumers care?
+Framing the question
+An argument can be made that the three cryptocurrency networks are all different in how well they encapsulate the vision of bitcoin as a decentralized network.
+But it's worth noting, too, that decentralization is frequently achieved by market economics.
+When thinking about this, I'm reminded of the classic question asked by Soviet leader Mikhail Gorbachev in 1988:
+"I haven't seen a single bread queue. Please take me to meet the person in charge of supplying bread to London. I must learn his secret."
+In fact, there was no one in charge for supplying bread to the city of London, that's why there were no queues.
+Though bitcoin was the first so-called "decentralized" product built on blockchain technology, there are arguments within the community as to whether it constitutes real "decentralization."
+There are those who argue that the power and influence of the mining industry results in the network being more centralized than most people expected. To support this point of view, it's valuable to revisit Satoshi Nakamoto's email regarding the original design of bitcoin.
+He writes:
+"Long before the network gets anywhere near as large as that, it would be safe for users to use Simplified Payment Verification (section 8) to check for double spending, which only requires having the chain of block headers, or about 12 KB per day. Only people trying to create new coins would need to run network nodes. At first, most users would run network nodes, but as the network grows beyond a certain point, it would be left more and more to specialists with server farms of specialized hardware. A server farm would only need to have one node on the network and the rest of the LAN connects with that one node.
+The bandwidth might not be as prohibitive as you think. A typical transaction would be about 400 bytes (ECC is nicely compact). Each transaction has to be broadcast twice, so lets say 1KB per transaction. Visa processed 37 billion transactions in FY2008, or an average of 100 million transactions per day.
+That many transactions would take 100GB of bandwidth, or the size of 12 DVD or 2 HD quality movies, or about $18 worth of bandwidth at current prices. If the network were to get that big, it would take several years, and by then, sending 2 HD movies over the Internet would probably not seem like a big deal."
+This email makes clear that Satoshi Nakamoto predicted that running network nodes would become the responsibility of a few mining pools or "specialists" rather than individual users.
+What's less clear is what he would have made of the results of his plan.
+The bitcoin cash problem
+So far, it seems Satoshi's original scaling proposal actually increases the power mining pools have in deciding the future of the network.
+We saw an example of that firsthand when China's developers and miners tried to come up with a new solution to perceived network congestion – forking off to create bitcoin cash.
+Bitcoin cash is essentially a blockchain asset created using a software implementation called Bitcoin ABC. The software excluded a somewhat controversial code change called SegWit and has a block size of 8 MB, up from 1 MB on bitcoin. The new rules created a new network.
+Now, there is still some ongoing disagreement among the community as to whether bitcoin cash constitutes a hard fork of bitcoin or should be considered a separate "altcoin," but we'll save that for another time.
+Relevant for this conversation is the fact that 70% of bitcoin's mining power belongs to China's miners, and the fact is that these entities can easily join forces. Bitcoin Cash, I believe, is a prime example of that.
+Thanks to the support of BTC.com, BTC.Top, ViaBTC, AntPool (all of which have direct or dubious connections to Bitmain), it can be argued that bitcoin cash became a centralized commercial product controlled by China's miners.
+Weak links in bitcoin gold
+With the increasing price of bitcoin cash as a backdrop, others followed the model.
+Another fork of bitcoin took place this fall, bitcoin gold, which sought to incorporate technology used by other cryptocurrenices designed to block factors that led to more centralized mining.
+Less is known about bitcoin gold, but according to its website:
+"Bitcoin gold decentralizes mining by adopting a PoW algorithm, Equihash, which cannot be run faster on the specialty equipment used for bitcoin mining (ASIC miners). This gives ordinary users a fair opportunity to mine with ubiquitous GPUs."
+Efforts are underway already to create FPGA chip miner for zcash, though, and with progress here, it might only be a matter of time before they develop an ASIC chip. If that's the case, then mining might again shift away from users back to traditional mining pools.
+To this possibility, we might ask, what was the point of the fork to begin with?
+One possible reason: since initial coin offerings (ICOs) are banned by the Chinese government, there is an appetite by Chinese-based crypto companies to develop new business models.
+Open questions
+Entering 2018, I believe it's important that we answer key questions about this trend.
+These include whether forks of bitcoin might actually be weaker in providing consumers with decentralization, whether buyers want access to those properties or if "decentralization" is simply a buzzword and marketing ploy for all cryptocurrencies.
+Ultimately, time will tell whether bitcoin, bitcoin cash, or bitcoin gold becomes the most prevalent, but the great thing about an open market is that users get to decide what has the best value or utility.
+If the groups behind the scenes can't offer more value than competitors, then their asset will struggle to survive.
+That said, I don't expect to ever see full consensus across any of these crypto assets. As prices continue to rise, I suspect more external powers, whether they're government, institutional or within the bitcoin community, to try and exert their influence and power.
+When the time comes, we may be thankful that we took the time to understand how to fulfill Satoshi's vision in the way he wanted it to be, if not exactly how he expected it to be done.
+Disagree? CoinDesk is looking for submissions to its 2017 in Review series. Email news@coindesk.com to pitch your idea and make your views heard.
+Disclosure: CoinDesk is a subsidiary of Digital Currency Group, which has an ownership stake in Blockchain. 
+Fancy cutlery image via Shutterstock
+The leader in blockchain news, CoinDesk is a media outlet that strives for the highest journalistic standards and abides by a strict set of editorial policies . CoinDesk is an independent operating subsidiary of Digital Currency Group, which invests in cryptocurrencies and blockchain startups.
+
+
+Original link: https://www.coindesk.com/2018s-big-question-can-bitcoin-forks-deliver-value/

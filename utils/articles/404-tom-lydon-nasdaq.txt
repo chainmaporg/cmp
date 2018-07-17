@@ -1,0 +1,20 @@
+Bitcoin Frenzy Continues: New Blockchain, Crypto Indexes Debut
+
+Hedge Fund Research, Inc. (HFR), which specializes in benchmarks for the global hedge fund industry, unveiled blockchain technology and cryptocurrency indexes on Wednesday.
+
+As bitcoin soars, investors are hearing more and more about blockchain, the centralized transaction record for all cryptocurrencies. Over the past month, several exchange traded funds issuers have revealed plans for ETFs that are plays on blockchain.
+
+The HFR Blockchain Composite Index includes funds that invest directly in blockchain technology, cryptocurrency or other emerging blockchain innovations,” according to a statement from HFR. “Managers focus on how blockchain technologies have begun to, and will continue to, fundamentally change payments, banking, market trading structure, Internet of things (IoT), healthcare, remittances, supply chains, digital identity and more.”
+
+Semiconductor stocks such as Nvidia Corp. (NASDAQ: NVDA) and Advanced Micro Devices, Inc. (NASDAQ: AMD) are viewed as blockchain technology plays. Both companies make chips used in the mining of digital currencies.
+
+“A blockchain is a digitized, decentralized, public ledger of all cryptocurrency transactions. Constantly growing as ‘completed’ blocks (the most recent transactions) are recorded and added to it in chronological order, it allows market participants to keep track of digital currency transactions without central record keeping. Each node (a computer connected to the network) gets a copy of the blockchain, which is downloaded automatically,” according to Investopedia.
+
+The HFR Blockchain Composite Index has two constituent strategies – Cryptocurrency and Infrastructure. It includes performance data starting in 2015 with annualized performance of +282 percent since inception, punctuated by a meteoric surge of +1,522 percent in 2017 through November,” according to HFR.
+
+The HFR Cryptocurrency Index is a sub-strategy of the blockchain benchmark. The cryptocurrency index “ includes all funds which invest and trade in cryptocurrency directly, typically generating performance through an actively managed portfolio of cryptocurrency assets, including Bitcoin, Ethereum, Litecoin, Ripple and many other coins, as well as new initial coin offerings (ICOs),” according to HFR.
+
+The indexes are rebalanced quarterly and “ are investable through tracker funds operated by HFR Asset Management,” said HFR.
+
+
+Original link: http://www.nasdaq.com/article/bitcoin-frenzy-continues-new-blockchain-crypto-indexes-debut-cm892027

@@ -1,0 +1,16 @@
+Email
+Goldman Sachs Group Inc. demanded some clients set aside funds equal to the full value of their bitcoin futures trade as a condition for clearing the transaction, according to people familiar with the investments.
+The demands deterred some customers from seeking to clear trades through the bank and led them to take their business elsewhere, said the people, who asked not to be identified discussing the matter. The guidelines are inclusive of other margin requirements such as Options Clearing Corp.’s 44 percent, required to clear contracts traded on the Cboe Global Markets Inc., and the 47 percent to be demanded by CME Group Inc. when it begins trading bitcoin futures next week.
+“Margin decisions are based on multiple factors and vary on a case-by-case basis,” Tiffany Galvin, a spokeswoman for New York-based Goldman Sachs, said Thursday in a statement. 
+The bank is one of a handful that have cleared the trades since the Cboe began offering futures contracts earlier this week. Bitcoin’s volatility spurred many large banks to hold off on clearing trades. Options Clearing and CME raised their margin requirements amid wild
+price swings in the market.
+It’s not uncommon for a brokerage to impose steeper requirements than the exchange. Interactive Brokers Group Inc., which has said it handled 53 percent of the first day’s trading in Cboe’s bitcoin futures, will require a margin of 50 percent for long investments, and about 240 percent for short selling, based on current rates, according to Interactive spokeswoman Kalen Holliday.
+A
+margin requirement is how much investors must set aside so that other parties in the trade know any losses can be covered. The guidelines for bitcoin futures are several times that of commodities such as gold and oil.
+— With assistance by Rob Urban
+(Adds Interactive Brokers margin requirements in fifth paragraph.)
+Before it's here, it's on the Bloomberg Terminal. LEARN MORE
+Most Read
+
+
+Original link: https://www.bloomberg.com/news/articles/2017-12-14/goldman-said-to-seek-100-margin-on-some-bitcoin-futures-trades

@@ -1,0 +1,18 @@
+Hacked Starbucks WiFi hotspot used to sneakily mine cryptocurrency
+Mining malware was not meant to be on the menu
+Hacked Starbucks WiFi hotspot used to sneakily mine cryptocurrency
+0 Comments
+A CAFFEINE PEDDLING Starbucks store in Buenos Aires is not the place you'd expect to find illegitimate cryptocurrency mining to go alongside your venti triple shot skinny mint latte.
+But Noah Dinkin discovered his laptop had been infected by malware after he connected to the Starbucks store's free WiFi hotspot.
+It turns out the hotspot had been hijacked and injected with malware that syphons off processor power to crunch the calculations needed to generate or 'mine' cryptocurrency, Monero in this case.
+A rather surprised Dinkin alerted the coffee-pushing company to the infection, and Starbucks got its internet service provider to purge the malware from the network. So it would appear that this is the work of a hacker rather than a way for Starbucks to make some extra cash on the side.
+Hi @Starbucks @StarbucksAr did you know that your in-store wifi provider in Buenos Aires forces a 10 second delay when you first connect to the wifi so it can mine bitcoin using a customer's laptop? Feels a little off-brand.. cc @GMFlickinger pic.twitter.com/VkVVdSfUtT
+— Noah Dinkin (@imnoah) December 2, 2017
+While the CPU power stolen from Dinkin's laptop wouldn't have generated any cryptocurrency on its own, a network of such compromised computers could be used to generate Monero coins making hackers illicit money that's difficult to trace.
+And such hacking appears to be on the rise, with even the likes of The Pirate Bay actively saying it had been using cryptocurrency miners built into its website to experiment with new ways to generate revenue beyond advertising.
+The problem with such miners is they can cause machines to run sluggishly and put central processor units under heavier loads thereby causing a computer to use up more power and over time erode the lifespan of the processor chip.
+But we live in a world where some of us want to get rich or die tryin' and need to find ways to make money out of anything, so cryptocurrency mining and illicit ways to go about it could become ever more popular. µ
+Tweet  
+
+
+Original link: https://www.theinquirer.net/inquirer/news/3023128/hacked-starbucks-wi-fi-hotspot-used-to-sneakily-mine-cryptocurrency

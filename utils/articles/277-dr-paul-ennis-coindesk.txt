@@ -1,0 +1,32 @@
+As Wall Street Bids Up Bitcoin, ICO Tactics Change
+FEATURE
+Dr Paul Ennis
+Dec 14, 2017 at 23:30 UTC  |  Updated  Jan 3, 2018 at 15:25 UTC
+Dr. Paul Ennis is an assistant professor at The Centre for Innovation, Technology & Organization at University College Dublin, specializing in bitcoin and blockchain studies.
+November was a tricky month for initial coin offerings (ICOs).
+But one thing's for sure, the hype has most certainly cooled in an environment where Tezos has been beset by legal issues and Bancor by technical glitches, both reported by CNBC no less . Even more remarkable than the press attention, the report suggests, "just 23 percent" of ICO deals are now reaching their maximum goals.
+This is no doubt linked to the bewildering array of ICOs currently on offer, all competing for the attention of investors at a time when simply holding bitcoin or one of the stronger alternative cryptocurrencies might be more appealing.
+Furthermore, the ICO media-sphere remains immature, and this makes it difficult to assess what information is good or bad.
+All told, this situation is particularly stressful for those ICOs that aim to avoid the hype cycle and operate cleanly. One recent ICO, Confideal , missed its target by a considerable amount, raising approximately 303 ETH ($160,000) of a projected target of 70,000 ether (roughly $35 million).
+This was particularly frustrating for CEO Pyotr Belousov, who told CoinDesk that the market is "full of startups who can't demonstrate any product or prototype, only a white paper and vague promises," noting that this "reduces trust in all ICOs."
+It is an interesting phenomenon, then, that an ICO with a demonstrable product, in this case a functioning smart contract app, can get lost in the haze and effectively lose out to a hyped-up ICO running primarily on promotional steam.
+Belousov has responded to this failure by taking a new strategy: the relaunched ICO will have a much lower cap, 5,000 ether, and it will target cryptocurrency whales and investment and hedge funds active in the space.
+In other words, ICOs may look in the future to target large funds rather than rely on the collective power of smaller individual investors.
+So many fish
+The overall trend looks to center on how to distinguish one's ICO within the sea of generic options. One tactic is to avoid the "ICO template" website look that has dogged the area since its beginnings.
+The aesthetic is no doubt familiar to us all, a white paper, a list of team members with minimal details and social media accounts with tumbleweeds passing through.
+In response we are starting to see more visual creativity in the space, as in the bubbly aesthetic of ICOs such as CoinMetro . This shift is welcome, disrupting the empty slickness that has beset the space for quite some time. Another approach may simply be to aim exceptionally high (pardon the pun) – flying taxis in Dubai, courtesy of McFly anyone?
+Perhaps one of the most significant, but under-the-radar, moves has been to capture big-name advisers, as in the case of NAGA , which has brought onboard no less a figure than "Bitcoin Jesus" himself, Roger Ver.
+Ver told CoinDesk that he was "honored to be involved" as an advisor to a company that "shared his ideals."
+It is difficult to say whether these moves will pay off, though NAGA has currently raised a highly-respectable $17,165,44 for its pre-ICO at the time of writing, a number that outscales many actual ICOs at this point.
+Goodbye Easy Street
+ICOs, therefore, are coming to terms with reduced expectations. In short, they must now actively pursue an audience, rather than expect one to arrive passively.
+However, this creates the right conditions for the differentiation of projects. The ideal outcome is that investors, as per the wishes of the U.S. Securities and Exchange Commission, become more discerning about their investments in ICOs, avoiding the potentially misleading celebrity endorsements in favor of a more investigative zeal.
+It also puts pressure on ICOs to avoid lapsing into genericity, a vague landscape of future promise, a kind of crypto variation on vaporware.
+Reuben Godfrey of Deep Green consultancy , who advises no less than 14 ICOs, told CoinDesk that he has seen subtle but important changes in the ICO ecosystem in this regard, with projects using the funding vehicle now having to work hard to make clear what they have to offer.
+In other words, the days of simply assuming investors will buy up any token are gone and in their place we enter the era of the discerning ICO investor.
+Strategy image via Shutterstock
+The leader in blockchain news, CoinDesk is a media outlet that strives for the highest journalistic standards and abides by a strict set of editorial policies . CoinDesk is an independent operating subsidiary of Digital Currency Group, which invests in cryptocurrencies and blockchain startups.
+
+
+Original link: https://www.coindesk.com/wall-street-bids-bitcoin-tactics-change-icos/

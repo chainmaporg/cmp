@@ -1,0 +1,16 @@
+Add a message to Coins.ph
+Apply
+Software Engineer, Front-End Developer
+Why This is Exciting
+-Advanced Technology - We're building our financial services platform on the back of the Bitcoin Blockchain and are one of the largest deployments in the Blockchain industry globally
+-Opportunity to Scale a Rapidly Growing Deployment - We're currently in a period of rapid user growth and are solving challenging scaling problems every day; your work will affect millions of users
+-Flexible Working Arrangement - More than half our development team successfully works remotely, we can assist with relocation to the Philippines, Thailand, or Singapore, and we have onsite teams in Manila and Bangkok
+-Mission - If we succeed in our mission, our company will provide financial services for the first time to hundreds of millions of people and will economically empower individuals and communities throughout Southeast Asia
+What We’re Looking For
+Coins is looking for an experienced Front-End Developer to join our rapidly scaling FinTech company.  We are looking for engineers that can help us develop new products, scale our existing systems, and create meaningful user experiences.  The ideal candidate will be a self-starter with strong foundational expertise in an MVC framework and a track record of creating intuitive interfaces.  Coins is a company founded by Software Engineers and accordingly we have strong Engineering principles in the very DNA of our company.  We are actively seeking the best talent in the world, whether that be in either our Manila or Bangkok offices or, for qualified applicants, from a remote location.
+Technologies & Tools We Use
+We are actively seeking the best Engineering talent regardless of language, so background in these technologies is not necessarily required, but some of the technologies our team currently uses include:
+-Javascript, React, Ember.js
+
+
+Original link: https://angel.co/coinsph/jobs/202246-software-engineer-front-end

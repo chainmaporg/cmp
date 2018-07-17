@@ -1,0 +1,36 @@
+Download (2.51 MB)
+Download 2.51 MB
+The Reserve Bank is warning against the "speculative mania" surrounding Bitcoin - with one Bitcoin now worth more than $21,000, but an Australian sustainability analyst has gone further, saying the digital currency threatens our very existence.
+Guy Lane, Executive Director of the Long Future Foundation, says the exponential rise in the amount of energy that is consumed in "mining" or creating Bitcoin could eventually suck up 15 per cent of the world's energy.
+A new Bitcoin requires the performance of a complex mathematical calculation that has no value except to prove that it has been done - known as a "proof of work."
+Duration: 5min 29sec
+Thu 14 Dec 2017, 6:43pm
+More Information
+Guy Lane, Executive Director, Long Future Foundation
+Transcript
+icon-plusicon-minus
+DOMINIQUE SCHWARTZ: The Reserve Bank is warning against the speculative mania surrounding bitcoin, with one bitcoin now worth more than $21,000. But an Australian sustainability analyst has gone even further, saying the digital currency threatens our very existence. Guy Lane is the executive director of the Long Future Foundation, a non-profit group which is investigating sustainable cryptocurrencies. He says the exponential rise in the amount of energy that's consumed in mining, or creating bitcoin, could eventually suck up 15 per cent of the world's energy.
+A new bitcoin requires the performance of a complex mathematical calculation, that has no value - except to prove that it's been done - known as a proof of work.
+Guy Lane joined me in the Brisbane studio earlier.
+GUY LANE: It is an un-understood catastrophe in the making. If you imagine that we have to plateau carbon emissions on this planet by 2020 and then drop carbon emissions by half, by 2030 and then half again by 2040 and then you start looking at what bitcoin could potentially do to energy supplies, which are predominantly based on fossil fuels, then you start to see the scale of the problem.
+DOMINIQUE SCHWARTZ: So, how much energy does bitcoin use?
+GUY LANE: Well, it's very difficult to actually know the answer to that because it's a distributed network. Which is to say that there are bits of bitcoin being mined everywhere, from Iceland - where there's a lot being mined, China - where most of it's actually mined, to probably the broom closet downstairs, and if your power bill's gone up through the roof, you might want to find out whether somebody hasn't snuck in an Antminer and plugged it into your network.
+One analysis says that bitcoin mining is consuming 0.14 per cent of the world's electricity supply at the moment. And, what my research found in 2013, is that the amount of electricity consumed by the bitcoin mining network is directly proportional to the value of the coin.
+Basically, what that means is, that if the coin continues to go up in value - which everyone who owns bitcoin wants it to do - and now Wall Street's just opened up a derivatives trading desk for bitcoin, it's price will go up, in line with the exuberance of the market place. And so, a lot of people talk about $1 million as the benchmarks it could get to, and if that was if that was the case, using the model that I developed then it's consuming the equivalent of 15 per cent of the world's electricity supply.
+DOMINIQUE SCHWARTZ: You're talking about sustainable cryptocurrencies. What are they, and how to they differ from bitcoin?
+GUY LANE: I came in to the conversation about cryptocurrencies by conducting a carbon order on the bitcoin mining network back in December 2013. And so, straight away I thought, "Wow, this is actually a very unsustainable thing" and so, more recently - and back then there was only bitcoin and a couple of others - but now there's a plethora of different cryptocurrencies and I'm starting to see that there are other cryptocurrencies that aren't based on the proof of work.
+So there's a model that I'm developing around this and it's got two axes. One axis says - what's your proof mechanism? If it's proof of work, that's not good because there's an energy issue. If it's not proof of work, then it's maybe benign, you know you've still got to run a computer, there's still electricity involved. And then the other aspect of sustainability is - what's the coin for? If it's a coin that's designed to help promote reforestation or wildlife conservation, or sustainable energy, then that is a sustainable coin. If it's a coin that's designed to support fossil fuel investments, then that's not a sustainable coin, for example.
+DOMINIQUE SCHWARTZ: Are there cryptocurrencies that are sustainable, in the market at the moment?
+GUY LANE: There are a number of coins that are designed to foster environmental objectives, which you could say are sustainable. And there are others that are based on alternative proofs.
+DOMINIQUE SCHWARTZ: Is there a possibility that these cryptocurrencies could be powered by something other than fossil fuels, that you can do this via renewable energy?
+GUY LANE: Yes, you can run a bitcoin mining rig. So the most popular one at the moment is called the Antminer S9. It draws 1300 watts of electricity. If you had, say, 9kw of PV and enough batteries to store around 30kw of electricity a day, you could have this thing running 24/7 in a sunny part of Australia.
+That technically is not the issue though, the problem is that if bitcoin mining network continues to swallow up more and more and more and more of the worlds electricity supply, it's going to outstrip our capacity for us to manufacture solar panels.
+And something that a lot of people fail to acknowledge in the crypto community, is that there are alternative uses for electricity, than mining bitcoin. For example, you can use it to run a refrigerator to keep your beer cold, you can run a hospital, or in developing countries, where there's a lot of bitcoin mining going on, use it to help people get out of poverty.
+And so, at the very time in the earth's history, when we most desperately need to be finding a new and equitable allocation of the world's energy supplies, we've got this crypto spectre which is now popping up everywhere, gobbling up huge amounts of electricity.
+DOMINIQUE SCHWARTZ: So, what is the solution?
+GUY LANE: There may be a technical solution in transferring bitcoin away from the proof of work, onto a different proof. There's another blockchain technology called Ethereum - based on proof of work - which is actually transitioning from proof of work to proof of stake. And they're taking that very slowly and gradually because they know that proof of work works, and they're not wanting to disrupt the system. What I hear is that that will be completely on this alternative proof by mid next year. Whether that is possible for bitcoin, I don't know.
+DOMINIQUE SCHWARTZ: That's Guy Lane, the executive director of the Long Future Foundation.
+Credits
+
+
+Original link: http://www.abc.net.au/radio/programs/pm/warnings-bitcoin-fever-could-threaten-our-very-existence/9260330

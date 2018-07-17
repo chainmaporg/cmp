@@ -1,0 +1,14 @@
+job title, keywords or company
+city, state, or zip
+Software Engineer (distributed systems, blockchain, cryptography, algorithms)
+Blockstream - San Francisco, CA
+Other
+Pioneering advancements in cryptography and blockchain technology, Blockstream is the first company extending the capabilities of Bitcoin at the protocol level to support a broad range of new privacy features, asset types, and financial markets. Blockstream is building an open platform for blockchain applications and a family of hardened cryptofinance appliances. Blockstream supports values of decentralization, end-to-end security, user control, and open, permissionless innovation.
+Blockstream brings together some of the best minds in cryptography, mathematics, computer science, and engineering to work on 21 century technological platforms and applications. Quality and innovation are imperative for creating computationally intensive solutions for large institutions and individual investors around the globe.
+We welcome outstanding candidates at all experience levels and we are willing to consider candidates with a record of extraordinary intellectual achievement regardless of area of expertise or past experience.
+You will enjoy a fast-paced creative atmosphere of a well-funded FinTech Series A startup, excellent benefits, and flexible working schedule as well as an option for partial telecommute.
+If you are excited about the opportunities with Blockstream, please do not hesitate to send us your resume and a statement of interest to lilia@blockstream.io
+Looking forward hearing from you!
+
+
+Original link: https://www.indeed.com/viewjob?jk=1b2b0765cc5ebb06&q=Blockchain+Engineer&l=United+States&tk=1cgd5s9o01fkk45c&from=web&vjs=3

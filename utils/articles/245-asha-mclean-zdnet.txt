@@ -1,0 +1,18 @@
+Read More
+"There is huge opportunities in bringing the technological development into play in development cooperation. The use of blockchain and cryptocurrency is merely some of the technologies which can give us new tools in the development cooperation toolbox," Danish Minister for Development Cooperation Ulla Tørnæs said.
+"It is clear that if we are to succeed in relation to the sustainable development goals we need digital and technological solutions and some of these we do not know of, but we will help find them."
+A report published by the ministry, alongside think tank Sustainia and blockchain currency platform Coinify, investigates how blockchain technology might solve problems in providing development aid, noting that by using cryptocurrency, money can be transferred faster and safer, and without a middleman or fees.
+In addition, contracts and other legal papers can be digitalised to combat corruption and ensure a more effective development aid and better protection of the rights of marginalised groups, the report, Hack the Future of Development Aid, explains.
+"Denmark could therefore consider being the first donor country to transfer aid by using cryptocurrency," the report says.
+The report also recommends that development and humanitarian organisations use blockchain when promoting human rights, for example in India, where blockchain is being explored as a tool to combat the country's land register bribes -- which the report says amounts to around $700 million.
+"Crypto and crisis is a perfect match, and aid organisations will undeniably be able to respond quicker using blockchain-based digital money, which arrives at email-speed, safely and transparently," Sustainia project leader Marianne Haahr said.
+"The big challenge now is to disrupt the aid model. First step is to build trust in blockchain and its ability to facilitate all aspects of aid; next step is to disrupt the whole aid system."
+Blockchain is still relatively immature and it might take time to develop trust, but some concrete initiatives are being developed. Coinify, one of Europe's biggest virtual currency platforms, is working on using cryptocurrency payments to scale off-grid renewable energy.
+"You will be able to pay with your cryptos directly into a solar panel situated in, for example, an African village and then you would not donate money but electricity," Coinify's chief executive Mark Højgaard told Reuters .
+There's a growing realisation that blockchain is actually widely applicable to many industries, even beyond financial services, with digital cash only one use for the technology. IBM, for example, is currently using blockchain to conduct, manage, and track transactions in the shipping supply chain , and more specifically to help prevent contamination in the global food supply chain.
+Another option, according to Coinify, could be an online hub where people would donate to single projects like schools, railroads, or bridges. So-called smart contracts would ensure that the money went to its intended project.
+"The money being donated goes into a programme where you can only use it for bricks and mortar to build a bridge for example," Højgaard added. "Even if you try to buy a banana it will go back so you can seriously control the money flow."
+With AAP
+
+
+Original link: http://www.zdnet.com/article/denmark-considers-blockchain-a-new-weapon-in-the-fight-for-human-rights/

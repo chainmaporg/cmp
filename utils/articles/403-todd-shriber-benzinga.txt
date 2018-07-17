@@ -1,0 +1,15 @@
+By The Numbers: Should You Buy Micron Stock? (Seeking Alpha)
+Investors looking for ways to track how hedge funds involved with blockchain and the cryptocurrency space are performing have some indexes to consider. Hedge Fund Research, Inc. (HFR), which specializes in analysis of and indexation of hedge funds, introduced this week benchmarks for blockchain and cryptocurrency hedge funds.
+"The HFR Blockchain Composite Index includes funds that invest directly in blockchain technology, cryptocurrency or other emerging blockchain innovations,"  according to HFR . "Managers focus on how blockchain technologies have begun to, and will continue to, fundamentally change payments, banking, market trading structure, Internet of things, healthcare, remittances, supply chains, digital identity and more. In addition, key exposure themes include cloud storage, decentralized computing, digital investment platforms, distributed ledger technology and promising innovations involving token interconnectivity and transaction scalability."
+Blockchain is centralized transaction record for digital currencies, including bitcoin. The technology's potential applications are believed to be widespread and could permeate various segments of the financial services and fintech spaces in the years ahead.
+Blockchain ETFs
+Retail investors looking to access the blockchain trade have some existing options to consider. Those include semiconductor exchange-traded funds, such as the VanEck Vectors Semiconductor ETF (NYSE: SMH ), which has ample blockchain exposure .
+Investors waiting on a dedicated blockchain ETF may not have to wait long. In November, at least four ETF issuers filed plans with U.S. regulators for blockchain ETFs. Issuers eyeing blockchain ETFs include Amplify ETFs, First Trust, Horizons and RealityShares.
+The HFR Blockchain Composite Index "includes performance data starting in 2015 with annualized performance of +282 percent since inception, punctuated by a meteoric surge of +1,522 percent in 2017 through November," said HFR.
+Inside the Cryptocurrencies Index
+The HFR Cryptocurrency Index includes hedge funds engaged directly in the cryptocurrency trade and the management of digital currency portfolio. Those digital currencies can include, bitcoin, ethereum, litecoin and initial coin offerings .
+“These trading strategies are primarily Macro in nature, including both fundamental and systematic trend-following approaches, but may also include, Arbitrage and Momentum strategies,” said HFR. “The HFR Cryptocurrency Index has annualized performance of +292 percent since inception and has surged +1,641 percent in 2017 through November.”
+Related Links:
+
+
+Original link: https://www.benzinga.com/fintech/17/12/10912488/new-ways-to-track-blockchain-cryptocurrency-hedge-funds

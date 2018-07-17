@@ -1,0 +1,25 @@
+Darryn Pollock
+South African Tax Services Researching Ways to Track BTC Transactions
+The South African Revenue Service is in discussions with technology companies to enable it to track cryptocurrency trades.
+12973 Total views
+275 Total shares
+Regulations
+Regulators , governments and tax men alike have been stumped as to how to keep up with the rapidly growing cryptocurrency market. It has seen a large grey area appear over the market in which incidents are usually handled as they come .
+To this end, the South African Revenue Service, the taxation body of the country, is seeking help from top technology companies from around the world in order to try and track Bitcoin transactions.
+This attempt by the South African Revenue Service (SARS) could potentially open up a can of worms as the right to privacy is instilled deeply in Bitcoins transparent, yet anonymous, transactions .
+How it works currently
+It was reported that only 802 people paid taxes on their Bitcoin gains in the US back in September as the IRS had little option but to ask for people to be honest in their tax returns.
+This extends to most countries as it stands as there is still no precedent for forcing people to reveal their transactions .
+Banks are required to supply SARS, and other tax institutions across other countries, with information on the investments of their clients for verification purposes, but in a crypto environment such information is lacking.
+Difficult battle
+This leaves the revenue service in a tight spot that is only getting tighter as more people enter the cryptomarket.
+Dr. Randall Carolissen , SARS group executive for research, admits that they are looking into options to track Bitcoin transactions.
+“As you can imagine it is very difficult – the Blockchain technology. Without revealing too much – we are talking to some of the top technology companies in the world that are doing similar work for Canada and the UK and we are hoping to get that technology.”
+Tightrope
+The issue really is that there is a right to privacy that is enshrined in Bitcoin, and that will be hard for any institution to break into - legally. Bitcoin’s transactions are transparent, yet anonymous, but that anonymity is not total .
+With no set precedent available yet on how to monitor transactions on this decentralized system, tax services and other regulators will need to come up with a solution on their own.
+The problem is that because it is decentralized, no one can come to their aide from the side of Bitcoin. Transactions are maintained openly on the Blockchain, but when it comes to tying those transactions to a person and enforcing taxation on it, it is still a very dark area for regulators.
+Follow us on:
+
+
+Original link: https://cointelegraph.com/news/south-african-tax-services-researching-ways-to-track-btc-transactions

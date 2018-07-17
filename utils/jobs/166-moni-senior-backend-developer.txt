@@ -1,0 +1,40 @@
+ 
+Primarily working on backend code, consuming and building new API’s
+If you have the chops to do some web development on the side, that’s all the better!
+There is also always infrastructure automation work, if you are so inclined
+Desired personal qualities:
+Genuine interest in software development and a constant drive to improve yourself.
+Positive hands-on attitude – you get things done, without the need for supervision.
+Not easily daunted by complexities of dealing with external systems
+Appreciation for unit tests and continuous integration
+Opinionated on the best approach to solving problems, yet curious and open to exploring new directions.
+Team player with good people and organizational skills.
+Technical requirements:
+At least eight (8) years of professional software development experience (C/C++/Java/Python/PHP/Scala/JavaScript/anything goes).
+At least one (1) years of server-side Python development experience (at least one released product).
+Strong with backend and comfortable with frontend of web stack (Python/Django, Postgres, HTML, CSS, JavaScript).
+Understand how basic networking and HTTP requests work.
+Experience building/using RESTful interfaces.
+Comfort with and personal preference for agile development model.
+Nice to have:
+Huge plus if you have experience related to financial services.
+Django experience is another big plus.
+Have built and utilised different types of networked APIs.
+Have experience building scalable systems.
+Have a general idea what DevOps is.
+General interest in backend architecture.
+Is MONI the place for you?
+ 
+Working in a small team, you will have the freedom to pursue your own solutions to problems, and will have a large impact on the technology and architecture behind MONI. There will be everyday grunt work, there always is. But at the same time, there is a lot of leeway in how to approach problems. We also happen to be at the point, where we can start dealing with real technical challenges. This means new code, new architecture, new logic and interesting problems to work with.
+ 
+On the people side, you will have an amazing and supporting team of individuals around you, all working together towards the same goals. By definition, when MONI succeeds, we make it possible for people to utilise services they didn’t have access to before, significantly improving their life quality. And therefore, the work you do, has direct impact our users’ lives in very real, tangible ways.
+ 
+Notice of eligibility: This position is open for professionals who are already eligible to work in Finland, namely, EEA & Swiss citizens or residents or professionals from elsewhere who already have a work permit in Finland. This is due to the very long processing times for employment based visas to Finland.
+Apply now!
+Please send your application to  [email protected] . Remember to title your mail as “Senior Backend Developer for MONI”.
+Job applications should include your CV and an introduction to why you would want to work at MONI. Add links to your Linkedin profile, online resume & portfolio, and github and stackoverflow profiles (if applicable).
+Don’t hesitate to contact us for further information or questions about this position.
+Menu
+
+
+Original link: https://moni.com/jobs/senior-backend-developer-helsinki/

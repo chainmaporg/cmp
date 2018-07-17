@@ -1,0 +1,29 @@
+New York, NY or Remote
+Engineering
+Apply for this job
+Blockstack is a new internet for decentralized apps. With Blockstack, you own your data and maintain your privacy, security and freedom. Blockstack is open source project and a public benefit corporation. Learn more.
+Blockstack is looking for a passionate and experienced engineer to work with a team of distributed systems experts to implement a new blockchain architecture for Blockstack apps, decreasing transaction time and cost for the Blockstack ecosystem and enabling new functionality. This role is ideal for programming language engineers who are experts in developing programming languages and tooling for developer to write applications which are easy to use and reason about, and who are excited by the idea of a provably sound blockchain programming language.
+You will:
+- Research and strategize on core functions and behaviors of the Stacks blockchain
+- Research and develop a language for programming on the Stacks blockchain with the goal of supporting benchmark decentralized applications
+- Test and prove the correct implementation of that language within the Stacks blockchain— including the compiler or other translational systems
+Qualifications
+You have worked with programming languages in both formal and practical settings, are familiar with distributed systems and blockchain programming languages, and are passionate about the mission of building a new decentralized internet.
+KPIs
+- Deliver a programming language for the Stacks blockchain, which can support the benchmark use-cases of decentralized applications
+- Implement a compiler which will translate that language into the code deployed on the blockchain itself
+- Prove the correctness of that translation
+    
+- Expert knowledge of peer-to-peer distributed systems
+- Knowledge of the protocol details of a widely-deployed public blockchain
+- Experience building programming languages and language tooling
+- A rigorous background in formal programming languages, proof and type systems
+- Experience in automated proof systems such Coq
+Qualities + Traits 
+- Passion for building the new internet for decentralized apps  
+- Strong problem solving skills, ability to think fast and thoroughly 
+- Excellent communication
+We get a lot of applicants, and have historically hired people who are proactively involved in our work and mission of decentralizing the internet. We hope you explore our  Whitepaper ,  Browser , Github , and  Slack  prior to submitting your resume.
+
+
+Original link: https://jobs.lever.co/blockstack/337c8e14-8251-44c3-8d62-0d7892beda52

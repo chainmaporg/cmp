@@ -1,0 +1,40 @@
+All jobs → Build and Release Engineer
+Build and Release Engineer
+Palo Alto, California, United States · Engineering
+Description
+BitGo, a global leader in digital currency security, provides sophisticated digital wallets, offline vaults, single integration APIs, and private blockchains to financial institutions. BitGo supports Bitcoin, Ethereum, Ripple, Litecoin, Bitcoin Cash, Bitcoin Gold, RMG, and ERC20 tokens, with many more being continuously released. BitGo’s clients include the world’s largest cryptocurrency exchanges and financial enterprises conducting over $12 billion in monthly transactions: Bitstamp, The Royal Mint, The CME Group, Bitbank, BitBay, Brave, KCoin, Ripple, Bitcoin IRA, CoinPayments, Pantera, Genesis, Wirex, Bitso, and many more.
+BitGo Inc. was founded in 2013 in Palo Alto, CA and is led by CEO/Co-Founder Mike Belshe, creator of the world’s first multisig protocols for Bitcoin, and author of SPDY, and CTO Benedict Chan, creator of the world’s first Ethereum multisig web wallet. BitGo raised over $54.5 million in funding led by Valor Equity Partners, Redpoint Ventures, DRW, and David Sacks among other capital investors.
+BitGo is looking for an experienced Build and Release Engineer who will join our Engineering Team in Palo Alto. Main Responsibilities:
+Interact with Scrum Teams, Development, QA/Test, DevOps/Ops, and other functional teams throughout entire development, testing, and release cycles of software products
+Manage and improve the product build and release processes focusing on quality, scalability, efficiency and risk assessments
+Participate in designing, developing, and supporting a continuous integration and continuous delivery/deployment system that will fully automated and scalable build/release pipelines throughout development, code reviews, product testing, and release
+Set up and maintain multiple development, test, and potential staging environments as well as troubleshooting issues as needed
+Manage and maintain Git/GitHub, Phabricator (code review), CI/CD system, JIRA, toolchains, and other software tools as required. Also integrate or automate the process between necessary tools
+Requirements
+BitGo is looking for people who are passionate about their craft, take full ownership for their work and projects, and believe in transparent and collaborative culture with the goal of making BitGo successful.
+6+ years of build, release, deployment, and tools experience with web-based application built using JavaScript/Java technology stack
+Extensive experience supporting JavaScript, Node.js, NPM, Java, Maven / Gradle, Artifactory / Nexus repository, NoSQL database, multiple browsers, and Linux systems
+Proficient with 2 or more scripting / automation languages such as Shell, Python, Go, etc.
+Expert in Git/GitHub and branching methodologies, code review tools, Jenkins or other CI tools, JIRA, Confluence, etc.
+Extensive experience in designing and developing fully automated CI/CD system and pipelines using Jenkins or other CI tools
+Hands-on experience in building, packaging, and deploying JavaScript, node.js, and Java based products. Experience with AWS EC2 and S3 is a big plus
+Experience or strong knowledge of Docker, Ansible, Terraform, Kubernetes, Packer, etc.
+Familiar with Linux system such as Ubuntu, CentOS, or RHEL. Linux system administration is a big plus.
+Familiar with NoSQL database, preferably MongoDB
+Solid communicator, team player, flexible, extremely detail oriented and obsessed about flawless product release delivery
+You are a huge fan of blockchain technology and cryptocurrencies
+Benefits
+Opportunity to work for a true fast growing tech startup in one of the hottest industries
+Opportunity to work with an awesome team of unique and smart people
+Competitive salary, bonus, stock options, 401K matching
+Fully paid health insurance, including spouse and kids
+Unlimited paid time off and paid holidays
+Free catered lunches (order what you want online)
+Free parking and Caltrain passes
+Onsite fully stocked kitchen with healthy snacks, fruits and drinks
+Onsite espresso machine with freshly ground coffee (Philz, Verve)
+Work equipment of your choice (apple machines, standing desks)
+Great restaurants, bars and gyms right on California Avenue
+
+
+Original link: https://bitgo.workable.com/j/23CF834CFB

@@ -1,0 +1,15 @@
+Add a message to Blokur
+Apply
+Job Description
+ABOUT US
+Blokur is a new blockchain-based infrastructure for creative rights management. We work with creators and their backers to ensure that their rights are accurately represented in the world so that when content is used, the right person gets paid.
+Our team is passionate about our mission to "complete the potential of the internet for the creator" and has deep expertise across tech, music and business, whether it be touring the world as an artist, building data solutions for Universal Music, consulting for Radiohead's management on Thom Yorke's BitTorrent record, or licensing Will.I.Am's streaming platform.
+THE ROLE
+We are looking for a software development intern who is excited by the prospect of contributing to building a new product from the ground up in an innovative blockchain startup.
+ABOUT YOU
+You are curious, with an interest in music and the arts, a love for problem solving, and a degree degree in computer science or a related discipline. YOu may also have a portfolio of projects that you can demonstrate from side projects, academic work or previous work experience.
+You have mastery of at least one programming language such as Ruby, Python or Java and are familiar with at least one of the following technologies:
+React, Angular or Similar
+
+
+Original link: https://angel.co/blokur/jobs/225729-intern-software-engineer

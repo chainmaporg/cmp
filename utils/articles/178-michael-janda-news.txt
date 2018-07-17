@@ -1,0 +1,39 @@
+Map: Australia
+The Reserve Bank governor has talked down the chances of a Government-issued cryptocurrency, despite a massive increase in electronic transactions.
+In a speech in Sydney, Dr Philip Lowe said the major cryptocurrencies are not very effective as a way to pay for things, with high transaction costs, including the massive amounts of energy needed to "mine" them .
+"When thought of purely as a payment instrument, it seems more likely to be attractive to those who want to make transactions in the black or illegal economy, rather than everyday transactions," he said.
+"So the current fascination with these currencies feels more like a speculative mania than it has to do with their use as an efficient and convenient form of electronic payment."
+Can't tell a bitcoin from a blockchain? Read our explainer to see how the cryptocurrency works.
+These views echo weekend comments by Dr Lowe's counterpart in New Zealand, who said bitcoin's rapid ascent to $US17,369 ($22,987) — a more than 2,000 per cent increase over the past year — showed all the signs of pure speculation.
+"It looks remarkably like a bubble forming to me," Reserve Bank of New Zealand acting governor Grant Spencer told TVNZ.
+"Over the centuries we've seen bubbles, and this appears to be a bit of a classic case.
+"With a bubble, you never know how far it's going to go before it comes down."
+Dr Lowe said previous experiments with privately-issued currencies showed that they were not reliable and stable.
+"Experience cautions that there are significant difficulties and dangers associated with privately issued fiat money," he said.
+"The history of private issuance is one of periodic panic and instability. In times of uncertainty and stress, people don't want to hold privately issued fiat money.
+"This suggests that if there were to be an electronic form of banknotes that was widely used by the community, it is probably better and more likely for it to be issued by the central bank."
+We asked for your thoughts on the current fascination with bitcoin. Read the discussion below.
+New Payments Platform makes e-currency redundant
+However, Dr Lowe said the Reserve Bank currently saw no need for an electronic currency, given advances currently underway in the electronic payments system.
+"Our current working hypothesis is that with the NPP [New Payments Platform] there is likely to be little additional benefit from electronic banknotes," he went on to say.
+"Having less of an electronic fingerprint hardly seems the basis for building a public policy case to issue an electronic form of the currency. So there would need to be more than this."
+Dr Lowe said that the introduction of the NPP, which will allow near real time electronic payments to be made through the banking system, dramatically reduced the need for separate electronic payment methods.
+"There is a certain attraction of being able to make payments from funds held in prudentially regulated accounts that can earn interest," he added.
+Reserve Bank figures show that the overwhelming majority of payments are already made electronically, with cash now accounting for less than 40 per cent of transactions.
+Photo: Cash is now used for less than 40 per cent of all transactions, down from about 70 per cent a decade ago. (Supplied: RBA)
+Physical cash only makes up about 3.5 per cent of the total money in Australia, with the rest held as deposits in private banks.
+"So the vast majority of what we know today as money is a liability of the private sector, and not the central bank, and is already electronic," Dr Lowe said.
+However, despite most payments being done electronically, RBA figures also show that there have been more banknotes on issue over the past few years than at any other point over the past five decades.
+Photo: The banknotes on issue are worth about 4 per cent of GDP, the highest level in 50 years. (Supplied: RBA)
+Official e-currency could trigger bank runs
+Dr Lowe also warned that an official electronic currency issued by the Reserve Bank on behalf of the Australian Government could carry risks to the banking system.
+"If we were to issue electronic banknotes, it is possible that in times of banking system stress, people might seek to exchange their deposits in commercial banks for these banknotes, which are a claim on the central bank," he explained.
+"It is likely that the process of switching from commercial bank deposits to digital banknotes would be easier than switching to physical banknotes.
+"In other words, it might be easier to run on the banking system."
+Dr Lowe said there would be similar problems if people had electronic transaction accounts at the RBA.
+"In times of stress, it is highly likely that people might want to run from what funds they still hold in commercial bank accounts to their account at the RBA," he said.
+First posted December 13, 2017 10:09:29
+Cryptocurrencies
+
+
+Original link: http://www.abc.net.au/news/2017-12-13/rba-talks-down-chances-of-electronic-australian-dollar/9254380

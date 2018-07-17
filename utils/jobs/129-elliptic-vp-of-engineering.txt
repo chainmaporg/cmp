@@ -1,0 +1,31 @@
+Add a message to Elliptic
+Apply
+This job listing was recently removed.
+Job Description
+The Company
+At Elliptic we know that cryptocurrency will play a huge role in the future of value transfer, and we care deeply about helping to build this future. In order for cryptocurrency to flourish, it’s important to detect criminal abuse of the technology, and provide a safe space in which innovative new businesses can grow. Elliptic is the global leader in risk intelligence to detect and prevent criminal activity in cryptocurrencies.
+Our unique platform gives us an unparalleled understanding of cryptocurrency capital flows, using a combination of network science and machine learning to aggregate and interpret vast quantities of transaction data. We provide risk intelligence to the leading participants in the cryptocurrency ecosystem.  Customers rely on us to analyze more than $150bn of transaction value every month, and include cryptocurrency businesses, major financial institutions, and government agencies.
+The company has offices in London, UK,  San Francisco, CA, and Arlington, VA. We are backed by Octopus Ventures, SignalFire, Paladin Capital, Santander InnoVentures, and Digital Currency Group.
+Position Overview
+The Vice President of Engineering will serve as a member of the senior management team and lead the product, engineering, and data science organization.
+We are looking for a VPE with a track record of building strong product and engineering teams, delivering a highly technical product. The VPE will have ownership of product strategy and roadmap, and needs to have a passion for cryptocurrencies and share our vision of a world in which crypto plays an important, legitimate role.
+The VPE will work with other company leaders to set and execute company strategy and to ensure that there is an excellent two-way flow of communication between the sales and product teams.
+Responsibilities:
+Ownership of P&L for all engineering, data science, and product resources
+Own the product strategy, driving continuous product innovation and shaping best practices for the industry
+Recruit, train and manage high-performance product, engineering, and data team members
+Collaborate with current and prospective customers to develop new offerings
+Work with other company leaders to set and execute company strategy
+Partner with account management, sales, marketing, and legal to ensure robust service delivery and exceed customer expectations
+Professional and Personal Qualifications:
+Exceptional growth-oriented leader and talent magnet with hands-on technical management experience
+Passion for cryptocurrencies, and a belief in their ability to reshape value-transfer
+Empathetic and invested mentor, company/cultural evangelist, boundary-pusher
+Has shipped several large scale SaaS projects in agile environments with complex dependencies across teams
+Has been actively involved in working with product managers to set product strategy
+Excellent communication skills with everyone from junior team members to the board and customers
+Willing to travel regularly to visit customers
+Compensation
+
+
+Original link: https://angel.co/elliptic/jobs/343792-vp-engineering

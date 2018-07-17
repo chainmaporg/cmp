@@ -1,0 +1,48 @@
+Wealth management blockchain platform promises new standard for ICOs
+COPYING AND DISTRIBUTING ARE PROHIBITED WITHOUT PERMISSION OF THE PUBLISHER: CHUNT@EUROMONEY.COM
+By:
+Published on:
+Thursday, December 14, 2017
+Marco Abele, former head of digital for private banking at Credit Suisse, plans to tokenize billionaires’ luxury assets so millionaires can enjoy them too.
+Amid all the buzz about huge fortunes being made almost overnight in cryptocurrency and initial coin offerings (ICOs), SEC chairman Jay Clayton felt compelled to comment in December.
+There was some grudging acceptance.
+“I believe that initial coin offerings – whether they represent offerings of securities or not – can be effective ways for entrepreneurs and others to raise funding, including for innovative projects.”
+Jay Clayton, SEC
+However, there was yet another clear warning : “A change in the structure of a securities offering does not change the fundamental point that when a security is being offered, our securities laws must be followed.”
+The ICO that Euromoney will be watching most closely is due to come in 2018 from Tend , an investment platform for high-net-worth investors set up by Marco Abele, former head of digital for private banking at Credit Suisse.
+Abele conceived the idea for Tend when he saw how the leading private banks are increasingly concentrating their efforts on ultra-high net-worth (UHNW) clients with more assets and higher transaction volumes, and rather neglecting the less affluent.
+His aim is to provide well-off customers – those with perhaps $200,000 to $1 million sitting in cash or low return financial assets – with a digital platform to co-invest in the kind of luxury real assets, such as vineyards, luxury cars and works of art, that are now the preserve of the seriously wealthy.
+It sounds a bit like timeshares for posh people. Though, of course, he describes it differently.
+Abele tells Euromoney: “Investment return is the first consideration. We don’t have consumer goods on our platform, rather only goods that also have the potential to increase in capital value and in some cases also to provide dividend returns.”
+He is also tapping into a new spirit of the times.
+“These are also assets that may satisfy the emotional needs and passions of investors who are no longer comfortable putting more money into financial assets at zero return, but who face barriers to entry in acquiring high-value luxury items like art, or a 1955 vintage Porsche speedster or a vineyard.”
+The business splits and tokenizes ownership of such luxury assets so that less-wealthy investors can drive that Porsche a few days a year, invite friends for dinner under that iconic work of art, wear that super expensive Swiss watch to the ex’s wedding.
+“This is the way the world is heading,” says Abele. “People no longer feel the need to own assets outright, but they would like and will pay for access to the experience of them, especially if that also brings the chance to share in capital return and earnings.
+“We are democratizing access to these assets. You wouldn’t believe how many of them are now hidden away in closed storage.”
+Trading tokens
+The business works with smart contracts on the Ethereum blockchain. Well-off customers can trade tokens representing fractional ownership in that Porsche or vineyard.
+Abele is seeking to enlist an ecosystem of partners, such as specialist insurers of luxury items, classic car mechanics, so that Tend will look after maintenance of these assets.
+“Operations and logistics are a key challenge,” he says. “That’s why I hired Rasoul Jalali from Uber to be my chief operations officer.”
+Intriguingly, Abele is looking for distribution channels to those wealthy investors in the mega cities of emerging markets – Jakarta, Mumbai, São Paulo, Seoul – where he sees a lot of wealth being accumulated by young adults who have also grown up with Uber and Airbnb.
+And here’s the really clever thing. For original owners of these luxury assets – for the billionaires – the platform offers a new source of liquidity by satisfying the aspirations of the millionaires.
+We have decided not to go the venture capital route but rather the initial coin offering route. Venture capitalists are looking for a quick exit, whereas we want to build this company for the long term 
+ - Marco Abele, Tend
+The family office looking after the assets of a UHNW individual might take that $600,000 car that sits unused in the garage for 11 months of the year, split ownership into 10 tokens of $60,000 each, offer up four, or seven or eight to other buyers on the Tend platform and so raise some liquidity against a lumpy asset. The original owner might later buy those tokens back in the open market on the Tend platform. Or they might sell them all.
+Tend deals with the garage and mechanics who service the car. Data on which token owner is due to pick it up next for a few days and what condition it comes back in is stored and moved on the blockchain .
+Abele says: “Ethereum is only two-and-a-half years old, but I don’t think people outside the crypto world understand just how fast this technology is evolving and how quickly the code is developing.
+“Because it is all open source, the system itself is learning very fast. Within three more years, this will look quite mainstream and we’ll struggle to remember the world as it was.”
+And here’s the exciting aspect for the fast-evolving funding markets for blockchain enabled start-ups.
+“Up until now, I have funded this personally,” Abele says. “Now we need more money to roll the business out.”
+Tend was only incorporated in October. At the end of 2017 it had 20 customers trialling it and it hopes to go into alpha testing early in 2018, beta testing with 400 clients in the second quarter and full launch before the end of next year.
+“We have decided not to go the venture capital route but rather the initial coin offering route,” says Abele. “Venture capitalists are looking for a quick exit, whereas we want to build this company for the long term.
+“Just as we are democratizing access to these luxury assets, so we also want to democratize access to investment in the earnings of this business that might previously have been restricted to the wealthy limited partners in venture capital funds.”
+Controversies
+He is fully aware of the controversies around ICOs .
+“For me, this will be a chance to create new standards for an ICO, partly by leveraging my experience from the banking industry around know your customer and anti-money laundering,” says Abele.
+“We will release details in January, but this will be a distinct investment token, separate from tokens representing ownership of the luxury items on the platform which will be denominated in Swiss francs and can be bought in fiat currency to begin with and perhaps eventually crypto as well.”
+Euromoney will be watching closely. So, no doubt, will the private banks. They have mainly invested in digital to make their existing businesses more efficient. This is a whole new business model.
+Perhaps it’s no surprise that this Swiss banker, who was at Deutsche Bank before Credit Suisse, could only build it outside the banking industry.
+Further reading ON EUROMONEY
+
+
+Original link: https://www.euromoney.com/article/b161f51bf1mvw3/wealth-management-blockchain-platform-promises-new-standard-for-icos

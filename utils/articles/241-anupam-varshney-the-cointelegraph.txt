@@ -1,0 +1,31 @@
+App Stores of Future Will Be Based on Blockchain, Promote Transparency
+Blockchain is prepared to disrupt the mobile app economy by increasing transparency and eliminating middlemen.
+19678 Total views
+611 Total shares
+Sponsored
+In 2017, app stores saw record revenues and downloads. Across both iOS and Android platforms, downloads grew by 15 percent year-over-year to reach nearly 50 billion worldwide, taking total revenue to $15 billion.
+Google Play and the Apple App Store are the most widely used mobile marketplaces across the globe. It’s because of this duopoly that they are able to impose a 30% cut on all purchases, app downloads and in-app items alike.
+AppCoin wants to change this by utilising Blockchain technology, disrupting the traditional app economy. This economy is worth nearly $77 bln today and may double by 2020.
+What problems will it solve?
+The app economy is highly inefficient due to many intermediaries between the users and developers. It’s constructed by single entities that provide highly centralised platforms. These platforms offer distribution, discovery and financial transactions but have frustratingly non-transparent policies.
+These entities are also responsible for maintaining the apps and games on the store, but also enforcing security measures and guaranteeing the integrity of every transaction made. Just like many other centralised systems, this model is flawed. Malware-plagued downloads, inaccessible in-app purchases for low-end markets, data leaks and privacy concerns are a few reasons why the user experience on mobile marketplaces are increasingly filled with risks and inconveniences.
+In a nutshell, there are three crucial functions of app stores: advertising, in-app purchases and app approval. Aptoide wants to move these three functions to the Blockchain and revolutionise the mobile app industry with its supercharged app store protocol, AppCoins . AppCoins will act as a medium of exchange between end-users and developers, improving user experience and market efficiency through immutable smart contracts .
+How will they be solved?
+In order to make advertising more transparent and affordable, AppCoins will eliminate middlemen by creating a new method to acquire users that will make CPI (Cost per Installation) campaigns obsolete. They’re calling it CPAt (Cost Per Attention). This new model allows a developer to directly reward a user for spending at least two minutes inside the app. The user earns AppCoins, which are stored in their wallets, and can be used to make in-app purchases.
+Blockchain will also help AppCoins’ team to reach the two billion smartphone users who do not have the necessary payment methods to do in-app purchases. With their new model, users will be rewarded by CPAt campaigns, by which they can earn AppCoins and spend them inside their favourite game or app.
+With the use of Blockchain , app approvals will be made universal and more transparent through a developer reputation system. Their reputation will be validated by financial transactions on an auditable public ledger. A dispute system will be created so that AppCoins’ owners can create rankings for developers and the apps they publish.
+The ICO
+AppCoins is an ERC20 token that will be issued and used as the primary medium of exchange in the AppCoins protocol. App stores utilising this protocol will pay out 85% of the advertiser’s costs to the app users in the form of AppCoin tokens.
+The pre-sale ended successfully, distributing over 20 million AppCoins. In total, including the pre-sale and public sale, 40 percent of the 700 million AppCoins tokens will be distributed.
+The remaining tokens will go towards the App Store Foundation (15%), bootstrap strategies and key partnerships in the apps economy (20%), Aptoide (15%) and the key contributors to AppCoins idea (10%).
+The token is valued at $0.10 with a hard cap of $28 million.
+The Team
+The Aptoide Android App Store was developed back in 2009 as a flexible, open and free alternative to Google Play Store which now has around 200 million users worldwide that downloaded more than four billion apps and games.
+Conclusion
+AppCoins is supported by Aptoide , one of the world’s most popular app stores. It is highly likely that with the elimination of intermediaries, developers will be able to realise greater returns on investment, increase the monetisation potential of their product, and directly communicate with their customer base.
+For more information on the ICO, please visit https://appcoins.io . We also recommend reading the Whitepaper to further understand their roadmap and technology.
+Disclaimer. Cointelegraph does not endorse any content or product on this page. While we aim at providing you all important information that we could obtain, readers should do their own research before taking any actions related to the company and carry full responsibility for their decisions, nor this article can be considered as an investment advice.
+Follow us on:
+
+
+Original link: https://cointelegraph.com/news/app-stores-of-future-will-be-based-on-blockchain-promote-transparency

@@ -1,0 +1,44 @@
+ABOUT ITBIT  
+ 
+itBit is a global exchange and custodian offering institutional and retail investors a regulated platform to buy, sell and hold crypto assets. In 2015, itBit obtained a New York State trust company charter and became the first regulated Bitcoin exchange in the U.S. As a regulated financial services company based in New York City, itBit is focused on meeting the sophisticated needs of institutions, active traders and other crypto asset trading professionals. In addition to New York City, itBit has an office and operational teams based in Singapore.
+We hold ourselves to a very high hiring bar. To achieve this, we think of roles first and foremost as outcomes to be achieved, not simply a description of responsibilities. We have developed what we call a ‘Success Profile’ for this role, which has two sections:
+Outcomes: Meaningful and measurable work products that have a significant impact on the team and business over a defined timeframe
+How to Achieve Outcomes: We have a strong point of view on how this role will succeed in achieving outcomes at itBit. So, we have taken the Operating System of itBit - our values - and made it relevant to this role.
+ 
+OUTCOMES
+Automate our infrastructure – you believe in Infrastructure As Code and detest manual tasks. Success is measured by your ability to spin up environments on demand.
+Build observability into our environment and applications that help us monitor and self-heal when problems come up. Make the right trade-off between reliability and product feature speed – come up with metrics that define the tradeoff, get buy-in from stakeholders and measure against those.
+Automate code deployments so that we can release daily and often multiple times a day.
+Active involvement and mentorship of junior engineers doing code reviews resulting in up leveling the skill set for the entire team.
+ 
+HOW TO ACHIEVE THE OUTCOMES
+Functional Acumen Required:
+Strong exposure to AWS. Knowledge of other cloud providers is a plus
+Strong knowledge in at least one of the languages(Go, Python, Kotlin, Java)
+Master of at least one domain – Infrastructure As Code tools(Docker, Terraform, Puppet, Helm), Monitoring tools(Prometheus, Zabbix), Container Orchestration tools(Kubernetes, Docker), Database technologies(Cassandra, Postgres), CI/CD tools(Jenkins, Spinnaker)
+Able to understand and articulate the design and application of the architecture of the entire system
+Strong knowledge of distributed systems, cloud native applications and system design (Answer – how to create scalable fault tolerant systems?)
+ 
+Search for the truth:
+Focus on the “why”. Proactively asks questions to understand the problem we are trying to solve
+Understands the tradeoffs needed in creating good software in their area, which is often times an entire product or platform feature
+Proactively identifies problems with requirements (lack of clarity, inconsistencies, technical limitations) for their own work and adjacent work, and communicate these issues early to help course-correct.
+ 
+Be An Owner:
+Strike the right balance between fixing the problem at hand and focusing on finding the root cause of the problem. For example, if it’s a production issue the priority is to fix the immediate problem and collect all the data necessary for root cause analysis. In a non-production environment, the focus should be on finding the root cause and fixing it the right way to make sure the problem doesn’t occur again.
+Shows initiative beyond merely knocking tasks off a list. Identifies and suggests areas of future work for themselves and their teams.
+Takes the initiative to identify and solve important problems even if they are not in their domain or work area because of the ability to spot problems downstream and work with others to fix them before they become fires.
+ 
+Shared Commitment to Excellence:
+Identify and proactively tackle technical debt before it grows into something that requires significant up-front work to resolve. A rule of thumb is to start looking into root cause of issues whenever there is noise. There is no smoke without fire.
+Able to work independently with very little oversight beyond high-level direction
+Participates extensively in code reviews, mentors others via code reviews and pairing, document thoroughly as well as frequently presenting at team meetings.
+ 
+Realtime Candor:
+Communicates effectively, consistently and in a timely fashion, across functions and is able to work well with the Product Engineers, Product Managers and Business teams. The ability to get work done across teams goes beyond mere proactive status updates (although that is expected as well).
+Play a leadership role in making the right trade-offs with other teams even when doing so might mean more work for themselves, as long as that is the right thing to do.
+ 
+ITBIT IS AN EQUAL OPPORTUNITY EMPLOYER. IT DOES NOT DISCRIMINATE ON THE BASIS OF SEX, AGE, COLOR, RACE RELIGION, MARITAL STATUS, NATIONAL ORIGIN, ANCESTRY, SEXUAL ORIENTATION, PHYSICAL AND MENTAL DISABILITY, MEDICAL CONDITION, GENETIC INFORMATION, VETERAN STATUS OR ANY OTHER BASIS PROTECTED BY FEDERAL, STATE OR LOCAL LAW. 
+
+
+Original link: https://www.itbit.com/h/careers/senior-site-reliability-engineer

@@ -1,0 +1,29 @@
+Apply for this job
+Axoni develops novel blockchain solutions while focusing on the capital markets industry. We have demonstrated in various production implementations that our blockchain software can serve multiple asset classes and use cases at the world’s most advanced financial institutions. Join us in our mission to further strengthen and scale our system and develop new blockchain solutions. We’re excited to have you become part of our high-performing team of software engineers.
+Forward Deployed Engineers understand customer and user needs, and the capabilities of the blockchain platform, and design end-to-end solutions to address them. We work in a cross-functional capacity with platform engineers, business team members, and product management to ensure that our blockchain solutions work effortlessly on mission-critical production systems. Due to the nature of blockchain, each of our projects involves collaboration between various financial institutions.
+Forward Deployed Engineers work on one of more of the following areas:
+- Building full-stack web applications for non-technical users to visualize operations on the chain
+- Architecting and developing smart contracts
+- Designing and implementing APIs for interacting with our blockchain network
+- Gathering data analytics for transactions and operations on the chain
+- Developing tools to integrate real-time data feeds with the chain
+- Working with our technical writers to customize runbooks and technical documentation to a specific client environment
+- Working with the founders and the core engineering teams as a key customer-facing engineer to help improve functionality and influence product roadmap
+Relevant Skills and Experience
+Experience in a scripting language (Javascript, Python) and a compiled language (C++, go, Java)
+Experience with a relational database (Postgres, MySQL, Oracle, Sybase)
+Ability to explain technical problems or concepts in a clear and concise way to non-technical stakeholders and users
+Best practices for facilitating Agile and Test Driven Development
+Strong communication skills and a collaborative team member
+Experience in front-end javascript and MVC frameworks (React, Angular) a plus
+Knowledge of blockchain technology (Ethereum, Bitcoin, Hyperledger) a plus
+Experience in ETL (extraction, transformation, load) a plus
+Smart contract development experience (Solidity) a plus
+Benefits
+Health, dental, and vision insurance
+401K plan
+Catered team lunch and snacks
+Robust work stations
+
+
+Original link: https://jobs.lever.co/axoni/956d783c-59c6-445f-8033-252df5821c1b

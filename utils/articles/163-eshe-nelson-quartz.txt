@@ -1,0 +1,18 @@
+Future of Finance
+December 18, 2017
+Bitcoin futures started trading last night on CME Group, the world’s largest futures exchange, and prices so far signal traders think the digital asset could climb higher. Last week, Cboe Holdings also launched bitcoin futures, which give traders a way to speculate on what prices will be at some later date. Both futures contracts traded at $19,400 or higher today UK time, compared with bitcoin’s actual spot price of around $18,860 .
+Wall Street firms already trade on the big Chicago exchanges, and their bitcoin-tied derivatives are seen as a step toward bringing the digital asset into the financial mainstream. Institutional traders can buy and sell futures, but only a few of them can hold or transact in actual bitcoin for regulatory reasons. TD Ameritrade, a major brokerage for retail traders, will allow buying and selling of bitcoin futures.
+The exchanges have proven that traders, regulators, and banks can be convinced to get a derivative tied to a new digital asset off the ground—which is no small feat. When US officials greenlighted the futures, they acknowledged that bitcoin is unlike any asset they have dealt with before.
+But plenty of questions remain: Most new futures products fail to get traction, and prices for the underlying bitcoin are splintered across a range of trading platforms, making it difficult to know the true, exact price at any given time. CME’s futures contract is linked to an index derived from four exchanges, while Cboe’s is tied to the Gemini exchange.
+Trading volumes in a new derivative take time to build. Meanwhile, the exchanges for trading the underlying bitcoin are struggling to cope with their success and remain vulnerable , with outages and trading issues occurring regularly. As Wall Street cautiously enters the market, demand for actual bitcoin still appears to be going bonkers.
+Trading was so far was orderly, though buying and selling of futures was light, according to Bobby Cho, head of trading at Cumberland, a unit of proprietary trading firm DRW. The volume of bitcoin futures changing hands was about 30% higher at CME than Cboe.
+For now, Cho said he expects actual bitcoin trading to remain much more robust than than the derivatives market. Cryptoasset wallet providers around the world make it easy to buy digital assets, while access to such a new futures product is still constrained.
+Cryptoassets received another vote of confidence recently when Bloomberg added pricing for litecoin, ethereum, and ripple to its terminal network, which traders rely on for financial data, according to Fortune. This suggests another challenge for exchanges like CME and Cboe—even if bitcoin doesn’t implode, another digital asset could eventually prove more popular. The cryptoasset boom has been led by retail investors and it remains to be seen whether Wall Street will be able to catch up.
+“There’s a lot of interest from our counterparties for different
+tokens or cryptocurrencies,” Cho said. “We continue adding to the list of tokens
+that we trade.”
+This story was updated to show more recent prices and comments from Cumberland.
+Most Popular
+
+
+Original link: https://qz.com/1159324/cme-group-launches-bitcoin-futures/

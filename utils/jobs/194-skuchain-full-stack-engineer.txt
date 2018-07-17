@@ -1,0 +1,65 @@
+Skuchain: Empower my supply chain |   Careers
+1460
+Careers
+ 
+We’re hiring! If you are passionate about blockchain, cryptography, finance or supply chain, please get in touch with us at info@skuchain.com .
+ 
+System Software Engineer
+The Role:
+We are seeking a talented system software engineer to help in the design and development of our platform. As part of our engineering team, you will be given autonomy to lead critical features for our core products.
+What are the best design patterns and technologies to help us keep pace with leading the market? How do we craft our code to ensure a high-quality experience for customers, one which scales to handle the concurrency of big brands? These and more are some of the problems you will help us tackle.
+Our Ideal Candidate:
+Has experience leading, or playing a critical role in development for 5+ years, ideally in startup/SaaS environments
+Is proficient in leading edge back end technologies similar to NodeJS, GO etc.
+Is fully conversant with microservice architecture and is able to build production ready integrations between services, monitoring, logging and fault tolerant features to make the platform robust.
+Has experience mentoring other talented engineers
+Has completed their Bachelor in Computer Science or similar experience
+Has deep experience working with git, bash, docker, aws, kafka/kubernetes etc.
+DevOps Engineer
+The Role:
+We are seeking a talented DevOps engineer to help in the design and development of our platform. As part of our engineering team, you will be given autonomy to lead critical features for our core products.
+What are the best design patterns and technologies to help us keep pace with leading the market? How do we craft our code to ensure a high-quality experience for customers, one which scales to handle the concurrency of big brands? These and more are some of the problems you will help us tackle.
+Our Ideal Candidate:
+Has experience working in a large scale, high-availability production environment
+5+ years of experience in Unix or Linux systems administration
+Has proven experience writing scripts and automation tools, including Docker, Jenkins, Kafka, Kubernets, Bash etc.
+Has excellent networking and core infrastructure services (DNS, DHCP, BGP, SMTP, etc.) understanding
+Is comfortable working with wide range of relevant server-side technologies, such as Graph DB, Postgres, ELK, etc.
+React Native Engineer
+The Role:
+We are seeking a talented React Native engineer to help in the design and development of our platform. As part of our engineering team, you will be given autonomy to lead critical features for our core products.
+What are the best design patterns and technologies to help us keep pace with leading the market? How do we craft our code to ensure a high-quality experience for customers, one which scales to handle the concurrency of big brands? These and more are some of the problems you will help us tackle.
+Our Ideal Candidate:
+Has 3+ years of professional experience
+Is highly proficient in React Native
+Has strong core JS skills
+Is able to operate in highly iterative development process
+Is self-motivated and continuous improvement on skillset and product
+Has extensive iOS and Android development experience
+Has completed their Bachelor in Computer Science or similar experience
+Has experience working with git, docker, aws, REST apis etc.
+Product Architect/Full Stack React Developer
+The Role:
+We are seeking a talented Product Architect / Full-Stack React Developer to help in the design and development of our platform. As part of our engineering team, you will be given autonomy to lead critical features for our core products.
+What are the best design patterns and technologies to help us keep pace with leading the market? How do we craft our code to ensure a high-quality experience for customers, one which scales to handle the concurrency of big brands? These and more are some of the problems you will help us tackle.
+Our Ideal Candidate:
+Has 5+ years of experience in architecting and developing scalable, responsive front-end/UI framework
+Is highly proficient in Javascript MVC frameworks
+Has strong experience with front-end technologies such as HTML5, CSS3, JavaScript, and building mobile, responsive/adaptive applications
+Has strong professional experience using Webpack, Gulp
+Has experience working with git, docker, aws, etc.
+Has strong experience writing and utilizing RESTful API services and performance tuning large scale web applications
+Has professional experience with relational and non-relational (e.g., MongoDB, PostgreSQL etc.) data store
+Has a good understanding of fundamental design principles behind a scalable application
+Has strong experience with test driven development
+Is able to work collaboratively in a team environment
+Has skills to communicate complex ideas effectively
+Is able to operate in highly iterative development process
+Is self-motivated and continuous improvement on skillset and product
+Has completed their Bachelor in Computer Science or similar experience
+ 
+If any of these sound like you, please send an e-mail to info@skuchain.com . We look forward to hearing from you!
+Reach out to us
+
+
+Original link: http://www.skuchain.com/careers/?job=1

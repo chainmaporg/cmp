@@ -1,0 +1,18 @@
+by Polina Chernykh on Wednesday, December 13th, 2017 10:43pm UTC Leave a comment
+Photo: Colu
+After raising $12 million from top investors, the blockchain startup is now looking to collect $50 million in a crowdsale launching next month.
+Tweet
+Launched in 2014 in Israel, Colu has developed a blockchain-powered monetary system allowing individuals and merchants to exchange transactions in their local economies without any friction. The startup aims to facilitate the real life usage of digital currencies by allowing users to send transactions directly via its blockchain-based app.
+Before launching the platform, the startup communicated with businesses in order to understand how the technology can be used to create new business models. After implementing the first product that used blockchain for transactions in dollar and other currencies, the startup identified the main barriers to wider usage of the technology, but also recognized its huge potential.
+“After engaging with consumers and local business owners about digital currencies, we realized the magnitude of the problem. Local communities are largely abandoned by multinational corporations, and do not receive the same attention from financial institutions,” Colu said in a blog post .
+“Although small-enterprises outnumber large companies by a wide margin, and typically employ many more people, it seems like almost no company in the payments space is focused on catering to their needs.”
+The goal of the project is to facilitate the real life usage of digital currencies, allowing users to exchange them directly via its digital wallet app.
+To empower local economies, Colu has developed a local payment network, the Colu Local Network (CLN), encouraging consumers to buy locally thereby supporting local businesses. Users will be able to make purchases with fiat money via the Colu digital wallet and enjoy the added value of being rewarded in “community currencies”.
+The startup has already grown its user communities in four local economies in Tel Aviv, Haifa, London, and Liverpool and processes more than 50,000 payments each month. In less than a year, it has managed to recruit hundreds of merchants in these communities and already registered over 100,000 users.
+During the previous years, Colu managed to attract more than $12 million in venture funds from leading investors, including Aleph Ventures, Spark Capital, and Digital Currency Group.
+Next month, the startup will begin a one-week crowdsale of its CLN tokens that will run from January 18 till January 25. Overall, the team aims to raise $50 million that will be used for further development of the project and its expansion to new countries.
+Earlier this year, the company announced the launch of an open-source protocol Bankbox to help financial institutions to issue cryptocurrency. Aiming to drive the use of digital currencies in other sectors, the company earlier collaborated with Revelator to bring the blockchain technology to the music industry.
+You May Also Like
+
+
+Original link: https://www.coinspeaker.com/2017/12/13/blockchain-startup-colu-launch-ico-colu-local-network-token/

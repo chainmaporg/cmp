@@ -1,0 +1,14 @@
+0
+IBM, Walmart, JD.com and Tsinghua University said they will collaborate on blockchain tools for food tracking, traceability and safety in China's supply chain.
+The four entities will work in a Blockchain Food Safety Alliance that aims to create a standard for collecting data on origin, safety and authenticity of food using blockchain technology for traceability. Real-time transparency has been difficult due to paper-based systems and multiple players in the food chain.
+Here's how the work will be distributed:
+Walmart, JD, IBM and Tsinghua University will work with regulators and the food supply chain to develop standards and partnerships for safety.
+IBM provides its blockchain platform
+Tsinghua University is the technical advisor and will provide expertise in technology and China's food safety ecosystem.
+Walmart and JD will help develop and optimize technology that can be rolled out to suppliers and retailers.
+Walmart, IBM and Tsinghua University have piloted blockchain in the food supply chain previously. The aim is to track food from farm to store in near real time.
+In August, IBM launched its blockchain food supply efforts via a collaboration with Dole, Driscoll's, Golden State Foods, Kroger, McCormick and Company, McLane Company, Nestlé, Tyson Foods, Unilever and Walmart.
+Additional resources
+
+
+Original link: http://www.zdnet.com/article/ibm-walmart-jd-com-and-tsinghua-university-eye-blockchain-for-food-supply-chain-safety-in-china/

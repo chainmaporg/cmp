@@ -1,0 +1,50 @@
+Something new is happening in the world of cryptocurrencies.
+The roughly $460 billion 
+digital currency world , spawned eight years ago from the almost exclusively male domain of bitcoin, is starting to open to women. Four out of 30 of the largest initial coin offerings this year through October had female co-founders, double the number of women leading the 30 technology companies with the largest international public offerings worldwide. Two of the female-led ICOs were among the biggest so far.
+Women are now more visible as speakers at crypto conferences. And
+Coinbase Inc. , one of the largest U.S. digital currency exchanges, said 46 percent of its new hires this year are women or are ethnically diverse.
+Even if the viability of most blockchain projects remains to be seen, the experiences of pioneering women indicate that the nascent industry is moving toward a more inclusive culture and expanding its 
+talent base  as it marches down a path toward the mainstream -- steps that in other fields have given a boost to innovation and financial performance.
+“We have an opportunity to rebuild the financial system,” said Galia Benartzi, co-founder of Bancor, which raised $150 million in June. “Are we going to do it with all guys again?”
+Famous Women
+Famous women have popped up in the blockchain world -- such as Blythe Masters, the former JPMorgan Chase & Co. banker, who quit her job to run
+Digital Asset Holdings . Another is Elizabeth Stark, who taught at Yale and Stanford universities before co-founding Lightning Labs, which is testing a technology to speed up cryptocurrency transactions. 
+Others are building their first careers in the industry, such as Maxine Ryan, a half-Chinese, half-Australian 25-year-old who dropped out of university to launch Bitspark in Hong Kong, where she was born. Its ICO last month raised $1.4 million.
+“It’s still a handful, even though it’s growing," said Ryan, about the presence of women in the blockchain world.
+Maxine Ryan of Bitspark
+Photographer: David Paul Morris/Bloomberg
+That’s a contrast from the early days. Nathaniel Popper’s 2015 book “Digital Gold: Bitcoin and the Inside Story of the Misfits and Millionaires Trying to Reinvent Money,” which covers bitcoin’s history through early 2014, mentions no women by name directly involved in the virtual currency. In a
+survey of bitcoin users conducted by CoinDesk Inc. in 2015, more than 90 percent of nearly 4,000 respondents were male.
+There’s scant data on the diversity of crypto companies. Among 67 companies in the portfolio of
+Digital Currency Group Inc. -- a company that invests in blockchain technology -- 17 percent of employees were female, while a third had no women, according to a March 2016 blog post by DCG’s director of development Meltem Demirors. The figure is comparable to the percentage of venture-funded companies with female founders around the world, according to Crunchbase data.
+‘Marketing Chick’
+Demirors says women don’t always get the credit they deserve: She recalls being referred to as a “random marketing chick” earlier in her career and just last month had a man try to explain to her how crypto technology works at an event in Hong Kong where she delivered the opening remarks.
+“I truly believe a lot of the women are the ones who are actually doing a lot of the hard operational, strategic work," Demirors said.
+The crypto world has come under unprecedented scrutiny this year, with investment in bitcoin going mainstream after a roughly 1,600 percent surge in price. The boom has spawned the initial coin offering -- a cross between a new share sale and crowdfunding -- which has raised $3.8 billion for startups so far, according to CoinDesk data.
+More Professional
+Kathleen Breitman, the San Francisco-based co-founder behind Tezos, which made
+news for infighting after a $232 million ICO in July, said things are improving for women as the industry grows and becomes more professional. Tezos is now the target of class-action lawsuits accusing it of violating U.S. securities laws and questioning the viability of its project.
+“I think things are much better than they were before," said Breitman, who a year ago met with a New York hedge fund in lieu of her male co-founder and husband, only to have them remark that they were “really surprised" she was smart. The improvement now is due "to more sophisticated actors entering the space across development and investment. There are also a lot of women who have entered the space across development and operations. Both trends have elevated the professionalism.”
+Kathleen Breitman of Tezos
+Photographer: Michael Short/Bloomberg
+Breitman has organized a blockchain group in San Francisco called “Attack of the 51 Percent,” a play on the notion that anyone who controls more than half of bitcoin’s computing power can take over the blockchain. A group called CryptoFriends plans a blockchain conference with all female speakers, called New Girls on the Block, in Tel Aviv in May 2018.
+Still, there’s a long way to go. CoinDesk, an influential cryptocurrency media company, recently compiled a list for a vote on the most influential people in blockchain, which includes outsiders who’ve made an impact such as socialite Paris Hilton and JPMorgan chief
+Jamie Dimon . A fifth of the 153 identifiable candidates were women. 
+The crypto world’s gender imbalance echoes similar issues in Silicon Valley. The bitcoin community started as casual networks with informal roles across social circles, email threads and Internet forums, making it harder for outsiders to join. There are also fewer female coders and engineers in the industry to begin with.
+No Excuse
+Benartzi, the Bancor co-founder, said a shortage of female programmers is no excuse not to have women involved in blockchain businesses. Bancor has a female vice president for engineering.
+"Both women and men should be extremely excited about this,” said Benartzi, who splits her time between Tel Aviv, California and Switzerland. "Even if you can’t create 50-50 diversity in your developer teams, having women in leadership positions in your company is absolutely doable and absolutely essential.”
+The price of Bancor’s token has
+slipped since its debut amid skepticism over the usefulness of its technology, whose application aims to facilitate trading in other digital coins.
+The crypto community’s gender politics made news in October when the CoinAgenda conference in Las Vegas invited Gurbaksh Chahal, a tech executive who founded a blockchain marketing company called Lyndian, to speak -- despite a domestic violence
+conviction . Michael Terpin, CoinAgenda’s managing director, replied in an email that he didn’t think Chahal’s misdemeanor conviction "merited a lifetime ban" from speaking.
+Women like Breitman still report that their appearance and speaking styles are heavily scrutinized and critiqued in online forums. Ryan said she’s often addressed as Mr. Max or Mr. Ryan in emails, and is received with surprise when she meets people in the tech sector.
+“It’s a strong filter for women who have a lot of grit,” said Breitman. Still, “any sort of weird niche group like blockchain technology will have its own idiosyncrasies and its own culling over time."
+Rumi Morales, Chicago-based former head of CME Ventures, exchange operator CME Group Inc.’s venture arm, says the nascent nature of blockchain means those behaviors aren’t entrenched. And after all, crypto-evangelists routinely tout the industry’s potential to upend world norms.
+“It’s very welcoming to anyone who drinks the Kool-Aid,” said Morales.
+(Updates second paragraph with comparison with women leading tech companies IPOs with IPOs.)
+Before it's here, it's on the Bloomberg Terminal. LEARN MORE
+Most Read
+
+
+Original link: https://www.bloomberg.com/news/articles/2017-12-12/bitcoin-started-with-all-men-now-crypto-is-opening-up-to-women

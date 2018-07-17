@@ -1,0 +1,24 @@
+Filed Under Bitcoin , Blockchain & Cryptocurrency
+Dragon Ball Z is perhaps the most iconic anime of all time. It’s also, coincidentally, a fantastic analogy to explain the relationship between the world’s most popular cryptocurrency , bitcoin , and a rising “altcoin” known as litecoin .
+The protagonist of *DBZ is the all-powerful Goku, who represents bitcoin in this case. Vegeta — Goku’s arch-nemesis turned best friend — is constantly in Goku’s shadow, not driving the action of the series but complementing it. He’s not the focus nor the most powerful character, but he provides a more relatable alternative for audiences to connect with.
+This is sort of the idea Charlie Lee, the former director of engineering at Coinbase, had when he created litecoin.
+In case this meme needs explaining...
+Litecoin is Vegeta to Bitcoin's Goku. And Vegeta is reading Goku's power level and it's over...! https://t.co/d2YcKSKeaP
+— Charlie Lee [LTC] (@SatoshiLite) November 25, 2017
+“Litecoin was never intended to replace Bitcoin but to complement it like the silver to Bitcoin’s gold,” Linda Xie, the co-founder of Scalar Capital, explained in a Coinbase blog .
+In other words, it was supposed to be like Bitcoin’s little brother, like a more accessible version of the most popular cryptocurrency.
+However, with the ballooning prices of Bitcoin driving the crypto sector, Litecoin has seen some pretty substantial growth itself. Within 24 hours of Lee announcing that his cryptocurrency had achieved a $10 billion market cap, it broke the $15 billion mark and is now valued over $300 per litecoin. Making Litecoin worth more than the entire cryptocurrency market just 15 months ago.
+Mining Difference
+LTC was created in the shadow of bitcoin. It makes use of blockchain technology like its larger counterparts, but there are some minor differences in how it’s mined and traded.
+Litecoin mining uses Scrypt protocol, instead of the SHA-256 algorithm that Bitcoin uses. The major difference between these two is that SHA-256 is extremely processor intensive, which means you need incredibly powerful equipment in order to mine Bitcoin. Scrypt is memory intensive, meaning you need terabytes of space but no special mining equipment.
+This means that Bitcoin miners can’t easily switch to mining Litecoin, as it just wouldn’t be worth it. This makes Litecoin more accessible to those who are interested in cryptocurrencies but don’t have the money to get into Bitcoin.
+Speed Difference
+Another major difference between these two digital currencies is how quickly you can make a transaction. On average it takes ten minutes for a transaction to be written into the Bitcoin blockchain, which is essentially just a digital receipt of your transactions. It takes roughly two and a half minutes for a Litecoin transaction to be logged in its blockchain.
+This makes Litecoin able to process more transactions in a shorter amount of time than Bitcoin.
+What’s Next?
+Litecoin was made to put cryptocurrencies at the fingertips of people without the resources to dive head first into bitcoin or ether. But with the ballooning interest and money being poured into the sector, the cryptocurrency for the people seems to be on the same exclusive track as its predecessors.
+Vegeta, or litecoin, might never be as strong as Goku, or bitcoin, but Vegeta’s power-levels seem to be on track to surpass 9,000. If that does happen the original idea behind Litecoin would be all but a memory.
+If you liked this article, check out this video about Litecoin’s creator, a meme-loving Internet Dad.
+
+
+Original link: https://www.inverse.com/article/39312-why-is-litecoin-going-up-how-the-more-currency-like-crypto-works

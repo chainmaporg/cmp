@@ -1,0 +1,78 @@
+Start Trading Crypto
+Trade Bitcoin Futures
+If you are looking for a solid US based company to trade Bitcoin Futures, TradeStation is your best option. They offer low commissions, overnight daytrade margins, and more interest earned on your existing cash balance.
+What is cryptocurrency?
+Technically, cryptocurrency, also known as digital currency, are entries made in a digital ledger which cannot be tampered with unless they fulfill certain conditions. In other words, it is a peer-to-peer electronic cash system. The best part is, it is decentralized, with no server or central authority.
+Cryptocurrency consists of each peer in a network of peers who have a record of the complete history of transactions and are privy to the balance of every account.
+Ultimately, cryptocurrency is a medium of exchange created and stored electronically in the blockchain using encryption techniques with a two-fold purpose: 
+To control the creation of monetary units.
+To verify the transfer of funds.
+This image showcases how cryptocurrency works:
+Cryptocurrency overview
+Cryptocurrency is a medium of exchange created and and stored electronically in the blockchain.
+Characteristics in the cryptocurrency market
+Those interested in trading in cryptocurrency should have a good understanding of the characteristics of the cryptocurrency market.
+Decentralized
+This market is decentralized, with no government or bank involved. This ensures privacy of transaction and elimination of transaction charges. What’s more, there is no capital limit with respect to the transactions.
+Limited supply
+The supply of cryptocurrencies are limited, as it cannot be created arbitrarily and will have to be mined by digital means. For example, Bitcoin founders have stipulated that only 21 million Bitcoins can be mined in total.
+Why the cryptocurrency craze?
+The cryptocurrency craze is reaching a feverish pitch due to several reasons, some of which are listed below: 
+It ensures fraud-proof transactions, given that everything is done digitally, which disallows counterfeiting or reversal of transactions by senders.
+Settlement is immediate.
+Lack of transaction fees, with the miners currently being compensated by the network.
+Universal recognition, as it is not affected by interest rates, exchange rates, charges, etc.
+Cryptocurrency terms
+Block
+In simple terms, block is like a page of a record or ledger. Blocks are files where data concerning a digital currency network is stored permanently.
+Blockchain
+It is the list of all transactions in a peer-to-peer network.
+Mining
+Mining is a computationally-intensive process the computers or nodes in a cryptocurrency network complete to verify the transaction record. In return, miners receive digital coins as compensation.
+Mining Rigs
+Computer system used for mining cyrptocurrencies.
+Node
+Any computer that connects to a blockchain is called a node.
+Cryptocurrency exchanges
+These are websites where cryptocurrencies can be bought or sold, or in other words, exchanged in return for other digital currencies or traditional currencies.
+ICO
+Initial Coin Offering, or ICO, is selling a new digital currency or token at a discount by a company to raise money. It is the means by which a new cryptocurrency venture raises funds.
+Cryptocurrency wallet
+A software program used to store private and public keys which are used to send and receive digital currencies and monitor their balance by interfacing with various blockchains.
+Pros and cons of cryptocurrency trading
+Pros
+Staggering returns. Going by the breathtaking rally in Bitcoin, you have the potential to get rich investing in digital currencies. From $968.23 at the end of last year, Bitcoin has rallied over 740 percent and has recently scaled the $8,000 barrier.
+The potential presented by the cryptocurrency as a preferred medium of savings, especially as fiat currencies, are exposed to geopolitical, economic and financial uncertainties and makes it a preferred investment choice.
+Cons
+Not the best bet for investors seeking fixed returns, as an investor in the digital currency is not entitled to dividend income.
+Risk of being brought under regulatory purview
+Scalability of cryptocurrencies
+Hacking of cryptocurrency firms
+It’s possible to lose your capital.
+Cryptocurrency can be traded through two ways. Actual cryptocurrency can be bought and sold at a cryptocurrency exchange. The digital currency as a speculative investment is traded as contract for difference, or CFD, through brokers.
+A CFA is an tradable instrument that moves in tandem with the underlying asset and is a contract negotiated between the broker and its customer. Traders don’t actually own the underlying asset, but profits or losses when the underlying asset moves in relation to the position taken. 
+For our comparison purpose, only brokers were taken into account.
+Best overall for US-based traders
+If you’re a US-based trader, those no doubt that you have heard about Coinbase . It’s pretty large; the company has served over 200 million customers and handled about$150 billion in transactions.
+Coinbase boasts great customer service , which is a huge win for customers of an online platform. And, your cryptocurrency – whether you’re trading Bitcoin, Ethereum, Litecoin, ERC20 token, or anything else – is protected. The platform uses vault protections, delayed withdrawals, and two-factor authentication. The best part? Your cryptocurrency is covered by insurance.
+The desktop and mobile apps are simple to use, especially for first time traders. You have easy access to trends, charts, and can buy and sell with a few clicks. Set up recurring buys, too. The simplicity makes for a pretty seamless trading experience.
+While their Digital Wallet service is free, Coinbase does have fees for buying and selling cryptocurrency. In the United States, Coinbase has a 4 percent base rate for all transactions. But exact payout, deposit, and transfer fees will differ depending on the amount and type of transaction.
+Best overall for traders outside of the United States
+ 
+AvaTrade has emerged as one of the overall winners among brokers offering cryptocurrency trading. It’s trading platform caters to various types of traders. AvaTrade also has additional trading tools such as live quotes and charts and it has carved a unique niche for itself in cryptocurrency trading.
+The fairly affordable account minimum, competitive swap rates and the breadth of coins offered also makes it a preferred destination for investors looking to make some quick bucks through trading cryptocurrencies.
+Best for number of choices
+These are the digital currencies offered by brokers:
+Plus500 – Bitcoin, Ethereum/Bitcoin, Bitcoin Cash, Ethereum, Litecoin, Ripple, IOTA. 
+Etoro – Bitcoin, Dash, Ethereum Classic, Ethereum, Litecoin and Ripple
+AvaTrade – Bitcoin, Bitcoin cash, Ethereum, Ethereum Classic, Ripple, Dash, Litecoin, Monero, NEO
+UFX
+ETX – Bitcoins
+Best platform and tools
+Among the brokers on our radar, most of them offer desktop, online, as well as web trading platforms.
+Plus500 offers its proprietary trading platform , which comes in four versions: downloadable, web-based, app version and a version for Apple Watch Platform. The platform has a charting software, allows trading in multiple markets from the same screen and provides real time quotes.
+eToro offers web and mobile trading platforms.
+AvaTrade presents a wide-selection of platforms and also the option for automated trading. The  trading platforms offered include AvaTradeAct, Metatrader 4, Mac Trading, Automated Trading, Web Trading and Mobile Trading.
+
+
+Original link: https://www.benzinga.com/investing/best-brokers-cryptocurrencies/

@@ -1,0 +1,11 @@
+Wachsman, a blockchain professional services firm, has hired senior bankers from investment banks ...
+Volcano
+Investing , News | December 13, 2017 By: Adam Saiter
+The digital currency markets have been active today, as the biggest digital currencies have experienced, on average, relatively large fluctuations in price over the past 24 hours.
+A notable high volatility outlier was Qtum, which traded between $13.43 and $20.44 today, with an average price of $16.97. On the other end, BitConnect saw unusually low volatility today. Its range was $360.80 – $399.78 with an average of $385.46.
+Our proprietary Block Tribune Volatility Index is a measure of daily price variability compared with variability over the prior 30 days. 50 indicates an average day. Greater scores indicate a wider range of trade prices while lesser scores indicate a relatively flat trading period.
+The data below was compiled on a per-currency basis using reports from the exchanges that saw 1% or more of the total trade volume for that currency. It is as of 1:00 p.m. US Eastern Time and includes the digital currencies with the greatest trading volume, as measured in U.S. Dollars.
+Currency
+
+
+Original link: http://blocktribune.com/qtum-leads-block-tribune-volatility-index/

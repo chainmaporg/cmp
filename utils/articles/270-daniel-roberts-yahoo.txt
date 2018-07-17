@@ -1,0 +1,46 @@
+Square CEO Jack Dorsey (L), Overstock CEO Patrick Byrne, (Reuters/AP)
+More
+As the prices of bitcoin and other cryptocurrencies like litecoin and ether have soared in recent weeks, you may be wondering: How can I invest in the crypto space apart from actually buying coins?
+In some cases, their level of exposure is minor, like Square testing a feature on its mobile app that lets users buy bitcoin (but not send it to their friends, yet). In some cases, their exposure is significant, like Overstock, which was an early adopter of bitcoin and is planning a token sale for a new arm of its business, tZero.
+From Square to Overstock to Nvidia, here are the large public companies that have some amount of interest in crypto. Note: We’ve set the bar for inclusion at $1 billion in market cap.
+Last updated on Dec. 21, 2017 at 4:02 p.m. EST.
+Advanced Micro Devices ( AMD )
+AMD’s graphics cards are used in cryptocurrency mining rigs, which helped make AMD one of the best-performing stocks through the first half of 2017, though it has since plummeted 16% in the second half of the year.
+The “newly resurgent cryptocurrency mining markets” are driving “solid demand” for AMD graphics cards, the company told CNBC in June . Morgan Stanley, on the other hand, warns that the market for AMD’s GPUs will get slashed in half in 2018 due to the rising costs of mining.
+Bitcoin Investment Trust ( GBTC )
+Grayscale, an investment company created by Digital Currency Group (the No. 1 largest investment firm in crypto startups) , launched the Bitcoin Investment Trust (BIT) in 2015 as the first publicly traded security pegged solely to the price of bitcoin. Shares are meant to track the bitcoin market price, minus network fees.
+BIT “enables investors to gain exposure to the price movement of bitcoin through a traditional investment vehicle, without the challenges of buying, storing, and safekeeping bitcoins,” Grayscale says. BIT is traded over the counter (OTC) and is up 1,400% in 2017 (compared to 1,760% for bitcoin itself) to a $4 billion market cap.
+Cboe Global Markets ( CBOE )
+The Chicago Board Options Exchange, nowadays stylized as Cboe, became the first to market this month to launch bitcoin futures trading, beating CME Group by 10 days. The volume is still low as some big banks, like Bank of America and Citi, are hesitant to let their clients get in, but experts expect the market to heat up once CME and Nasdaq jump in . Bitcoin futures are likely to bring big institutional money to the space.
+Cboe is basing its bitcoin futures trading on the price at Gemini, a bitcoin exchange created by the Winklevoss brothers. Cboe also owns Bats Global Markets, formerly based in Kansas City, which it bought for $3.4 billion last year. Bats is where the Winklevoss brothers aim to list their bitcoin ETF (exchange-traded fund), which has yet to get regulatory approval.
+CME Group ( CME )
+Along with Cboe, Chicago Mercantile Exchange announced recently its plan to launch bitcoin futures trading on Dec. 18. The price of CME’s futures will be pegged to four bitcoin exchanges: Bitstamp, GDAX (owned by Coinbase), itBit, and Kraken.
+Goldman Sachs (GS)
+One of the very biggest banks in the world is opening a new trading desk for bitcoin and other cryptocurrencies, according to a Bloomberg report on Dec. 21. Goldman’s entry would be a watershed moment for the space—and it would lead many to wonder if JPMorgan, whose CEO Jamie Dimon has called bitcoin a “fraud,” might get in next.
+Interactive Brokers Group ( IBKR )
+Interactive Brokers, a major online trading platform, announced in mid-December it will allow its customers to short bitcoin .
+Adding bitcoin shorting “was necessitated by the large premium of the January futures contract over the price at which bitcoin trades on the physical venues,” said Interactive Brokers chairman Thomas Peterffy.
+Microsoft ( MSFT )
+Since 2014, Microsoft has accepted bitcoin as payment for digital content in its Windows store and Xbox store.
+Compared to some of the others on this list, that level of crypto exposure is small, but it isn’t insignificant: some see it as an indication that Microsoft could become the first major consumer tech player to get into bitcoin in a more overt way.
+Story Continues
+Nasdaq ( NDAQ )
+Nasdaq, following the lead of CME and Cboe, announced in December it intends to add bitcoin futures trading in 2018 . Nasdaq hasn’t yet gotten CFTC approval, and CME and Cboe will beat it to market, but Nasdaq is mainstream enough that its entry into bitcoin futures will signal a tipping point.
+Nvidia ( NVDA )
+Nvidia’s chips are used in bitcoin and ethereum mining machines. Nvidia says sales of chips for mining rigs brought it $150 million in revenue last quarter.
+Overstock ( OSTK )
+Overstock was an early bitcoin believer, becoming the first major e-commerce retailer to accept bitcoin as payment in 2014. At that time, Overstock was keeping 10% of the bitcoin it received, but instantly converting the rest to US dollars. Nowadays, it keeps 50% of the bitcoin it receives, which means Overstock is deeply invested in the price of bitcoin .
+PayPal ( PYPL )
+When PayPal began  allowing merchants to accept bitcoin in 2015 it was a watershed moment for the space. Since then, it has also partnered with Coinbase to allow you to cash out funds using your PayPal account.
+Square ( SQ )
+Square allowed merchant customers to accept bitcoin beginning in 2014 (one year before PayPal did it), so it was already somewhat involved in crypto. More recently, it added a test feature to its Square Cash app that allows people to buy bitcoin , though they can’t yet pay friends using bitcoin. CEO Jack Dorsey told Yahoo Finance , “There’s nothing that’s more impactful to our business than digital currency.”
+TD Ameritrade ( AMTD )
+TD Ameritrade has said it will allow its customers to trade bitcoin futures through Cboe if the platform meets its standards. With big banks like BofA, Citi, and others saying that for now they won’t allow it, TD Ameritrade’s entry will be a significant moment.
+Visa ( V )
+You can now obtain a bitcoin Visa card from a wide range of third-party companies. BitPay offers a Visa bitcoin debit card, where you can use bitcoin to load it with funds; London Block Exchange offers an app that lets you instantly convert crypto balances into British pounds at any merchant that accepts Visa. And bitcoin.com says it is rolling out a bitcoin Visa debit card imminently.
+—
+Daniel Roberts covers bitcoin and blockchain at Yahoo Finance. Follow him on Twitter at @ readDanwrite .
+Read more:
+
+
+Original link: https://finance.yahoo.com/news/watchlist-stocks-exposure-bitcoin-195929419.html

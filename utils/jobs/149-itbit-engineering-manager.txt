@@ -1,0 +1,43 @@
+ 
+ 
+itBit is a global exchange and custodian offering institutional and retail investors a regulated platform to buy, sell and hold crypto assets. In 2015, itBit obtained a New York State trust company charter and became the first regulated Bitcoin exchange in the U.S. As a regulated financial services company based in New York City, itBit is focused on meeting the sophisticated needs of institutions, active traders and other crypto asset trading professionals. In addition to New York City, itBit has an office and operational teams based in Singapore.
+ 
+We’re looking for an experienced Engineering Manager lead and build out our exchange team.  You’ll work closely with our tech team and product owner to meet new product development objectives, and be front-and-center designing and developing these tools from the ground up. You will have not only the technical chops to roll up your sleeves and provide technical leadership to major projects, but also manage a team of engineers. You will identify technical obstacles early and work closely with your Agile team to find creative solutions.
+We hold ourselves to a very high hiring bar. To achieve this, we think of roles first and foremost as outcomes to be achieved, not simply a description of responsibilities. We have developed what we call a ‘Success Profile’ for this role, which has two sections:
+Outcomes: Meaningful and measurable work products that have a significant impact on the team and business over a defined timeframe
+How to Achieve Outcomes: We have a strong point of view on how this role will succeed in achieving outcomes at itBit. So, we have taken the Operating System of itBit - our values - and made it relevant to this role.
+ 
+OUTCOMES
+ 
+Own the delivery and execution of features and modules of an entire product/platform by judiciously managing time, resources and the team members assigned to the product. Success is measured both by adherence to timelines and quality of the product.
+Partner collaboratively with key internal stakeholders (Testing, Product Management, Business Development, Design etc.) to make the right decisions for the product and ultimately the customer. Success is measured by speed of decision making that lead to key outcomes while using all the available data to make good decisions.
+Actively identify bottlenecks in the process or constraints in tools or resources for your team and work to remove those roadblocks before they impact the success of the team. Success is measured by time to market of product features while not compromising on reliability.
+Build and develop a world-class engineering team. Success is defined by constantly giving timely feedback to team members, rewarding and growing the best engineers, investing in development of team members as well as quick/swift action on poor performance.
+ 
+HOW TO ACHIEVE THE OUTCOMES
+Functional Acumen Required:
+Proficient in coding, data structures and algorithms on par with a Software Engineer on the team, even if they are not coding on a daily basis
+Able to contribute bug fixes and small features without becoming a bottleneck for the team
+Heavily involved in system design and architecture of the system(s) they are involved in and will ensure the systems are monitorable and highly available.
+ 
+Be An Owner:
+Comfortable and good at managing in a hands-on way. This means your job as the leader of the team goes beyond just asking for status updates. In addition, you are actively involved and contribute to tracking the team’s progress and routinely assist in adjusting processes and timelines to ensure high quality work is delivered.
+Drive accountability for deploying and monitoring the solutions that your team creates by aligning resources adequately and appropriately i.e. the right people for the right job.
+ 
+Shared Commitment to Excellence:
+Communicate context to the team and surface requirements or constraints to upwards.
+Adept at managing team members with different skill sets from their own. Focus on being the person who removes obstacles for team members and knows when to get out of their way.
+Demonstrate care for team members by showing a good understanding of the experiences that matter the most to each team member during their time at the company
+Evangelize – Sell the company and their team to potential candidates. Inspire potential recruits to join the company.
+ 
+Search for the truth:
+Focus on the “why”. Proactively asks questions to understand the problem we are trying to solve.
+Able to identify areas of strategic technical debt and provide cost/benefit analysis for eliminating this debt and suggested timelines for how to prioritize.
+ 
+Real time candor:
+Partner closely with Product Managers to manage project scope and ensure the technical deliverables are met. Ensure that Product and Engineering are equal owners in building the product in both spirit and action
+Communicate expectations clearly to all team members and solicit and deliver feedback frequently
+ITBIT IS AN EQUAL OPPORTUNITY EMPLOYER. IT DOES NOT DISCRIMINATE ON THE BASIS OF SEX, AGE, COLOR, RACE RELIGION, MARITAL STATUS, NATIONAL ORIGIN, ANCESTRY, SEXUAL ORIENTATION, PHYSICAL AND MENTAL DISABILITY, MEDICAL CONDITION, GENETIC INFORMATION, VETERAN STATUS OR ANY OTHER BASIS PROTECTED BY FEDERAL, STATE OR LOCAL LAW. 
+
+
+Original link: https://www.itbit.com/h/careers/engineering-manager

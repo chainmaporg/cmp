@@ -1,0 +1,19 @@
+job title, keywords or company
+city, state, or zip
+Principal Software Engineer - blockchain and microservices - early stage startup
+The Bivium Group - Cambridge, MA
+$140,000 - $160,000 a year
+Brand new opening. Working directly with the founders and an executive engineer that we placed. Early stage startup in Boston, pre-series A with strong seed funding and several pilot customers. Looking to close their Series A over the next 1-2 months, so an excellent time to join.
+Seeking a Principal level software engineer with architecture experience to work closely with the founders, CTO and VP of Engineering  all hands-on coders. A small, very talented engineering team.
+Want an experienced software engineer with a strong background developing enterprise class software systems  large scale, high performance and availability production software. Their primary languages currently include Go and Python  however experience with Go or Python is not a must. They feel that a smart and capable engineer will have no problems learning new technologies. However, experience with micro-services architecture (MSA) and implementation is a must have. MSA is one of the areas this team is currently a little light on and would love for someone to come in with microservices experience and make a major impact on the companys core product. Still lots of opportunity to shape the architecture, as well as select the right tools and technologies for the job.
+Base salary to be commensurate with experience, and will also include early stage equity.
+For more info contact Biviums founders - jobs@biviumgroup.com
+-
+The Bivium Group is a leading recruitment firm in Boston that specializes exclusively in the software engineering market in Boston  for the past 16+ years.
+Bivium founder Jamie LeBlanc has a degree in Mechanical Engineering and has been a key member of several startups - a technical software recruiter who understands software and the technologies used to build it. Jamie is a top ranked technical recruiter in Boston with >80 written Recommendations on LinkedIn that has been expertly recruiting and placing Software Engineers for nearly 20 years.
+Visit our website to view more of Boston's Best Software Engineer jobs Here
+You can also sign-up for our job alert email to be automatically notified of any new jobs meeting your criteria Here
+principal software engineer, software architect, msa architect, blockchain, micro-services, microservices architecture, msa, service-oriented architecture, soa, container systems, amazon elastic container services, ecs, kubernetes, moby, docker swarm, continuous integration, continuous deployment, ci, cd, system monitoring, security, privacy, digital identity, java, scala, go, golang, python, distributed systems, cryptography, neo4j, ‎arangodb, graphql, ethereum, hyperledger fabric, decentralized platforms, jamie leblanc, cambridge software jobs, Bivium, #jamiejobs
+
+
+Original link: https://www.indeed.com/viewjob?jk=4d1ce3caa7f2a7a5&q=Blockchain&l=Cambridge,+MA&tk=1cga7pbtsbqclbq0&from=web&advn=2925777763912502&sjdu=l1zMf5orFuiEfU9xTsaKuSd1Za2eo-9UagIn7Lh3RQCuE2a1rrfrTuXYQh7o7PKtWsspc9bpArmVaL6Ixo7vMDCQ8hlDPTwR6Ns8SCidlEdO_mO3YzcvQFOiNG7FLG5cmQt8_kx3omTJy99Vi6QShA&acatk=1cga7po77busgavi&pub=4a1b367933fd867b19b072952f68dceb&vjs=3

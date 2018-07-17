@@ -1,0 +1,26 @@
+Section 1634 of the law specifies that:
+No department, agency, organization, or other element of the Federal Government may use, whether directly or through work with or on behalf of another department, agency, organization, or element of the Federal Government, any hardware, software, or services developed or provided, in whole or in part, by—
+(1) Kaspersky Lab (or any successor entity);
+(2) any entity that controls, is controlled by, or is under common control with Kaspersky Lab; or
+(3) any entity of which Kaspersky Lab has majority ownership.
+All of Uncle Sam's agencies have been given until October 1, 2018, to banish Kaspersky's wares from their systems. The US Secretary of Defense Jim Mattis has a deadline too: he has 180 days to conduct a review on how to remove Kasperskyware from government systems, and then produce a report on how to get the job done. If the Pentagon uses all that time, its guidance is going to land only about three months before the date of expected expunging, which could make life interesting.
+America's drone owner database is baaaack! Just in time for Xmas
+Kaspersky Labs may laugh this one off: its stuff has already mostly been erased by some US government agencies, and it has closed its Washington DC office in anticipation of federal sales efforts being futile.
+Plenty of other cyber-defense stuff
+The Kaspersky ban is just one of “cyberspace-related matters” in Section C of the act. Section 1646 calls for “a description of potential offensive and defensive cyber applications of blockchain technology and other distributed database technologies” along with “an assessment of efforts by foreign powers, extremist organizations, and criminal networks to utilize such technologies.”
+Section 1633 outlines a requirement for the US president to “develop a national policy for the United States relating to cyberspace, cybersecurity, and cyber warfare” that covers:
+Delineation of the instruments of national power available to deter or respond to cyber attacks or other malicious cyber activities by a foreign power or actor;
+Available or planned response options to address the full range of potential cyber attacks on United States interests that could be conducted by potential adversaries of the United States;
+Available or planned denial options that prioritize the defensibility and resiliency against cyber attacks and malicious cyber activities;
+Available or planned cyber capabilities that may be used to impose costs on any foreign power targeting the United States or United States persons with a cyber attack or malicious cyber activity;
+Development of multi-prong response options, such as new defences or weapons.
+There's also a review of “the role of cyber forces in the military strategy, planning, and programming of the United States” and another review of whether US military staff have had sufficient and/or adequate cyber security training.
+Section 1642 gives “the Commander of the United States Cyber Command” the job of conducting revisiting procurement practices for cyber-tools, including “consideration of agile or iterative development practices, agile acquisition practices, and other similar best practices of commercial industry.”
+The Register eagerly anticipates the USA's future blockchain-powered, DevOps-driven cyber defence policy and will report on the various reports as they emerge. We've also asked Kaspersky Lab to comment on the Act and will update this story if the biz has anything of substance to say. ®
+Updated to add
+A Kaspersky Lab spokesperson has sent us the following:
+Kaspersky Lab continues to have serious concerns about Section 1634 of the National Defense Authorization Act due to its geographic-specific approach to cybersecurity, singling out Kaspersky Lab, which we maintain, does little to mitigate information security risks affecting government networks.
+Nevertheless, Kaspersky Lab is assessing its options, while continuing to protect its customers from cyber threats, and collaborating globally with the IT security community to fight cybercrime.
+
+
+Original link: https://www.theregister.co.uk/2017/12/12/us_government_bans_kaspersky/

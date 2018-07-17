@@ -1,0 +1,22 @@
+job title, keywords or company
+city, state, or zip
+Coinbase 3 reviews - San Francisco, CA
+Moving and transacting financial assets safely is core to executing on this. The payments team builds shared infrastructure for Coinbase, GDAX and other business units to securely store and trade billion dollars of assets. We take on hard engineering problems in cryptography, finance, security, blockchain technology and distributed systems, with a focus on building high reliability services for product teams.
+As the Director of Payments, you will lead teams responsible for crypto, fiat, accounting and trading infrastructure for Coinbase. You’ll grow the team to meet the needs of a rapidly growing organization, and mentor senior leaders on the team. You will be a champion of engineering standards and best practices, and be responsible for communicating a multi-year vision for developing payments infrastructure at Coinbase.
+Responsibilities
+Be accountable for payments at the company level and ensure that our business strategy is developed on strong engineering foundations.
+Work with product teams to set the strategy, roadmap and goals for the Payments team, working with leaders across the company.
+Hire great managers and individual contributors, scaling the infrastructure team rapidly to meet the company’s needs.
+Develop and mentor senior engineering leaders, building a positive energy work environment where people can do their best work.
+Requirements
+You’ve led teams of 30+ engineers, building payments infrastructure at scale.
+You’re a strong written and oral communicator.
+You have proven experience attracting and mentoring great managers and senior IC’s
+You have a deep understanding of distributed systems, payment systems and engineering highly reliable and fault tolerant systems.
+You’re passionate about building an open financial system that brings the world together.
+Nice to Haves
+You’re knowledgeable about cryptocurrencies.
+You’ve worked in high security, financial environments.
+
+
+Original link: https://www.indeed.com/viewjob?jk=1f2cee8702151197&tk=1cgd9mc311fkk600&from=serp&vjs=3

@@ -1,0 +1,27 @@
+Ledger Bounty Program
+Security Certification Engineer
+Founded in 2015, Ledger is a leader in security and infrastructure solutions for cryptocurrencies and blockchain applications.  Ledger develops hardware based security solutions. Our environment is fast-paced and exciting. In order to increase our security expertise we’re creating an attack lab and are going to start our Security certification program. To achieve this, we’re looking for an experienced Security Certification Engineer.
+Required profile
+Have a driving and pragmatic personality
+Have good communication skills
+An experience reviewing or writing a PP would definitely be an asset
+Engineer / Master Degree in Computer Science, Electronics, Mathematics or equivalent
+Strong experience in security certification / evaluation
+An experience with CC is a key for the success.
+Missions
+Drive the certification program – security evaluation within CC scheme, CSPN and FIPS140-2
+Write Protection Profiles suited to our products
+Design and implement security procedures
+Define the scope and content of CC documentation (ASE, ARC, ALC,..)
+Review life cycle and contribute to the sites security procedures
+Review documentation provided by the development team
+Follow certification schemes evolutions – Identify and attend dedicated working groups (ISCI-WG1?)
+Job Description
+Location: Paris 2nd (no telecommuting)
+Apply
+To apply, please send your CV (PDF only) as well as a short cover letter to [email protected]  with the subject [JOBS] [CG] Security Certification Engineer
+Founded in 2014, Ledger is a leader in security and infrastructure solutions for cryptocurrencies and blockchain applications. Headquartered in Paris, Vierzon and San Francisco, Ledger has a team of 80 professionals developing a variety of products and services to safeguard cryptocurrency assets for individuals and companies – including the Ledger hardware wallets line already sold in 165 countries.
+LINKS
+
+
+Original link: https://www.ledger.fr/join-us/security-certification-engineer/

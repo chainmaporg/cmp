@@ -1,0 +1,25 @@
+0
+A prolific cyber criminal gang with links to North Korea is targeting employees at cryptocurrency firms in a bid to steal bitcoin.
+The spear-phishing attacks are thought to be the work of The Lazarus Group, a hacking operation believed to be associated with North Korea. The cyber operation has previously been linked to high profile attacks, including the WannaCry ransomware outbreak , a $80m Bangladesh cyber bank heist and 2014's Sony Pictures hack .
+Uncovered by Secureworks, the attacks have targeted employees at at least one London-based cryptocurrency company, in what researchers suggest is an attempt to steal bitcoin.
+"Our inference based on previous activity is that this is the goal of the attack, particularly in light of recent reporting from other sources that North Korea has an increased focus on bitcoin and obtaining bitcoin," Rafe Pilling, senior security researcher at Secureworks told ZDNet.
+A single unit of bitcoin is currently worth over $17, 500 , making it a valuable target for hackers and cyber criminals.
+Researchers note that North Korea has shown active interest in Bitcoin since at least 2013, with usernames and IP addresses in North Korea regularly linked to research into the cryptocurrency, as well as to criminal and espionage campaigns to acquire it.
+The latest round of cyber attacks targets financial executives of cryptocurrency firms with a phishing email purporting to contain information about a Chief Financial Officer position.
+The message contains a Microsoft Word attachment, which when opened tells the user they need to enable editing in order to see the document. If the user follows the instruction, it allows a hidden malicious macro to undertake the next stage of the attack.
+Enabling content allows the malicious macro to begin work.
+Image: Secureworks
+This macro creates a separate decoy document containing the description for a fake CFO role at a European-based Bitcoin company - the decoy appears to be based on the LinkedIn profile of an actual CFO at a cryptocurrency firm in the Far East. Researchers note that the Lazarus Group has previously been known to copy and paste job descriptions from recruitment sites as part of previous campaigns.
+While the user is looking at this document, a Remote Access Trojan is installed in the background, providing the attackers with full access to the victim's computer and allowing the attacker to download additional malware at any point.
+The fake job description looks to be a copy and paste of a similar legitimate role.
+Image: Secureworks
+Researchers say the malware used in this particular campaign looks to be a new form of trojan, potentially crafted for these attacks.
+Nonetheless, the malware appears to share some elements with previous attacks by the Lazarus Group, such as relying on components of the C2 protocol to communicate with command and control servers. This has led to the Secureworks Counter Threat Unit attributing it to Lazarus and North Korea with "high confidence".
+Pilling told ZDNet that the switch in focus to directly targeting cryptocurrency firms in an effort to steal bitcoin demonstrates a change in tactics for the Lazarus Group.
+"The interesting thing here is that the technique and the tactics being used since last summer mark a change in the nature of the lure and the nature of the targeting. Previously, Lazarus used defence-themed lures to target defence organisations, but now they're using bitcoin-themed lures to target financial companies," he said.
+Researchers are still investigating the scale of the campaign, but it's thought that the phishing emails started to be distributed in late October and that attacks are still ongoing.
+In order to protect against falling victim to this type of phishing and malware distribution campaign, Secureworks recommends that training on social engineering is provided,  macros in Word documents are disabled and two-factor authentication is implemented across key systems.
+READ MORE ON CYBER CRIME
+
+
+Original link: http://www.zdnet.com/article/trojan-malware-attacks-by-north-korean-hackers-are-attempting-to-steal-bitcoin/

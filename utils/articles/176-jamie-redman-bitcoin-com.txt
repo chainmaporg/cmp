@@ -1,0 +1,22 @@
+18573
+Bitpay Plans to Use Bitcoin Cash for Payment Invoices and Debit Loads
+On December 15 the largest bitcoin payment processor in the world, Bitpay, announced it will now process payments for multiple blockchains. The first decentralized currency Bitpay has opted to utilize will be bitcoin cash.
+Also read:  Venezuelans Turn to Bitcoin as Government Crackdown on Mining Intensifies
+Bitpay Will Now Process Bitcoin Cash for Merchant Invoices and Debit Card Loads
+Bitpay has made an announcement that’s sure to please bitcoin cash (BCH) supporters as the firm has announced BCH payment processing. This means Bitpay’s merchant invoices and card load ups can be paid in bitcoin cash as soon as the company finishes integration. The company explains they have received multiple requests over the years to support more than one digital asset. The firm believes allowing merchants to accept payments stemming from other blockchains will open up new customer bases. Another reason Bitpay is moving to alternative blockchains is also because of the bitcoin core network’s congestion and high fees .
+“Demand for Bitcoin transactions is outstripping capacity, causing miner fees to rise on the Bitcoin network,” says Bitpay’s announcement.
+With multiple blockchain payment options, our merchants’ customers will be able to choose one with features, confirmation times, and miner fee levels that work for them.     
+‘Bitcoin Cash Has Faster Network Confirmations and Significantly Lower Miner Fees’
+Bitpay says they are not leaving the bitcoin core network behind and will continue to help build that chain. They are researching and developing ideas to make the network transactions more affordable and reliable. This includes assisting various efforts with the Lightning Network and Segregated Witness (Segwit) implementation. Bitpay details that Segwit could help fees drop and speed up the network but right now the situation is complicated.  
+“With average transaction fees already around $20, we understand that Bitcoin alone cannot handle the current demand for blockchain payments,” Bitpay explains.
+Bitcoin Cash is a blockchain created by a fork of the Bitcoin network. It allows for payments with significantly faster network confirmations and significantly lower miner fee costs.
+All Bitpay Invoices Will Default to Bitcoin Cash
+Bitpay reveals the first step for BCH integration will be starting with Bitpay’s Visa card loads. Further in early 2018, all Bitpay invoices will default to a bitcoin cash invoice, but customers will still be able to utilize bitcoin core invoices the company emphasizes. The Atlanta-based firm says they will be notifying the public and its regular merchants well in advance before the launch of bitcoin cash invoice implementation.
+“You will also continue to only receive the settlement type you have chosen, with zero volatility risk from price swings,” Bitpay concludes.
+What do you think about Bitpay integrating bitcoin cash for payment invoices and debit card loads? Let us know what you think in the comments below.
+Images via Shutterstock, Pixabay, and Bitpay. 
+Do you like to research and read about Bitcoin technology? Check out Bitcoin.com ’s Wiki page for an in-depth look at Bitcoin’s innovative technology and interesting history.
+TAGS
+
+
+Original link: https://news.bitcoin.com/bitpay-plans-to-use-bitcoin-cash-for-payment-invoices-and-debit-loads/

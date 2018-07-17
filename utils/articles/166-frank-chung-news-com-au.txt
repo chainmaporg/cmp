@@ -1,0 +1,30 @@
+The WannaCry ransomware attack hit more than 150 countries. Picture: Ritchie B. Tongo/EPASource:AAP
+KIM Jong-un is a bitcoin fan.
+As the worldwide mania continues , experts have warned the brutal North Korean regime is taking a keen interest in getting its hands on as much bitcoin as possible — through “ransomware” attacks such as WannaCry, mining its own, and even theft.
+“It is a fact that North Korea has been attacking virtual currency exchanges,” Korea Internet and Security Agency director Lee Dong-geun told CNN . “We don’t know how much North Korea has stolen so far, but we do know that the police have confirmed the regime’s hacking attempts.”
+Despite 2017 being hailed as the “mainstream” moment for the cryptocurrency — no longer used only by drug dealers and criminals to transact anonymously on the dark web — its decentralised nature has made it attractive to the rogue nation.
+In May this year, hundreds of thousands of computers in more than 150 countries were infected with the WannaCry ransomware virus , which encrypted sensitive data and demanded payment of $US300 in bitcoin for the files to be unlocked.
+The US National Security Agency pinned the attack on North Korea’s intelligence service, the Reconnaissance General Bureau, as an attempt to raise funds for the regime. Shortly after, analysts recorded the first bitcoin “mining” activity coming from the country.
+Mining is the highly energy-intensive process by which computers on the network verify and maintain the blockchain — the public digital ledger which records every bitcoin transaction — and in return are rewarded with new bitcoins every 10 minutes.
+“Before that day, there had been virtually no activity to bitcoin-related sites or nodes, or utilizing bitcoin-specific ports or protocols,” security experts Insikt Group wrote in July.
+“Beginning on May 17, that activity increased exponentially, from nothing to hundreds per day. The timing of this mining is important because it began very soon after the May WannaCry ransomware attacks.
+“By this point, actors within the government would have realised that moving the bitcoin from the three WannaCry ransom accounts would be easy to track and ill-advised if they wished to retain deniability for the attack.”
+North Korean dictator Kim Jong-un. Picture: AFP/KCNA via KNSSource:AFP
+The same month saw the start of North Korean hacking activity targeting cryptocurrency exchanges, which allow users to easily buy, sell and store bitcoin and other currencies. Between May and July, four South Korean exchanges were targeted, with a successful attack in April resulting in four “wallets” on the Yapizon exchange compromised.
+“The spearphishing we have observed in these cases often targets personal email accounts of employees at digital currency exchanges, frequently using tax-themed lures and deploying malware,” security firm FireEye wrote in September .
+“While bitcoin and cryptocurrency exchanges may seem like odd targets for nation state actors interested in funding state coffers, some of the other illicit endeavors North Korea pursues further demonstrate interest in conducting financial crime on the regime’s behalf.
+“North Korea’s Office 39 is involved in activities such as gold smuggling, counterfeiting foreign currency, and even operating restaurants.
+“It should be no surprise that cryptocurrencies, as an emerging asset class, are becoming a target of interest by a regime that operates in many ways like a criminal enterprise. Cyber criminals may no longer be the only nefarious actors in this space.”
+FireEye chief technology officer Bryce Boland told CNN is was unclear how much bitcoin North Korea had amassed, but it was “reasonable to assume some, and the value is increasing significantly at the moment”.
+It came as Bitfinex, one of the world’s largest exchanges, said it was under sustained denial-of-service attack .
+“A person or group is intentionally trying to cause the platform to not operate normally,” it tweeted last week, adding on Friday, “Bitfinex has been under significant denial-of-service attack for the past several days. The attack has recently worsened.”
+On Tuesday, Bitfinex said its API [application programming interface] had gone down. “We are currently under heavy DDOS. API is also down. We are working on further mitigation.”
+Adding to investor nervousness, other exchanges have experienced outages in recent days , including Coinbase, the world’s largest, which temporarily suspended trading in rival cryptocurrencies ethereum and litecoin.
+It came as Australia’s Reserve Bank weighed into the “speculative mania”, which has seen bitcoin’s value skyrocket by more than 1500 per cent this year to nearly $US17,000 , bringing its market capitalisation to more than $US280 billion .
+In a speech to the Australian Payment Summit in Sydney on Wednesday, RBA Governor Philip Lowe said cryptocurrencies were not being commonly used for everyday payments.
+“The value of bitcoin is very volatile, the number of payments that can currently be handled is very low, there are governance problems, the transaction cost involved in making a payment with bitcoin is very high and the estimates of the electricity used in the process of mining the coins are staggering,” Mr Lowe said.
+“When thought of purely as a payment instrument, it seems more likely to be attractive to those who want to make transactions in the black or illegal economy, rather than everyday transactions.
+“So the current fascination with these currencies feels more like a speculative mania than it has to do with their use as an efficient and convenient form of electronic payment.”
+
+
+Original link: http://www.news.com.au/finance/economy/world-economy/bitcoin-boom-could-be-lining-north-koreas-pockets/news-story/139dccb8bcb0456c0717a8f1bc410223

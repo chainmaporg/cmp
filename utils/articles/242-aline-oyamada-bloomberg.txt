@@ -1,0 +1,37 @@
+Email
+Bitcoin trading expanded faster this year in emerging markets than developed ones -- and quickest of all in places where authorities tried to crack down. Somewhere, Satoshi Nakamoto is smiling.
+After all, avoiding bank and government oversight, and sidestepping the eroding effects of inflation, was what Nakamoto had in mind when he (or she, or they) created bitcoin in 2008.
+Peer-to-peer bitcoin trading in major developing nations outpaced the U.S., the world’s biggest market, according to data from LocalBitcoins. Demand surged in China and Russia, where central banks put a stop to local exchange trading; in Venezuela, where authorities cracked down on bitcoin mining even as hyperinflation drove up demand; and in Brazil and Colombia, where citizens heard dire warnings of cryptocurrencies’ risks.
+“The strong interest from emerging-market countries could be reflective of relatively less stable local currencies or a byproduct of greater exposure to financial and economic crises that makes an alternative system like bitcoin relatively appealing,” Spencer Bogart, head of research at Blockchain Capital LLC in San Francisco said.
+Cryptocurrencies don’t rely on central banks or financial institutions and are traded on online exchanges and transferred anywhere in the world, allowing holders to skirt currency controls. Bitcoin’s creators also set a limit to the amount of currency that could be created to avoid the inflation that ensues when central banks print money.
+In China, where regulators closed local exchange operations, peer-to-peer trading rose more than 2,000 percent in dollar terms this year, and in Russia, where President Vladimir Putin
+warned the use of digital currencies bears “serious risks,” it increased by almost 200 percent. Meantime, it grew by about 20 percent in the U.S.
+Bitcoin landed on Wall Street this week, with the launch of futures on Cboe Global Markets Inc.’s exchange, as the 1,700 percent surge in the world’s most popular cryptocurrency this year has captivated everyone from mom-and-pop speculators to trading firms. Similar futures will start trading Dec. 17 at CME Group Inc.’s exchange.
+Bitcoin rose 0.4 percent to $16,825.9 as of 8:03 a.m. in New York.
+Google Trends data also hints at growing interest from emerging-market users, according to Bogart. Five out of the six countries where “bitcoin” has the most search interest are developing nations, he says.
+Nigeria, which sits atop the Trends’ list, saw peer-to-peer transactions rise almost 1,500 percent this year, as the country went through a foreign exchange market overhaul that led the naira to weaken 12.4 percent this year. An almost 1,000 percent rise came in Venezuela, where bitcoin provided a way to skirt the government’s tightening controls on access to U.S. dollars and spiraling inflation that slashes the value of the bolivar.
+Trading volume in such places remains a fraction of larger markets, even after such explosive growth, amounting to about $115 million in Nigeria and $50 million in Venezuela. Global trading stood at $1.9 billion last year, according to LocalBitcoins.
+Emerging markets’ share of total trading volume in LocalBitcoins is increasing. China and Russia combined account for about 40 percent of the market.
+Read more:
+Bitcoin Love Spreads to Latin America’s Richest With New Funds
+Room for arbitrage?
+Surging demand has created price discrepancies. One bitcoin in NairaEx, a local Nigerian exchange, cost 7,230,098 nairas as of Dec. 12. Converted to dollars, the cryptocurrency was more than 15 percent more expensive than a bitcoin in the U.S. 
+Prices were also higher at local exchanges in Russia and Argentina than in the U.S., while they were cheaper in Colombia, Singapore and Brazil.
+Regulation
+issued warnings . 
+Brazil’s central bank last month said in a
+statement , “they are neither issued nor guaranteed by any monetary authority” and therefore, “there is no guarantee that they can be converted to a sovereign currency and they are not backed by any kind of real asset.” Peer-to-peer trading in Latin America’s largest economy rose 450 percent this year. 
+While Colombia’s central bank has also
+said virtual currencies aren’t recognized by authorities and bring risks to financial stability, the peso has weakened more than 3 percent in the past three months, increasing cryptocurrencies’ allure. Turkey and India have also cautioned bitcoin users.
+Of course, it’s not necessarily true that strict regulation is driving demand for cryptocurrencies. It could be the demand came first, thanks to high inflation or long-standing limits on taking cash abroad, and that motivated people to buy bitcoin. Then came the crackdown. 
+The
+surge in bitcoin demand “should at least raise some eyebrows,” given that it doesn’t have the backing of a state and isn’t legal tender, said Agustin Carstens, a general manager at the Bank for International Settlements, and former governor of Mexico’s central bank. 
+Simon Quijano-Evans, an emerging-market strategist at Legal & General Investment Management Ltd., wrote in a
+note in early December that emerging-market central banks must quickly deal with the rise of virtual currencies.
+“Cryptocurrencies stand as a potential challenge to the millennia of confidence-building measures that have gone into the construction of fiat currency,” he wrote.
+(Adds price in eight paragraph.)
+Before it's here, it's on the Bloomberg Terminal. LEARN MORE
+Most Read
+
+
+Original link: https://www.bloomberg.com/news/articles/2017-12-14/bitcoin-trading-thrives-wherever-regulators-crack-down-most

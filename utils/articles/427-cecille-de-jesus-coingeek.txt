@@ -1,0 +1,14 @@
+Blockchain.info now supports Bitcoin Cash
+Business
+December 15, 2017
+The Bitcoin Cash ecosystem is growing—and fast.
+Wallet provider Blockchain has announced yesterday that they are already fully supporting Bitcoin Cash (BCH) due to demand, as they have promised in November.
+“At Blockchain, we’re always looking for ways to empower our users to interact with the digital economy in new, meaningful ways. In November, we revealed our plan to deliver on the growing demand we’ve seen for Bitcoin Cash. Starting today, we’re supporting Bitcoin Cash with full functionality through the same web wallet users know and love,” they wrote in a press release .
+BCH will now be easily accessible alongside ETH and BTC on their web wallet, with mobile support following shortly by the end of first quarter of 2018.
+Barely five months into its existence, Bitcoin Cash (BCH) is quickly gaining traction over the community, as more and more services opt to adopt the fledgling cryptocurrency.
+Last month, fearless non-profit whistleblowing website WikiLeaks started accepting BCH for purchases on their online shop. Shortly after, a community-backed development fund called Bitcoin Cash Fund was launched by Paul Wasensteiner. And with big things planned for next year, the ecosystem is expected to expand further.
+Earlier this month, the Bitcoin Cash developer community released statements echoing a united vision for scaling Bitcoin Cash and fulfilling the core principles behind Satoshi’s Bitcoin. nChain confirmed the long-awaited block size increase from 8Mb to 32Mb, and Bitprim dropped a major gamechanger, saying smart contracts are also on the way for Bitcoin Cash next year.
+Note: Tokens in the SegWit chain are referred to as SegWit1X (BTC) and SegWit Gold (SWG) and are no longer Bitcoin. Bitcoin Cash (BCH) is the only true  Bitcoin  as intended by the original Satoshi white paper.  Bitcoin BCH is the only public block chain that offers safe and cheap microtransactions.
+
+
+Original link: https://coingeek.com/blockchain-info-now-supports-bitcoin-cash/

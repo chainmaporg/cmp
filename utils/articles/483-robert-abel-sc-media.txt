@@ -1,0 +1,15 @@
+Starbucks free Wi-Fi caught secretly mining cryptocurrency
+Buenos Aires Starbucks Free Wi-Fi secretly charges CPU to mine Monero
+A tech CEO noticed the free Wi-Fi at his local Starbucks didn't exactly come without a price after discovering the network was secretly jacking his computing power to mine cryptocurrency.
+Stensul CEO Noah Dinkin grew suspicious of the wireless connection after noticing there was a 10-second delay when connecting to the public Wi-Fi at a Starbucks store in Buenos Aires, Argentina. Dinkin decided to look into the issue and found Coinhive's Monero Miner code in the Starbucks' reward site for Argentina.
+“Hi @Starbucks @StarbucksAr did you know that your in-store wifi provider in Buenos Aires forces a 10 second delay when you first connect to the wifi so it can mine bitcoin using a customer's laptop?,” Dinkin said in a Dec. 2 tweet to the coffee franchise and its CEO. “Feels a little off-brand.. cc @GMFlickinger ”
+Hi @Starbucks @StarbucksAr did you know that your in-store wifi provider in Buenos Aires forces a 10 second delay when you first connect to the wifi so it can mine bitcoin using a customer's laptop? Feels a little off-brand.. cc @GMFlickinger pic.twitter.com/VkVVdSfUtT
+— Noah Dinkin (@imnoah) December 2, 2017
+Starbucks responded to the tweet about a week later claiming that they took action to ensure the internet provider resolved the issue as soon as they were alerted to the incident.
+Starbucks spokesperson Reggie Borges told Motherboard the Wi-Fi wasn't controlled by Starbucks and that his company isn't concerned of this being a widespread issue. It is unclear whether the Starbucks was knowingly running the cryptomining code or if it had been injected by hackers, but some researchers are giving the coffee franchise the benefit of the doubt.
+“It appears as if the Starbucks store wasn't intentionally running the cryptocurrency mining software, rather the internet service provider was either compromised or running it intentionally,” Javvad Malik, security advocate at AlienVault told SC Media. “It goes to highlight once again the threats that lurk in the supply chain.”
+Malik added that the situation also illustrates the lengths criminals will go to in order to gain access to a few seconds of computing power to mine cryptocurrency.
+Topics:
+
+
+Original link: https://www.scmagazine.com/buenos-aires-starbucks-free-wi-fi-secretly-charges-cpu-to-mine-monero/article/718218/

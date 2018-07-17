@@ -1,0 +1,26 @@
+Abra
+ 
+Want to transform the financial industry?  Abra is working on the world’s first multi-currency, multi-crypto mobile wallet that lets you buy, sell, hold, and send fiat and crypto currencies all in the palm of your hand.
+ 
+Position Overview
+As a Senior Software Engineer, you will write server side code that powers Abra’s mobile apps in Scala.  You will build a robust and scalable back-end infrastructure that facilitates digital cash transactions between smartphone users all around the world.  We’re building a high volume transactional system that exposes a simple, usable set of APIs on top of crypto-currencies and associated smart contracts. You will also help with writing test automation to assure that our solutions delight our customers.
+Responsibilities
+Collaboratively identify product requirements and design architecture with Product, UX, and Mobile App development team
+Write server side Scala APIs for crypto-currency transactions
+Write automated tests for those APIs
+Conduct early project scoping and collaborate with cross-functional teams.
+Skills and Requirements
++5 Years in server side development
+Deep expertise in REST and RESTful APIs
+Expertise in Scala a must
+Experience in Java for Test automation
+JBehave or Cucumber, Git, continuous integration tools (Jenkins)
+Ability to work effectively, efficiently and independently with minimal oversight
+Excellent organizational skills and attention to detail
+Strong communication, collaboration and interpersonal skills.
+BS/MS in Computer Science or a related field
+Experience in modern test techniques such as Test and Behavior Driven Development (TDD and BDD)
+Apply for this Job
+
+
+Original link: https://boards.greenhouse.io/abra/jobs/1192298

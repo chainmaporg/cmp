@@ -1,0 +1,30 @@
+job title, keywords or company
+city, state, or zip
+DxChain Network - San Francisco, CA
+About DxChain
+DxChain is a big data and machine learning network powered by a computing-centric blockchain. With a unique chain architecture design and several major innovations, DxChain provides a comprehensive solution for running machine learning algorithms and businesses intelligence on big data and keeping data privacy with security.
+Web: http://www.dxchain.com
+Responsibilities
+As a member of the DxChain engineering team, you will be responsible for:
+Write clean, high quality code and test cases, implement the decentralization, distributed blockchain consensus and syncing protocol
+Use continuous integration technology to build, deploy and test all aspect of the products to ensure high quality delivery
+Strictly adhere to all security protocols and processes and work diligently to protect the assets of the company and its customers
+Monitor, research and evaluate Blockchain technologies
+Qualifications
+Demonstrated hands-on experience with blockchain technology, ideally with Bitcoin, Ethereum and cryptocurrencies in general
+Understanding of mainstream consensus algorithm, including but not limited to PoW, PoR, PoS, DPoS, PBFT, Paxos, Raft and so on
+Proficient of multiple programming languages such as Golang, Python
+Strong knowledge of data structures, algorithms, operating systems, and distributed systems fundamentals.
+Understanding of microservices architecture and Docker infrastructure
+Understanding of security technologies: PKI, Crypto, identity management
+Enthusiasm of working in a high-growth company
+A strong technical background with excellent problem solving and multitasking skills
+Strong sense of ownership, passion to build quality products for massive scale in collaborative, agile environment and excitement to learn
+Job Type: Full-time
+28 days ago - save job
+Apply Now
+Please review all application instructions before applying to DxChain Network.
+Other jobs you may like
+
+
+Original link: https://www.indeed.com/cmp/DxChain-Network/jobs/Blockchain-Software-Engineer-de53c3f83f52c097?sjdu=QwrRXKrqZ3CNX5W-O9jEvQuE2rFhn5Wnm_ekCrUH0R9U0MvPnWzUHuAiqcA3FJ58gF4FJuzTh62YM2aaESUm7BGvbbOLWZxrB8f9W0oyrAI&tk=1cgd5s9o01fkk45c&vjs=3

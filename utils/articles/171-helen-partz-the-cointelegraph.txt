@@ -1,0 +1,18 @@
+Corporate Shareholders in Russia to Vote Via Blockchain
+Russian developers make Blockchain E-voting solution for corporate shareholders.
+23393 Total views
+295 Total shares
+According to local sources, Russia  has become one of the first countries to develop an online system for corporate E-voting based on Distributed Ledger ( Blockchain ) Technology. The system is designed by DataArt and The National Settlement Depository (NSD), a member of the Moscow Exchange Group.
+The technology will allow shareholders of publicly traded companies to vote on corporate matters entirely transparently while preserving shareholders’ anonymity.
+System years in the making
+Last year the E-proxy voting system was successfully tested in Russia by the NSD. The voting system was built on three conditions: every participant should know that their vote is accounted for; no participants should know the decisions of the others; all data should be immutably stored.
+The NSD announced back then that their tests were successful, but that in order for the project to be fully realized more time and legislation changes were necessary. There were also technical concerns about how to keep some information hidden from participants, such as transaction value or provisional results of voting.
+The NSD and DataArt developers have solved these problems by integrating zero-knowledge proof technology into Hyperledger Fabric platform . This integration will allow keeping shareholders’ privacy and at the same time will help to avoid voter fraud. Denis Baranov, the Principal Consultant at DataArt, says that the E-proxy voting application will be available for public access in a couple of months.
+However, the project is still facing some constraints, the most complex of which is that the process and the results of the E-voting should be legally enforced.
+Blockchain in Russia
+In the past year, the Russian government has shown clear interest in developing Blockchain technology in the country, both in the public and private sectors. However, the government’s official position on cryptocurrency is much more cautious, generally referring to it as a highly risky investment in need of regulation.
+Notably, for at least a year the Russian state, Duma has had an interdepartmental working group dedicated to exploring digital currencies,  assessing risk and researching solutions for regulation.
+Follow us on:
+
+
+Original link: https://cointelegraph.com/news/corporate-shareholders-in-russia-to-vote-via-blockchain

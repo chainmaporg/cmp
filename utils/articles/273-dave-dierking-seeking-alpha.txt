@@ -1,0 +1,21 @@
+The State Of The Bitcoin ETF Race
+
+Summary
+Bitcoin futures began trading on the CBOE on December 10th clearing the way for a potential bitcoin ETF to finally get approved.
+
+More than a dozen bitcoin ETF filings have already been made.
+
+Ironically, several bitcoin ETFs could hit the market before the Winklevoss Bitcoin ETF.
+
+Could the first bitcoin ETF come from Canada?
+
+I break down all of the bitcoin ETF filings, their latest status, and how likely they could be to become the first fund launched.
+
+The timeline for approval of the first bitcoin ETF got a little shorter this past Sunday evening as futures contracts based on bitcoin began trading on the CBOE. While trading volume didn’t exactly blow the doors off, the January 2018 contract had a trading volume of about 4000 contracts after roughly the first day, the initial action was relatively brisk for a brand new product. Perhaps the most notable event from the first day of trading was that the January contract price was volatile enough that trading had to be halted multiple times in accordance with CBOE rules. As of this writing, the futures contract price was more than $1000 above the spot price, indicating that traders expect the rally in bitcoin to continue.
+
+What the launch of bitcoin futures does is it puts a more definitive timeframe around the debut of the first bitcoin ETF. I suppose “definitive” may not be the best word to use given that an ETF hasn’t even been approved by the SEC yet, but the bitcoin futures contract gives regulators an underlying asset that they’re likely more comfortable working with in establishing an exchange-traded product.
+
+One of the concerns around the original bitcoin ETF filing, the Winklevoss Bitcoin Trust ETF (COIN), was that it would be storing an asset unregulated by the SEC. Another concern is the physical safekeeping of the digital currency. Just recently, hackers made off with about $75 million worth of bitcoin from the cryptocurrency marketplace NiceHash. About a month ago, Parity, a maker of open-source digital currency wallets, inadvertently locked up more than $150 million in ethereum tokens due to a technical glitch. Now, SEC regulation isn’t necessarily going to impact the ability of hackers to steal digital currencies or prevent computer errors from taking place. But the SEC’s job in approving products is to protect investors, and these types of activities likely aren’t going to do any favors to those ETF filings that look to store actual bitcoin. Bitcoin futures help ease some of that concern by building an ETF that will use a regulated asset as part of its strategy.
+
+
+Original link: https://seekingalpha.com/article/4131814-state-bitcoin-etf-race

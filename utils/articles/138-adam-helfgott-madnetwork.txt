@@ -1,0 +1,14 @@
+Dec 16, 2017
+Phase 1 of the MAD Network Token Sale is Completed
+We’re excited to announce that the first phase of our token launch has officially closed! We hit our 7 million USD raise goal around 10 p.m. EST, just 36 hours after we opened up the first phase. Our community successfully claimed 28,000,000 MADtoken over the course of this phase.
+We would like to thank all of our supporters who worked alongside our team throughout this process. The number of individuals who share our passion for restructuring incentives within the ad tech industry was astounding. We’re confident that a large, engaged community will help us achieve our goals quickly.
+Confirmation emails for participants have been sent out. If you have any questions regarding your purchase, please reach out to us at contact [at] madnetwork.io
+All Phase 1 participants will receive their tokens no later than 60 days after the end of the sale. MADtoken is an ERC20 equivalent token so you will be able to store it and transfer it from any ERC20 compatible wallet. We recommend using MyEtherWallet, Jaxx, and MetaMask. You can always check your MADtoken balance by logging into the token portal . Please make sure you registered a proper ERC20 address on CoinCart.co . If you haven’t, please reach out to us and we’ll get it sorted for you.
+Participants from the United States must be accredited investors. Verifying accreditation is easy and can be done within our token portal. If CoinCart asks you to manually verify identity, please contact our team immediately at contact [at] madnetwork.io and we will take work alongside with you to get everything resolved quickly.
+Moving Forward
+The remainder of MADtoken will be made available in separate phases to both ICO platforms and industry partners. Cooperating with ICO platforms in international markets allows us to have a geographically wide token distribution. Having proper representation abroad, in turn, allows us grow the value of our network much quicker. Similarly, we have reserved MADtoken for strategic partners within the media and advertising industries. This will also allow us to grow the value of the MAD Network quickly, as we’ll be able to leverage their expertise to on-board enterprise users.
+We plan to complete all phases of the sale and get MADtoken into every participant’s hands no later than 60 after the sale ends. All proceeds raised throughout the token sale will be deployed towards further developing the MAD Network, starting with our decentralized payment rail, MADnet Books . For a full breakdown of how we intend to allocate the funds, please read our token sale terms .
+Thank you! None of this would be possible without the amazing support of our community. We’re thrilled to have you alongside us in our mission to decentralize ad tech.
+
+
+Original link: https://blog.madnetwork.io/phase-1-of-the-mad-network-token-sale-is-completed-fc3b2dd5586e

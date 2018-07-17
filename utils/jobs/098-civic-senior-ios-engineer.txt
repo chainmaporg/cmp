@@ -1,0 +1,33 @@
+Engineering
+San Francisco, CA, USA
+Civic has built a visionary blockchain identity verification technology that allows consumers to authorize the use of their identities in real-time. We are spearheading the development of an ecosystem that is designed to facilitate on-demand, secure, and low-cost access to identity verification services via the blockchain. 
+Civic’s mission is to provide every person on Earth with a digital identity that they can use to interact privately and securely with the world.  We envision a world where people can decide who they want to share their personal information with and what information gets shared.
+We have created a revolutionary platform to achieve this based on blockchain technology and have recently conducted one of the most well respected token sales in history!  We sold $33m worth of tokens that will allow us to deliver a Marketplace for transaction of trusted identities. This Marketplace will change both the economics and user experience of how trusted identity is used forever, opening up new use cases for how we  use identity.  For further reference on our token sale and how the ecosystem will work please click here and to read our whitepaper, click here . 
+This is a truly unique opportunity to join our team and shape the future of Civic as we begin a massive growth phase in the company.
+Help us shape the future of identity verification on the blockchain with Civic. We are looking for a Sr. iOS engineer who will help us build amazing, stable, and beautiful products as well as conduct code reviews, promote code quality and collaborate and work well with others.
+Role Description: 
+Create compelling features that leverage biometrics, identity and blockchain technology
+Design lasting solutions and write clean, maintainable, and testable code
+Collaborate with other iOS engineers, working efficiently as part of local and remote teams
+You'll work fast yet are a perfectionist when it comes to your end product
+Requirements:
+Strong experience in Swift
+Experience writing functional code
+Exhibit deep understanding of development tool chains, including ability to setup continuous integration for iOS apps
+A varied portfolio of iOS apps (point us to your work in the App Store)
+Attention to detail when building UI
+Primary frameworks and technologies: Swift, Realm, RxSwift or similar, Nimble, Quick, Texture (AsyncDisplayKit)
+Very low dependence on Interface Builder and Storyboards - ability to build apps without reliance on Nibs.
+Strong asynchronous coding skills
+Ability to work with a remote team that relies heavily on tools such as Slack, Jira and Git
+A good self organizer and self starter with strong confidence in building & maintaining complex code
+Good experience with unit and integration testing
+Experience with cloud computing providers such as Amazon Web Services 
+Familiarity with Bitcoin, Ethereum, Hyperledger and crypto ledger technologies
+Remind me to apply later
+clear
+Type your email address below to receive a reminder
+Email
+
+
+Original link: https://hire.withgoogle.com/public/jobs/civiccom/view/P_AAAAAADAAADBFH3qrCR-5F

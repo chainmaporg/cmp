@@ -1,0 +1,36 @@
+GOP tax bill blocks potential bitcoin gains gambit
+A provision in the congressional tax bill would limit "like-kind" exchanges to real estate.
+Even if you don't receive official notice of your taxable gains, you need to report them to the IRS.
+Typically, the IRS has up to three years after you file your taxes to begin an audit.
+Published  2:23  PM ET Thu, 14 Dec 2017
+Updated   7:58  AM ET Fri, 15 Dec 2017
+CNBC.com
+Getty Images
+A Bitcoin conference in New York.
+With bitcoin 's meteoric rise in value, some investors are wondering if using it to purchase another digital asset means they can delay paying taxes on their gains.
+Under the Republican tax bill expected to be voted on next week, the answer is no.
+Because the IRS views bitcoin as property rather than a currency for tax purposes, there's been discussion about whether a certain kind of transaction known as a 1031 exchange can apply to bitcoin and its brethren.
+A 1031 exchange allows taxpayers to exchange one type of asset for a similar one, thereby postponing capital gains taxes. The asset also must be used for business or investment purposes and meet other requirements.
+In simple terms, such an exchange can result in getting taxed at a lower rate when the new asset is eventually sold.
+show chapters
+10:50  AM ET Wed, 17 Jan 2018 |  01:29
+"Some people think, 'I'm taking my bitcoin, which the IRS has deemed to be property, swapping it for another property and doing it for investment reasons,' so it sounds like it could be a 1031 exchange," said Evan Fox, tax manager at New York accounting firm Berdon. "I think it's a stretch."
+While tax professionals have been waiting for further guidance from the IRS on whether digital assets like bitcoin, ethereum and litecoin qualify for such swaps, a provision in the tax bill renders the question moot because it explicitly limits 1031 exchanges to real estate.
+It's no wonder that cryptocurrency investors would be exploring ways to minimize their tax bill. So far this year, bitcoin has surged to more than $16,000 as of Thursday morning from $997 (and from less than a dollar in 2010). For investors who have unloaded it this year — whether by cashing out, purchasing goods and services or using it to buy other digital assets — there's a good chance you owe taxes on your gains. (Click on chart below to enlarge.)
+For investments held less than a year, gains are considered short term and taxed as ordinary income. Depending on your bracket for 2017, that could range from a tax rate of 10 percent to 39.6 percent.
+Any bitcoin you sold or spent after owning it for more than one year is taxed as a long-term gain. Taxable rates on those gains range from 0 to 20 percent, with higher-income households paying the highest rate.
+Unlike many other investments, investors in digital assets like bitcoin typically do not receive a Form 1099 that shows their taxable gains, meaning that self-reporting is necessary. When a 1099 is issued by a bank or brokerage to an investor, it also goes to the IRS.
+Fox cautions that just because you don't receive that form, or you move your investment from one crypto asset to another, it would be foolhardy to assume you can hide your gains from the IRS forever.
+show chapters
+5:10  PM ET Wed, 13 Dec 2017 |  00:49
+"If you put money into the cryptocurrency space, and you decide to buy [another digital asset], and you one day monetize it and show up with a $2 million house, the IRS is not stupid," Fox said. "Money doesn't just appear out of nowhere."
+Along with other federal agencies, the IRS has ramped up efforts to get a handle on the burgeoning world of cryptocurrencies. Since 2015, it has employed a company, Chainalysis, to help it track and analyze bitcoin transactions, according to various published reports.
+Evans also said that because the IRS has three years to conduct an audit, it could be a while before you're 2017 tax return is questioned.
+"It's going to be interesting to see how much reporting occurs this year." -Evan Fox, tax manager at Berdon
+"If a few years from now the IRS is able to decode what happened, and you made a significant amount of money in 2017 and didn't report it, you'll face interest and penalties that have been accruing," Evans said. "It might be a risk some people want to take, but there are some bad consequences if you get caught."
+In an examination of tax returns from 2013 to 2015, the IRS found that in each year only about 800 taxpayers claimed bitcoin gains. During that time, it rose to $430 from about $13.
+"It's going to be interesting to see how much reporting occurs this year," Fox said.
+More from Personal Finance:
+
+
+Original link: https://www.cnbc.com/2017/12/14/gop-tax-bill-blocks-potential-bitcoin-gains-gambit.html

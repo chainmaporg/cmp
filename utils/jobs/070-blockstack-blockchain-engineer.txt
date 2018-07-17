@@ -1,0 +1,13 @@
+New York, NY or Remote
+Engineering
+Apply for this job
+Blockstack is a new internet for decentralized apps. With Blockstack, you own your data and maintain your privacy, security and freedom. Blockstack is open source project and a public benefit corporation. Learn more.
+Blockstack is looking for a passionate and experienced distributed systems engineer to join a team of experts to implement a new blockchain architecture for Blockstack apps, decreasing transaction time and cost for the Blockstack ecosystem, while enabling new functionality. This role is ideal for engineers who are experts in peer-to-peer protocol development, familiar with the bitcoin blockchain, and keen to build a clean-slate system from the ground up.
+You will:
+- Research, strategize and educate on methodology and best practices for blockchain design, implementation, and deployment
+- Collaborate with a team and open source community to design and build the Stacks blockchain with the following design goals:
+- Decreased transaction times and costs
+- Programmable payment systems
+
+
+Original link: https://jobs.lever.co/blockstack/7a54de2d-3940-4af0-a9f9-224301a6018e

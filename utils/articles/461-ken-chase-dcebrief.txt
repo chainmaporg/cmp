@@ -1,0 +1,16 @@
+Bitfinex, Coinbase Services Disrupted as Crypto Price Volatility Continues
+Home » Bitcoin » Bitfinex, Coinbase Services Disrupted as Crypto Price Volatility Continues
+Posted on Dec 12, 2017
+ 
+Two of the world’s largest digital currency exchanges experienced partial service outages on Tuesday, amid increased interest in many of the top cryptocurrencies. In a Twitter announcement, Bitfinex claimed  that it was suffering a “heavy” denial-of-service attack. It also confirmed that its API was down. Meanwhile, Coinbase acknowledged that its operations were experiencing a partial system outage.
+Today is not the first time that Bitfinex claimed to have suffered a DDOS attack. The exchange reportedly experienced similar attacks in recent weeks, resulting in temporary outages in late November and earlier this month. In its Twitter announcement, the company claimed to be “working on further mitigation.”
+There was no indication that Coinbase suffered similar cyber attacks, but the company’s website announced a “partial system outage” early Tuesday. The exchange also temporarily paused Litecoin and Ethereum trading on Tuesday amid heavy trading, though trading support resumed a short while later.
+At press time, the Coinbase support page continued to display a partial system outage message, but the problem seemed to be confined to issues related to “ID document verification” delays “due to high traffic.”
+Coinbase suggested last week in a blog post that its customers might experience downtime issues in the coming weeks, as interest in cryptocurrencies continues to surge. While noting that the company has made significant investments in its infrastructure, the post said:
+“Despite the sizable and ongoing increases in our technical infrastructure and engineering staff, we wanted to remind customers that access to Coinbase services may become degraded or unavailable during times of significant volatility or volume. This could result in the inability to buy or sell for periods of time.”
+Author: Ken Chase
+Freelance writer whose interests include topics ranging from technology and finance to politics, fitness, and all things canine. Aspiring polymath, semi-professional skeptic, and passionate advocate for the judicious use of the Oxford comma.
+Share This Post On
+
+
+Original link: https://dcebrief.com/bitfinex-coinbase-services-disrupted-as-crypto-price-volatility-continues/

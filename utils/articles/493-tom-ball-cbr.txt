@@ -1,0 +1,12 @@
+Barclays, Reuters bet on Ethereum blockchain for MiFID II compliance
+Increase / Decrease text size
+Add to favorites
+MiFID II arrives on the 3rd of January 2018 and the Ethereum based project is planned to be complete at the end of that month.
+Barclays and Thomson Reuters are two major organisations among a group of others looking to leverage Ethereum smart contracts to achieve MiFID II compliance.
+KBC and Credit Suisse are also part of the initiative, aiming to use the cutting edge technology to put a Legal Entity Identified (LEI) in place, a requirement of the directive that arrives on the 3rd of January 2018.
+The blockchain technology behind Ethereum smart contracts is expected to be able to enhance the process of carrying out the monumental task of gaining the LEI. The process will require extensive data reconciliation, an undertaking that could be transformed by smart contracts.
+Christophe Tummers, Head Service Line Data, UBS, said: “Traditionally, a firm such as ours quality checks data against multiple sources but we do not have a quality baseline against peers. Through using blockchain-inspired smart contracts, the reconciliation of data can happen in almost real-time for all participants, anonymously.”
+The process involves a Microsoft Azure backed Ethereum private blockchain and cryptographic concealment is set to be used to guard the LEI data held by the organisations involved in the project. With the regulation landing in early January, the end of that month is the target for the project’s release.
+
+
+Original link: https://www.cbronline.com/news/barclays-reuters-ethereum-mifid-ii

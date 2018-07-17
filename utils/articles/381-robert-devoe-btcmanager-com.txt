@@ -1,0 +1,17 @@
+by Robert DeVoe
+According to a press release from the New York County District Attorney’s Office, a New Jersey man has been arrested for the theft of $1.8 million worth of Ethereum’s cryptocurrency, ether (ETH). The suspect in question, Louis Meza, is currently charged with grand larceny, kidnapping, robbery, criminal use of a firearm, illegal possession of stolen property, burglary, computer trespass, and computer tampering.
+Ether Cache Stolen in Armed Robbery
+While most people today are concerned about cryptocurrency being stolen through hacks on exchanges or other intermediaries, the truth is that our blockchain assets are still at risk from traditional forms of theft such as burglary and robbery. An unarmed victim in New Jersey who lost $1.8 million worth of ether from a kidnapping and robbery, just learned this unfortunate lesson.
+With the help of a currently unapprehended accomplice, the suspect managed to acquire all the information necessary to steal the ether from the victim’s hardware wallet. After luring the victim into a minivan, the accomplice pointed a gun at the victim and forcefully extracted the victims 24-word seed phrase to his hardware wallet.
+Louis Meza then took the victim’s stolen house keys, acquired the hardware wallet, and used the 24-word seed phrase to gain access to and transfer all of the victim’s Ethereum units to his account.
+Advertisement
+advertisement
+Bad Operational Security?
+Official reports state that the suspect and victim knew each other and may have even been friends. From this, it is easy to surmise that the victim was bragging or showing off all of the newly found wealth they had. The suspect, potentially desperate for money or perhaps filled with greed due to the incredibly high value of the assets, then used this information to commit the crime.
+What other cryptocurrency investors should take note from this circumstance is that not only should you keep your assets secure digitally (such as using a hardware wallet) but you should also maintain better operational security by limiting who knows about your assets, how your assets are stored, and how to gain access to them.
+Meza Faces Serious Prison Time
+If found guilty, Louis Meza could stand to face prison times at a minimum of one year just for the grand larceny charge. These charges could be extended all the way up to 25 years depending on if the crime was premeditated and what sort of criminal history Meza may have. If officials include the additional charges of kidnapping, robbery, and firearms charges, the suspect could face jail time in the decades.
+According to his Facebook page , the culprit is a married Bronx native who studied culinary arts at The Art Institutes right after high school. He was following updates from Kraken, Siacoin, Salt Lending, and CoinLaunch. There has been no activity on his Facebook page since March 3rd. Police officials are currently holding Meza on a $1 million bond, or $500,000 cash bail.
+
+
+Original link: https://btcmanager.com/nj-man-steals-1-8-million-ether-victim-gunpoint/

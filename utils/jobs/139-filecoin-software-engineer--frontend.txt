@@ -1,0 +1,25 @@
+Hiring excellent Frontend Engineers to build web and desktop interfaces for the decentralized web.
+Engineering at Protocol Labs
+Engineering at Protocol Labs is not just about writing world-class code. We create software systems that tackle significant challenges. We aim to solve those challenges with new technology breakthroughs and great user experience design.  We believe in an open-source approach to creation. We strike a balance between pragmatism (put it on a ship ⛴), deeply informed protocol design, and strict application of strong engineering principles. All of this happens in an environment defined by curiosity, passion, and a love for open source.
+Some examples of software you might work on are the community-facing websites for Protocol Labs, IPFS and Filecoin, the IPFS web-based UI that ships with all IPFS nodes, client software for the Filecoin storage network, completely new tools for storing and sharing files, and the Interactive documentation for the many APIs and protocols we publish.
+As a Frontend Software Engineer at Protocol Labs you might...
+Work with product teams to build mobile and desktop interfaces for decentralized web technologies like IPFS, Filecoin and libp2p.
+Collaborate with Designers, Product Managers, and fellow Software Engineers to deliver compelling user-facing products
+Participate in product teams throughout the iterative design-development cycle
+Take mockups and implement them pixel perfectly across browsers
+Build efficient and reusable front-end systems and abstractions
+Identify and communicate front-end best practices
+You may be a fit for this role if you have...
+Deep experience with JavaScript (including modern libraries and tooling)
+Commanding grasp of HTML, CSS and related web technologies
+Awareness of cross-browser compatibility issues and client-side performance considerations
+Demonstrated design and UX sensibilities
+Excellent written and verbal communication skills
+Bonus Points
+Experience working and contributing to Open Source projects 
+What it's like to work at Protocol Labs?
+Protocol Labs mission is to improve humanity’s most important technology, the Internet. We build protocols, systems, and tools to improve how it works. Today, we are focused on how we store, locate, and move information. Our projects include IPFS, Filecoin, libp2p, and more.
+As a distributed team, we hire anywhere in the world, and at various levels of experience (entry, senior, staff). We look for people with unique perspectives and diverse backgrounds.
+
+
+Original link: https://jobs.lever.co/protocol/362ae2fd-24a5-49cf-b19c-6d98aa43556a

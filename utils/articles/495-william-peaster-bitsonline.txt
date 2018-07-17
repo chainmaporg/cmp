@@ -1,0 +1,31 @@
+December 14, 2017 by William Peaster 0 Comment 2529 Views
+In an unfortunate but inevitable first for the cryptocurrency space, a New York woman was just indicted on five counts pertaining to her use of bitcoins as part of a scheme to funnel money to the internationally-recognized terror group Islamic State of Iraq and al-Sham (ISIS). Critics will surely try to link bitcoin with terrorism in the days to come accordingly. 
+Join the  Bitsonline Telegram channel  to get the latest Bitcoin, cryptocurrency, and tech news updates:  https://t.me/bitsonline
+The Infamous First
+Per a December 14th press release issued from the United States Attorney’s Office Eastern District of New York, 27-year-old Long Island resident Zoobia Shahnaz was indicted on five charges related to her alleged involvement in an ISIS funding scheme.
+Specifically, Shahnaz’s charges were 1) three counts of money laundering 2) one count of conspiracy to commit money laundering and 3) one count of bank fraud.
+Shahnaz’s alleged to have funneled thousands of stolen dollars into bitcoins and other as-yet undisclosed cryptocurrencies in order to hide the origins of the funds. Afterward, the woman is said to have withdrawn newly “cleaned” cash, sending the ensuing funds to ISIS-affiliated “shell entities in Pakistan, China and Turkey.”
+To this end, cryptocurrency was only a small aspect of her apparent workflow; the girth of her legal transgressions pertain to fiat wire transfers to shell companies that are known sponsors of terrorism.
+The press release on Shahnaz’s charges.
+Per Bridget M. Rohde, Acting United States Attorney for the Eastern District of New York:
+“As alleged, the defendant Zoobia Shahnaz engaged in a bank fraud scheme, purchased bitcoin and other cryptocurrencies and laundered money overseas, intending to put thousands of dollars into the coffers of terrorists.”
+“The indictment reflects the resolve of this Office, together with our law enforcement partners, to investigate and prosecute anyone who would seek to support terrorists, including those who would perpetrate financial crimes to do so.”
+FBI Assistant Director-in-Charge William F. Sweeney also specifically touched upon the use of cryptocurrencies in Shahnaz’s now-botched ploy:
+“The subject in this investigation was allegedly so determined to assist ISIS that she planned a covert, illegal entry into Syria. On top of which, she allegedly tried to launder virtual currency to bolster terrorists’ dwindling financial support. The FBI New York Joint Terrorism Task Force kept this woman from her dangerous and potentially deadly goal. We will do all we can to stop the next person hoping to do the same.”
+Details on Shahnaz’s Scheme
+Shahnaz’s road to infamy began after she apparently provided false documents to fraudulently assume $22,500 USD.
+With these funds, in combination with more than 10 credit cards, the woman bought $62,000 worth of bitcoins and other cryptocurrencies.
+Again, the idea was to hide her bank fraud. Shahnaz wanted to retrieve cash that wasn’t readily marked as stolen. After all was said and done, Shahnaz was able to accrue enough fiat to send $150,000 to overseas shell companies linked to ISIS.
+Curiously, the woman turned to the crypto ecosystem for an acute fix to her criminal dilemma, but she didn’t use some of the space’s more privacy-minded features, like coin tumbling services. Instead, she chose to revert back to fiat — old habits dying hard, as the saying goes.
+Why It Matters
+This is the cryptocurrency space’s first high-profile terrorism case with filed charges that is directly linked to bitcoin and other digital currencies.
+It’s certainly unneeded PR at a time when Bitcoin users are already nervous over potential regulatory decisions in South Korea and the United States, for example. The episode will give ammunition to some critics’ absurd stereotyping of cryptocurrencies as being mainly for crime.
+But, as Bitcoin’s resident scholar Andreas Antonopoulos pointed out during a recent conference talk , critics leveled the same accusation against the dawn of the internet back in the 1990s.
+New York woman charged with sending $85,000 in Bitcoin to support ISIS ☠️ #Terrorism @warriors_mom https://t.co/qyTJT7W9VA
+— Tamara Davis ?? (@warriors_mom) December 15, 2017
+Criminals use the innovative tech that the rest of us use, to be sure. But some politicians and regulators will surely point to Shahnaz’s case as a reason to “throw the baby out with the bath water,” as it were.
+What do you think? Will there be more cases like Shahnaz’s in the days to come? Sound off in the comments below!
+Images via Justice.gov, The Guardian
+
+
+Original link: https://www.bitsonline.com/woman-indicted-bitcoin-terrorism/

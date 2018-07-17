@@ -1,0 +1,15 @@
+by Sofiko Abeslamidze on Thursday, December 14th, 2017 8:31pm UTC Leave a comment
+Photo: Mike Seyfang / Flickr
+Japanese multi-modal transport group, Mitsui O.S.K. Lines, is now investigating possibilities of blockchain technology to perform international transactions.
+Tweet
+On its official website, MOL Ltd recently has announced the intention to join cryptocurrency community and provide exposure to new cost-effective ways of payment. Before implementing of the blockchain-based application to perform its cross-border trade operations, the company is going to test it, in order to verify its effectiveness to reduce time-consuming paperwork and administrative expenses.
+During that trial, the blockchain will be used as a digital ledger of real trade transactions. The whole package of company’s documentation including trade agreements and insurance is going to be recorded and remitted from peer-to-peer within blockchain track. The main idea of these actions is to compare the conventional system of information circulation to brand-new blockchain technology and to prove the competitiveness of the last one.
+As previously detailed, the blockchain is the new fast-growing trend occuring within business enveroment. Due to blockchain system transaction can be delivered just in a matter of second all around the globe without any regulations and restrictions imposed by banking system or government. Boundlessness and cheapness are the greatest advantages, which helps blockchain technology to win over a devoted clientele.
+Seeking to respond to the challenges and requirements of the market Mitsui O.S.K. Lines in collaborations with IBM Japan, Ltd, the Japan Research Institute, Sumitomo Mitsui Financial Group (SMFG), Sumitomo Mitsui Banking Corporation aims to keep in pace with the innovations and struggle to supply their customers with the best marine transportation services at the profitable price.
+As the experienced and high-reputed market player, the Japanese shipping giant wants to combine both gathered expertise of global trade and the cutting-age blockchain technology to storm new hills of international business. Among the company’s primary goals are safety and security which blockchain easily withstands.
+To conduct the trial company will use the Hyperledger Fabric blockchain framework, which is developed by the Linux Foundation-led Hyperledger blockchain consortium. Hyperledger is an open-source platform, designed to develop cross-industry blockchain technologies. It has drawn members from various industries including banking, “internet of things” and supply chain, and now ocean shipping service joins the list. Earlier SMFG successfully tested a prototype using distributed ledger technology (DLT) to streamline international transaction agreements.
+Time shows whether the field of marine transportation will put the framework into practice, but the steps to diverge from the regular banking system through blockchain are taken.
+You May Also Like
+
+
+Original link: https://www.coinspeaker.com/2017/12/14/japanese-shipping-giant-mitsui-ibm-now-use-blockchain-tech-transporting/

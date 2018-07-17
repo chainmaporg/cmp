@@ -1,0 +1,18 @@
+Berlin, Germany · Software Development
+Description
+Parity Technologies creates core blockchain infrastructure, which means that we write the underlying software that runs blockchains, but we also write and maintain Front-end apps (and Dapps) to interact with these blockchains. If you’re passionate about making great user experiences in a highly technical field and have an interest in blockchain, this job is for you.
+You will be responsible for using the APIs of a blockchain node, like the Parity client for Ethereum-like network, the Polkadot or Bitcoin clients, and making or contributing to existing front-ends for things like voting, wallets or other ways to interact with a blockchain. So far we have written all our apps using React.
+Requirements
+Ability to write high quality client-side JavaScript code, HTML5 & CSS3
+Experience creating user interfaces with a focus on UX
+Experience with JavaScript testing (Mocha, Jasmine, Selenium)
+Experience with JavaScript frameworks like React, Meteor and Angular
+Familiarity with NodeJS, Webpack and modern JavaScript tooling
+Experience interfacing with RPC APIs
+Willing to relocate to Berlin or London
+NICE-TO-HAVES
+Experience with backend development in languages such as Rust/C/C++/Python
+Experience making Dapps
+
+
+Original link: https://parity-technologies-deutschland-gmbh.workable.com/j/64CA35B673

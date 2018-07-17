@@ -1,0 +1,47 @@
+Provenance is looking for a Front-end Developer!
+Location: Provenance HQ, Kings Cross
+Reporting to: CTO
+Contract: Full-time position starting as soon as possible
+Equal opportunities: Provenance is dedicated to creating a diverse environment and is proud to be an equal opportunity employer.
+About us:
+Provenance empowers brands to increase trust, using revolutionary technologies for greater supply chain transparency. Our software lets brands bring the origin and histories of products to the point of sale. At Provenance, we envision a future where every great product comes with accessible, verifiable information about its history and creation, helping us all make positive choices about the things we buy.
+Overview of the Front-end Developer role:
+We are looking for an experienced Frontend Developer to help us build the future of brand trust. The focus of this role will be on developing the core interface and features of our SaaS product across marketing pages, content management tools and suite of embeddable, shopper-facing experiences.
+This is an exciting and challenging role within a growing team, supporting a rapidly evolving platform. You will start as the only interface developer in the team and as such, you will need to be able to balance attention to detail and maintaining quality in a rapidly changing codebase with a pragmatic approach to shipping improvements and features.
+With an interest in sustainability and future facing technologies, the ideal candidate will have hands-on experience in developing responsive (mobile first) web interfaces, implementing component-based architectures, working with templating languages and writing unobtrusive Javascript. You will approach new technologies with excitement and will very quickly have the opportunity to interact with our blockchain infrastructure as part of this role.
+You will be reporting to the CTO with daily interactions with the rest of the product team (designers, developers and community engagement team) working in two week Agile sprints.
+Provenance is working at the intersection of physical and digital along product supply chains (mostly in food, drinks, but also fashion and furniture). So a love of how things are made, and a keen interest in sustainability / social and environmental impact in the creation of physical products is a big plus.
+Tasks:
+Front end web development: mobile-first, responsive, component-based
+Developing new features through a lean, test-first, iterative approach
+Proactive bug fixing and improvements to ensure our users have a great experience using our tools
+Refactoring to ensure the codebase grows in a consistent, maintainable way
+Ensuring interfaces work well across modern browsers
+Champion the introduction of new technologies, techniques and best practices in web development
+Your profile:
+Experienced front-end web application developer (at least 3 years building products and services on the web)
+Strong knowledge of core web technologies: HTML5, CSS3 and Javascript
+Familiarity with modern Javascript (ideally exposure to ES6 and React) – comfortable with vanilla JS rather than just jQuery
+Experience using front-end build tools (e.g. gulp, yarn, webpack)
+Comfortable working with templating languages (e.g. ERB) within a full-stack web application (e.g. Ruby on Rails)
+A passion for creating beautiful, simple experiences to help users achieve complex tasks
+Familiarity with web standards and best practices for fast load times and accessibility
+Understanding of SEO and marketing analytics best practices
+Great interpersonal skills and an open attitude to collaborating daily with designers, marketing colleagues and other engineers
+Comfortable prototyping ideas and iterating them based on user feedback
+Comfortable as the only front-end developer in the team
+Strong visual and aesthetic sense
+Benefits:
+Working directly with businesses and organisations trying to make global supply chains fairer and more sustainable. Social impact is core to the business.
+Competitive salary
+Flexible working options (both location and times)
+Team workshops and regular social events
+Training and development opportunities
+Working with cutting edge technologies be part of “building the future”
+Employee share option program (meaning you get to own some of the company)
+We are committed to growing a diverse team with equal opportunities for all. A handful of us work remotely from within the UK, and from other cities in Europe.
+If you think your profile could be a good fit, apply via Workable here
+Share on
+
+
+Original link: https://www.provenance.org/news/us/frontend-developer

@@ -1,0 +1,18 @@
+Avi Salzman
+Dec. 12, 2017 6:18 p.m. ET
+Bitcoin futures have been marketed as a safe way for institutional traders to trade Bitcoin without ever having to touch Bitcoin. But it turns out that the launch of futures and other derivatives products has also led professional traders to buy more Bitcoin itself. That's helping lift the price, which was around $17,200 in afternoon trading on Tuesday.
+GDAX, an exchange that caters to institutions and is connected to top retail exchange Coinbase, is seeing surging traffic in recent weeks, according to GDAX General Manager Adam White. In fact, GDAX says it just became the number one crypto exchange by volume, as measured by website Exchangewar.info . At the start of the year, it was not listed among the volume leaders .
+Illustration: Getty Images
+Now that regulators are watching the market more closely, institutions seem more willing to get into the game, and not just on the futures market. GDAX is more heavily regulated than other exchanges and White argues that that makes it attractive to institutions.
+“A lot of this volume, if not the majority of it, is being driven by institutional traders," he said in an interview on Tuesday. "These are well-known Wall Street firms that are creating accounts on GDAX and trading this asset class like they would any other. Prop trading firms, market makers, hedge funds, high net worth individuals, family offices, brokerages. These are all customers of GDAX and they are driving the majority of this growth."
+White says some new clients buy Bitcoin because they need a way to hedge their futures position.
+"Many of those traders that make markets in the derivatives market, the only way to hedge out that risk is to trade on the spot markets as well. They’re coming onto our exchange and our market share is representative of that."
+The rankings depend on which coins are tracked.  Coinmarketcap.com has GDAX in third place behind Bitfinex, incorporated in the British Virgin Islands, and Korean exchange Bithumb, at least in terms of Bitcoin trading. Taking into account other coins such as Litecoin and Ethereum, the three exchanges were neck and neck in volume on Coinmarketcap.
+Regardless of the official winner in this case, it's clear that the major exchanges are seeing a surge in volume, which is sometimes causing outages. GDAX has not been immune.
+"We have struggled, but we are working around the clock to continue to improve our site, and we’ve made incredible strides over the last couple months," White said.
+Bitfinex also experienced downtime as a result of a DDoS attack.
+“Since last week, there has been a sustained denial of service attack," a statement from the company said. "While last week the platform traded continuously, to effectively perform emergency maintenance, we took the website down for a brief time today to mitigate further issues for customers.  We are constantly improving our systems to ensure that we’re able to both accommodate the immense volume of trading that occurs on our platform while also fending off sustained DDoS attacks."
+Most Popular
+
+
+Original link: https://www.barrons.com/articles/bitcoin-futures-are-a-gateway-drug-to-more-bitcoin-and-exchanges-are-buckling-1513120696

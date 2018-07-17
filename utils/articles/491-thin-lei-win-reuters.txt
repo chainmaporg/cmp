@@ -1,0 +1,21 @@
+December 13, 2017 /  4:25 PM / in 6 months
+Can blockchain ensure Unilever's tea farmers produce a fairer brew?
+Thin Lei Win
+3 Min Read
+ROME, Dec 13 (Thomson Reuters Foundation) - Imagine being able to trace the exact origins of your cup of tea: where and how it was made, whether organic soil was used and if the workers were treated fairly.
+A pilot one-year project in Malawi seeks to discover just that, using blockchain the technology behind the cryptocurrency bitcoin, to track supply chains for tea sold by consumer goods giant Unilever and the British supermarket Sainsbury’s.
+“Malawian tea is the start, not the end,” said Andrew Voysey, director of sustainable finance at The University of Cambridge Institute for Sustainability Leadership (CISL), which unveiled the project on Tuesday at the “One Planet” Summit.
+The Paris gathering - led by France’s President Emmanuel Macron, as well as World Bank and United Nations chiefs - aimed to accelerate lagging efforts to combat climate change.
+Up to 10,000 farmers in Malawi could join the pilot, which will reward those who produce a fairer, more sustainable brew with financial incentives, such as preferential loans and access to credit, CISL said in a statement.
+Financial institutions and consumer goods companies are coming under increasing pressure to find cheaper and more reliable ways to certify that their supply chains are sustainable and free from slavery and corruption.
+In August, a group of 10 large food and retail companies, including Nestle, Unilever, and Tyson Foods joined an IBM project to study how blockchain systems can help track food supply chains and improve safety.
+Blockchain, which allows shared access to data that is maintained by a network of computers, can quickly trace the hundreds of parties involved in the mass production and distribution of food.
+If successful, the project could be “replicated and applied across all sorts of agriculture supply chains and more broadly,” Voysey told the Thomson Reuters Foundation by phone from Paris.
+Some 1.5 billion families around the world make a living from small-scale agriculture, CISL said.
+With improved supply chain transparency and traceability, banks could offer favourable loans to the Malawian farmers, enabling them to become more productive, it said.
+Up till now, corporations “haven’t been able to get finance to flow to more sustainable operators because they haven’t had that validated, reliable data”, said Rhian-Mari Thomas, who leads a Barclays initiative to support low carbon businesses.
+Barclays, BNP Paribas and Standard Chartered banks are among 10 organisations participating in the project. (Reporting By Thin Lei Win, Editing by Katy Migiro. Please credit the Thomson Reuters Foundation, the charitable arm of Thomson Reuters, that covers humanitarian news, women’s rights, corruption and climate change. Visit www.trust.org)
+0 : 0
+
+
+Original link: https://af.reuters.com/article/africaTech/idAFL3N1OD3SH

@@ -1,0 +1,19 @@
+We’re seeking strong engineers who are ready for a Japan adventure of a lifetime.
+Visa and relocation expenses included for the right candidate.
+bitFlyer is one of the leading virtual currency exchanges and blockchain tech companies in the world. Headquartered in Tokyo, Japan, we handle over 80% of the regions’ cryptocurrency trading volume and are in a unique and privileged position to continue our expansion into the global financial markets. Licensed to operate in over 45 States and Europe, we treat compliance and security as paramount.
+We’re looking for full-stack engineers who can help build our global digital currencies exchanges, while living and working in central Tokyo. This is a high-visibility role interfacing with stakeholders across the US, EU and Japan. Strong communications skills are essential as you’ll be working alongside our existing international development teams to solve complex business problems and overcome technical challenges. With engineers from Japan, the United States and Europe, you will be a part of a team focused on delivering results through small and frequent release cycles. A genuine interest and familiarity with Bitcoin and blockchain technologies is highly desirable.
+Responsibilities:
+You’ll leverage your engineering capabilities to to create, enhance and maintain complex cross-border trading platforms
+You’ll have a strong voice in Designing and Developing our back-end systems as well as our front-end, client side virtual currency marketplace
+You’ll help ensure the stability and security of the exchange system
+Required Skills and Experience:
+Extensive technical knowledge of the Microsoft Stack (server and client-side)
+5+ years’ experience developing in .NET Framework, ASP.NET (C#) and JavaScript
+5+ years’ experience with SQL Server or other RDBMS
+Experience with Microsoft Azure or similar
+Desired Skills and Experience:
+Atlassian Suite: Jira, Confluence and Agile methodologies
+Data Architecture and Design
+
+
+Original link: https://angel.co/bitflyer/jobs/342347-full-stack-engineer

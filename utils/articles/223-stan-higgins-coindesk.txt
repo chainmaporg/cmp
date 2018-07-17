@@ -1,0 +1,18 @@
+DOJ Alleges Bitcoin Involved in Attempted ISIS Funding
+NEWS
+Stan Higgins
+Dec 14, 2017 at 22:20 UTC  |  Updated  Dec 14, 2017 at 22:24 UTC
+A New York woman has been indicted for attempting to provide financial support to the ISIS terrorist grou in a scheme that prosecutors say involved the purchase of cryptocurrencies using fraudulently obtained credit cards.
+Zoobia Shahnaz of Long Island, the U.S. Attorney's Office for the Eastern District of New York said today , has been charged with bank fraud, conspiracy to commit money laundering and three counts of money laundering.
+Though the indictment unsealed today makes no mention of the involvement of bitcoin directly, the office said in a press release that the funds she sent overseas – totaling more than $150,000 – were sourced in part from credit cards for which she fraudulently applied. Those cards were then used to purchase bitcoin and other unnamed cryptocurrencies, which were subsequently laundered back into the banks prior to being wired out.
+Some of the funds were also generated through a fraudulently obtained loan, prosecutors said.
+The office went on to explain:
+"[Shahnaz]...fraudulently applied for over a dozen credit cards, which she used to purchase approximately $62,000 in Bitcoin and other cryptocurrencies online. She then engaged in a pattern of financial activity, culminating in several wire transactions, totaling over $150,000, to individuals and apparent shell entities in Pakistan, China and Turkey. These transactions were designed to avoid transaction reporting requirements, conceal the identity, source and destination of the illicitly obtained monies, and, ultimately, benefit ISIS."
+Court documents name four banks – American Express Bank, Chase Bank, Discover Bank and TD Bank – that Shahnaz and a group of unnamed conspirators sought to use to transmit funds overseas. After the transactions were sent, according to the statement, Shahnaz was questioned by law enforcement while attempting to travel to Syria from New York.
+At this time, it's unclear based on the available information if any bitcoin was sent overseas by Shahnaz.
+If convicted on all charges, Shahnaz could be sentenced to as many as 90 years in prison, according to the attorney's office.
+Justice statue image via Shutterstock
+The leader in blockchain news, CoinDesk is a media outlet that strives for the highest journalistic standards and abides by a strict set of editorial policies . CoinDesk is an independent operating subsidiary of Digital Currency Group, which invests in cryptocurrencies and blockchain startups.
+
+
+Original link: https://www.coindesk.com/doj-alleges-bitcoin-involved-attempted-isis-funding/

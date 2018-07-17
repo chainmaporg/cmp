@@ -1,0 +1,10 @@
+North Korea hackers steal bitcoin by targeting currency insiders
+The state-backed group tries to trick workers into compromising their PCs.
+Save
+Chesnot/Getty Images
+Bitcoin values are skyrocketing , and North Korea appears to be trying to profit from that virtual gold rush. Secureworks reports that the Lazarus Group (a team linked to the North Korean government) has been conducting a spearphishing campaign against cryptocurrency industry workers in a bid to steal bitcoin. The attacks have tried to trick workers into compromising their computers by including a seemingly innocuous Word file that claims they need to enable editing to see the document. If they fell prey, it installed a rogue macro that quietly loaded a PC-hijacking trojan while staffers were busy looking at the bogus document.
+Attempts have been taking place as recently as November, but Secureworks' analysts saw activity as early as 2016. The organization adds that the campaign is likely still going, and that this is a preliminary report. You may get a better sense of the scope in the future.
+It's easy to see why Lazarus would try a campaign like this. It has already conducted money-grabbing efforts like the 2016 bank attack that swiped $81 million , and taking even a handful of bitcoins could reap a windfall when just one is worth roughly $19,400 as of this writing. North Korea could spend relatively little effort to swipe a lot of money and circumvent the many sanctions that prevent money from flowing in.
+
+
+Original link: https://www.engadget.com/2017/12/16/north-korea-hackers-steal-bitcoin-by-targeting-currency-insiders/

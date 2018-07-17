@@ -1,0 +1,22 @@
+Could Bitcoin's Incredible Bull Run Be Nearing An End?
+
+It is tempting, as somebody who was writing positive things about bitcoin several years ago, before it became popular to do so and when the price was around $250, to look at the advent of bitcoin futures trading as a validation, and therefore as a positive. It does, after all signal mainstream acceptance of the digital currency, and the huge increase in the price of bitcoin can be viewed as doing the same.
+
+But it isn’t that simple.
+
+Bitcoin was originally envisaged as a currency that would exist outside the conventional monetary system. It would be controlled by its owners, not by governments or banks. As I first wrote in January of 2015 and have repeated many times since, the establishment embrace of bitcoin is a double-edged sword at best. Yes, it gives the appearance of increased legitimacy, but it also leaves the currency open to attack in many ways.
+
+Bitcoin futures make it particularly vulnerable, and could be seen as signaling that the end of this incredible bull run is close. For one thing, it makes shorting the currency that much easier, even if the cost of doing so is currently prohibitive. Interactive Brokers (IBKR), one of the first large firms to embrace the futures market and with an estimated 53% of the business so far, initially didn’t allow shorting, but has announced that that will change.
+
+Because of the upside volatility they have set the margin at somewhere around $100,000 for the existing CBOE contract, which would mean an eye-popping $500,000 for the large CME contract that is coming soon.
+
+That is obviously not a practical proposition for most small, retail traders, but will it be enough to deter Wall Street banks and funds from putting massive downward pressure on the futures at some point? That remains to be seen, but my personal experience in forex at a time when banks and funds were taking on Central Banks in events such as those of the so-called Black Wednesday in 1992 suggests that it is distinctly possible.
+
+Even if the introduction of bitcoin futures does not result in a massive squeeze of long positions, it may still be a sign that a major correction in the market is coming. There have been many studies done on past asset bubbles, and one frequent conclusion is that the most reliable sign that the top is near is when leverage begins to be used by those wanting in.
+
+Futures are inherently leveraged, so the popularity of the contracts is a warning sign in and of itself.
+
+As someone who believes in the ultimate utility of bitcoin as a digital currency, and as a long-term supporter, I would love to believe that the improved access offered by a futures market is a positive. History, however, makes me believe otherwise.
+
+
+Original link: http://www.nasdaq.com/article/could-bitcoins-incredible-bull-run-be-nearing-an-end-cm891328

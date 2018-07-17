@@ -1,0 +1,42 @@
+at Averon (View all jobs)
+Anywhere
+Would you like to build global infrastructure to handle billions of events a day for hundreds of millions of people?  Do you want a job where you stop bad guys and make the world a safer place?
+Averon is looking for entrepreneurial SRE’s to build out highly scalable, highly reliable infrastructure. Reporting to the CTO the SRE will work with the Development and Product teams to ensure a dynamic, robust, and scalable  infrastructure to support our platform.
+We’re building out next generation platform so this a greenfield opportunity. You can build it right from the start (and not have your time sapped with a bunch of snowflake legacy servers). We highly prioritize reliability over time to market so you can take your time to do it right. We are a startup, so expect the work to be 75% SRE, and 25% devops.
+Don’t worry, we’re engineers, not some corporate HR department so we’re not holding our breath for the unrealistic swiss army knife of SRE who has 10 years of experience in technology that’s only been around for 3. If you’ve got some of the skills we list and would like to pick up new ones, send us your resume. First and foremost we value brains and ability to learn.
+Some of our tech stack: linux (CentOS? Ubuntu? help us finalize a flavor), docker, ELK, mongo, monitoring (icinga or nagios? what do you like), and orchestration (puppet? chef? Ansible? again greenfield activity)
+Oh, and we've closed over $10M and have customers, so you get the upside of greenfield with the stability of funding and revenue.
+ 
+Architect and run a high availability, global scale infrastructure
+Work with the tech and product teams to evaluate, deploy and support new technologies
+Linux server administration
+Network administration (routing, switches, firewall, VPN, DNS, etc.)
+Backup and monitoring (safety first!)
+Documentation (you can never have too much!)
+Strategic selection of new technologies
+Vendor management and selection
+Continue to stay current on new technologies
+Kick ass and chew gum (gum chewing optional)
+Requirements:
+At least 7 years experience with highly-available enterprise servers (we don’t care if your prior company used the title SRE, devops, or sys admin--we look at abilities not titles)
+Experience with orchestration (e.g. Puppet, Chef, Salt, Ansible)
+Experience with Linux shell scripting, automation, troubleshooting, and performance tuning
+Experience with one or more of MySQL, Mongo (or other NoSQL), HDFS
+Experience with big data tools (e.g. Hadoop, Kafka, Storm, Spark)
+Experience with icinga, nagios, PTRG, Sentry or other monitoring tools
+Experience with web servers (e.g. nginx, Apache) and application frameworks (ideally django)
+Experience with AWS, Azure, GCE, or other clouds
+Additional Pluses:
+Work history or knowledge of cybersecurity
+Work history or knowledge of the telecom industry
+Why You'll Love It:
+How often do you get to stop bad guys?
+It's a greenfield opportunity you can help lead
+Once we have an automated system going and we're just monitoring there will be significant time to do R&D and work on passion SRE/devops projects
+We believe in continuous learning
+ 
+Candidates only. No recruiters or Third Parties.
+Apply for this Job
+
+
+Original link: https://boards.greenhouse.io/averon/jobs/4009060002

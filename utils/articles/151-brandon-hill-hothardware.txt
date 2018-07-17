@@ -1,0 +1,11 @@
+by Brandon Hill — Wednesday, December 13, 2017
+NVIDIA Titan V Ethereum Mining Blows Past 82MH/s While Overclocked On Our Test Bench
+Early yesterday morning, we brought you news of a YouTuber that managed to get his hands on one of the first NVIDIA TITAN V graphics cards that shipped to well-heeled customers. BitsBeTrippin' slapped the chest thumpin' Volta-based GPU into an AMD Ryzen Threadripper 1950X system, and cranked out 70 MH/s at stock speeds and 77 MH/s while overclocked, while drawing 213W and 237W respectively.
+We here at HotHardware just so happen to have a TITAN V in house as well, and we are presently running it through an exhaustive battery of benchmarks. However, we were able to extract a few data points for all of you Ethereum miners out there .
+Using Claymore Miner (v10.2), we were able to hit 69.06 MH/s at default speeds right out of the box, with no tweaking whatsoever, far outpacing what's possible with the current standard-bearer from AMD and the previous generation Pascal-based TITAN Xp. The Radeon RX Vega 64 was well behind with a 37.72 MH/s rate, while the TITAN Xp was virtually tied at 37.45.
+However, when we cranked up the GPU power and temperature targets and boosted the memory clock, we saw a significant jump in performance, with an average hash rate of about 82.067 MH/s. That's well over twice the rate of the Radeon RX Vega 64 and TITAN Xp when those two cards were operating at default clocks. For the overclocking, we simply upped the power and temperature target for the GPU, and manually increased the fan speed, while simply tweaking the memory frequency offset using EVGA's Precision XOC utility. We used NVIDIA's public drivers for the the TITAN V in our testing.
+Given that the TITAN V retails for $2,999 and it's geared for compute workloads, we would expect for it to be an absolute monster when it comes cryptocurrency mining. However, the TITAN V's Ethereum mining performance should also give us a ballpark range of what to expect when mainstream and high-end Volta parts aimed at gamers arrive on the market some time in 2018.
+Stay tuned for our full review of the NVIDIA TITAN V; you'll be pleasantly surprised at what this card is capable of with current software.
+
+
+Original link: https://hothardware.com/news/nvidia-titan-v-volta-ethereum

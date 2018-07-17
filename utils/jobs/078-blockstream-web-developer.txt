@@ -1,0 +1,19 @@
+at Blockstream (View all jobs)
+Victoria, BC, Canada
+Pioneering advancements in blockchain technology infrastructure, Blockstream is the leading company extending Bitcoin at the protocol level to support a broad range of new asset types and financial markets. Blockstream supports values of decentralization, privacy, end-to-end security, user control, and open, permissionless innovation.
+We are looking for an experienced Web Developer to implement and support Blockstream, GreenAddress and other company’s web sites.
+You will enjoy a fast-paced creative atmosphere of a well-funded FinTech Series A startup, multitude of growth opportunities, excellent compensation and benefits, flexible working schedule, and an option for partial telecommute.
+A strong preference is given to the candidates living in Victoria, BC. Relocation assistance is provided.
+Requirements:
+Strong experience with JavaScript, HTML5, CSS3, Sass
+Knowledge of some of the JavaScript frameworks JQuery, React, Vue.js, Angular, ember.js or similar
+Experience with Responsive Design
+Experience releasing and supporting quality web applications
+Git
+Demonstrated ability to learn new technologies well and fast and passion for learning
+Strong understanding of UI/UX best-practices
+Good taste in web design
+Pluses:
+
+
+Original link: https://boards.greenhouse.io/blockstream/jobs/1153223

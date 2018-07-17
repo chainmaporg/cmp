@@ -1,0 +1,21 @@
+Ledger Bounty Program
+Developer full-stack / front-end RoR
+As part of the strong growth in its business, Ledger – a technology leader in digital asset and cryptographic security solutions – is looking for a full-stack ruby ​​on rails developer profile to work on our merchant site.
+You are able to both be the technical manager of our merchant site and have the experience of interacting with the UI / UX teams in order to improve the e-commerce site? Join our team, one of the world’s leaders in one of the most innovative technology sectors!
+Required profile
+Developer profile with a minimum of 1 years experience in developing on Ruby on Rails.
+Proficiency in web technologies (HTML / CSS / Javascript)
+Rigorous and passionate about  pixel-perfect user interface integration.
+Good knowledge of git.
+Maintain the Ledger merchant site.
+Extend the functionality of the merchant site.
+Participate in the re-design and graphic integration.
+Job Description
+Location: Paris 2nd (no telecommuting)
+Apply
+To apply, please send your CV (PDF only) as well as a short cover letter to [email protected]  with the subject [JOBS] Developer full-stack / front-end RoR.
+Founded in 2014, Ledger is a leader in security and infrastructure solutions for cryptocurrencies and blockchain applications. Headquartered in Paris, Vierzon and San Francisco, Ledger has a team of 80 professionals developing a variety of products and services to safeguard cryptocurrency assets for individuals and companies – including the Ledger hardware wallets line already sold in 165 countries.
+LINKS
+
+
+Original link: https://www.ledger.fr/join-us/developer-fullstackfrontend-ror/

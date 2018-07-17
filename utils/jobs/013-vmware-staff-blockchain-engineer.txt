@@ -1,0 +1,24 @@
+job title, keywords or company
+city, state, or zip
+VMware 583 reviews - Palo Alto, CA
+Business Unit Summary:
+Blockchain is an emerging technology that promises to change the world we live in. With VMware’s vast experience in building highly trusted distributed systems and our background in doing advanced research in this space for several years, we are poised to change the industry’s definition of blockchain and what it can do. We are building out a team of highly skilled individuals to help us change the industry and change the world.
+VMware’s blockchain platform is a multi-cloud, multi-blockchain hybrid SaaS solution. Our team works on cutting edge technology to deliver improved management and security tools for our own blockchain environment as well as others from across the industry. You will work with a team of talented and supportive individuals from across the world as well as members of the academic community and VMware’s Research Group in this role. Our team values diversity, collaboration, and open thought while supporting VMware’s EPIC2 values.
+Job Role and Responsibility:
+You'd be contributing to architecture, design, and implementation of a blockchain environment including but not limited to the consensus layer, distributed ledger, and smart contracts layer. This could include running the data layer, security layer or distributed network layer.
+You'll be responsible for building rapid prototypes and working on dynamic projects.
+Taking existing prototypes to production quality code to create new products and offerings will be significant to this role.
+You will be collaborating effectively with other staff and teams to solve complex problems.
+You will also assist with debugging and verification of defects in your own and others' work.
+Required Skills
+Education in BS/MS in CS from reputable university or equivalent experience.
+We are highly interested to see your experience in one of the following disciplines:
+Databases
+Peer-to-peer networks or distributed systems
+Working experience in mainstream programming languages such as Java/C/C++ is highly critical.
+PreferredSkills
+Security (cryptography preferred)
+Your exposure to multiple programming languages is important and will bring addition, as the ability to pick up and use the language that suits a body of work is expected.
+
+
+Original link: https://www.indeed.com/viewjob?jk=23b172f268c071be&tk=1cgd8dgth1fkk3cr&from=serp&vjs=3

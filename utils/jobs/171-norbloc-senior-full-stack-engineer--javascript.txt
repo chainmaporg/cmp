@@ -1,0 +1,20 @@
+All jobs → Senior full stack Javascript engineer
+Senior full stack Javascript engineer
+Athens, Attica, Greece
+Description
+Edit
+We are growing our team to further develop the norbloc KYC platform and integrate it with financial institutions. As a result, we are seeking a Senior full stack Javascript engineer to join our team. Norbloc is a mission critical application used by financial organisations, performance and security are key requirements.
+norbloc was founded in 2016 by a group of professionals with extensive financial industry and blockchain development experience. It is a global pioneer in regulatory applications residing on blockchain platforms. Its headquarters are in Stockholm and it is funded by some of the most well-known VC funds and angel investors in Europe and US. norbloc is a core member of the Hyperledger consortium.
+For more info, please visit https://www.norbloc.com
+Requirements
+As the right person for the role, you should:
+Participate in developing the design specifications for the product.
+Be experienced in relational database design, have strong SQL experience.
+Have Back-end Node.js & front-end development experience.
+Cannot sleep without Unit & functional tests in place.
+Collaborate with Git and issue tracking software (JIRA, Redmine, Trac or similar).
+Have familiarity with most of our software stack:
+Express.js, lodash, async
+
+
+Original link: https://norbloc-se.workable.com/j/06FEA625B2

@@ -1,0 +1,26 @@
+Now You Can Short Bitcoin
+But it will be very, very expensive.
+Posted on
+Pin
+Interactive Brokers Group, Inc. Chairman and CEO Thomas Peterffy.
+The only major brokerage offering bitcoin futures trades is now allowing its clients to go short, betting against the price of bitcoin, Interactive Brokers said Wednesday.
+Currently, there's a large premium in the futures market for bitcoin — right now the contract to buy bitcoin on Jan. 17 is worth $16,540, compared to the $16,083 listed "spot" price for bitcoin itself.
+"That says to me that there aren’t enough brokers allowing shorting," Peterffy told BuzzFeed News Tuesday, "because if there were, there would be people that buy the cash and sell the futures."
+Interactive Brokers has not previously let its clients go short due to the extreme volatility of the bitcoin market, and has made its clients put up half of the value of the contracts they buy in what's called "margin," above and beyond requirements imposed by Cboe, which operates the futures market. For the short bets, however, buyers will have to put up $40,000, more than twice the value of a single contract, according to an Interactive Brokers spokesperson.
+So far, the bitcoin futures market has been muted and running smoothly. According to data from the Wall Street Journal, about 4,000 futures contracts were traded Monday, worth $68 million in total. On the GDAX cryptocurrency market, about 40,000 bitcoins have changed hands in the last 24 hours, worth about $688 million. The futures market launched on Sunday evening.
+Peterffy said so far that many of his clients buying the futures contracts were hedge funds and financial advisers. "It’s not the little people," he said.
+He was skeptical overall about bitcoin's recent massive jump in price. "It has no intrinsic value," he said. "It’s the only thing other than gold and silver that trades futures that have no intrinsic value, and even gold and silver have some intrinsic value," he said, referring to the limited industrial use for gold and silver. He even told CNBC last week that the price could go over $100,000 "before it crashes to nothing."
+But, he said, he couldn't stop his clients from trading highly speculative securities whose value is based primarily on the expectation that they will produce value at some far-off point in the future. "Why am I allowing my clients to buy Tesla? Don’t forget that 20 years or even 10 years ago, why would you allow people to buy Amazon? I remember when it down to $2 share."
+Peterffy has been outspoken about the risks that trading bitcoin futures poses to exchanges, even publishing an open letter in the Wall Street Journal in November warning that a big move up or down in bitcoin futures could destabilize the exchanges themselves as well as firms that don't trade bitcoin futures. That's because smaller brokers could go bankrupt if the price were to move up too fast and their clients, who were betting that the price would fall, would not have enough money to cover their losses.
+"Unless the risk of clearing cryptocurrency is isolated and segregated from other products, a catastrophe in the cryptocurrency market that destabilizes a clearing organization will destabilize the real economy," he wrote in the letter he published as an ad .
+"If somebody defaults, everyone is on the hook," Peterffy told BuzzFeed News.
+But, Peterffy said, "Many of our clients asked us to make trading available for them," and so they complied.
+"It doesn’t make any difference from a danger point of view whether we’re offering it or not."
+UPDATE
+Dec. 13, 2017, at 15:19 PM
+This story has been updated with more information from Interactive Brokers about when shorting will be available.
+Matthew Zeitlin is a business reporter for BuzzFeed News and is based in New York. Zeitlin reports on Wall Street and big banks.
+Contact Matthew Zeitlin at matt.zeitlin@buzzfeed.com .
+
+
+Original link: https://www.buzzfeed.com/matthewzeitlin/major-broker-to-allow-shorting-of-bitcoin-futures-later?utm_term=.kge8VXvwo#.op2n5PpAd

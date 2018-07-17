@@ -1,0 +1,25 @@
+Apply for this job
+Site Reliability Engineering at Chain involves building a simple, reliable platform for our core ledger services. Chain powers financial infrastructure for companies including Visa, Nasdaq and Citi. We take the time to do things the right way and we strive for excellent development and operations.
+You will be responsible for
+Designing, building, and maintaining EC2 footprint
+Building infrastructure to support CI / automated testing
+Visibility systems (e.g. logging, metrics, monitoring)
+Deploy automation
+Working with security teams to ensure safe operations
+Your skills
+Comfortable making design decisions and crafting a vision for our infrastructure
+A strong taste for simple, intuitive developer experience
+Comfortable switching between languages / environments
+Deep understanding of Linux system administration
+Fluent with AWS best practices
+Bonus Points
+You have written software using Go
+You have worked for a developer facing company (e.g. Heroku, Stripe)
+SRE vs. Other Engineering at Chain
+Application health. Each service is monitored by the team that built it. SRE needs to support the servers that run the applications.
+Testing. Test suites are built by the team that build the system. SRE just needs to support the infrastructure to run the tests.
+At Chain, we believe our success is based upon our diversity of backgrounds and experiences. We value the contribution of our employees and the potential of job applicants based on merit, competence, creativity, and qualifications. We will never discriminate on the basis of race, gender, ethnicity, religion, color, sexual orientation, age, or disability. We believe that we are building the financial system of the future - and that at the heart of it should be an inclusive culture.
+We are a community that enjoys our work. Our beautiful tree house of an office is located in Hayes Valley. We eat lunch together and take company outings. Chain provides competitive salaries, equity, and full benefits.
+
+
+Original link: https://jobs.lever.co/chain/79d9d258-5f67-424b-b63e-7596307d859f

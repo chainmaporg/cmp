@@ -1,0 +1,32 @@
+New York, NY or Remote
+Engineering
+Apply for this job
+Blockstack is a new internet for decentralized apps. With Blockstack, you own your data and maintain your privacy, security and freedom. Blockstack is open source project and a public benefit corporation. Learn more.
+Blockstack is looking for a Security Engineer to secure the Blockstack ecosystem including software and operations. As a security engineer you will predict and preemptively address potential vulnerabilities. Experience across a number of production environments including both start-ups and larger enterprise companies are critical. This person has a breadth of expertise including encryption, penetration testing, vulnerability assessment, cryptography, and security best practices.  
+Our engineering team builds software using JavaScript/ES6, React, Redux, and Swift on the frontend and Python, bash, and Bitcoin Core on the backend.
+You will:
+- Apply an applied cryptography lens to Blockstack protocol and Blockchain
+- Implement security upgrades to the Blockstack browser, core, and API 
+- Deliver and implement software and operational security solutions for use across our team 
+- Preemptively address any potential vulnerabilities for malicious hackers 
+- Take responsibility for Hackerone Bug Bounties
+Qualifications
+You are obsessed with security engineering and planning, interested in securing a platform and token protocol, and are capable of establishing a holistic understanding of the various engineering pieces required to deliver a secure product. 10+ years professional experience 
+KPIs:
+- Increased uptime of the Blockstack software 
+- Delivery of long term, securely tested software, including roadmap and implementation 
+- Ensuring safety of Blockstack team practices 
+Skills:
+- Expert knowledge of applied cryptography and cryptographic protocols, including familiarity with state-of-the-art academic literature on the subject and practical knowledge on engineering successful systems.
+- Experience in the low-level implementation and protocol details of a widely-deployed public blockchain
+- Strong background in security-oriented system design, with a focus on applied cryptography
+- Must be able to identify and defend against plausible protocol-level and network-level attacks on the system.
+- Strong programming skills and familiarity with programming languages and technologies in use at Blockstack(Python 2, Linux, Bitcoin on our backend, and Javascript on our frontend).
+Qualities + Traits:
+- Passion for building the new internet for decentralized apps  
+- Strong problem solving skills, ability to think fast and thoroughly 
+- Excellent communication
+We get a lot of applicants, and have historically hired people who are proactively involved in our work and mission of decentralizing the internet. We hope you explore our  Whitepaper ,  Browser , Github , and  Slack  prior to submitting your resume.
+
+
+Original link: https://jobs.lever.co/blockstack/10540f5a-5e85-4c4a-9e45-a2a12ffed698

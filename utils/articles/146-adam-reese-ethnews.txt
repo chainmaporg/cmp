@@ -1,0 +1,15 @@
+LinkedIn
+Cancel
+Following negative reactions from the Ethereum community, Parity has signaled that it may stop pushing for a hard fork to unlock the 500,000 Ether frozen in some of its wallets.
+The tech firm Parity may give up on advocating for a hard fork of the Ethereum blockchain as a remedy to a bug in its software.
+On November 6, the vulnerability was exploited in a manner that led to the freezing of over 500,000 Ether housed in certain of the company's multi-signature hardware wallets, which cannot be retrieved as long as the bug persists.
+Parity later acknowledged that it could have prevented the freeze, if it had only been faster to redeploy a particular executable distributed code contract – which it had been planning to do as part of a round of scheduled maintenance – when the incident occurred.
+On December 11, the firm suggested several fixes to the problem, all of which would necessitate a hard fork.
+Today, sources report that Parity representative Afri Schoeden was speaking at an Ethereum developers' meeting when he fielded a question on the matter from the Ethereum Foundation's Hudson Jameson. He responded: "Actually, I don't want to talk about it, except that one point is that Parity doesn't want to follow up on the proposals, because we see the feedback was clear and loud."
+The spokesman was likely alluding to sentiments expressed through various online platforms by members of the Ethereum community, who believe that a hard fork to rescue Parity's locked funds would constitute special treatment, in light of the significant overlap between Parity's personnel and that of the Ethereum Foundation.
+Schoeden reportedly later told media that "we are not putting any more effort in improving these proposals."
+After the meeting concluded, the company's twitter account issued the following message :
+https://twitter.com/ParityTech/status/941694237992783872
+
+
+Original link: https://www.ethnews.com/parity-appears-to-back-away-from-hard-fork-solution

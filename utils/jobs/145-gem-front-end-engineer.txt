@@ -1,0 +1,25 @@
+Apply for this job
+ABOUT GEM
+Gem is a cryptocurrency and blockchain startup based in Venice Beach. Our mission is to empower individuals to take full control of their wealth, to benefit from the value of their own data, and to experience the collective power of the decentralized movement spreading globally today.
+Check out the trailer for our new app coming out this summer, as well as hear from our CEO on his vision for the product.
+THE ROLE
+We are looking for a senior front-end engineer who is passionate about building dynamic consumer applications. You should feel comfortable architecting SPAs. Our engineers are involved in all parts of the product life cycle: idea generation, design, prototyping, planning, execution, and shipping.
+TECHNOLOGIES WE USE
+Our front-end stack is composed of Typescript, CSS modules, React, Redux, Webpack, TSLint and Jest.
+What you’ll do
+- Implement the features and user interfaces of various consumer facing applications
+- Architect efficient and reusable front-end systems that drive complex web applications
+- Collaborate with Product Designers, Product Managers, and Software Engineers to deliver compelling user-facing products
+What you’ll need
+- Strong CS background (algorithms, data structures…)
+- 5+ years' experience in designing and architecting highly scalable, usable, and performant web applications while doing highly creative, detail oriented front end web development
+- JavaScript experience, including concepts like event driven programming, closures, types and ES6. Experience working with React or Angular, Redux, Javascript bundlers is a plus
+- HTML/CSS experience, including concepts like layout, specificity, cross browser compatibility and accessibility
+- Experience with browser APIs and optimizing front end performance
+- Be a perfectionist who makes sure every pixel is in the right place
+Nice to have
+- Proficiency with a scripting language like Ruby or Python
+- Understanding of Docker containers
+
+
+Original link: https://jobs.lever.co/gem/420ff0e8-6eff-4af1-b402-cf29c8847272

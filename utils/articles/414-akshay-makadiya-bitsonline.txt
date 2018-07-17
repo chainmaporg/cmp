@@ -1,0 +1,24 @@
+December 14, 2017 by Akshay Makadiya 0 Comment 2101 Views
+Blockchain — one of the most popular digital wallet services — today commenced support for Bitcoin Cash (BCH) with complete functionality. The company had promised in November to introduce full functionality for BCH by the end of the year.
+Also read:  Automata Podcast: Brit Yonge of Stellar’s For-Profit Arm Lightyear
+Join the  Bitsonline Telegram channel  to get the latest Bitcoin, cryptocurrency, and tech news updates:  https://t.me/bitsonline
+For now, BCH functionality will only be available on the web wallet and users will have to wait for the same feature on the mobile wallet. As per the company blog post, mobile support will be enabled by Q1 2018.
+The  post read “With Bitcoin Cash joining our existing lineup of digital currencies, users now have a full suite of options.”
+What Does the Bitcoin Cash Functionality Do?
+The new functionality will allow users to switch and trade between virtual currencies such as Bitcoin and Ethereum. Additionally, the wallet acts as a central portal that enables users to track crypto prices, as well as send and receive funds. For most users, though, there’s still no service to buy/sell them with fiat currencies.
+Like Bitcoin and Ethereum, Bitcoin Cash will have its private keys allowing complete access to the tokens.
+Bitcoin Cash has maintained a top-five market cap ranking since its rollout. It underwent another dramatic price rise in the past 24 hours, climbing 22 percent to $1,967 USD at press time. Also, BCH has gained a degree of trust among crypto enthusiasts. Many crypto investors continue to compare Bitcoin and Bitcoin Cash, and express either doubts or hopes the two can coexist.
+Blockchain Meets Market Demands
+On November 15th, Blockchain announced, “Market demand for Bitcoin Cash has proven strong and, in our view, it’s likely here to stay.” The company commenced partial support for BCH on October 11th and said it would introduce complete support if the BCH market demand arose.
+Blockchain already supported Bitcoin, Ethereum, and limited Bitcoin Cash functionality. Blockchain allowed users with BTC balances in the wallet on August 1st 2017 to receive the identical amount of BCH balances (partial support) almost eight weeks after the initial fork launch.
+However, the growing demand for BCH has led the company to launch BCH with full functionality.
+#BitcoinCash (full support in December) and #SegWit coming up next ? https://t.co/YZeJNbfcPh
+— Peter Smith (@OneMorePeter) November 15, 2017
+ 
+However, many criticized the move to add BCH to Blockchain wallets before implementing SegWit for BTC transactions. In response, the company blog post stated: “In 2018 we will be rolling out support for SegWit within our wallet products.”
+Do you agree with Blockchain’s move? Will more services support BCH in the coming year? Let’s hear your thoughts.
+Images via Blockchain, Pixabay
+The ‘Bitcoin Cash’ section at Bitsonline is sponsored by Bitcoin Cash. In hopes of bringing cryptocurrency to the masses, Bitcoin Cash has set out to provide a digital currency with on-chain scalability, so everyone can use the blockchain affordably. Learn more at BitcoinCash.org and join the official Telegram Group .
+
+
+Original link: https://www.bitsonline.com/blockchain-bitcoin-cash-web/

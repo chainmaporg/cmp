@@ -1,0 +1,21 @@
+Apply for this job
+Axoni develops novel blockchain solutions while focusing on the capital markets industry. We have demonstrated in various production implementations that our blockchain software can serve multiple asset classes and use cases at the world’s most advanced financial institutions. Join us in our mission to further strengthen and scale our system and develop new blockchain solutions. We’re excited to have you become part of our high-performing team of software engineers.
+Headquartered in New York City, we are currently working intensely on what we hope to become the most widely used programming language for blockchain smart contracts; AxLang. AxLang is based on Scala, and enables secure and full featured smart contract development by supporting both functional programming and formal verification. Its design is driven by the rigorous requirements for solutions serving the world's largest financial institutions. AxLang is part of Axoni's blockchain infrastructure, which underpins the broadest reaching and most ambitious permissioned ledger production projects in the world, including $11 trillion of credit derivatives, the world's leading foreign exchange connectivity network, and various other industry implementations.
+By joining our growing compiler team you will help us build cutting edge compiler technology that targets the Ethereum open-source community. Overall, this is a unique opportunity to contribute to one of the most promising technologies today (i.e., blockchain) by helping us revolutionize the way smart contracts are developed in the Ethereum ecosystem.
+Relevant Skills and Experience
+Well versed in C++ or Scala or both
+Experience with compiler development is a plus
+Experience with formal verification and/or semantic analysis a plus
+Research in the field of programming languages, compilers, formal verification a plus
+Comfortable with python or a similar scripting language
+Knowledge of Ethereum and Bitcoin blockchains a plus
+Best practices for facilitating Agile and Test Driven Development
+Strong communication skills and a collaborative team member
+Benefits
+Health, dental, and vision insurance
+401K plan
+Catered team lunch and snacks
+Robust work stations
+
+
+Original link: https://jobs.lever.co/axoni/1356bb24-c82f-4a0f-a6f5-783d6a265d25

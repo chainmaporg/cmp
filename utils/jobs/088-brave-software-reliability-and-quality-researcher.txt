@@ -1,0 +1,31 @@
+Software Reliability and Quality Researcher
+at Brave
+London or SF
+We are hiring a member of the Brave browser research team to work on browser reliability, quality, and performance.
+As a Software Reliability and Quality Researcher engineer, your responsibilities will include:
+Developing ways to monitor and improve the quality of the product, as well as the quality of ad blocking, tracking prevention, and fingerprinting  prevention
+Measuring performance and looking for performance regression 
+Modifying our open source fork of Chromium to improve  reliability, the  quality of various blockers, and to improve performance.
+Required qualifications:
+A  Ph.D. in computer  science  or a closely-related field.
+Demonstrated ability to read and write research papers, do occasional  presentations, and to interact with  academic shareholders, and well as with engineers. 
+Proficiency in C++ and JavaScript. At least 5 years of experience is preferred.
+Proficiency working with Git.
+Comfortable working with a geographically-distributed software development team.
+Be familiar with web technologies and how the web works.
+Be comfortable diving into an unfamiliar and complex codebase.
+Preferred qualifications:
+Experience with static and runtime analysis
+Experience with large-scale testing 
+Experience contributing to open source codebases and/or participating in open source communities. Virtually all of our work at Brave is done in the open on Github.
+A working knowledge of JavaScript, HTML, and Node.
+Having contributed patches to Tor Browser.
+Familiarity with Chromium's architecture.
+Experience auditing C++ code for security issues.
+Ability to write clear technical documentation.
+Be excited about reliability, performance, blockchain, privacy, anonymity, and censorship resistance!
+This is a full-time or part-time role, reporting to our Chief Scientist Officer.
+Apply for this Job
+
+
+Original link: https://boards.greenhouse.io/brave/jobs/1067946
