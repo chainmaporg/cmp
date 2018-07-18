@@ -46,7 +46,6 @@
                     </div>
                     <!-- End breadcrumbs -->
 
-
                     <section class="container main-content">
                         <div class="row">
                             <div class="col-md-9">
@@ -60,6 +59,7 @@
                                                 <div class="user-profile-img">
                                                     <img width="60" height="60" src="/image/111.png" alt="admin">
                                                 </div>
+                                                
                                                 <div class="ul_list ul_list-icon-ok about-user">
                                                     <ul>
                                                         <!-- <li>
@@ -114,6 +114,7 @@
                                                                 <%=data.userProfile[0].headline%>
                                                             </span>
                                                         </li>
+
                                                         <li>
                                                             <i class="icon-map-marker"></i>Topic Interest :
                                                             <span id="headlineSpan">
@@ -201,10 +202,33 @@
                                                     <div class="ul_list ul_list-icon-ok">
                      
 														<ul>
-														<li>Chinese: <a href="https://github.com/Ebookcoin/ebookcoin">Node.js区块链开发</a>
-														<li>English: <a href="https://github.com/blockchain-ebook/nodejs-blockchain">Use Node.js to develop Blockchain</a>			
-														</ul>
-														</center>
+                                                            <li>Chinese: <a href="https://github.com/Ebookcoin/ebookcoin">Node.js区块链开发</a></li>
+                                                            <li>English: <a href="https://github.com/blockchain-ebook/nodejs-blockchain">Use Node.js to develop Blockchain</a>	</li>
+                                                        
+                                                            <li id =link0></li>
+                                                            <li id =link1></li>
+                                                            <li id =link2></li>
+                                                            <li id =link3></li>
+                                                            <li id =link4></li>
+                                                            <li id =link5></li>
+                                                            <script type="text/javascript">
+                                                            
+                                                            var reqUrl = "./recommendations";
+                                                            $.get(reqUrl, function(data) {
+                                                                var recommendations = data.response.recommendations;
+                                                                console.log(recommendations);
+                                                            })
+                                                           
+                                                            var i;
+                                                            var name = "This is a link"
+                                                            var link = "https://github.com/blockchain-ebook/nodejs-blockchain"; 
+                                                            for (i=0; i < 6; i++)
+                                                            {
+                                                                document.getElementById("link"+i).innerHTML = "<a href=\"" + recommendations[i]["url"] + "\">" + recommendations[i]['title'] + "</a>"
+                                                            }
+                                                        </script>
+                                                        </ul>
+                                                        </center>
                                                     </div>
                                                 </div>
                                                 <!-- End user-profile-widget -->

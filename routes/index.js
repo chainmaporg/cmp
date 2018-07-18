@@ -171,6 +171,7 @@ router.post('/userRegister', users.userRegister);
 router.get('/loginRegister', function (req, res) {
   res.render('loginRegister', { title: 'Login/Register' });
 });
+router.post('/recommendations', users.getRecommendations);
 router.post('/getCompanies', users.getCompanies);
 router.post('/tokenRanking', users.tokenRanking)
 router.post('/totalQuestionAnswer', questionBoard.totalQuestionAnswer)

@@ -118,7 +118,7 @@ exports.getRecommendations = function(req, res) {
             if (error) {
                 console.log("error ocurred", error)
                 res.render("error", {
-                    errorMsg: "Error on insertion into DB Users",
+                    errorMsg: "Error on finding user categories",
                 })
             } else {
                 console.log(results)
@@ -136,7 +136,8 @@ exports.getRecommendations = function(req, res) {
             }
         }
     )
-
+    console.log("Found keywords: ")
+    console.log(keywords)
     // some hard coded keywords if keywords can't be retrieved
 
     if (!keywords) {
@@ -156,7 +157,7 @@ exports.getRecommendations = function(req, res) {
     }
 
     var urls = keywords.map(function(current) {
-        return getLink(current, 5)
+        return getLink(current, 6)
     })
 
     function makePromise(url) {
@@ -208,7 +209,8 @@ exports.getRecommendations = function(req, res) {
             var values = values.reduce(function(selected, current) {
                 return selected.concat(current)
             }, [])
-            res.send(shuffle(values).slice(0, 5))
+            var recommendations = shuffle(values).slice(0,6)
+            res.send(recommendations)
         })
         .catch(function(error) {
             console.log(error)
