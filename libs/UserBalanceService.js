@@ -6,6 +6,10 @@ var UserBalaceService = function () {
 		//find no determined balances
 		global.connection.query('SELECT u.user_id, u.payment_address,b.balance FROM user u ' +
 			'left join user_balance b on u.user_id = b.user_id where LEFT(u.payment_address,2)="n1"and balance is null', function (err, result, fields) {
+				if(err){
+					return console.log(err);
+				}
+				
 				if (result.length > 0) {
 					//if thereis a null balance
 					var wallets = [];
@@ -41,6 +45,10 @@ var UserBalaceService = function () {
 		var limit = 86400;
 		global.connection.query('select * from (select b.user_id,max(timestamp) as timestamp,u.payment_address from ' +
 			'user_balance b left join user u on u.user_id = b.user_id  group by user_id) b where  timestamp < unix_timestamp() - ' + limit, function (err, result) {
+				if(err){
+					return console.log(err);
+				}
+			
 				if (result.length > 0) {
 					//if thereis a null balance
 					var wallets = [];
@@ -112,8 +120,8 @@ var UserBalaceService = function () {
 
 	}
 
-	this.start();
 }
 
 global.userBalanceService = new UserBalaceService();
+global.userBalanceService.start(20);
 module.exports = global.userBalanceService;
