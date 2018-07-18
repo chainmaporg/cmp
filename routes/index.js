@@ -171,7 +171,6 @@ router.post('/userRegister', users.userRegister);
 router.get('/loginRegister', function (req, res) {
   res.render('loginRegister', { title: 'Login/Register' });
 });
-router.post('/recommendations', users.getRecommendations);
 router.post('/getCompanies', users.getCompanies);
 router.post('/tokenRanking', users.tokenRanking)
 router.post('/totalQuestionAnswer', questionBoard.totalQuestionAnswer)
@@ -179,6 +178,7 @@ router.get('/error', function (req, res) {
   res.render('error', { title: 'Error' });
 });
 router.get('/userProfile/:user_id', users.userProfile);
+router.post('/userProfile/recommendations', users.getRecommendations);
 router.get('/trainingMaterial', trainingMaterial.getAllTrainingMaterial);
 router.post('/updateUserProfile', users.updateUserProfile);
 router.get('/aboutUs', function (req, res) {

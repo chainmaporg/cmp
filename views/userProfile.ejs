@@ -200,34 +200,37 @@
                                                 <div class="user-profile-widget">
                                                     <h2>Recommendation</h2>
                                                     <div class="ul_list ul_list-icon-ok">
-                     
-														<ul>
-                                                            <li>Chinese: <a href="https://github.com/Ebookcoin/ebookcoin">Node.js区块链开发</a></li>
-                                                            <li>English: <a href="https://github.com/blockchain-ebook/nodejs-blockchain">Use Node.js to develop Blockchain</a>	</li>
                                                         
-                                                            <li id =link0></li>
-                                                            <li id =link1></li>
-                                                            <li id =link2></li>
-                                                            <li id =link3></li>
-                                                            <li id =link4></li>
-                                                            <li id =link5></li>
-                                                            <script type="text/javascript">
-                                                            
-                                                            var reqUrl = "./recommendations";
-                                                            $.get(reqUrl, function(data) {
-                                                                var recommendations = data.response.recommendations;
-                                                                console.log(recommendations);
-                                                            })
-                                                           
-                                                            var i;
-                                                            var name = "This is a link"
-                                                            var link = "https://github.com/blockchain-ebook/nodejs-blockchain"; 
-                                                            for (i=0; i < 6; i++)
-                                                            {
-                                                                document.getElementById("link"+i).innerHTML = "<a href=\"" + recommendations[i]["url"] + "\">" + recommendations[i]['title'] + "</a>"
-                                                            }
-                                                        </script>
+                     
+														<ul id = "rec list">
+                                                            <li>Chinese: <a href="https://github.com/Ebookcoin/ebookcoin">Node.js区块链开发</a></li>
+                                                            <li>English: <a href="https://github.com/blockchain-ebook/nodejs-blockchain">Use Node.js to develop Blockchain</a>	</li>      
+                                                            <li id="link1"></li>
+                                                            <li id="link2"></li>
+                                                            <li id="link3"></li>
+                                                            <li id="link4"></li>
+                                                            <li id="link5"></li>
+                                                            <li id="link6"></li>
                                                         </ul>
+                                                         <script>
+                                                            url = "./getRecommendations"
+                                                            $.when(
+                                                            $.get(url, function(data) {
+                                                                var docs = data.reponse.recommendations
+                                                                })).then(function(data) {
+                                                                    var link = document.getElementById("link1");
+                                                                    link.innerHTML = "<p>Done</p>"
+                                                            })
+                                                            var link = "http://google.com"
+                                                            var title ="google"
+                                                            var i
+                                                            for (i=2; i < 7; i++) 
+                                                            {
+                                                                document.getElementById("link"+i).innerHTML="<li><a href=\"" + link +"\"" + ">" + title + "</a></li>";
+                                                            }
+                                                            
+                                                            
+                                                        </script>
                                                         </center>
                                                     </div>
                                                 </div>
@@ -494,5 +497,5 @@
                             <!-- footer end -->
 
     </body>
-
+    
 </html>

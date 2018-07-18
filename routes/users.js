@@ -58,6 +58,7 @@ exports.userRegister = function (req, res) {
     'payment_address': "",
     'is_reviewer': 0
   };
+    console.log("Creating new user")
 
   connection.query('select COUNT(*) as number from user where `user`.user_email = ?', req.body.user_email, function (error, results, fields) {
     if (error) {
@@ -109,8 +110,15 @@ exports.userRegister = function (req, res) {
 }
 
 exports.getRecommendations = function(req, res) {
-    userID = req.params.user_id
+    /*
+    console.log("Hello")
+    var solr_host = global.config.search_solr_host;
     var keywords
+    var session = req.session;
+    console.log("Logging session:")
+    console.log(session);
+    console.log(session.user_id)
+    var userID = session.user_id;
     connection.query(
         "select category_id from user_category where user_id=?",
         [userID],
@@ -129,6 +137,8 @@ exports.getRecommendations = function(req, res) {
                         if (error) {
                             console.log("user categories not found")
                         } else {
+                            console.log(results)
+                            console.log(typeof results)
                             keywords = results
                         }
                     }
@@ -139,10 +149,12 @@ exports.getRecommendations = function(req, res) {
     console.log("Found keywords: ")
     console.log(keywords)
     // some hard coded keywords if keywords can't be retrieved
-
+*/
+    var keywords
     if (!keywords) {
         keywords = ["Bitcoin", "Blockchain", "P2P"]
     }
+    console.log(keywords)
     var category = "article"
 
     function getLink(keyword, num) {
@@ -178,6 +190,8 @@ exports.getRecommendations = function(req, res) {
                 console.log("request error", error)
                 reject()
             })
+        }).catch((error) => {
+            console.log(error)
         })
         return p
     }
