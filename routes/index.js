@@ -178,7 +178,7 @@ router.get('/error', function (req, res) {
   res.render('error', { title: 'Error' });
 });
 router.get('/userProfile/:user_id', users.userProfile);
-router.post('/userProfile/recommendations', users.getRecommendations);
+router.get('/getRecommendations', users.getRecommendations);
 router.get('/trainingMaterial', trainingMaterial.getAllTrainingMaterial);
 router.post('/updateUserProfile', users.updateUserProfile);
 router.get('/aboutUs', function (req, res) {
