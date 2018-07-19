@@ -214,13 +214,13 @@
                                                         </ul>
 
                                                             <script type="text/javascript">
-
-                                                                var reqUrl = "http://localhost/getRecommendations";
+                                                                var host = $(location).attr("hostname")
+                                                                var reqUrl = "http://" + $(location).attr("hostname") + "/getRecommendations";
                                                                 $.when($.get(reqUrl)).done((r) => {
                                                                 for (i=0; i < 6; i++) 
                                                                 {
                                                                     var link = r[i]["url"];
-                                                                    var title = r[i]["title"];
+                                                                    var title = String(r[i]["title"]).replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()).replace(/ /g, "&nbsp");
                                                                     document.getElementById("link"+i).innerHTML="<li><a href=\"" + link +"\"" + ">" + title + "</a></li>";
                                                                 }
                                                                 });
