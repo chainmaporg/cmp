@@ -129,6 +129,8 @@ exports.userRegister = function(req, res) {
 }
 
 exports.getRecommendations = function(req, res) {
+    var Client = require("node-rest-client").Client
+    var client = new Client()
     var solr_host = global.config.search_solr_host
     var session = req.session
     var userID = session.user_id
@@ -154,10 +156,9 @@ exports.getRecommendations = function(req, res) {
         .catch(error => console.log(error))
         .then(results => {
             new Promise((resolve, reject) => {
-                console.log(results)
                 connection.query(
-                    "select category_name from category where id = ?",
-                    results.join(" or id="),
+                    "select category_name from category where id =" +
+                        results.join(" or id="),
                     function(error, results, fields) {
                         if (error) {
                             reject(error)
@@ -172,14 +173,11 @@ exports.getRecommendations = function(req, res) {
             })
                 .catch(error => console.log(error))
                 .then(keywords => {
-                    console.log("Found keywords: ")
-                    console.log(keywords)
                     // some hard coded keywords if keywords can't be retrieved
 
                     if (keywords === undefined || keywords.length == 0) {
                         keywords = ["Bitcoin", "Blockchain", "P2P"]
                     }
-                    console.log(keywords)
                     var category = "article"
 
                     function getLink(keyword, num) {
@@ -189,7 +187,9 @@ exports.getRecommendations = function(req, res) {
                             encodeURI(category) +
                             "%20AND%20search_content:" +
                             encodeURI(keyword) +
-                            "&rows=5&wt=json"
+                            "&rows=" +
+                            encodeURI(num) +
+                            "&wt=json"
                         return url
                     }
 
@@ -200,8 +200,9 @@ exports.getRecommendations = function(req, res) {
                     function makePromise(url) {
                         var p = new Promise((resolve, reject) => {
                             // request is asynchronous
+                            var client = new Client()
                             var r = client.get(url, function(data, response) {
-                                docs = JSON.parse(data).response.docs
+                                var docs = JSON.parse(data).response.docs
                                 resolve(docs)
                             })
 
@@ -253,7 +254,6 @@ exports.getRecommendations = function(req, res) {
                             },
                             [])
                             var recommendations = shuffle(values).slice(0, 6)
-                            console.log(recommendations)
                             res.send(recommendations)
                         })
                         .catch(function(error) {

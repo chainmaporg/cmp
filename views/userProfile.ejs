@@ -205,46 +205,25 @@
 														<ul id = "rec list">
                                                             <li>Chinese: <a href="https://github.com/Ebookcoin/ebookcoin">Node.js区块链开发</a></li>
                                                             <li>English: <a href="https://github.com/blockchain-ebook/nodejs-blockchain">Use Node.js to develop Blockchain</a>	</li>      
+                                                            <li id="link0"></li>
                                                             <li id="link1"></li>
                                                             <li id="link2"></li>
                                                             <li id="link3"></li>
                                                             <li id="link4"></li>
                                                             <li id="link5"></li>
-                                                            <li id="link6"></li>
                                                         </ul>
-                                                         <script> /*
 
-                                                            var reqUrl = "./getRecommendations"
-                                                            $.ajax({
-                                                                type: "GET",
-                                                                url: reqUrl,    
-                                                                dataType: "json",
-                                                                success: function(data) {
-                                                                    alert(data.d);
-                                                                },
-                                                                error: function (xhr, ajaxOptions, thrownError) {
-                                                                    alert(xhr.status);
-                                                                    alert(xhr.responseText);
-                                                                    alert(thrownError);
-       }
-                                                            });
-                                                                                                                        
-                                                            var link = "http://google.com"
-                                                            var title ="google"
-                                                            var i
-                                                            for (i=1; i < 7; i++) 
-                                                            {
-                                                                document.getElementById("link"+i).innerHTML="<li><a href=\"" + link +"\"" + ">" + title + "</a></li>";
-                                                            }
-                                                                   */ </script>
                                                             <script type="text/javascript">
 
-                    //http://chainmap.org/query/All/bitcoin
-                    var reqUrl = "http://localhost/getRecommendations";
-                        $.when($.get(reqUrl)).done((r) => {
-                            var recommendations = r[0];
-                            console.log(recommendations)
-                                                    });
+                                                                var reqUrl = "http://localhost/getRecommendations";
+                                                                $.when($.get(reqUrl)).done((r) => {
+                                                                for (i=0; i < 6; i++) 
+                                                                {
+                                                                    var link = r[i]["url"];
+                                                                    var title = r[i]["title"];
+                                                                    document.getElementById("link"+i).innerHTML="<li><a href=\"" + link +"\"" + ">" + title + "</a></li>";
+                                                                }
+                                                                });
 
                                                         </script>
                                                         </center>
