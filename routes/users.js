@@ -183,7 +183,7 @@ exports.getRecommendations = function(req, res) {
                     function getLink(keyword, num) {
                         url =
                             solr_host +
-                            "/select?fl=title,%20url,%20summary,%20category&q=category:" +
+                            "/select?fl=title,%20url,%20category&q=category:" +
                             encodeURI(category) +
                             "%20AND%20search_content:" +
                             encodeURI(keyword) +
@@ -195,6 +195,141 @@ exports.getRecommendations = function(req, res) {
 
                     var urls = keywords.map(function(current) {
                         return getLink(current, 6)
+                    })
+
+                    function makePromise(url) {
+                        var p = new Promise((resolve, reject) => {
+                            // request is asynchronous
+                            var client = new Client()
+                            var r = client.get(url, function(data, response) {
+                                var docs = JSON.parse(data).response.docs
+                                resolve(docs)
+                            })
+
+                            r.on("requestTimeout", function(r) {
+                                console.log("request expired.")
+                                r.abort()
+                                reject()
+                            })
+
+                            r.on("error", function(err) {
+                                console.log("request error", error)
+                                reject()
+                            })
+                        }).catch(error => {
+                            console.log(error)
+                        })
+                        return p
+                    }
+
+                    var combined = urls.map(function(x) {
+                        return makePromise(x)
+                    }, [])
+
+                    function shuffle(array) {
+                        var counter = array.length
+                        // While there are elements in the array
+                        while (counter > 0) {
+                            // Pick a random index
+                            var index = Math.floor(Math.random() * counter)
+
+                            // Decrease counter by 1
+                            counter--
+
+                            // And swap the last element with it
+                            var temp = array[counter]
+                            array[counter] = array[index]
+                            array[index] = temp
+                        }
+                        return array
+                    }
+
+                    Promise.all(combined)
+                        .then(function(values) {
+                            var values = values.reduce(function(
+                                selected,
+                                current
+                            ) {
+                                return selected.concat(current)
+                            },
+                            [])
+                            var recommendations = shuffle(values).slice(0, 6)
+                            res.send(recommendations)
+                        })
+                        .catch(function(error) {
+                            console.log(error)
+                        })
+                })
+        })
+}
+
+exports.getJobRecommendations = function(req, res) {
+    var Client = require("node-rest-client").Client
+    var client = new Client()
+    var solr_host = global.config.search_solr_host
+    var session = req.session
+    var userID = session.user_id
+    new Promise((resolve, reject) => {
+        connection.query(
+            "select category_id from user_category where user_id=?",
+            [userID],
+            function(error, results, fields) {
+                if (error) {
+                    reject(error)
+                    res.render("error", {
+                        errorMsg: "Error on finding user categories",
+                    })
+                } else {
+                    results = results.map(function(value) {
+                        return value["category_id"]
+                    })
+                    resolve(results)
+                }
+            }
+        )
+    })
+        .catch(error => console.log(error))
+        .then(results => {
+            new Promise((resolve, reject) => {
+                connection.query(
+                    "select category_name from category where id =" +
+                        results.join(" or id="),
+                    function(error, results, fields) {
+                        if (error) {
+                            reject(error)
+                        } else {
+                            results = results.map(function(value) {
+                                return value["category_name"]
+                            })
+                            resolve(results)
+                        }
+                    }
+                )
+            })
+                .catch(error => console.log(error))
+                .then(keywords => {
+                    // some hard coded keywords if keywords can't be retrieved
+
+                    if (keywords === undefined || keywords.length == 0) {
+                        keywords = ["Bitcoin", "Blockchain", "P2P"]
+                    }
+                    var category = "job"
+
+                    function getLink(keyword, num) {
+                        url =
+                            solr_host +
+                            "/select?fl=title,%20url,%20category&q=category:" +
+                            encodeURI(category) +
+                            "%20AND%20search_content:" +
+                            encodeURI(keyword) +
+                            "&rows=" +
+                            encodeURI(num) +
+                            "&wt=json"
+                        return url
+                    }
+
+                    var urls = keywords.map(function(current) {
+                        return getLink(current, 2)
                     })
 
                     function makePromise(url) {
