@@ -1213,6 +1213,8 @@ div[class*="slider_shadow"]:before, div[class^="header_shadow"] {
 	width: 49%;
 	float: left;
 	margin-bottom: 20px !important;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .user-profile-widget .ul_list li:nth-child(2n+1) {
 	margin-right: 2%;

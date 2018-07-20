@@ -388,7 +388,7 @@ exports.getJobRecommendations = function(req, res) {
                                 return selected.concat(current)
                             },
                             [])
-                            var recommendations = shuffle(values).slice(0, 6)
+                            var recommendations = shuffle(values).slice(0, 4)
                             res.send(recommendations)
                         })
                         .catch(function(error) {
