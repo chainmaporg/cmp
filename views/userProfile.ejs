@@ -195,10 +195,10 @@
                                         </div>
                                         <!-- End col-md-12 -->
                                         
-                                                                              <div class="col-md-12">
+                                        <div class="col-md-12">
                                             <div class="page-content page-content-user-profile">
                                                 <div class="user-profile-widget">
-                                                    <h2>Recommendation</h2>
+                                                    <h2>Recommendations</h2>
                                                     <div class="ul_list ul_list-icon-ok">
                                                         
                      
@@ -220,11 +220,11 @@
                                                                 for (i=0; i < 6; i++) 
                                                                 {
                                                                     var link = r[i]["url"];
-                                                                    var title = String(r[i]["title"]).replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()).replace(/ /g, "&nbsp");
-                                                                    document.getElementById("link"+i).innerHTML="<li><a href=\"" + link +"\"" + ">" + title + "</a></li>";
+                                                                    var category = String(r[i]["category"]).charAt(0).toUpperCase() + String(r[i]["category"]).slice(1);
+                                                                    var title = String(r[i]["title"]).replace(/^[0-9]+/,"").replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()).replace(/ /g, "&nbsp");
+                                                                    document.getElementById("link"+i).innerHTML=category + ":&nbsp<a href=\"" + link +"\"" + ">" + title + "</a>";
                                                                 }
                                                                 });
-
                                                         </script>
                                                         </center>
                                                     </div>
@@ -234,8 +234,38 @@
                                             <!-- End page-content -->
                                         </div>
                                         <!-- End col-md-12 -->
-                                        
-                                        
+                                       
+                                        <div class="col-md-12">
+                                            <div class="page-content page-content-user-profile">
+                                                <div class="user-profile-widget">
+                                                    <h2>Job Recommendations</h2>
+                                                    <div class="ul_list ul_list-icon-ok">
+                                                        <ul id = "rec list">
+                                                            <li id="job0"></li>
+                                                            <li id="job1"></li>
+                                                            <li id="job2"></li>
+                                                            <li id="job3"></li>
+                                                        </ul>
+
+                                                        <script type="text/javascript">
+                                                                var host = $(location).attr("hostname")
+                                                                var reqUrl = "http://" + $(location).attr("hostname") + "/getJobRecommendations";
+                                                                $.when($.get(reqUrl)).done((r) => {
+                                                                for (i=0; i < 4; i++) 
+                                                                {
+                                                                    var category = String(r[i]["category"]).charAt(0).toUpperCase() + String(r[i]["category"]).slice(1);
+                                                                    var link = r[i]["url"];
+                                                                    var title = String(r[i]["title"]).replace(/^[0-9]+/,"").replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()).replace(/ /g, "&nbsp");
+                                                                    document.getElementById("job"+i).innerHTML= category + ":&nbsp<a href=\"" + link +"\"" + ">" + title + "</a>";
+                                                                }
+                                                                });
+                                                        </script>
+                                                        </center>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="col-md-12">
                                             <div class="page-content page-content-user-profile">
                                                 <div class="user-profile-widget">
