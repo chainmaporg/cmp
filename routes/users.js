@@ -1,131 +1,124 @@
-var express = require("express")
-var md5 = require("md5")
+var express = require('express');
+var md5 = require('md5');
 
-exports.userRegister = function(req, res) {
-    console.log("req", req.body)
-    var today = new Date()
-    var company_id = ""
-    // if (req.body.mode == "create") {
-    //   var companyInfo = {
-    //     'company_name': req.body.company_name,
-    //     'company_info': req.body.company_info,
-    //     'company_email': req.body.company_email,
-    //     'company_phone': req.body.company_phone,
-    //     'company_site': req.body.company_site
-    //   }
-    //   connection.query('INSERT INTO company SET ?', companyInfo, function (error, results, fields) {
-    //     if (error) {
-    //       console.log("error ocurred", error);
-    //       res.render("error", { errorMsg: "Error on insertion into DB Users" })
 
-    //     } else {
-    //       var userInfo = {
-    //         'company_id': results.insertId,
-    //         'firstname': req.body.firstname,
-    //         'lastname': req.body.lastname,
-    //         'user_name': req.body.user_name,
-    //         'user_email': req.body.user_email,
-    //         'user_phone': req.body.user_phone,
-    //         'password': md5(req.body.password),
-    //         'payment_address': req.body.payment_address,
-    //         'is_reviewer': req.body.is_reviewer
-    //       };
 
-    //       connection.query('INSERT INTO user SET ?', userInfo, function (error, results, fields) {
-    //         if (error) {
-    //           console.log("error ocurred", error);
-    //           res.render("error", { errorMsg: "Error on insertion into DB Users" })
+exports.userRegister = function (req, res) {
+  console.log("req", req.body);
+  var today = new Date();
+  var company_id = "";
+  // if (req.body.mode == "create") {
+  //   var companyInfo = {
+  //     'company_name': req.body.company_name,
+  //     'company_info': req.body.company_info,
+  //     'company_email': req.body.company_email,
+  //     'company_phone': req.body.company_phone,
+  //     'company_site': req.body.company_site
+  //   }
+  //   connection.query('INSERT INTO company SET ?', companyInfo, function (error, results, fields) {
+  //     if (error) {
+  //       console.log("error ocurred", error);
+  //       res.render("error", { errorMsg: "Error on insertion into DB Users" })
 
-    //         } else {
-    //           console.log('The information saved successfully', results);
-    //           res.send('success');
-    //         }
-    //       });
-    //     }
-    //   });
-    // }
-    // else if (req.body.mode == "select") {
-    var userInfo = {
-        company_id: 0,
-        firstname: "",
-        lastname: "",
-        user_name: req.body.user_name,
-        user_email: req.body.user_email,
-        user_phone: req.body.user_phone,
-        password: md5(req.body.password),
-        payment_address: "",
-        is_reviewer: 0,
-    }
-    console.log("Creating new user")
+  //     } else {
+  //       var userInfo = {
+  //         'company_id': results.insertId,
+  //         'firstname': req.body.firstname,
+  //         'lastname': req.body.lastname,
+  //         'user_name': req.body.user_name,
+  //         'user_email': req.body.user_email,
+  //         'user_phone': req.body.user_phone,
+  //         'password': md5(req.body.password),
+  //         'payment_address': req.body.payment_address,
+  //         'is_reviewer': req.body.is_reviewer
+  //       };
 
-    connection.query(
-        "select COUNT(*) as number from user where `user`.user_email = ?",
-        req.body.user_email,
-        function(error, results, fields) {
-            if (error) {
-                console.log("error ocurred", error)
-                res.status(500).send({ error: "you have an error" })
-            } else {
-                if (results[0].number == 0) {
-                    connection.query(
-                        "select COUNT(*) as number from user where `user`.user_name = ?",
-                        req.body.user_name,
-                        function(error, results, fields) {
-                            if (error) {
-                                console.log("error ocurred", error)
-                                // res.redirect('/error');
-                                res.status(500).send({
-                                    error: "you have an error",
-                                })
-                            } else {
-                                if (results[0].number == 0) {
-                                    connection.query(
-                                        "INSERT INTO user SET ?",
-                                        userInfo,
-                                        function(error, results, fields) {
-                                            if (error) {
-                                                // res.render("error", { errorMsg: "Error on insertion into DB Users code " })
-                                                console.log(
-                                                    "error ocurred changes",
-                                                    error
-                                                )
-                                                res.status(500).send({
-                                                    error: "you have an error",
-                                                })
-                                            } else {
-                                                console.log(
-                                                    "The information saved successfully",
-                                                    results
-                                                )
-                                                res.send({
-                                                    msg: "success",
-                                                })
-                                            }
-                                        }
-                                    )
-                                } else {
-                                    console.log(
-                                        "duplicate user name",
-                                        req.body.user_name
-                                    )
-                                    res.send({
-                                        msg: "duplicateUserName",
-                                    })
-                                }
-                            }
-                        }
-                    )
+  //       connection.query('INSERT INTO user SET ?', userInfo, function (error, results, fields) {
+  //         if (error) {
+  //           console.log("error ocurred", error);
+  //           res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+  //         } else {
+  //           console.log('The information saved successfully', results);
+  //           res.send('success');
+  //         }
+  //       });
+  //     }
+  //   });
+  // }
+  // else if (req.body.mode == "select") {
+  var userInfo = {
+    'company_id': 0,
+    'firstname': "",
+    'lastname': "",
+    'user_name': req.body.user_name,
+    'user_email': req.body.user_email,
+    'user_phone': req.body.user_phone,
+    'password': md5(req.body.password),
+    'payment_address': "",
+    'is_reviewer': 0
+  };
+
+  connection.query('select COUNT(*) as number from user where `user`.user_email = ?', req.body.user_email, function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.status(500).send({ error: 'you have an error' });
+
+    } else {
+      if (results[0].number == 0) {
+        connection.query('select COUNT(*) as number from user where `user`.user_name = ?', req.body.user_name, function (error, results, fields) {
+          if (error) {
+            console.log("error ocurred", error);
+            // res.redirect('/error');
+            res.status(500).send({ error: 'you have an error' });
+
+          } else {
+            if (results[0].number == 0) {
+              connection.query('INSERT INTO user SET ?', userInfo, function (error, results, fields) {
+                if (error) {
+                  // res.render("error", { errorMsg: "Error on insertion into DB Users code " })
+                  console.log("error ocurred changes", error);
+                  res.status(500).send({ error: 'you have an error' });
+
                 } else {
-                    console.log("duplicate user Email", req.body.user_email)
-                    res.send({
-                        msg: "duplicateUserEmail",
-                    })
+                  console.log('The information saved successfully', results);
+                  res.send({
+                    "msg": "success"
+                  })
                 }
+              });
+            } else {
+              console.log('duplicate user name', req.body.user_name);
+              res.send({
+                "msg": "duplicateUserName"
+              })
             }
-        }
-    )
+          }
+        });
+      } else {
+        console.log('duplicate user Email', req.body.user_email);
+        res.send({
+          "msg": "duplicateUserEmail"
+        })
+      }
+    }
+  });
 
-    // }
+
+  // }
+}
+
+exports.getCompanies = function (req, res) {
+  connection.query('select company_id, company_name from company', function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+    } else {
+      console.log(results)
+      res.send(results);
+    }
+  });
 }
 
 exports.getRecommendations = function(req, res) {
@@ -398,316 +391,195 @@ exports.getJobRecommendations = function(req, res) {
         })
 }
 
-exports.getCompanies = function(req, res) {
-    connection.query("select company_id, company_name from company", function(
-        error,
-        results,
-        fields
-    ) {
+exports.userProfile = function (req, res) {
+  userID = req.params.user_id;
+  resultObj = {}
+  connection.query('select * from user where user_id=?', [userID], function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+    } else {
+      resultObj['userProfile'] = results;
+      connection.query('SELECT (select count(*) from challenge where challenge.post_user_id = ?) as total_challenge, (select COUNT(*) FROM answer where answer.post_user_id = ?) as total_answer', [userID, userID], function (error, results, fields) {
         if (error) {
-            console.log("error ocurred", error)
-            res.render("error", {
-                errorMsg: "Error on insertion into DB Users",
-            })
+          console.log("error ocurred", error);
+          res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
         } else {
-            console.log(results)
-            res.send(results)
-        }
-    })
-}
-
-exports.userProfile = function(req, res) {
-    userID = req.params.user_id
-    resultObj = {}
-    connection.query("select * from user where user_id=?", [userID], function(
-        error,
-        results,
-        fields
-    ) {
-        if (error) {
-            console.log("error ocurred", error)
-            res.render("error", {
-                errorMsg: "Error on insertion into DB Users",
-            })
-        } else {
-            resultObj["userProfile"] = results
-            connection.query(
-                "SELECT (select count(*) from challenge where challenge.post_user_id = ?) as total_challenge, (select COUNT(*) FROM answer where answer.post_user_id = ?) as total_answer",
-                [userID, userID],
-                function(error, results, fields) {
-                    if (error) {
-                        console.log("error ocurred", error)
-                        res.render("error", {
-                            errorMsg: "Error on insertion into DB Users",
-                        })
-                    } else {
-                        resultObj["questions"] = results[0].total_challenge
-                        resultObj["answers"] = results[0].total_answer
-                        connection.query(
-                            "select challenge.*, `user`.user_name, `user`.user_id, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers from challenge join `user` on challenge.post_user_id = `user`.user_id where `user`.user_id = ? ORDER BY posting_date DESC",
-                            [userID],
-                            function(error, results, fields) {
-                                if (error) {
-                                    console.log("error ocurred", error)
-                                    res.render("error", {
-                                        errorMsg:
-                                            "Error on insertion into DB Users",
-                                    })
-                                } else {
-                                    resultObj["allQuestions"] = results
-                                    // console.log('Total data from the userProfile request: ', resultObj);
-                                    connection.query(
-                                        "select challenge.*, (select count(*) from answer where answer.challenge_id = challenge.challenge_id) as total_answer  from challenge join answer on challenge.challenge_id = answer.challenge_id where answer.post_user_id = ? GROUP BY challenge_id ORDER BY posting_date",
-                                        [userID],
-                                        function(error, results, fields) {
-                                            if (error) {
-                                                console.log(
-                                                    "error ocurred",
-                                                    error
-                                                )
-                                                res.render("error", {
-                                                    errorMsg:
-                                                        "Error on insertion into DB Users",
-                                                })
-                                            } else {
-                                                resultObj[
-                                                    "allansweredQuestions"
-                                                ] = results
-                                                // console.log('Total data from the userProfile request: ', resultObj);
-                                                connection.query(
-                                                    "select user_category.category_id, user_category.`level`, category.category_name from user_category join category on user_category.category_id = category.id where user_id = ?",
-                                                    [userID],
-                                                    function(
-                                                        error,
-                                                        results,
-                                                        fields
-                                                    ) {
-                                                        if (error) {
-                                                            console.log(
-                                                                "error ocurred",
-                                                                error
-                                                            )
-                                                            res.render(
-                                                                "error",
-                                                                {
-                                                                    errorMsg:
-                                                                        "Error on insertion into DB Users",
-                                                                }
-                                                            )
-                                                        } else {
-                                                            resultObj[
-                                                                "userCategory"
-                                                            ] = results
-                                                            console.log(
-                                                                "user category from userProfile request: ",
-                                                                results
-                                                            )
-
-                                                            res.render(
-                                                                "userProfile",
-                                                                {
-                                                                    data: resultObj,
-                                                                }
-                                                            )
-                                                        }
-                                                    }
-                                                )
-                                            }
-                                        }
-                                    )
-                                }
-                            }
-                        )
-                    }
-                }
-            )
-        }
-    })
-}
-
-exports.tokenRanking = function(req, res) {
-    connection.query(
-        "select `user`.*, ((select count(*) as total from challenge where post_user_id = `user`.user_id) + (select count(*) as total from answer where post_user_id = `user`.user_id)) as total from `user` ORDER BY total DESC limit 5",
-        function(error, results, fields) {
+          resultObj['questions'] = results[0].total_challenge;
+          resultObj['answers'] = results[0].total_answer;
+          connection.query('select challenge.*, `user`.user_name, `user`.user_id, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers from challenge join `user` on challenge.post_user_id = `user`.user_id where `user`.user_id = ? ORDER BY posting_date DESC', [userID], function (error, results, fields) {
             if (error) {
-                console.log("error ocurred", error)
-                res.render("error", {
-                    errorMsg: "Error on insertion into DB Users",
-                })
+              console.log("error ocurred", error);
+              res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
             } else {
-                console.log(results)
-                res.send({ users: results })
-            }
-        }
-    )
-}
+              resultObj['allQuestions'] = results;
+              // console.log('Total data from the userProfile request: ', resultObj);
+              connection.query('select challenge.*, (select count(*) from answer where answer.challenge_id = challenge.challenge_id) as total_answer  from challenge join answer on challenge.challenge_id = answer.challenge_id where answer.post_user_id = ? GROUP BY challenge_id ORDER BY posting_date', [userID], function (error, results, fields) {
+                if (error) {
+                  console.log("error ocurred", error);
+                  res.render("error", { errorMsg: "Error on insertion into DB Users" })
 
-exports.updatePaymentaddress = function(req, res) {
-    let session = req.session
-    userID = session.user_id
-    paymentAddress = req.body.paymentAddress
-    console.log("User ID", userID)
-    console.log("payment Address", paymentAddress)
-    connection.query(
-        "update `user` set `user`.payment_address = ? WHERE user_id = ?",
-        [paymentAddress, userID],
-        function(error, results, fields) {
-            if (error) {
-                console.log("error ocurred", error)
-                res.render("error", {
-                    errorMsg: "Error on insertion into DB Users",
-                })
-            } else {
-                console.log(results)
-                res.redirect("/userProfile/" + userID)
-            }
-        }
-    )
-}
-
-exports.updateUserProfile = function(req, res) {
-    console.log("total Input", req.body)
-    var session = req.session
-    var userID = session.user_id
-    var interests = req.body.interest
-    var levels = req.body.level
-    var userCategoryInterest = []
-    if (typeof interests !== "undefined") {
-        for (let i = 0; i < interests.length; i++) {
-            var row = []
-            row.push(interests[i])
-            row.push(userID)
-            row.push(levels[interests[i] - 1])
-
-            userCategoryInterest.push(row)
-        }
-    }
-
-    connection.query(
-        "delete from user_category WHERE user_id = ?",
-        [userID],
-        function(error, results, fields) {
-            if (error) {
-                console.log("error ocurred", error)
-                res.render("error", {
-                    errorMsg: "Error on insertion into DB Users",
-                })
-            } else {
-                if (userCategoryInterest.length > 0) {
-                    connection.query(
-                        "INSERT INTO user_category (category_id, user_id, level) VALUES ?",
-                        [userCategoryInterest],
-                        function(error, results, fields) {
-                            if (error) {
-                                console.log("error ocurred", error)
-                                res.render("error", {
-                                    errorMsg:
-                                        "Error on insertion into DB Users",
-                                })
-                            } else {
-                                connection.query(
-                                    "update `user` set `user`.payment_address = ?, `user`.headline = ? WHERE user_id = ?",
-                                    [
-                                        req.body.paymentAddress,
-                                        req.body.headline,
-                                        userID,
-                                    ],
-                                    function(error, results, fields) {
-                                        if (error) {
-                                            console.log("error ocurred", error)
-                                            res.render("error", {
-                                                errorMsg:
-                                                    "Error on insertion into DB Users",
-                                            })
-                                        } else {
-                                            console.log(results)
-                                            res.redirect(
-                                                "/userProfile/" + userID
-                                            )
-                                        }
-                                    }
-                                )
-                            }
-                        }
-                    )
                 } else {
-                    connection.query(
-                        "update `user` set `user`.payment_address = ?, `user`.headline = ? WHERE user_id = ?",
-                        [req.body.paymentAddress, req.body.headline, userID],
-                        function(error, results, fields) {
-                            if (error) {
-                                console.log("error ocurred", error)
-                                res.render("error", {
-                                    errorMsg:
-                                        "Error on insertion into DB Users",
-                                })
-                            } else {
-                                console.log(results)
-                                res.redirect("/userProfile/" + userID)
-                            }
-                        }
-                    )
-                }
-            }
-        }
-    )
-}
-
-exports.getAllCategory = function(req, res) {
-    connection.query("select * from category", function(
-        error,
-        results,
-        fields
-    ) {
-        if (error) {
-            console.log("error ocurred", error)
-            res.render("error", {
-                errorMsg: "Error on insertion into DB Users",
-            })
-        } else {
-            console.log(results)
-            res.send({ categories: results })
-        }
-    })
-}
-
-exports.getAllCategoryWithUserCat = function(req, res) {
-    var category
-    var userCategory
-    var session = req.session
-    var userID = session.user_id
-    connection.query("select * from category", function(
-        error,
-        results,
-        fields
-    ) {
-        if (error) {
-            console.log("error ocurred", error)
-            res.render("error", {
-                errorMsg: "Error on insertion into DB Users",
-            })
-        } else {
-            category = results
-            connection.query(
-                "select * from user_category where user_id = ?",
-                [userID],
-                function(error, results, fields) {
+                  resultObj['allansweredQuestions'] = results;
+                  // console.log('Total data from the userProfile request: ', resultObj);
+                  connection.query('select user_category.category_id, user_category.`level`, category.category_name from user_category join category on user_category.category_id = category.id where user_id = ?', [userID], function (error, results, fields) {
                     if (error) {
-                        console.log("error ocurred", error)
-                        res.render("error", {
-                            errorMsg: "Error on insertion into DB Users",
-                        })
+                      console.log("error ocurred", error);
+                      res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
                     } else {
-                        userCategory = results
-                        res.send({
-                            allCategories: category,
-                            userCategories: userCategory,
-                        })
+                      resultObj['userCategory'] = results;
+                      console.log('user category from userProfile request: ', results);
+
+                      res.render('userProfile', { data: resultObj });
                     }
+                  });
                 }
-            )
+              });
+            }
+          });
         }
-    })
+      });
+    }
+  });
+}
+
+exports.tokenRanking = function (req, res) {
+  connection.query('select `user`.*, ((select count(*) as total from challenge where post_user_id = `user`.user_id) + (select count(*) as total from answer where post_user_id = `user`.user_id)) as total from `user` ORDER BY total DESC limit 5', function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+    } else {
+      console.log(results)
+      res.send({ 'users': results });
+    }
+  });
+}
+
+exports.updatePaymentaddress = function (req, res) {
+  let session = req.session;
+  userID = session.user_id;
+  paymentAddress = req.body.paymentAddress;
+  console.log("User ID", userID)
+  console.log("payment Address", paymentAddress)
+  connection.query('update `user` set `user`.payment_address = ? WHERE user_id = ?', [paymentAddress, userID], function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+    } else {
+      console.log(results)
+      res.redirect('/userProfile/' + userID);
+    }
+  });
+}
+
+exports.updateUserProfile = function (req, res) {
+  console.log("total Input", req.body);
+  var session = req.session;
+  var userID = session.user_id;
+  var interests = req.body.interest;
+  var levels = req.body.level;
+  var userCategoryInterest = [];
+  if (typeof interests !== 'undefined') {
+    for (let i = 0; i < interests.length; i++) {
+      var row = []
+      row.push(interests[i])
+      row.push(userID)
+      row.push(levels[interests[i] - 1])
+
+      userCategoryInterest.push(row)
+    }
+  }
+
+  connection.query('delete from user_category WHERE user_id = ?', [userID], function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+    } else {
+      if (userCategoryInterest.length > 0) {
+        connection.query('INSERT INTO user_category (category_id, user_id, level) VALUES ?', [userCategoryInterest], function (error, results, fields) {
+          if (error) {
+            console.log("error ocurred", error);
+            res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+          } else {
+            connection.query('update `user` set `user`.payment_address = ?, `user`.headline = ? WHERE user_id = ?', [req.body.paymentAddress, req.body.headline, userID], function (error, results, fields) {
+              if (error) {
+                console.log("error ocurred", error);
+                res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+              } else {
+                console.log(results)
+                res.redirect('/userProfile/' + userID);
+              }
+            });
+          }
+        });
+      } else {
+        connection.query('update `user` set `user`.payment_address = ?, `user`.headline = ? WHERE user_id = ?', [req.body.paymentAddress, req.body.headline, userID], function (error, results, fields) {
+          if (error) {
+            console.log("error ocurred", error);
+            res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+          } else {
+            console.log(results)
+            res.redirect('/userProfile/' + userID);
+          }
+        });
+      }
+
+    }
+  });
+}
+
+
+exports.getAllCategory = function (req, res) {
+
+  connection.query('select * from category', function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+    } else {
+      console.log(results)
+      res.send({ 'categories': results });
+    }
+  });
+}
+
+exports.getAllCategoryWithUserCat = function (req, res) {
+  var category;
+  var userCategory;
+  var session = req.session;
+  var userID = session.user_id;
+  connection.query('select * from category', function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+    } else {
+      category = results;
+      connection.query('select * from user_category where user_id = ?', [userID], function (error, results, fields) {
+        if (error) {
+          console.log("error ocurred", error);
+          res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+        } else {
+          userCategory = results;
+          res.send({
+            "allCategories": category,
+            "userCategories": userCategory,
+          })
+        }
+      });
+    }
+  });
 }
 
 // module.exports = router;
