@@ -1,8 +1,0 @@
-Read: Permabear Albert Edwards warns stocks are as bloated as bitcoin
-Late Friday, TD Ameritrade announced it would open trading for the recently launched Cboe bitcoin futures contract, following what it said was “standard protocol” for granting access to any futures product.
-So far, trading volumes on the Cboe have been fairly low. That may continue for a while as the initial margin required to get exposure on both Cboe and CME is so big, it confines participation to institutional and high net-worth traders, said Chris Weston, chief market strategist, in emailed comments.
-But under a “perfect scenario” and barring any big collapse in price, participation should pick up over time, he said. That’s as increased liquidity reduces the bid/ask spread on futures and increases appetite for bitcoin futures among those players who use implied volatility as a means of assessing potential portfolio risk.
-“That said, that is the longer-term potential and what could be considered an almost perfect scenario for bitcoin futures,” said Weston. “We also need to recall that the futures market is still a derivative of what is currently an unregulated market, so much rides on the longer-term prospects of bitcoin.”
-
-
-Original link: https://www.marketwatch.com/story/bitcoin-futures-rebound-pointing-to-a-run-at-18000-spot-prices-higher-as-well-2017-12-15

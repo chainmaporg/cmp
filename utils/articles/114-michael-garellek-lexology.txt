@@ -1,9 +1,0 @@
-Gowling WLG
-Canada December 13 2017
-Now that Bitcoin futures have begun trading on the CBOE, one of the largest futures exchanges in the world, the Investment Industry Regulatory Organization of Canada (IIROC) has issued a notice which provides for greater dealer margin requirements for cryptocurrency futures contracts.
-IIROC is prescribing higher margin requirements for cryptocurrency futures contracts than the regular margin required for commodity futures contracts and futures contract options found in the Dealer Member Rules.
-The notice states that Dealer Members must mark-to-market and margin exchange-traded cryptocurrency futures contract positions daily at the greatest of (i) 50% of the market value of the contracts; (ii) the margin required by the futures exchange, such as the CBOE, on which the contracts are entered into; (iii) the margin required by the futures exchange’s clearing corporation; and (iv) the margin required by the Dealer Member’s clearing broker. The margin requirements for the CBOE futures exchange on Bitcoin futures is currently 44% of the current daily settlement price in the case of speculative trading.
-This IIROC guidance is effective immediately.
-
-
-Original link: https://www.lexology.com/library/detail.aspx?g=cb477e81-5ceb-4c4f-883c-9c9c317327c3

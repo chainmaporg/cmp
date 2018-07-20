@@ -1,9 +1,0 @@
-Apply for this job
-Axoni develops novel blockchain solutions while focusing on the capital markets industry. We have demonstrated in various production implementations that our blockchain software can serve multiple asset classes and use cases at the world’s most advanced financial institutions. Join us in our mission to further strengthen and scale our system and develop new blockchain solutions. We’re excited to have you become part of our high-performing team of software engineers.
-The Blockchain Research Scientist is responsible for developing proposals for innovative systems, protocols and data models that solve real-world challenges, implementing proof-of-concepts, conducting performance, scalability, security and reliability studies in concept and production systems, and authoring technical documents, white papers and patents.
-RELEVANT SKILLS AND EXPERIENCE
-Ph.D. in Computer Science or a related field, with a strong publication record in at least one of the following areas:
-Computer Networking
-
-
-Original link: https://jobs.lever.co/axoni/8b37d818-d139-4413-aebd-861adbc5a0c3

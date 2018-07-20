@@ -1,9 +1,0 @@
-Ethereum is the second largest cryptocurrency in the world, and it’s been gaining increasingly more attention as Bitcoin newbies and veterans alike look to other more attainable coins. 
-Now, Ethereum is trading at close to $700 , a 20 percent increase in just 24 hours. 
-Of note here is that Ethereum was about on par with Bitcoin’s value for the most of a year, until a few months ago when the latter’s value skyrocketed to its current value of $17,196. The current value of Ethereum is the highest it’s ever been, showing just how crypto-crazy people are getting. Its market capitalization is currently $66.5 billion. 
-Aside from the both of them running on blockchains, Ethereum and Bitcoin don’t really have a lot in common . Bitcoin is solely a currency, and a payment system, whereas Ethereum is a little more versatile. It’s a way to decentralize data in a way that apps can plug into them, without the vulnerability of a server. In addition, it also makes sharing data between apps so much easier.
-Then there are also Ether tokens, the platform’s own currency of sorts. Instead of buying or mining Ether tokens, users instead set up a node on the blockchain network to donate their processing power to app developers and the like. In turn, they’re compensated in Ether tokens. However, each service or app plugging into Ethereum can have its own coin offering, and these all trade for Ether tokens based on their value. 
-Don't Miss
-
-
-Original link: https://www.indiatimes.com/technology/news/bitcoin-s-biggest-rival-ethereum-just-crossed-a-record-high-value-of-700-and-is-still-rising-335669.html

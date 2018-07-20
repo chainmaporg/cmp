@@ -1,7 +1,0 @@
-San Francisco
-What We're Building
-BitPay was founded in 2011, while Bitcoin was still in its infancy. We saw the potential for bitcoin to revolutionize the financial industry, making payments faster, more secure, and less expensive on a global scale.
-We started BitPay because we wanted to make it easy for businesses to accept bitcoin payments. We are currently the largest bitcoin payment processor in the world, serving industry-leading merchants on six continents. We've created a seamless, secure bitcoin payment experience used daily by hundreds of thousands of bitcoin users.
-
-
-Original link: https://angel.co/bitpay/jobs/341181-senior-back-end-developer-node-js-mongodb-and-javascript

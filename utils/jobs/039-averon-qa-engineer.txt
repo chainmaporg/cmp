@@ -1,8 +1,0 @@
-at Averon (View all jobs)
-Anywhere
-Do you want a job where you stop bad guys and make the world a safer place? Want to develop a global scale system?
-Averon is looking for a QE Engineer to help reduce cybercrime. Reporting to the CTO the QA engineer will own the quality of  Averon's patented and proprietary technology platform. This job is expected to be 75% automation and 25% manual--you work will be primarily writing tests and scripting scenarios. The software engineers will all be writing unit tests but you will write more advanced automated tests.
- 
-
-
-Original link: https://boards.greenhouse.io/averon/jobs/4012012002
