@@ -19,6 +19,10 @@ module.exports = {
 		pass: 'MyDongFangHong_05',
 		net: 'test'
 	},
+	balance: {
+		testTimer: 20,//in second
+		renewLimit: 86400 //renew every 86400 second (1 day)
+	},
     chainmap_env:chainmap_env,
     smartContract_address:smartContract_address,
     chainmapServerWallet:chainmapServerWallet,
