@@ -138,15 +138,19 @@ exports.getRecommendations = function(req, res) {
                         errorMsg: "Error on finding user categories",
                     })
                 } else {
-                    results = results.map(function(value) {
+                    var results = results.map(function(value) {
                         return value["category_id"]
                     })
-                    resolve(results)
+                    if (results.length === 0) resolve([1, 2])
+                    else resolve(results)
                 }
             }
         )
     })
-        .catch(error => console.log(error))
+        .catch(error => {
+            console.log(error)
+            console.log("Error reached.")
+        })
         .then(results => {
             new Promise((resolve, reject) => {
                 connection.query(
@@ -276,7 +280,8 @@ exports.getJobRecommendations = function(req, res) {
                     results = results.map(function(value) {
                         return value["category_id"]
                     })
-                    resolve(results)
+                    if (results.length === 0) resolve([1, 2])
+                    else resolve(results)
                 }
             }
         )
@@ -318,11 +323,12 @@ exports.getJobRecommendations = function(req, res) {
                             "&rows=" +
                             encodeURI(num) +
                             "&wt=json"
+                        console.log(url)
                         return url
                     }
 
                     var urls = keywords.map(function(current) {
-                        return getLink(current, 2)
+                        return getLink(current, 4)
                     })
 
                     function makePromise(url) {
