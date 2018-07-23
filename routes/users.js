@@ -138,7 +138,7 @@ exports.getRecommendations = function(req, res) {
                         errorMsg: "Error on finding user categories",
                     })
                 } else {
-                    var results = results.map(function(value) {
+                    results = results.map(function(value) {
                         return value["category_id"]
                     })
                     if (results.length === 0) resolve([1, 2])
