@@ -141,7 +141,7 @@ exports.getRecommendations = function(req, res) {
                     results = results.map(function(value) {
                         return value["category_id"]
                     })
-                    if (results.length === 0) resolve([1, 2])
+                    if (results.length == 0) resolve([1, 2])
                     else resolve(results)
                 }
             }
@@ -270,7 +270,7 @@ exports.getJobRecommendations = function(req, res) {
                     results = results.map(function(value) {
                         return value["category_id"]
                     })
-                    if (results.length === 0) resolve([1, 2])
+                    if (results.length == 0) resolve([1, 2])
                     else resolve(results)
                 }
             }
