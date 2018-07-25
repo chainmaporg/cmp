@@ -379,29 +379,46 @@ exports.getJobRecommendations = function(req, res) {
         })
 }
 
-
 exports.recordClick = function(req, res) {
-    console.log("Starting recording")
     var body = req.body
     var session = req.session
     var userID = session.user_id
-    var id = parseInt(body.id);
-    connection.query('select doc_id from click where user_id=? && doc_id=?', [userID, id], function(error, results, fields) {
-        if (error)
-            console.log("error occured", error)
-        else if (results.length == 0){
-            console.log(userID)
-            connection.query('INSERT INTO click (user_id, doc_id) VALUES (?)', [[userID, id]], function (error, results, fields) {
-                if (error) {
-                    console.log("error ocurred", error)
-                }
-                else
-                    console.log("Success on recoding click");
-            })
+    var id = body.id
+
+    String.prototype.hashCode = function() {
+        var hash = 0
+        if (this.length == 0) {
+            return hash
         }
-        else
-            console.log(results)
-    })
+        for (var i = 0; i < this.length; i++) {
+            var char = this.charCodeAt(i)
+            hash = (hash << 5) - hash + char
+            hash = hash & hash // Convert to 32bit integer
+        }
+        return hash
+    }
+
+    var hashID = id.hashCode()
+
+    connection.query(
+        "select doc_id from click where user_id=? && doc_id=?",
+        [userID, hashID],
+        function(error, results, fields) {
+            if (error) console.log("error occured", error)
+            else if (results.length == 0) {
+                console.log(userID)
+                connection.query(
+                    "INSERT INTO click (user_id, doc_id) VALUES (?)",
+                    [[userID, hashID]],
+                    function(error, results, fields) {
+                        if (error) {
+                            console.log("error ocurred", error)
+                        } else console.log("Success on recoding click")
+                    }
+                )
+            } else console.log(results)
+        }
+    )
 }
 
 exports.userProfile = function (req, res) {
