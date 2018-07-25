@@ -121,6 +121,7 @@ exports.getCompanies = function (req, res) {
   });
 }
 
+
 exports.getRecommendations = function(req, res) {
     var Client = require("node-rest-client").Client
     var client = new Client()
@@ -152,16 +153,17 @@ exports.getRecommendations = function(req, res) {
             console.log("Error reached.")
         })
         .then(results => {
+            console.log(results)
             new Promise((resolve, reject) => {
                 connection.query(
-                    "select category_name from category where id =" +
+                    "select keyword from keywords where id =" +
                         results.join(" or id="),
                     function(error, results, fields) {
                         if (error) {
                             reject(error)
                         } else {
                             results = results.map(function(value) {
-                                return value["category_name"]
+                                return value["keyword"]
                             })
                             resolve(results)
                         }
@@ -169,7 +171,20 @@ exports.getRecommendations = function(req, res) {
                 )
             })
                 .catch(error => console.log(error))
-                .then(keywords => {
+                .then(all => {
+                    function getRandom() {
+                        var randomIndex = Math.floor(
+                            Math.random() * all.length
+                        )
+                        return all.splice(randomIndex, 1)[0]
+                    }
+                    var keywords = []
+                    var maxLength = all.length
+                    for (var i = 0; i < Math.min(maxLength, 5); i++) {
+                        keywords.push(getRandom())
+                    }
+
+                    console.log(keywords)
                     // some hard coded keywords if keywords can't be retrieved
 
                     var category = "article"
@@ -281,16 +296,17 @@ exports.getJobRecommendations = function(req, res) {
             console.log("Error reached.")
         })
         .then(results => {
+            console.log(results)
             new Promise((resolve, reject) => {
                 connection.query(
-                    "select category_name from category where id =" +
+                    "select keyword from keywords where id =" +
                         results.join(" or id="),
                     function(error, results, fields) {
                         if (error) {
                             reject(error)
                         } else {
                             results = results.map(function(value) {
-                                return value["category_name"]
+                                return value["keyword"]
                             })
                             resolve(results)
                         }
@@ -298,7 +314,20 @@ exports.getJobRecommendations = function(req, res) {
                 )
             })
                 .catch(error => console.log(error))
-                .then(keywords => {
+                .then(all => {
+                    function getRandom() {
+                        var randomIndex = Math.floor(
+                            Math.random() * all.length
+                        )
+                        return all.splice(randomIndex, 1)[0]
+                    }
+                    var keywords = []
+                    var maxLength = all.length
+                    for (var i = 0; i < Math.min(maxLength, 5); i++) {
+                        keywords.push(getRandom())
+                    }
+
+                    console.log(keywords)
                     // some hard coded keywords if keywords can't be retrieved
 
                     var category = "job"
@@ -378,6 +407,7 @@ exports.getJobRecommendations = function(req, res) {
                 })
         })
 }
+
 
 exports.recordClick = function(req, res) {
     var body = req.body
