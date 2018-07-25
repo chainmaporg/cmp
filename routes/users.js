@@ -386,12 +386,12 @@ exports.recordClick = function(req, res) {
     var session = req.session
     var userID = session.user_id
     var id = parseInt(body.id);
-    connection.query('select id from click where user_id=? && id=?', [userID, id], function(error, results, fields) {
+    connection.query('select id from click where user_id=? && doc_id=?', [userID, id], function(error, results, fields) {
         if (error)
             console.log("error occured", error)
         else if (results.length == 0){
             console.log(userID)
-            connection.query('INSERT INTO click (user_id, id) VALUES (?)', [[userID, id]], function (error, results, fields) {
+            connection.query('INSERT INTO click (user_id, doc_id) VALUES (?)', [[userID, id]], function (error, results, fields) {
                 if (error) {
                     console.log("error ocurred", error)
                 }
