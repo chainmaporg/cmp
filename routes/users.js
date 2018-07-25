@@ -153,7 +153,6 @@ exports.getRecommendations = function(req, res) {
             console.log("Error reached.")
         })
         .then(results => {
-            console.log(results)
             new Promise((resolve, reject) => {
                 connection.query(
                     "select keyword from keywords where id =" +
@@ -183,9 +182,6 @@ exports.getRecommendations = function(req, res) {
                     for (var i = 0; i < Math.min(maxLength, 5); i++) {
                         keywords.push(getRandom())
                     }
-
-                    console.log(keywords)
-                    // some hard coded keywords if keywords can't be retrieved
 
                     var category = "article"
 
@@ -296,7 +292,6 @@ exports.getJobRecommendations = function(req, res) {
             console.log("Error reached.")
         })
         .then(results => {
-            console.log(results)
             new Promise((resolve, reject) => {
                 connection.query(
                     "select keyword from keywords where id =" +
@@ -326,9 +321,6 @@ exports.getJobRecommendations = function(req, res) {
                     for (var i = 0; i < Math.min(maxLength, 5); i++) {
                         keywords.push(getRandom())
                     }
-
-                    console.log(keywords)
-                    // some hard coded keywords if keywords can't be retrieved
 
                     var category = "job"
 
