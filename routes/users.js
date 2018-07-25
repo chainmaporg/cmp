@@ -419,6 +419,7 @@ exports.recordClick = function(req, res) {
             } else console.log(results)
         }
     )
+    res.send()
 }
 
 exports.userProfile = function (req, res) {
