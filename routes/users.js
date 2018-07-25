@@ -380,6 +380,30 @@ exports.getJobRecommendations = function(req, res) {
 }
 
 
+exports.recordClick = function(req, res) {
+    console.log("Starting recording")
+    var body = req.body
+    var session = req.session
+    var userID = session.user_id
+    var id = parseInt(body.id);
+    connection.query('select id from click where user_id=? && id=?', [userID, id], function(error, results, fields) {
+        if (error)
+            console.log("error occured", error)
+        else if (results.length == 0){
+            console.log(userID)
+            connection.query('INSERT INTO click (user_id, id) VALUES (?)', [[userID, id]], function (error, results, fields) {
+                if (error) {
+                    console.log("error ocurred", error)
+                }
+                else
+                    console.log("Success on recoding click");
+            })
+        }
+        else
+            console.log(results)
+    })
+}
+
 exports.userProfile = function (req, res) {
   userID = req.params.user_id;
   resultObj = {}

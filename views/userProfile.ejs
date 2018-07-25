@@ -203,8 +203,8 @@
                                                         
                      
 														<ul id = "rec list">
-                                                            <li>Chinese: <a href="https://github.com/Ebookcoin/ebookcoin">Node.js区块链开发</a></li>
-                                                            <li>English: <a href="https://github.com/blockchain-ebook/nodejs-blockchain">Use Node.js to develop Blockchain</a>	</li>      
+                                                            <li>Chinese: <a href="https://github.com/Ebookcoin/ebookcoin" onclick = "return logClick(1);">Node.js区块链开发</a></li>
+                                                            <li>English: <a href="https://github.com/blockchain-ebook/nodejs-blockchain" onclick = "return logClick(2);">Use Node.js to develop Blockchain</a>	</li>
                                                             <li id="link0"></li>
                                                             <li id="link1"></li>
                                                             <li id="link2"></li>
@@ -221,10 +221,19 @@
                                                                 {
                                                                     var link = r[i]["url"];
                                                                     var category = String(r[i]["category"]).charAt(0).toUpperCase() + String(r[i]["category"]).slice(1);
-                                                                    var title = String(r[i]["title"]).replace(/^[0-9]+/,"").replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()).replace(/ /g, "&nbsp");
-                                                                    document.getElementById("link"+i).innerHTML=category + ":&nbsp<a href=\"" + link +"\"" + ">" + title + "</a>";
+                                                                    var title = String(r[i]["title"]);
+                                                                    var id = title.match(/^[0-9]+/)[0];
+                                                                    title = title.replace(/^[0-9]+/,"").replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()).replace(/ /g, "&nbsp");
+                                                                    document.getElementById("link"+i).innerHTML=category + ":&nbsp<a href=\"" + link +"\"" + " onclick = \"return logClick(" + id + ");\">" + title + "</a>";
                                                                 }
                                                                 });
+
+                                                                function logClick(item_id)
+                                                                {
+                                                                    console.log("Detected click: " + item_id);
+                                                                    $.post("http://" + $(location).attr("hostname") + "/log", {id:item_id});
+                                                                    return true;
+                                                                }
                                                         </script>
                                                         </center>
                                                     </div>
