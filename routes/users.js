@@ -379,6 +379,48 @@ exports.getJobRecommendations = function(req, res) {
         })
 }
 
+exports.recordClick = function(req, res) {
+    var body = req.body
+    var session = req.session
+    var userID = session.user_id
+    var id = body.id
+
+    String.prototype.hashCode = function() {
+        var hash = 0
+        if (this.length == 0) {
+            return hash
+        }
+        for (var i = 0; i < this.length; i++) {
+            var char = this.charCodeAt(i)
+            hash = (hash << 5) - hash + char
+            hash = hash & hash // Convert to 32bit integer
+        }
+        return hash
+    }
+
+    var hashID = id.hashCode()
+
+    connection.query(
+        "select doc_id from click where user_id=? && doc_id=?",
+        [userID, hashID],
+        function(error, results, fields) {
+            if (error) console.log("error occured", error)
+            else if (results.length == 0) {
+                console.log(userID)
+                connection.query(
+                    "INSERT INTO click (user_id, doc_id) VALUES (?)",
+                    [[userID, hashID]],
+                    function(error, results, fields) {
+                        if (error) {
+                            console.log("error ocurred", error)
+                        } else console.log("Success on recoding click")
+                    }
+                )
+            } else console.log(results)
+        }
+    )
+    res.send()
+}
 
 exports.userProfile = function (req, res) {
   userID = req.params.user_id;
