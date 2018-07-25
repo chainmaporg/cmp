@@ -141,12 +141,16 @@ exports.getRecommendations = function(req, res) {
                     results = results.map(function(value) {
                         return value["category_id"]
                     })
-                    resolve(results)
+                    if (results.length == 0) resolve([1, 2])
+                    else resolve(results)
                 }
             }
         )
     })
-        .catch(error => console.log(error))
+        .catch(error => {
+            console.log(error)
+            console.log("Error reached.")
+        })
         .then(results => {
             new Promise((resolve, reject) => {
                 connection.query(
@@ -168,27 +172,26 @@ exports.getRecommendations = function(req, res) {
                 .then(keywords => {
                     // some hard coded keywords if keywords can't be retrieved
 
-                    if (keywords === undefined || keywords.length == 0) {
-                        keywords = ["Bitcoin", "Blockchain", "P2P"]
-                    }
                     var category = "article"
 
-                    function getLink(keyword, num) {
-                        url =
+                    function getLink(keywords, numShow) {
+                        var url =
                             solr_host +
                             "/select?fl=title,%20url,%20category&q=category:" +
                             encodeURI(category) +
-                            "%20AND%20search_content:" +
-                            encodeURI(keyword) +
+                            "%20AND%20(search_content:" +
+                            encodeURI(
+                                " " +
+                                    keywords.join(" OR search_content: ") +
+                                    ")"
+                            ) +
                             "&rows=" +
-                            encodeURI(num) +
+                            encodeURI(numShow) +
                             "&wt=json"
                         return url
                     }
 
-                    var urls = keywords.map(function(current) {
-                        return getLink(current, 6)
-                    })
+                    var url = getLink(keywords, 10)
 
                     function makePromise(url) {
                         var p = new Promise((resolve, reject) => {
@@ -215,9 +218,7 @@ exports.getRecommendations = function(req, res) {
                         return p
                     }
 
-                    var combined = urls.map(function(x) {
-                        return makePromise(x)
-                    }, [])
+                    var combined = makePromise(url)
 
                     function shuffle(array) {
                         var counter = array.length
@@ -237,20 +238,13 @@ exports.getRecommendations = function(req, res) {
                         return array
                     }
 
-                    Promise.all(combined)
-                        .then(function(values) {
-                            var values = values.reduce(function(
-                                selected,
-                                current
-                            ) {
-                                return selected.concat(current)
-                            },
-                            [])
-                            var recommendations = shuffle(values).slice(0, 6)
-                            res.send(recommendations)
-                        })
+                    combined
                         .catch(function(error) {
                             console.log(error)
+                        })
+                        .then(function(values) {
+                            var recommendations = shuffle(values).slice(0, 6)
+                            res.send(recommendations)
                         })
                 })
         })
@@ -276,12 +270,16 @@ exports.getJobRecommendations = function(req, res) {
                     results = results.map(function(value) {
                         return value["category_id"]
                     })
-                    resolve(results)
+                    if (results.length == 0) resolve([1, 2])
+                    else resolve(results)
                 }
             }
         )
     })
-        .catch(error => console.log(error))
+        .catch(error => {
+            console.log(error)
+            console.log("Error reached.")
+        })
         .then(results => {
             new Promise((resolve, reject) => {
                 connection.query(
@@ -303,27 +301,26 @@ exports.getJobRecommendations = function(req, res) {
                 .then(keywords => {
                     // some hard coded keywords if keywords can't be retrieved
 
-                    if (keywords === undefined || keywords.length == 0) {
-                        keywords = ["Bitcoin", "Blockchain", "P2P"]
-                    }
                     var category = "job"
 
-                    function getLink(keyword, num) {
-                        url =
+                    function getLink(keywords, numShow) {
+                        var url =
                             solr_host +
                             "/select?fl=title,%20url,%20category&q=category:" +
                             encodeURI(category) +
-                            "%20AND%20search_content:" +
-                            encodeURI(keyword) +
+                            "%20AND%20(search_content:" +
+                            encodeURI(
+                                " " +
+                                    keywords.join(" OR search_content: ") +
+                                    ")"
+                            ) +
                             "&rows=" +
-                            encodeURI(num) +
+                            encodeURI(numShow) +
                             "&wt=json"
                         return url
                     }
 
-                    var urls = keywords.map(function(current) {
-                        return getLink(current, 2)
-                    })
+                    var url = getLink(keywords, 10)
 
                     function makePromise(url) {
                         var p = new Promise((resolve, reject) => {
@@ -350,9 +347,7 @@ exports.getJobRecommendations = function(req, res) {
                         return p
                     }
 
-                    var combined = urls.map(function(x) {
-                        return makePromise(x)
-                    }, [])
+                    var combined = makePromise(url)
 
                     function shuffle(array) {
                         var counter = array.length
@@ -372,24 +367,18 @@ exports.getJobRecommendations = function(req, res) {
                         return array
                     }
 
-                    Promise.all(combined)
-                        .then(function(values) {
-                            var values = values.reduce(function(
-                                selected,
-                                current
-                            ) {
-                                return selected.concat(current)
-                            },
-                            [])
-                            var recommendations = shuffle(values).slice(0, 4)
-                            res.send(recommendations)
-                        })
+                    combined
                         .catch(function(error) {
                             console.log(error)
+                        })
+                        .then(function(values) {
+                            var recommendations = shuffle(values).slice(0, 4)
+                            res.send(recommendations)
                         })
                 })
         })
 }
+
 
 exports.userProfile = function (req, res) {
   userID = req.params.user_id;
