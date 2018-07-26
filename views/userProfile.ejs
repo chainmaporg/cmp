@@ -230,7 +230,6 @@
                                                                     var link = r[i]["url"];
                                                                     var category = String(r[i]["category"]).charAt(0).toUpperCase() + String(r[i]["category"]).slice(1);
                                                                     var title = String(r[i]["title"]);
-                                                                    var id = title.match(/^[0-9]+/)[0];
                                                                     title = title.replace(/^[0-9]+/,"").replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()).replace(/ /g, "&nbsp");
                                                                     document.getElementById("link"+i).innerHTML=category + ":&nbsp<a href=\"" + link +"\"" + " onclick = \"return logClick(this);\">" + title + "</a>";
                                                                 }

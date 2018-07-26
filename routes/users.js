@@ -405,6 +405,15 @@ exports.recordClick = function(req, res) {
     var body = req.body
     var session = req.session
     var userID = session.user_id
+
+    if (userID == undefined)
+    {
+        console.log("user is not logged in. cannot record click.")
+        res.send()
+        return
+    }
+
+
     var id = body.id
 
     String.prototype.hashCode = function() {
