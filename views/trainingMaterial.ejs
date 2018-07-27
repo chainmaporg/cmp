@@ -21,7 +21,6 @@
                 $.post("http://" + $(location).attr("hostname") + "/log", {id:link, type:t});
                 return true;
             }
-
         </script>
 
         <div class="loader">
@@ -100,6 +99,7 @@
                                                         <div class="post-content">
                                                             <p><%=data.Infrastructure[i].description%></p>
                                                             <a href="<%=data.Infrastructure[i].link%>" onclick = "return logClick(this);" class="post-read-more button color small" target="_blank" type="training material">Continue reading</a>
+
                                                         </div>
                                                         <!-- End post-content -->
                                                     </div>

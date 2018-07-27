@@ -121,6 +121,7 @@ exports.getCompanies = function (req, res) {
   });
 }
 
+
 exports.getRecommendations = function(req, res) {
     var Client = require("node-rest-client").Client
     var client = new Client()
@@ -154,14 +155,14 @@ exports.getRecommendations = function(req, res) {
         .then(results => {
             new Promise((resolve, reject) => {
                 connection.query(
-                    "select category_name from category where id =" +
-                        results.join(" or id="),
+                    "select keyword from keywords where category_id =" +
+                        results.join(" or category_id="),
                     function(error, results, fields) {
                         if (error) {
                             reject(error)
                         } else {
                             results = results.map(function(value) {
-                                return value["category_name"]
+                                return value["keyword"]
                             })
                             resolve(results)
                         }
@@ -169,8 +170,18 @@ exports.getRecommendations = function(req, res) {
                 )
             })
                 .catch(error => console.log(error))
-                .then(keywords => {
-                    // some hard coded keywords if keywords can't be retrieved
+                .then(all => {
+                    function getRandom() {
+                        var randomIndex = Math.floor(
+                            Math.random() * all.length
+                        )
+                        return all.splice(randomIndex, 1)[0]
+                    }
+                    var keywords = []
+                    var maxLength = all.length
+                    for (var i = 0; i < Math.min(maxLength, 5); i++) {
+                        keywords.push(getRandom())
+                    }
 
                     var category = "article"
 
@@ -283,14 +294,14 @@ exports.getJobRecommendations = function(req, res) {
         .then(results => {
             new Promise((resolve, reject) => {
                 connection.query(
-                    "select category_name from category where id =" +
-                        results.join(" or id="),
+                    "select keyword from keywords where category_id =" +
+                        results.join(" or category_id="),
                     function(error, results, fields) {
                         if (error) {
                             reject(error)
                         } else {
                             results = results.map(function(value) {
-                                return value["category_name"]
+                                return value["keyword"]
                             })
                             resolve(results)
                         }
@@ -298,8 +309,18 @@ exports.getJobRecommendations = function(req, res) {
                 )
             })
                 .catch(error => console.log(error))
-                .then(keywords => {
-                    // some hard coded keywords if keywords can't be retrieved
+                .then(all => {
+                    function getRandom() {
+                        var randomIndex = Math.floor(
+                            Math.random() * all.length
+                        )
+                        return all.splice(randomIndex, 1)[0]
+                    }
+                    var keywords = []
+                    var maxLength = all.length
+                    for (var i = 0; i < Math.min(maxLength, 5); i++) {
+                        keywords.push(getRandom())
+                    }
 
                     var category = "job"
 
@@ -395,7 +416,7 @@ exports.recordClick = function(req, res) {
 
     var id = body.id
     var type = body.type;
-
+    
     String.prototype.hashCode = function() {
         var hash = 0
         if (this.length == 0) {
