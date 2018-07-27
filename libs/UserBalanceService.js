@@ -186,11 +186,6 @@ var UserBalaceService = function () {
 				if (err) {
 					return reject(err);
 				}
-				if (result.length == 0) {
-					//if no record reject with error
-					return reject(new Error('No record finded for balances'))
-				}
-				//resolve it
 				resolve({
 					data: result
 				});
