@@ -36,12 +36,15 @@ var UserBalaceService = function () {
 						from(global.config.chainmapServerWallet).
 						to(config.smartContract_address).
 						contractCall('balancesOf', wallets).call((err, data) => {
+							console.log("dddd---wallets", wallets)
 							var inserts = [];
 							var now = Math.floor((new Date()).getTime() / 1000)
 							//generate list for sql
 							for (let wallet in data.result) {
 								inserts.push([userIds[wallet], data.result[wallet], now])
 							}
+							console.log("UserBalaceService:findMissingBalances:"," wallets=",wallets, " userIds", userIds, " insert=",inserts)
+
 							//add new wallets to database user_balance table
 							global.connection.query("INSERT INTO user_balance (user_id, balance,timestamp) VALUES ?", [inserts], function (err, result) {
 								if (err) {
@@ -88,6 +91,9 @@ var UserBalaceService = function () {
 							for (let wallet in data.result) {
 								inserts.push([userIds[wallet], data.result[wallet], now])
 							}
+							
+							console.log("UserBalaceService:findOldBalances:"," wallets=",wallets, " userIds", userIds, " insert=",inserts)
+
 							//insert new balances to database
 							global.connection.query("INSERT INTO user_balance (user_id, balance,timestamp) VALUES ?", [inserts], function (err, result) {
 								if (err) {
@@ -169,6 +175,30 @@ var UserBalaceService = function () {
 		})
 
 	}
+	
+	/**
+	 * get all user balance in one query in cache
+	 * @return {Promise} object
+	 */
+	this.usersBalance = function () {
+		return new Promise((resolve, reject) => {
+			global.connection.query('select user_id, balance from user_balance where balance_id in (select max(balance_id) from user_balance group by user_id)', [], function (err, result) {
+				if (err) {
+					return reject(err);
+				}
+				if (result.length == 0) {
+					//if no record reject with error
+					return reject(new Error('No record finded for balances'))
+				}
+				//resolve it
+				resolve({
+					data: result
+				});
+			})
+		})
+
+	}
+
 
 }
 

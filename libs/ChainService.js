@@ -158,12 +158,18 @@ var ChainService = function () {
 			gasLimit: 200000,
 			nonce:0
 		};
+		
+
+		
 		//merge it
 		Object.assign(data, txData);
+		
+		console.log("dddd--aaa", data)
 		//push to que
 		this.txQueue.push(() => {
 			return self.neb.api.call(data).then(function (data) {
 				//code
+				console.log("dddd--bbb", data)
 				data.result=JSON.parse(data.result)
 				callback(null, data)
 			}).catch((err) => {
