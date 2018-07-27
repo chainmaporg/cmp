@@ -155,8 +155,8 @@ exports.getRecommendations = function(req, res) {
         .then(results => {
             new Promise((resolve, reject) => {
                 connection.query(
-                    "select keyword from keywords where id =" +
-                        results.join(" or id="),
+                    "select keyword from keywords where category_id =" +
+                        results.join(" or category_id="),
                     function(error, results, fields) {
                         if (error) {
                             reject(error)
@@ -294,8 +294,8 @@ exports.getJobRecommendations = function(req, res) {
         .then(results => {
             new Promise((resolve, reject) => {
                 connection.query(
-                    "select keyword from keywords where id =" +
-                        results.join(" or id="),
+                    "select keyword from keywords where category_id =" +
+                        results.join(" or category_id="),
                     function(error, results, fields) {
                         if (error) {
                             reject(error)

@@ -133,7 +133,7 @@ CREATE TABLE `click` (
 
 DROP TABLE IF EXISTS `keywords`;
 CREATE Table `keywords` (
-    `id` int(11) NOT NULL,
+    `category_id` int(11) NOT NULL,
     `keyword` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

@@ -19,7 +19,7 @@ def generateInsStatement(filename):
 	l=readFromCsv(filename)
 	
 	for content in l:
-		a="INSERT INTO keywords (id, keyword)"
+		a="INSERT INTO keywords (category_id, keyword)"
 		b="VALUES("
 		c=content.key_id+","+"'"+content.keyword
 		d="');"
