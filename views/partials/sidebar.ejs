@@ -87,7 +87,7 @@
         </div> -->
 
     <div class="widget widget_highest_points">
-        <h3 class="widget_title">Highest points</h3>
+        <h3 class="widget_title">CMAP Token Ranking</h3>
         <ul id="tokenPoints">
         </ul>
     </div>
@@ -151,8 +151,11 @@
                 let liStr = ""
                 if (data.users.length > 0) {
                     for (var i = 0; i < data.users.length; i++) {
-                        liStr = liStr + '<li><div class="author-img"><a href="/userProfile/'+ data.users[i].user_id +'"><img width="60" height="60" src="/image/111.png" alt=""></a></div>';
-                        liStr = liStr + '<h6><a href="/userProfile/'+ data.users[i].user_id +'">'+ data.users[i].user_name +'</a></h6><span class="comment">'+ data.users[i].total +' Points</span></li>';
+                        if (data.users[i].total>0)
+                        {
+                          liStr = liStr + '<li><div class="author-img"><a href="/userProfile/'+ data.users[i].user_id +'"><img width="60" height="60" src="/image/111.png" alt=""></a></div>';
+                          liStr = liStr + '<h6><a href="/userProfile/'+ data.users[i].user_id +'">'+ data.users[i].user_name +'</a></h6><span class="comment">'+ data.users[i].total +' <img width="40" height="40" src="/image/token.jpg"></span></li>';
+                        }
                     }
                 }
                 $("#tokenPoints").append(liStr);

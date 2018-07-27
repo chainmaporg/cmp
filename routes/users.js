@@ -1,5 +1,6 @@
 var express = require('express');
 var md5 = require('md5');
+var ubs = require('../libs/UserBalanceService');
 
 
 
@@ -475,6 +476,24 @@ exports.recordClick = function(req, res) {
 
 exports.userProfile = function (req, res) {
   userID = req.params.user_id;
+  
+  global.userBalanceMap = {};
+  //prepare balance info in a map
+	
+	
+   ubs.usersBalance().then((results)=>{
+	   console.log("user balances:", results)
+	   for (let i in results.data) {
+	   		global.userBalanceMap[results.data[i].user_id]= results.data[i].balance
+	   	}
+	   	
+	   	user_token_balance = global.userBalanceMap[userID]
+	   	
+	   	console.log("userProfile balance Map..:", global.userBalanceMap, "useid:", userID, "balance:", user_token_balance)
+	})
+
+
+  
   resultObj = {}
   connection.query('select * from user where user_id=?', [userID], function (error, results, fields) {
     if (error) {
@@ -516,7 +535,7 @@ exports.userProfile = function (req, res) {
                       resultObj['userCategory'] = results;
                       console.log('user category from userProfile request: ', results);
 
-                      res.render('userProfile', { data: resultObj });
+                      res.render('userProfile', { data: resultObj, user_token_balance: user_token_balance });
                     }
                   });
                 }
@@ -529,6 +548,7 @@ exports.userProfile = function (req, res) {
   });
 }
 
+/**
 exports.tokenRanking = function (req, res) {
   connection.query('select `user`.*, ((select count(*) as total from challenge where post_user_id = `user`.user_id) + (select count(*) as total from answer where post_user_id = `user`.user_id)) as total from `user` ORDER BY total DESC limit 5', function (error, results, fields) {
     if (error) {
@@ -541,6 +561,24 @@ exports.tokenRanking = function (req, res) {
     }
   });
 }
+**/
+
+exports.tokenRanking = function (req, res) {
+
+  connection.query('select `user`.*, (select balance from user_balance b where b.user_id = `user`.user_id and balance_id in (select max(balance_id) from user_balance group by user_id)) as total from `user` ORDER BY total DESC limit 5', function (error, results, fields) {
+                                   
+  //connection.query('select `user`.*, ((select count(*) as total from challenge where post_user_id = `user`.user_id) + (select count(*) as total from answer where post_user_id = `user`.user_id)) as total from `user` ORDER BY total DESC limit 5', function (error, results, fields) {
+    if (error) {
+      console.log("error ocurred", error);
+      res.render("error", { errorMsg: "Error on insertion into DB Users" })
+
+    } else {
+      console.log(results)
+      res.send({ 'users': results });
+    }
+  });
+}
+
 
 exports.updatePaymentaddress = function (req, res) {
   let session = req.session;
