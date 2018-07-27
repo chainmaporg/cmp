@@ -182,6 +182,7 @@ router.get('/getJobRecommendations', users.getJobRecommendations);
 router.get('/getRecommendations', users.getRecommendations);
 router.get('/trainingMaterial', trainingMaterial.getAllTrainingMaterial);
 router.post('/updateUserProfile', users.updateUserProfile);
+router.post('/log', users.recordClick);
 router.get('/aboutUs', function (req, res) {
   res.render('aboutUs', { title: 'About Us' });
 });
