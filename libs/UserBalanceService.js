@@ -36,7 +36,6 @@ var UserBalaceService = function () {
 						from(global.config.chainmapServerWallet).
 						to(config.smartContract_address).
 						contractCall('balancesOf', wallets).call((err, data) => {
-							console.log("dddd---wallets", wallets)
 							var inserts = [];
 							var now = Math.floor((new Date()).getTime() / 1000)
 							//generate list for sql
@@ -186,11 +185,6 @@ var UserBalaceService = function () {
 				if (err) {
 					return reject(err);
 				}
-				if (result.length == 0) {
-					//if no record reject with error
-					return reject(new Error('No record finded for balances'))
-				}
-				//resolve it
 				resolve({
 					data: result
 				});

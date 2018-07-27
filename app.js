@@ -12,11 +12,12 @@ var mysql = require('mysql');
 // var usersRouter = require('./routes/users');
 
 //var configFile = '../' + require('os').hostname() + '.js';
-configFile = '../local-deploy.js';
-console.log(">>Check your local deploy env loca and file for deployment (see template in env/local-deploy.js.sample)",  configFile)
-console.log(">>Copy/Paste: cp env/loc-deploy.js.sample ../local-deploy.js and change the DB password for your own DB")
 
-configFile = fs.existsSync(configFile) ? configFile : '../server.js';
+serverConfigFile = "../cmap-2-0-config.js"
+localConfigFile = './local-deploy.js';
+console.log(">>Check your local config file and DB settings under ./local-deploy.js)",  localConfigFile)
+
+configFile = fs.existsSync(serverConfigFile) ? serverConfigFile : localConfigFile;
 
 console.log(">>The server is picking this configuration:",  configFile)
 
