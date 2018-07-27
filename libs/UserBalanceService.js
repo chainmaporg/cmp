@@ -36,7 +36,6 @@ var UserBalaceService = function () {
 						from(global.config.chainmapServerWallet).
 						to(config.smartContract_address).
 						contractCall('balancesOf', wallets).call((err, data) => {
-							console.log("dddd---wallets", wallets)
 							var inserts = [];
 							var now = Math.floor((new Date()).getTime() / 1000)
 							//generate list for sql
