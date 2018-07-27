@@ -17,7 +17,8 @@
             function logClick(obj)
             {
                 var link = obj.getAttribute("href");
-                $.post("http://" + $(location).attr("hostname") + "/log", {id:link});
+                var t = obj.getAttribute("type");
+                $.post("http://" + $(location).attr("hostname") + "/log", {id:link, type:t});
                 return true;
             }
         </script>
@@ -97,7 +98,8 @@
                                                         </div>
                                                         <div class="post-content">
                                                             <p><%=data.Infrastructure[i].description%></p>
-                                                            <a href="<%=data.Infrastructure[i].link%>" onclick = "return logClick(this);" class="post-read-more button color small" target="_blank">Continue reading</a>
+                                                            <a href="<%=data.Infrastructure[i].link%>" onclick = "return logClick(this);" class="post-read-more button color small" target="_blank" type="training material">Continue reading</a>
+
                                                         </div>
                                                         <!-- End post-content -->
                                                     </div>
@@ -127,7 +129,7 @@
                                                         </div>
                                                         <div class="post-content">
                                                             <p><%=data.Collection[i].description%></p>
-                                                            <a href="<%=data.Collection[i].link%>" onclick = "return logClick(this);" class="post-read-more button color small" target="_blank">Continue reading</a>
+                                                            <a href="<%=data.Collection[i].link%>" onclick = "return logClick(this);" class="post-read-more button color small" target="_blank"type="training material">Continue reading</a>
                                                         </div>
                                                         <!-- End post-content -->
                                                     </div>
@@ -158,7 +160,7 @@
                                                     </div>
                                                     <div class="post-content">
                                                         <p><%=data.Usecase[i].description%></p>
-                                                        <a href="<%=data.Usecase[i].link%>" onclick = "return logClick(this);" class="post-read-more button color small" target="_blank">Continue reading</a>
+                                                        <a href="<%=data.Usecase[i].link%>" onclick = "return logClick(this);" class="post-read-more button color small" target="_blank" type="training material">Continue reading</a>
                                                     </div>
                                                     <!-- End post-content -->
                                                 </div>
@@ -191,7 +193,7 @@
                                                     </div>
                                                     <div class="post-content">
                                                         <p><%=data.DevGuide[i].description%></p>
-                                                        <a href="<%=data.DevGuide[i].link%>" onclick = "return logClick(this);" class="post-read-more button color small" target="_blank">Continue reading</a>
+                                                        <a href="<%=data.DevGuide[i].link%>" onclick = "return logClick(this);" class="post-read-more button color small" target="_blank" type="training material">Continue reading</a>
                                                     </div>
                                                     <!-- End post-content -->
                                                 </div>

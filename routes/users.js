@@ -415,7 +415,8 @@ exports.recordClick = function(req, res) {
 
 
     var id = body.id
-
+    var type = body.type;
+    
     String.prototype.hashCode = function() {
         var hash = 0
         if (this.length == 0) {
@@ -430,6 +431,25 @@ exports.recordClick = function(req, res) {
     }
 
     var hashID = id.hashCode()
+
+    connection.query(
+        "select doc_id from documents where doc_id=?",
+        [hashID],
+        function(error, results, fields) {
+            if (error) console.log("error occured", error)
+            else if (results.length == 0) {
+                connection.query(
+                    "INSERT INTO documents (doc_id, type, link) VALUES (?)",
+                    [[hashID, type, id]],
+                    function(error, results, fields) {
+                        if (error) {
+                            console.log("error ocurred", error)
+                        } else console.log("Success on recoding doc")
+                    }
+                )
+            } else console.log(results)
+        }
+    )
 
     connection.query(
         "select doc_id from click where user_id=? && doc_id=?",

@@ -15,7 +15,8 @@
             function logClick(obj)
             {
                 var link = obj.getAttribute("href");
-                $.post("http://" + $(location).attr("hostname") + "/log", {id:link});
+                var t = obj.getAttribute("type");
+                $.post("http://" + $(location).attr("hostname") + "/log", {id:link, type:t});
                 return true;
             }
         </script>
@@ -182,7 +183,8 @@
                                 '<img src="image/' + img + '" class="img-rounded" alt="" width="40" height="40" align="right">' +
                                 '</div>' +
                                 '<div class="col-sm-10"> ' +
-                                '<a href="'+url+'" onclick = "return logClick(this);" target="_blank" class="list-group-item" style="border: none">' +
+                                '<a href="'+url+'" onclick = "return logClick(this);" target="_blank" class="list-group-item" style="border: none" type=' 
+                                + value.category + '>' +
                                 '<h4 class="list-group-item-heading" style="color:DodgerBlue;">' + value.title + '</h4>' +
                                 '<p class="list-group-item-text">' + value.summary + ' </p>' +
                                 '<p class="list-group-item-text_small"> Category: ' + value.category + '</p>' +

@@ -15,7 +15,8 @@
             function logClick(obj)
             {
                 var link = obj.getAttribute("href");
-                $.post("http://" + $(location).attr("hostname") + "/log", {id:link});
+                var t = obj.getAttribute("type");
+                $.post("http://" + $(location).attr("hostname") + "/log", {id:link, type:t});
                 return true;
             }
         </script>
@@ -187,7 +188,8 @@
                                                             
                                                             <div class="grid-bxslider">
                                                                 <div class="bxslider-overlay t_center">
-                                                                    <a href="https://consensys.net/academy/resources/" onclick = "return logClick(this);" class="bxslider-title" target="_blank">
+                                                                    <a href="https://consensys.net/academy/resources/" onclick = "return logClick(this);" class="bxslider-title" target="_blank" type="training material">
+
                              
                                                                         <h3>Ethereum and Blockchain Resources</h3>
                                                                     </a>
@@ -201,7 +203,8 @@
                                                         <div class="slide bx-clone" style="float: left; list-style: outside none none; position: relative; margin-right: 30px; width: 189.5px;">
                                                             <div class="grid-bxslider">
                                                                 <div class="bxslider-overlay t_center">
-                                                                    <a href="https://medium.com/coinmonks/top-dapp-tutorial-series-2e70c0d79782" onclick = "return logClick(this);" class="bxslider-title" target="_blank">
+                                                                    <a href="https://medium.com/coinmonks/top-dapp-tutorial-series-2e70c0d79782" onclick = "return logClick(this);" class="bxslider-title" target="_blank" type="training material">
+
                                                                         <h3>Top Dapp tutorials Series – Coinmonks – Medium</h3>
                                                                         
                                                                     </a>
@@ -214,7 +217,7 @@
                                                         <div class="slide bx-clone" style="float: left; list-style: outside none none; position: relative; margin-right: 30px; width: 189.5px;">
                                                             <div class="grid-bxslider">
                                                                 <div class="bxslider-overlay t_center">
-                                                                    <a href="https://blockgeeks.com/guides/" onclick = "return logClick(this);"  class="bxslider-title" target="_blank">
+                                                                    <a href="https://blockgeeks.com/guides/" onclick = "return logClick(this);"  class="bxslider-title" target="_blank" type="training material">
                                                                         <h3>Guides for Blockchain Geeks</h3>
                                                                     </a>
                                                                     
@@ -225,7 +228,8 @@
                                                         <div class="slide bx-clone" style="float: left; list-style: outside none none; position: relative; margin-right: 30px; width: 189.5px;">
                                                             <div class="grid-bxslider">
                                                                 <div class="bxslider-overlay t_center">
-                                                                    <a href="https://bitcoin.org/bitcoin.pdf" onclick = "return logClick(this);" class="bxslider-title" target="_blank">
+                                                                    <a href="https://bitcoin.org/bitcoin.pdf" onclick = "return logClick(this);" class="bxslider-title" target="_blank" type="training material">
+
                                                                         <h3>What is Bitcoin? Learn More about Bitcoint</h3>
                                                                         
                                                                     </a>
@@ -238,7 +242,8 @@
                                                         <div class="slide" style="float: left; list-style: outside none none; position: relative; margin-right: 30px; width: 189.5px;">
                                                             <div class="grid-bxslider">
                                                                 <div class="bxslider-overlay t_center">
-                                                                    <a href="https://www-01.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=XIM12354USEN" onclick = "return logClick(this);" class="bxslider-title" target="_blank">
+                                                                    <a href="https://www-01.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=XIM12354USEN" onclick = "return logClick(this);" class="bxslider-title" target="_blank" type="training material">
+
                                                                         <h3>E-Book: Blockchain for Dummies</h3>
                                                                     </a>
                                                                     
@@ -311,7 +316,8 @@
                                 '<img src="image/' + img + '" class="img-rounded" alt="" width="40" height="40" align="right">' +
                                 '</div>' +
                                 '<div class="col-sm-10"> ' +
-                                '<a href="'+url+'" onclick = "return logClick(this);" target="_blank" class="list-group-item" style="border: none">' +
+                                '<a href="'+url+'" onclick = "return logClick(this);" target="_blank" class="list-group-item" style="border: none" type=' 
+                                + value.category + '>' +
                                 '<h4 class="list-group-item-heading" style="color:DodgerBlue;">' + value.title + '</h4>' +
                                 '<p class="list-group-item-text">' + value.summary + ' </p>' +
                                 '<p class="list-group-item-text_small"> Category: ' + value.category + '</p>' +
