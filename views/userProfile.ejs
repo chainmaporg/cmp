@@ -9,6 +9,15 @@
     <!-- header end -->
 
     <body>
+        <script type ="text/javascript">                                                                
+            function logClick(obj)
+            {
+                var link = obj.getAttribute("href");
+                var t = obj.getAttribute("type");
+                $.post("http://" + $(location).attr("hostname") + "/log", {id:link, type:t});
+                return true;
+            }
+        </script>
 
         <div class="loader">
             <div class="loader_html"></div>
@@ -201,10 +210,8 @@
                                                     <h2>Recommendations</h2>
                                                     <div class="ul_list ul_list-icon-ok">
                                                         
-                     
-														<ul id = "rec list">
-                                                            <li>Chinese: <a href="https://github.com/Ebookcoin/ebookcoin">Node.js区块链开发</a></li>
-                                                            <li>English: <a href="https://github.com/blockchain-ebook/nodejs-blockchain">Use Node.js to develop Blockchain</a>	</li>      
+                                                            <li>Chinese: <a href="https://github.com/Ebookcoin/ebookcoin" onclick = "return logClick(this);" type="training material">Node.js区块链开发</a></li>
+                                                            <li>English: <a href="https://github.com/blockchain-ebook/nodejs-blockchain" onclick = "return logClick(this);" type="training material">Use Node.js to develop Blockchain</a>	</li>
                                                             <li id="link0"></li>
                                                             <li id="link1"></li>
                                                             <li id="link2"></li>
@@ -221,8 +228,8 @@
                                                                 {
                                                                     var link = r[i]["url"];
                                                                     var category = String(r[i]["category"]).charAt(0).toUpperCase() + String(r[i]["category"]).slice(1);
-                                                                    var title = String(r[i]["title"]).replace(/^[0-9]+/,"").replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()).replace(/ /g, "&nbsp");
-                                                                    document.getElementById("link"+i).innerHTML=category + ":&nbsp<a href=\"" + link +"\"" + ">" + title + "</a>";
+                                                                    title = title.replace(/^[0-9]+/,"").replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()).replace(/ /g, "&nbsp");
+                                                                    document.getElementById("link"+i).innerHTML=category + ":&nbsp<a href=\"" + link +"\"" + " onclick = \"return logClick(this);\"type=" + category + ">" + title + "</a>";
                                                                 }
                                                                 });
                                                         </script>
@@ -256,7 +263,7 @@
                                                                     var category = String(r[i]["category"]).charAt(0).toUpperCase() + String(r[i]["category"]).slice(1);
                                                                     var link = r[i]["url"];
                                                                     var title = String(r[i]["title"]).replace(/^[0-9]+/,"").replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()).replace(/ /g, "&nbsp");
-                                                                    document.getElementById("job"+i).innerHTML= category + ":&nbsp<a href=\"" + link +"\"" + ">" + title + "</a>";
+                                                                    document.getElementById("job"+i).innerHTML=category + ":&nbsp<a href=\"" + link +"\"" + " onclick = \"return logClick(this);\"type=" + category + ">" + title + "</a>";                                                                
                                                                 }
                                                                 });
                                                         </script>

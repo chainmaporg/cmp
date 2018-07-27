@@ -125,3 +125,24 @@ CREATE TABLE `socialgroup` (
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+DROP TABLE IF EXISTS `click`;
+CREATE TABLE `click` (
+    `user_id` int(11) NOT NULL,
+    `doc_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `keywords`;
+CREATE Table `keywords` (
+    `id` int(11) NOT NULL,
+    `keyword` varchar(80) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `documents`;
+CREATE TABLE `documents` (
+    `doc_id` int(11) NOT NULL,
+    `type` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+    `link` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+    PRIMARY KEY (`doc_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
