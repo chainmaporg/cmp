@@ -2,7 +2,7 @@
 
 
 ## What is chainmap
-See chainmap.org
+See http://chainmap.org
 
 ## Team
 
