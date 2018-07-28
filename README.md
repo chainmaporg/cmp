@@ -4,9 +4,6 @@
 ## What is chainmap
 See http://chainmap.org
 
-## Team
-
-ChainMap Team + Beijing University
 
 ## How to start the server
 
