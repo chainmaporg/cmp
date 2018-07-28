@@ -1,8 +1,8 @@
-# ChainDev Market Place
+# chainmap.org local build instructions
 
-Use blockchain (nebulas chain) smart contract and utility token to make a decentralized market place for
-job posting and job flow management. This flow shall reward the positive actions to the community and also
-have a immutable records for developer certification and ranking for the capabilities they can do!
+
+## What is chainmap
+See chainmap.org
 
 ## Team
 
