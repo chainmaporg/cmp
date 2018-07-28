@@ -7,8 +7,7 @@ See http://chainmap.org
 
 ## How to start the server
 
-(0) Need to have Node.js and relevant components (expressJS) installed. And you can see node_modules folder.
-	(otherwise, you shall see: Error: Cannot find module 'express-session'), the current repo has this folder for your convenience.
+(0) Need to have Node.js and relevant components (expressJS) installed. 
 
 (1) Installation
 
