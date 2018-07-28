@@ -4,6 +4,9 @@
 ## What is chainmap
 See http://chainmap.org
 
+## Version and milestones
+
+Current version is V2.0 and we often have weekly releases.
 
 ## How to start the server
 
