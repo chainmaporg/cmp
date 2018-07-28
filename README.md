@@ -13,7 +13,14 @@ ChainMap Team + Beijing University
 (0) Need to have Node.js and relevant components (expressJS) installed. And you can see node_modules folder.
 	(otherwise, you shall see: Error: Cannot find module 'express-session'), the current repo has this folder for your convenience.
 
-(1) git clone https://github.com/chainmaporg/cmp into a directory as ${CMP_HOME}
+(1) Installation
+
+    git clone https://github.com/chainmaporg/cmp into a directory as ${CMP_HOME}
+    - under ${CMP_HOME} run NPM instal to install Node.js components
+    - install mysql 5.x+
+    - run mysql scripts under ${CMP_HOME}/dbscripts to create tables
+    - run seed data scritps "insertKeywords.sql", "insertGroup.sql", "load_materials.sql", you can use mysql source command under mysql command line console
+    - change the ${CMP_HOME}/local_deploy.env with your own mysql DB password
 
 (2) cd ${CMP_HOME}/
 
@@ -22,10 +29,6 @@ ChainMap Team + Beijing University
     Note: need sudo to open the port 80. This shall create the Node.js server
 
 (3) Check http://localhost/
-
-## milestones
-
-(1)  feature 10-11: post challenge and answer challenge.
 
 
 ## Contact
