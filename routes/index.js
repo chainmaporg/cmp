@@ -100,6 +100,7 @@ var users = require('../routes/users');
 var questionBoard = require("../routes/questionBoard");
 var trainingMaterial = require("../routes/trainingMaterial");
 var socialgroup = require('../routes/socialgroup');
+var news = require('../routes/news');
 // global.environment = "local";
 global.environment = "production";
 
@@ -188,4 +189,6 @@ router.get('/aboutUs', function (req, res) {
 });
 router.post('/getAllCategory', users.getAllCategory);
 router.post('/getAllCategoryWithUserCat', users.getAllCategoryWithUserCat);
+router.get('/getNews', news.getNews);
+
 module.exports = router;

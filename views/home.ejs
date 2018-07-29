@@ -14,6 +14,7 @@
         <script type ="text/javascript">                                                                
             function logClick(obj)
             {
+            	console.log("----log click", obj)
                 var link = obj.getAttribute("href");
                 var t = obj.getAttribute("type");
                 $.post("http://" + $(location).attr("hostname") + "/log", {id:link, type:t});
@@ -31,10 +32,16 @@
             <% include ./partials/header_login %>
 
                 <% include ./partials/body_header %>
+
+                
                 <div class="section-warp ask-me">
+
+
                         <div class="container clearfix">
                             <div class="box_icon box_warp box_no_border box_no_background" box_border="transparent" box_background="transparent" box_color="#FFF">
                                 <div class="row">
+                                    
+
                                     <div class="col-md-12">
                                     	<h2>ChainMap</h2>
                                         <!--
@@ -58,62 +65,66 @@
                             <!-- End box_icon -->
                         </div>
                         <!-- End container -->
-                    </div>
 
-                    <section class="container main-content page-full-width">
+
+                </div>
+
+                <section class="container main-content page-full-width">                            
+                    <div class="box_icon box_warp" box_border="transparent" box_background="#8d8dc4">
                         <div class="row">
+                            <h3 style="color:white;">Blockchain News Headlines</h3>
                             <div class="col-md-12">
-                                <div id="columns" class="row">
-                                    
-                                    <!-- <div class="col-md-12">
-                                        <div class="boxedtitle page-title">
-                                            <h2>ChainMap Contribution for Developers</h2>
-                                        </div>
-                                    </div> -->
-                                   
-                                    <div class="col-md-12">
-                                        <p>
-                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/trainingMaterial">Knowledge Center</a> - Find some of the best blockchain training material out there (White Papers including Chinese ones!).
-                                        </p>
-                                        <p>
-                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/questionBoard">Challenge Board</a>- Ask domain specific challenges, and get solutions (Nebulas, Etherum, HyberLedger, dApp...).
-                                        </p>
-                                        <p>
-                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/loginRegister">Connections</a>- Sign on to get you connect with other developers and job opportunities and connect with blockchain groups.
-                                        </p>
-                                        <p>
-                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/loginRegister">Certification</a> - Sign on to get your development skills certified and ranking higher on top of the blockchain. 
-                                        </p>
-                                        <p>
-                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/loginRegister">Recommendation</a> - Sign on to have AI based personalized recommendation for learning and career development. 
-                                        </p>
-                                        <!--
-                                        <p>
-                                        <center><a href="/loginRegister" class="button small green-button custom-button">Register Now</a></center>
-                                        </p>
-                                        -->
+                            <% 
+                                 for(var i = 0;i < 5;i++) { %>
 
-                                    </div>
-                                    <!-- <div class="col-md-6">
-                                        <h5>For Enterprise</h5>
-                                        <p>
-                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i>Blockchain Consulting.
-                                        </p>
-                                        <p>
-                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i>Smart contract development and operations.
-                                        </p>
-                                        <p>
-                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i>Hire best talent.
-                                        </p>
-                                        <div class="clearfix gap"></div>
-                                    </div> -->
+                                 <article class="post blog_2 clearfix">
+                                                    <div class="post-inner">
+                                                        <h2 id="<%="art"+i+"1"%>" class="post-title">
+                                                            title
+                                                        </h2>
+                                                        
+                                                        <span id="<%="art"+i+"2"%>" class ="meta-date">
+                                                                date
+                                                          </span>
+                                                            <span id="<%="art"+i+"3"%>" class="meta-author">
+                                                                summary
+                                                            </span>
+                                                    </div>
+                                                    <!-- End post-inner -->
+                                </article>
 
-                                </div>
+								 <% } %>
+								 
+								 
+   
+ 
+                                <script type="text/javascript">
+                                    var host = $(location).attr("hostname")
+                                        var reqUrl = "http://" + $(location).attr("hostname") + "/getNews";
+                                        $.when($.get(reqUrl)).done((r) => {
+                                            for (i=0; i < 5; i++) 
+                                            {
+                                                var link = r[i]["url"][0];
+                                                var pdate = String(r[i]["date"][0]);
+                                                var title = String(r[i]["title"][0]);
+                                                var category = String(r[i]["category"][0]);
+                                                var summary = String(r[i]["summary"][0]).match(/(.*?)[.?!]\s/)[0];
+                                                
+                                                var summarylink = "<a href=\'" + link +"\'"+ " onclick = \'return logClick(this);\' type=\'news\' class='post-read-more button color small' target='_blank'>" + "Continue reading" + "</a>";
 
-
-
-
-                            <div class="col-md-12">
+                        
+                                                document.getElementById("art"+i+"1").innerHTML=title;
+                                                document.getElementById("art"+i+"2").innerHTML="["+pdate+"]";
+                                                document.getElementById("art"+i+"3").innerHTML=summary+summarylink;
+                                            }
+                                        });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                             <div class="col-md-12">
                                 <div class="page-content">
                                 <!--
                                     <div class="boxedtitle page-title">
@@ -172,6 +183,65 @@
                                 </div>
                                 <!-- End page-content -->
                             </div>
+                    </div>
+                    
+					<div class="row">
+						<br>
+					</div>
+					
+                    <div class="row">
+                            <div class="col-md-12">
+                                <div id="columns" class="row">
+                                    
+                                    <!-- <div class="col-md-12">
+                                        <div class="boxedtitle page-title">
+                                            <h2>ChainMap Contribution for Developers</h2>
+                                        </div>
+                                    </div> -->
+                                    
+                                    <div class="col-md-12">
+                                        <p>
+                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/trainingMaterial">Knowledge Center</a> - Find some of the best blockchain training material out there (White Papers including Chinese ones!).
+                                        </p>
+                                        <p>
+                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/questionBoard">Challenge Board</a>- Ask domain specific challenges, and get solutions (Nebulas, Etherum, HyberLedger, dApp...).
+                                        </p>
+                                        <p>
+                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/loginRegister">Connections</a>- Sign on to get you connect with other developers and job opportunities and connect with blockchain groups.
+                                        </p>
+                                        <p>
+                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/loginRegister">Certification</a> - Sign on to get your development skills certified and ranking higher on top of the blockchain. 
+                                        </p>
+                                        <p>
+                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/loginRegister">Recommendation</a> - Sign on to have AI based personalized recommendation for learning and career development. 
+                                        </p>
+                                        <!--
+                                        <p>
+                                        <center><a href="/loginRegister" class="button small green-button custom-button">Register Now</a></center>
+                                        </p>
+                                        -->
+
+                                    </div>
+                                    <!-- <div class="col-md-6">
+                                        <h5>For Enterprise</h5>
+                                        <p>
+                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i>Blockchain Consulting.
+                                        </p>
+                                        <p>
+                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i>Smart contract development and operations.
+                                        </p>
+                                        <p>
+                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i>Hire best talent.
+                                        </p>
+                                        <div class="clearfix gap"></div>
+                                    </div> -->
+
+                                </div>
+
+
+
+
+
 
 							
                                     <div id="columns" class="row">
