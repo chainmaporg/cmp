@@ -58,6 +58,11 @@ app.use(session({
 	saveUninitialized: true
 }));
 
+console.log("Requiring output graph")
+var outputGraph = require('./utils/outputGraph');
+outputGraph.getGraph();
+outputGraph.getMappings();
+
 // middleware to make 'user' available to all templates
 
 app.use(function(req, res, next) {
