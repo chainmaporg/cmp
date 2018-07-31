@@ -124,6 +124,7 @@ exports.getCompanies = function (req, res) {
 
 
 exports.getRecommendations = function(req, res) {
+    var resData = {}
     var Client = require("node-rest-client").Client
     var client = new Client()
     var solr_host = global.config.search_solr_host
@@ -202,7 +203,9 @@ exports.getRecommendations = function(req, res) {
                             "&wt=json"
                         return url
                     }
-
+                    keywords = new Set(keywords)
+                    keywords = [...keywords]
+                    resData.keywords = keywords
                     var url = getLink(keywords, 10)
 
                     function makePromise(url) {
@@ -256,7 +259,8 @@ exports.getRecommendations = function(req, res) {
                         })
                         .then(function(values) {
                             var recommendations = shuffle(values).slice(0, 6)
-                            res.send(recommendations)
+                            resData.recommendations = recommendations
+                            res.send(resData)
                         })
                 })
         })

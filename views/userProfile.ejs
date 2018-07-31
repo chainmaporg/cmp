@@ -209,7 +209,8 @@
                                         <div class="col-md-12">
                                             <div class="page-content page-content-user-profile">
                                                 <div class="user-profile-widget">
-                                                    <h2>Recommendations</h2>
+                                                    <h2>Document Recommendations</h2>
+                                                    <p id=keywords>Relevant topics:&nbsp</p>
                                                     <div class="ul_list ul_list-icon-ok">
 
                                                             <li>Chinese: <a href="https://github.com/Ebookcoin/ebookcoin" onclick = "return logClick(this);" type="training material">Node.js区块链开发</a></li>
@@ -223,17 +224,20 @@
                                                         </ul>
 
                                                             <script type="text/javascript">
-
-                                                                var host = $(location).attr("hostname")
                                                                 var reqUrl = "http://" + $(location).attr("hostname") + "/getRecommendations";
                                                                 $.when($.get(reqUrl)).done((r) => {
+                                                                    console.log(r)
+                                                                    var recommendations = r.recommendations
+                                                                    var keywords = r.keywords
+                                                                    document.getElementById("keywords").innerText += keywords.join(", ")
+
                                                                 for (i=0; i < 6; i++) 
                                                                 {
-                                                                    var link = r[i]["url"];
-                                                                    var category = String(r[i]["category"]).charAt(0).toUpperCase() + String(r[i]["category"]).slice(1);
-                                                                    var title = String(r[i]["title"]);
+                                                                    var link = recommendations[i]["url"];
+                                                                    var category = String(recommendations[i]["category"]).charAt(0).toUpperCase() + String(recommendations[i]["category"]).slice(1);
+                                                                    var title = String(recommendations[i]["title"]);
                                                                     title = title.replace(/^[0-9]+/,"").replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()).replace(/ /g, "&nbsp");
-                                                                    document.getElementById("link"+i).innerHTML=category + ":&nbsp<a href=\"" + link +"\"" + " onclick = \"return logClick(this);\"type=" + category + ">" + title + "</a>";
+                                                                    document.getElementById("link"+i).innerHTML= category + " author" + ":&nbsp<a href=\"" + link +"\"" + " onclick = \"return logClick(this);\"type=" + category + ">" + title + "</a>";
                                                                 }
                                                                 });
 
