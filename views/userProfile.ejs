@@ -226,7 +226,6 @@
                                                             <script type="text/javascript">
                                                                 var reqUrl = "http://" + $(location).attr("hostname") + "/getRecommendations";
                                                                 $.when($.get(reqUrl)).done((r) => {
-                                                                    console.log(r)
                                                                     var recommendations = r.recommendations
                                                                     var keywords = r.keywords
                                                                     document.getElementById("keywords").innerText += keywords.join(", ")
