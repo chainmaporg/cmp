@@ -39,18 +39,29 @@ exports.getGraph = function() {
 
             console.log(output)
 
-            var fs = require('fs');
+            var fs = require("fs")
             fs.writeFile("./utils/graph.txt", output, function(err) {
-                if(err) {
-                    return console.log(err);
+                if (err) {
+                    return console.log(err)
                 }
 
-                console.log("The file was saved!");
-            });
+                console.log("The file was saved!")
+            })
             return get_hash_id_dict
         }
     })
     return {}
+}
+
+exports.runPPR = function() {
+    var exec = require("child_process").execFile
+
+    console.log("running ppr executable.")
+
+    exec("./utils/randwalk", function(err, data) {
+        console.log(err)
+        console.log(data.toString())
+    })
 }
 
 exports.getMappings = function() {

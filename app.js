@@ -61,6 +61,7 @@ app.use(session({
 console.log("Requiring output graph")
 var outputGraph = require('./utils/outputGraph');
 outputGraph.getGraph();
+outputGraph.runPPR();
 outputGraph.getMappings();
 
 // middleware to make 'user' available to all templates
