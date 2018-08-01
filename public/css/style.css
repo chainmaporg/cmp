@@ -1108,7 +1108,7 @@ div[class*="slider_shadow"]:before, div[class^="header_shadow"] {
 	margin-bottom: 20px;
 	padding-bottom: 30px;
 	line-height: 22px;
-	font-size: 13px;
+	font-size: 14px;
 	border-bottom: 1px solid #dedede;
 	color: #848991;
 }
@@ -1129,14 +1129,14 @@ div[class*="slider_shadow"]:before, div[class^="header_shadow"] {
 }
 .question .question-answered-done,.user-question .question-answered-done i {
 	color: #318e08;
-	font-size: 13px;
+	font-size: 14px;
 }
 .question-remove {
 	display: inline-block;
 	margin-right: 10px;
 }
 .question-date,.question-view,.question-favorite,.question-reply,.question-category a,.question-comment a {
-	font-size: 13px;
+	font-size: 14px;
 	color: #2f3239;
 }
 .question-favorite i.icon-star,.question-remove i.icon-star {

@@ -48,12 +48,23 @@
                                         <h2>ChainMap <a href="/loginRegister" class="button small green-button custom-button">Register/Login Now</a></h2> 
                                         -->
                                         <p style="font-size: 26px !important">
-                                            A blockchain developer growth platform supporting the community and ecosystem.
+                                            A blockchain developer growth platform providing the best map for users' blockchain success.
                                         </p>
                                         <p style="font-size: 26px !important">
-                                            Contributors will get rewarded with incentive tokens!!!
-                                        </p>
+                     
+                                        <center>
 
+															<%        
+                							                  if (typeof session == 'undefined' || typeof session.email == 'undefined'){
+                						                    %>
+                                        
+                                                               <a href="/loginRegister" class="button small green-button custom-button">Login/Register to get recommendations and incentives</a></center>
+                                       
+                                                            <% } %> 
+                                        </center>
+                                        
+                                                                                
+                                        </p>
                                         <div class="clearfix"></div>
                                         <!-- <a class="color button dark_button medium" href="#">About Us</a>
                                     <a class="color button dark_button medium" href="#">Join Now</a> -->
@@ -73,7 +84,7 @@
                     <div class="box_icon box_warp" box_border="transparent" box_background="transparent">
                         <div class="row">
                             <div class="boxedtitle page-title">
-                                <h2>Blockchain News Headlines</h2>
+                                <h2>ChainMap News Headlines</h2>
                             </div> 
 
                             <div class="col-md-12">
@@ -86,12 +97,13 @@
                                                             title
                                                         </h2>
                                                         
-                                                        <span id="<%="art"+i+"2"%>" class ="meta-date">
-                                                                date
-                                                          </span>
-                                                            <span id="<%="art"+i+"3"%>" class="meta-author">
-                                                                summary
-                                                            </span>
+                                                        <span style="font-weight: bold;" id="<%="art"+i+"2"%>" class ="meta-date">
+                                                             date 
+                                                         </span>
+                                                        
+                                                         <span style="font-size:16px" id="<%="art"+i+"3"%>" class="meta-author">
+                                                             summary
+                                                         </span>
                                                     </div>
                                                     <!-- End post-inner -->
                                 </article>
@@ -129,7 +141,7 @@
                     <div class="row">
                              <div class="col-md-12">
                                  <div class="boxedtitle page-title">
-                                     <h2>Website Search Engine</h2>
+                                     <h2>ChainMap Search Engine</h2>
                                  </div> 
 
                                 <div class="page-content">
@@ -255,7 +267,7 @@
                                         <div class="col-md-12">
                                             <br>
                                             <div class="boxedtitle page-title">
-                                                <h2>Featured Links</h2>
+                                                <h2>ChainMap Featured Links</h2>
                                             </div> 
                                        
                                             <div class="bx-wrapper">

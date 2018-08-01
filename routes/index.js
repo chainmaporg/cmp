@@ -188,7 +188,6 @@ router.get('/trainingMaterial_Bitcoin', trainingMaterial.trainingMaterial_Bitcoi
 router.get('/trainingMaterial_Ethereum', trainingMaterial.trainingMaterial_Ethereum);
 router.get('/trainingMaterial_UseCases', trainingMaterial.trainingMaterial_UseCases);
 router.get('/trainingMaterial_OtherProtocol', trainingMaterial.trainingMaterial_OtherProtocol);
-router.get('/trainingMaterial_UseCases', trainingMaterial.trainingMaterial_UseCases);
 router.get('/trainingMaterial_Training', trainingMaterial.trainingMaterial_Training);
 
 

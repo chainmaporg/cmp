@@ -22,6 +22,8 @@
                 return true;
             }
         </script>
+        
+        
 
         <div class="loader">
             <div class="loader_html"></div>
@@ -42,9 +44,21 @@
                                         <%        
                 							if (typeof session == 'undefined' || typeof session.email == 'undefined'){
                 						%>
+               						
                                         <p>
-                                        <center><a href="/loginRegister" class="button small green-button custom-button">Register Now to see Chinese/English book "Use Node.js to Build Blockchain" </a></center>
+                                        <a href="/trainingMaterial_Introduction">Introduction</a>
+  										<a href="/trainingMaterial_Infrastructure" ">Infrastructur</a>
+                                        <a href="/trainingMaterial_Hyperledger" ">Hyperledger</a>
+                                        <a href="/trainingMaterial_Bitcoin" ">Bitcoin</a>
+                                        
+                                        <a href="/trainingMaterial_Ethereum" ">Ethereum</a>
+                                        <a href="/trainingMaterial_UseCases" ">UseCases</a>
+                                        <a href="/trainingMaterial_OtherProtocol" ">OtherProtocol</a>
+                                        <a href="/trainingMaterial_Training" ">Training</a>
+                                 
+                                        
                                         </p>
+
                                          <% } %> 
                                         <div class="clearfix"></div>
                                         <!-- <a class="color button dark_button medium" href="#">About Us</a>
@@ -100,7 +114,14 @@
                                                             </span>
                                                         </div>
                                                         <div class="post-content">
-                                                            <p><%=list[i].description%></p>
+                                                            <p style="font-size:14px"><%=list[i].description%></p>
+                                                            <%        
+                							                  if (typeof session == 'undefined' || typeof session.email == 'undefined'){
+                						                    %>
+                                        
+                                                               <a href="/loginRegister" class="button small green-button custom-button">Login/Register to get recommendations </a></center>
+                                       
+                                                            <% } %> 
                                                             <a href=<%=list[i].link%> onclick = "return logClick(this);" class="post-read-more button color small" target="_blank" type="training material">Continue reading</a>
 
                                                         </div>
