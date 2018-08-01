@@ -411,18 +411,9 @@ exports.recordClick = function(req, res) {
     var body = req.body
     var session = req.session
     var userID = session.user_id
-
-    if (userID == undefined)
-    {
-        console.log("user is not logged in. cannot record click.")
-        res.send()
-        return
-    }
-
-
     var id = body.id
     var type = body.type;
-    
+
     String.prototype.hashCode = function() {
         var hash = 0
         if (this.length == 0) {
@@ -458,23 +449,38 @@ exports.recordClick = function(req, res) {
         }
     )
 
+
+    if (userID == undefined)
+    {
+        userID = -1   
+    }
+
     connection.query(
-        "select doc_id from click where user_id=? && doc_id=?",
+        "select viewcount from click where user_id=? && doc_id=?",
         [userID, hashID],
         function(error, results, fields) {
             if (error) console.log("error occured", error)
             else if (results.length == 0) {
-                console.log(userID)
                 connection.query(
-                    "INSERT INTO click (user_id, doc_id) VALUES (?)",
-                    [[userID, hashID]],
+                    "INSERT INTO click (user_id, doc_id, viewcount) VALUES (?)",
+                    [[userID, hashID, 1]],
                     function(error, results, fields) {
                         if (error) {
                             console.log("error ocurred", error)
                         } else console.log("Success on recoding click")
                     }
                 )
-            } else console.log(results)
+            } else {
+                connection.query(
+                    "UPDATE click SET viewcount = viewcount + 1 WHERE user_id = ? AND doc_id = ?",
+                    [userID, hashID],
+                    function(error, results, fields) {
+                        if (error) {
+                            console.log("error ocurred", error)
+                        } else console.log("Success on recoding click")
+                    }
+                )
+            }        
         }
     )
     res.send()
