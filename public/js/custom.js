@@ -858,7 +858,7 @@ jQuery(document).ready(function ($) {
 						}
 
 
-						divElement = divElement + "<div class='profile_interest'>" + "<input id='poll-" + i + "' name='interest' type='checkbox' " + checked + " value='" + data.allCategories[i].id + "'>";
+						divElement = divElement + "<div><div class='profile_interest'>" + "<input id='poll-" + i + "' name='interest' type='checkbox' " + checked + " value='" + data.allCategories[i].id + "'>";
 						divElement = divElement + '<label for="poll-' + i + '">' + data.allCategories[i].category_name + '</label></div>';
 						divElement = divElement + '<div class="profile_interest"><select id="level" name="level">';
 						divElement = divElement + '<option value="">Select your Proficiency Level</option><option value="Diamond" '+diamonCheck+'>Diamond</option>';
