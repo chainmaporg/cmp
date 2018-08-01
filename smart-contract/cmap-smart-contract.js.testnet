@@ -249,8 +249,7 @@ challengeContract.prototype = {
     },
     balancesOf: function(owners) {
         var list = {};
-        return owners;
-        for (var i in owners) {
+        for (var i = 0; i < owners.length; i++) {
             var owner = owners[i];
             var balance = this.balances.get(owner);
 
