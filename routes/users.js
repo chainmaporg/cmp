@@ -116,7 +116,7 @@ exports.getCompanies = function (req, res) {
       res.render("error", { errorMsg: "Error on insertion into DB Users" })
 
     } else {
-      console.log(results)
+      //console.log(results)
       res.send(results);
     }
   });
@@ -212,6 +212,7 @@ exports.getRecommendations = function(req, res) {
                         var p = new Promise((resolve, reject) => {
                             // request is asynchronous
                             var client = new Client()
+                            console.log("dddd---url:", url);
                             var r = client.get(url, function(data, response) {
                                 var docs = JSON.parse(data).response.docs
                                 resolve(docs)
@@ -452,7 +453,8 @@ exports.recordClick = function(req, res) {
                         } else console.log("Success on recoding doc")
                     }
                 )
-            } else console.log(results)
+            } else {} 
+            //console.log(results)
         }
     )
 
@@ -577,7 +579,7 @@ exports.tokenRanking = function (req, res) {
       res.render("error", { errorMsg: "Error on insertion into DB Users" })
 
     } else {
-      console.log(results)
+      //console.log(results)
       res.send({ 'users': results });
     }
   });
@@ -596,7 +598,7 @@ exports.updatePaymentaddress = function (req, res) {
       res.render("error", { errorMsg: "Error on insertion into DB Users" })
 
     } else {
-      console.log(results)
+      //console.log(results)
       res.redirect('/userProfile/' + userID);
     }
   });
@@ -639,7 +641,7 @@ exports.updateUserProfile = function (req, res) {
                 res.render("error", { errorMsg: "Error on insertion into DB Users" })
 
               } else {
-                console.log(results)
+                //console.log(results)
                 res.redirect('/userProfile/' + userID);
               }
             });
@@ -652,7 +654,7 @@ exports.updateUserProfile = function (req, res) {
             res.render("error", { errorMsg: "Error on insertion into DB Users" })
 
           } else {
-            console.log(results)
+            //console.log(results)
             res.redirect('/userProfile/' + userID);
           }
         });
@@ -671,7 +673,7 @@ exports.getAllCategory = function (req, res) {
       res.render("error", { errorMsg: "Error on insertion into DB Users" })
 
     } else {
-      console.log(results)
+      //console.log(results)
       res.send({ 'categories': results });
     }
   });
