@@ -120,7 +120,7 @@
                                             for (i=0; i < 5; i++) 
                                             {
                                                 var link = r[i]["url"][0];
-                                                var pdate = String(r[i]["date"][0]);
+                                                var pdate = String(r[i]["date"][0]).replace("T00:00:00Z", "");
                                                 var title = String(r[i]["title"][0]);
                                                 var category = String(r[i]["category"][0]);
                                                 var summary = String(r[i]["summary"][0]).match(/(.*?)[.?!]\s/)[0];
