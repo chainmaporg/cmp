@@ -129,7 +129,8 @@ CREATE TABLE `socialgroup` (
 DROP TABLE IF EXISTS `click`;
 CREATE TABLE `click` (
     `user_id` int(11) NOT NULL,
-    `doc_id` int(11) NOT NULL
+    `doc_id` int(11) NOT NULL,
+    `viewcount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `keywords`;
