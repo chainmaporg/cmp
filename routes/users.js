@@ -616,13 +616,14 @@ exports.updateUserProfile = function (req, res) {
   var userID = session.user_id;
   var interests = req.body.interest;
   var levels = req.body.level;
+  levels = levels.filter(function(n){ return n != "" }); 
   var userCategoryInterest = [];
   if (typeof interests !== 'undefined') {
     for (let i = 0; i < interests.length; i++) {
       var row = []
       row.push(interests[i])
       row.push(userID)
-      row.push(levels[interests[i] - 1])
+      row.push(levels[i])
 
       userCategoryInterest.push(row)
     }
