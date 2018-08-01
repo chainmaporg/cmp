@@ -1,71 +1,69 @@
 
 
-exports.getAllTrainingMaterial = function (req, res) {
+var getAllTrainingMaterial = function (req, res, tag) {
     console.log("Get All MAterials")
-	/**GZ: no session management for now
-	if(!session.email) {
-		return res.redirect("/")
-		req.session.error="need to login first"
-	}
-	**/
+
     var resultObj = {};
-    connection.query('select * from materials WHERE materials.type = ?', ['Infrastructure'], function (error, results, fields) {
+    connection.query('select * from materials  where materials.type = ?', [tag], function (error, results, fields) {
         if (error) {
-            console.log("error ocurred", { title: 'Error on handling challenge events' });
+            console.log("error ocurred", { title: 'Error on handling training materisl' });
             res.send({
                 "code": 400,
                 "failed": "error ocurred"
             })
             //res.render('error');
         } else {
-            resultObj['Infrastructure'] = results;
-            console.log('The Infrastructure materials are: ', results);
-            connection.query('select * from materials  WHERE materials.type = ?', ['Collection'], function (error, results, fields) {
-                if (error) {
-                    console.log("error ocurred", { title: 'Error on handling challenge events' });
-                    res.send({
-                        "code": 400,
-                        "failed": "error ocurred"
-                    })
-                    //res.render('error');
-                } else {
-                    resultObj['Collection'] = results;
-                    console.log('The Collection materials are: ', results);
-                    
-                    connection.query('select * from materials  WHERE materials.type = ?', ['Use Case/App'], function (error, results, fields) {
-                        if (error) {
-                            console.log("error ocurred", { title: 'Error on handling challenge events' });
-                            res.send({
-                                "code": 400,
-                                "failed": "error ocurred"
-                            })
-                            //res.render('error');
-                        } else {
-                            resultObj['Usecase'] = results;
-                            console.log('The Use case materials are: ', results);
-                            connection.query('select * from materials  WHERE materials.type = ?', ['Developer Guide'], function (error, results, fields) {
-                                if (error) {
-                                    console.log("error ocurred", { title: 'Error on handling challenge events' });
-                                    res.send({
-                                        "code": 400,
-                                        "failed": "error ocurred"
-                                    })
-                                    //res.render('error');
-                                } else {
-                                    resultObj['DevGuide'] = results;
-                                    console.log('The Developer guide materials are: ', results);
-                                    res.render('trainingMaterial', { data: resultObj });
+            var data = {}
+            var subtypes=[]
+            for(var i = 0;i < results.length;i++)
+            {
+            	st = results[i].subtype;
+            	key=st;
+    			if(key in data) {
+    				data[key].push(results[i]);
+    			}
+    			else {
+    				list=[]
+    				list.push(results[i]);
+    				data[key]=list
+    				subtypes.push(key)
+    			}
+            }
+            info= { data: data, subtypes:subtypes, tag:tag }
+            console.log(info)
+            res.render('trainingMaterial', info);
 
-                                }
-                            });
-                        }
-                    });
-                }
-            });
-        }
+         }
     });
 }
 
+exports.trainingMaterial_Introduction = function (req, res) {
+	getAllTrainingMaterial(req, res, "Introduction");
+}
+
+exports.trainingMaterial_Infrastructure = function (req, res) {
+	getAllTrainingMaterial(req, res, "Infrastructure");
+}
+
+exports.trainingMaterial_Hyperledger = function (req, res) {
+	getAllTrainingMaterial(req, res, "Hyperledger");
+}
+
+exports.trainingMaterial_Bitcoin = function (req, res) {
+	getAllTrainingMaterial(req, res, "Bitcoin");
+}
+exports.trainingMaterial_Ethereum = function (req, res) {
+	getAllTrainingMaterial(req, res, "Ethereum");
+}
+exports.trainingMaterial_UseCases = function (req, res) {
+	getAllTrainingMaterial(req, res, "UseCases");
+}
+exports.trainingMaterial_OtherProtocol = function (req, res) {
+	getAllTrainingMaterial(req, res, "OtherProtocol");
+}
+exports.trainingMaterial_Training = function (req, res) {
+	getAllTrainingMaterial(req, res, "Training");
+}
 
 
 

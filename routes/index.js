@@ -181,7 +181,21 @@ router.get('/error', function (req, res) {
 router.get('/userProfile/:user_id', users.userProfile);
 router.get('/getJobRecommendations', users.getJobRecommendations);
 router.get('/getRecommendations', users.getRecommendations);
-router.get('/trainingMaterial', trainingMaterial.getAllTrainingMaterial);
+router.get('/trainingMaterial_Introduction', trainingMaterial.trainingMaterial_Introduction);
+router.get('/trainingMaterial_Infrastructure', trainingMaterial.trainingMaterial_Infrastructure);
+router.get('/trainingMaterial_Hyperledger', trainingMaterial.trainingMaterial_Hyperledger);
+router.get('/trainingMaterial_Bitcoin', trainingMaterial.trainingMaterial_Bitcoin);
+router.get('/trainingMaterial_Ethereum', trainingMaterial.trainingMaterial_Ethereum);
+router.get('/trainingMaterial_UseCases', trainingMaterial.trainingMaterial_UseCases);
+router.get('/trainingMaterial_OtherProtocol', trainingMaterial.trainingMaterial_OtherProtocol);
+router.get('/trainingMaterial_UseCases', trainingMaterial.trainingMaterial_UseCases);
+router.get('/trainingMaterial_Training', trainingMaterial.trainingMaterial_Training);
+
+
+
+
+
+
 router.post('/updateUserProfile', users.updateUserProfile);
 router.post('/log', users.recordClick);
 router.get('/aboutUs', function (req, res) {
