@@ -413,7 +413,6 @@ exports.recordClick = function(req, res) {
     var userID = session.user_id
     var id = body.id
     var type = body.type;
-    var viewcount = 1;
 
     String.prototype.hashCode = function() {
         var hash = 0
@@ -453,7 +452,7 @@ exports.recordClick = function(req, res) {
 
     if (userID == undefined)
     {
-        userID = "Not Logged In User"    
+        userID = -1   
     }
 
     connection.query(
@@ -462,11 +461,9 @@ exports.recordClick = function(req, res) {
         function(error, results, fields) {
             if (error) console.log("error occured", error)
             else if (results.length == 0) {
-                console.log(viewcount)
-                console.log(userID)
                 connection.query(
                     "INSERT INTO click (user_id, doc_id, viewcount) VALUES (?)",
-                    [[userID, hashID, viewcount]],
+                    [[userID, hashID, 1]],
                     function(error, results, fields) {
                         if (error) {
                             console.log("error ocurred", error)
@@ -474,12 +471,9 @@ exports.recordClick = function(req, res) {
                     }
                 )
             } else {
-                viewcount = results.viewcount + 1
-                console.log(viewcount)
-                console.log(userID)
                 connection.query(
-                    "INSERT INTO click (user_id, doc_id, viewcount) VALUES (?)",
-                    [[userID, hashID]],
+                    "UPDATE click SET viewcount = viewcount + 1 WHERE user_id = ? AND doc_id = ?",
+                    [userID, hashID],
                     function(error, results, fields) {
                         if (error) {
                             console.log("error ocurred", error)
