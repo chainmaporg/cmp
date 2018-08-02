@@ -486,9 +486,42 @@ exports.recordClick = function(req, res) {
     res.send()
 }
 
+exports.checkDuplicatePayment = function(req, res){
+    paymentAddress = req.body.paymentAddress;
+    session = req.session;
+    connection.query('select user_id from user where payment_address = ?', [paymentAddress], function (error, results, fields) {
+        if (error) {
+          console.log("error ocurred", error);
+          res.render("error", { errorMsg: "Error on getting data from DB user table" })
+
+        } else {
+            console.log("payment address is", paymentAddress);
+            console.log("rows found", results.length);
+            sendingData = false;
+            if (results.length >= 2){
+                sendingData = false;
+            }
+            else if(results.length == 1){
+                if (results[0].user_id == session.user_id){
+                    sendingData = true;
+                }else{
+                    sendingData = false
+                }
+            }else{
+                sendingData = true
+            }
+
+          res.send({
+            "sendingData": sendingData
+          })
+        }
+      });
+
+}
+
 exports.userProfile = function (req, res) {
   userID = req.params.user_id;
-  
+  session = req.session;
   global.userBalanceMap = {};
   //prepare balance info in a map
 	
@@ -618,27 +651,9 @@ exports.tokenRanking = function (req, res) {
   });
 }
 
-
-exports.updatePaymentaddress = function (req, res) {
-  let session = req.session;
-  userID = session.user_id;
-  paymentAddress = req.body.paymentAddress;
-  console.log("User ID", userID)
-  console.log("payment Address", paymentAddress)
-  connection.query('update `user` set `user`.payment_address = ? WHERE user_id = ?', [paymentAddress, userID], function (error, results, fields) {
-    if (error) {
-      console.log("error ocurred", error);
-      res.render("error", { errorMsg: "Error on insertion into DB Users" })
-
-    } else {
-      //console.log(results)
-      res.redirect('/userProfile/' + userID);
-    }
-  });
-}
-
 exports.updateUserProfile = function (req, res) {
   console.log("total Input", req.body);
+
   var session = req.session;
   var userID = session.user_id;
   var interests = req.body.interest;
@@ -676,6 +691,7 @@ exports.updateUserProfile = function (req, res) {
 
               } else {
                 //console.log(results)
+                session.wallet = req.body.paymentAddress;
                 res.redirect('/userProfile/' + userID);
               }
             });
@@ -689,6 +705,7 @@ exports.updateUserProfile = function (req, res) {
 
           } else {
             //console.log(results)
+            session.wallet = req.body.paymentAddress;
             res.redirect('/userProfile/' + userID);
           }
         });
