@@ -200,6 +200,11 @@ router.post('/log', users.recordClick);
 router.get('/aboutUs', function (req, res) {
   res.render('aboutUs', { title: 'About Us' });
 });
+
+router.get('/aboutToken', function (req, res) {
+  res.render('aboutToken', { title: 'About Token' });
+});
+
 router.post('/getAllCategory', users.getAllCategory);
 router.post('/getAllCategoryWithUserCat', users.getAllCategoryWithUserCat);
 router.get('/getNews', news.getNews);
