@@ -147,4 +147,20 @@ CREATE TABLE `documents` (
     PRIMARY KEY (`doc_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+/* vote_direction is 1 if upvote, 0 if downvote */
+DROP TABLE IF EXISTS `answer_votes`;
+CREATE TABLE `answer_votes` (
+    `answer_id` int(15) NOT NULL,
+    `user_id` int(11) NOT NULL,
+    `vote_direction` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/* vote_direction is 1 if upvote, 0 if downvote */
+DROP TABLE IF EXISTS `challenge_votes`;
+CREATE TABLE `challenge_votes` (
+    `challenge_id` int(15) NOT NULL,
+    `user_id` int(11) NOT NULL,
+    `vote_direction` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
