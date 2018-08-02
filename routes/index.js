@@ -197,6 +197,9 @@ router.get('/trainingMaterial_Training', trainingMaterial.trainingMaterial_Train
 
 router.post('/updateUserProfile', users.updateUserProfile);
 router.post('/log', users.recordClick);
+
+router.post('/checkDuplicatePayment', users.checkDuplicatePayment);
+
 router.get('/aboutUs', function (req, res) {
   res.render('aboutUs', { title: 'About Us' });
 });
