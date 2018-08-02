@@ -4,7 +4,24 @@ var Nebulas = index.Nebulas;
 var smartContract_address = index.smartContract_address;
 var chainmapServerWallet = index.chainmapServerWallet;
 
-
+function changeLevelNames(level) {
+    switch (level)
+    {
+        case "Brozen":
+            return ("Easy")
+            break
+        case "Silver":
+            return ("Average")
+            break
+        case "Gold":
+            return ("Hard")
+            break 
+        case "Diamond":
+            return ("Very Hard")
+            break
+    }
+    return ""
+}
 
 
 function handChallengeSmartContract(address, challengeId, challengeLevel, challenge, timeEstimation) {
@@ -199,7 +216,11 @@ exports.getAllChallenge = function (req, res) {
 			})
 			//res.render('error');
 		} else {
-			resultObj['mostRecent'] = results;
+            // change display title
+            results.forEach(dict => {
+                dict.level = changeLevelNames(dict.level)
+            })
+            resultObj['mostRecent'] = results;
 			//This line can cause lots of logs
 			//console.log('The recent challenges are: ', results);
 			connection.query('select challenge.*, `user`.user_name, `user`.user_id, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers from challenge join `user` on challenge.post_user_id = `user`.user_id ORDER BY view_count+upvote_count-downvote_count DESC', [], function (error, results, fields) {
@@ -211,6 +232,10 @@ exports.getAllChallenge = function (req, res) {
 					})
 					//res.render('error');
 				} else {
+                    // change display title
+                    results.forEach(dict => {
+                        dict.level = changeLevelNames(dict.level)
+                    })
 					resultObj['mostResponse'] = results;
 					console.log('The Most response challenges are: ', results);
 					connection.query('select * from (select challenge.*, `user`.user_name, `user`.user_id, (SELECT max(answer.posting_date) as maximum FROM answer WHERE answer.challenge_id = challenge.challenge_id) as recent_answer, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers from challenge join `user` on challenge.post_user_id = `user`.user_id) as innerTable where innerTable.recent_answer is not null', [], function (error, results, fields) {
@@ -222,6 +247,10 @@ exports.getAllChallenge = function (req, res) {
 							})
 							//res.render('error');
 						} else {
+                            // change display title
+                            results.forEach(dict => {
+                                dict.level = changeLevelNames(dict.level)
+                            })
 							resultObj['mostRecentAnswered'] = results;
 							console.log('The Most recent answered challenges are: ', results);
 							connection.query('select * from (select challenge.*, `user`.user_name, `user`.user_id, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers from challenge join `user` on challenge.post_user_id = `user`.user_id) as innerTable where total_answers = 0', [], function (error, results, fields) {
@@ -233,6 +262,10 @@ exports.getAllChallenge = function (req, res) {
 									})
 									//res.render('error');
 								} else {
+                                    // change display title
+                                    results.forEach(dict => {
+                                        dict.level = changeLevelNames(dict.level)
+                                    })
 									resultObj['NoAnswers'] = results;
 									console.log('Not answered challenges are: ', results);
 									res.render('questionBoard', { data: resultObj });
@@ -383,6 +416,10 @@ exports.getDetailsChallenge = function (req, res) {
 				})
 				res.render('error');
 			} else {
+                // change display title
+                results.forEach(dict => {
+                    dict.level = changeLevelNames(dict.level)
+                })
 				console.log('Challenge Details: ', results);
 				if (results.length > 0) {
 					resultObj['challengedetails'] = results

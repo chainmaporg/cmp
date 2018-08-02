@@ -504,7 +504,24 @@ exports.userProfile = function (req, res) {
 	   	console.log("userProfile balance Map..:", global.userBalanceMap, "useid:", userID, "balance:", user_token_balance)
 	})
 
-
+    function changeLevelNames(level) {
+        switch (level)
+        {
+            case "Brozen":
+                return ("Easy")
+                break
+            case "Silver":
+                return ("Average")
+                break
+            case "Gold":
+                return ("Hard")
+                break 
+            case "Diamond":
+                return ("Very Hard")
+                break
+        }
+        return ""
+    }
   
   resultObj = {}
   connection.query('select * from user where user_id=?', [userID], function (error, results, fields) {
@@ -528,6 +545,11 @@ exports.userProfile = function (req, res) {
               res.render("error", { errorMsg: "Error on insertion into DB Users" })
 
             } else {
+                // change display title
+                results.forEach(dict => {
+                    dict.level = changeLevelNames(dict.level)
+                })
+
               resultObj['allQuestions'] = results;
               // console.log('Total data from the userProfile request: ', resultObj);
               connection.query('select challenge.*, (select count(*) from answer where answer.challenge_id = challenge.challenge_id) as total_answer  from challenge join answer on challenge.challenge_id = answer.challenge_id where answer.post_user_id = ? GROUP BY challenge_id ORDER BY posting_date', [userID], function (error, results, fields) {
@@ -536,6 +558,11 @@ exports.userProfile = function (req, res) {
                   res.render("error", { errorMsg: "Error on insertion into DB Users" })
 
                 } else {
+                    // change display title
+                    results.forEach(dict => {
+                        dict.level = changeLevelNames(dict.level)
+                    })
+
                   resultObj['allansweredQuestions'] = results;
                   // console.log('Total data from the userProfile request: ', resultObj);
                   connection.query('select user_category.category_id, user_category.`level`, category.category_name from user_category join category on user_category.category_id = category.id where user_id = ?', [userID], function (error, results, fields) {
