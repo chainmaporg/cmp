@@ -293,74 +293,385 @@ exports.getAllChallenge = function (req, res) {
 }
 
 exports.likeAnswer = function (req, res) {
-	answer_id = req.params.answer_id;
-	challenge_id = req.params.challenge_id;
-	var session = req.session;
-	var address = session.wallet;
+	var answer_id = req.params.answer_id;
+    var challenge_id = req.params.challenge_id;
+    var session = req.session;
+    var userID = req.session.user_id;
+    var address = session.wallet;
+    var canVote = false;
 
-	connection.query("update answer set upvote_count=upvote_count+1 where answer_id=?", [answer_id], function (error, results, fields) {
-		if (error) {
-			console.log("error ocurred", error);
-			res.render("error", { errorMsg: "Error on selecting from DB Users" })
-		}
-		else {
-			console.log('Update Up Votes successfully for answer:' + answer_id, results);
+    connection.query(
+        "select vote_direction from answer_votes where user_id=? and answer_id=?",
+        [userID, answer_id],
+        function(error, results, fields) {
+            if (error) {
+                console.log("error: ", error);
+                res.render("error", {
+                    errorMsg: "Error.",
+                });
+            } else {
+                console.log("Found results: ", results);
+                if (results.length == 0) {
+                    connection.query(
+                        "INSERT INTO answer_votes (user_id, answer_id, vote_direction) VALUES (?)",
+                        [[userID, answer_id, 1]],
+                        function(error, results, fields) {
+                            if (error) console.log("error: ", error);
+                            else {
+                                console.log("user can upvote");
+                                connection.query(
+                                    "update answer set upvote_count=upvote_count+1 where answer_id=?",
+                                    [answer_id],
+                                    function(error, results, fields) {
+                                        console.log(
+                                            "inside query.................."
+                                        );
+                                        if (error) {
+                                            console.log("error ocurred", error);
+                                            res.render("error", {
+                                                errorMsg:
+                                                    "Error on selecting from DB Users",
+                                            });
+                                        } else {
+                                            console.log(
+                                                "Update Up Votes successfully for answer:" +
+                                                    answer_id,
+                                                results
+                                            );
 
-			handleVoteSmartContract(address, challenge_id, answer_id, true);
+                                            handleVoteSmartContract(
+                                                address,
+                                                challenge_id,
+                                                answer_id,
+                                                true
+                                            );
+                                            res.redirect(
+                                                "/getChallengebyID/" +
+                                                    challenge_id
+                                            );
+                                        }
+                                    }
+                                );
+                            }
+                        }
+                    );
+                } else if (results[0].vote_direction == 0) {
+                    connection.query(
+                        "UPDATE answer_votes SET vote_direction = ? WHERE user_id = ? AND answer_id = ?",
+                        [1, userID, answer_id],
+                        function(error, results, fields) {
+                            if (error) console.log("error: ", error);
+                            else {
+                                connection.query(
+                                    "UPDATE answer SET upvote_count=upvote_count+1, downvote_count=downvote_count-1 WHERE answer_id=?",
+                                    [answer_id],
+                                    function(error, results, fields) {
+                                        if (error) {
+                                            console.log("error ocurred", error);
+                                            res.render("error", {
+                                                errorMsg:
+                                                    "Error on selecting from DB Users",
+                                            });
+                                        } else {
+                                            console.log(
+                                                "Update Up Votes successfully for answer:" +
+                                                    answer_id,
+                                                results
+                                            );
 
-			res.redirect('/getChallengebyID/' + challenge_id);
-		}
-	});
-
-
-}
+                                            res.redirect(
+                                                "/getChallengebyID/" +
+                                                    challenge_id
+                                            );
+                                        }
+                                    }
+                                );
+                            }
+                        }
+                    );
+                }
+            }
+        }
+    );
+};
 
 exports.dislikeAnswer = function (req, res) {
-	answer_id = req.params.answer_id;
-	challenge_id = req.params.challenge_id;
-	var session = req.session;
-	var address = session.wallet;
-	connection.query("update answer set downvote_count=downvote_count+1 where answer_id=?", [answer_id], function (error, results, fields) {
-		if (error) {
-			console.log("error ocurred", error);
-			res.render("error", { errorMsg: "Error on selecting from DB Users" })
-		}
-		else {
-			console.log('Update Down Votes successfully for answer:' + answer_id, results);
-			handleVoteSmartContract(address, challenge_id, answer_id, false);
-			res.redirect('/getChallengebyID/' + challenge_id);
-		}
-	});
+	var answer_id = req.params.answer_id;
+    var challenge_id = req.params.challenge_id;
+    var session = req.session;
+    var address = session.wallet;
+    var userID = req.session.user_id;
 
-}
+    connection.query(
+        "select vote_direction from answer_votes where user_id=? and answer_id=?",
+        [userID, answer_id],
+        function(error, results, fields) {
+            if (error) {
+                console.log("error: ", error);
+                res.render("error", {
+                    errorMsg: "Error.",
+                });
+            } else {
+                console.log("Found results: ", results);
+                if (results.length == 0) {
+                    connection.query(
+                        "INSERT INTO answer_votes (user_id, answer_id, vote_direction) VALUES (?)",
+                        [[userID, answer_id, 0]],
+                        function(error, results, fields) {
+                            if (error) console.log("error: ", error);
+                            else {
+                                console.log("user can downvote");
+                                connection.query(
+                                    "update answer set downvote_count=downvote_count+1 where answer_id=?",
+                                    [answer_id],
+                                    function(error, results, fields) {
+                                        if (error) {
+                                            console.log("error ocurred", error);
+                                            res.render("error", {
+                                                errorMsg:
+                                                    "Error on selecting from DB Users",
+                                            });
+                                        } else {
+                                            console.log(
+                                                "Update Down Votes successfully for answer:" +
+                                                    answer_id,
+                                                results
+                                            );
+                                            handleVoteSmartContract(
+                                                address,
+                                                challenge_id,
+                                                answer_id,
+                                                false
+                                            );
+                                            res.redirect(
+                                                "/getChallengebyID/" +
+                                                    challenge_id
+                                            );
+                                        }
+                                    }
+                                );
+                            }
+                        }
+                    );
+                } else if (results[0].vote_direction == 1) {
+                    connection.query(
+                        "UPDATE answer_votes SET vote_direction = ? WHERE user_id = ? AND answer_id = ?",
+                        [0, userID, answer_id],
+                        function(error, results, fields) {
+                            if (error) console.log("error: ", error);
+                            else {
+                                connection.query(
+                                    "UPDATE answer SET upvote_count=upvote_count-1, downvote_count=downvote_count+1 WHERE answer_id=?",
+                                    [answer_id],
+                                    function(error, results, fields) {
+                                        if (error) {
+                                            console.log("error ocurred", error);
+                                            res.render("error", {
+                                                errorMsg:
+                                                    "Error on selecting from DB Users",
+                                            });
+                                        } else {
+                                            console.log(
+                                                "Update Down Votes successfully for answer:" +
+                                                    answer_id,
+                                                results
+                                            );
+
+                                            res.redirect(
+                                                "/getChallengebyID/" +
+                                                    challenge_id
+                                            );
+                                        }
+                                    }
+                                );
+                            }
+                        }
+                    );
+                }
+            }
+        }
+    );
+};
 
 exports.likeChallenge = function (req, res) {
-	challenge_id = req.params.challenge_id;
-	connection.query("update challenge set upvote_count=upvote_count+1 where challenge_id=?", [challenge_id], function (error, results, fields) {
-		if (error) {
-			console.log("error ocurred", error);
-			res.render("error", { errorMsg: "Error on selecting from DB Users" })
-		}
-		else {
-			console.log('Update Up Votes successfully for challenge:' + challenge_id, results);
-			res.redirect('/getChallengebyID/' + challenge_id);
-		}
-	});
-}
+	var challenge_id = req.params.challenge_id;
+    var userID = req.session.user_id;
 
-exports.dislikeChallenge = function (req, res) {
-	challenge_id = req.params.challenge_id;
-	connection.query("update challenge set downvote_count=downvote_count+1 where challenge_id=?", [challenge_id], function (error, results, fields) {
-		if (error) {
-			console.log("error ocurred", error);
-			res.render("error", { errorMsg: "Error on selecting from DB Users" })
-		}
-		else {
-			console.log('Update Up Votes successfully for challenge:' + challenge_id, results);
-			res.redirect('/getChallengebyID/' + challenge_id);
-		}
-	});
-}
+    connection.query(
+        "select vote_direction from challenge_votes where user_id=? and challenge_id=?",
+        [userID, challenge_id],
+        function(error, results, fields) {
+            if (error) {
+                console.log("error: ", error);
+                res.render("error", {
+                    errorMsg: "Error.",
+                });
+            } else {
+                console.log("Found results: ", results);
+                if (results.length == 0) {
+                    connection.query(
+                        "INSERT INTO challenge_votes (user_id, challenge_id, vote_direction) VALUES (?)",
+                        [[userID, challenge_id, 1]],
+                        function(error, results, fields) {
+                            if (error) console.log("error: ", error);
+                            else {
+                                console.log("user can upvote");
+                                connection.query(
+                                    "update challenge set upvote_count=upvote_count+1 where challenge_id=?",
+                                    [challenge_id],
+                                    function(error, results, fields) {
+                                        if (error) {
+                                            console.log("error ocurred", error);
+                                            res.render("error", {
+                                                errorMsg:
+                                                    "Error on selecting from DB Users",
+                                            });
+                                        } else {
+                                            console.log(
+                                                "Update Up Votes successfully for challenge:" +
+                                                    challenge_id,
+                                                results
+                                            );
+
+                                            res.redirect(
+                                                "/getChallengebyID/" +
+                                                    challenge_id
+                                            );
+                                        }
+                                    }
+                                );
+                            }
+                        }
+                    );
+                } else if (results[0].vote_direction == 0) {
+                    connection.query(
+                        "UPDATE challenge_votes SET vote_direction = ? WHERE user_id = ? AND challenge_id = ?",
+                        [1, userID, challenge_id],
+                        function(error, results, fields) {
+                            if (error) console.log("error: ", error);
+                            else {
+                                connection.query(
+                                    "UPDATE challenge SET upvote_count=upvote_count+1, downvote_count=downvote_count-1 WHERE challenge_id=?",
+                                    [challenge_id],
+                                    function(error, results, fields) {
+                                        if (error) {
+                                            console.log("error ocurred", error);
+                                            res.render("error", {
+                                                errorMsg:
+                                                    "Error on selecting from DB Users",
+                                            });
+                                        } else {
+                                            console.log(
+                                                "Update Up Votes successfully for challenge:" +
+                                                    challenge_id,
+                                                results
+                                            );
+
+                                            res.redirect(
+                                                "/getChallengebyID/" +
+                                                    challenge_id
+                                            );
+                                        }
+                                    }
+                                );
+                            }
+                        }
+                    );
+                }
+            }
+        }
+    );
+};
+
+exports.dislikeChallenge = function(req, res) {
+    var challenge_id = req.params.challenge_id;
+    var userID = req.session.user_id;
+    connection.query(
+        "select vote_direction from challenge_votes where user_id=? and challenge_id=?",
+        [userID, challenge_id],
+        function(error, results, fields) {
+            if (error) {
+                console.log("error: ", error);
+                res.render("error", {
+                    errorMsg: "Error.",
+                });
+            } else {
+                console.log("Found results: ", results);
+                if (results.length == 0) {
+                    connection.query(
+                        "INSERT INTO challenge_votes (user_id, challenge_id, vote_direction) VALUES (?)",
+                        [[userID, challenge_id, 0]],
+                        function(error, results, fields) {
+                            if (error) console.log("error: ", error);
+                            else {
+                                console.log("user can downvote");
+                                connection.query(
+                                    "update challenge set downvote_count=downvote_count+1 where challenge_id=?",
+                                    [challenge_id],
+                                    function(error, results, fields) {
+                                        if (error) {
+                                            console.log("error ocurred", error);
+                                            res.render("error", {
+                                                errorMsg:
+                                                    "Error on selecting from DB Users",
+                                            });
+                                        } else {
+                                            console.log(
+                                                "Update Down Votes successfully for challenge:" +
+                                                    challenge_id,
+                                                results
+                                            );
+
+                                            res.redirect(
+                                                "/getChallengebyID/" +
+                                                    challenge_id
+                                            );
+                                        }
+                                    }
+                                );
+                            }
+                        }
+                    );
+                } else if (results[0].vote_direction == 1) {
+                    connection.query(
+                        "UPDATE challenge_votes SET vote_direction = ? WHERE user_id = ? AND challenge_id = ?",
+                        [0, userID, challenge_id],
+                        function(error, results, fields) {
+                            if (error) console.log("error: ", error);
+                            else {
+                                connection.query(
+                                    "UPDATE challenge SET upvote_count=upvote_count-1, downvote_count=downvote_count+1 WHERE challenge_id=?",
+                                    [challenge_id],
+                                    function(error, results, fields) {
+                                        if (error) {
+                                            console.log("error ocurred", error);
+                                            res.render("error", {
+                                                errorMsg:
+                                                    "Error on selecting from DB Users",
+                                            });
+                                        } else {
+                                            console.log(
+                                                "Update Down Votes successfully for challenge:" +
+                                                    challenge_id,
+                                                results
+                                            );
+
+                                            res.redirect(
+                                                "/getChallengebyID/" +
+                                                    challenge_id
+                                            );
+                                        }
+                                    }
+                                );
+                            }
+                        }
+                    );
+                }
+            }
+        }
+    );
+};
+
 
 exports.closeChallenge = function (req, res) {
 
