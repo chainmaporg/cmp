@@ -311,6 +311,7 @@ exports.likeAnswer = function (req, res) {
                 });
             } else {
                 console.log("Found results: ", results);
+                // check no previous vote
                 if (results.length == 0) {
                     connection.query(
                         "INSERT INTO answer_votes (user_id, answer_id, vote_direction) VALUES (?)",
@@ -355,6 +356,7 @@ exports.likeAnswer = function (req, res) {
                             }
                         }
                     );
+                // check if user's first vote was downvote, if downvote, then allow upvote
                 } else if (results[0].vote_direction == 0) {
                     connection.query(
                         "UPDATE answer_votes SET vote_direction = ? WHERE user_id = ? AND answer_id = ?",
@@ -413,6 +415,7 @@ exports.dislikeAnswer = function (req, res) {
                 });
             } else {
                 console.log("Found results: ", results);
+                // check no previous vote
                 if (results.length == 0) {
                     connection.query(
                         "INSERT INTO answer_votes (user_id, answer_id, vote_direction) VALUES (?)",
@@ -453,6 +456,7 @@ exports.dislikeAnswer = function (req, res) {
                             }
                         }
                     );
+                // check if previous vote was upvote, if upvote, allow downvote
                 } else if (results[0].vote_direction == 1) {
                     connection.query(
                         "UPDATE answer_votes SET vote_direction = ? WHERE user_id = ? AND answer_id = ?",
@@ -508,6 +512,7 @@ exports.likeChallenge = function (req, res) {
                 });
             } else {
                 console.log("Found results: ", results);
+                // check no previous vote
                 if (results.length == 0) {
                     connection.query(
                         "INSERT INTO challenge_votes (user_id, challenge_id, vote_direction) VALUES (?)",
@@ -543,6 +548,7 @@ exports.likeChallenge = function (req, res) {
                             }
                         }
                     );
+                // check if previous vote was downvote, if downvote, then allow upvote
                 } else if (results[0].vote_direction == 0) {
                     connection.query(
                         "UPDATE challenge_votes SET vote_direction = ? WHERE user_id = ? AND challenge_id = ?",
@@ -597,6 +603,7 @@ exports.dislikeChallenge = function(req, res) {
                 });
             } else {
                 console.log("Found results: ", results);
+                // check no previous vote
                 if (results.length == 0) {
                     connection.query(
                         "INSERT INTO challenge_votes (user_id, challenge_id, vote_direction) VALUES (?)",
@@ -632,6 +639,7 @@ exports.dislikeChallenge = function(req, res) {
                             }
                         }
                     );
+                // check if previous vote was upvote, if upvote, then allow downvote
                 } else if (results[0].vote_direction == 1) {
                     connection.query(
                         "UPDATE challenge_votes SET vote_direction = ? WHERE user_id = ? AND challenge_id = ?",
