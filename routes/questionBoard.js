@@ -235,7 +235,20 @@ exports.getAllChallenge = function (req, res) {
 								} else {
 									resultObj['NoAnswers'] = results;
 									console.log('Not answered challenges are: ', results);
-									res.render('questionBoard', { data: resultObj });
+									connection.query('select * from (select category.id , challenge.*, `user`.user_name, `user`.user_id, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers from challenge join `user` on challenge.post_user_id = `user`.user_id JOIN category on category.category_name = challenge.category) as innerTable ORDER BY id', [], function (error, results, fields) {
+										if (error) {
+											console.log("error ocurred", { title: 'Error on handling challenge events' });
+											res.send({
+												"code": 400,
+												"failed": "error ocurred"
+											})
+											//res.render('error');
+										} else {
+											resultObj['categoryChallenges'] = results;
+											console.log('Challenges are showing in order to the category id: ', results);	
+											res.render('questionBoard', { data: resultObj });
+										}
+									});
 								}
 							});
 						}
