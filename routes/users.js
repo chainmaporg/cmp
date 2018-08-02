@@ -540,7 +540,7 @@ exports.userProfile = function (req, res) {
     function changeLevelNames(level) {
         switch (level)
         {
-            case "Bronze":
+            case "Brozen":
                 return ("Easy")
                 break
             case "Silver":
