@@ -691,6 +691,7 @@ exports.updateUserProfile = function (req, res) {
 
               } else {
                 //console.log(results)
+                session.wallet = req.body.paymentAddress;
                 res.redirect('/userProfile/' + userID);
               }
             });
