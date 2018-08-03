@@ -10,3 +10,4 @@ routes/.DS_Store
 .vscode
 .idea
 Session.vim
+tslint.json
