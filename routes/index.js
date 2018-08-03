@@ -1,112 +1,121 @@
+chainmap_env = global.config.chainmap_env;
+smartContract_address = global.config.smartContract_address;
+chainmapServerWallet = global.config.chainmapServerWallet;
 
-chainmap_env=global.config.chainmap_env
-smartContract_address=global.config.smartContract_address
-chainmapServerWallet=global.config.chainmapServerWallet
-
-
-var Nebulas = require("nebulas")
-
+var Nebulas = require("nebulas");
 
 //Export to make other function accessd
-exports.Nebulas = Nebulas
-exports.smartContract_address = smartContract_address
-exports.chainmapServerWallet = chainmapServerWallet
+exports.Nebulas = Nebulas;
+exports.smartContract_address = smartContract_address;
+exports.chainmapServerWallet = chainmapServerWallet;
 
-var express = require('express');
-var SolrNode = require('solr-node');
+var express = require("express");
+var SolrNode = require("solr-node");
 var router = express.Router();
-
-
-
 
 // var client = new SolrNode({
 //     host: 'localhost',
 //     port: '8983',
 //     core: 'chainmap',
 //     protocol: 'http',
-//     debugLevel: 'ERROR' // log4js debug level paramter 
+//     debugLevel: 'ERROR' // log4js debug level paramter
 // });
 
-var Client = require('node-rest-client').Client;
+var Client = require("node-rest-client").Client;
 
 var client = new Client();
-
 
 // var strQuery = client.query().q('text:test');
 // var objQuery = client.query().q({text:'test', title:'test'});
 // var myStrQuery = 'q=text:test&wt=json';
 
-
 var solr_host = global.config.search_solr_host;
 var engine_host = global.config.search_engine_host;
 
+var logIP = function(req, res) {
+    if (!req.session.logged) {
+        console.log("New unique session.");
+        console.log(req.connection.remoteAddress);
+        req.session.logged = true;
+        connection.query(
+            "INSERT INTO ip (ip, timestamp) VALUES (INET6_ATON(?), NOW())",
+            [req.connection.remoteAddress],
+            function(error, results, fields) {
+                if (error) console.log("Error: ", error);
+            }
+        );
+    }
+};
 
-router.get('/query/:category/:content', function (req, res, next) {
-
-    var url = '';
-    if (req.params.category == 'All') {
-        url = solr_host + '/select?fl=title,%20url,%20summary,%20category&q=search_content:'+ encodeURI(req.params.content) +'&wt=json';
+router.get("/query/:category/:content", function(req, res, next) {
+    var url = "";
+    if (req.params.category == "All") {
+        url =
+            solr_host +
+            "/select?fl=title,%20url,%20summary,%20category&q=search_content:" +
+            encodeURI(req.params.content) +
+            "&wt=json";
     } else {
-        url = solr_host + '/select?fl=title,%20url,%20summary,%20category&q=category:'+ encodeURI(req.params.category) + '%20AND%20search_content:'+ encodeURI(req.params.content) +'&wt=json';
+        url =
+            solr_host +
+            "/select?fl=title,%20url,%20summary,%20category&q=category:" +
+            encodeURI(req.params.category) +
+            "%20AND%20search_content:" +
+            encodeURI(req.params.content) +
+            "&wt=json";
     }
 
-  console.log("chainmap_search:",url)
-  
-  client.get(url, function (data, response) {
-    var obj = JSON.parse(data);
-    res.send(obj);
-  });
+    console.log("chainmap_search:", url);
+
+    client.get(url, function(data, response) {
+        var obj = JSON.parse(data);
+        res.send(obj);
+    });
 });
 
-router.get('/resource/company/:name', function (req, res) {
-  res.redirect(engine_host+'/resource/company/' + req.params.name)
+router.get("/resource/company/:name", function(req, res) {
+    res.redirect(engine_host + "/resource/company/" + req.params.name);
 });
 
-router.get('/resource/ico/:name', function (req, res) {
-  //http://chainmap.org/resource/ICO/Bitcoin%20Green
-  res.redirect(engine_host+'/resource/ICO/' + req.params.name)
+router.get("/resource/ico/:name", function(req, res) {
+    //http://chainmap.org/resource/ICO/Bitcoin%20Green
+    res.redirect(engine_host + "/resource/ICO/" + req.params.name);
 });
 
-
-router.get('/resource/event/:name', function (req, res) {
-  res.redirect(engine_host+'/resource/event/' + req.params.name);
+router.get("/resource/event/:name", function(req, res) {
+    res.redirect(engine_host + "/resource/event/" + req.params.name);
 });
 
-
-router.get('/resource/white_paper/:name', function (req, res, next) {
-  res.redirect(engine_host+'/resource/white_paper/' + req.params.name);
+router.get("/resource/white_paper/:name", function(req, res, next) {
+    res.redirect(engine_host + "/resource/white_paper/" + req.params.name);
 });
 
-router.get('/page', function (req, res) {
-  res.render('home', { title: 'Home' });
+router.get("/page", function(req, res) {
+    res.render("home", { title: "Home" });
+    logIP(req, res);
 });
 
-router.get('/about', function (req, res) {
-  res.render('about', { title: 'About' });
+router.get("/about", function(req, res) {
+    res.render("about", { title: "About" });
+    logIP(req, res);
 });
 
-
-router.get('/login', function (req, res) {
-  res.render('login', { title: 'Login' });
+router.get("/login", function(req, res) {
+    res.render("login", { title: "Login" });
+    logIP(req, res);
 });
-
-
-
-
 
 //route to handle user registration
-var login = require('../routes/login');
-var users = require('../routes/users');
+var login = require("../routes/login");
+var users = require("../routes/users");
 var questionBoard = require("../routes/questionBoard");
 var trainingMaterial = require("../routes/trainingMaterial");
-var socialgroup = require('../routes/socialgroup');
-var news = require('../routes/news');
+var socialgroup = require("../routes/socialgroup");
+var news = require("../routes/news");
 // global.environment = "local";
 global.environment = "production";
 
-
-router.post('/login', login.login)
-
+router.post("/login", login.login);
 
 // router.get('/logOut',function(req,res){
 //   console.log("logged out");
@@ -119,97 +128,130 @@ router.post('/login', login.login)
 // 	});
 // })
 
-router.get('/logOut', function (req, res) {
-
-  req.session.destroy();
-  req.session = null;
-  // res.send("logout success!");
-  res.redirect('/questionBoard');
-})
-
-router.get('/', function (req, res) {
-  res.render('home', { title: 'Home' });
+router.get("/logOut", function(req, res) {
+    req.session.destroy();
+    req.session = null;
+    // res.send("logout success!");
+    res.redirect("/questionBoard");
 });
 
-router.get('/searchContent', function (req, res) {
-  res.render('searchContent', { title: 'Search Blockchain related Content' });
+router.get("/", function(req, res) {
+    res.render("home", { title: "Home" });
+    logIP(req, res);
 });
 
-router.get('/connectJob', function (req, res) {
-  res.render('connectJob', { title: 'Find jobs' });
+router.get("/searchContent", function(req, res) {
+    res.render("searchContent", { title: "Search Blockchain related Content" });
+    logIP(req, res);
 });
 
-router.get('/connectSmartContract', function (req, res) {
-  res.render('connectSmartContract', { title: 'Connect to do smart contract' });
+router.get("/connectJob", function(req, res) {
+    res.render("connectJob", { title: "Find jobs" });
+    logIP(req, res);
 });
 
-router.get('/connectGroup', socialgroup.getSocialGroup);
-
-
-router.get('/askQuestion', function (req, res) {
-  session = req.session
-  console.log("printing user ID");
-  console.log(session);
-
-  if (typeof session.user_id === "undefined") {
-    console.log("You are not logged in");
-    res.redirect('loginRegister');
-  } else {
-    res.render('askQuestion', { title: 'Post a Challenge' });
-  }
-
-});
-router.get('/questionBoard', questionBoard.getAllChallenge);
-router.get('/getChallengebyID/:challenge_id', questionBoard.getDetailsChallenge);
-router.get('/likeAnswer/:challenge_id/:answer_id', questionBoard.likeAnswer);
-router.get('/dislikeAnswer/:challenge_id/:answer_id', questionBoard.dislikeAnswer);
-router.get('/likeChallenge/:challenge_id', questionBoard.likeChallenge);
-router.get('/dislikeChallenge/:challenge_id', questionBoard.dislikeChallenge);
-router.get('/closeChallenge/:challenge_id', questionBoard.closeChallenge);
-router.post('/postChallenge', questionBoard.postChallenge);
-router.post('/postanswer', questionBoard.postanswer);
-router.post('/userRegister', users.userRegister);
-router.get('/loginRegister', function (req, res) {
-  res.render('loginRegister', { title: 'Login/Register' });
-});
-router.post('/getCompanies', users.getCompanies);
-router.post('/tokenRanking', users.tokenRanking)
-router.post('/totalQuestionAnswer', questionBoard.totalQuestionAnswer)
-router.get('/error', function (req, res) {
-  res.render('error', { title: 'Error' });
-});
-router.get('/userProfile/:user_id', users.userProfile);
-router.get('/getJobRecommendations', users.getJobRecommendations);
-router.get('/getRecommendations', users.getRecommendations);
-router.get('/trainingMaterial_Introduction', trainingMaterial.trainingMaterial_Introduction);
-router.get('/trainingMaterial_Infrastructure', trainingMaterial.trainingMaterial_Infrastructure);
-router.get('/trainingMaterial_Hyperledger', trainingMaterial.trainingMaterial_Hyperledger);
-router.get('/trainingMaterial_Bitcoin', trainingMaterial.trainingMaterial_Bitcoin);
-router.get('/trainingMaterial_Ethereum', trainingMaterial.trainingMaterial_Ethereum);
-router.get('/trainingMaterial_UseCases', trainingMaterial.trainingMaterial_UseCases);
-router.get('/trainingMaterial_OtherProtocol', trainingMaterial.trainingMaterial_OtherProtocol);
-router.get('/trainingMaterial_Training', trainingMaterial.trainingMaterial_Training);
-
-
-
-
-
-
-router.post('/updateUserProfile', users.updateUserProfile);
-router.post('/log', users.recordClick);
-
-router.post('/checkDuplicatePayment', users.checkDuplicatePayment);
-
-router.get('/aboutUs', function (req, res) {
-  res.render('aboutUs', { title: 'About Us' });
+router.get("/connectSmartContract", function(req, res) {
+    res.render("connectSmartContract", {
+        title: "Connect to do smart contract",
+    });
 });
 
-router.get('/aboutToken', function (req, res) {
-  res.render('aboutToken', { title: 'About Token' });
+router.get("/connectGroup", socialgroup.getSocialGroup);
+
+router.get("/askQuestion", function(req, res) {
+    var session = req.session;
+    console.log("printing user ID");
+    console.log(session);
+
+    if (typeof session.user_id === "undefined") {
+        console.log("You are not logged in");
+        res.redirect("loginRegister");
+    } else {
+        res.render("askQuestion", { title: "Post a Challenge" });
+    }
+
+    logIP(req, res);
+});
+router.get("/questionBoard", function(req, res) {
+    questionBoard.getAllChallenge(req, res);
+    logIP(req, res);
+});
+router.get(
+    "/getChallengebyID/:challenge_id",
+    questionBoard.getDetailsChallenge
+);
+router.get("/likeAnswer/:challenge_id/:answer_id", questionBoard.likeAnswer);
+router.get(
+    "/dislikeAnswer/:challenge_id/:answer_id",
+    questionBoard.dislikeAnswer
+);
+router.get("/likeChallenge/:challenge_id", questionBoard.likeChallenge);
+router.get("/dislikeChallenge/:challenge_id", questionBoard.dislikeChallenge);
+router.get("/closeChallenge/:challenge_id", questionBoard.closeChallenge);
+router.post("/postChallenge", questionBoard.postChallenge);
+router.post("/postanswer", questionBoard.postanswer);
+router.post("/userRegister", users.userRegister);
+router.get("/loginRegister", function(req, res) {
+    res.render("loginRegister", { title: "Login/Register" });
+});
+router.post("/getCompanies", users.getCompanies);
+router.post("/tokenRanking", users.tokenRanking);
+router.post("/totalQuestionAnswer", questionBoard.totalQuestionAnswer);
+router.get("/error", function(req, res) {
+    res.render("error", { title: "Error" });
+});
+router.get("/userProfile/:user_id", users.userProfile);
+router.get("/getJobRecommendations", users.getJobRecommendations);
+router.get("/getRecommendations", users.getRecommendations);
+router.get("/trainingMaterial_Introduction", function(req, res) {
+    trainingMaterial.trainingMaterial_Introduction;
+});
+router.get("/trainingMaterial_Infrastructure", function(req, res) {
+    trainingMaterial.trainingMaterial_Infrastructure(req, res);
+    logIP(req, res);
+});
+router.get("/trainingMaterial_Hyperledger", function(req, res) {
+    trainingMaterial.trainingMaterial_Hyperledger(req, res);
+    logIP(req, res);
+});
+router.get("/trainingMaterial_Bitcoin", function(req, res) {
+    trainingMaterial.trainingMaterial_Bitcoin(req, res);
+    logIP(req, res);
+});
+router.get("/trainingMaterial_Ethereum", function(req, res) {
+    trainingMaterial.trainingMaterial_Ethereum(req, res);
+    logIP(req, res);
+});
+router.get("/trainingMaterial_UseCases", function(req, res) {
+    trainingMaterial.trainingMaterial_UseCases(req, res);
+    logIP(req, res);
+});
+router.get("/trainingMaterial_OtherProtocol", function(req, res) {
+    trainingMaterial.trainingMaterial_OtherProtocol(req, res);
+    logIP(req, res);
+});
+router.get("/trainingMaterial_Training", function(req, res) {
+    trainingMaterial.trainingMaterial_Training(req, res);
+    logIP(req, res);
 });
 
-router.post('/getAllCategory', users.getAllCategory);
-router.post('/getAllCategoryWithUserCat', users.getAllCategoryWithUserCat);
-router.get('/getNews', news.getNews);
+router.post("/updateUserProfile", users.updateUserProfile);
+router.post("/log", users.recordClick);
+
+router.post("/checkDuplicatePayment", users.checkDuplicatePayment);
+
+router.get("/aboutUs", function(req, res) {
+    res.render("aboutUs", { title: "About Us" });
+    logIP(req, res);
+});
+
+router.get("/aboutToken", function(req, res) {
+    res.render("aboutToken", { title: "About Token" });
+    logIP(req, res);
+});
+
+router.post("/getAllCategory", users.getAllCategory);
+router.post("/getAllCategoryWithUserCat", users.getAllCategoryWithUserCat);
+router.get("/getNews", news.getNews);
 
 module.exports = router;

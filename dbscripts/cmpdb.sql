@@ -130,7 +130,8 @@ DROP TABLE IF EXISTS `click`;
 CREATE TABLE `click` (
     `user_id` int(11) NOT NULL,
     `doc_id` int(11) NOT NULL,
-    `viewcount` int(11) NOT NULL
+    `session_id` varchar(32) NOT NULL,
+    `timestamp` datetime NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `keywords`;
@@ -163,4 +164,10 @@ CREATE TABLE `challenge_votes` (
     `vote_direction` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+/* ip information is stored in hex, so it will not be visible in a simple select */
+DROP TABLE IF EXISTS `ip`;
+CREATE TABLE `ip` (
+    `ip` VARBINARY(16) NOT NULL,
+    `timestamp` datetime NOT NULL 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
 

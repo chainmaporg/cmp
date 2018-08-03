@@ -408,10 +408,11 @@ exports.getJobRecommendations = function(req, res) {
 
 
 exports.recordClick = function(req, res) {
-    var body = req.body
-    var session = req.session
-    var userID = session.user_id
-    var id = body.id
+    var body = req.body;
+    var session = req.session;
+    var session_id = req.sessionID;
+    var userID = session.user_id;
+    var id = body.id;
     var type = body.type;
 
     String.prototype.hashCode = function() {
@@ -456,33 +457,15 @@ exports.recordClick = function(req, res) {
     }
 
     connection.query(
-        "select viewcount from click where user_id=? && doc_id=?",
-        [userID, hashID],
+        "INSERT INTO click (user_id, doc_id, session_id, timestamp) VALUES (?, ?, ?, NOW())",
+        [userID, hashID, session_id],
         function(error, results, fields) {
-            if (error) console.log("error occured", error)
-            else if (results.length == 0) {
-                connection.query(
-                    "INSERT INTO click (user_id, doc_id, viewcount) VALUES (?)",
-                    [[userID, hashID, 1]],
-                    function(error, results, fields) {
-                        if (error) {
-                            console.log("error ocurred", error)
-                        } else console.log("Success on recoding click")
-                    }
-                )
-            } else {
-                connection.query(
-                    "UPDATE click SET viewcount = viewcount + 1 WHERE user_id = ? AND doc_id = ?",
-                    [userID, hashID],
-                    function(error, results, fields) {
-                        if (error) {
-                            console.log("error ocurred", error)
-                        } else console.log("Success on recoding click")
-                    }
-                )
-            }        
+            if (error) {
+                console.log("error ocurred", error)
+            } else console.log("Success on recoding click")
         }
     )
+
     res.send()
 }
 
