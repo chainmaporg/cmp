@@ -38,7 +38,7 @@ var logIP = function(req, res) {
         console.log(req.connection.remoteAddress);
         req.session.logged = true;
         connection.query(
-            "INSERT INTO ip (ip, timestamp) VALUES (INET6_ATON(?), NOW())",
+            "INSERT INTO ip (ip, timestamp) VALUES (?, NOW())",
             [req.connection.remoteAddress],
             function(error, results, fields) {
                 if (error) console.log("Error: ", error);
@@ -112,6 +112,7 @@ var questionBoard = require("../routes/questionBoard");
 var trainingMaterial = require("../routes/trainingMaterial");
 var socialgroup = require("../routes/socialgroup");
 var news = require("../routes/news");
+var admin = require("../routes/admin")
 // global.environment = "local";
 global.environment = "production";
 
@@ -253,5 +254,13 @@ router.get("/aboutToken", function(req, res) {
 router.post("/getAllCategory", users.getAllCategory);
 router.post("/getAllCategoryWithUserCat", users.getAllCategoryWithUserCat);
 router.get("/getNews", news.getNews);
+
+router.get("/admin", function(req, res) {
+    res.redirect("loginAdmin");
+});
+router.get("/loginAdmin", function(req, res) {
+    res.render("loginAdmin")
+});
+router.post("/adminLogin", admin.login);
 
 module.exports = router;
