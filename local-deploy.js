@@ -11,7 +11,7 @@ module.exports = {
     db: {
         host: 'localhost',
         user: 'root',
-        password: '',
+        password: 'z1965z',
         database: 'cmpdb'
 
     },
