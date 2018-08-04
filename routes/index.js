@@ -255,8 +255,14 @@ router.post("/getAllCategory", users.getAllCategory);
 router.post("/getAllCategoryWithUserCat", users.getAllCategoryWithUserCat);
 router.get("/getNews", news.getNews);
 
-router.get("/admin", function(req, res) {
-    res.redirect("loginAdmin");
+router.get("/adminPage", function(req, res) {
+    if (req.session.admin)
+    {
+        console.log("Admin access unlocked.");
+        admin.adminPageAccess(req, res);
+    }
+    else
+        res.redirect("loginAdmin");
 });
 router.get("/loginAdmin", function(req, res) {
     res.render("loginAdmin")
