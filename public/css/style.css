@@ -1809,7 +1809,7 @@ div[class*="slider_shadow"]:before, div[class^="header_shadow"] {
 .widget {
 	margin-bottom: 30px;
 	color: #2f3239;
-	padding: 20px;
+	padding: 10px;
 	border: 1px solid #dedede;
 	background: #FFF;
 	-moz-box-shadow: 0 0 5px #dedede;
@@ -2056,7 +2056,7 @@ div[class*="slider_shadow"]:before, div[class^="header_shadow"] {
 	width: 71px;
 	height: 71px;
 	position: relative;
-	margin-right: 20px;
+	margin-right: 5px;
 	overflow: hidden;
 	padding: 2px;
 	border: 1px solid #dedede;
