@@ -112,7 +112,9 @@ var questionBoard = require("../routes/questionBoard");
 var trainingMaterial = require("../routes/trainingMaterial");
 var socialgroup = require("../routes/socialgroup");
 var news = require("../routes/news");
+
 var companyNews = require("../routes/companyNews");
+var admin = require("../routes/admin")
 // global.environment = "local";
 global.environment = "production";
 
@@ -260,5 +262,19 @@ router.get("/aboutToken", function(req, res) {
 router.post("/getAllCategory", users.getAllCategory);
 router.post("/getAllCategoryWithUserCat", users.getAllCategoryWithUserCat);
 router.get("/getNews", news.getNews);
+
+router.get("/adminPage", function(req, res) {
+    if (req.session.admin)
+    {
+        console.log("Admin access unlocked.");
+        admin.adminPageAccess(req, res);
+    }
+    else
+        res.redirect("loginAdmin");
+});
+router.get("/loginAdmin", function(req, res) {
+    res.render("loginAdmin")
+});
+router.post("/adminLogin", admin.login);
 
 module.exports = router;

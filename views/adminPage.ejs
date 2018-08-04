@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- header part start -->
+<% include ./partials/header %>
+	<!-- header part end -->
+
+	<body>
+
+		<div class="loader">
+			<div class="loader_html"></div>
+		</div>
+
+		<div id="wrap" class="grid_1200">
+			<% include ./partials/header_login %>
+				<% include ./partials/body_header %>
+					<div class="breadcrumbs">
+						<section class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1>Admin Page</h1>
+                                </div>
+                            </div>
+                            <!-- End row -->
+                        </section>
+                        <!-- End container -->
+                    </div>
+                    <!-- End breadcrumbs -->
+					<!-- <% include ./partials/alert_msg %> -->
+					<section class="container main-content">
+                        <h3> Unique IPs </h3>
+                        <% 
+                            console.log(data);
+                            data.ips.forEach(function(ip){
+                         %>
+                         <p> <%= ip %> </p>
+                         <% }); %>
+
+                        <h3> Doc Hashing Values </h3>
+
+                        <% data.docs.forEach(function(doc) { %>
+                        <article class="post blog_2 clearfix">
+                            
+                                <span style="font-weight: bold;" class ="meta-date">
+                                    Doc:  
+                                </span><%= doc.doc_id%>
+                                <span style="font-weight: bold;" class ="meta-date">
+                                    Type:  
+                                </span><%= doc.type%>
+                                <span style="font-weight: bold; font-size:12px; align-content:right;" class="meta-author">
+                                    Link:
+                                </span><a href=<%=doc.link%>><%= doc.link%></a>
+                            <!-- End post-inner -->
+                        </article>                       
+                        <% }) %>
+                        
+                        <h3> Recorded Clicks </h3>
+                        <% data.click.forEach(function(c) { %>
+                        <article class="post blog_2 clearfix">
+                            
+                                <span style="font-weight: bold;" class ="meta-date">
+                                    User:   
+                                </span><%= c.user_id%>
+                                <span style="font-weight: bold;" class ="meta-date">
+                                     Doc:   
+                                </span><%= c.doc_id%>
+                                <span style="font-weight: bold;" class ="meta-date">
+                                     Session ID:   
+                                </span><%= c.session_id%>
+                                <span style="font-weight: bold;" class ="meta-date">
+                                     Timestamp:   
+                                </span><%= c.timestamp%>
+
+                            <!-- End post-inner -->
+                        </article>                       
+                        <% }) %>
+
+
+                    </section>
+					<!-- End container -->
+					<!-- body footer start -->
+					<% include ./partials/body_footer %>
+						<!-- body footer end -->
+
+		</div>
+		<!-- End wrap -->
+
+		<!-- footer started -->
+		<% include ./partials/footer_js %>
+			<!-- footer end -->
+	</body>
+
+</html>
