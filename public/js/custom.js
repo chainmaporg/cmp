@@ -872,7 +872,15 @@ jQuery(document).ready(function ($) {
 				if (headlineDetails[0].trim() == ""){
 					$("#subHeadline").val("I want to get hired");
 				}else{
-					$("#subHeadline").val(headlineDetails[0].trim())
+					state = false;
+					$('#subHeadline').find('option').each(function(){
+						if ($(this).val() === headlineDetails[0].trim()) {
+							$(this).prop('selected',true);
+							state = true
+						}
+					});
+					if (state == false)
+						$("#subHeadline").val("I want to get hired");
 				}
 				
 
