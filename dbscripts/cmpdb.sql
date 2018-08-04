@@ -171,3 +171,16 @@ CREATE TABLE `ip` (
     `timestamp` datetime NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
 
+
+DROP TABLE IF EXISTS `company_events`;
+CREATE TABLE `company_events` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`type` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+	`name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,   
+	`description` text COLLATE utf8_unicode_ci NOT NULL,
+	`event_img_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL, 
+	`event_link` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
+	`created` datetime NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+

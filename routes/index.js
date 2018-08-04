@@ -112,6 +112,8 @@ var questionBoard = require("../routes/questionBoard");
 var trainingMaterial = require("../routes/trainingMaterial");
 var socialgroup = require("../routes/socialgroup");
 var news = require("../routes/news");
+
+var companyNews = require("../routes/companyNews");
 var admin = require("../routes/admin")
 // global.environment = "local";
 global.environment = "production";
@@ -195,6 +197,11 @@ router.post("/userRegister", users.userRegister);
 router.get("/loginRegister", function(req, res) {
     res.render("loginRegister", { title: "Login/Register" });
 });
+
+router.get("/companyNews", function(req, res) {
+     companyNews.getCompanyNews(req,res);
+});
+
 router.post("/getCompanies", users.getCompanies);
 router.post("/tokenRanking", users.tokenRanking);
 router.post("/totalQuestionAnswer", questionBoard.totalQuestionAnswer);
@@ -250,6 +257,7 @@ router.get("/aboutToken", function(req, res) {
     res.render("aboutToken", { title: "About Token" });
     logIP(req, res);
 });
+
 
 router.post("/getAllCategory", users.getAllCategory);
 router.post("/getAllCategoryWithUserCat", users.getAllCategoryWithUserCat);
