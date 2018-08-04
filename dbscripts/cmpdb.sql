@@ -167,7 +167,7 @@ CREATE TABLE `challenge_votes` (
 /* ip information is stored in hex, so it will not be visible in a simple select */
 DROP TABLE IF EXISTS `ip`;
 CREATE TABLE `ip` (
-    `ip` VARBINARY(16) NOT NULL,
+    `ip` VARCHAR(45) NOT NULL,
     `timestamp` datetime NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
 
