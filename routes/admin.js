@@ -1,6 +1,6 @@
 var md5 = require("md5");
 
-var admin_pass = md5("admin_pass");
+var admin_pass = md5("admin");
 var admin_user = "admin";
 
 exports.login = function(req, res) {
@@ -40,7 +40,7 @@ exports.adminPageAccess = function(req, res) {
                 if (error) console.log("Error: ", error);
                 else {
                     sitedata.docs = results;
-                    connection.query("SELECT * from click", function(
+                    connection.query("select date(timestamp) as day, count(*) as count from click group by date(timestamp);", function(
                         error,
                         results,
                         fields
@@ -49,6 +49,7 @@ exports.adminPageAccess = function(req, res) {
                             console.log("Error: ", error);
                         } else {
                             sitedata.click = results;
+                            console.log("adminpage:click", sitedata)
                             res.render("adminPage", { data: sitedata });
                         }
                     });

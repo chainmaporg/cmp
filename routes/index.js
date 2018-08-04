@@ -32,20 +32,6 @@ var client = new Client();
 var solr_host = global.config.search_solr_host;
 var engine_host = global.config.search_engine_host;
 
-var logIP = function(req, res) {
-    if (!req.session.logged) {
-        console.log("New unique session.");
-        console.log(req.connection.remoteAddress);
-        req.session.logged = true;
-        connection.query(
-            "INSERT INTO ip (ip, timestamp) VALUES (?, NOW())",
-            [req.connection.remoteAddress],
-            function(error, results, fields) {
-                if (error) console.log("Error: ", error);
-            }
-        );
-    }
-};
 
 router.get("/query/:category/:content", function(req, res, next) {
     var url = "";
@@ -92,17 +78,14 @@ router.get("/resource/white_paper/:name", function(req, res, next) {
 
 router.get("/page", function(req, res) {
     res.render("home", { title: "Home" });
-    logIP(req, res);
 });
 
 router.get("/about", function(req, res) {
     res.render("about", { title: "About" });
-    logIP(req, res);
 });
 
 router.get("/login", function(req, res) {
     res.render("login", { title: "Login" });
-    logIP(req, res);
 });
 
 //route to handle user registration
@@ -140,17 +123,14 @@ router.get("/logOut", function(req, res) {
 
 router.get("/", function(req, res) {
     res.render("home", { title: "Home" });
-    logIP(req, res);
 });
 
 router.get("/searchContent", function(req, res) {
     res.render("searchContent", { title: "Search Blockchain related Content" });
-    logIP(req, res);
 });
 
 router.get("/connectJob", function(req, res) {
     res.render("connectJob", { title: "Find jobs" });
-    logIP(req, res);
 });
 
 router.get("/connectSmartContract", function(req, res) {
@@ -173,11 +153,9 @@ router.get("/askQuestion", function(req, res) {
         res.render("askQuestion", { title: "Post a Challenge" });
     }
 
-    logIP(req, res);
 });
 router.get("/questionBoard", function(req, res) {
     questionBoard.getAllChallenge(req, res);
-    logIP(req, res);
 });
 router.get(
     "/getChallengebyID/:challenge_id",
@@ -212,35 +190,29 @@ router.get("/userProfile/:user_id", users.userProfile);
 router.get("/getJobRecommendations", users.getJobRecommendations);
 router.get("/getRecommendations", users.getRecommendations);
 router.get("/trainingMaterial_Introduction", function(req, res) {
-    trainingMaterial.trainingMaterial_Introduction;
+    trainingMaterial.trainingMaterial_Introduction(req, res);
+    
 });
 router.get("/trainingMaterial_Infrastructure", function(req, res) {
     trainingMaterial.trainingMaterial_Infrastructure(req, res);
-    logIP(req, res);
 });
 router.get("/trainingMaterial_Hyperledger", function(req, res) {
     trainingMaterial.trainingMaterial_Hyperledger(req, res);
-    logIP(req, res);
 });
 router.get("/trainingMaterial_Bitcoin", function(req, res) {
     trainingMaterial.trainingMaterial_Bitcoin(req, res);
-    logIP(req, res);
 });
 router.get("/trainingMaterial_Ethereum", function(req, res) {
     trainingMaterial.trainingMaterial_Ethereum(req, res);
-    logIP(req, res);
 });
 router.get("/trainingMaterial_UseCases", function(req, res) {
     trainingMaterial.trainingMaterial_UseCases(req, res);
-    logIP(req, res);
 });
 router.get("/trainingMaterial_OtherProtocol", function(req, res) {
     trainingMaterial.trainingMaterial_OtherProtocol(req, res);
-    logIP(req, res);
 });
 router.get("/trainingMaterial_Training", function(req, res) {
     trainingMaterial.trainingMaterial_Training(req, res);
-    logIP(req, res);
 });
 
 router.post("/updateUserProfile", users.updateUserProfile);
@@ -250,12 +222,10 @@ router.post("/checkDuplicatePayment", users.checkDuplicatePayment);
 
 router.get("/aboutUs", function(req, res) {
     res.render("aboutUs", { title: "About Us" });
-    logIP(req, res);
 });
 
 router.get("/aboutToken", function(req, res) {
     res.render("aboutToken", { title: "About Token" });
-    logIP(req, res);
 });
 
 
@@ -278,3 +248,4 @@ router.get("/loginAdmin", function(req, res) {
 router.post("/adminLogin", admin.login);
 
 module.exports = router;
+
