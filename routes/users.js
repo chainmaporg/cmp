@@ -684,7 +684,11 @@ exports.updateUserProfile = function (req, res) {
             res.render("error", { errorMsg: "Error on insertion into DB Users" })
 
           } else {
-            connection.query('update `user` set `user`.payment_address = ?, `user`.headline = ? WHERE user_id = ?', [req.body.paymentAddress, req.body.headline, userID], function (error, results, fields) {
+
+            var headline = req.body.headline
+            var subHeadline = req.body.subHeadline
+            headline = subHeadline+" - "+headline
+            connection.query('update `user` set `user`.payment_address = ?, `user`.headline = ? WHERE user_id = ?', [req.body.paymentAddress, headline, userID], function (error, results, fields) {
               if (error) {
                 console.log("error ocurred", error);
                 res.render("error", { errorMsg: "Error on insertion into DB Users" })

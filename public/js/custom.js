@@ -867,7 +867,16 @@ jQuery(document).ready(function ($) {
 				}
 				$("#profile_interest").html(divElement);
 				$("#paymentAddress").val($("#paymentAddressSpan").html().trim())
-				$("#headline").val($("#headlineSpan").html().trim())
+				var headlineDetails = $("#headlineSpan").html().trim();
+				if (headlineDetails.charAt(0) === '-'){
+					headlineDetails = headlineDetails.split("- ");
+				}else{
+					headlineDetails = headlineDetails.split(" - ");
+				}
+				$("#subHeadline").val(headlineDetails[0])
+
+				$("#headline").val(headlineDetails.splice(1, headlineDetails.length-1))
+				
 			},
 			error: function () {
 				alert('An error occured. Please try again later or contact with us.');
