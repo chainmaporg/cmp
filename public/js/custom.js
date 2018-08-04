@@ -868,12 +868,13 @@ jQuery(document).ready(function ($) {
 				$("#profile_interest").html(divElement);
 				$("#paymentAddress").val($("#paymentAddressSpan").html().trim())
 				var headlineDetails = $("#headlineSpan").html().trim();
-				if (headlineDetails.charAt(0) === '-'){
-					headlineDetails = headlineDetails.split("- ");
+				headlineDetails = headlineDetails.split("-");
+				if (headlineDetails[0].trim() == ""){
+					$("#subHeadline").val("I want to get hired");
 				}else{
-					headlineDetails = headlineDetails.split(" - ");
+					$("#subHeadline").val(headlineDetails[0].trim())
 				}
-				$("#subHeadline").val(headlineDetails[0])
+				
 
 				$("#headline").val(headlineDetails.splice(1, headlineDetails.length-1))
 				
