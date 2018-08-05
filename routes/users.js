@@ -654,53 +654,43 @@ exports.updateUserProfile = function (req, res) {
     }
   }
 
+ 
   connection.query('delete from user_category WHERE user_id = ?', [userID], function (error, results, fields) {
     if (error) {
       console.log("error ocurred", error);
       res.render("error", { errorMsg: "Error on insertion into DB Users" })
 
     } else {
+      //Update category
       if (userCategoryInterest.length > 0) {
         connection.query('INSERT INTO user_category (category_id, user_id, level) VALUES ?', [userCategoryInterest], function (error, results, fields) {
           if (error) {
             console.log("error ocurred", error);
             res.render("error", { errorMsg: "Error on insertion into DB Users" })
 
-          } else {
-
-            var headline = req.body.headline
-            var subHeadline = req.body.subHeadline
-            headline = subHeadline+" - "+headline
-            connection.query('update `user` set `user`.payment_address = ?, `user`.headline = ? WHERE user_id = ?', [req.body.paymentAddress, headline, userID], function (error, results, fields) {
-              if (error) {
-                console.log("error ocurred", error);
-                res.render("error", { errorMsg: "Error on insertion into DB Users" })
-
-              } else {
-                //console.log(results)
-                session.wallet = req.body.paymentAddress;
-                res.redirect('/userProfile/' + userID);
-              }
-            });
           }
-        });
-      } else {
-        connection.query('update `user` set `user`.payment_address = ?, `user`.headline = ? WHERE user_id = ?', [req.body.paymentAddress, req.body.headline, userID], function (error, results, fields) {
-          if (error) {
-            console.log("error ocurred", error);
-            res.render("error", { errorMsg: "Error on insertion into DB Users" })
+         });
+       }
+       
+      //Update Payment, headline etc.      
+	  var headline_interest = req.body.headline_interest
+	  var headline_status = req.body.headline_status
+	  headline = headline_status+" - "+headline_interest
+	  connection.query('update `user` set `user`.payment_address = ?, `user`.headline = ? WHERE user_id = ?', [req.body.paymentAddress, headline, userID], function (error, results, fields) {
+	    if (error) {
+		  console.log("error ocurred", error);
+		  res.render("error", { errorMsg: "Error on insertion into DB Users" })
 
-          } else {
-            //console.log(results)
-            session.wallet = req.body.paymentAddress;
-            res.redirect('/userProfile/' + userID);
-          }
-        });
-      }
-
-    }
-  });
-}
+	    } else {
+		  //console.log(results)
+		  session.wallet = req.body.paymentAddress;
+		  res.redirect('/userProfile/' + userID);
+	    }
+	  }); 
+	}
+	});
+            
+ }
 
 
 exports.getAllCategory = function (req, res) {
