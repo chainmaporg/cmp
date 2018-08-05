@@ -276,7 +276,7 @@ exports.getAllChallenge = function (req, res) {
 											//res.render('error');
 										} else {
 											resultObj['categoryChallenges'] = results;
-											console.log('Challenges are showing in order to the category id: ', results);	
+											//console.log('Challenges are showing in order to the category id: ', results);	
 											res.render('questionBoard', { data: resultObj });
 										}
 									});

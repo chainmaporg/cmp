@@ -866,25 +866,40 @@ jQuery(document).ready(function ($) {
 					}
 				}
 				$("#profile_interest").html(divElement);
-				$("#paymentAddress").val($("#paymentAddressSpan").html().trim())
-				var headlineDetails = $("#headlineSpan").html().trim();
-				headlineDetails = headlineDetails.split("-");
-				if (headlineDetails[0].trim() == ""){
-					$("#subHeadline").val("I want to get hired");
-				}else{
-					state = false;
-					$('#subHeadline').find('option').each(function(){
-						if ($(this).val() === headlineDetails[0].trim()) {
-							$(this).prop('selected',true);
-							state = true
-						}
-					});
-					if (state == false)
-						$("#subHeadline").val("I want to get hired");
+				
+				if ($("#headlineSpan")){
+					var headlineDetails = $("#headlineSpan").html().trim();
+					headlineDetails = headlineDetails.split("-");
+					if (headlineDetails[0].trim() == ""){
+						$("#headline_status").val("I want to get hired");
+					}else{
+						state = false;
+						$('#headline_status').find('option').each(function(){
+							if ($(this).val() === headlineDetails[0].trim()) {
+								$(this).prop('selected',true);
+								state = true
+							}
+						});
+						if (state == false)
+							$("#headline_status").val("I want to get hired");
+					}			
+
+					$("#headline_interest").val(headlineDetails.splice(1, headlineDetails.length-1))
+				}
+				else
+				{
+					$("#headline_status").val("I want to get hired");
+					$("#headline_interest").val("");
 				}
 				
-
-				$("#headline").val(headlineDetails.splice(1, headlineDetails.length-1))
+				
+				if($("#paymentAddressSpan")){
+					$("#paymentAddress").val($("#paymentAddressSpan").html().trim())
+				}
+				else {
+					$("#paymentAddress").val("")
+				}
+				
 				
 			},
 			error: function () {
