@@ -86,69 +86,19 @@
 
                 </div>
 
+
+				<!-- Main Section of the home page contents -->
+				
                 <section class="container main-content page-full-width">                            
                     <div class="box_icon box_warp" box_border="transparent" box_background="transparent">
-                        <div class="row">
-                            <div class="boxedtitle page-title">
-                                <h2>ChainMap News Headlines</h2>
-                            </div> 
-
-                            <div class="col-md-12">
-                            <% 
-                                 for(var i = 0;i < 5;i++) { %>
-
-                                 <article class="post blog_2 clearfix">
-                                                    <div class="post-inner">
-                                                        <h2 id="<%="art"+i+"1"%>" class="post-title">
-                                                            title
-                                                        </h2>
-                                                        
-                                                        <span style="font-weight: bold;" id="<%="art"+i+"2"%>" class ="meta-date">
-                                                             date 
-                                                         </span>
-                                                        
-                                                         <span style="font-size:16px" id="<%="art"+i+"3"%>" class="meta-author">
-                                                             summary
-                                                         </span>
-                                                    </div>
-                                                    <!-- End post-inner -->
-                                </article>
-
-								 <% } %>
-								 
-								 
-   
- 
-                                <script type="text/javascript">
-                                    var host = $(location).attr("hostname")
-                                        var reqUrl = "http://" + $(location).attr("hostname") + "/getNews";
-                                        $.when($.get(reqUrl)).done((r) => {
-                                            for (i=0; i < 5; i++) 
-                                            {
-                                                var link = r[i]["url"][0];
-                                                var pdate = String(r[i]["date"][0]).replace("T00:00:00Z", "");
-                                                var title = String(r[i]["title"][0]);
-                                                var category = String(r[i]["category"][0]);
-                                                var summary = String(r[i]["summary"][0]).match(/(.*?)[.?!]\s/)[0];
-                                                
-                                                var summarylink = "<a href=\'" + link +"\'"+ " onclick = \'return logClick(this);\' type=\'news\' class='post-read-more button color small' target='_blank'>" + "Continue reading" + "</a>";
-
-                        
-                                                document.getElementById("art"+i+"1").innerHTML=title;
-                                                document.getElementById("art"+i+"2").innerHTML="["+pdate+"]";
-                                                document.getElementById("art"+i+"3").innerHTML=summary+summarylink;
-                                            }
-                                        });
-                                </script>
-                            </div>
-                        </div>
-                    </div>
                     
-                    <div class="row">
-                             <div class="col-md-12">
-                                 <div class="boxedtitle page-title">
+                    				<!--Search engine section-->
+                   <div class="row">
+                            <div class="boxedtitle page-title">
                                      <h2>ChainMap Search Engine</h2>
-                                 </div> 
+                            </div> 
+                            
+                             <div class="col-md-12">
 
                                 <div class="page-content">
                                 <!--
@@ -226,19 +176,37 @@
                                     
                                     <div class="col-md-12">
                                         <p>
-                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/trainingMaterial">Knowledge Center</a> - Find some of the best blockchain training material out there (White Papers including Chinese ones!).
-                                        </p>
-                                        <p>
+                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/trainingMaterial">Knowledge Center</a> - Find some of the best blockchain training material.
+                       						
+											<p>
+											&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="/trainingMaterial_Introduction">Introduction,</a>
+											<a href="/trainingMaterial_Infrastructure" ">Infrastructure,</a>
+											<a href="/trainingMaterial_Hyperledger" ">Hyperledge,</a>
+											<a href="/trainingMaterial_Bitcoin" ">Bitcoin,</a>
+										
+											<a href="/trainingMaterial_Ethereum" ">Ethereum,</a>
+											<a href="/trainingMaterial_UseCases" ">UseCases,</a>
+											<a href="/trainingMaterial_OtherProtocol" ">OtherProtocol,</a>
+											<a href="/trainingMaterial_Training" ">Training</a>                              
+										
+											</p>
+										
+                                        
+                                        
+                                         <p>
                                             <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/questionBoard">Challenge Board</a>- Ask domain specific challenges, and get solutions (Nebulas, Etherum, HyberLedger, dApp...).
+																				<p>
+											&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="/questionBoard">Connection,</a>
+											<a href="/askQuestion" ">Post Challenge</a>
+										
+											</p>								
+											   
+
                                         </p>
-                                        <p>
-                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/loginRegister">Connections</a>- Sign on to get you connect with other developers and job opportunities and connect with blockchain groups.
-                                        </p>
-                                        <p>
-                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/loginRegister">Certification</a> - Sign on to get your development skills certified and ranking higher on top of the blockchain. 
-                                        </p>
+
                                         <p>
                                             <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/loginRegister">Recommendation</a> - Sign on to have AI based personalized recommendation for learning and career development. 
+
                                         </p>
                                         <!--
                                         <p>
@@ -263,6 +231,68 @@
 
                                 </div>
 
+
+                		<div class="row">
+							<br>
+						</div>
+						
+                        <div class="row">
+                            <div class="boxedtitle page-title">
+                                <h2>ChainMap News Headlines</h2>
+                            </div> 
+
+                            <div class="col-md-12">
+                            <% 
+                                 for(var i = 0;i < 5;i++) { %>
+
+                                 <article class="post blog_2 clearfix">
+                                                    <div class="post-inner">
+                                                        <h2 id="<%="art"+i+"1"%>" class="post-title">
+                                                            title
+                                                        </h2>
+                                                        
+                                                        <span style="font-weight: bold;" id="<%="art"+i+"2"%>" class ="meta-date">
+                                                             date 
+                                                         </span>
+                                                        
+                                                         <span style="font-size:16px" id="<%="art"+i+"3"%>" class="meta-author">
+                                                             summary
+                                                         </span>
+                                                    </div>
+                                                    <!-- End post-inner -->
+                                </article>
+
+								 <% } %>
+								 
+								 
+   
+ 
+                                <script type="text/javascript">
+                                    var host = $(location).attr("hostname")
+                                        var reqUrl = "http://" + $(location).attr("hostname") + "/getNews";
+                                        $.when($.get(reqUrl)).done((r) => {
+                                            for (i=0; i < 5; i++) 
+                                            {
+                                                var link = r[i]["url"][0];
+                                                var pdate = String(r[i]["date"][0]).replace("T00:00:00Z", "");
+                                                var title = String(r[i]["title"][0]);
+                                                var category = String(r[i]["category"][0]);
+                                                var summary = String(r[i]["summary"][0]).match(/(.*?)[.?!]\s/)[0];
+                                                
+                                                var summarylink = "<a href=\'" + link +"\'"+ " onclick = \'return logClick(this);\' type=\'news\' class='post-read-more button color small' target='_blank'>" + "Continue reading" + "</a>";
+
+                        
+                                                document.getElementById("art"+i+"1").innerHTML=title;
+                                                document.getElementById("art"+i+"2").innerHTML="["+pdate+"]";
+                                                document.getElementById("art"+i+"3").innerHTML=summary+summarylink;
+                                            }
+                                        });
+                                </script>
+                            </div> <!--col-md-12-->
+                        </div> <!--row-->
+                    </div><!--box-->
+                    
+ 
 
 
 
