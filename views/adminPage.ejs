@@ -5,7 +5,7 @@
 <html lang="en">
 <!--<![endif]-->
 <!-- header part start -->
-<% include ./partials/header %>
+<% include ./partials/adminHeader %>
 	<!-- header part end -->
 
 	<body>
@@ -54,10 +54,13 @@
 						        </tr>
 						        <% } %>
                         </table>
-                		
-                        
+
+                        <% %>
+                		<canvas id="viewChart"></canvas>
+                                                
                     </section>
-					<!-- End container -->
+
+                    					<!-- End container -->
 					<!-- body footer start -->
 					<% include ./partials/body_footer %>
 						<!-- body footer end -->
@@ -69,5 +72,37 @@
 		<% include ./partials/footer_js %>
 			<!-- footer end -->
 	</body>
+    <% 
+        labels = [];
+        counts = [];
+        data.click.forEach(function(dict) {
+        labels.push(dict.day.toString().substring(0,15));
+        counts.push(dict.count);
+    }) %>
+    <script>
+        var ctx = document.getElementById("viewChart");
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: <%- JSON.stringify(labels); %>,
+                datasets: [{
+                    label: '# of clicks',
+                    data: <%- JSON.stringify(counts); %>,
+                    borderColor: "#ff7361",
+                    pointBackgroundColor: "#ff7361", 
+                    backgroundColor: "#ffafa5",
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });    
+    </script>
 
 </html>
