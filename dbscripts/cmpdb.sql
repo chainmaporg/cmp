@@ -62,7 +62,8 @@ CREATE TABLE `connections` (
     `user_id` int(11) NOT NULL,
     `profile_id` varchar(32) COLLATE utf8_bin,
     `show_profile` tinyint(1) NOT NULL DEFAULT '0',
-    PRIMARY KEY (`user_id`)
+    PRIMARY KEY (`user_id`),
+    UNIQUE KEY (`profile_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 

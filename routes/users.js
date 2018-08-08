@@ -526,11 +526,36 @@ exports.checkDuplicatePayment = function(req, res) {
     );
 };
 
-exports.userProfile = (req, res) => {
-    console.log("Made it to user profile.");
-    console.log(req.session.user_id);
-    console.log(req.params.user_id);
 
+exports.checkDuplicatePublicID = function(req, res) {
+    const public_id = req.body.public_id;
+    connection.query(
+        "select public_id from connections where public_id = ?",
+        [public_id],
+        (error, results, fields) => {
+            if (error) {
+                console.log("error ocurred", error);
+                res.render("error", {
+                    errorMsg: "Error on getting data from connections.",
+                });
+            } else {
+                if (results.length == 0) {
+                    const repeat = false;
+                }
+                else {
+                    const repeat = true;
+                }
+                    res.send({
+                        repeat:repeat
+                    });
+            }
+        }
+    );
+
+};
+
+
+exports.userProfile = (req, res) => {
 
     // user access their own profile while logged in
     if (req.params.user_id == req.session.user_id && req.session.user_id != null)
@@ -568,7 +593,6 @@ exports.userProfile = (req, res) => {
                 }
             );
         }
-        console.log(req.params.user_id);
         return;
     } else {
         res.redirect("/loginRegister");
@@ -576,7 +600,6 @@ exports.userProfile = (req, res) => {
     }
 
     function accessProfile(user) {
-        console.log("Made it to ap.");
         const userID = user;
         const session = req.session;
         global.userBalanceMap = {};
@@ -617,8 +640,7 @@ exports.userProfile = (req, res) => {
         }
 
         var resultObj = {};
-        resultObj["private"] = user != req.session.user_id;
-        console.log(resultObj);
+        resultObj["private"] = user !== req.session.user_id;
         connection.query("select * from user where user_id=?", [userID], function(
             error,
             results,
@@ -835,7 +857,6 @@ exports.updateUserProfile = function(req, res) {
                                 errorMsg: "Error on deletion",
                             });
                         } else {
-                            console.log(Math.max(showProfile));
                             connection.query(
                                 "INSERT INTO connections (user_id, profile_id, show_profile) VALUES (?)",
                                 [[userID, public_id, showProfile.length === 2 ? 1 : 0]],

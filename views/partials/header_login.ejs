@@ -196,7 +196,7 @@ the html attributes. -->
     </h2>
     <div class="form-style form-style-3">
 
-        <form action="/updateUserProfile" method="POST" onsubmit="return checkPaymentAddress(this)" id="updateUserProfileProfileForm">
+        <form action="/updateUserProfile" method="POST" onsubmit="return (checkPaymentAddress(this) && checkDuplicatePublicID(this))" id="updateUserProfileProfileForm">
             <div class="form-inputs clearfix">
                 <p>
                     Please select your topic interest and proficiency level on that topic. This will be helpful for us to recommend our courses
@@ -301,8 +301,37 @@ the html attributes. -->
         else{
             return true;
         }
-
     }
+
+    function checkDuplicatePublicID() {
+        url = "/checkDuplicatePublicID";
+        var public_id = $("#public_id").val();
+        if (public_id != "") {
+            if (isNaN(public_id))
+            {
+                $.ajaxSetup({ 'async': false});
+                $.post(url, data: {
+                    public_id:public_id,
+                }, (data) => {
+                    return (!data.repeat)
+                }).fail(
+                    function() {
+                    alert( "error" );
+                })
+                $.ajaxSetup({ 'async': true});
+            }
+            else
+            {
+                alert("Cannot use numbers for public id.")
+                return false;
+            }
+        }
+        else
+        {
+            return true;
+        }
+    }
+
     // var gMode = "select";
     // function selectMode(mode) {
     //     if (mode == "select") {
