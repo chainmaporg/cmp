@@ -42,19 +42,29 @@ CREATE TABLE `answer` (
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `company_id` int(11) NOT NULL,
-  `firstname` varchar(255) NOT NULL,
-  `lastname` varchar(255) NOT NULL,
-  `user_name` varchar(255) NOT NULL,
-  `user_email` varchar(255) NOT NULL,
-  `user_phone` varchar(20) NOT NULL,
-  `password` varchar(32) NOT NULL,
-  `payment_address` varchar(255) NOT NULL DEFAULT '' COMMENT 'Not sure what should be the length of the payment address field.',
-  `is_reviewer` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0 => Not a reviewer, 1 => This developer is a reviewer also.',
-  `headline` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`user_id`)
+    `user_id` int(11) NOT NULL AUTO_INCREMENT,
+    `company_id` int(11) NOT NULL,
+    `firstname` varchar(255) NOT NULL,
+    `lastname` varchar(255) NOT NULL,
+    `user_name` varchar(255) NOT NULL,
+    `user_email` varchar(255) NOT NULL,
+    `user_phone` varchar(20) NOT NULL,
+    `password` varchar(32) NOT NULL,
+    `payment_address` varchar(255) NOT NULL DEFAULT '' COMMENT 'Not sure what should be the length of the payment address field.',
+    `is_reviewer` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0 => Not a reviewer, 1 => This developer is a reviewer also.',
+    `headline` varchar(255) NOT NULL DEFAULT '',
+    PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `connections`;
+CREATE TABLE `connections` (
+    `user_id` int(11) NOT NULL,
+    `profile_id` varchar(32),
+    `show_profile` tinyint(1) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 -- ----------------------------
 -- Table structure for `company`
@@ -183,4 +193,15 @@ CREATE TABLE `company_events` (
 	`created` datetime NOT NULL,
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+DROP TABLE IF EXISTS `messages`;
+CREATE TABLE `messages` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `sender_id` int(11) NOT NULL,
+    `receiver_id` int(11) NOT NULL,
+    `message` varchar(1600) COLLATE utf8_unicode_ci NOT NULL,
+    `timestamp` datetime NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
