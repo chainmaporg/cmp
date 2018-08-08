@@ -55,20 +55,13 @@
                      
                                         <center>
 
-															<%        
-                							                  if (typeof session == 'undefined' || typeof session.email == 'undefined'){
-                						                    %>
                                         
                                                                <a href="aboutToken">CMAP token explained</a>
                                                                
                         									   <a href="/companyNews">Company News</a>
-                        									   
-                                                               </center>
-                                                                                            
+                        									                   
                                         	
            
-                                       
-                                                            <% } %> 
                                         </center>
                                         
                                                                                 
@@ -94,6 +87,12 @@
                 <section class="container main-content page-full-width">                            
                     <div class="box_icon box_warp" box_border="transparent" box_background="transparent">
                     
+                    <br>
+                    <div class="row">
+						<table><tr><td><img src="/image/chainmap.jpg" width="80"> </td><td><a href="/payContent/chainmap-01"><h3>Top 5 Blockchain Success and Challenge Stories - So you can do better!</h3></a> </td>
+						</tr></table>
+					</div>
+					<br>
                     				<!--Search engine section-->
                    <div class="row">
                    
@@ -119,12 +118,13 @@
                                                     </label>
                                                     <span class="styled-select">
                                                         <select required id="category" name="category" required>
+                                                        	<option value="job">Jobs</option>
+                                                        	<option value="news">News</option>                                                     															
                                                             <option value="White_Paper">White Papers</option>
                                                             <option value="company">Company</option>
                                                             <option value="event">Event</option>
                                                             <option value="ICO">ICO</option>
                                                             <option value="article">Article</option>
-                                                            <option value="news">News</option>
                                                             <option value="All">All</option>
 
                                                         </select>
