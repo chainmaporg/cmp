@@ -40,19 +40,32 @@ exports.adminPageAccess = function(req, res) {
                 if (error) console.log("Error: ", error);
                 else {
                     sitedata.docs = results;
-                    connection.query("select date(timestamp) as day, count(*) as count from click group by date(timestamp);", function(
-                        error,
-                        results,
-                        fields
-                    ) {
-                        if (error) {
-                            console.log("Error: ", error);
-                        } else {
-                            sitedata.click = results;
-                            console.log("adminpage:click", sitedata)
-                            res.render("adminPage", { data: sitedata });
+                    connection.query(
+                        "select date(timestamp) as day, count(*) as count from click group by date(timestamp);",
+                        function(error, results, fields) {
+                            if (error) {
+                                console.log("Error: ", error);
+                            } else {
+                                sitedata.click = results;
+                                console.log("adminpage:click", sitedata);
+                                connection.query(
+                                    "select count(*) from user",
+                                    function(error, results, fields) {
+                                        if (error) {
+                                            console.log("Error: ", error);
+                                        } else {
+                                            console.log(results);
+                                            sitedata.users =
+                                                results[0]["count(*)"];
+                                            res.render("adminPage", {
+                                                data: sitedata,
+                                            });
+                                        }
+                                    }
+                                );
+                            }
                         }
-                    });
+                    );
                 }
             });
         }
