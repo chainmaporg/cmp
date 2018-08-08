@@ -6,7 +6,7 @@ exports.login = function (req, res) {
   var password = md5(req.body.password);
   console.log("login info-", email, "/", password);
   
-  qry='';
+  var qry='';
   if(email.includes("@")) {
   	 qry = 'SELECT * FROM user WHERE (user_email = ?) ';
   }
@@ -30,7 +30,7 @@ exports.login = function (req, res) {
           session.user_id = results[0].user_id
           session.wallet = results[0].payment_address.trim()
           console.log("logged in ");
-          res.redirect('/userProfile/' + session.user_id);
+          res.redirect('/userProfile/mine');
         }
         else {
           console.log("Not successful");
