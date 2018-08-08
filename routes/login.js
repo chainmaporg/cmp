@@ -19,29 +19,29 @@ exports.login = function (req, res) {
   connection.query(qry, [email], function (error, results, fields) {
     if (error) {
       console.log("error ocurred", error);
-      res.render("error", { errorMsg: "Error on selecting from DB Users" })
+      res.render("error", { errorMsg: "Error on selecting from DB Users" });
     } else {
       console.log('The solution is: ', results);
       console.log('[0]=', [0]);
       if (results.length > 0) {
-        if (results[0].password == password) {
-          var session = req.session;
-          session.email = req.body.email
-          session.user_id = results[0].user_id
-          session.wallet = results[0].payment_address.trim()
+        if (results[0].password === password) {
+          const session = req.session;
+          session.email = req.body.email;
+          session.user_id = results[0].user_id;
+          session.wallet = results[0].payment_address.trim();
           console.log("logged in ");
-          res.redirect('/userProfile/mine');
+          res.redirect("/userProfile/" + session.user_id);
         }
         else {
           console.log("Not successful");
-          res.render("loginRegister", { errorMsg: "Password did not match" })
+          res.render("loginRegister", { errorMsg: "Password did not match" });
         }
       } else {
         console.log("Not successful");
-          res.render("loginRegister", { errorMsg: "Email does not exist" })
+          res.render("loginRegister", { errorMsg: "Email does not exist" });
       }
 
     }
   });
-}
+};
 

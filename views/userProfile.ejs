@@ -83,7 +83,11 @@
                                                                 <%=data.userProfile[0].lastname%>
                                                             </span>
                                                         </li> -->
+                                                        <%
+                                                        if((!data.private) && (data.private !== null)) 
+                                                        { %>
                                                         <li>
+
                                                             <i class="icon-plus"></i>Username :
                                                             <span>
                                                                 <%=data.userProfile[0].user_name%>
@@ -100,23 +104,26 @@
                                                             <i class="icon-plus"></i>Payment address :
                                                             <span>
                                                                 <%
-                                        if (data.userProfile[0].payment_address.length > 0){
-                                        %>
-                                                                    <span id="paymentAddressSpan">
-                                                                        <%=data.userProfile[0].payment_address%>
-                                                                    </span>
-                                                                    <% } else {%>
+                                                               if (data.userProfile[0].payment_address.length > 0){
+                                                               %>
+                                                               <span id="paymentAddressSpan">
+                                                                   <%=data.userProfile[0].payment_address%>
+                                                               </span>
+                                                               <% } else {%>
 
-                                                                        <blockquote>
-                                                                            <p>Payment address is not set.
-                                                                                <a href="https://medium.com/nebulasio/creating-a-nas-wallet-9d01b5fa2df6" target="_blank">You can check here to set up payment address.
-                                                                                </a>
-                                                                            </p>
+                                                               <blockquote>
+                                                                   <p>Payment address is not set.
+                                                                   <a href="https://medium.com/nebulasio/creating-a-nas-wallet-9d01b5fa2df6" target="_blank">You can check here to set up payment address.
+                                                                   </a>
+                                                                   </p>
 
-                                                                        </blockquote>
-                                                                        <% } %>
+                                                               </blockquote>
+                                                               <% } %>
                                                             </span>
                                                         </li>
+
+                                                        <% } %>
+
                                                         <li>
                                                             <i class="icon-map-marker"></i>Headline :
                                                             <span id="headlineSpan">

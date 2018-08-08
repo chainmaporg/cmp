@@ -526,33 +526,59 @@ exports.checkDuplicatePayment = function(req, res) {
     );
 };
 
-exports.userProfile = function(req, res) {
-    if (!req.session.user_id && req.param.user_id == "mine") {
-        res.redirect("/loginRegister");
-        return;
-    } else if (req.param.user_id != null) {
-        if (isNAN(req.param.user_id)) {
-            var user = req.param.user_id;
-        } else {
+exports.userProfile = (req, res) => {
+    console.log("Made it to user profile.");
+    console.log(req.session.user_id);
+    console.log(req.params.user_id);
+
+
+    // user access their own profile while logged in
+    if (req.params.user_id == req.session.user_id && req.session.user_id != null)
+    {
+        accessProfile(req.session.user_id);
+    }
+    // user wants to access someone else's profile
+    else if (req.params.user_id != null) {
+        if (isNaN(req.params.user_id)) {
             connection.query(
-                "select profile_id from connections where user_id = ? and show_profile = 1",
-                [req.param.user_id],
-                function(error, results, fields) {
-                    if (results.length == 0) {
+                "select user_id from connections where profile_id = ? and show_profile = 1",
+                [req.params.user_id],
+                (error, results, fields) => {
+                    if (results.length === 0) {
+                        console.log("No results found 1.");
+                        res.redirect("/loginRegister");
                         return;
                     } else {
-                        var user = results[0].profile_id;
+                        accessProfile(results[0].user_id);
+                    }
+                }
+            );
+        } else {
+            connection.query(
+                "select user_id from connections where user_id = ? and show_profile = 1",
+                [req.params.user_id],
+                (error, results, fields) => {
+                    if (results.length === 0) {
+                        console.log("No results found 2.");
+                        res.redirect("/loginRegister");
+                        return;
+                    } else {
+                        accessProfile(results[0].user_id);
                     }
                 }
             );
         }
-        console.log(req.param.user_id);
+        console.log(req.params.user_id);
+        return;
+    } else {
+        res.redirect("/loginRegister");
         return;
     }
 
-    () => {
-        var userID = req.session.user_id;
-        var session = req.session;
+    function accessProfile(user) {
+        console.log("Made it to ap.");
+        const userID = user;
+        const session = req.session;
         global.userBalanceMap = {};
         //prepare balance info in a map
 
@@ -585,12 +611,14 @@ exports.userProfile = function(req, res) {
                     return "Hard";
                 case "Diamond":
                     return "Very Hard";
-                case default:
+                default:
                     return "";
             }
         }
 
         var resultObj = {};
+        resultObj["private"] = user != req.session.user_id;
+        console.log(resultObj);
         connection.query("select * from user where user_id=?", [userID], function(
             error,
             results,
@@ -795,23 +823,25 @@ exports.updateUserProfile = function(req, res) {
                     );
                 }
 
-                var showProfile = req.body.showProfile;
-                var public_id = req.body.public_id;
+                const showProfile = req.body.showProfile;
+                const public_id = req.body.public_id;
                 connection.query(
                     "delete from connections where user_id = ?",
                     [userID],
-                    function(error, results, fields) {
+                    (error, results, fields) => {
                         if (error) {
                             console.log("error ocurred", error);
                             res.render("error", {
                                 errorMsg: "Error on deletion",
                             });
                         } else {
+                            console.log(Math.max(showProfile));
                             connection.query(
                                 "INSERT INTO connections (user_id, profile_id, show_profile) VALUES (?)",
-                                [[userID, public_id, showProfile]],
-                                function(error, results, fields) {
-                                    if (error) {
+                                [[userID, public_id, showProfile.length === 2 ? 1 : 0]],
+                                // only send 1 if both 1 and 0 are received as checkbox vals
+                                (error, results, fields) => {
+                                        if (error) {
                                         console.log("error ocurred", error);
                                         res.render("error", {
                                             errorMsg:
