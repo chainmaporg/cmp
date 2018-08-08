@@ -11,3 +11,4 @@ routes/.DS_Store
 .idea
 Session.vim
 tslint.json
+*.ts
