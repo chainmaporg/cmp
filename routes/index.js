@@ -156,16 +156,11 @@ router.get("/askQuestion", function(req, res) {
 });
 
 router.get("/payContent/:name", function(req, res) {
-    var session = req.session;
-    console.log(session);
+    //var session = req.session;
+    //console.log(session);
 
-    if (typeof session.user_id === "undefined") {
-        console.log("You are not logged in");
-        res.redirect("loginRegister");
-    } else {
-    	//e.g. chainmap-01.ejs...
-        res.render(req.params.name, { title: req.params.name});
-    }
+    //e.g. chainmap-01.ejs...
+    res.render(req.params.name, { title: req.params.name});
 
 });
 
