@@ -531,167 +531,186 @@ exports.userProfile = function(req, res) {
         res.redirect("/loginRegister");
         return;
     } else if (req.param.user_id != null) {
-        console.log(req.param.user_id);
-        return;
-    }
-    var userID = req.session.user_id;
-    var session = req.session;
-    global.userBalanceMap = {};
-    //prepare balance info in a map
-
-    ubs.usersBalance().then(results => {
-        console.log("user balances:", results);
-        for (let i in results.data) {
-            global.userBalanceMap[results.data[i].user_id] =
-                results.data[i].balance;
-        }
-
-        user_token_balance = global.userBalanceMap[userID];
-
-        console.log(
-            "userProfile balance Map..:",
-            global.userBalanceMap,
-            "useid:",
-            userID,
-            "balance:",
-            user_token_balance
-        );
-    });
-
-    function changeLevelNames(level) {
-        switch (level) {
-            case "Brozen":
-                return "Easy";
-            case "Silver":
-                return "Average";
-            case "Gold":
-                return "Hard";
-            case "Diamond":
-                return "Very Hard";
-        }
-        return "";
-    }
-
-    var resultObj = {};
-    connection.query("select * from user where user_id=?", [userID], function(
-        error,
-        results,
-        fields
-    ) {
-        if (error) {
-            console.log("error ocurred", error);
-            res.render("error", {
-                errorMsg: "Error on insertion into DB Users",
-            });
+        if (isNAN(req.param.user_id)) {
+            var user = req.param.user_id;
         } else {
-            resultObj["userProfile"] = results;
             connection.query(
-                "SELECT (select count(*) from challenge where challenge.post_user_id = ?) as total_challenge, (select COUNT(*) FROM answer where answer.post_user_id = ?) as total_answer",
-                [userID, userID],
+                "select profile_id from connections where user_id = ? and show_profile = 1",
+                [req.param.user_id],
                 function(error, results, fields) {
-                    if (error) {
-                        console.log("error ocurred", error);
-                        res.render("error", {
-                            errorMsg: "Error on insertion into DB Users",
-                        });
+                    if (results.length == 0) {
+                        return;
                     } else {
-                        resultObj["questions"] = results[0].total_challenge;
-                        resultObj["answers"] = results[0].total_answer;
-                        connection.query(
-                            "select challenge.*, `user`.user_name, `user`.user_id, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers from challenge join `user` on challenge.post_user_id = `user`.user_id where `user`.user_id = ? ORDER BY posting_date DESC",
-                            [userID],
-                            function(error, results, fields) {
-                                if (error) {
-                                    console.log("error ocurred", error);
-                                    res.render("error", {
-                                        errorMsg:
-                                            "Error on insertion into DB Users",
-                                    });
-                                } else {
-                                    // change display title
-                                    results.forEach(dict => {
-                                        dict.level = changeLevelNames(
-                                            dict.level
-                                        );
-                                    });
-
-                                    resultObj["allQuestions"] = results;
-                                    // console.log('Total data from the userProfile request: ', resultObj);
-                                    connection.query(
-                                        "select challenge.*, (select count(*) from answer where answer.challenge_id = challenge.challenge_id) as total_answer  from challenge join answer on challenge.challenge_id = answer.challenge_id where answer.post_user_id = ? GROUP BY challenge_id ORDER BY posting_date",
-                                        [userID],
-                                        function(error, results, fields) {
-                                            if (error) {
-                                                console.log(
-                                                    "error ocurred",
-                                                    error
-                                                );
-                                                res.render("error", {
-                                                    errorMsg:
-                                                        "Error on insertion into DB Users",
-                                                });
-                                            } else {
-                                                // change display title
-                                                results.forEach(dict => {
-                                                    dict.level = changeLevelNames(
-                                                        dict.level
-                                                    );
-                                                });
-
-                                                resultObj[
-                                                    "allansweredQuestions"
-                                                ] = results;
-                                                // console.log('Total data from the userProfile request: ', resultObj);
-                                                connection.query(
-                                                    "select user_category.category_id, user_category.`level`, category.category_name from user_category join category on user_category.category_id = category.id where user_id = ?",
-                                                    [userID],
-                                                    function(
-                                                        error,
-                                                        results,
-                                                        fields
-                                                    ) {
-                                                        if (error) {
-                                                            console.log(
-                                                                "error ocurred",
-                                                                error
-                                                            );
-                                                            res.render(
-                                                                "error",
-                                                                {
-                                                                    errorMsg:
-                                                                        "Error on insertion into DB Users",
-                                                                }
-                                                            );
-                                                        } else {
-                                                            resultObj[
-                                                                "userCategory"
-                                                            ] = results;
-                                                            console.log(
-                                                                "user category from userProfile request: ",
-                                                                results
-                                                            );
-
-                                                            res.render(
-                                                                "userProfile",
-                                                                {
-                                                                    data: resultObj,
-                                                                    user_token_balance: user_token_balance,
-                                                                }
-                                                            );
-                                                        }
-                                                    }
-                                                );
-                                            }
-                                        }
-                                    );
-                                }
-                            }
-                        );
+                        var user = results[0].profile_id;
                     }
                 }
             );
         }
-    });
+        console.log(req.param.user_id);
+        return;
+    }
+
+    () => {
+        var userID = req.session.user_id;
+        var session = req.session;
+        global.userBalanceMap = {};
+        //prepare balance info in a map
+
+        ubs.usersBalance().then(results => {
+            console.log("user balances:", results);
+            for (let i in results.data) {
+                global.userBalanceMap[results.data[i].user_id] =
+                    results.data[i].balance;
+            }
+
+            user_token_balance = global.userBalanceMap[userID];
+
+            console.log(
+                "userProfile balance Map..:",
+                global.userBalanceMap,
+                "useid:",
+                userID,
+                "balance:",
+                user_token_balance
+            );
+        });
+
+        function changeLevelNames(level) {
+            switch (level) {
+                case "Brozen":
+                    return "Easy";
+                case "Silver":
+                    return "Average";
+                case "Gold":
+                    return "Hard";
+                case "Diamond":
+                    return "Very Hard";
+                case default:
+                    return "";
+            }
+        }
+
+        var resultObj = {};
+        connection.query("select * from user where user_id=?", [userID], function(
+            error,
+            results,
+            fields
+        ) {
+            if (error) {
+                console.log("error ocurred", error);
+                res.render("error", {
+                    errorMsg: "Error on insertion into DB Users",
+                });
+            } else {
+                resultObj["userProfile"] = results;
+                connection.query(
+                    "SELECT (select count(*) from challenge where challenge.post_user_id = ?) as total_challenge, (select COUNT(*) FROM answer where answer.post_user_id = ?) as total_answer",
+                    [userID, userID],
+                    function(error, results, fields) {
+                        if (error) {
+                            console.log("error ocurred", error);
+                            res.render("error", {
+                                errorMsg: "Error on insertion into DB Users",
+                            });
+                        } else {
+                            resultObj["questions"] = results[0].total_challenge;
+                            resultObj["answers"] = results[0].total_answer;
+                            connection.query(
+                                "select challenge.*, `user`.user_name, `user`.user_id, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers from challenge join `user` on challenge.post_user_id = `user`.user_id where `user`.user_id = ? ORDER BY posting_date DESC",
+                                [userID],
+                                function(error, results, fields) {
+                                    if (error) {
+                                        console.log("error ocurred", error);
+                                        res.render("error", {
+                                            errorMsg:
+                                            "Error on insertion into DB Users",
+                                        });
+                                    } else {
+                                        // change display title
+                                        results.forEach(dict => {
+                                            dict.level = changeLevelNames(
+                                                dict.level
+                                            );
+                                        });
+
+                                        resultObj["allQuestions"] = results;
+                                        // console.log('Total data from the userProfile request: ', resultObj);
+                                        connection.query(
+                                            "select challenge.*, (select count(*) from answer where answer.challenge_id = challenge.challenge_id) as total_answer  from challenge join answer on challenge.challenge_id = answer.challenge_id where answer.post_user_id = ? GROUP BY challenge_id ORDER BY posting_date",
+                                            [userID],
+                                            function(error, results, fields) {
+                                                if (error) {
+                                                    console.log(
+                                                        "error ocurred",
+                                                        error
+                                                    );
+                                                    res.render("error", {
+                                                        errorMsg:
+                                                        "Error on insertion into DB Users",
+                                                    });
+                                                } else {
+                                                    // change display title
+                                                    results.forEach(dict => {
+                                                        dict.level = changeLevelNames(
+                                                            dict.level
+                                                        );
+                                                    });
+
+                                                    resultObj[
+                                                        "allansweredQuestions"
+                                                    ] = results;
+                                                    // console.log('Total data from the userProfile request: ', resultObj);
+                                                    connection.query(
+                                                        "select user_category.category_id, user_category.`level`, category.category_name from user_category join category on user_category.category_id = category.id where user_id = ?",
+                                                        [userID],
+                                                        function(
+                                                            error,
+                                                            results,
+                                                            fields
+                                                        ) {
+                                                            if (error) {
+                                                                console.log(
+                                                                    "error ocurred",
+                                                                    error
+                                                                );
+                                                                res.render(
+                                                                    "error",
+                                                                    {
+                                                                        errorMsg:
+                                                                        "Error on insertion into DB Users",
+                                                                    }
+                                                                );
+                                                            } else {
+                                                                resultObj[
+                                                                    "userCategory"
+                                                                ] = results;
+                                                                console.log(
+                                                                    "user category from userProfile request: ",
+                                                                    results
+                                                                );
+
+                                                                res.render(
+                                                                    "userProfile",
+                                                                    {
+                                                                        data: resultObj,
+                                                                        user_token_balance: user_token_balance,
+                                                                    }
+                                                                );
+                                                            }
+                                                        }
+                                                    );
+                                                }
+                                            }
+                                        );
+                                    }
+                                }
+                            );
+                        }
+                    }
+                );
+            }
+        });
+    }
 };
 
 /**
