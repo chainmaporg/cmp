@@ -246,6 +246,8 @@ router.post("/log", users.recordClick);
 
 router.post("/checkDuplicatePayment", users.checkDuplicatePayment);
 
+router.post("/checkDuplicatePublicID", users.checkDuplicatePublicID);
+
 router.get("/aboutUs", function(req, res) {
     res.render("aboutUs", { title: "About Us" });
 });

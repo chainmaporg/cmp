@@ -199,7 +199,7 @@ the html attributes. -->
         <form action="/updateUserProfile" method="POST" onsubmit="return checkPaymentAddress(this)" id="updateUserProfileProfileForm">
             <div class="form-inputs clearfix">
                 <p>
-                    Please select your topic interest and proficieny level on that topic. This will be helpful for us to recommend our courses
+                    Please select your topic interest and proficiency level on that topic. This will be helpful for us to recommend our courses
                     for you.
                 </p>
                 <div id="profile_interest">
@@ -225,6 +225,15 @@ the html attributes. -->
                     </label>
                     <input type="text" name="paymentAddress" id="paymentAddress">
                 </p>
+                <p>
+                    <label>
+                        <input type='hidden' value='0' id='showProfile' name='showProfile'>
+                        <input type='checkbox' value='1' id='showProfile' name='showProfile'>  
+                        Allow Others to See My Profile (Email, Wallet will be hidden.)
+                        <br> @ chainmap.org/userProfile/YOUR_USERNAME 
+                    </label>
+                </p>
+
 
             </div>
 
