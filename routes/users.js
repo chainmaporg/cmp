@@ -747,6 +747,12 @@ exports.userProfile = (req, res) => {
                                                                     }
                                                                 );
                                                             } else {
+                                                                results.forEach(dict => {
+                                                                    dict.level = changeLevelNames(
+                                                                        dict.level
+                                                                    );
+                                                                });
+
                                                                 resultObj[
                                                                     "userCategory"
                                                                 ] = results;
@@ -819,8 +825,8 @@ exports.updateUserProfile = function(req, res) {
     var userID = session.user_id;
     var interests = req.body.interest;
     var levels = req.body.level;
-    levels = levels.filter(function(n) {
-        return n != "";
+    levels = levels.map(function(n) {
+        return (n !== "" ? n : "Brozen");
     });
     var userCategoryInterest = [];
     if (typeof interests !== "undefined") {
