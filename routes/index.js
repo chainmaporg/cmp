@@ -141,7 +141,8 @@ router.get("/connectSmartContract", function(req, res) {
 
 router.get("/getPayContent", function(req, res) {
 	code = req.query.coupon;
-	console.log("track-download:", code);
+	email = req.query.email;
+	console.log("===track-download:", code, email);
 		
 	if(code=="chainmap") {
 		res.render("chainmap-01", {coupon: "YES"});
