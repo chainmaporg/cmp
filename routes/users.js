@@ -529,25 +529,30 @@ exports.checkDuplicatePayment = function(req, res) {
 
 exports.checkDuplicatePublicID = function(req, res) {
     const public_id = req.body.public_id;
+    console.log(public_id);
     connection.query(
-        "select public_id from connections where public_id = ?",
+        "select profile_id from connections where profile_id = ?",
         [public_id],
-        (error, results, fields) => {
+        async function(error, results, fields) {
             if (error) {
                 console.log("error ocurred", error);
                 res.render("error", {
                     errorMsg: "Error on getting data from connections.",
                 });
             } else {
+                await results;
                 if (results.length == 0) {
                     const repeat = false;
+                    res.send({
+                        repeat
+                    });
                 }
                 else {
                     const repeat = true;
-                }
                     res.send({
-                        repeat:repeat
+                        repeat
                     });
+                }
             }
         }
     );
