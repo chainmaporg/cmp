@@ -196,7 +196,7 @@ the html attributes. -->
     </h2>
     <div class="form-style form-style-3">
 
-        <form action="/updateUserProfile" method="POST" onsubmit="return(validate().then(v => {console.log(v); return (v)}));" id="updateUserProfileProfileForm">
+        <form action="/updateUserProfile" method="POST" onsubmit="return checkPaymentAddress(this)" id="updateUserProfileProfileForm">
             <div class="form-inputs clearfix">
                 <p>
                     Please select your topic interest and proficiency level on that topic. This will be helpful for us to recommend our courses
@@ -226,15 +226,11 @@ the html attributes. -->
                     <input type="text" name="paymentAddress" id="paymentAddress">
                 </p>
                 <p>
-                    <label class="required">Public ID(Accessible through chainmap.org/UserProfile/Your_ID)
-                    </label>
-                    <input type="text" name="public_id" id="public_id">
-                </p>
-                <p>
                     <label>
                         <input type='hidden' value='0' id='showProfile' name='showProfile'>
                         <input type='checkbox' value='1' id='showProfile' name='showProfile'>  
-                        Allow Others to View my Profile (Username, Email, Wallet will be hidden.)
+                        Allow Others to See My Profile (Email, Wallet will be hidden.)
+                        <br> @ chainmap.org/userProfile/YOUR_USERNAME 
                     </label>
                 </p>
 
@@ -255,15 +251,6 @@ the html attributes. -->
 
 <script type="text/javascript">
 
-    async function validate() {
-        var pay = checkPaymentAddress();
-        console.log(pay);
-        var id = checkDuplicatePublicID();
-        console.log(id);
-        var valid = await (pay && id);
-        console.log(valid);
-        return (await valid);
-    }
 
     function checkPaymentAddress() {
         // userID = '<%= session.user_id%>';
@@ -277,13 +264,14 @@ the html attributes. -->
                 alert("Invalid Payment Address")
                 return false;
             }
+            $.ajaxSetup({ 'async': false });
             $.ajax({
                 type: 'POST',
                 url: url,
                 data: {
                     paymentAddress: paymentAddress,
                 },
-                async: true,
+                async: false,
                 success: function (data) {
                     if (data.sendingData == false){
                         
@@ -298,9 +286,10 @@ the html attributes. -->
                     return false;
                 }
             });
+            $.ajaxSetup({ 'async': true });
             if (status == false){
                 alert("Duplicate Payment Address");
-                return false;
+                return false
             }   
             else
                 return true;
@@ -308,47 +297,8 @@ the html attributes. -->
         else{
             return true;
         }
-    }
 
-    async function checkDuplicatePublicID() {
-        url = "/checkDuplicatePublicID";
-        var public_id = $("#public_id").val();
-        console.log(public_id);
-        if (public_id != "") {
-            if (isNaN(public_id))
-            {
-                $.ajax(
-                {
-                    type: 'POST',
-                    url: url,
-                    data: {
-                        public_id:public_id,
-                    },
-                    async: true,
-                    success: function (data) {
-                        if (data.repeat)
-                            alert("Duplicate public id. Please choose a new one.");
-                        return !(data.repeat);
-                        console.log()
-                    },
-                    error: function () {
-                        alert('Error occured. Please try again.');
-                        return false;
-                    }
-                }); 
-            }
-            else
-            {
-                alert("Cannot use numbers for public id.");
-                return false;
-            }
-        }
-        else
-        {
-            return true;
-        }
     }
-
     // var gMode = "select";
     // function selectMode(mode) {
     //     if (mode == "select") {

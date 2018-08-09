@@ -567,19 +567,27 @@ exports.userProfile = (req, res) => {
     {
         accessProfile(req.session.user_id);
     }
-    // user wants to access someone else's profile
+    // user wants to access a public profile
     else if (req.params.user_id != null) {
         if (isNaN(req.params.user_id)) {
             connection.query(
-                "select user_id from connections where profile_id = ? and show_profile = 1",
+                "select connections.user_id, show_profile from connections inner join user on user.user_name = ?",
                 [req.params.user_id],
                 (error, results, fields) => {
-                    if (results.length === 0) {
+                    if (error) {
+                        console.log(error);
+                    }
+                    else if (!results[0]) {
                         console.log("No results found 1.");
                         res.redirect("/loginRegister");
                         return;
-                    } else {
+                    } else if (results[0].show_profile === 1) {
                         accessProfile(results[0].user_id);
+                    } else if (results[0].user_id === req.session.user_id) {
+                        accessProfile(results[0].user_id);
+                    } else {
+                        res.redirect("/loginRegister");
+                        return;
                     }
                 }
             );
@@ -588,7 +596,10 @@ exports.userProfile = (req, res) => {
                 "select user_id from connections where user_id = ? and show_profile = 1",
                 [req.params.user_id],
                 (error, results, fields) => {
-                    if (results.length === 0) {
+                    if (error) {
+                        console.log(error);
+                    }
+                    else if (!results[0]) {
                         console.log("No results found 2.");
                         res.redirect("/loginRegister");
                         return;
@@ -851,7 +862,6 @@ exports.updateUserProfile = function(req, res) {
                 }
 
                 const showProfile = req.body.showProfile;
-                const public_id = req.body.public_id;
                 connection.query(
                     "delete from connections where user_id = ?",
                     [userID],
@@ -863,8 +873,8 @@ exports.updateUserProfile = function(req, res) {
                             });
                         } else {
                             connection.query(
-                                "INSERT INTO connections (user_id, profile_id, show_profile) VALUES (?)",
-                                [[userID, public_id, showProfile.length === 2 ? 1 : 0]],
+                                "INSERT INTO connections (user_id, show_profile) VALUES (?)",
+                                [[userID, showProfile.length === 2 ? 1 : 0]],
                                 // only send 1 if both 1 and 0 are received as checkbox vals
                                 (error, results, fields) => {
                                         if (error) {
