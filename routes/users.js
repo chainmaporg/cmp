@@ -530,7 +530,7 @@ exports.userProfile = (req, res) => {
     else if (req.params.user_id != null) {
         if (isNaN(req.params.user_id)) {
             connection.query(
-                "select connections.user_id, show_profile from connections inner join user on user.user_name = ?",
+                "select user.user_id, show_profile from connections inner join user on user.user_id=connections.user_id and user.user_name = ?",
                 [req.params.user_id],
                 (error, results, fields) => {
                     if (error) {
