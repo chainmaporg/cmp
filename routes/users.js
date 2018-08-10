@@ -536,22 +536,25 @@ exports.userProfile = (req, res) => {
                     if (error) {
                         console.log(error);
                     } else if (!results[0]) {
-                        console.log("No results found 1.");
-                        res.redirect("/loginRegister");
+                        res.render("error", {
+                            errorMsg: "User has made their profile private or your url is incorrect.",
+                        });
                         return;
                     } else if (results[0].show_profile === 1) {
                         accessProfile(results[0].user_id);
                     } else if (results[0].user_id === req.session.user_id) {
                         accessProfile(results[0].user_id);
                     } else {
-                        res.redirect("/loginRegister");
+                        res.render("error", {
+                            errorMsg: "User has made their profile private.",
+                        });
                         return;
                     }
                 },
             );
         } else {
             connection.query(
-                "select user_id from connections where user_id = ? and show_profile = 1",
+                "select user_id, show_profile from connections where user_id = ?",
                 [req.params.user_id],
                 (error, results, fields) => {
                     if (error) {
@@ -560,8 +563,13 @@ exports.userProfile = (req, res) => {
                         console.log("No results found 2.");
                         res.redirect("/loginRegister");
                         return;
-                    } else {
+                    } else if (results[0].show_profile == 1) {
                         accessProfile(results[0].user_id);
+                    } else {
+                        res.render("error", {
+                            errorMsg: "User has made their profile private.",
+                        });
+                        return;
                     }
                 },
             );
