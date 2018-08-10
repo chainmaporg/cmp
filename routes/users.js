@@ -538,6 +538,7 @@ exports.userProfile = (req, res) => {
                     } else if (!results[0]) {
                         res.render("error", {
                             errorMsg: "User has made their profile private or your url is incorrect.",
+                            showError: true,
                         });
                         return;
                     } else if (results[0].show_profile === 1) {
@@ -546,7 +547,9 @@ exports.userProfile = (req, res) => {
                         accessProfile(results[0].user_id);
                     } else {
                         res.render("error", {
-                            errorMsg: "User has made their profile private. You cannot send messages to them or view their profile.",
+                            errorMsg:
+                                "User has made their profile private. You cannot send messages to them or view their profile.",
+                            showError: true,
                         });
                         return;
                     }
@@ -567,7 +570,9 @@ exports.userProfile = (req, res) => {
                         accessProfile(results[0].user_id);
                     } else {
                         res.render("error", {
-                            errorMsg: "User has made their profile private. You cannot send messages to them or view their profile.",
+                            errorMsg:
+                                "User has made their profile private. You cannot send messages to them or view their profile.",
+                            showError: true,
                         });
                         return;
                     }
@@ -701,11 +706,25 @@ exports.userProfile = (req, res) => {
                                                                         if (error) {
                                                                             console.log(error);
                                                                         } else {
-                                                                            resultObj["message_count"] = results.length;
-                                                                            res.render("userProfile", {
-                                                                                data: resultObj,
-                                                                                user_token_balance: user_token_balance,
-                                                                            });
+                                                                            resultObj["in_message_count"] =
+                                                                                results.length;
+                                                                            connection.query(
+                                                                                "select id from messages where sender_id = ?",
+                                                                                [userID],
+                                                                                (error, results, fields) => {
+                                                                                    if (error) {
+                                                                                        console.log(error);
+                                                                                    } else {
+                                                                                        resultObj["out_message_count"] =
+                                                                                            results.length;
+
+                                                                                        res.render("userProfile", {
+                                                                                            data: resultObj,
+                                                                                            user_token_balance: user_token_balance,
+                                                                                        });
+                                                                                    }
+                                                                                },
+                                                                            );
                                                                         }
                                                                     },
                                                                 );
@@ -927,32 +946,39 @@ exports.sendMessage = (req, res) => {
     });
 };
 
-exports.messages = (req, res) => {
+exports.messages = (req, res, isInbox) => {
     const userID = req.session.user_id;
+    const userType = isInbox ? "receiver_id" : "sender_id";
+    const displayedType = !isInbox ? "receiver_id" : "sender_id";
     connection.query(
-        "select message, sender_id, timestamp from messages where receiver_id = ? order by timestamp desc",
+        "select message, " +
+            displayedType +
+            ", timestamp from messages where " +
+            userType +
+            " = ? order by timestamp desc",
         [userID],
         (error, results, fields) => {
             if (error) {
                 console.log(error);
             } else if (results.length > 0) {
                 const data = results;
-                const senders = [];
+                const users = [];
                 data.forEach(dict => {
-                    senders.push(dict.sender_id);
+                    users.push(dict[displayedType]);
                 });
+                console.log(data);
                 connection.query(
                     "select user_name, user_id from user where user_id in (?)",
-                    [senders],
+                    [users],
                     (error, results, fields) => {
                         id_name_map = {};
                         results.forEach(dict => {
                             id_name_map[dict.user_id] = dict.user_name;
                         });
                         data.forEach(dict => {
-                            dict.sender_id = id_name_map[dict.sender_id];
+                            dict.user_id = id_name_map[dict[displayedType]];
                         });
-                        res.render("messages", { data });
+                        res.render("messages", { data, isInbox });
                     },
                 );
             } else {

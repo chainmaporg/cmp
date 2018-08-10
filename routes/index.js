@@ -262,12 +262,19 @@ router.get("/loadSessionUserID", (req, res) => {
 
 router.post("/sendMessage", users.sendMessage);
 
-router.get("/messages", function(req, res) {
+router.get("/inbox", (req, res) => {
     if (typeof req.session.user_id === "undefined") {
-        console.log("You are not logged in");
         res.redirect("loginRegister");
     } else {
-        users.messages(req, res);
+        users.messages(req, res, true);
+    }
+});
+
+router.get("/outbox", (req, res) => {
+    if (typeof req.session.user_id === "undefined") {
+        res.redirect("loginRegister");
+    } else {
+        users.messages(req, res, false);
     }
 });
 

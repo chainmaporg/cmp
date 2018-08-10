@@ -27,7 +27,11 @@
                             <div class="box_icon box_warp box_no_border box_no_background" box_border="transparent" box_background="transparent" box_color="#FFF">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <h2>Your Personal Messages</h2>
+                                        <% if(isInbox) {%>
+                                        <h2>Your Personal Inbox</h2>
+                                        <% } else { %>
+                                        <h2>Your Sent Messages<h2>
+                                        <% } %>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -49,7 +53,12 @@
                                  <article class="post blog_2 clearfix">
                                      <div class="post-inner">
                                          <h2 class="post-title">
-                                             From: <a href="../userProfile/<%=dict.sender_id%>"><%=dict.sender_id%></a>
+                                             <% if(isInbox) {%>
+                                             From:
+                                             <% } else { %>
+                                             To:
+                                             <% } %>
+                                             <a href="../userProfile/<%=dict.user_id%>"><%=dict.user_id%></a>
                                          </h2>
 
                                          <span style="font-weight: bold;" class ="meta-date">
@@ -60,10 +69,12 @@
                                              <%=dict.message%>
                                          </span>
                                         
+                                         <% if(isInbox) {%>
                                          <span>
                                              <br>
-                                             <a href="../userProfile/<%=dict.sender_id%>" class="button small blue-button custom-button">Go to the User's Profile to Send Response</a>
+                                             <a href="../userProfile/<%=dict.user_id%>" class="button small blue-button custom-button">Go to the User's Profile to Send Response</a>
                                          </span>
+                                         <% } %>
                                      </div>
                                      <!-- End post-inner -->
                                  </article>

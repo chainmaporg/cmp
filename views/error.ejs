@@ -54,7 +54,7 @@
                                 <div class="error_404">
                                     <div>
                                         <h2>Error</h2>
-                                        <% if (errorMsg) 
+                                        <% if (errorMsg && typeof showError !== "undefined") 
                                             {
                                                 console.log(errorMsg);
                                         %>

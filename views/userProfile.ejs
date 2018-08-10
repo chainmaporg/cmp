@@ -258,7 +258,8 @@
                                                     </form>
                                                 </div>
                                                 <% } else { 
-                                                    let url = "../messages";
+                                                    let inUrl = "../inbox";
+                                                    let outUrl = "../outbox";
                                                 %>
                                                 <div class="col-md-12">
                                                     <div class="page-content page-content-user-profile">
@@ -268,10 +269,19 @@
                                                                 <ul>
                                                                     <li>
                                                                         <i class="icon-comment"></i>
-                                                                        <a href="<%=url %>"> Your Inbox
+                                                                        <a href="<%=inUrl %>"> Your Inbox
                                                                             <span> (
                                                                                 <span>
-                                                                                    <%=data.message_count%>
+                                                                                    <%=data.in_message_count%>
+                                                                                </span> ) </span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="icon-comment"></i>
+                                                                        <a href="<%=outUrl %>"> Your Outbox
+                                                                            <span> (
+                                                                                <span>
+                                                                                    <%=data.out_message_count%>
                                                                                 </span> ) </span>
                                                                         </a>
                                                                     </li>
