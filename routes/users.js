@@ -694,11 +694,21 @@ exports.userProfile = (req, res) => {
                                                                     "user category from userProfile request: ",
                                                                     results,
                                                                 );
-
-                                                                res.render("userProfile", {
-                                                                    data: resultObj,
-                                                                    user_token_balance: user_token_balance,
-                                                                });
+                                                                connection.query(
+                                                                    "select id from messages where receiver_id = ?",
+                                                                    [userID],
+                                                                    (error, results, fields) => {
+                                                                        if (error) {
+                                                                            console.log(error);
+                                                                        } else {
+                                                                            resultObj["message_count"] = results.length;
+                                                                            res.render("userProfile", {
+                                                                                data: resultObj,
+                                                                                user_token_balance: user_token_balance,
+                                                                            });
+                                                                        }
+                                                                    },
+                                                                );
                                                             }
                                                         },
                                                     );
