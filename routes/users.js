@@ -909,4 +909,39 @@ exports.sendMessage = (req, res) => {
     });
 };
 
+exports.messages = (req, res) => {
+    const userID = req.session.user_id;
+    connection.query(
+        "select message, sender_id, timestamp from messages where receiver_id = ? order by timestamp desc",
+        [userID],
+        (error, results, fields) => {
+            if (error) {
+                console.log(error);
+            } else if (results.length > 0) {
+                const data = results;
+                const senders = [];
+                data.forEach(dict => {
+                    senders.push(dict.sender_id);
+                });
+                connection.query(
+                    "select user_name, user_id from user where user_id in (?)",
+                    [senders],
+                    (error, results, fields) => {
+                        id_name_map = {};
+                        results.forEach(dict => {
+                            id_name_map[dict.user_id] = dict.user_name;
+                        });
+                        data.forEach(dict => {
+                            dict.sender_id = id_name_map[dict.sender_id];
+                        });
+                        res.render("messages", { data });
+                    },
+                );
+            } else {
+                res.render("messages", {});
+            }
+        },
+    );
+};
+
 // module.exports = router;

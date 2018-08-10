@@ -139,16 +139,14 @@ router.get("/connectSmartContract", function(req, res) {
 });
 
 router.get("/getPayContent", function(req, res) {
-	code = req.query.coupon;
-	console.log("track-download:", code);
-		
-	if(code=="chainmap") {
-		res.render("chainmap-01", {coupon: "YES"});
-	}
-	else {
-		res.render("chainmap-01", {coupon: "NO"});
-	}
+    code = req.query.coupon;
+    console.log("track-download:", code);
 
+    if (code == "chainmap") {
+        res.render("chainmap-01", { coupon: "YES" });
+    } else {
+        res.render("chainmap-01", { coupon: "NO" });
+    }
 });
 
 router.get("/payContent/:name", function(req, res) {
@@ -156,11 +154,8 @@ router.get("/payContent/:name", function(req, res) {
     //console.log(session);
 
     //e.g. chainmap-01.ejs...
-    res.render(req.params.name, { title: req.params.name});
-
+    res.render(req.params.name, { title: req.params.name });
 });
-
-
 
 router.get("/connectGroup", socialgroup.getSocialGroup);
 
@@ -266,5 +261,14 @@ router.get("/loadSessionUserID", (req, res) => {
 });
 
 router.post("/sendMessage", users.sendMessage);
+
+router.get("/messages", function(req, res) {
+    if (typeof req.session.user_id === "undefined") {
+        console.log("You are not logged in");
+        res.redirect("loginRegister");
+    } else {
+        users.messages(req, res);
+    }
+});
 
 module.exports = router;

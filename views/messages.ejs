@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- header part start -->
+<% include ./partials/header %>
+    <!-- header part end -->
+
+    <!-- body part start -->
+
+    <body>
+
+        <div class="loader">
+            <div class="loader_html"></div>
+        </div>
+
+        <div id="wrap" class="grid_1200">
+
+            <% include ./partials/header %>
+                <% include ./partials/body_header %>
+                    <div class="section-warp ask-me">
+                        <div class="container clearfix">
+                            <div class="box_icon box_warp box_no_border box_no_background" box_border="transparent" box_background="transparent" box_color="#FFF">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h2>Your Personal Messages</h2>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <!-- End row -->
+                            </div>
+                            <!-- End box_icon -->
+                        </div>
+                        <!-- End container -->
+                    </div>
+                    <!-- End section-warp -->
+
+                    <section class="container main-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <%
+                                 if (typeof(data) != "undefined") {
+                                 data.forEach((dict) => { %>
+
+                                 <article class="post blog_2 clearfix">
+                                     <div class="post-inner">
+                                         <h2 class="post-title">
+                                             From: <a href="http://chainmap.org/userProfile/<%=dict.sender_id%>"><%=dict.sender_id%></a>
+                                         </h2>
+
+                                         <span style="font-weight: bold;" class ="meta-date">
+                                             <%=dict.timestamp%> 
+                                         </span>
+                                         <br>
+                                         <span style="font-size:16px" class="meta-author">
+                                             <%=dict.message%>
+                                         </span>
+                                     </div>
+                                     <!-- End post-inner -->
+                                 </article>
+
+                                 <% }); } else { %>
+                                    <h3> No messages to show. </h3>
+                                 <% } %>
+
+                            </div>
+                            <!-- End main -->
+                        </div>
+                        <!-- End row -->
+                    </section>
+                    <!-- End container -->
+
+                    <!-- body footer start -->
+                    <% include ./partials/body_footer %>
+                    <!-- body footer end -->
+        </div>
+        <!-- End wrap -->
+        <!-- footer started -->
+        <% include ./partials/footer_js %>
+        <!-- footer end -->
+    </body>
+    <!-- body part end -->
+</html>
