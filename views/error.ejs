@@ -54,7 +54,14 @@
                                 <div class="error_404">
                                     <div>
                                         <h2>Error</h2>
-                                        <h3>Sorry Some unexpected error happen. Please try again or contact with us. We are so sorry for that.</h3>
+                                        <% if (errorMsg) 
+                                            {
+                                                console.log(errorMsg);
+                                        %>
+                                            <h3><%=errorMsg%><h3>
+                                        <%  } else { %>
+                                        <h3>Sorry. Some unexpected error happened. Please try again or contact with us. </h3>
+                                        <% } %>
                                     </div>
                                     <div class="clearfix"></div>
                                     <br>
