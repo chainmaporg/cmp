@@ -546,7 +546,7 @@ exports.userProfile = (req, res) => {
                         accessProfile(results[0].user_id);
                     } else {
                         res.render("error", {
-                            errorMsg: "User has made their profile private.",
+                            errorMsg: "User has made their profile private. You cannot send messages to them or view their profile.",
                         });
                         return;
                     }
@@ -567,7 +567,7 @@ exports.userProfile = (req, res) => {
                         accessProfile(results[0].user_id);
                     } else {
                         res.render("error", {
-                            errorMsg: "User has made their profile private.",
+                            errorMsg: "User has made their profile private. You cannot send messages to them or view their profile.",
                         });
                         return;
                     }
