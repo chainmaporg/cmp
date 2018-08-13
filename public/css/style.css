@@ -5263,3 +5263,13 @@ html[xmlns] .slides {
 }
 
 .clear { clear:both; display:block; overflow:hidden; visibility:hidden; height:0px;}
+
+
+#message textarea {
+	display: block;
+	width: 100%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
