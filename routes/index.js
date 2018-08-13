@@ -32,7 +32,6 @@ var client = new Client();
 var solr_host = global.config.search_solr_host;
 var engine_host = global.config.search_engine_host;
 
-
 router.get("/query/:category/:content", function(req, res, next) {
     var url = "";
     if (req.params.category == "All") {
@@ -97,7 +96,7 @@ var socialgroup = require("../routes/socialgroup");
 var news = require("../routes/news");
 
 var companyNews = require("../routes/companyNews");
-var admin = require("../routes/admin")
+var admin = require("../routes/admin");
 // global.environment = "local";
 global.environment = "production";
 
@@ -140,16 +139,14 @@ router.get("/connectSmartContract", function(req, res) {
 });
 
 router.get("/getPayContent", function(req, res) {
-	code = req.query.coupon;
-	console.log("track-download:", code);
-		
-	if(code=="chainmap") {
-		res.render("chainmap-01", {coupon: "YES"});
-	}
-	else {
-		res.render("chainmap-01", {coupon: "NO"});
-	}
+    code = req.query.coupon;
+    console.log("track-download:", code);
 
+    if (code == "chainmap") {
+        res.render("chainmap-01", { coupon: "YES" });
+    } else {
+        res.render("chainmap-01", { coupon: "NO" });
+    }
 });
 
 router.get("/payContent/:name", function(req, res) {
@@ -157,11 +154,8 @@ router.get("/payContent/:name", function(req, res) {
     //console.log(session);
 
     //e.g. chainmap-01.ejs...
-    res.render(req.params.name, { title: req.params.name});
-
+    res.render(req.params.name, { title: req.params.name });
 });
-
-
 
 router.get("/connectGroup", socialgroup.getSocialGroup);
 
@@ -176,22 +170,14 @@ router.get("/askQuestion", function(req, res) {
     } else {
         res.render("askQuestion", { title: "Post a Challenge" });
     }
-
 });
-
 
 router.get("/questionBoard", function(req, res) {
     questionBoard.getAllChallenge(req, res);
 });
-router.get(
-    "/getChallengebyID/:challenge_id",
-    questionBoard.getDetailsChallenge
-);
+router.get("/getChallengebyID/:challenge_id", questionBoard.getDetailsChallenge);
 router.get("/likeAnswer/:challenge_id/:answer_id", questionBoard.likeAnswer);
-router.get(
-    "/dislikeAnswer/:challenge_id/:answer_id",
-    questionBoard.dislikeAnswer
-);
+router.get("/dislikeAnswer/:challenge_id/:answer_id", questionBoard.dislikeAnswer);
 router.get("/likeChallenge/:challenge_id", questionBoard.likeChallenge);
 router.get("/dislikeChallenge/:challenge_id", questionBoard.dislikeChallenge);
 router.get("/closeChallenge/:challenge_id", questionBoard.closeChallenge);
@@ -203,7 +189,7 @@ router.get("/loginRegister", function(req, res) {
 });
 
 router.get("/companyNews", function(req, res) {
-     companyNews.getCompanyNews(req,res);
+    companyNews.getCompanyNews(req, res);
 });
 
 router.post("/getCompanies", users.getCompanies);
@@ -217,7 +203,6 @@ router.get("/getJobRecommendations", users.getJobRecommendations);
 router.get("/getRecommendations", users.getRecommendations);
 router.get("/trainingMaterial_Introduction", function(req, res) {
     trainingMaterial.trainingMaterial_Introduction(req, res);
-    
 });
 router.get("/trainingMaterial_Infrastructure", function(req, res) {
     trainingMaterial.trainingMaterial_Infrastructure(req, res);
@@ -256,24 +241,41 @@ router.get("/aboutToken", function(req, res) {
     res.render("aboutToken", { title: "About Token" });
 });
 
-
 router.post("/getAllCategory", users.getAllCategory);
 router.post("/getAllCategoryWithUserCat", users.getAllCategoryWithUserCat);
 router.get("/getNews", news.getNews);
 
 router.get("/adminPage", function(req, res) {
-    if (req.session.admin)
-    {
+    if (req.session.admin) {
         console.log("Admin access unlocked.");
         admin.adminPageAccess(req, res);
-    }
-    else
-        res.redirect("loginAdmin");
+    } else res.redirect("loginAdmin");
 });
 router.get("/loginAdmin", function(req, res) {
-    res.render("loginAdmin")
+    res.render("loginAdmin");
 });
 router.post("/adminLogin", admin.login);
 
-module.exports = router;
+router.get("/loadSessionUserID", (req, res) => {
+    res.send({ idExists: req.session.user_id != "undefined" });
+});
 
+router.post("/sendMessage", users.sendMessage);
+
+router.get("/inbox", (req, res) => {
+    if (typeof req.session.user_id === "undefined") {
+        res.redirect("loginRegister");
+    } else {
+        users.messages(req, res, true);
+    }
+});
+
+router.get("/outbox", (req, res) => {
+    if (typeof req.session.user_id === "undefined") {
+        res.redirect("loginRegister");
+    } else {
+        users.messages(req, res, false);
+    }
+});
+
+module.exports = router;

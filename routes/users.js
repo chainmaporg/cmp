@@ -58,82 +58,65 @@ exports.userRegister = function(req, res) {
         is_reviewer: 0,
     };
 
-    connection.query(
-        "select COUNT(*) as number from user where `user`.user_email = ?",
-        req.body.user_email,
-        function(error, results, fields) {
-            if (error) {
-                console.log("error ocurred", error);
-                res.status(500).send({ error: "you have an error" });
-            } else {
-                if (results[0].number == 0) {
-                    connection.query(
-                        "select COUNT(*) as number from user where `user`.user_name = ?",
-                        req.body.user_name,
-                        function(error, results, fields) {
-                            if (error) {
-                                console.log("error ocurred", error);
-                                // res.redirect('/error');
-                                res.status(500).send({
-                                    error: "you have an error",
+    connection.query("select COUNT(*) as number from user where `user`.user_email = ?", req.body.user_email, function(
+        error,
+        results,
+        fields,
+    ) {
+        if (error) {
+            console.log("error ocurred", error);
+            res.status(500).send({ error: "you have an error" });
+        } else {
+            if (results[0].number == 0) {
+                connection.query(
+                    "select COUNT(*) as number from user where `user`.user_name = ?",
+                    req.body.user_name,
+                    function(error, results, fields) {
+                        if (error) {
+                            console.log("error ocurred", error);
+                            // res.redirect('/error');
+                            res.status(500).send({
+                                error: "you have an error",
+                            });
+                        } else {
+                            if (results[0].number == 0) {
+                                connection.query("INSERT INTO user SET ?", userInfo, function(error, results, fields) {
+                                    if (error) {
+                                        // res.render("error", { errorMsg: "Error on insertion into DB Users code " })
+                                        console.log("error ocurred changes", error);
+                                        res.status(500).send({
+                                            error: "you have an error",
+                                        });
+                                    } else {
+                                        console.log("The information saved successfully", results);
+                                        res.send({
+                                            msg: "success",
+                                        });
+                                    }
                                 });
                             } else {
-                                if (results[0].number == 0) {
-                                    connection.query(
-                                        "INSERT INTO user SET ?",
-                                        userInfo,
-                                        function(error, results, fields) {
-                                            if (error) {
-                                                // res.render("error", { errorMsg: "Error on insertion into DB Users code " })
-                                                console.log(
-                                                    "error ocurred changes",
-                                                    error
-                                                );
-                                                res.status(500).send({
-                                                    error: "you have an error",
-                                                });
-                                            } else {
-                                                console.log(
-                                                    "The information saved successfully",
-                                                    results
-                                                );
-                                                res.send({
-                                                    msg: "success",
-                                                });
-                                            }
-                                        }
-                                    );
-                                } else {
-                                    console.log(
-                                        "duplicate user name",
-                                        req.body.user_name
-                                    );
-                                    res.send({
-                                        msg: "duplicateUserName",
-                                    });
-                                }
+                                console.log("duplicate user name", req.body.user_name);
+                                res.send({
+                                    msg: "duplicateUserName",
+                                });
                             }
                         }
-                    );
-                } else {
-                    console.log("duplicate user Email", req.body.user_email);
-                    res.send({
-                        msg: "duplicateUserEmail",
-                    });
-                }
+                    },
+                );
+            } else {
+                console.log("duplicate user Email", req.body.user_email);
+                res.send({
+                    msg: "duplicateUserEmail",
+                });
             }
         }
-    );
+    });
 
     // }
 };
 
 exports.getCompanies = function(req, res) {
-    connection.query("select company_id, company_name from company", function(
-        error,
-        results,
-        fields
-    ) {
+    connection.query("select company_id, company_name from company", function(error, results, fields) {
         if (error) {
             console.log("error ocurred", error);
             res.render("error", {
@@ -154,24 +137,24 @@ exports.getRecommendations = function(req, res) {
     var session = req.session;
     var userID = session.user_id;
     new Promise((resolve, reject) => {
-        connection.query(
-            "select category_id from user_category where user_id=?",
-            [userID],
-            function(error, results, fields) {
-                if (error) {
-                    reject(error);
-                    res.render("error", {
-                        errorMsg: "Error on finding user categories",
-                    });
-                } else {
-                    results = results.map(function(value) {
-                        return value["category_id"];
-                    });
-                    if (results.length == 0) resolve([1, 2]);
-                    else resolve(results);
-                }
+        connection.query("select category_id from user_category where user_id=?", [userID], function(
+            error,
+            results,
+            fields,
+        ) {
+            if (error) {
+                reject(error);
+                res.render("error", {
+                    errorMsg: "Error on finding user categories",
+                });
+            } else {
+                results = results.map(function(value) {
+                    return value["category_id"];
+                });
+                if (results.length == 0) resolve([1, 2]);
+                else resolve(results);
             }
-        );
+        });
     })
         .catch(error => {
             console.log(error);
@@ -180,8 +163,7 @@ exports.getRecommendations = function(req, res) {
         .then(results => {
             new Promise((resolve, reject) => {
                 connection.query(
-                    "select keyword from keywords where category_id =" +
-                        results.join(" or category_id="),
+                    "select keyword from keywords where category_id =" + results.join(" or category_id="),
                     function(error, results, fields) {
                         if (error) {
                             reject(error);
@@ -191,15 +173,13 @@ exports.getRecommendations = function(req, res) {
                             });
                             resolve(results);
                         }
-                    }
+                    },
                 );
             })
                 .catch(error => console.log(error))
                 .then(all => {
                     function getRandom() {
-                        var randomIndex = Math.floor(
-                            Math.random() * all.length
-                        );
+                        var randomIndex = Math.floor(Math.random() * all.length);
                         return all.splice(randomIndex, 1)[0];
                     }
                     var keywords = [];
@@ -216,11 +196,7 @@ exports.getRecommendations = function(req, res) {
                             "/select?fl=title,%20url,%20category&q=category:" +
                             encodeURI(category) +
                             "%20AND%20(search_content:" +
-                            encodeURI(
-                                " " +
-                                    keywords.join(" OR search_content: ") +
-                                    ")"
-                            ) +
+                            encodeURI(" " + keywords.join(" OR search_content: ") + ")") +
                             "&rows=" +
                             encodeURI(numShow) +
                             "&wt=json";
@@ -297,24 +273,24 @@ exports.getJobRecommendations = function(req, res) {
     var session = req.session;
     var userID = session.user_id;
     new Promise((resolve, reject) => {
-        connection.query(
-            "select category_id from user_category where user_id=?",
-            [userID],
-            function(error, results, fields) {
-                if (error) {
-                    reject(error);
-                    res.render("error", {
-                        errorMsg: "Error on finding user categories",
-                    });
-                } else {
-                    results = results.map(function(value) {
-                        return value["category_id"];
-                    });
-                    if (results.length == 0) resolve([1, 2]);
-                    else resolve(results);
-                }
+        connection.query("select category_id from user_category where user_id=?", [userID], function(
+            error,
+            results,
+            fields,
+        ) {
+            if (error) {
+                reject(error);
+                res.render("error", {
+                    errorMsg: "Error on finding user categories",
+                });
+            } else {
+                results = results.map(function(value) {
+                    return value["category_id"];
+                });
+                if (results.length == 0) resolve([1, 2]);
+                else resolve(results);
             }
-        );
+        });
     })
         .catch(error => {
             console.log(error);
@@ -323,8 +299,7 @@ exports.getJobRecommendations = function(req, res) {
         .then(results => {
             new Promise((resolve, reject) => {
                 connection.query(
-                    "select keyword from keywords where category_id =" +
-                        results.join(" or category_id="),
+                    "select keyword from keywords where category_id =" + results.join(" or category_id="),
                     function(error, results, fields) {
                         if (error) {
                             reject(error);
@@ -334,15 +309,13 @@ exports.getJobRecommendations = function(req, res) {
                             });
                             resolve(results);
                         }
-                    }
+                    },
                 );
             })
                 .catch(error => console.log(error))
                 .then(all => {
                     function getRandom() {
-                        var randomIndex = Math.floor(
-                            Math.random() * all.length
-                        );
+                        var randomIndex = Math.floor(Math.random() * all.length);
                         return all.splice(randomIndex, 1)[0];
                     }
                     var keywords = [];
@@ -359,11 +332,7 @@ exports.getJobRecommendations = function(req, res) {
                             "/select?fl=title,%20url,%20category&q=category:" +
                             encodeURI(category) +
                             "%20AND%20(search_content:" +
-                            encodeURI(
-                                " " +
-                                    keywords.join(" OR search_content: ") +
-                                    ")"
-                            ) +
+                            encodeURI(" " + keywords.join(" OR search_content: ") + ")") +
                             "&rows=" +
                             encodeURI(numShow) +
                             "&wt=json";
@@ -452,26 +421,22 @@ exports.recordClick = function(req, res) {
 
     var hashID = id.hashCode();
 
-    connection.query(
-        "select doc_id from documents where doc_id=?",
-        [hashID],
-        function(error, results, fields) {
-            if (error) console.log("error occured", error);
-            else if (results.length == 0) {
-                connection.query(
-                    "INSERT INTO documents (doc_id, type, link) VALUES (?)",
-                    [[hashID, type, id]],
-                    function(error, results, fields) {
-                        if (error) {
-                            console.log("error ocurred", error);
-                        } else console.log("Success on recoding doc");
-                    }
-                );
-            } else {
-            }
-            //console.log(results)
+    connection.query("select doc_id from documents where doc_id=?", [hashID], function(error, results, fields) {
+        if (error) console.log("error occured", error);
+        else if (results.length == 0) {
+            connection.query("INSERT INTO documents (doc_id, type, link) VALUES (?)", [[hashID, type, id]], function(
+                error,
+                results,
+                fields,
+            ) {
+                if (error) {
+                    console.log("error ocurred", error);
+                } else console.log("Success on recoding doc");
+            });
+        } else {
         }
-    );
+        //console.log(results)
+    });
 
     if (userID == undefined) {
         userID = -1;
@@ -484,7 +449,7 @@ exports.recordClick = function(req, res) {
             if (error) {
                 console.log("error ocurred", error);
             } else console.log("Success on recoding click");
-        }
+        },
     );
 
     res.send();
@@ -493,77 +458,72 @@ exports.recordClick = function(req, res) {
 exports.checkDuplicatePayment = function(req, res) {
     var paymentAddress = req.body.paymentAddress;
     var session = req.session;
-    connection.query(
-        "select user_id from user where payment_address = ?",
-        [paymentAddress],
-        function(error, results, fields) {
-            if (error) {
-                console.log("error ocurred", error);
-                res.render("error", {
-                    errorMsg: "Error on getting data from DB user table",
-                });
-            } else {
-                console.log("payment address is", paymentAddress);
-                console.log("rows found", results.length);
-                var sendingData = false;
-                if (results.length >= 2) {
-                    sendingData = false;
-                } else if (results.length == 1) {
-                    if (results[0].user_id == session.user_id) {
-                        sendingData = true;
-                    } else {
-                        sendingData = false;
-                    }
-                } else {
+    connection.query("select user_id from user where payment_address = ?", [paymentAddress], function(
+        error,
+        results,
+        fields,
+    ) {
+        if (error) {
+            console.log("error ocurred", error);
+            res.render("error", {
+                errorMsg: "Error on getting data from DB user table",
+            });
+        } else {
+            console.log("payment address is", paymentAddress);
+            console.log("rows found", results.length);
+            var sendingData = false;
+            if (results.length >= 2) {
+                sendingData = false;
+            } else if (results.length == 1) {
+                if (results[0].user_id == session.user_id) {
                     sendingData = true;
+                } else {
+                    sendingData = false;
                 }
-
-                res.send({
-                    sendingData: sendingData,
-                });
+            } else {
+                sendingData = true;
             }
-        }
-    );
-};
 
+            res.send({
+                sendingData: sendingData,
+            });
+        }
+    });
+};
 
 exports.checkDuplicatePublicID = function(req, res) {
     const public_id = req.body.public_id;
     console.log(public_id);
-    connection.query(
-        "select profile_id from connections where profile_id = ?",
-        [public_id],
-        async function(error, results, fields) {
-            if (error) {
-                console.log("error ocurred", error);
-                res.render("error", {
-                    errorMsg: "Error on getting data from connections.",
+    connection.query("select profile_id from connections where profile_id = ?", [public_id], async function(
+        error,
+        results,
+        fields,
+    ) {
+        if (error) {
+            console.log("error ocurred", error);
+            res.render("error", {
+                errorMsg: "Error on getting data from connections.",
+            });
+        } else {
+            await results;
+            if (results.length == 0) {
+                const repeat = false;
+                res.send({
+                    repeat,
                 });
             } else {
-                await results;
-                if (results.length == 0) {
-                    const repeat = false;
-                    res.send({
-                        repeat
-                    });
-                }
-                else {
-                    const repeat = true;
-                    res.send({
-                        repeat
-                    });
-                }
+                const repeat = true;
+                res.send({
+                    repeat,
+                });
             }
         }
-    );
-
+    });
 };
-
 
 exports.userProfile = (req, res) => {
     // user access their own profile while logged in
-    if (req.params.user_id == req.session.user_id && req.session.user_id != null)
-    {
+    if (req.params.user_id == req.session.user_id && req.session.user_id != null) {
         accessProfile(req.session.user_id);
     }
     // user wants to access a public profile
@@ -575,37 +535,48 @@ exports.userProfile = (req, res) => {
                 (error, results, fields) => {
                     if (error) {
                         console.log(error);
-                    }
-                    else if (!results[0]) {
-                        console.log("No results found 1.");
-                        res.redirect("/loginRegister");
+                    } else if (!results[0]) {
+                        res.render("error", {
+                            errorMsg: "User has made their profile private or your url is incorrect.",
+                            showError: true,
+                        });
                         return;
                     } else if (results[0].show_profile === 1) {
                         accessProfile(results[0].user_id);
                     } else if (results[0].user_id === req.session.user_id) {
                         accessProfile(results[0].user_id);
                     } else {
-                        res.redirect("/loginRegister");
+                        res.render("error", {
+                            errorMsg:
+                                "User has made their profile private. You cannot send messages to them or view their profile.",
+                            showError: true,
+                        });
                         return;
                     }
-                }
+                },
             );
         } else {
             connection.query(
-                "select user_id from connections where user_id = ? and show_profile = 1",
+                "select user_id, show_profile from connections where user_id = ?",
                 [req.params.user_id],
                 (error, results, fields) => {
                     if (error) {
                         console.log(error);
-                    }
-                    else if (!results[0]) {
+                    } else if (!results[0]) {
                         console.log("No results found 2.");
                         res.redirect("/loginRegister");
                         return;
-                    } else {
+                    } else if (results[0].show_profile == 1) {
                         accessProfile(results[0].user_id);
+                    } else {
+                        res.render("error", {
+                            errorMsg:
+                                "User has made their profile private. You cannot send messages to them or view their profile.",
+                            showError: true,
+                        });
+                        return;
                     }
-                }
+                },
             );
         }
         return;
@@ -623,8 +594,7 @@ exports.userProfile = (req, res) => {
         ubs.usersBalance().then(results => {
             console.log("user balances:", results);
             for (let i in results.data) {
-                global.userBalanceMap[results.data[i].user_id] =
-                    results.data[i].balance;
+                global.userBalanceMap[results.data[i].user_id] = results.data[i].balance;
             }
 
             user_token_balance = global.userBalanceMap[userID];
@@ -635,7 +605,7 @@ exports.userProfile = (req, res) => {
                 "useid:",
                 userID,
                 "balance:",
-                user_token_balance
+                user_token_balance,
             );
         });
 
@@ -656,11 +626,7 @@ exports.userProfile = (req, res) => {
 
         var resultObj = {};
         resultObj["private"] = user !== req.session.user_id;
-        connection.query("select * from user where user_id=?", [userID], function(
-            error,
-            results,
-            fields
-        ) {
+        connection.query("select * from user where user_id=?", [userID], function(error, results, fields) {
             if (error) {
                 console.log("error ocurred", error);
                 res.render("error", {
@@ -687,15 +653,12 @@ exports.userProfile = (req, res) => {
                                     if (error) {
                                         console.log("error ocurred", error);
                                         res.render("error", {
-                                            errorMsg:
-                                            "Error on insertion into DB Users",
+                                            errorMsg: "Error on insertion into DB Users",
                                         });
                                     } else {
                                         // change display title
                                         results.forEach(dict => {
-                                            dict.level = changeLevelNames(
-                                                dict.level
-                                            );
+                                            dict.level = changeLevelNames(dict.level);
                                         });
 
                                         resultObj["allQuestions"] = results;
@@ -705,79 +668,77 @@ exports.userProfile = (req, res) => {
                                             [userID],
                                             function(error, results, fields) {
                                                 if (error) {
-                                                    console.log(
-                                                        "error ocurred",
-                                                        error
-                                                    );
+                                                    console.log("error ocurred", error);
                                                     res.render("error", {
-                                                        errorMsg:
-                                                        "Error on insertion into DB Users",
+                                                        errorMsg: "Error on insertion into DB Users",
                                                     });
                                                 } else {
                                                     // change display title
                                                     results.forEach(dict => {
-                                                        dict.level = changeLevelNames(
-                                                            dict.level
-                                                        );
+                                                        dict.level = changeLevelNames(dict.level);
                                                     });
 
-                                                    resultObj[
-                                                        "allansweredQuestions"
-                                                    ] = results;
+                                                    resultObj["allansweredQuestions"] = results;
                                                     // console.log('Total data from the userProfile request: ', resultObj);
                                                     connection.query(
                                                         "select user_category.category_id, user_category.`level`, category.category_name from user_category join category on user_category.category_id = category.id where user_id = ?",
                                                         [userID],
-                                                        function(
-                                                            error,
-                                                            results,
-                                                            fields
-                                                        ) {
+                                                        function(error, results, fields) {
                                                             if (error) {
-                                                                console.log(
-                                                                    "error ocurred",
-                                                                    error
-                                                                );
-                                                                res.render(
-                                                                    "error",
-                                                                    {
-                                                                        errorMsg:
-                                                                        "Error on insertion into DB Users",
-                                                                    }
-                                                                );
+                                                                console.log("error ocurred", error);
+                                                                res.render("error", {
+                                                                    errorMsg: "Error on insertion into DB Users",
+                                                                });
                                                             } else {
                                                                 results.forEach(dict => {
-                                                                    dict.level = changeLevelNames(
-                                                                        dict.level
-                                                                    );
+                                                                    dict.level = changeLevelNames(dict.level);
                                                                 });
 
-                                                                resultObj[
-                                                                    "userCategory"
-                                                                ] = results;
+                                                                resultObj["userCategory"] = results;
                                                                 console.log(
                                                                     "user category from userProfile request: ",
-                                                                    results
+                                                                    results,
                                                                 );
+                                                                connection.query(
+                                                                    "select id from messages where receiver_id = ?",
+                                                                    [userID],
+                                                                    (error, results, fields) => {
+                                                                        if (error) {
+                                                                            console.log(error);
+                                                                        } else {
+                                                                            resultObj["in_message_count"] =
+                                                                                results.length;
+                                                                            connection.query(
+                                                                                "select id from messages where sender_id = ?",
+                                                                                [userID],
+                                                                                (error, results, fields) => {
+                                                                                    if (error) {
+                                                                                        console.log(error);
+                                                                                    } else {
+                                                                                        resultObj["out_message_count"] =
+                                                                                            results.length;
 
-                                                                res.render(
-                                                                    "userProfile",
-                                                                    {
-                                                                        data: resultObj,
-                                                                        user_token_balance: user_token_balance,
-                                                                    }
+                                                                                        res.render("userProfile", {
+                                                                                            data: resultObj,
+                                                                                            user_token_balance: user_token_balance,
+                                                                                        });
+                                                                                    }
+                                                                                },
+                                                                            );
+                                                                        }
+                                                                    },
                                                                 );
                                                             }
-                                                        }
+                                                        },
                                                     );
                                                 }
-                                            }
+                                            },
                                         );
                                     }
-                                }
+                                },
                             );
                         }
-                    }
+                    },
                 );
             }
         });
@@ -813,7 +774,7 @@ exports.tokenRanking = function(req, res) {
                 //console.log(results)
                 res.send({ users: results });
             }
-        }
+        },
     );
 };
 
@@ -825,7 +786,7 @@ exports.updateUserProfile = function(req, res) {
     var interests = req.body.interest;
     var levels = req.body.level;
     levels = levels.map(function(n) {
-        return (n !== "" ? n : "Brozen");
+        return n !== "" ? n : "Brozen";
     });
     var userCategoryInterest = [];
     if (typeof interests !== "undefined") {
@@ -839,93 +800,79 @@ exports.updateUserProfile = function(req, res) {
         }
     }
 
-    connection.query(
-        "delete from user_category WHERE user_id = ?",
-        [userID],
-        function(error, results, fields) {
-            if (error) {
-                console.log("error ocurred", error);
-                res.render("error", {
-                    errorMsg: "Error on insertion into DB Users",
-                });
-            } else {
-                //Update category
-                if (userCategoryInterest.length > 0) {
-                    connection.query(
-                        "INSERT INTO user_category (category_id, user_id, level) VALUES ?",
-                        [userCategoryInterest],
-                        function(error, results, fields) {
-                            if (error) {
-                                console.log("error ocurred", error);
-                                res.render("error", {
-                                    errorMsg:
-                                        "Error on insertion into DB Users",
-                                });
-                            }
-                        }
-                    );
-                }
-
-                const showProfile = req.body.showProfile;
+    connection.query("delete from user_category WHERE user_id = ?", [userID], function(error, results, fields) {
+        if (error) {
+            console.log("error ocurred", error);
+            res.render("error", {
+                errorMsg: "Error on insertion into DB Users",
+            });
+        } else {
+            //Update category
+            if (userCategoryInterest.length > 0) {
                 connection.query(
-                    "delete from connections where user_id = ?",
-                    [userID],
-                    (error, results, fields) => {
-                        if (error) {
-                            console.log("error ocurred", error);
-                            res.render("error", {
-                                errorMsg: "Error on deletion",
-                            });
-                        } else {
-                            connection.query(
-                                "INSERT INTO connections (user_id, show_profile) VALUES (?)",
-                                [[userID, showProfile.length === 2 ? 1 : 0]],
-                                // only send 1 if both 1 and 0 are received as checkbox vals
-                                (error, results, fields) => {
-                                        if (error) {
-                                        console.log("error ocurred", error);
-                                        res.render("error", {
-                                            errorMsg:
-                                                "Error on insertion into DB Users",
-                                        });
-                                    }
-                                }
-                            );
-                        }
-                    }
-                );
-
-                //Update Payment, headline etc.
-                var headline_interest = req.body.headline_interest;
-                var headline_status = req.body.headline_status;
-                var headline = headline_status + " - " + headline_interest;
-                connection.query(
-                    "update `user` set `user`.payment_address = ?, `user`.headline = ? WHERE user_id = ?",
-                    [req.body.paymentAddress, headline, userID],
+                    "INSERT INTO user_category (category_id, user_id, level) VALUES ?",
+                    [userCategoryInterest],
                     function(error, results, fields) {
                         if (error) {
                             console.log("error ocurred", error);
                             res.render("error", {
                                 errorMsg: "Error on insertion into DB Users",
                             });
-                        } else {
-                            //console.log(results)
-                            session.wallet = req.body.paymentAddress;
-                            res.redirect("/userProfile/" + userID);
                         }
-                    }
+                    },
                 );
             }
+
+            const showProfile = req.body.showProfile;
+            connection.query("delete from connections where user_id = ?", [userID], (error, results, fields) => {
+                if (error) {
+                    console.log("error ocurred", error);
+                    res.render("error", {
+                        errorMsg: "Error on deletion",
+                    });
+                } else {
+                    connection.query(
+                        "INSERT INTO connections (user_id, show_profile) VALUES (?)",
+                        [[userID, showProfile.length === 2 ? 1 : 0]],
+                        // only send 1 if both 1 and 0 are received as checkbox vals
+                        (error, results, fields) => {
+                            if (error) {
+                                console.log("error ocurred", error);
+                                res.render("error", {
+                                    errorMsg: "Error on insertion into DB Users",
+                                });
+                            }
+                        },
+                    );
+                }
+            });
+
+            //Update Payment, headline etc.
+            var headline_interest = req.body.headline_interest;
+            var headline_status = req.body.headline_status;
+            var headline = headline_status + " - " + headline_interest;
+            connection.query(
+                "update `user` set `user`.payment_address = ?, `user`.headline = ? WHERE user_id = ?",
+                [req.body.paymentAddress, headline, userID],
+                function(error, results, fields) {
+                    if (error) {
+                        console.log("error ocurred", error);
+                        res.render("error", {
+                            errorMsg: "Error on insertion into DB Users",
+                        });
+                    } else {
+                        //console.log(results)
+                        session.wallet = req.body.paymentAddress;
+                        res.redirect("/userProfile/" + userID);
+                    }
+                },
+            );
         }
-    );
+    });
 };
 
 exports.getAllCategory = function(req, res) {
-    connection.query("select * from category", function(
-        error,
-        results,
-        fields
-    ) {
+    connection.query("select * from category", function(error, results, fields) {
         if (error) {
             console.log("error ocurred", error);
             res.render("error", {
@@ -943,11 +890,7 @@ exports.getAllCategoryWithUserCat = function(req, res) {
     var userCategory;
     var session = req.session;
     var userID = session.user_id;
-    connection.query("select * from category", function(
-        error,
-        results,
-        fields
-    ) {
+    connection.query("select * from category", function(error, results, fields) {
         if (error) {
             console.log("error ocurred", error);
             res.render("error", {
@@ -955,26 +898,94 @@ exports.getAllCategoryWithUserCat = function(req, res) {
             });
         } else {
             category = results;
-            connection.query(
-                "select * from user_category where user_id = ?",
-                [userID],
-                function(error, results, fields) {
-                    if (error) {
-                        console.log("error ocurred", error);
-                        res.render("error", {
-                            errorMsg: "Error on insertion into DB Users",
-                        });
-                    } else {
-                        userCategory = results;
-                        res.send({
-                            allCategories: category,
-                            userCategories: userCategory,
-                        });
-                    }
+            connection.query("select * from user_category where user_id = ?", [userID], function(
+                error,
+                results,
+                fields,
+            ) {
+                if (error) {
+                    console.log("error ocurred", error);
+                    res.render("error", {
+                        errorMsg: "Error on insertion into DB Users",
+                    });
+                } else {
+                    userCategory = results;
+                    res.send({
+                        allCategories: category,
+                        userCategories: userCategory,
+                    });
                 }
+            });
+        }
+    });
+};
+
+exports.sendMessage = (req, res) => {
+    const userID = req.session.user_id;
+    const msg = req.body.msg;
+    connection.query("select user_id from user where user_name = ?", [req.body.receiver], (error, results, fields) => {
+        if (error) {
+            console.log(error);
+            res.send({ result: "Message not sent." });
+        } else {
+            const receiverID = results[0].user_id;
+            connection.query(
+                "insert into messages (sender_id, receiver_id, message, timestamp) values (?, ?, ?, NOW())",
+                [userID, receiverID, msg],
+                (error, results, fields) => {
+                    if (error) {
+                        console.log(error);
+                        res.send({ result: "Message not sent." });
+                    } else {
+                        console.log("Message sent successfully.");
+                        res.send({ result: "Message sent." });
+                    }
+                },
             );
         }
     });
+};
+
+exports.messages = (req, res, isInbox) => {
+    const userID = req.session.user_id;
+    const userType = isInbox ? "receiver_id" : "sender_id";
+    const displayedType = !isInbox ? "receiver_id" : "sender_id";
+    connection.query(
+        "select message, " +
+            displayedType +
+            ", timestamp from messages where " +
+            userType +
+            " = ? order by timestamp desc",
+        [userID],
+        (error, results, fields) => {
+            if (error) {
+                console.log(error);
+            } else if (results.length > 0) {
+                const data = results;
+                const users = [];
+                data.forEach(dict => {
+                    users.push(dict[displayedType]);
+                });
+                console.log(data);
+                connection.query(
+                    "select user_name, user_id from user where user_id in (?)",
+                    [users],
+                    (error, results, fields) => {
+                        id_name_map = {};
+                        results.forEach(dict => {
+                            id_name_map[dict.user_id] = dict.user_name;
+                        });
+                        data.forEach(dict => {
+                            dict.user_id = id_name_map[dict[displayedType]];
+                        });
+                        res.render("messages", { data, isInbox });
+                    },
+                );
+            } else {
+                res.render("messages", {});
+            }
+        },
+    );
 };
 
 // module.exports = router;

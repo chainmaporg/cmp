@@ -198,7 +198,7 @@ CREATE TABLE `messages` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `sender_id` int(11) NOT NULL,
     `receiver_id` int(11) NOT NULL,
-    `message` varchar(1600) COLLATE utf8_unicode_ci NOT NULL,
+    `message` text COLLATE utf8_unicode_ci NOT NULL,
     `timestamp` datetime NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
