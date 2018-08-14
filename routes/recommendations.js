@@ -8,7 +8,13 @@ exports.getTopLinks = () => {
                     reject(error);
                 } else {
                     resultLinks = [];
-                    for (let i = 0; i < 5; i++) {
+                    console.log("results length:", results.length);
+                    
+                    t=5;
+                    if (results.length<5) {
+                    	t= results.length;
+                    }
+                    for (let i = 0; i < t; i++) {
                         resultLinks.push(results[i].link);
                     }
                     resolve(resultLinks);
