@@ -9,3 +9,6 @@ routes/.DS_Store
 *.log
 .vscode
 .idea
+Session.vim
+tslint.json
+*.ts

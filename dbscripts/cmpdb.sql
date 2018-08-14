@@ -19,6 +19,7 @@ DROP TABLE IF EXISTS `materials`;
 CREATE TABLE `materials` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`type` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+	`subtype` varchar(20) COLLATE utf8_unicode_ci NOT NULL,	
 	`description` text COLLATE utf8_unicode_ci NOT NULL,
 	`link` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
 	`name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,       
@@ -41,19 +42,28 @@ CREATE TABLE `answer` (
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `company_id` int(11) NOT NULL,
-  `firstname` varchar(255) NOT NULL,
-  `lastname` varchar(255) NOT NULL,
-  `user_name` varchar(255) NOT NULL,
-  `user_email` varchar(255) NOT NULL,
-  `user_phone` varchar(20) NOT NULL,
-  `password` varchar(32) NOT NULL,
-  `payment_address` varchar(255) NOT NULL DEFAULT '' COMMENT 'Not sure what should be the length of the payment address field.',
-  `is_reviewer` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0 => Not a reviewer, 1 => This developer is a reviewer also.',
-  `headline` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`user_id`)
+    `user_id` int(11) NOT NULL AUTO_INCREMENT,
+    `company_id` int(11) NOT NULL,
+    `firstname` varchar(255) NOT NULL,
+    `lastname` varchar(255) NOT NULL,
+    `user_name` varchar(255) NOT NULL,
+    `user_email` varchar(255) NOT NULL,
+    `user_phone` varchar(20) NOT NULL,
+    `password` varchar(32) NOT NULL,
+    `payment_address` varchar(255) NOT NULL DEFAULT '' COMMENT 'Not sure what should be the length of the payment address field.',
+    `is_reviewer` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0 => Not a reviewer, 1 => This developer is a reviewer also.',
+    `headline` varchar(255) NOT NULL DEFAULT '',
+    PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `connections`;
+CREATE TABLE `connections` (
+    `user_id` int(11) NOT NULL,
+    `show_profile` tinyint(1) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 -- ----------------------------
 -- Table structure for `company`
@@ -128,7 +138,9 @@ CREATE TABLE `socialgroup` (
 DROP TABLE IF EXISTS `click`;
 CREATE TABLE `click` (
     `user_id` int(11) NOT NULL,
-    `doc_id` int(11) NOT NULL
+    `doc_id` int(11) NOT NULL,
+    `session_id` varchar(32) NOT NULL,
+    `timestamp` datetime NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `keywords`;
@@ -143,6 +155,52 @@ CREATE TABLE `documents` (
     `type` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
     `link` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
     PRIMARY KEY (`doc_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+/* vote_direction is 1 if upvote, 0 if downvote */
+DROP TABLE IF EXISTS `answer_votes`;
+CREATE TABLE `answer_votes` (
+    `answer_id` int(15) NOT NULL,
+    `user_id` int(11) NOT NULL,
+    `vote_direction` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/* vote_direction is 1 if upvote, 0 if downvote */
+DROP TABLE IF EXISTS `challenge_votes`;
+CREATE TABLE `challenge_votes` (
+    `challenge_id` int(15) NOT NULL,
+    `user_id` int(11) NOT NULL,
+    `vote_direction` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/* ip information is stored in hex, so it will not be visible in a simple select */
+DROP TABLE IF EXISTS `ip`;
+CREATE TABLE `ip` (
+    `ip` VARCHAR(45) NOT NULL,
+    `timestamp` datetime NOT NULL 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
+
+
+DROP TABLE IF EXISTS `company_events`;
+CREATE TABLE `company_events` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`type` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+	`name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,   
+	`description` text COLLATE utf8_unicode_ci NOT NULL,
+	`event_img_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL, 
+	`event_link` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
+	`created` datetime NOT NULL,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+DROP TABLE IF EXISTS `messages`;
+CREATE TABLE `messages` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `sender_id` int(11) NOT NULL,
+    `receiver_id` int(11) NOT NULL,
+    `message` text COLLATE utf8_unicode_ci NOT NULL,
+    `timestamp` datetime NOT NULL,
+    PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 

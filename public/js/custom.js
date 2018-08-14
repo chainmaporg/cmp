@@ -858,7 +858,7 @@ jQuery(document).ready(function ($) {
 						}
 
 
-						divElement = divElement + "<div class='profile_interest'>" + "<input id='poll-" + i + "' name='interest' type='checkbox' " + checked + " value='" + data.allCategories[i].id + "'>";
+						divElement = divElement + "<div><div class='profile_interest'>" + "<input id='poll-" + i + "' name='interest' type='checkbox' " + checked + " value='" + data.allCategories[i].id + "'>";
 						divElement = divElement + '<label for="poll-' + i + '">' + data.allCategories[i].category_name + '</label></div>';
 						divElement = divElement + '<div class="profile_interest"><select id="level" name="level">';
 						divElement = divElement + '<option value="">Select your Proficiency Level</option><option value="Diamond" '+diamonCheck+'>Diamond</option>';
@@ -866,8 +866,41 @@ jQuery(document).ready(function ($) {
 					}
 				}
 				$("#profile_interest").html(divElement);
-				$("#paymentAddress").val($("#paymentAddressSpan").html().trim())
-				$("#headline").val($("#headlineSpan").html().trim())
+				
+				if ($("#headlineSpan")){
+					var headlineDetails = $("#headlineSpan").html().trim();
+					headlineDetails = headlineDetails.split("-");
+					if (headlineDetails[0].trim() == ""){
+						$("#headline_status").val("I want to get hired");
+					}else{
+						state = false;
+						$('#headline_status').find('option').each(function(){
+							if ($(this).val() === headlineDetails[0].trim()) {
+								$(this).prop('selected',true);
+								state = true
+							}
+						});
+						if (state == false)
+							$("#headline_status").val("I want to get hired");
+					}			
+
+					$("#headline_interest").val(headlineDetails.splice(1, headlineDetails.length-1))
+				}
+				else
+				{
+					$("#headline_status").val("I want to get hired");
+					$("#headline_interest").val("");
+				}
+				
+				
+				if($("#paymentAddressSpan")){
+					$("#paymentAddress").val($("#paymentAddressSpan").html().trim())
+				}
+				else {
+					$("#paymentAddress").val("")
+				}
+				
+				
 			},
 			error: function () {
 				alert('An error occured. Please try again later or contact with us.');

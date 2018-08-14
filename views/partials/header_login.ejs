@@ -196,43 +196,44 @@ the html attributes. -->
     </h2>
     <div class="form-style form-style-3">
 
-        <form action="/updateUserProfile" method="POST">
+        <form action="/updateUserProfile" method="POST" onsubmit="return checkPaymentAddress(this)" id="updateUserProfileProfileForm">
             <div class="form-inputs clearfix">
                 <p>
-                    Please select your topic interest and proficieny level on that topic. This will be helpful for us to 
-                    recommend our courses for you.
+                    Please select your topic interest and proficiency level on that topic. This will be helpful for us to recommend our courses
+                    for you.
                 </p>
                 <div id="profile_interest">
-                    <div>
-                        <div class="profile_interest">
-                            <input id="poll-1" name="interest" type="checkbox">
-                            <label for="poll-1">The first option</label>
-                        </div>
-                        <div class="profile_interest">
 
-                            <select required="" id="level" name="level">
-                                <option value="Diamond">Diamond</option>
-                                <option value="Gold">Gold</option>
-                                <option value="Silver">Silver</option>
-                                <option value="Brozen">Brozen</option>
-                            </select>
-
-
-                        </div>
-                        <div class="clear"></div> 
-                    </div>
 
 
                 </div>
                 <p>
-                    <label class="required">Headline</label>
-                    <input type="text" name="headline" id="headline">
+                    <label class="required">Headline(Status and Interest)</label>
+                    <select id="headline_status" name="headline_status">
+                        
+                        <option value="I want to get hired" selected>I want to get hired</option>
+                        <option value="I want to hire">I want to hire</option>
+                        <option value="I want to build a team">I want to build a team</option>
+                        <option value="I want to learn">I want to learn</option>
+                    </select>
+                    <input type="text" name="headline_interest" id="headline_interest">
                 </p>
                 <p>
-                    <label class="required">Payment Address <a href="https://medium.com/nebulasio/creating-a-nas-wallet-9d01b5fa2df6" target="_blank">(NAS Wallet)
-                    </a></label>
+                    <label class="required">Payment Address
+                        <a href="https://medium.com/nebulasio/creating-a-nas-wallet-9d01b5fa2df6" target="_blank">(NAS Wallet starting with "n1")
+                        </a>
+                    </label>
                     <input type="text" name="paymentAddress" id="paymentAddress">
                 </p>
+                <p>
+                    <label>
+                        <input type='hidden' value='0' id='showProfile' name='showProfile'>
+                        <input type='checkbox' value='1' id='showProfile' name='showProfile'>  
+                        Allow Others to See My Profile (Email, Wallet will be hidden.)
+                        <br> @ chainmap.org/userProfile/YOUR_USERNAME 
+                    </label>
+                </p>
+
 
             </div>
 
@@ -249,6 +250,55 @@ the html attributes. -->
 
 
 <script type="text/javascript">
+
+
+    function checkPaymentAddress() {
+        // userID = '<%= session.user_id%>';
+
+        url = "/checkDuplicatePayment";
+        var status;
+        var paymentAddress = $("#paymentAddress").val();
+        if (paymentAddress != "") {
+            var firstCharacter = paymentAddress.substring(0, 2);
+            if (firstCharacter != "n1") {
+                alert("Invalid Payment Address")
+                return false;
+            }
+            $.ajaxSetup({ 'async': false });
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: {
+                    paymentAddress: paymentAddress,
+                },
+                async: false,
+                success: function (data) {
+                    if (data.sendingData == false){
+                        
+                        status = false;
+                    }
+                    else{
+                        status = true;
+                    }
+                },
+                error: function () {
+                    alert('Error occured. Please try again.');
+                    return false;
+                }
+            });
+            $.ajaxSetup({ 'async': true });
+            if (status == false){
+                alert("Duplicate Payment Address");
+                return false
+            }   
+            else
+                return true;
+        }
+        else{
+            return true;
+        }
+
+    }
     // var gMode = "select";
     // function selectMode(mode) {
     //     if (mode == "select") {

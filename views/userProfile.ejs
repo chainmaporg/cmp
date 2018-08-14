@@ -17,6 +17,16 @@
                 $.post("http://" + $(location).attr("hostname") + "/log", {id:link, type:t});
                 return true;
             }
+            
+            var userIDExists;
+            function loadSessionUserID()
+            {
+                $.get("http://" + $(location).attr("hostname") + "/loadSessionUserID", function(data)
+                {
+                    userIDExists = data.idExists;
+                });
+            }
+            window.onload = loadSessionUserID;
         </script>
 
         <div class="loader">
@@ -83,7 +93,11 @@
                                                                 <%=data.userProfile[0].lastname%>
                                                             </span>
                                                         </li> -->
+                                                        <%
+                                                        if((!data.private) && (data.private !== null)) 
+                                                        { %>
                                                         <li>
+
                                                             <i class="icon-plus"></i>Username :
                                                             <span>
                                                                 <%=data.userProfile[0].user_name%>
@@ -100,23 +114,34 @@
                                                             <i class="icon-plus"></i>Payment address :
                                                             <span>
                                                                 <%
-                                        if (data.userProfile[0].payment_address.length > 0){
-                                        %>
-                                                                    <span id="paymentAddressSpan">
-                                                                        <%=data.userProfile[0].payment_address%>
-                                                                    </span>
-                                                                    <% } else {%>
+                                                               if (data.userProfile[0].payment_address.length > 0){
+                                                               %>
+                                                               <span id="paymentAddressSpan">
+                                                                   <%=data.userProfile[0].payment_address%>
+                                                               </span>
+                                                               <% } else {%>
 
-                                                                        <blockquote>
-                                                                            <p>Payment address is not set.
-                                                                                <a href="https://medium.com/nebulasio/creating-a-nas-wallet-9d01b5fa2df6" target="_blank">You can check here to set up payment address.
-                                                                                </a>
-                                                                            </p>
+                                                               <blockquote>
+                                                                   <p>Payment address is not set.
+                                                                   <a href="https://medium.com/nebulasio/creating-a-nas-wallet-9d01b5fa2df6" target="_blank">You can check here to set up payment address.
+                                                                   </a>
+                                                                   </p>
 
-                                                                        </blockquote>
-                                                                        <% } %>
+                                                               </blockquote>
+                                                               <% } %>
+
                                                             </span>
                                                         </li>
+
+                                                        <li>
+                                                            <i class="icon-map-marker"></i>Public Url :
+                                                            <span>
+                                                                <a href="<%=data.userProfile[0].user_name%>">chainmap.org/userProfile/<%=data.userProfile[0].user_name%></a>
+                                                            </span>
+                                                        </li>
+
+                                                        <% } %>
+
                                                         <li>
                                                             <i class="icon-map-marker"></i>Headline :
                                                             <span id="headlineSpan">
@@ -149,15 +174,22 @@
                                                             <% if (data.userProfile[0].user_id == session.user_id){ %>
                                                                 <span>
                                                                     <a href="javascript:" id="EditPaymentAddressClick" class="button small blue-button custom-button">
-                                                                        <i class="icon-edit">Update Profile</i> - to get better personalized recommendation!
+                                                                        <i class="icon-edit"><b>   Update Profile</b></i>
                                                                     </a>
                                                                 </span>
+                                      
+                                                                    <span style="font-size:14px"> Get CMAP Tokens! Get personalized recommendation!
+                                                                    </span>
+                                             
                                                                 <% } %>
                                                         </li>
 
 
                                                     </ul>
                                                 </div>
+
+                                                
+
                                                 <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi adipiscing
                                                     gravida odio, sit amet suscipit risus ultrices eu. Fusce viverra neque
                                                     at purus laoreet consequat. Vivamus vulputate posuere nisl quis consequat.
@@ -207,9 +239,115 @@
                                         <!-- End col-md-12 -->
                                         
                                         <div class="col-md-12">
+
+                                                <% if((data.private) && (data.private !== null)) { %>
+
+                                                <div id="message" class="page-content page-content-user-profile">
+                                                    <div class="user-profile-widget">
+                                                        <h2>Leave a message for this user</h2>
+                                                    </div>
+                                                    <form action="javascript:" method="post" id="commentform" class="comment-form">
+                                                        <div id="respond-textarea">
+                                                            <p>
+                                                            <textarea id="message_txt" name="message_txt" aria-required="true" cols="100" rows="8"></textarea>
+                                                            </p>
+                                                        </div>
+                                                        <p class="form-submit">
+                                                        <input name="submit" type="submit" id="submit" value="Send your message" class="button small color" onclick="return(checkMessage('<%-data.userProfile[0].user_name%>'));">
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                                <% } else { 
+                                                    let inUrl = "../inbox";
+                                                    let outUrl = "../outbox";
+                                                %>
+                                                <div class="col-md-12">
+                                                    <div class="page-content page-content-user-profile">
+                                                        <div class="user-profile-widget">
+                                                            <h2>Connections</h2>
+                                                            <p> Remember to set your profile to public in the "Update Profile" menu to receive messages from other users! </p>
+                                                            <div class="ul_list ul_list-icon-ok">
+                                                                <ul>
+                                                                    <li>
+                                                                        <i class="icon-comment"></i>
+                                                                        <a href="<%=inUrl %>"> Your Inbox
+                                                                            <span> (
+                                                                                <span>
+                                                                                    <%=data.in_message_count%>
+                                                                                </span> ) </span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="icon-comment"></i>
+                                                                        <a href="<%=outUrl %>"> Your Outbox
+                                                                            <span> (
+                                                                                <span>
+                                                                                    <%=data.out_message_count%>
+                                                                                </span> ) </span>
+                                                                        </a>
+                                                                    </li>
+                                                                 </ul>
+                                                            </div>
+                                                        </div>
+                                                        <!-- End user-profile-widget -->
+                                                    </div>
+                                                    <!-- End page-content -->
+                                                </div>
+
+                                                <% } %>
+
+                                        </div>
+
+                                        <script>
+                                            function checkMessage(receiver)
+                                            {
+                                                let allowMessage = userIDExists;
+                                                console.log(userIDExists);
+                                                if (!allowMessage) {
+                                                    alert("Please login to send a message.");
+                                                    return false;
+                                                }
+                                                else {
+                                                    allowMessage = sendMessage(receiver);
+                                                    return allowMessage;
+                                                }
+                                            }
+
+                                            function sendMessage(receiver) {
+                                                var url = "/sendMessage";
+                                                var msg = $("#message_txt").val();
+                                                if (msg.length <= 2) {
+                                                    alert('Cannot send empty message.');
+                                                    return false;
+                                                }
+                                                else {
+                                                    $.when($.ajax({
+                                                        type: 'POST',
+                                                        url: url,
+                                                        data: {
+                                                            msg: msg,
+                                                            receiver: receiver,
+                                                        },
+                                                        async: false,
+                                                        success: function (data) {
+                                                            alert(data.result);
+                                                            var successful = true;
+                                                        },
+                                                        error: function () {
+                                                            var successful = false;
+                                                            alert('Message could not be sent. Please try again later.');
+                                                        }
+                                                    })).then(() => {return successful});
+                                                }
+                                            }
+
+                                        </script>
+
+                                        <div class="col-md-12">
                                             <div class="page-content page-content-user-profile">
                                                 <div class="user-profile-widget">
-                                                    <h2>Recommendations</h2>
+                                                    <h2>Document Recommendations</h2>
+                                                    <p id=keywords>Relevant topics:&nbsp</p>
                                                     <div class="ul_list ul_list-icon-ok">
 
                                                             <li>Chinese: <a href="https://github.com/Ebookcoin/ebookcoin" onclick = "return logClick(this);" type="training material">Node.js区块链开发</a></li>
@@ -223,17 +361,19 @@
                                                         </ul>
 
                                                             <script type="text/javascript">
-
-                                                                var host = $(location).attr("hostname")
                                                                 var reqUrl = "http://" + $(location).attr("hostname") + "/getRecommendations";
                                                                 $.when($.get(reqUrl)).done((r) => {
+                                                                    var recommendations = r.recommendations
+                                                                    var keywords = r.keywords
+                                                                    document.getElementById("keywords").innerText += keywords.join(", ")
+
                                                                 for (i=0; i < 6; i++) 
                                                                 {
-                                                                    var link = r[i]["url"];
-                                                                    var category = String(r[i]["category"]).charAt(0).toUpperCase() + String(r[i]["category"]).slice(1);
-                                                                    var title = String(r[i]["title"]);
+                                                                    var link = recommendations[i]["url"];
+                                                                    var category = String(recommendations[i]["category"]).charAt(0).toUpperCase() + String(recommendations[i]["category"]).slice(1);
+                                                                    var title = String(recommendations[i]["title"]);
                                                                     title = title.replace(/^[0-9]+/,"").replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()).replace(/ /g, "&nbsp");
-                                                                    document.getElementById("link"+i).innerHTML=category + ":&nbsp<a href=\"" + link +"\"" + " onclick = \"return logClick(this);\"type=" + category + ">" + title + "</a>";
+                                                                    document.getElementById("link"+i).innerHTML= category + " author" + ":&nbsp<a href=\"" + link +"\"" + " onclick = \"return logClick(this);\"type=" + category + ">" + title + "</a>";
                                                                 }
                                                                 });
 

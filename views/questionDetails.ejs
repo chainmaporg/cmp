@@ -69,12 +69,8 @@
                                             <div class="question-inner">
                                                 <div class="clearfix"></div>
                                                 <div class="question-desc">
-
-                                                        <% 
-                                                            var value = data.challengedetails[0].description.replace(/[\r\n]+/g," <br/> ").replace(/\s/g, '&nbsp;');
-                                                            
-                                                        %>
-                                                        <%- value %>
+                                                    <% var value = data.challengedetails[0].description.replace(/[\r\n]+/g," <br/> ").replace(/\s/g, ' '); %>
+                                                    <%- value %>
                                                 </div>
                                                 <div class="question-details">
                                                     <%
@@ -302,14 +298,8 @@
                                                         <div class="text" >
                                                             <br/>
                                                             <br/>
-                                                                
-                                                                <%  description = data.answers[i].description.replace(/[\r\n]+/g," <br/> ").replace(/\s/g, '&nbsp;');%>
-                                                                <%-description%>
-                                                            
-                                                                
-                                                            
-                                                                
-                                                            
+                                                            <% var description = data.answers[i].description.replace(/[\r\n]+/g," <br/> ").replace(/\s/g, ' ');%>
+                                                            <%- description %>
                                                         </div>
                                                         <!-- <div class="question-answered question-answered-done">
                                                         <i class="icon-ok"></i>Best Answer</div> -->

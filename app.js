@@ -9,6 +9,23 @@ var fs = require('fs');
 var mysql = require('mysql');
 
 
+var logIP = function(req, res) {
+    if (!req.session.logged) {
+        console.log("New unique session.");
+        console.log(req.connection.remoteAddress);
+        req.session.logged = true;
+        connection.query(
+            "INSERT INTO ip (ip, timestamp) VALUES (?, NOW())",
+            [req.connection.remoteAddress],
+            function(error, results, fields) {
+                if (error) console.log("Error: ", error);
+            }
+        );
+    }
+};
+
+
+
 // var usersRouter = require('./routes/users');
 
 //var configFile = '../' + require('os').hostname() + '.js';
@@ -50,6 +67,7 @@ startMysqlConnection();
 
 
 require('./libs/UserBalanceService');
+var indexRouter = require('./routes/index');
 
 var app = express();
 app.use(session({
@@ -68,12 +86,13 @@ outputGraph.getMappings();
 
 app.use(function(req, res, next) {
   res.locals.session = req.session;
+  logIP(req, res);
   next();
 });
 
 // app.set('view engine', 'pug');
 app.set('view engine', 'ejs');
-// app.use(express.static('public'))
+app.use(express.static('public'))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -84,8 +103,6 @@ app.use(cookieParser());
 // app.use('/css',express.static(path.join(__dirname, 'public/stylesheets')));
 app.use(express.static('image'));
 
-
-var indexRouter = require('./routes/index');
 
 app.use('/', indexRouter);
 // app.use('/users', usersRouter);

@@ -19,45 +19,18 @@
 			<% include ./partials/header_login %>
 
 				<% include ./partials/body_header %>
-
-
-
-
-
-
-
-
-					<div class="breadcrumbs">
-						<section class="container">
-							<div class="row">
-								<div class="col-md-12">
-									<h1>Login</h1>
-								</div>
-								<div class="col-md-12">
-									<div class="crumbs">
-										<a href="/">Home</a>
-										<span class="crumbs-span">/</span>
-										<span class="current">Login/Register</span>
-									</div>
-								</div>
-							</div>
-							<!-- End row -->
-						</section>
-						<!-- End container -->
-					</div>
-					<!-- End breadcrumbs -->
 					<!-- <% include ./partials/alert_msg %> -->
 					<section class="container main-content">
 						<div class="login">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="page-content">
-										<h2>Login</h2>
+										<h2>Admin Login Page</h2>
 										<div class="form-style form-style-3">
-											<form action="/login" method="POST">
+											<form action="/adminLogin" method="POST">
 												<div class="form-inputs clearfix">
 													<p class="login-text">
-														<input type="text" placeholder="Email or UserName" name="email" required>
+														<input type="text" placeholder="Admin Username" name="username" required>
 														<i class="icon-user"></i>
 													</p>
 													<p class="login-password">
@@ -79,15 +52,6 @@
 									<!-- End page-content -->
 								</div>
 								<!-- End col-md-6 -->
-								<div class="col-md-6">
-									<div class="page-content">
-										<h2>Register Now</h2>
-										<p>Register now to start post challenges, give answers or vote and earn <a href="aboutToken"><b>CMAP token</b></a> and higher ranking to get hired! ChainMap shall focus on your needs to recommend the learning path for you to become a blockchain expert! </p>
-										<a class="button small color signup">Create an account</a>
-									</div>
-									<!-- End page-content -->
-								</div>
-								<!-- End col-md-6 -->
 							</div>
 							<!-- End row -->
 						</div>
@@ -104,13 +68,6 @@
 		<!-- footer started -->
 		<% include ./partials/footer_js %>
 			<!-- footer end -->
-			<script type="text/javascript">
-				$("#signup").on("show", function () {
-					$("body").addClass("modal-open");
-				}).on("hidden", function () {
-					$("body").removeClass("modal-open")
-				});
-			</script>
 	</body>
 
 </html>

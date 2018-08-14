@@ -22,6 +22,8 @@
                 return true;
             }
         </script>
+        
+        
 
         <div class="loader">
             <div class="loader_html"></div>
@@ -39,13 +41,22 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <h2>Welcome to the Chainmap BlockChain Knowledge Center</h2>
-                                        <%        
-                							if (typeof session == 'undefined' || typeof session.email == 'undefined'){
-                						%>
+
+               						
                                         <p>
-                                        <center><a href="/loginRegister" class="button small green-button custom-button">Register Now to see Chinese/English book "Use Node.js to Build Blockchain" </a></center>
+                                        <a href="/trainingMaterial_Introduction">Introduction</a>
+  										<a href="/trainingMaterial_Infrastructure" ">Infrastructur</a>
+                                        <a href="/trainingMaterial_Hyperledger" ">Hyperledger</a>
+                                        <a href="/trainingMaterial_Bitcoin" ">Bitcoin</a>
+                                        
+                                        <a href="/trainingMaterial_Ethereum" ">Ethereum</a>
+                                        <a href="/trainingMaterial_UseCases" ">UseCases</a>
+                                        <a href="/trainingMaterial_OtherProtocol" ">OtherProtocol</a>
+                                        <a href="/trainingMaterial_Training" ">Training</a>
+                                 
+                                        
                                         </p>
-                                         <% } %> 
+
                                         <div class="clearfix"></div>
                                         <!-- <a class="color button dark_button medium" href="#">About Us</a>
                                         <a class="color button dark_button medium" href="#">Join Now</a> -->
@@ -59,155 +70,69 @@
                         <!-- End container -->
                     </div>
                     <!-- End section-warp -->
-
+					
                     <section class="container main-content">
                         <div class="row">
                             <div class="col-md-9">
 
                                 <div class="tabs-warp question-tab">
+                                
+                                
                                     <ul class="tabs">
+                                                        
                                         <li class="tab">
-                                            <a href="#" class="current">Infrastructure</a>
-                                        </li>
+                                            <a href="#" class="current"><%=subtypes[0]%></a>
+                                        </li>                                          
+                                 		<% for(var i = 1;i < subtypes.length;i++) {%>                              
                                         <li class="tab">
-                                            <a href="#">Collection</a>
+                                            <a href="#"> <%=subtypes[i]%> </a>
                                         </li>
-                                        <li class="tab">
-                                            <a href="#">Use Case/App</a>
-                                        </li>
-                                        <li class="tab">
-                                            <a href="#">Developer Guide</a>
-                                        </li>
-                                        
+                                        <% } %> 
                                     </ul>
-                                    <div class="tab-inner-warp">
+                                    
+                                  <%
+                                  	
+                                  	for(var t = 0;t < subtypes.length;t++) {                                   	
+                                  %>
+                                  <div class="tab-inner-warp">
                                         <div class="tab-inner">
-                                            <% if(data.Infrastructure.length){ 
-                                                    for(var i = 0;i < data.Infrastructure.length;i++) { %>
+                                            <% st = subtypes[t];
+                                               list = data[st];
+                                            for(var i=0; i< list.length; i++) {  %>
                                                 <article class="post blog_2 clearfix">
                                                     <div class="post-inner">
                                                         <h2 class="post-title">
-                                                            <a href="javascript:"><%=data.Infrastructure[i].name%></a>
+                                                            <a href="javascript:"><%=list[i].name%></a>
                                                         </h2>
-                                                        <!-- <div class="post-img"><a href="single_post.html"><img src="http://placehold.it/250x160/222/FFF" alt=""></a></div> -->
                                                         <div class="post-meta">
                                                             <span class="meta-author">
                                                                 <i class="icon-user"></i>
-                                                                <a href="javascript:"><%=data.Infrastructure[i].created%></a>
+                                                                <a href="javascript:"><%=list[i].created%></a>
                                                             </span>
                                                         </div>
                                                         <div class="post-content">
-                                                            <p><%=data.Infrastructure[i].description%></p>
-                                                            <a href="<%=data.Infrastructure[i].link%>" onclick = "return logClick(this);" class="post-read-more button color small" target="_blank" type="training material">Continue reading</a>
+                                                            <p style="font-size:14px"><%=list[i].description%></p>
+                                                            <%        
+                							                  if (typeof session == 'undefined' || typeof session.email == 'undefined'){
+                						                    %>
+                                        
+                                                               <a href="/loginRegister" class="button small green-button custom-button">Login/Register to get recommendations </a></center>
+                                       
+                                                            <% } %> 
+                                                            <a href=<%=list[i].link%> onclick = "return logClick(this);" class="post-read-more button color small" target="_blank" type="training material">Continue reading</a>
 
                                                         </div>
                                                         <!-- End post-content -->
                                                     </div>
                                                     <!-- End post-inner -->
                                                 </article>
-                                                <!-- <a href="#" class="load-questions">
-                                                        <i class="icon-refresh"></i>Load More Questions</a> -->
-                                                <% }} %>
-                                        </div>
-                                    </div>
-                                    <div class="tab-inner-warp">
-                                        <div class="tab-inner">
-
-                                                <% if(data.Collection.length){ 
-                                                    for(var i = 0;i < data.Collection.length;i++) { %>
-                                                <article class="post blog_2 clearfix">
-                                                    <div class="post-inner">
-                                                        <h2 class="post-title">
-                                                            <a href="javascript:"><%=data.Collection[i].name%></a>
-                                                        </h2>
-                                                        <!-- <div class="post-img"><a href="single_post.html"><img src="http://placehold.it/250x160/222/FFF" alt=""></a></div> -->
-                                                        <div class="post-meta">
-                                                            <span class="meta-author">
-                                                                <i class="icon-user"></i>
-                                                                <a href="javascript:"><%=data.Collection[i].created%></a>
-                                                            </span>
-                                                        </div>
-                                                        <div class="post-content">
-                                                            <p><%=data.Collection[i].description%></p>
-                                                            <a href="<%=data.Collection[i].link%>" onclick = "return logClick(this);" class="post-read-more button color small" target="_blank"type="training material">Continue reading</a>
-                                                        </div>
-                                                        <!-- End post-content -->
-                                                    </div>
-                                                    <!-- End post-inner -->
-                                                </article>
-                                                <!-- <a href="#" class="load-questions">
-                                                        <i class="icon-refresh"></i>Load More Questions</a> -->
-                                                <% }} %>
-                                            <!-- <a href="#" class="load-questions">
-                                                <i class="icon-refresh"></i>Load More Questions</a> -->
-                                        </div>
-                                    </div>
-                                    <div class="tab-inner-warp">
-                                        <div class="tab-inner">
-                                            <% if(data.Usecase.length){ 
-                                                for(var i = 0;i < data.Usecase.length;i++) { %>
-                                            <article class="post blog_2 clearfix">
-                                                <div class="post-inner">
-                                                    <h2 class="post-title">
-                                                        <a href="javascript:"><%=data.Usecase[i].name%></a>
-                                                    </h2>
-                                                    <!-- <div class="post-img"><a href="single_post.html"><img src="http://placehold.it/250x160/222/FFF" alt=""></a></div> -->
-                                                    <div class="post-meta">
-                                                        <span class="meta-author">
-                                                            <i class="icon-user"></i>
-                                                            <a href="javascript:"><%=data.Usecase[i].created%></a>
-                                                        </span>
-                                                    </div>
-                                                    <div class="post-content">
-                                                        <p><%=data.Usecase[i].description%></p>
-                                                        <a href="<%=data.Usecase[i].link%>" onclick = "return logClick(this);" class="post-read-more button color small" target="_blank" type="training material">Continue reading</a>
-                                                    </div>
-                                                    <!-- End post-content -->
-                                                </div>
-                                                <!-- End post-inner -->
-                                            </article>
-                                            <!-- <a href="#" class="load-questions">
-                                                    <i class="icon-refresh"></i>Load More Questions</a> -->
-                                            <% }} %>
-
-                                            <!-- <a href="#" class="load-questions">
-                                                <i class="icon-refresh"></i>Load More Questions</a> -->
-                                        </div>
-                                    </div>
-                                    <div class="tab-inner-warp">
-                                        <div class="tab-inner">
-
-                                            <% if(data.DevGuide.length){ 
-                                                for(var i = 0;i < data.DevGuide.length;i++) { %>
-                                            <article class="post blog_2 clearfix">
-                                                <div class="post-inner">
-                                                    <h2 class="post-title">
-                                                        <a href="javascript:"><%=data.DevGuide[i].name%></a>
-                                                    </h2>
-                                                    <!-- <div class="post-img"><a href="single_post.html"><img src="http://placehold.it/250x160/222/FFF" alt=""></a></div> -->
-                                                    <div class="post-meta">
-                                                        <span class="meta-author">
-                                                            <i class="icon-user"></i>
-                                                            <a href="javascript:"><%=data.DevGuide[i].created%></a>
-                                                        </span>
-                                                    </div>
-                                                    <div class="post-content">
-                                                        <p><%=data.DevGuide[i].description%></p>
-                                                        <a href="<%=data.DevGuide[i].link%>" onclick = "return logClick(this);" class="post-read-more button color small" target="_blank" type="training material">Continue reading</a>
-                                                    </div>
-                                                    <!-- End post-content -->
-                                                </div>
-                                                <!-- End post-inner -->
-                                            </article>
-                                            <!-- <a href="#" class="load-questions">
-                                                    <i class="icon-refresh"></i>Load More Questions</a> -->
-                                            <% }} %>
-                                            <!-- <a href="#" class="load-questions">
-                                                <i class="icon-refresh"></i>Load More Questions</a> -->
+                                           <% } %>
                                         </div>
                                     </div>
                                     
-                                </div>
+                                     <% } %> 
+                                     
+                                 </div>
                                 <!-- End page-content -->
                             </div>
                             <!-- End main -->

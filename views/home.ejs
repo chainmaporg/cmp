@@ -48,12 +48,24 @@
                                         <h2>ChainMap <a href="/loginRegister" class="button small green-button custom-button">Register/Login Now</a></h2> 
                                         -->
                                         <p style="font-size: 26px !important">
-                                            A blockchain developer growth platform supporting the community and ecosystem.
+                                            A blockchain developer growth platform providing the best map for users' blockchain success.
                                         </p>
+                                        
                                         <p style="font-size: 26px !important">
-                                            Contributors will get rewarded with incentive tokens!!!
-                                        </p>
+                     
+                                        <center>
 
+                                        
+                                                               <a href="aboutToken">CMAP token explained</a>
+                                                               
+                        									   <a href="/companyNews">Company News</a>
+                        									                   
+                                        	
+           
+                                        </center>
+                                        
+                                                                                
+                                        </p>
                                         <div class="clearfix"></div>
                                         <!-- <a class="color button dark_button medium" href="#">About Us</a>
                                     <a class="color button dark_button medium" href="#">Join Now</a> -->
@@ -69,68 +81,27 @@
 
                 </div>
 
+
+				<!-- Main Section of the home page contents -->
+				
                 <section class="container main-content page-full-width">                            
                     <div class="box_icon box_warp" box_border="transparent" box_background="transparent">
-                        <div class="row">
-                            <div class="boxedtitle page-title">
-                                <h2>Blockchain News Headlines</h2>
-                            </div> 
-
-                            <div class="col-md-12">
-                            <% 
-                                 for(var i = 0;i < 5;i++) { %>
-
-                                 <article class="post blog_2 clearfix">
-                                                    <div class="post-inner">
-                                                        <h2 id="<%="art"+i+"1"%>" class="post-title">
-                                                            title
-                                                        </h2>
-                                                        
-                                                        <span id="<%="art"+i+"2"%>" class ="meta-date">
-                                                                date
-                                                          </span>
-                                                            <span id="<%="art"+i+"3"%>" class="meta-author">
-                                                                summary
-                                                            </span>
-                                                    </div>
-                                                    <!-- End post-inner -->
-                                </article>
-
-								 <% } %>
-								 
-								 
-   
- 
-                                <script type="text/javascript">
-                                    var host = $(location).attr("hostname")
-                                        var reqUrl = "http://" + $(location).attr("hostname") + "/getNews";
-                                        $.when($.get(reqUrl)).done((r) => {
-                                            for (i=0; i < 5; i++) 
-                                            {
-                                                var link = r[i]["url"][0];
-                                                var pdate = String(r[i]["date"][0]);
-                                                var title = String(r[i]["title"][0]);
-                                                var category = String(r[i]["category"][0]);
-                                                var summary = String(r[i]["summary"][0]).match(/(.*?)[.?!]\s/)[0];
-                                                
-                                                var summarylink = "<a href=\'" + link +"\'"+ " onclick = \'return logClick(this);\' type=\'news\' class='post-read-more button color small' target='_blank'>" + "Continue reading" + "</a>";
-
-                        
-                                                document.getElementById("art"+i+"1").innerHTML=title;
-                                                document.getElementById("art"+i+"2").innerHTML="["+pdate+"]";
-                                                document.getElementById("art"+i+"3").innerHTML=summary+summarylink;
-                                            }
-                                        });
-                                </script>
-                            </div>
-                        </div>
-                    </div>
                     
+                    <br>
                     <div class="row">
+						<table><tr><td><img src="/image/chainmap.jpg" width="80"> </td><td><a href="/payContent/chainmap-01"><h3>Chainmap 001: Top 5 Blockchain Stories and Get Connected with the Space(free download)!</h3>></a> </td>
+						</tr></table>
+					</div>
+					<br>
+                    				<!--Search engine section-->
+                   <div class="row">
+                   
+                   <!--
+                            <div class="boxedtitle page-title">
+                                     <h2>ChainMap Search Engine</h2>
+                            </div> 
+                     -->       
                              <div class="col-md-12">
-                                 <div class="boxedtitle page-title">
-                                     <h2>Website Search Engine</h2>
-                                 </div> 
 
                                 <div class="page-content">
                                 <!--
@@ -147,12 +118,13 @@
                                                     </label>
                                                     <span class="styled-select">
                                                         <select required id="category" name="category" required>
+                                                        	<option value="job">Jobs</option>
+                                                        	<option value="news">News</option>                                                     															
                                                             <option value="White_Paper">White Papers</option>
                                                             <option value="company">Company</option>
                                                             <option value="event">Event</option>
                                                             <option value="ICO">ICO</option>
                                                             <option value="article">Article</option>
-                                                            <option value="news">News</option>
                                                             <option value="All">All</option>
 
                                                         </select>
@@ -161,7 +133,7 @@
                                                 <p>
                                                     <label class="required">Keyword
                                                     </label>
-                                                    <input id="querybox" type="text" aria-required="true" placeholder="Blockchain" required>
+                                                    <input id="querybox" type="text" area-required="true" placeholder="Smart Contract" required>
                                                 </p>
 
                                             </div>
@@ -208,19 +180,38 @@
                                     
                                     <div class="col-md-12">
                                         <p>
-                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/trainingMaterial">Knowledge Center</a> - Find some of the best blockchain training material out there (White Papers including Chinese ones!).
-                                        </p>
-                                        <p>
+                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/trainingMaterial">Knowledge Center</a> - Find some of the best blockchain training material.
+                       						
+											<p>
+											&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="/trainingMaterial_Introduction">Introduction,</a>
+											<a href="/trainingMaterial_Infrastructure" ">Infrastructure,</a>
+											<a href="/trainingMaterial_Hyperledger" ">Hyperledge,</a>
+											<a href="/trainingMaterial_Bitcoin" ">Bitcoin,</a>
+										
+											<a href="/trainingMaterial_Ethereum" ">Ethereum,</a>
+											<a href="/trainingMaterial_UseCases" ">UseCases,</a>
+											<a href="/trainingMaterial_OtherProtocol" ">OtherProtocol,</a>
+											<a href="/trainingMaterial_Training" ">Training</a>                              
+										
+											</p>
+										
+                                        
+                                        
+                                         <p>
                                             <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/questionBoard">Challenge Board</a>- Ask domain specific challenges, and get solutions (Nebulas, Etherum, HyberLedger, dApp...).
+																				<p>
+											&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="/questionBoard">Challenge Board,</a>
+											<a href="/askQuestion" ">Post Challenge</a>
+										
+											</p>								
+											   
+
                                         </p>
+
                                         <p>
-                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/loginRegister">Connections</a>- Sign on to get you connect with other developers and job opportunities and connect with blockchain groups.
-                                        </p>
-                                        <p>
-                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/loginRegister">Certification</a> - Sign on to get your development skills certified and ranking higher on top of the blockchain. 
-                                        </p>
-                                        <p>
-                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/loginRegister">Recommendation</a> - Sign on to have AI based personalized recommendation for learning and career development. 
+                                            <i l_background="#ff7361" l_background_hover="#34495E" class="icon-ok ul_l_circle" style="color: rgb(255, 255, 255); background-color: rgb(255, 115, 97);"></i><a href="/loginRegister">Connection & Recommendation</a> - Sign on to have AI based personalized recommendation and career connections. 
+                                            <center><a href="/loginRegister" class="button medium green-button custom-button">Login/Register</a></center>
+         
                                         </p>
                                         <!--
                                         <p>
@@ -246,6 +237,70 @@
                                 </div>
 
 
+                		<div class="row">
+							<br>
+						</div>
+						
+                        <div class="row">
+                        
+               
+                            <div class="boxedtitle page-title">
+                                <h2>ChainMap News Headlines</h2>
+                            </div> 
+					
+                            <div class="col-md-12">
+                            <% 
+                                 for(var i = 0;i < 5;i++) { %>
+
+                                 <article class="post blog_2 clearfix">
+                                                    <div class="post-inner">
+                                                        <h2 id="<%="art"+i+"1"%>" class="post-title">
+                                                            title
+                                                        </h2>
+                                                        
+                                                        <span style="font-weight: bold;" id="<%="art"+i+"2"%>" class ="meta-date">
+                                                             date 
+                                                         </span>
+                                                        
+                                                         <span style="font-size:16px" id="<%="art"+i+"3"%>" class="meta-author">
+                                                             summary
+                                                         </span>
+                                                    </div>
+                                                    <!-- End post-inner -->
+                                </article>
+
+								 <% } %>
+								 
+								 
+   
+ 
+                                <script type="text/javascript">
+                                    var host = $(location).attr("hostname")
+                                        var reqUrl = "http://" + $(location).attr("hostname") + "/getNews";
+                                        $.when($.get(reqUrl)).done((r) => {
+                                            for (i=0; i < 5; i++) 
+                                            {
+                                                var link = r[i]["url"][0];
+                                                var pdate = String(r[i]["date"][0]).replace("T00:00:00Z", "");
+                                                var title = String(r[i]["title"][0]);
+                                                var category = String(r[i]["category"][0]);
+                                                var summary = String(r[i]["summary"][0]).match(/(.*?)[.?!]\s/)[0];
+                                                
+                                                var summarylink = "<a href=\'" + link +"\'"+ " onclick = \'return logClick(this);\' type=\'news\' class='post-read-more button color small' target='_blank'>" + "Continue reading" + "</a>";
+
+                        
+                                                document.getElementById("art"+i+"1").innerHTML=title;
+                                                document.getElementById("art"+i+"2").innerHTML="["+pdate+"]";
+                                                document.getElementById("art"+i+"3").innerHTML=summary+summarylink;
+                                            }
+                                        });
+                                </script>
+                            </div> <!--col-md-12-->
+                        </div> <!--row-->
+                    </div><!--box-->
+                    
+ 
+
 
 
 
@@ -254,10 +309,11 @@
                                     <div id="columns" class="row">
                                         <div class="col-md-12">
                                             <br>
+                                    	<!--
                                             <div class="boxedtitle page-title">
-                                                <h2>Featured Links</h2>
+                                                <h2>ChainMap Featured Links</h2>
                                             </div> 
-                                       
+                                       -->
                                             <div class="bx-wrapper">
                                                 <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 150px;">
                                                     <!-- <div class="bxslider" style="width: 1015%; position: relative; transition-duration: 0s; transform: translate3d(-1756px, 0px, 0px);"> -->
@@ -307,7 +363,7 @@
                                                                 <div class="bxslider-overlay t_center">
                                                                     <a href="https://bitcoin.org/bitcoin.pdf" onclick = "return logClick(this);" class="bxslider-title" target="_blank" type="training material">
 
-                                                                        <h3>What is Bitcoin? Learn More about Bitcoint</h3>
+                                                                        <h3>What is Bitcoin? Learn More about Bitcoin</h3>
                                                                         
                                                                     </a>
                                                                     
