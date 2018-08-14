@@ -249,27 +249,27 @@
                             </div> 
 					
                             <div class="col-md-12">
-                            <% 
+                                <% 
                                  for(var i = 0;i < 5;i++) { %>
 
                                  <article class="post blog_2 clearfix">
-                                                    <div class="post-inner">
-                                                        <h2 id="<%="art"+i+"1"%>" class="post-title">
-                                                            title
-                                                        </h2>
-                                                        
-                                                        <span style="font-weight: bold;" id="<%="art"+i+"2"%>" class ="meta-date">
-                                                             date 
-                                                         </span>
-                                                        
-                                                         <span style="font-size:16px" id="<%="art"+i+"3"%>" class="meta-author">
-                                                             summary
-                                                         </span>
-                                                    </div>
-                                                    <!-- End post-inner -->
-                                </article>
+                                     <div class="post-inner">
+                                         <h2 id="<%="art"+i+"1"%>" class="post-title">
+                                             title
+                                         </h2>
 
-								 <% } %>
+                                         <span style="font-weight: bold;" id="<%="art"+i+"2"%>" class ="meta-date">
+                                             date 
+                                         </span>
+
+                                         <span style="font-size:16px" id="<%="art"+i+"3"%>" class="meta-author">
+                                             summary
+                                         </span>
+                                     </div>
+                                     <!-- End post-inner -->
+                                 </article>
+
+                                 <% } %>
 								 
 								 
    
@@ -301,19 +301,27 @@
                     
  
 
-
-
-
-
-							
+                <% 
+                if(typeof links != "undefined" && links.length > 0) { 
+                    console.log(links); %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <br>
+                            <div class="boxedtitle page-title">
+                                <h2>ChainMap Hottest Links</h2>
+                            </div>
+                            <% links.forEach(link => { %>
+                            <h3 class="post-title"><a href="<%=link%>"><%=link%></a> </h3><br>
+                            <% }); %>
+                        </div>
+                    </div>
+                <% } %>
                                     <div id="columns" class="row">
                                         <div class="col-md-12">
                                             <br>
-                                    	<!--
                                             <div class="boxedtitle page-title">
                                                 <h2>ChainMap Featured Links</h2>
                                             </div> 
-                                       -->
                                             <div class="bx-wrapper">
                                                 <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 150px;">
                                                     <!-- <div class="bxslider" style="width: 1015%; position: relative; transition-duration: 0s; transform: translate3d(-1756px, 0px, 0px);"> -->
