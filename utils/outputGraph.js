@@ -77,7 +77,7 @@ exports.runPPR = () => {
                 vals = vals.slice(5, vals.length - 2);
                 importances = [];
                 vals.forEach(str => {
-                    let parsedStr = str.match(/\d*\.?\d+/g);
+                    const parsedStr = str.match(/\d*\.?\d+/g);
                     importances.push([
                         Number.parseInt(parsedStr[0]),
                         Number.parseInt(parsedStr[1]),
@@ -91,10 +91,59 @@ exports.runPPR = () => {
 };
 
 exports.getMappings = (id_dict, importances) => {
-    console.log(id_dict);
-    console.log(importances);
     connection.query("select * from documents", (error, results, fields) => {
-        if (error) console.log(error);
-        // else console.log(results)
+        if (error) {
+            console.log(error);
+        } else {
+            const id_to_link = {};
+            results.forEach(dict => {
+                id_to_link[dict.doc_id] = dict.link;
+            });
+
+            const numUsers = id_dict[0],
+                numDocs = id_dict[1];
+            id_dict = id_dict[2];
+            const all = {};
+
+            importances.forEach(vals => {
+                if (typeof all[id_dict[vals[0]]] === "undefined") {
+                    all[id_dict[vals[0]]] = [[id_dict[vals[1]], vals[2]]];
+                } else {
+                    const temp = all[id_dict[vals[0]]].concat([[id_dict[vals[1]], vals[2]]]);
+                    all[id_dict[vals[0]]] = temp;
+                }
+            });
+
+            const connectionRecs = {},
+                docRecs = {};
+
+            for (let i = 0; i < numUsers; i++) {
+                const currentDocRecs = [];
+                const currentConnectionRecs = [];
+                all[id_dict[i]].sort(comparator);
+                all[id_dict[i]].forEach(vals => {
+                    if (vals[0] in id_to_link) {
+                        currentDocRecs.push(id_to_link[vals[0]]);
+                    } else {
+                        currentConnectionRecs.push(vals[0]);
+                    }
+                });
+                connectionRecs[id_dict[i]] = currentConnectionRecs;
+                docRecs[id_dict[i]] = currentDocRecs;
+            }
+
+            function comparator(a, b) {
+                if (a[1] === b[1]) {
+                    return 0;
+                } else {
+                    return a[1] < b[1] ? 1 : -1;
+                }
+            }
+
+            console.log(connectionRecs);
+            console.log(docRecs);
+
+            return [connectionRecs, docRecs];
+        }
     });
 };
