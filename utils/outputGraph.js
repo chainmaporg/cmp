@@ -117,19 +117,40 @@ exports.getMappings = (id_dict, importances) => {
             const connectionRecs = {},
                 docRecs = {};
 
+            const promiseStack = [];
+
             for (let i = 0; i < numUsers; i++) {
-                const currentDocRecs = [];
-                const currentConnectionRecs = [];
-                all[id_dict[i]].sort(comparator);
-                all[id_dict[i]].forEach(vals => {
-                    if (vals[0] in id_to_link) {
-                        currentDocRecs.push(id_to_link[vals[0]]);
-                    } else {
-                        currentConnectionRecs.push(vals[0]);
-                    }
-                });
-                connectionRecs[id_dict[i]] = currentConnectionRecs;
-                docRecs[id_dict[i]] = currentDocRecs;
+                promiseStack.push(
+                    new Promise((resolve, reject) => {
+                        const currentDocRecs = [];
+                        const currentConnectionRecs = [];
+                        all[id_dict[i]].sort(comparator);
+                        connection.query(
+                            "select distinct doc_id from click where user_id = ?",
+                            [id_dict[i]],
+                            (error, results, fields) => {
+                                if (error) {
+                                    reject(error);
+                                } else {
+                                    const seen_vals = [];
+                                    results.forEach(val => {
+                                        seen_vals.push(val.doc_id);
+                                    });
+                                    const seen = new Set(seen_vals);
+                                    all[id_dict[i]].forEach(vals => {
+                                        if (seen.has(vals[0])) {
+                                        } else if (vals[0] in id_to_link) {
+                                            currentDocRecs.push(id_to_link[vals[0]]);
+                                        } else {
+                                            currentConnectionRecs.push(vals[0]);
+                                        }
+                                    });
+                                    resolve([currentConnectionRecs, currentDocRecs]);
+                                }
+                            },
+                        );
+                    }),
+                );
             }
 
             function comparator(a, b) {
@@ -140,10 +161,18 @@ exports.getMappings = (id_dict, importances) => {
                 }
             }
 
-            console.log(connectionRecs);
-            console.log(docRecs);
-
-            return [connectionRecs, docRecs];
+            Promise.all(promiseStack)
+                .then(values => {
+                    values.forEach((val, i) => {
+                        connectionRecs[id_dict[i]] = val[0];
+                        docRecs[id_dict[i]] = val[1];
+                    });
+                    console.log(connectionRecs, docRecs);
+                    return [connectionRecs, docRecs];
+                })
+                .catch(error => {
+                    console.log(error);
+                });
         }
     });
 };
