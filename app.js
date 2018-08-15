@@ -76,9 +76,15 @@ app.use(
 const outputGraph = require("./utils/outputGraph");
 const id_dict = outputGraph.getGraph();
 id_dict
-    .then(data => {
-        outputGraph.runPPR();
-        outputGraph.getMappings(data);
+    .then(dict => {
+        const importancePromise = outputGraph.runPPR();
+        importancePromise
+            .then(importances => {
+                outputGraph.getMappings(dict, importances);
+            })
+            .catch(error => {
+                console.log("Error:", error);
+            });
     })
     .catch(error => {});
 

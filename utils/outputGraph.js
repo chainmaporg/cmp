@@ -37,25 +37,26 @@ exports.getGraph = () => {
                     output += get_graph_node_id_dict[dict.doc_id] + " " + get_graph_node_id_dict[dict.user_id] + "\n";
                 });
 
-                console.log(output);
-
                 const fs = require("fs");
 
                 fs.writeFile("./utils/graph.txt", output, err => {
                     if (err) {
-                        return console.log(err);
+                        console.log(err);
+                        reject(err);
+                    } else {
+                        console.log("The file was saved!");
                     }
-
-                    console.log("The file was saved!");
                 });
 
                 const params = "" + users.size + " " + docs.size;
 
                 fs.writeFile("./utils/params.txt", params, err => {
                     if (err) {
-                        return console.log(err);
+                        console.log(err);
+                        reject(err);
+                    } else {
+                        console.log("Params were saved!");
                     }
-                    console.log("Params were saved!");
                 });
 
                 resolve([users.size, docs.size, get_hash_id_dict]);
@@ -65,21 +66,33 @@ exports.getGraph = () => {
 };
 
 exports.runPPR = () => {
-    const exec = require("child_process").execFile;
-
-    console.log("running ppr executable.");
-
-    exec("./utils/randwalk", (error, data) => {
-        if (error) {
-            console.log(err);
-        } else {
-            console.log(data.toString());
-        }
+    return new Promise((resolve, reject) => {
+        const exec = require("child_process").execFile;
+        exec("./utils/randwalk", (error, data) => {
+            if (error) {
+                console.log(error);
+                reject(error);
+            } else {
+                let vals = data.toString().split("\n");
+                vals = vals.slice(5, vals.length - 2);
+                importances = [];
+                vals.forEach(str => {
+                    let parsedStr = str.match(/\d*\.?\d+/g);
+                    importances.push([
+                        Number.parseInt(parsedStr[0]),
+                        Number.parseInt(parsedStr[1]),
+                        Number.parseFloat(parsedStr[2]),
+                    ]);
+                });
+                resolve(importances);
+            }
+        });
     });
 };
 
-exports.getMappings = id_dict => {
+exports.getMappings = (id_dict, importances) => {
     console.log(id_dict);
+    console.log(importances);
     connection.query("select * from documents", (error, results, fields) => {
         if (error) console.log(error);
         // else console.log(results)
