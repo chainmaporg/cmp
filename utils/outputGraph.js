@@ -1,65 +1,90 @@
 exports.getGraph = () => {
     return new Promise((resolve, reject) => {
-        connection.query("select distinct user_id, doc_id from click", (error, results, fields) => {
+        connection.query("select distinct sender_id, receiver_id from messages", (error, results, fields) => {
             if (error) {
-                console.log(error);
                 reject(error);
             } else {
-                let graph_node_id = 0;
-                const get_graph_node_id_dict = {};
-                const get_hash_id_dict = {};
-
-                // find unique hash ids and user ids
-                const users = new Set();
-                const docs = new Set();
-                results.forEach(dict => {
-                    users.add(dict.user_id);
-                    docs.add(dict.doc_id);
-                });
-
-                // assign consecutive ints as graph node ids
-                users.forEach(user_id => {
-                    get_graph_node_id_dict[user_id] = graph_node_id;
-                    get_hash_id_dict[graph_node_id] = user_id;
-                    graph_node_id++;
-                });
-
-                docs.forEach(doc_id => {
-                    get_graph_node_id_dict[doc_id] = graph_node_id;
-                    get_hash_id_dict[graph_node_id] = doc_id;
-                    graph_node_id++;
-                });
-
-                // output the graph
-                let output = "";
-                results.forEach(dict => {
-                    output += get_graph_node_id_dict[dict.user_id] + " " + get_graph_node_id_dict[dict.doc_id] + "\n";
-                    output += get_graph_node_id_dict[dict.doc_id] + " " + get_graph_node_id_dict[dict.user_id] + "\n";
-                });
-
-                const fs = require("fs");
-
-                fs.writeFile("./utils/graph.txt", output, err => {
-                    if (err) {
-                        console.log(err);
-                        reject(err);
+                const message_participants = results;
+                connection.query("select distinct user_id, doc_id from click", (error, results, fields) => {
+                    if (error) {
+                        reject(error);
                     } else {
-                        console.log("The file was saved!");
+                        let graph_node_id = 0;
+                        const get_graph_node_id_dict = {};
+                        const get_hash_id_dict = {};
+
+                        // find unique hash ids and user ids
+                        const users = new Set();
+                        const docs = new Set();
+                        results.forEach(dict => {
+                            users.add(dict.user_id);
+                            docs.add(dict.doc_id);
+                        });
+
+                        message_participants.forEach(dict => {
+                            users.add(dict.sender_id);
+                            users.add(dict.receiver_id);
+                        });
+
+                        // assign consecutive ints as graph node ids
+                        users.forEach(user_id => {
+                            get_graph_node_id_dict[user_id] = graph_node_id;
+                            get_hash_id_dict[graph_node_id] = user_id;
+                            graph_node_id++;
+                        });
+
+                        docs.forEach(doc_id => {
+                            get_graph_node_id_dict[doc_id] = graph_node_id;
+                            get_hash_id_dict[graph_node_id] = doc_id;
+                            graph_node_id++;
+                        });
+
+                        // output the graph for docs to users
+                        let output = "";
+                        results.forEach(dict => {
+                            output +=
+                                get_graph_node_id_dict[dict.user_id] + " " + get_graph_node_id_dict[dict.doc_id] + "\n";
+                            output +=
+                                get_graph_node_id_dict[dict.doc_id] + " " + get_graph_node_id_dict[dict.user_id] + "\n";
+                        });
+
+                        // add graph nodes for users to users
+                        message_participants.forEach(dict => {
+                            output +=
+                                get_graph_node_id_dict[dict.sender_id] +
+                                " " +
+                                get_graph_node_id_dict[dict.receiver_id] +
+                                "\n";
+                            output +=
+                                get_graph_node_id_dict[dict.receiver_id] +
+                                " " +
+                                get_graph_node_id_dict[dict.sender_id] +
+                                "\n";
+                        });
+
+                        const fs = require("fs");
+
+                        fs.writeFile("./utils/graph.txt", output, err => {
+                            if (error) {
+                                reject(error);
+                            } else {
+                                console.log("The file was saved!");
+                            }
+                        });
+
+                        const params = "" + users.size + " " + docs.size;
+
+                        fs.writeFile("./utils/params.txt", params, err => {
+                            if (error) {
+                                reject(error);
+                            } else {
+                                console.log("Params were saved!");
+                            }
+                        });
+
+                        resolve([users.size, docs.size, get_hash_id_dict]);
                     }
                 });
-
-                const params = "" + users.size + " " + docs.size;
-
-                fs.writeFile("./utils/params.txt", params, err => {
-                    if (err) {
-                        console.log(err);
-                        reject(err);
-                    } else {
-                        console.log("Params were saved!");
-                    }
-                });
-
-                resolve([users.size, docs.size, get_hash_id_dict]);
             }
         });
     });
@@ -74,6 +99,7 @@ exports.runPPR = () => {
                 reject(error);
             } else {
                 let vals = data.toString().split("\n");
+                console.log(vals[vals.length - 2]);
                 vals = vals.slice(5, vals.length - 2);
                 importances = [];
                 vals.forEach(str => {
