@@ -73,6 +73,8 @@ app.use(
     }),
 );
 
+// run once at the beginning
+console.log("Updating graph.");
 const outputGraph = require("./utils/outputGraph");
 const id_dict = outputGraph.getGraph();
 id_dict
@@ -87,6 +89,25 @@ id_dict
             });
     })
     .catch(error => {});
+
+// schedule recommendation updates every half day
+setInterval(() => {
+    console.log("Updating graph.");
+    const outputGraph = require("./utils/outputGraph");
+    const id_dict = outputGraph.getGraph();
+    id_dict
+        .then(dict => {
+            const importancePromise = outputGraph.runPPR();
+            importancePromise
+                .then(importances => {
+                    outputGraph.getMappings(dict, importances);
+                })
+                .catch(error => {
+                    console.log("Error:", error);
+                });
+        })
+        .catch(error => {});
+}, 4.32e7);
 
 // middleware to make 'user' available to all templates
 
