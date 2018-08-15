@@ -203,4 +203,16 @@ CREATE TABLE `messages` (
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+DROP TABLE IF EXISTS `doc_recommendations`;
+CREATE TABLE `doc_recommendations` (
+    `user_id` int(11)  NOT NULL,
+    `link` varchar(500) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+DROP TABLE IF EXISTS `user_recommendations`;
+CREATE TABLE `user_recommendations` (
+    `user_id` int(11)  NOT NULL,
+    `suggested_user` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET = utf8;
+
 

@@ -194,6 +194,7 @@ exports.getMappings = (id_dict, importances) => {
                         docRecs[id_dict[i]] = val[1];
                     });
                     console.log(connectionRecs, docRecs);
+                    storeRecommendations(connectionRecs, docRecs);
                     return [connectionRecs, docRecs];
                 })
                 .catch(error => {
@@ -202,3 +203,45 @@ exports.getMappings = (id_dict, importances) => {
         }
     });
 };
+
+function storeRecommendations(connectionRecs, docRecs) {
+    connection.query("delete from doc_recommendations", (error, results, fields) => {
+        if (error) {
+            console.log(error);
+        } else {
+            Object.keys(docRecs).forEach(key => {
+                docRecs[key].forEach(link => {
+                    connection.query(
+                        "insert into doc_recommendations(user_id, link) values (?)",
+                        [[key, link]],
+                        (error, results, fields) => {
+                            if (error) {
+                                console.log(error);
+                            }
+                        },
+                    );
+                });
+            });
+        }
+    });
+
+    connection.query("delete from user_recommendations", (error, results, fields) => {
+        if (error) {
+            console.log(error);
+        } else {
+            Object.keys(connectionRecs).forEach(key => {
+                connectionRecs[key].forEach(connect => {
+                    connection.query(
+                        "insert into user_recommendations(user_id, suggested_user) values (?)",
+                        [[key, connect]],
+                        (error, results, fields) => {
+                            if (error) {
+                                console.log(error);
+                            }
+                        },
+                    );
+                });
+            });
+        }
+    });
+}
