@@ -280,9 +280,7 @@ exports.getRecommendations = (req, res) => {
                         })
                         .then(values => {
                             values = values[0].concat(values[1]);
-                            console.log(values);
                             const recommendations = shuffle(values).slice(0, 6);
-                            console.log(recommendations);
                             resData.recommendations = recommendations;
                             res.send(resData);
                         });
