@@ -158,20 +158,32 @@ exports.getMappings = (id_dict, importances) => {
                                 if (error) {
                                     reject(error);
                                 } else {
-                                    const seen_vals = [];
+                                    const notRecommended = new Set();
                                     results.forEach(val => {
-                                        seen_vals.push(val.doc_id);
+                                        notRecommended.add(val.doc_id);
                                     });
-                                    const seen = new Set(seen_vals);
-                                    all[id_dict[i]].forEach(vals => {
-                                        if (seen.has(vals[0])) {
-                                        } else if (vals[0] in id_to_link) {
-                                            currentDocRecs.push(id_to_link[vals[0]]);
-                                        } else {
-                                            currentConnectionRecs.push(vals[0]);
-                                        }
-                                    });
-                                    resolve([currentConnectionRecs, currentDocRecs]);
+                                    connection.query(
+                                        "select doc_id from documents where type = ?",
+                                        ["Job"],
+                                        (error, results, fields) => {
+                                            if (error) {
+                                                console.log(error);
+                                            } else {
+                                                results.forEach(val => {
+                                                    notRecommended.add(val.doc_id);
+                                                });
+                                                all[id_dict[i]].forEach(vals => {
+                                                    if (notRecommended.has(vals[0])) {
+                                                    } else if (vals[0] in id_to_link) {
+                                                        currentDocRecs.push(id_to_link[vals[0]]);
+                                                    } else {
+                                                        currentConnectionRecs.push(vals[0]);
+                                                    }
+                                                });
+                                                resolve([currentConnectionRecs, currentDocRecs]);
+                                            }
+                                        },
+                                    );
                                 }
                             },
                         );
