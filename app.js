@@ -107,7 +107,7 @@ setInterval(() => {
                 });
         })
         .catch(error => {});
-}, 4.32e7);
+}, 3.6e6);
 
 // middleware to make 'user' available to all templates
 
