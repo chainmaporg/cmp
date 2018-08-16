@@ -260,6 +260,7 @@
                                                 <% } else { 
                                                     let inUrl = "../inbox";
                                                     let outUrl = "../outbox";
+                                                    let suggestUrl = "../userSuggestions"
                                                 %>
                                                 <div class="col-md-12">
                                                     <div class="page-content page-content-user-profile">
@@ -283,6 +284,15 @@
                                                                             <span> (
                                                                                 <span>
                                                                                     <%=data.out_message_count%>
+                                                                                </span> ) </span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="icon-comment"></i>
+                                                                        <a href="<%= suggestUrl%>"> Suggested Connections
+                                                                            <span> (
+                                                                                <span>
+                                                                                    <%=data.suggest_count%>
                                                                                 </span> ) </span>
                                                                         </a>
                                                                     </li>

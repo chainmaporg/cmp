@@ -139,17 +139,15 @@ router.get("/connectSmartContract", function(req, res) {
 });
 
 router.get("/getPayContent", function(req, res) {
-	
-  code = req.query.coupon;
-  email = req.query.email;
-  console.log("track-download:", code, email);
-		
-	if(code=="chainmap") {
-		res.render("chainmap-01", {coupon: "YES"});
-	}
-	else {
-		res.render("chainmap-01", {coupon: "NO"});
-	}
+    code = req.query.coupon;
+    email = req.query.email;
+    console.log("track-download:", code, email);
+
+    if (code == "chainmap") {
+        res.render("chainmap-01", { coupon: "YES" });
+    } else {
+        res.render("chainmap-01", { coupon: "NO" });
+    }
 });
 
 router.get("/payContent/:name", function(req, res) {
@@ -278,6 +276,16 @@ router.get("/outbox", (req, res) => {
         res.redirect("loginRegister");
     } else {
         users.messages(req, res, false);
+    }
+});
+
+router.get("/userSuggestions", (req, res) => {
+    if (typeof req.session.user_id === "undefined") {
+        console.log("Did not make it :(");
+        res.redirect("loginRegister");
+    } else {
+        console.log("Made it :O");
+        users.getConnectionRecommendations(req, res);
     }
 });
 
