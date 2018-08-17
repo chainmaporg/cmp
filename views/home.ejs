@@ -17,7 +17,8 @@
             	console.log("----log click", obj)
                 var link = obj.getAttribute("href");
                 var t = obj.getAttribute("type");
-                $.post("http://" + $(location).attr("hostname") + "/log", {id:link, type:t});
+                var title = obj.getAttribute("title");
+                $.post("http://" + $(location).attr("hostname") + "/log", {id:link, type:t, title});
                 return true;
             }
         </script>
@@ -286,7 +287,7 @@
                                                 var category = String(r[i]["category"][0]);
                                                 var summary = String(r[i]["summary"][0]).match(/(.*?)[.?!]\s/)[0];
                                                 
-                                                var summarylink = "<a href=\'" + link +"\'"+ " onclick = \'return logClick(this);\' type=\'news\' class='post-read-more button color small' target='_blank'>" + "Continue reading" + "</a>";
+                                                var summarylink = "<a href=\'" + link +"\'"+ " title = \"" + title + "\"onclick = \'return logClick(this);\' type=\'news\' class='post-read-more button color small' target='_blank'>" + "Continue reading" + "</a>";
 
                         
                                                 document.getElementById("art"+i+"1").innerHTML=title;
@@ -371,7 +372,7 @@
                                 '<img src="image/' + img + '" class="img-rounded" alt="" width="40" height="40" align="right">' +
                                 '</div>' +
                                 '<div class="col-sm-10"> ' +
-                                '<a href="'+url+'" onclick = "return logClick(this);" target="_blank" class="list-group-item" style="border: none" type=' 
+                                '<a href="'+url+'" title = \"' + value.title + '\" onclick = "return logClick(this);" target="_blank" class="list-group-item" style="border: none" type=' 
                                 + value.category + '>' +
                                 '<h4 class="list-group-item-heading" style="color:DodgerBlue;">' + value.title + '</h4>' +
                                 '<p class="list-group-item-text">' + value.summary + ' </p>' +

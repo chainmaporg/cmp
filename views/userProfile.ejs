@@ -14,7 +14,8 @@
             {
                 var link = obj.getAttribute("href");
                 var t = obj.getAttribute("type");
-                $.post("http://" + $(location).attr("hostname") + "/log", {id:link, type:t});
+                var title = obj.getAttribute("title");
+                $.post("http://" + $(location).attr("hostname") + "/log", {id:link, type:t, title});
                 return true;
             }
             
@@ -382,13 +383,8 @@
                                                                             var category = String(recommendations[i]["category"]).charAt(0).toUpperCase() + String(recommendations[i]["category"]).slice(1) + " author";
                                                                         else
                                                                             var category = "Link";
-                                                                        if (typeof recommendations[i]["title"] !== "undefined") {
-                                                                            var title = String(recommendations[i]["title"]);
-                                                                            title = title.replace(/^[0-9]+/,"").replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()).replace(/ /g, "&nbsp");
-                                                                        }
-                                                                        else
-                                                                            title = link;
-                                                                    document.getElementById("link"+i).innerHTML= category + ":&nbsp<a href=\"" + link +"\"" + " onclick = \"return logClick(this);\"type=" + category + ">" + title + "</a>";
+                                                                        var title = recommendations[i]["title"];
+                                                                        document.getElementById("link"+i).innerHTML= category + ":&nbsp<a href=\"" + link +"\"" + " title = \"" + title + "\"onclick = \"return logClick(this);\"type=" + category + ">" + title + "</a>";
                                                                 }
                                                                 });
 

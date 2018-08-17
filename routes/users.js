@@ -456,7 +456,16 @@ exports.recordClick = (req, res) => {
                     } else console.log("Success on recoding doc");
                 },
             );
-        } else {
+        } else if (results[0].title === "Empty") {
+            connection.query(
+                "UPDATE documents SET title = ? WHERE doc_id = ?",
+                [[title, hashID]],
+                (error, results, fields) => {
+                    if (error) {
+                        console.log("error ocurred", error);
+                    } else console.log("Success on updating doc");
+                },
+            );
         }
         //console.log(results)
     });
