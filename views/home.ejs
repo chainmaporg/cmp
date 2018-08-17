@@ -48,7 +48,7 @@
                                         <h2>ChainMap <a href="/loginRegister" class="button small green-button custom-button">Register/Login Now</a></h2> 
                                         -->
                                         <p style="font-size: 26px !important">
-                                            A blockchain developer growth platform providing the best map for users' blockchain success.
+                                            Your map for your blockchain success.
                                         </p>
                                         
                                         <p style="font-size: 26px !important">
@@ -89,7 +89,7 @@
                     
                     <br>
                     <div class="row">
-						<table><tr><td><img src="/image/chainmap.jpg" width="80"> </td><td><a href="/payContent/chainmap-01"><h3>Chainmap 001: Top 5 Blockchain Stories and Get Connected with the Space(free download)!</h3>></a> </td>
+						<table><tr><td><img src="/image/chainmap.jpg" width="80"> </td><td><a href="/payContent/chainmap-01"><h3>Chainmap 001: Top 5 Blockchain Stories and Get Connected with the Space(free download)!</h3></a> </td>
 						</tr></table>
 					</div>
 					<br>
@@ -249,27 +249,27 @@
                             </div> 
 					
                             <div class="col-md-12">
-                            <% 
+                                <% 
                                  for(var i = 0;i < 5;i++) { %>
 
                                  <article class="post blog_2 clearfix">
-                                                    <div class="post-inner">
-                                                        <h2 id="<%="art"+i+"1"%>" class="post-title">
-                                                            title
-                                                        </h2>
-                                                        
-                                                        <span style="font-weight: bold;" id="<%="art"+i+"2"%>" class ="meta-date">
-                                                             date 
-                                                         </span>
-                                                        
-                                                         <span style="font-size:16px" id="<%="art"+i+"3"%>" class="meta-author">
-                                                             summary
-                                                         </span>
-                                                    </div>
-                                                    <!-- End post-inner -->
-                                </article>
+                                     <div class="post-inner">
+                                         <h2 id="<%="art"+i+"1"%>" class="post-title">
+                                             title
+                                         </h2>
 
-								 <% } %>
+                                         <span style="font-weight: bold;" id="<%="art"+i+"2"%>" class ="meta-date">
+                                             date 
+                                         </span>
+
+                                         <span style="font-size:16px" id="<%="art"+i+"3"%>" class="meta-author">
+                                             summary
+                                         </span>
+                                     </div>
+                                     <!-- End post-inner -->
+                                 </article>
+
+                                 <% } %>
 								 
 								 
    
@@ -301,100 +301,22 @@
                     
  
 
+                <% 
+                if(typeof links != "undefined" && links.length > 0) { 
+                    console.log(links); %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <br>
+                            <div class="boxedtitle page-title">
+                                <h2>ChainMap Hottest Links</h2>
+                            </div>
+                            <% links.forEach(link => { %>
+                            <h3 class="post-title"><a href="<%=link%>"><%=link%></a> </h3><br>
+                            <% }); %>
+                        </div>
+                    </div>
+                <% } %>
 
-
-
-
-							
-                                    <div id="columns" class="row">
-                                        <div class="col-md-12">
-                                            <br>
-                                    	<!--
-                                            <div class="boxedtitle page-title">
-                                                <h2>ChainMap Featured Links</h2>
-                                            </div> 
-                                       -->
-                                            <div class="bx-wrapper">
-                                                <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 150px;">
-                                                    <!-- <div class="bxslider" style="width: 1015%; position: relative; transition-duration: 0s; transform: translate3d(-1756px, 0px, 0px);"> -->
-                                                        <div class="slide bx-clone" style="float: left; list-style: outside none none; position: relative; margin-right: 30px; width: 189.5px;">
-                                                            
-                                                            <div class="grid-bxslider">
-                                                                <div class="bxslider-overlay t_center">
-                                                                    <a href="https://consensys.net/academy/resources/" onclick = "return logClick(this);" class="bxslider-title" target="_blank" type="training material">
-
-                             
-                                                                        <h3>Ethereum and Blockchain Resources</h3>
-                                                                    </a>
-                                                                    
-                                                                </div>
-                                                               
-                                                                <img src="/image/homepagelinks/blockChainBasics.PNG" alt="" height="120" width="190">
-                                                            </div>
-                                                             
-                                                        </div>
-                                                        <div class="slide bx-clone" style="float: left; list-style: outside none none; position: relative; margin-right: 30px; width: 189.5px;">
-                                                            <div class="grid-bxslider">
-                                                                <div class="bxslider-overlay t_center">
-                                                                    <a href="https://medium.com/coinmonks/top-dapp-tutorial-series-2e70c0d79782" onclick = "return logClick(this);" class="bxslider-title" target="_blank" type="training material">
-
-                                                                        <h3>Top Dapp tutorials Series – Coinmonks – Medium</h3>
-                                                                        
-                                                                    </a>
-                                                                    
-                                                                    
-                                                                </div>
-                                                                <img src="/image/homepagelinks/1 YWZEVCk8u4xlwyGhRe149g.jpeg" alt="" height="120" width="190">
-                                                            </div>
-                                                        </div>
-                                                        <div class="slide bx-clone" style="float: left; list-style: outside none none; position: relative; margin-right: 30px; width: 189.5px;">
-                                                            <div class="grid-bxslider">
-                                                                <div class="bxslider-overlay t_center">
-                                                                    <a href="https://blockgeeks.com/guides/" onclick = "return logClick(this);"  class="bxslider-title" target="_blank" type="training material">
-                                                                        <h3>Guides for Blockchain Geeks</h3>
-                                                                    </a>
-                                                                    
-                                                                </div>
-                                                                <img src="/image/homepagelinks/blockgeeks.png" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="slide bx-clone" style="float: left; list-style: outside none none; position: relative; margin-right: 30px; width: 189.5px;">
-                                                            <div class="grid-bxslider">
-                                                                <div class="bxslider-overlay t_center">
-                                                                    <a href="https://bitcoin.org/bitcoin.pdf" onclick = "return logClick(this);" class="bxslider-title" target="_blank" type="training material">
-
-                                                                        <h3>What is Bitcoin? Learn More about Bitcoin</h3>
-                                                                        
-                                                                    </a>
-                                                                    
-                                                                    
-                                                                </div>
-                                                                <img src="/image/homepagelinks/bitcoin-price-live-987029.jpg" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="slide" style="float: left; list-style: outside none none; position: relative; margin-right: 30px; width: 189.5px;">
-                                                            <div class="grid-bxslider">
-                                                                <div class="bxslider-overlay t_center">
-                                                                    <a href="https://www-01.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=XIM12354USEN" onclick = "return logClick(this);" class="bxslider-title" target="_blank" type="training material">
-
-                                                                        <h3>E-Book: Blockchain for Dummies</h3>
-                                                                    </a>
-                                                                    
-                                                                    
-                                                                </div>
-                                                                <img src="/image/homepagelinks/blockchaindummy.png" alt="">
-                                                            </div>
-                                                        </div>
-    
-                                                    <!-- </div> -->
-                                                </div>
-                                                    
-                                            </div>
-                                        </div>
-    
-    
-    
-                                    </div>
                             </div>
                             <!-- End main -->
                         </div>

@@ -2,18 +2,18 @@ chainmap_env = global.config.chainmap_env;
 smartContract_address = global.config.smartContract_address;
 chainmapServerWallet = global.config.chainmapServerWallet;
 
-var Nebulas = require("nebulas");
+const Nebulas = require("nebulas");
 
 //Export to make other function accessd
 exports.Nebulas = Nebulas;
 exports.smartContract_address = smartContract_address;
 exports.chainmapServerWallet = chainmapServerWallet;
 
-var express = require("express");
-var SolrNode = require("solr-node");
-var router = express.Router();
+const express = require("express");
+const SolrNode = require("solr-node");
+const router = express.Router();
 
-// var client = new SolrNode({
+// const client = new SolrNode({
 //     host: 'localhost',
 //     port: '8983',
 //     core: 'chainmap',
@@ -21,16 +21,16 @@ var router = express.Router();
 //     debugLevel: 'ERROR' // log4js debug level paramter
 // });
 
-var Client = require("node-rest-client").Client;
+const Client = require("node-rest-client").Client;
 
-var client = new Client();
+const client = new Client();
 
-// var strQuery = client.query().q('text:test');
-// var objQuery = client.query().q({text:'test', title:'test'});
-// var myStrQuery = 'q=text:test&wt=json';
+// const strQuery = client.query().q('text:test');
+// const objQuery = client.query().q({text:'test', title:'test'});
+// const myStrQuery = 'q=text:test&wt=json';
 
-var solr_host = global.config.search_solr_host;
-var engine_host = global.config.search_engine_host;
+const solr_host = global.config.search_solr_host;
+const engine_host = global.config.search_engine_host;
 
 router.get("/query/:category/:content", function(req, res, next) {
     var url = "";
@@ -88,15 +88,16 @@ router.get("/login", function(req, res) {
 });
 
 //route to handle user registration
-var login = require("../routes/login");
-var users = require("../routes/users");
-var questionBoard = require("../routes/questionBoard");
-var trainingMaterial = require("../routes/trainingMaterial");
-var socialgroup = require("../routes/socialgroup");
-var news = require("../routes/news");
+const login = require("../routes/login");
+const users = require("../routes/users");
+const questionBoard = require("../routes/questionBoard");
+const trainingMaterial = require("../routes/trainingMaterial");
+const socialgroup = require("../routes/socialgroup");
+const news = require("../routes/news");
+const companyNews = require("../routes/companyNews");
+const admin = require("../routes/admin");
+const recommendations = require("../routes/recommendations");
 
-var companyNews = require("../routes/companyNews");
-var admin = require("../routes/admin");
 // global.environment = "local";
 global.environment = "production";
 
@@ -120,8 +121,15 @@ router.get("/logOut", function(req, res) {
     res.redirect("/questionBoard");
 });
 
-router.get("/", function(req, res) {
-    res.render("home", { title: "Home" });
+router.get("/", (req, res) => {
+    recommendations
+        .getTopLinks()
+        .catch(error => {
+            console.log(error);
+        })
+        .then(links => {
+            res.render("home", { title: "Home", links });
+        });
 });
 
 router.get("/searchContent", function(req, res) {
