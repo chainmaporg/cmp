@@ -310,8 +310,8 @@
                             <div class="boxedtitle page-title">
                                 <h2>ChainMap Hottest Links</h2>
                             </div>
-                            <% links.forEach(link => { %>
-                            <h3 class="post-title"><a href="<%=link%>"><%=link%></a> </h3><br>
+                            <% links.forEach((link, i) => { %>
+                            <h3 class="post-title">#<%=i+1%> Most Accessed Link: <a href="<%=link%>"><%=link%></a> </h3><br>
                             <% }); %>
                         </div>
                     </div>

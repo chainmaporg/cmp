@@ -420,41 +420,42 @@ exports.getJobRecommendations = function(req, res) {
         });
 };
 
-exports.recordClick = function(req, res) {
-    var body = req.body;
-    var session = req.session;
-    var session_id = req.sessionID;
-    var userID = session.user_id;
-    var id = body.id;
-    var type = body.type;
+exports.recordClick = (req, res) => {
+    const body = req.body;
+    const session = req.session;
+    const session_id = req.sessionID;
+    const userID = session.user_id;
+    const id = body.id;
+    const type = body.type;
+    const title = body.title;
 
     String.prototype.hashCode = function() {
-        var hash = 0;
-        if (this.length == 0) {
+        let hash = 0;
+        if (this.length === 0) {
             return hash;
         }
-        for (var i = 0; i < this.length; i++) {
-            var char = this.charCodeAt(i);
+        for (let i = 0; i < this.length; i++) {
+            const char = this.charCodeAt(i);
             hash = (hash << 5) - hash + char;
             hash = hash & hash; // Convert to 32bit integer
         }
         return hash;
     };
 
-    var hashID = id.hashCode();
+    const hashID = id.hashCode();
 
-    connection.query("select doc_id from documents where doc_id=?", [hashID], function(error, results, fields) {
+    connection.query("select doc_id from documents where doc_id=?", [hashID], (error, results, fields) => {
         if (error) console.log("error occured", error);
-        else if (results.length == 0) {
-            connection.query("INSERT INTO documents (doc_id, type, link) VALUES (?)", [[hashID, type, id]], function(
-                error,
-                results,
-                fields,
-            ) {
-                if (error) {
-                    console.log("error ocurred", error);
-                } else console.log("Success on recoding doc");
-            });
+        else if (results.length === 0) {
+            connection.query(
+                "INSERT INTO documents (doc_id, title, type, link) VALUES (?)",
+                [[hashID, title, type, id]],
+                (error, results, fields) => {
+                    if (error) {
+                        console.log("error ocurred", error);
+                    } else console.log("Success on recoding doc");
+                },
+            );
         } else {
         }
         //console.log(results)
@@ -467,7 +468,7 @@ exports.recordClick = function(req, res) {
     connection.query(
         "INSERT INTO click (user_id, doc_id, session_id, timestamp) VALUES (?, ?, ?, NOW())",
         [userID, hashID, session_id],
-        function(error, results, fields) {
+        (error, results, fields) => {
             if (error) {
                 console.log("error ocurred", error);
             } else console.log("Success on recoding click");
