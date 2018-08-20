@@ -1,0 +1,186 @@
+Smart Contract Design for CMAP token which support blockchain open Source Map (OSM)
+===================================================================================
+
+V0.1 - 8/19/2018
+Author History
+	George Zhao - Started
+	
+
+
+(1) Design Principal
+
+	1.1 Match to the vision of OSM and ChainMap 3.0: https://github.com/chainmaporg/cmp/wiki/ChainMap-V-3.0---Blockchain-Open-Source-Map
+		1.1 Map node update and the contributors get rewards
+		1.2 the OSM is certified in blockchain, so all creditors are rewarded
+		
+	1.2 A erc20 token system CMAP to support the chainmap community for incentive for the knowledge open source map (OSM) mappers (e.g. post a challenge)
+	
+	1.3 The smart contract framework can support permanente storage for the OSM data creditors (the knowledge map change)
+	
+	1.4 Upgradable contract - separated contract between logic and storage and the storage is using key-value store
+	
+	1.5 Generic flexible fashion for map nodes addition/update for the first release, so the contract shall be almost final and no need to upgrade
+	
+    1.6 Shall run in Etherum for token management and ERC20 token for the interface
+    
+    1.7 Shall make sure the cost is effective, so we can manage the storage in a few layers:
+    	1.7.1 Search Database: the lookup data, such as training materials, articles, job posting, it shall be in Lucene search engine
+    	1.7.2 User interaction DB: MySQL, the database interact with Node.js app (OSM interface)
+    	1.7.3 Smart Contract in Etherum
+    	1.7.3 Offline storage inside blockchain - IPFS
+    	
+
+
+(2) Parameters:
+
+	CMAP Policy:
+	{
+		Token Name: ChainMap
+		Symbol: CMAP
+		Decimal: 4 (x10000)
+		totalSupply: 2 billion * 10000
+		balanceOf:
+		transfer:
+		transferFrom:
+		approve:
+		allowance:
+	}
+	
+	Allocation:	
+	{
+	  Investor: 20%
+	  Team and advisors: 20%
+	  Partnership & Alliance: 15%
+	  Community: 45%
+	}
+
+(3) Code example:
+
+   // ------------------------------------------------------------------------
+    // Constructor
+    // ------------------------------------------------------------------------
+    function CmapToken() public {
+        symbol = "CMAP";
+        name = "ChainMap Token";
+        decimals = 4;
+        _totalSupply = 2000000000*10000; //2billion * 4 decimal
+        balances[POOL_ADDRESS] = _totalSupply;
+        Transfer(address(0), POOL_ADDRESS, _totalSupply);
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Total supply
+    // ------------------------------------------------------------------------
+    function totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Get the token balance for account tokenOwner
+    // ------------------------------------------------------------------------
+    function balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Transfer the balance from token owner's account to to account
+    // - Owner's account must have sufficient balance to transfer
+    // - 0 value transfers are allowed
+    // ------------------------------------------------------------------------
+    function transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        Transfer(msg.sender, to, tokens);
+        return true;
+    }
+
+
+	
+(4) User experience
+
+	Customer use MetaMask to manage their wallet for CMAP token
+
+(5) ChainMap deploy and test framework
+
+	ChainMap shall use Truffle and other automation tool for deployment and testing smart contracts
+	
+	
+(6) The first contract deployed in Etherum shall have majority code supported for OSM
+
+(7) Storage functions
+
+	7.1 token_init  - get token united
+	7.2 token_deposit - deposit the tokens into the address
+	7.3 token_get - get the token balance of the address
+	7.4 data_store - store the IPFS hash into the chain
+	
+
+(8) Smart Contract Logic to support OSM
+
+	8.1 action_add_node - add a new node in the network such as sharing info
+	8.2 action_vote_node - add a vote(positive) to the map and built a connection between two nodes
+	8.3 action_add_domain - add a domain (city) to the map
+	8.4 action_add_poi - add a point of interest to the map (such as a developer or project)
+	8.5 security_verify_address - verify if the sender can invoke the smart contract
+	8.6 security_add_address - add the address which can invoke the smart contract
+
+
+(9) Roadmap for this smart contract
+
+	a. Team agrees with policy and terms (2)
+	b. Function definition on (7) + (8) to support OSM in general
+	c. Implement the OSM data creditors and token storage as phase 1
+	d. Implement the IPFS storage as phase 2 
+	
+(10) references:
+
+	10.1 Your dapp tutorials: https://dappsforbeginners.wordpress.com/tutorials/interactions-between-contracts/
+
+	10.2 Call contract: https://dappsforbeginners.wordpress.com/tutorials/interactions-between-contracts/
+
+	10.3 Create a wallet: https://www.myetherwallet.com/
+
+	10.4 MetaMask: How it work - https://metamask.io/#how-it-works
+
+	10.5 Check wallet: https://www.myetherwallet.com
+
+	10.6 Issue own token: https://medium.com/bitfwd/how-to-issue-your-own-token-on-ethereum-in-less-than-20-minutes-ac1f8f022793
+
+	10.7 Deploy the contract:  http://remix.ethereum.org/
+
+	10.8 ropstern for testing: access https://ropsten.etherscan.io
+
+	10.9 Upgradable smartcontract: https://blog.indorse.io/ethereum-upgradeable-smart-contract-strategies-456350d0557c
+
+	10.10 Nebulas Smart Contract Example: https://github.com/nebulasio/wiki/blob/master/smart_contract.md
+
+	10.11 Nebulas contract to contract: https://github.com/nebulasio/wiki/blob/master/smart_contract.md#call-between-contractssince-110-testnet
+
+	10.12 Example contract: https://medium.com/rocket-pool/upgradable-solidity-contract-design-54789205276d
+
+	10.13 function in another contract:https://medium.com/@blockchain101/calling-the-function-of-another-contract-in-solidity-f9edfa921f4c
+
+	10.14 Know this guy: https://medium.com/@blockchain101
+	
+	10.15 Truffle: https://medium.com/coinmonks/test-a-smart-contract-with-truffle-3eb8e1929370
+	
+	10.16 ERC20 token: https://cointelegraph.com/explained/erc-20-tokens-explained
+	
+	10.17 IPFS storage: https://medium.com/@didil/off-chain-data-storage-ethereum-ipfs-570e030432cf
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
