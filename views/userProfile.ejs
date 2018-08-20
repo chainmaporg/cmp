@@ -375,13 +375,20 @@
                                                                     var keywords = r.keywords
                                                                     document.getElementById("keywords").innerText += keywords.join(", ")
 
-                                                                for (i=0; i < 6; i++) 
-                                                                {
-                                                                    var link = recommendations[i]["url"];
-                                                                    var category = String(recommendations[i]["category"]).charAt(0).toUpperCase() + String(recommendations[i]["category"]).slice(1);
-                                                                    var title = String(recommendations[i]["title"]);
-                                                                    title = title.replace(/^[0-9]+/,"").replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()).replace(/ /g, "&nbsp");
-                                                                    document.getElementById("link"+i).innerHTML= category + " author" + ":&nbsp<a href=\"" + link +"\"" + " onclick = \"return logClick(this);\"type=" + category + ">" + title + "</a>";
+                                                                    for (i=0; i < 6; i++) 
+                                                                    {
+                                                                        var link = recommendations[i]["url"];
+                                                                        if (typeof recommendations[i]["category"] !== "undefined")
+                                                                            var category = String(recommendations[i]["category"]).charAt(0).toUpperCase() + String(recommendations[i]["category"]).slice(1) + " author";
+                                                                        else
+                                                                            var category = "Link";
+                                                                        if (typeof recommendations[i]["title"] !== "undefined") {
+                                                                            var title = String(recommendations[i]["title"]);
+                                                                            title = title.replace(/^[0-9]+/,"").replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()).replace(/ /g, "&nbsp");
+                                                                        }
+                                                                        else
+                                                                            title = link;
+                                                                    document.getElementById("link"+i).innerHTML= category + ":&nbsp<a href=\"" + link +"\"" + " onclick = \"return logClick(this);\"type=" + category + ">" + title + "</a>";
                                                                 }
                                                                 });
 

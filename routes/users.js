@@ -129,46 +129,45 @@ exports.getCompanies = function(req, res) {
     });
 };
 
-exports.getRecommendations = function(req, res) {
-    var resData = {};
-    var Client = require("node-rest-client").Client;
-    var client = new Client();
-    var solr_host = global.config.search_solr_host;
-    var session = req.session;
-    var userID = session.user_id;
+exports.getRecommendations = (req, res) => {
+    const resData = {};
+    const Client = require("node-rest-client").Client;
+    const client = new Client();
+    const solr_host = global.config.search_solr_host;
+    const session = req.session;
+    const userID = session.user_id;
     new Promise((resolve, reject) => {
-        connection.query("select category_id from user_category where user_id=?", [userID], function(
-            error,
-            results,
-            fields,
-        ) {
-            if (error) {
-                reject(error);
-                res.render("error", {
-                    errorMsg: "Error on finding user categories",
-                });
-            } else {
-                results = results.map(function(value) {
-                    return value["category_id"];
-                });
-                if (results.length == 0) resolve([1, 2]);
-                else resolve(results);
-            }
-        });
+        connection.query(
+            "select category_id from user_category where user_id=?",
+            [userID],
+            (error, results, fields) => {
+                if (error) {
+                    reject(error);
+                    res.render("error", {
+                        errorMsg: "Error on finding user categories",
+                    });
+                } else {
+                    results = results.map(value => {
+                        return value["category_id"];
+                    });
+                    if (results.length == 0) resolve([1, 2]);
+                    else resolve(results);
+                }
+            },
+        );
     })
         .catch(error => {
             console.log(error);
-            console.log("Error reached.");
         })
         .then(results => {
             new Promise((resolve, reject) => {
                 connection.query(
                     "select keyword from keywords where category_id =" + results.join(" or category_id="),
-                    function(error, results, fields) {
+                    (error, results, fields) => {
                         if (error) {
                             reject(error);
                         } else {
-                            results = results.map(function(value) {
+                            results = results.map(value => {
                                 return value["keyword"];
                             });
                             resolve(results);
@@ -179,19 +178,19 @@ exports.getRecommendations = function(req, res) {
                 .catch(error => console.log(error))
                 .then(all => {
                     function getRandom() {
-                        var randomIndex = Math.floor(Math.random() * all.length);
+                        const randomIndex = Math.floor(Math.random() * all.length);
                         return all.splice(randomIndex, 1)[0];
                     }
-                    var keywords = [];
-                    var maxLength = all.length;
-                    for (var i = 0; i < Math.min(maxLength, 5); i++) {
+                    let keywords = [];
+                    const maxLength = all.length;
+                    for (let i = 0; i < Math.min(maxLength, 5); i++) {
                         keywords.push(getRandom());
                     }
 
-                    var category = "article";
+                    const category = "article";
 
                     function getLink(keywords, numShow) {
-                        var url =
+                        const url =
                             solr_host +
                             "/select?fl=title,%20url,%20category&q=category:" +
                             encodeURI(category) +
@@ -205,25 +204,24 @@ exports.getRecommendations = function(req, res) {
                     keywords = new Set(keywords);
                     keywords = [...keywords];
                     resData.keywords = keywords;
-                    var url = getLink(keywords, 10);
+                    const url = getLink(keywords, 6);
 
                     function makePromise(url) {
-                        var p = new Promise((resolve, reject) => {
+                        const p = new Promise((resolve, reject) => {
                             // request is asynchronous
-                            var client = new Client();
-                            console.log("dddd---url:", url);
-                            var r = client.get(url, function(data, response) {
-                                var docs = JSON.parse(data).response.docs;
+                            const client = new Client();
+                            const r = client.get(url, (data, response) => {
+                                const docs = JSON.parse(data).response.docs;
                                 resolve(docs);
                             });
 
-                            r.on("requestTimeout", function(r) {
+                            r.on("requestTimeout", r => {
                                 console.log("request expired.");
                                 r.abort();
                                 reject();
                             });
 
-                            r.on("error", function(err) {
+                            r.on("error", error => {
                                 console.log("request error", error);
                                 reject();
                             });
@@ -233,32 +231,56 @@ exports.getRecommendations = function(req, res) {
                         return p;
                     }
 
-                    var combined = makePromise(url);
+                    function getPPRRecs() {
+                        return new Promise((resolve, reject) => {
+                            const recs = [];
+                            connection.query(
+                                "select link from doc_recommendations where user_id = ?",
+                                [userID],
+                                (error, results, fields) => {
+                                    if (error) {
+                                        console.log(error);
+                                        reject(error);
+                                    } else {
+                                        for (let i = 0; i < Math.min(results.length, 6); i++) {
+                                            recs.push({ url: results[i].link });
+                                        }
+                                        resolve(recs);
+                                    }
+                                },
+                            );
+                        });
+                    }
+
+                    const combined = [];
+                    combined.push(makePromise(url));
+                    combined.push(getPPRRecs());
 
                     function shuffle(array) {
-                        var counter = array.length;
+                        let counter = array.length;
                         // While there are elements in the array
                         while (counter > 0) {
                             // Pick a random index
-                            var index = Math.floor(Math.random() * counter);
+                            const index = Math.floor(Math.random() * counter);
 
                             // Decrease counter by 1
                             counter--;
 
                             // And swap the last element with it
-                            var temp = array[counter];
+                            const temp = array[counter];
                             array[counter] = array[index];
                             array[index] = temp;
                         }
                         return array;
                     }
 
-                    combined
-                        .catch(function(error) {
+                    Promise.all(combined)
+                        .catch(error => {
                             console.log(error);
                         })
-                        .then(function(values) {
-                            var recommendations = shuffle(values).slice(0, 6);
+                        .then(values => {
+                            values = values[0].concat(values[1]);
+                            const recommendations = shuffle(values).slice(0, 6);
                             resData.recommendations = recommendations;
                             res.send(resData);
                         });
