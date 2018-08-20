@@ -1,0 +1,121 @@
+Smart Contract Design
+
+
+Storage:
+
+Token Name: ChainMap
+Symbol: CMAP
+Decimal: 8 (0.00000001)
+totalSupply: 2 billion
+balanceOf:
+transfer:
+transferFrom:
+approve:
+allowance:
+
+
+//Support dApp
+
+//Your dapp tutorials: https://dappsforbeginners.wordpress.com/tutorials/interactions-between-contracts/
+
+//Call contract: https://dappsforbeginners.wordpress.com/tutorials/interactions-between-contracts/
+
+//1. Ethereum is a decentralized network of computers with two basic functions.
+
+//2. They are: blockchain that can record transactions, and a virtual machine that can produce smart contracts.
+
+//Paid by Either
+
+//Erc20 token is a currency, points in chainmap.org and proof of data ownership of the system
+
+//Erc20 can be traded
+
+//Problems of Erc20
+
+//Examples of the ERC20 token, TRON and EOS
+
+//Upgrade of smart contracts
+
+//Ropsten Test network
+
+//Create a wallet: https://www.myetherwallet.com/
+
+//MetaMask: is an extension for accessing Ethereum enabled distributed applications, or "Dapps" in your normal Chrome browser!
+
+//MetaMask: The extension injects the Ethereum web3 API into every website's javascript context, so that dapps can read from the blockchain.
+
+//MetaMask: How it work - https://metamask.io/#how-it-works
+
+//Check wallet: https://www.myetherwallet.com
+
+//Issue own token: https://medium.com/bitfwd/how-to-issue-your-own-token-on-ethereum-in-less-than-20-minutes-ac1f8f022793
+
+//Deploy the contract:  http://remix.ethereum.org/
+
+//Deply the contract: MEW where we will start to deploy the contract
+
+//access https://ropsten.etherscan.io
+
+//register the contract: 
+
+//Get it right once or get it wrong forever.
+
+//Upgradable smartcontract: https://blog.indorse.io/ethereum-upgradeable-smart-contract-strategies-456350d0557c
+
+//Data storage as key-value pair
+
+//Separate Logic and Data Contracts with Data as Key-Value pairs
+
+//Example: https://github.com/nebulasio/wiki/blob/master/smart_contract.md
+
+//Example contract to contract: https://github.com/nebulasio/wiki/blob/master/smart_contract.md#call-between-contractssince-110-testnet
+
+//Example contract: https://medium.com/rocket-pool/upgradable-solidity-contract-design-54789205276d
+
+//DAO hack: which lost approximately $60 million
+
+//Parity Multisig Wallet hack: $162 million worth of ether and tokens being stuck in limbo for a possible eternity on the blockchain
+
+//HardCode address: address constant _walletLibrary = 0x863df6bfa4469f3ead0be8f9f2aae51c91a907b4;
+
+//modifier??
+
+//only registered contracts within the Rocket Pool network can write to storage.
+
+//Call function in another contract:https://medium.com/@blockchain101/calling-the-function-of-another-contract-in-solidity-f9edfa921f4c
+
+//Know this guy: https://medium.com/@blockchain101
+
+//
+
+
+
+
+
+
+//===Use cases Storage
+// (1) token_init  - get token united
+// (2) token_deposit - deposit the tokens into the address
+// (3) token_get - get the token balance of the address
+
+//===Use case logic
+// (1) action_add_node - add a new node in the network such as sharing info
+// (2) action_vote_node - add a vote(positive) to the map and built a connection between two nodes
+// (3) action_add_domain - add a domain (city) to the map
+// (4) action_add_poi - add a point of interest to the map (such as a developer or project)
+// (5) security_verify_address - verify if the sender can invoke the smart contract
+// (6) security_add_address - add the address which can invoke the smart contract
+
+
+
+
+
+
+
+
+
+
+
+
+
+
