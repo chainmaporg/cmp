@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
@@ -285,7 +285,13 @@
                                                 var pdate = String(r[i]["date"][0]).replace("T00:00:00Z", "");
                                                 var title = String(r[i]["title"][0]);
                                                 var category = String(r[i]["category"][0]);
-                                                var summary = String(r[i]["summary"][0]).match(/(.*?)[.?!]\s/)[0];
+                                                var summary = String(r[i]["summary"][0]).match(/(.*?)[.?!]\s/);
+
+						if(summary == null){
+						summary = 'No summary available';
+						}else{
+						summary = summary[0];
+						}
                                                 
                                                 var summarylink = "<a href=\'" + link +"\'"+ " title = \"" + title + "\"onclick = \'return logClick(this);\' type=\'news\' class='post-read-more button color small' target='_blank'>" + "Continue reading" + "</a>";
 
