@@ -129,6 +129,21 @@ exports.getCompanies = function(req, res) {
     });
 };
 
+exports.getConnectionRecommendations = (req, res) => {
+    const userID = req.session.user_id;
+    connection.query(
+        "select suggested_user, user_name, firstname, lastname from user_recommendations inner join user t2 on suggested_user = t2.user_id inner join connections t3 on t3.user_id = t2.user_id where user_recommendations.user_id = ? and show_profile = 1;",
+        [userID],
+        (error, results, fields) => {
+            if (error) {
+                console.log(error);
+            } else {
+                res.render("userSuggestions", { suggestions: results });
+            }
+        },
+    );
+};
+
 exports.getRecommendations = (req, res) => {
     const resData = {};
     const Client = require("node-rest-client").Client;
@@ -739,11 +754,33 @@ exports.userProfile = (req, res) => {
                                                                                     } else {
                                                                                         resultObj["out_message_count"] =
                                                                                             results.length;
-
-                                                                                        res.render("userProfile", {
-                                                                                            data: resultObj,
-                                                                                            user_token_balance: user_token_balance,
-                                                                                        });
+                                                                                        connection.query(
+                                                                                            "select count(*) from user_recommendations inner join user t2 on suggested_user = t2.user_id inner join connections t3 on t3.user_id = t2.user_id where user_recommendations.user_id = ? and show_profile = 1;",
+                                                                                            [userID],
+                                                                                            (
+                                                                                                error,
+                                                                                                results,
+                                                                                                fields,
+                                                                                            ) => {
+                                                                                                if (error) {
+                                                                                                    console.log(error);
+                                                                                                } else {
+                                                                                                    resultObj[
+                                                                                                        "suggest_count"
+                                                                                                    ] =
+                                                                                                        results[0][
+                                                                                                            "count(*)"
+                                                                                                        ];
+                                                                                                    res.render(
+                                                                                                        "userProfile",
+                                                                                                        {
+                                                                                                            data: resultObj,
+                                                                                                            user_token_balance: user_token_balance,
+                                                                                                        },
+                                                                                                    );
+                                                                                                }
+                                                                                            },
+                                                                                        );
                                                                                     }
                                                                                 },
                                                                             );
