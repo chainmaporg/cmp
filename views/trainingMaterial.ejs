@@ -18,7 +18,8 @@
             {
                 var link = obj.getAttribute("href");
                 var t = obj.getAttribute("type");
-                $.post("http://" + $(location).attr("hostname") + "/log", {id:link, type:t});
+                var title = obj.getAttribute("title");
+                $.post("http://" + $(location).attr("hostname") + "/log", {id:link, type:t, title});
                 return true;
             }
         </script>
@@ -119,7 +120,7 @@
                                                                <a href="/loginRegister" class="button small green-button custom-button">Login/Register to get recommendations </a></center>
                                        
                                                             <% } %> 
-                                                            <a href=<%=list[i].link%> onclick = "return logClick(this);" class="post-read-more button color small" target="_blank" type="training material">Continue reading</a>
+                                                            <a href=<%=list[i].link%> title = "<%=list[i].name%>" onclick = "return logClick(this);" class="post-read-more button color small" target="_blank" type="training material">Continue reading</a>
 
                                                         </div>
                                                         <!-- End post-content -->

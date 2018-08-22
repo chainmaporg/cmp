@@ -152,6 +152,7 @@ CREATE Table `keywords` (
 DROP TABLE IF EXISTS `documents`;
 CREATE TABLE `documents` (
     `doc_id` int(11) NOT NULL,
+    `title` varchar(150) DEFAULT 'Empty' NOT NULL,
     `type` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
     `link` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
     PRIMARY KEY (`doc_id`)

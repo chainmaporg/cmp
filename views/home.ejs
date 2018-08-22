@@ -17,7 +17,8 @@
             	console.log("----log click", obj)
                 var link = obj.getAttribute("href");
                 var t = obj.getAttribute("type");
-                $.post("http://" + $(location).attr("hostname") + "/log", {id:link, type:t});
+                var title = obj.getAttribute("title");
+                $.post("http://" + $(location).attr("hostname") + "/log", {id:link, type:t, title});
                 return true;
             }
         </script>
@@ -292,7 +293,7 @@
 						summary = summary[0];
 						}
                                                 
-                                                var summarylink = "<a href=\'" + link +"\'"+ " onclick = \'return logClick(this);\' type=\'news\' class='post-read-more button color small' target='_blank'>" + "Continue reading" + "</a>";
+                                                var summarylink = "<a href=\'" + link +"\'"+ " title = \"" + title + "\"onclick = \'return logClick(this);\' type=\'news\' class='post-read-more button color small' target='_blank'>" + "Continue reading" + "</a>";
 
                         
                                                 document.getElementById("art"+i+"1").innerHTML=title;
@@ -316,8 +317,8 @@
                             <div class="boxedtitle page-title">
                                 <h2>ChainMap Hottest Links</h2>
                             </div>
-                            <% links.forEach(link => { %>
-                            <h3 class="post-title"><a href="<%=link%>"><%=link%></a> </h3><br>
+                            <% links.forEach((link, i) => { %>
+                            <h3 class="post-title">#<%=i+1%> Most Accessed Link: <a href="<%=link%>"><%=link%></a> </h3><br>
                             <% }); %>
                         </div>
                     </div>
@@ -377,7 +378,7 @@
                                 '<img src="image/' + img + '" class="img-rounded" alt="" width="40" height="40" align="right">' +
                                 '</div>' +
                                 '<div class="col-sm-10"> ' +
-                                '<a href="'+url+'" onclick = "return logClick(this);" target="_blank" class="list-group-item" style="border: none" type=' 
+                                '<a href="'+url+'" title = \"' + value.title + '\" onclick = "return logClick(this);" target="_blank" class="list-group-item" style="border: none" type=' 
                                 + value.category + '>' +
                                 '<h4 class="list-group-item-heading" style="color:DodgerBlue;">' + value.title + '</h4>' +
                                 '<p class="list-group-item-text">' + value.summary + ' </p>' +
