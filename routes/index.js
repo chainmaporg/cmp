@@ -1,6 +1,7 @@
 chainmap_env = global.config.chainmap_env;
 smartContract_address = global.config.smartContract_address;
 chainmapServerWallet = global.config.chainmapServerWallet;
+supportEmail = global.config.supportEmail
 
 const Nebulas = require("nebulas");
 
@@ -8,6 +9,7 @@ const Nebulas = require("nebulas");
 exports.Nebulas = Nebulas;
 exports.smartContract_address = smartContract_address;
 exports.chainmapServerWallet = chainmapServerWallet;
+exports.supportEmail = supportEmail;
 
 const express = require("express");
 const SolrNode = require("solr-node");
@@ -196,6 +198,10 @@ router.post("/userRegister", users.userRegister);
 router.get("/loginRegister", function(req, res) {
     res.render("loginRegister", { title: "Login/Register" });
 });
+router.get("/forgetPassword", function(req, res) {
+    res.render("forgetPassword", { title: "Retrieve your Password" });
+});
+router.get("/resetPassword/:token", users.resetPassword);
 
 router.get("/companyNews", function(req, res) {
     companyNews.getCompanyNews(req, res);
@@ -236,6 +242,8 @@ router.get("/trainingMaterial_Training", function(req, res) {
 });
 
 router.post("/updateUserProfile", users.updateUserProfile);
+router.post("/submitEmail", users.submitEmail);
+router.post("/resetPasswordAction", users.resetPasswordAction);
 router.post("/log", users.recordClick);
 
 router.post("/checkDuplicatePayment", users.checkDuplicatePayment);

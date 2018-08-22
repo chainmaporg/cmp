@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "aws-sdk": "^2.296.0",
     "body-parser": "^1.18.3",
     "chart.js": "^2.7.2",
     "cookie-parser": "~1.4.3",
@@ -24,6 +25,8 @@
     "node-rest-client": "^3.1.0",
     "pug": "2.0.0-beta11",
     "queue": "^4.4.2",
+    "randomstring": "^1.1.5",
+    "request": "^2.81.0",
     "solr-node": "^1.0.13",
     "webpack": "^4.14.0"
   }
