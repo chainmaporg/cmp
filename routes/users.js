@@ -1073,7 +1073,7 @@ exports.submitEmail = (req, res) => {
                                 var ses = new aws.SES({ apiVersion: '2010-12-01' });
                                 // send to list
                                 var to = [user_email]
-                                var url = hostname + "/resetPassword" + "/" + code
+                                var url = global.config.baseUrl + "resetPassword" + "/" + code
                                 var emailBody = "Hi " + user_name + "<br><br> To reset your password, Please access this link within 24 hours: <a href='" + url + "' target='_blank'> Reset Password </a>";
                                 emailBody = emailBody + "<br> <br> Thanks <br>Chainmap Support Team<br><a href='http://chainmap.org/'>Chainmap.org</a>";
                                 emailSubject = "Reset Password link sent!!!"

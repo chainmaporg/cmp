@@ -9,6 +9,7 @@ var chainmapServerWallet = "n1GvvvstiCXUKBaeYniqRGeoAdMkMHoipvc";
 var supportEmail = "support@chainmap.org"
 var dataSiteKey = "6LdF3GkUAAAAAIIWKqWINCO3LbxKroenIIPDZF_D"
 var secretKey = "6LdF3GkUAAAAAKMbqkzddlZZe5PLs8m4qMlt6jJV"
+var baseUrl = "http://localhost/"
 
 module.exports = {
     name: 'server',
@@ -35,7 +36,8 @@ module.exports = {
     search_engine_host:search_engine_host,
     supportEmail:supportEmail,
     dataSiteKey:dataSiteKey,
-    secretKey:secretKey	
+    secretKey:secretKey,
+    baseUrl:baseUrl	
 }
 
 
