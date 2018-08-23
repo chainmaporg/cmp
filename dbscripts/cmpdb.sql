@@ -225,3 +225,19 @@ CREATE TABLE `forgetpasswordcode` (
   PRIMARY KEY (`token`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `solutionmap`;
+CREATE TABLE `solutionmap` (
+  `id` int(11) NOT NULL,
+  `name` varchar(80) NOT NULL,
+  `description` varchar(500)    NOT NULL,
+  `url` varchar(200) NOT NULL,
+  `link` varchar(500)    NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `solutionmap` VALUES ('1', 'PoW', 'Proof of Work', 'https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FProof-of-work_system', ' ');
+INSERT INTO `solutionmap` VALUES ('2', 'PoS', 'Proof of Stake', 'https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FProof-of-stake%2F', ' ');
+INSERT INTO `solutionmap` VALUES ('3', 'DPoS', 'Delegated Proof of Stage', 'https://hackernoon.com/what-is-delegated-proof-of-stake-897a2f0558f9', ' ');
+INSERT INTO `solutionmap` VALUES ('4', 'Consensus', 'Consensus', 'https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FConsensus_(computer_science)', ' ');
+INSERT INTO `solutionmap` VALUES ('5', 'FaultTolerant', 'Fault Tolerant', 'https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FFault_tolerance', ' ');
+
+
