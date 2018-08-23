@@ -129,19 +129,26 @@ exports.getCompanies = function (req, res) {
     });
 };
 
-exports.getConnectionRecommendations = (req, res) => {
-    const userID = req.session.user_id;
-    connection.query(
-        "select suggested_user, user_name, firstname, lastname from user_recommendations inner join user t2 on suggested_user = t2.user_id inner join connections t3 on t3.user_id = t2.user_id where user_recommendations.user_id = ? and show_profile = 1;",
-        [userID],
-        (error, results, fields) => {
-            if (error) {
-                console.log(error);
-            } else {
-                res.render("userSuggestions", { suggestions: results });
-            }
-        },
-    );
+exports.getConnectionRecommendations = userID => {
+    return new Promise((resolve, reject) => {
+        connection.query(
+            "select suggested_user, user_name, firstname, lastname, headline, category_name" +
+                " from user_recommendations inner join user t2 on suggested_user = t2.user_id" +
+                " inner join connections t3 on t3.user_id = t2.user_id" +
+                " left join user_category t4 on t3.user_id = t4.user_id" +
+                " left join category t5 on t4.category_id = t5.id" +
+                " where user_recommendations.user_id = ? and show_profile = 1" +
+                " order by suggested_user",
+            [userID],
+            (error, results, fields) => {
+                if (error) {
+                    reject(error);
+                } else {
+                    resolve(results);
+                }
+            },
+        );
+    });
 };
 
 exports.getRecommendations = (req, res) => {

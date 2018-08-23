@@ -168,7 +168,18 @@ router.get("/payContent/:name", function(req, res) {
     res.render(req.params.name, { title: req.params.name });
 });
 
-router.get("/connectGroup", socialgroup.getSocialGroup);
+router.get("/partnerPage", (req, res) => {
+    const groups = socialgroup.getSocialGroup();
+    const connections = users.getConnectionRecommendations(req.session.user_id);
+    Promise.all([groups, connections])
+        .catch(error => {
+            res.render("error", { errorMsg: "Could not find partner data." });
+        })
+        .then(values => {
+            console.log(values[1]);
+            res.render("connect", { groups: values[0], connections: values[1] });
+        });
+});
 
 router.get("/askQuestion", function(req, res) {
     var session = req.session;
@@ -292,16 +303,6 @@ router.get("/outbox", (req, res) => {
         res.redirect("loginRegister");
     } else {
         users.messages(req, res, false);
-    }
-});
-
-router.get("/userSuggestions", (req, res) => {
-    if (typeof req.session.user_id === "undefined") {
-        console.log("Did not make it :(");
-        res.redirect("loginRegister");
-    } else {
-        console.log("Made it :O");
-        users.getConnectionRecommendations(req, res);
     }
 });
 
