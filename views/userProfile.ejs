@@ -275,7 +275,10 @@
                                                                     {
                                                                         var link = recommendations[i]["url"];
                                                                         if (typeof recommendations[i]["category"] !== "undefined")
-                                                                            var category = String(recommendations[i]["category"]).charAt(0).toUpperCase() + String(recommendations[i]["category"]).slice(1) + " author";
+                                                                            if (recommendations[i]["category"] === "article")
+                                                                                var category = String(recommendations[i]["category"]).charAt(0).toUpperCase() + String(recommendations[i]["category"]).slice(1) + " author";
+                                                                            else
+                                                                                var category = "White Paper"
                                                                         else
                                                                             var category = "Link";
                                                                         var title = recommendations[i]["title"];

@@ -209,7 +209,7 @@ exports.getRecommendations = (req, res) => {
                         keywords.push(getRandom());
                     }
 
-                    const category = "article";
+                    const category = "(article OR White_Paper)";
 
                     function getLink(keywords, numShow) {
                         const url =
