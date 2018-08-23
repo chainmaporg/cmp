@@ -92,13 +92,20 @@ exports.getGraph = () => {
 
 exports.runPPR = () => {
     return new Promise((resolve, reject) => {
-        const exec = require("child_process").execFile;
-        exec("./utils/randwalk", (error, data) => {
-            if (error) {
-                console.log(error);
-                reject(error);
-            } else {
-                let vals = data.toString().split("\n");
+        const spawn = require("child_process").spawn;
+        const proc = spawn("./utils/randwalk");
+        let result = "";
+
+        proc.stdout.on('data', (data) => {
+            result += data.toString();
+        });
+
+        proc.stderr.on('data', (data) => {
+            reject("error: " + data.toString());
+        });
+
+        proc.on('close', (code) => {
+            let vals = result.split("\n");
                 console.log(vals[vals.length - 2]);
                 vals = vals.slice(5, vals.length - 2);
                 importances = [];
@@ -110,8 +117,7 @@ exports.runPPR = () => {
                         Number.parseFloat(parsedStr[2]),
                     ]);
                 });
-                resolve(importances);
-            }
+            resolve(importances);
         });
     });
 };

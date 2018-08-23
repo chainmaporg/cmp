@@ -446,7 +446,7 @@ exports.recordClick = (req, res) => {
     const body = req.body;
     const session = req.session;
     const session_id = req.sessionID;
-    const userID = session.user_id;
+    let userID = session.user_id;
     const id = body.id;
     const type = body.type;
     const title = body.title;
@@ -492,7 +492,7 @@ exports.recordClick = (req, res) => {
         //console.log(results)
     });
 
-    if (userID == undefined) {
+    if (typeof userID === "undefined") {
         userID = -1;
     }
 
