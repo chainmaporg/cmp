@@ -10,9 +10,9 @@ hosts=("107.182.235.108")
 
 target=/home/deploy
 user=gezhao
-tarname=cmp-2.1.tar
+tarname=cmp-2.2.tar
 
-tar --exclude='./.git/' --exclude='./node_modules' -cvf ../$tarname .
+tar --exclude='./.git/' --exclude='./mynode.log' --exclude='utils/randwalk' --exclude=='utils/graph.txt' --exclude=='utils/params.txt' --exclude='./node_modules' -cvf ../$tarname .
 
 for ix in ${!hosts[*]}
 do
