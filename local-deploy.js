@@ -6,12 +6,16 @@ var smartContract_address = "n1oS3WbLc15VWfeeNr78N7aKjY9Ve8eupCb";
 
 var chainmapServerWallet = "n1GvvvstiCXUKBaeYniqRGeoAdMkMHoipvc";
 
+var supportEmail = "support@chainmap.org"
+var dataSiteKey = "6LdF3GkUAAAAAIIWKqWINCO3LbxKroenIIPDZF_D"
+var secretKey = "6LdF3GkUAAAAAKMbqkzddlZZe5PLs8m4qMlt6jJV"
+
 module.exports = {
     name: 'server',
     db: {
         host: 'localhost',
         user: 'root',
-        password: 'z1965z',
+        password: '',
         database: 'cmpdb'
 
     },
@@ -28,7 +32,10 @@ module.exports = {
     smartContract_address:smartContract_address,
     chainmapServerWallet:chainmapServerWallet,
     search_solr_host:search_solr_host,
-    search_engine_host:search_engine_host	
+    search_engine_host:search_engine_host,
+    supportEmail:supportEmail,
+    dataSiteKey:dataSiteKey,
+    secretKey:secretKey	
 }
 
 
