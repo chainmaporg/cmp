@@ -248,124 +248,9 @@
                                         <!-- End col-md-12 -->
                                         
                                         <div class="col-md-12">
-
-                                                <% if((data.private) && (data.private !== null)) { %>
-
-                                                <div id="message" class="page-content page-content-user-profile">
-                                                    <div class="user-profile-widget">
-                                                        <h2>Leave a message for this user</h2>
-                                                    </div>
-                                                    <form action="javascript:" method="post" id="commentform" class="comment-form">
-                                                        <div id="respond-textarea">
-                                                            <p>
-                                                            <textarea id="message_txt" name="message_txt" aria-required="true" cols="100" rows="8"></textarea>
-                                                            </p>
-                                                        </div>
-                                                        <p class="form-submit">
-                                                        <input name="submit" type="submit" id="submit" value="Send your message" class="button small color" onclick="return(checkMessage('<%-data.userProfile[0].user_name%>'));">
-                                                        </p>
-                                                    </form>
-                                                </div>
-                                                <% } else { 
-                                                    let inUrl = "../inbox";
-                                                    let outUrl = "../outbox";
-                                                    let suggestUrl = "../partnerPage"
-                                                %>
-                                                <div class="col-md-12">
-                                                    <div class="page-content page-content-user-profile">
-                                                        <div class="user-profile-widget">
-                                                            <h2>Partner Connections</h2>
-                                                            <p> Remember to set your profile to public in the "Update Profile" menu to receive messages from other users! </p>
-                                                            <div class="ul_list ul_list-icon-ok">
-                                                                <ul>
-                                                                    <li>
-                                                                        <i class="icon-comment"></i>
-                                                                        <a href="<%=inUrl %>"> Your Inbox
-                                                                            <span> (
-                                                                                <span>
-                                                                                    <%=data.in_message_count%>
-                                                                                </span> ) </span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <i class="icon-comment"></i>
-                                                                        <a href="<%=outUrl %>"> Your Outbox
-                                                                            <span> (
-                                                                                <span>
-                                                                                    <%=data.out_message_count%>
-                                                                                </span> ) </span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <i class="icon-comment"></i>
-                                                                        <a href="<%= suggestUrl%>"> Potential Connections
-                                                                            <span> (
-                                                                                <span>
-                                                                                    <%=data.suggest_count%>
-                                                                                </span> ) </span>
-                                                                        </a>
-                                                                    </li>
-                                                                 </ul>
-                                                            </div>
-                                                        </div>
-                                                        <!-- End user-profile-widget -->
-                                                    </div>
-                                                    <!-- End page-content -->
-                                                </div>
-
-                                                <% } %>
-
-                                        </div>
-
-                                        <script>
-                                            function checkMessage(receiver)
-                                            {
-                                                let allowMessage = userIDExists;
-                                                console.log(userIDExists);
-                                                if (!allowMessage) {
-                                                    alert("Please login to send a message.");
-                                                    return false;
-                                                }
-                                                else {
-                                                    allowMessage = sendMessage(receiver);
-                                                    return allowMessage;
-                                                }
-                                            }
-
-                                            function sendMessage(receiver) {
-                                                var url = "/sendMessage";
-                                                var msg = $("#message_txt").val();
-                                                if (msg.length <= 2) {
-                                                    alert('Cannot send empty message.');
-                                                    return false;
-                                                }
-                                                else {
-                                                    $.when($.ajax({
-                                                        type: 'POST',
-                                                        url: url,
-                                                        data: {
-                                                            msg: msg,
-                                                            receiver: receiver,
-                                                        },
-                                                        async: false,
-                                                        success: function (data) {
-                                                            alert(data.result);
-                                                            var successful = true;
-                                                        },
-                                                        error: function () {
-                                                            var successful = false;
-                                                            alert('Message could not be sent. Please try again later.');
-                                                        }
-                                                    })).then(() => {return successful});
-                                                }
-                                            }
-
-                                        </script>
-
-                                        <div class="col-md-12">
                                             <div class="page-content page-content-user-profile">
                                                 <div class="user-profile-widget">
-                                                    <h2>Document Recommendations</h2>
+                                                    <h2>Solution Recommendations</h2>
                                                     <p id=keywords>Relevant topics:&nbsp</p>
                                                     <div class="ul_list ul_list-icon-ok">
 
@@ -394,6 +279,7 @@
                                                                         else
                                                                             var category = "Link";
                                                                         var title = recommendations[i]["title"];
+                                                                        typeof title === "undefined" ? title = link : {};
                                                                         document.getElementById("link"+i).innerHTML= category + ":&nbsp<a href=\"" + link +"\"" + " title = \"" + title + "\"onclick = \"return logClick(this);\"type=" + category + ">" + title + "</a>";
                                                                 }
                                                                 });
@@ -409,37 +295,7 @@
                                         </div>
                                         <!-- End col-md-12 -->
                                        
-                                        <div class="col-md-12">
-                                            <div class="page-content page-content-user-profile">
-                                                <div class="user-profile-widget">
-                                                    <h2>Job Post Recommendations</h2>
-                                                    <div class="ul_list ul_list-icon-ok">
-                                                        <ul id = "rec list">
-                                                            <li id="job0"></li>
-                                                            <li id="job1"></li>
-                                                            <li id="job2"></li>
-                                                            <li id="job3"></li>
-                                                        </ul>
-
-                                                        <script type="text/javascript">
-                                                                var host = $(location).attr("hostname")
-                                                                var reqUrl = "http://" + $(location).attr("hostname") + "/getJobRecommendations";
-                                                                $.when($.get(reqUrl)).done((r) => {
-                                                                for (i=0; i < 4; i++) 
-                                                                {
-                                                                    var category = String(r[i]["category"]).charAt(0).toUpperCase() + String(r[i]["category"]).slice(1);
-                                                                    var link = r[i]["url"];
-                                                                    var title = String(r[i]["title"]).replace(/^[0-9]+/,"").replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()).replace(/ /g, "&nbsp");
-                                                                    document.getElementById("job"+i).innerHTML=category + ":&nbsp<a href=\"" + link +"\"" + " onclick = \"return logClick(this);\"type=" + category + ">" + title + "</a>";                                                                
-                                                                }
-                                                                });
-                                                        </script>
-                                                        </center>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
+                                        
                                         <div class="col-md-12">
                                             <div class="page-content page-content-user-profile">
                                                 <div class="user-profile-widget">
@@ -630,12 +486,155 @@
                                                             </div>
                                                             <% } %>
 
+                                                            <div class="col-md-12">
+                                                                <div class="page-content page-content-user-profile">
+                                                                    <div class="user-profile-widget">
+                                                                        <h2>Job Post Recommendations</h2>
+                                                                        <div class="ul_list ul_list-icon-ok">
+                                                                            <ul id = "rec list">
+                                                                                <li id="job0"></li>
+                                                                                <li id="job1"></li>
+                                                                                <li id="job2"></li>
+                                                                                <li id="job3"></li>
+                                                                            </ul>
 
+                                                                            <script type="text/javascript">
+                                                                                var host = $(location).attr("hostname")
+                                                                                var reqUrl = "http://" + $(location).attr("hostname") + "/getJobRecommendations";
+                                                                                $.when($.get(reqUrl)).done((r) => {
+                                                                                    for (i=0; i < 4; i++) 
+                                                                                    {
+                                                                                        var category = String(r[i]["category"]).charAt(0).toUpperCase() + String(r[i]["category"]).slice(1);
+                                                                                        var link = r[i]["url"];
+                                                                                        var title = String(r[i]["title"]).replace(/^[0-9]+/,"").replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()).replace(/ /g, "&nbsp");
+                                                                                        document.getElementById("job"+i).innerHTML=category + ":&nbsp<a href=\"" + link +"\"" + " onclick = \"return logClick(this);\"type=" + category + ">" + title + "</a>";                                                                
+                                                                                    }
+                                                                                });
+                                                                            </script>
+                                                                            </center>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+              
+                                                            
+                                                            
+                                            <div class="col-md-12">
 
+                                                <% if((data.private) && (data.private !== null)) { %>
 
+                                                <div id="message" class="page-content page-content-user-profile">
+                                                    <div class="user-profile-widget">
+                                                        <h2>Leave a message for this user</h2>
+                                                    </div>
+                                                    <form action="javascript:" method="post" id="commentform" class="comment-form">
+                                                        <div id="respond-textarea">
+                                                            <p>
+                                                            <textarea id="message_txt" name="message_txt" aria-required="true" cols="100" rows="8"></textarea>
+                                                            </p>
                                                         </div>
-                                                        <!-- End user-profile -->
-                                            </div>
+                                                        <p class="form-submit">
+                                                        <input name="submit" type="submit" id="submit" value="Send your message" class="button small color" onclick="return(checkMessage('<%-data.userProfile[0].user_name%>'));">
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                                <% } else { 
+                                                    let inUrl = "../inbox";
+                                                    let outUrl = "../outbox";
+                                                    let suggestUrl = "../partnerPage"
+                                                %>
+                                                    <div class="page-content page-content-user-profile">
+                                                        <div class="user-profile-widget">
+                                                            <h2>Partner Connections</h2>
+                                                            <p> Remember to set your profile to public in the "Update Profile" menu to receive messages from other users! </p>
+                                                            <div class="ul_list ul_list-icon-ok">
+                                                                <ul>
+                                                                    <li>
+                                                                        <i class="icon-comment"></i>
+                                                                        <a href="<%=inUrl %>"> Your Inbox
+                                                                            <span> (
+                                                                                <span>
+                                                                                    <%=data.in_message_count%>
+                                                                                </span> ) </span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="icon-comment"></i>
+                                                                        <a href="<%=outUrl %>"> Your Outbox
+                                                                            <span> (
+                                                                                <span>
+                                                                                    <%=data.out_message_count%>
+                                                                                </span> ) </span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="icon-comment"></i>
+                                                                        <a href="<%= suggestUrl%>"> Potential Connections
+                                                                            <span> (
+                                                                                <span>
+                                                                                    <%=data.suggest_count%>
+                                                                                </span> ) </span>
+                                                                        </a>
+                                                                    </li>
+                                                                 </ul>
+                                                            </div>
+                                                        </div>
+                                                        <!-- End user-profile-widget -->
+                                                    </div>
+                                                    <!-- End page-content -->
+
+                                                <% } %>
+
+                                        </div>
+
+                                        <script>
+                                            function checkMessage(receiver)
+                                            {
+                                                let allowMessage = userIDExists;
+                                                console.log(userIDExists);
+                                                if (!allowMessage) {
+                                                    alert("Please login to send a message.");
+                                                    return false;
+                                                }
+                                                else {
+                                                    allowMessage = sendMessage(receiver);
+                                                    return allowMessage;
+                                                }
+                                            }
+
+                                            function sendMessage(receiver) {
+                                                var url = "/sendMessage";
+                                                var msg = $("#message_txt").val();
+                                                if (msg.length <= 2) {
+                                                    alert('Cannot send empty message.');
+                                                    return false;
+                                                }
+                                                else {
+                                                    $.when($.ajax({
+                                                        type: 'POST',
+                                                        url: url,
+                                                        data: {
+                                                            msg: msg,
+                                                            receiver: receiver,
+                                                        },
+                                                        async: false,
+                                                        success: function (data) {
+                                                            alert(data.result);
+                                                            var successful = true;
+                                                        },
+                                                        error: function () {
+                                                            var successful = false;
+                                                            alert('Message could not be sent. Please try again later.');
+                                                        }
+                                                    })).then(() => {return successful});
+                                                }
+                                            }
+
+                                        </script>
+
+                                    </div>
+                                    <!-- End user-profile -->
+                                </div>
                                             <!-- End row -->
                                             <div class="clearfix"></div>
 
