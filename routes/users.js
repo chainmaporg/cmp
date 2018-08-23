@@ -1028,7 +1028,7 @@ exports.submitEmail = (req, res) => {
         return res.json({ "responseCode": 1, "responseDesc": "Please select captcha" });
 
     }
-    var givenString = req.body.emailAddress
+    var givenString = req.body.emailorUsername
     // Put your secret key here.
     var secretKey = global.config.secretKey;
     // req.connection.remoteAddress will provide IP address of connected user.
@@ -1051,7 +1051,10 @@ exports.submitEmail = (req, res) => {
                     user_id = results[0].user_id
                     var user_name = results[0].user_name
                     var randomstring = require("randomstring");
+                    var dateStamp = new Date().valueOf();
                     code = randomstring.generate();
+                    code = md5(code + dateStamp)
+                    console.log("the code is: ", code);
                     expirationTime = Date.now() + 86400000; // 24 hour
                     var hostname = req.headers.host;
                     connection.query(
@@ -1065,13 +1068,13 @@ exports.submitEmail = (req, res) => {
                                 // load aws sdk
                                 var aws = require('aws-sdk');
                                 // load aws config
-                                aws.config.loadFromPath('../config.json');
+                                aws.config.loadFromPath('config.json');
                                 // load AWS SES
                                 var ses = new aws.SES({ apiVersion: '2010-12-01' });
                                 // send to list
                                 var to = [user_email]
                                 var url = hostname + "/resetPassword" + "/" + code
-                                var emailBody = "Hi " + user_name + "<br><br> To reset your password, Please access this link : <a href='" + url + "' target='_blank'> Reset Password </a>";
+                                var emailBody = "Hi " + user_name + "<br><br> To reset your password, Please access this link within 24 hours: <a href='" + url + "' target='_blank'> Reset Password </a>";
                                 emailBody = emailBody + "<br> <br> Thanks <br>Chainmap Support Team<br><a href='http://chainmap.org/'>Chainmap.org</a>";
                                 emailSubject = "Reset Password link sent!!!"
                                 const params = {
@@ -1133,7 +1136,7 @@ exports.resetPassword = (req, res) => {
         } else if (results.length == 1) {
             var user_id = results[0].user_id
             var time = results[0].time
-            if (time < Date.now) {
+            if (time < Date.now()) {
                 res.render("resetPassword", {
                     data: 0
                 });
@@ -1170,7 +1173,7 @@ exports.resetPasswordAction = (req, res) => {
                 var user_id = results[0].user_id
                 var time = results[0].time
                 var isUsed = results[0].isUsed
-                if (time < Date.now) {
+                if (time < Date.now()) {
                     return res.json({ "responseCode": 1, "responseDesc": "Given code is expired. Please try again." });
                 } else {
                     password = md5(password)
