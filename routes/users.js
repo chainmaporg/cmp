@@ -1186,7 +1186,7 @@ exports.resetPasswordAction = (req, res) => {
                                 return res.json({ "responseCode": 1, "responseDesc": "Something went wrong. Please try again." });
                             } else {
                                 connection.query(
-                                    "delete from forgetPasswordcode where token = ?",
+                                    "delete from forgetPasswordCode where token = ?",
                                     [token],
                                     (error, results, fields) => {
                                         if (error) {
