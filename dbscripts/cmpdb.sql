@@ -216,8 +216,8 @@ CREATE TABLE `user_recommendations` (
     `suggested_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET = utf8;
 
-DROP TABLE IF EXISTS `forgetPasswordcode`;
-CREATE TABLE `forgetPasswordcode` (
+DROP TABLE IF EXISTS `forgetPasswordCode`;
+CREATE TABLE `forgetPasswordCode` (
   `token` char(32) NOT NULL,
   `user_id` int(11) NOT NULL,
   `time` bigint(16) NOT NULL,
