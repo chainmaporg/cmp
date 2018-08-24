@@ -30,12 +30,18 @@ Then open the folder with "open .".
     - For each sql file inside dbscripts, type "source " inside the mysql terminal and then drag each sql file from the finder into the mysql terminal and end each line with ";". Press enter, and repeat for the next file.
     - change the CMP/local_deploy.env with your own mysql DB password in the exports, db section.
 
-(5) Run in the terminal : "sudo sh startNode.sh"
+(5) Untar the Depenency zip under your cmp folder
+   - tar -xvf randwalk.tar
+   - under the ./examples/randwalk, run "make all" and generta the randwalk
+   - Copy the randwalk into ./utils/
+   This is the AI engine and shall execute at the beginning of the application
+
+(6) Run in the terminal : "sudo sh startNode.sh"
     
     Note: need sudo to open the port 80. This shall create the Node.js server. You will need to enter a password for sudo commands if a password has not been entered recently.
     - stop it wih "sudo sh stopNode.sh"
 
-(6) Access your local environment with http://localhost/ in a web browser.
+(7) Access your local environment with http://localhost/ in a web browser.
 
 
 ## Contact
