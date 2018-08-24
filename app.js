@@ -73,41 +73,50 @@ app.use(
     }),
 );
 
-// run once at the beginning
-console.log("Updating graph.");
-const outputGraph = require("./utils/outputGraph");
-const id_dict = outputGraph.getGraph();
-id_dict
-    .then(dict => {
-        const importancePromise = outputGraph.runPPR();
-        importancePromise
-            .then(importances => {
-                outputGraph.getMappings(dict, importances);
+fs.stat('./utils/randwalk', (err, stat) => {
+    if(err == null) {
+        // run once at the beginning
+        console.log("Updating graph.");
+        const outputGraph = require("./utils/outputGraph");
+        const id_dict = outputGraph.getGraph();
+        id_dict
+            .then(dict => {
+                const importancePromise = outputGraph.runPPR();
+                importancePromise
+                    .then(importances => {
+                        outputGraph.getMappings(dict, importances);
+                    })
+                    .catch(error => {
+                        console.log("Error:", error);
+                    });
             })
-            .catch(error => {
-                console.log("Error:", error);
-            });
-    })
-    .catch(error => {});
+            .catch(error => {});
 
-// schedule recommendation updates every half day
-setInterval(() => {
-    console.log("Updating graph.");
-    const outputGraph = require("./utils/outputGraph");
-    const id_dict = outputGraph.getGraph();
-    id_dict
-        .then(dict => {
-            const importancePromise = outputGraph.runPPR();
-            importancePromise
-                .then(importances => {
-                    outputGraph.getMappings(dict, importances);
+        // schedule recommendation updates every half day
+        setInterval(() => {
+            console.log("Updating graph.");
+            const outputGraph = require("./utils/outputGraph");
+            const id_dict = outputGraph.getGraph();
+            id_dict
+                .then(dict => {
+                    const importancePromise = outputGraph.runPPR();
+                    importancePromise
+                        .then(importances => {
+                            outputGraph.getMappings(dict, importances);
+                        })
+                        .catch(error => {
+                            console.log("Error:", error);
+                        });
                 })
-                .catch(error => {
-                    console.log("Error:", error);
-                });
-        })
-        .catch(error => {});
-}, 3.6e6);
+                .catch(error => {});
+        }, 3.6e6);
+
+    } else if(err.code === "ENOENT") {
+        console.log("Try running the make file.");
+    } else {
+        console.log("Error: ", err.code);
+    }
+});
 
 // middleware to make 'user' available to all templates
 
