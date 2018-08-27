@@ -1,7 +1,7 @@
 chainmap_env = global.config.chainmap_env;
 smartContract_address = global.config.smartContract_address;
 chainmapServerWallet = global.config.chainmapServerWallet;
-supportEmail = global.config.supportEmail
+supportEmail = global.config.supportEmail;
 
 const Nebulas = require("nebulas");
 
@@ -34,13 +34,26 @@ const client = new Client();
 const solr_host = global.config.search_solr_host;
 const engine_host = global.config.search_engine_host;
 
-router.get("/query/:category/:content", function(req, res, next) {
-    var url = "";
-    if (req.params.category == "All") {
+router.get("/query/:category/:content/:search_type", (req, res, next) => {
+    let url = "";
+    if (req.params.category === "All") {
         url =
             solr_host +
             "/select?fl=title,%20url,%20summary,%20category&q=search_content:" +
             encodeURI(req.params.content) +
+            "&wt=json";
+    } else if (req.params.category === "job_postings") {
+        let order = "";
+        if (req.params.search_type === "recent") {
+            order = "&sort=date desc";
+        }
+        url =
+            solr_host +
+            "/select?fl=title,%20url,%20summary,%20date,%20city,%20location,%20company,%20tags,%20category&q=category:" +
+            encodeURI(req.params.category) +
+            "%20AND%20search_content:" +
+            encodeURI(req.params.content) +
+            encodeURI(order) +
             "&wt=json";
     } else {
         url =
@@ -55,7 +68,8 @@ router.get("/query/:category/:content", function(req, res, next) {
     console.log("chainmap_search:", url);
 
     client.get(url, function(data, response) {
-        var obj = JSON.parse(data);
+        const obj = JSON.parse(data);
+        console.log(obj);
         res.send(obj);
     });
 });
@@ -139,8 +153,8 @@ router.get("/searchContent", function(req, res) {
     res.render("searchContent", { title: "Search Blockchain related Content" });
 });
 
-router.get("/connectJob", function(req, res) {
-    res.render("connectJob", { title: "Find jobs" });
+router.get("/connectJobs", function(req, res) {
+    res.render("connectJobs", { title: "Connect Jobs" });
 });
 
 router.get("/connectSmartContract", function(req, res) {
@@ -182,11 +196,10 @@ router.get("/partnerPage", (req, res) => {
         });
 });
 
-
 router.get("/solution", solution.getSolutions);
 
-router.get("/usecase", function(req,res) {
-	res.render("usecase", {title: "Blockchain Use Case"});
+router.get("/usecase", function(req, res) {
+    res.render("usecase", { title: "Blockchain Use Case" });
 });
 
 router.get("/askQuestion", function(req, res) {

@@ -362,13 +362,13 @@ exports.getJobRecommendations = function (req, res) {
                         var randomIndex = Math.floor(Math.random() * all.length);
                         return all.splice(randomIndex, 1)[0];
                     }
-                    var keywords = [];
-                    var maxLength = all.length;
+                    const keywords = [];
+                    const maxLength = all.length;
                     for (var i = 0; i < Math.min(maxLength, 5); i++) {
                         keywords.push(getRandom());
                     }
 
-                    var category = "job";
+                    const category = "job_postings";
 
                     function getLink(keywords, numShow) {
                         var url =
@@ -383,7 +383,8 @@ exports.getJobRecommendations = function (req, res) {
                         return url;
                     }
 
-                    var url = getLink(keywords, 10);
+                    const url = getLink(keywords, 10);
+                    console.log(url);
 
                     function makePromise(url) {
                         var p = new Promise((resolve, reject) => {
@@ -391,6 +392,7 @@ exports.getJobRecommendations = function (req, res) {
                             var client = new Client();
                             var r = client.get(url, function (data, response) {
                                 var docs = JSON.parse(data).response.docs;
+                                console.log(docs);
                                 resolve(docs);
                             });
 

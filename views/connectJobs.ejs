@@ -59,12 +59,13 @@
                                         <form class="form-style form-style-3 form-style-5" action="javascript:">
                                             <div class="form-inputs clearfix">
                                                 <p>
-                                                    <label class="required">Select Category
+                                                    <label class="required">Select Job Search Type
                                                         <span>*</span>
                                                     </label>
                                                     <span class="styled-select">
-                                                        <select required id="category" name="category" required>
-                                                            <option value="job">Jobs</option>
+                                                        <select required id="search_type" name="search_type" required>
+                                                            <option value="recent">Most Recent</option>
+                                                            <option value="relevant">Most Relevant by Keywords</option>
                                                         </select>
                                                     </span>
                                                 </p>
@@ -119,13 +120,14 @@
                     var query = document.getElementById("querybox").value;
 
                     //http://chainmap.org/query/All/bitcoin
-                    var reqUrl = "./query/" + document.getElementById("category").value + "/" + encodeURI(query);
+                    var reqUrl = "./query/job_postings" + "/" + encodeURI(query) + "/" + document.getElementById("search_type").value
 
 
-                    $.get(reqUrl, function (data) {
+                    $.when($.get(reqUrl)).then((data) => {
 
-                        document.getElementById("numResults").innerHTML = "Found " + data.response.numFound + " results in category " + document.getElementById("category").value;;
+                        document.getElementById("numResults").innerHTML = "Found " + data.response.numFound + " results in category job postings"
                         var docs = data.response.docs;
+                        console.log(docs);
 
                         // document.getElementById("results1").innerHTML = docs[1].title;
                         var resultsNode = document.getElementById("foundResults");
@@ -136,6 +138,11 @@
                         $.each(docs, function (index, value) {
                             var img = value.category + ".png";
                             var url = String(value.url);
+                            if (value.tags)
+                                var tags = value.tags;
+                            else
+                                var tags = "No tags.";
+                            
                             //alert(url.length);
                             if(url.startsWith("http")) {
                                 //alert(url);
@@ -151,8 +158,10 @@
                                 '<a href="'+url+'" target="_blank" class="list-group-item" style="border: none">' +
                                 '<h4 class="list-group-item-heading" style="color:DodgerBlue;">' + value.title + '</h4>' +
                                 '<p class="list-group-item-text">' + value.summary + ' </p>' +
-                                '<p class="list-group-item-text_small"> Category: ' + value.category + '</p>' +
-
+                                '<p class="list-group-item-text_small"> Tags: ' + tags + '</p>' +
+                                '<p class="list-group-item-text_small"> Company: ' + value.company + '</p>' +
+                                '<p class="list-group-item-text_small"> City: ' + value.city + '</p>' +
+                                '<p class="list-group-item-text_small"> Date: ' + value.date + '</p>' +
                                 '</a>' +
                                 '</div>' +
                                 '</div>'
