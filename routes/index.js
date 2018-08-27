@@ -99,6 +99,7 @@ const news = require("../routes/news");
 const companyNews = require("../routes/companyNews");
 const admin = require("../routes/admin");
 const recommendations = require("../routes/recommendations");
+const solution = require("../routes/solution");
 
 // global.environment = "local";
 global.environment = "production";
@@ -179,6 +180,13 @@ router.get("/partnerPage", (req, res) => {
             console.log(values[1]);
             res.render("connect", { groups: values[0], connections: values[1] });
         });
+});
+
+
+router.get("/solution", solution.getSolutions);
+
+router.get("/usecase", function(req,res) {
+	res.render("usecase", {title: "Blockchain Use Case"});
 });
 
 router.get("/askQuestion", function(req, res) {
