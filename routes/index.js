@@ -70,7 +70,6 @@ router.get("/query/:category/:content/:search_type", (req, res, next) => {
 
     client.get(url, function(data, response) {
         const obj = JSON.parse(data);
-        console.log(obj);
         res.send(obj);
     });
 });
