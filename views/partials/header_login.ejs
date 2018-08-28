@@ -228,7 +228,11 @@ the html attributes. -->
                 <p>
                     <label>
                         <input type='hidden' value='0' id='showProfile' name='showProfile'>
-                        <input type='checkbox' value='1' id='showProfile' name='showProfile'>  
+                        <% if (typeof show_profile !== "undefined" && show_profile == 0) {  %>
+                            <input type='checkbox' value='1' id='showProfile' name='showProfile'> 
+                        <% } else { %>
+                            <input type='checkbox' value='1' id='showProfile' name='showProfile' checked>
+                        <% } %>
                         Allow Others to See My Profile (Email, Wallet will be hidden.)
                         <br> @ chainmap.org/userProfile/YOUR_USERNAME 
                     </label>
@@ -238,7 +242,6 @@ the html attributes. -->
             </div>
 
             <div class="form-inputs clearfix">
-
             </div>
             <p class="form-submit">
                 <input type="submit" value="Update Profile" class="button color small submit">

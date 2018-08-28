@@ -820,11 +820,29 @@ exports.userProfile = (req, res) => {
                                                                                                         results[0][
                                                                                                             "count(*)"
                                                                                                         ];
-                                                                                                    res.render(
-                                                                                                        "userProfile",
-                                                                                                        {
-                                                                                                            data: resultObj,
-                                                                                                            user_token_balance: user_token_balance,
+                                                                                                    connection.query(
+                                                                                                        "select show_profile from connections where user_id = ?",
+                                                                                                        [userID],
+                                                                                                        (
+                                                                                                            error,
+                                                                                                            results,
+                                                                                                            fields,
+                                                                                                        ) => {
+                                                                                                            if (error) {
+                                                                                                                console.log(
+                                                                                                                    error,
+                                                                                                                );
+                                                                                                            } else {
+                                                                                                                resultObj.show_profile =
+                                                                                                                    results[0].show_profile;
+                                                                                                                res.render(
+                                                                                                                    "userProfile",
+                                                                                                                    {
+                                                                                                                        data: resultObj,
+                                                                                                                        user_token_balance: user_token_balance,
+                                                                                                                    },
+                                                                                                                );
+                                                                                                            }
                                                                                                         },
                                                                                                     );
                                                                                                 }
