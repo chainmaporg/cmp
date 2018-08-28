@@ -510,7 +510,7 @@
                                                                                         var category = String(r[i]["category"]).charAt(0).toUpperCase() + String(r[i]["category"]).slice(1);
                                                                                         var link = r[i]["url"];
                                                                                         var title = String(r[i]["title"]).replace(/^[0-9]+/,"").replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()).replace(/ /g, "&nbsp");
-                                                                                        document.getElementById("job"+i).innerHTML=category + ":&nbsp<a href=\"" + link +"\"" + " onclick = \"return logClick(this);\"type=" + category + ">" + title + "</a>";                                                                
+                                                                                        document.getElementById("job"+i).innerHTML= "Job Posting"+ ":&nbsp<a href=\"" + link +"\"" + " onclick = \"return logClick(this);\"type=" + category + ">" + title + "</a>";                                                                
                                                                                     }
                                                                                 });
                                                                             </script>
