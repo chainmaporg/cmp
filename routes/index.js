@@ -34,17 +34,18 @@ const client = new Client();
 const solr_host = global.config.search_solr_host;
 const engine_host = global.config.search_engine_host;
 
+
 router.get("/query/:category/:content/:search_type", (req, res, next) => {
     let url = "";
-    if (req.params.category === "All") {
+    if (req.params.category == "All") {
         url =
             solr_host +
             "/select?fl=title,%20url,%20summary,%20category&q=search_content:" +
             encodeURI(req.params.content) +
             "&wt=json";
-    } else if (req.params.category === "job_postings") {
+    } else if (req.params.category == "job_postings") {
         let order = "";
-        if (req.params.search_type === "recent") {
+        if (req.params.search_type == "recent") {
             order = "&sort=date desc";
         }
         url =
@@ -73,6 +74,33 @@ router.get("/query/:category/:content/:search_type", (req, res, next) => {
         res.send(obj);
     });
 });
+
+router.get("/query/:category/:content", function(req, res, next) {
+    var url = "";
+    if (req.params.category == "All") {
+        url =
+            solr_host +
+            "/select?fl=title,%20url,%20summary,%20category&q=search_content:" +
+            encodeURI(req.params.content) +
+            "&wt=json";
+    } else {
+        url =
+            solr_host +
+            "/select?fl=title,%20url,%20summary,%20category&q=category:" +
+            encodeURI(req.params.category) +
+            "%20AND%20search_content:" +
+            encodeURI(req.params.content) +
+            "&wt=json";
+    }
+
+    console.log("chainmap_search:", url);
+
+    client.get(url, function(data, response) {
+        var obj = JSON.parse(data);
+        res.send(obj);
+    });
+});
+
 
 router.get("/resource/company/:name", function(req, res) {
     res.redirect(engine_host + "/resource/company/" + req.params.name);
