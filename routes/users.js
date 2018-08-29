@@ -832,7 +832,7 @@ exports.userProfile = (req, res) => {
                                                                                                                 console.log(
                                                                                                                     error,
                                                                                                                 );
-                                                                                                            } else {
+                                                                                                            } else if (results.length > 0) {
                                                                                                                 resultObj.show_profile =
                                                                                                                     results[0].show_profile;
                                                                                                                 res.render(
@@ -842,6 +842,15 @@ exports.userProfile = (req, res) => {
                                                                                                                         user_token_balance: user_token_balance,
                                                                                                                     },
                                                                                                                 );
+                                                                                                            } else {
+                                                                                                                resultObj.show_profile = 0;
+                                                                                                                res.render(
+                                                                                                                    "userProfile",
+                                                                                                                    {
+                                                                                                                        data: resultObj,
+                                                                                                                        user_token_balance: user_token_balance,
+                                                                                                                    }, 
+                                                                                                                )
                                                                                                             }
                                                                                                         },
                                                                                                     );
