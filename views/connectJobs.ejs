@@ -33,7 +33,18 @@
                             <div class="box_icon box_warp box_no_border box_no_background" box_border="transparent" box_background="transparent" box_color="#FFF">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <h2>Welcome to ChainMap Job Center - Know the needs and learn the skills!</h2>
+                                        <h2>Map of Blockchain Jobs</h2>
+                                        <font size="4">Know the needs and learn the skills!</font>
+                                        	<br><br>
+                                		    <%        
+                								if (typeof session == 'undefined' || typeof session.email == 'undefined'){
+                						    %>
+                                        
+                                                <a href="/loginRegister" class="button small green-button custom-button">Login/Register to get recommendations and gain tokens! </a></center>
+                                       
+                                            <% } %> 
+                                        <br><br>
+                                                            
                                         <div class="clearfix"></div>
                                         <!-- <a class="color button dark_button medium" href="#">About Us</a>
                                         <a class="color button dark_button medium" href="#">Join Now</a> -->
@@ -102,6 +113,8 @@
                             <!-- End main -->
                         </div>
                         <!-- End row -->
+                        
+                                                   
                     </section>
                     <!-- End container -->
 
