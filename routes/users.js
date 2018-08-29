@@ -403,7 +403,7 @@ exports.getJobRecommendations = function (req, res) {
                             });
 
                             r.on("error", function (err) {
-                                console.log("request error", error);
+                                console.log("request error", err);
                                 reject();
                             });
                         }).catch(error => {

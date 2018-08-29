@@ -24,7 +24,17 @@
                     <div class="box_icon box_warp box_no_border box_no_background" box_border="transparent" box_background="transparent" box_color="#FFF">
                         <div class="row">
                             <div class="col-md-12">
-                                <h2>Welcome to the Chainmap Connection Center</h2>
+                                <h2>Map of your blockchain conenctions </h2>
+                                <font size="4">Find Friends/Projects to Partner with!</font>
+								<br><br>
+									<%        
+										if (typeof session == 'undefined' || typeof session.email == 'undefined'){
+									%>
+								
+										<a href="/loginRegister" class="button small green-button custom-button">Login/Register to get recommendations and gain tokens! </a></center>
+							   
+									<% } %> 
+								<br><br>
                                 <div class="clearfix"></div>
                                 <!-- <a class="color button dark_button medium" href="#">About Us</a>
                                     <a class="color button dark_button medium" href="#">Join Now</a> -->
