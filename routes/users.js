@@ -432,8 +432,9 @@ exports.getJobRecommendations = function(req, res) {
                                 reject();
                             });
 
-                            r.on("error", function(err) {
-                                console.log("request error", error);
+                            r.on("error", function (err) {
+                                console.log("request error", err);
+
                                 reject();
                             });
                         }).catch(error => {

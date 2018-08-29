@@ -25,6 +25,16 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h2>Map of Blockchain Solutions</h2>
+                                <font size="4">Find Step by Step best route guidance for blockchain solutions!</font>
+                                    <br><br>
+									<%        
+										if (typeof session == 'undefined' || typeof session.email == 'undefined'){
+									%>
+								
+										<a href="/loginRegister" class="button small green-button custom-button">Login/Register to get recommendations and gain tokens! </a></center>
+							   
+									<% } %> 
+                                    <br><br>
                                 <div class="clearfix"></div>
                             </div>
 
@@ -48,12 +58,12 @@
                	
             %>
                         <div class="row">
-                        
                             <!--<div class="boxedtitle page-title">-->
-                                <table><tr><td> <img src=<%=imgname%> width="300" height="300"/> 
+                            <table><tr><td><img src=<%=imgname%> width="400" height="300"/>
                                         </td>
-                                         </tr>
-                                </table>
+                                    </tr>
+                            </table>
+                
                             <!--</div>-->
 					        <br>
                             <div class="col-md-12">
@@ -62,15 +72,26 @@
                                  for(var k = 0;k < steps.length;k++) { %>
 
                                  <tr>
+                                   <td width="100">
+                                    	<h2>Step <%=steps[k].step%></h2>
+                                   </td>
                                    <td width="300">
-                                   		<h3>Step <%=steps[k].step+" - "+steps[k].step_name%></h3>
+                                   		<h3><%=steps[k].step_name%></h3>
                                    </td>
                                    <td width="500">
-                                   		<%=steps[k].step_description%>
+                                   		<font size="4"><%=steps[k].step_description%></font>
+                                   		<br><br>
                                    </td>
                                    <td width="200">
-                                   		<a href=<%=steps[k].step_url%>>Read the article</a>
+                                   		<li><center> <h3> <a href=<%=steps[k].step_url%>>Read the article</a></h3></center>
+                                   		<br><br>
                                    </td>
+                                 </tr>
+                                 <tr>
+                                 	<td>
+                                 		<br><br>
+                                 	</td>
+                                 
                                  </tr>
 
                                  <% } %>
@@ -78,8 +99,10 @@
 								 
 	                        </div> <!--col-md-12-->
                         </div> <!--row-->
+      
                         
            <% } %>      
+
  
             </section>
 
