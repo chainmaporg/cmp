@@ -2,7 +2,7 @@ var express = require("express");
 var md5 = require("md5");
 var ubs = require("../libs/UserBalanceService");
 
-exports.userRegister = function (req, res) {
+exports.userRegister = function(req, res) {
     console.log("req", req.body);
     var today = new Date();
     var company_id = "";
@@ -58,65 +58,89 @@ exports.userRegister = function (req, res) {
         is_reviewer: 0,
     };
 
-    connection.query("select COUNT(*) as number from user where `user`.user_email = ?", req.body.user_email, function (
-        error,
-        results,
-        fields,
-    ) {
-        if (error) {
-            console.log("error ocurred", error);
-            res.status(500).send({ error: "you have an error" });
-        } else {
-            if (results[0].number == 0) {
-                connection.query(
-                    "select COUNT(*) as number from user where `user`.user_name = ?",
-                    req.body.user_name,
-                    function (error, results, fields) {
-                        if (error) {
-                            console.log("error ocurred", error);
-                            // res.redirect('/error');
-                            res.status(500).send({
-                                error: "you have an error",
-                            });
-                        } else {
-                            if (results[0].number == 0) {
-                                connection.query("INSERT INTO user SET ?", userInfo, function (error, results, fields) {
-                                    if (error) {
-                                        // res.render("error", { errorMsg: "Error on insertion into DB Users code " })
-                                        console.log("error ocurred changes", error);
-                                        res.status(500).send({
-                                            error: "you have an error",
-                                        });
-                                    } else {
-                                        console.log("The information saved successfully", results);
-                                        res.send({
-                                            msg: "success",
-                                        });
-                                    }
+    connection.query(
+        "select COUNT(*) as number from user where `user`.user_email = ?",
+        req.body.user_email,
+        (error, results, fields) => {
+            if (error) {
+                console.log("error ocurred", error);
+                res.status(500).send({ error: "you have an error" });
+            } else {
+                if (results[0].number == 0) {
+                    connection.query(
+                        "select COUNT(*) as number from user where `user`.user_name = ?",
+                        req.body.user_name,
+                        (error, results, fields) => {
+                            if (error) {
+                                console.log("error ocurred", error);
+                                // res.redirect('/error');
+                                res.status(500).send({
+                                    error: "you have an error",
                                 });
                             } else {
-                                console.log("duplicate user name", req.body.user_name);
-                                res.send({
-                                    msg: "duplicateUserName",
-                                });
+                                if (results[0].number == 0) {
+                                    connection.query("INSERT INTO user SET ?", userInfo, (error, results, fields) => {
+                                        if (error) {
+                                            console.log("error ocurred changes", error);
+                                            res.status(500).send({
+                                                error: "you have an error",
+                                            });
+                                        } else {
+                                            const userData = results;
+                                            connection.query(
+                                                "select user_id from user where user_name = ?",
+                                                [req.body.user_name],
+                                                (error, results, fields) => {
+                                                    if (error) {
+                                                        console.log(error);
+                                                    } else {
+                                                        const userID = results[0].user_id;
+                                                        connection.query(
+                                                            "insert into connections(user_id, show_profile) values (?)",
+                                                            [[userID, 1]],
+                                                            (error, results, fields) => {
+                                                                if (error) {
+                                                                    console.log(error);
+                                                                } else {
+                                                                    console.log(
+                                                                        "The information saved successfully",
+                                                                        userData,
+                                                                    );
+                                                                    res.send({
+                                                                        msg: "success",
+                                                                    });
+                                                                }
+                                                            },
+                                                        );
+                                                    }
+                                                },
+                                            );
+                                        }
+                                    });
+                                } else {
+                                    console.log("duplicate user name", req.body.user_name);
+                                    res.send({
+                                        msg: "duplicateUserName",
+                                    });
+                                }
                             }
-                        }
-                    },
-                );
-            } else {
-                console.log("duplicate user Email", req.body.user_email);
-                res.send({
-                    msg: "duplicateUserEmail",
-                });
+                        },
+                    );
+                } else {
+                    console.log("duplicate user Email", req.body.user_email);
+                    res.send({
+                        msg: "duplicateUserEmail",
+                    });
+                }
             }
-        }
-    });
+        },
+    );
 
     // }
 };
 
-exports.getCompanies = function (req, res) {
-    connection.query("select company_id, company_name from company", function (error, results, fields) {
+exports.getCompanies = function(req, res) {
+    connection.query("select company_id, company_name from company", function(error, results, fields) {
         if (error) {
             console.log("error ocurred", error);
             res.render("error", {
@@ -304,20 +328,27 @@ exports.getRecommendations = (req, res) => {
                             values = values[0].concat(values[1]);
                             const recommendations = shuffle(values).slice(0, 6);
                             resData.recommendations = recommendations;
+                            for (let i = 0; i < recommendations.length; i++) {
+                                if (String(recommendations[i].url).startsWith("http")) {
+                                } else {
+                                    recommendations[i].url =
+                                        "/resource/" + recommendations[i].category + "/" + recommendations[i].title;
+                                }
+                            }
                             res.send(resData);
                         });
                 });
         });
 };
 
-exports.getJobRecommendations = function (req, res) {
+exports.getJobRecommendations = function(req, res) {
     var Client = require("node-rest-client").Client;
     var client = new Client();
     var solr_host = global.config.search_solr_host;
     var session = req.session;
     var userID = session.user_id;
     new Promise((resolve, reject) => {
-        connection.query("select category_id from user_category where user_id=?", [userID], function (
+        connection.query("select category_id from user_category where user_id=?", [userID], function(
             error,
             results,
             fields,
@@ -328,7 +359,7 @@ exports.getJobRecommendations = function (req, res) {
                     errorMsg: "Error on finding user categories",
                 });
             } else {
-                results = results.map(function (value) {
+                results = results.map(function(value) {
                     return value["category_id"];
                 });
                 if (results.length == 0) resolve([1, 2]);
@@ -344,11 +375,11 @@ exports.getJobRecommendations = function (req, res) {
             new Promise((resolve, reject) => {
                 connection.query(
                     "select keyword from keywords where category_id =" + results.join(" or category_id="),
-                    function (error, results, fields) {
+                    function(error, results, fields) {
                         if (error) {
                             reject(error);
                         } else {
-                            results = results.map(function (value) {
+                            results = results.map(function(value) {
                                 return value["keyword"];
                             });
                             resolve(results);
@@ -384,19 +415,18 @@ exports.getJobRecommendations = function (req, res) {
                     }
 
                     const url = getLink(keywords, 10);
-                    console.log(url);
 
                     function makePromise(url) {
                         var p = new Promise((resolve, reject) => {
                             // request is asynchronous
                             var client = new Client();
-                            var r = client.get(url, function (data, response) {
+                            var r = client.get(url, function(data, response) {
                                 var docs = JSON.parse(data).response.docs;
                                 console.log(docs);
                                 resolve(docs);
                             });
 
-                            r.on("requestTimeout", function (r) {
+                            r.on("requestTimeout", function(r) {
                                 console.log("request expired.");
                                 r.abort();
                                 reject();
@@ -404,6 +434,7 @@ exports.getJobRecommendations = function (req, res) {
 
                             r.on("error", function (err) {
                                 console.log("request error", err);
+
                                 reject();
                             });
                         }).catch(error => {
@@ -433,10 +464,10 @@ exports.getJobRecommendations = function (req, res) {
                     }
 
                     combined
-                        .catch(function (error) {
+                        .catch(function(error) {
                             console.log(error);
                         })
-                        .then(function (values) {
+                        .then(function(values) {
                             var recommendations = shuffle(values).slice(0, 4);
                             res.send(recommendations);
                         });
@@ -511,10 +542,10 @@ exports.recordClick = (req, res) => {
     res.send();
 };
 
-exports.checkDuplicatePayment = function (req, res) {
+exports.checkDuplicatePayment = function(req, res) {
     var paymentAddress = req.body.paymentAddress;
     var session = req.session;
-    connection.query("select user_id from user where payment_address = ?", [paymentAddress], function (
+    connection.query("select user_id from user where payment_address = ?", [paymentAddress], function(
         error,
         results,
         fields,
@@ -547,10 +578,10 @@ exports.checkDuplicatePayment = function (req, res) {
     });
 };
 
-exports.checkDuplicatePublicID = function (req, res) {
+exports.checkDuplicatePublicID = function(req, res) {
     const public_id = req.body.public_id;
     console.log(public_id);
-    connection.query("select profile_id from connections where profile_id = ?", [public_id], async function (
+    connection.query("select profile_id from connections where profile_id = ?", [public_id], async function(
         error,
         results,
         fields,
@@ -682,7 +713,7 @@ exports.userProfile = (req, res) => {
 
         var resultObj = {};
         resultObj["private"] = user !== req.session.user_id;
-        connection.query("select * from user where user_id=?", [userID], function (error, results, fields) {
+        connection.query("select * from user where user_id=?", [userID], function(error, results, fields) {
             if (error) {
                 console.log("error ocurred", error);
                 res.render("error", {
@@ -693,7 +724,7 @@ exports.userProfile = (req, res) => {
                 connection.query(
                     "SELECT (select count(*) from challenge where challenge.post_user_id = ?) as total_challenge, (select COUNT(*) FROM answer where answer.post_user_id = ?) as total_answer",
                     [userID, userID],
-                    function (error, results, fields) {
+                    function(error, results, fields) {
                         if (error) {
                             console.log("error ocurred", error);
                             res.render("error", {
@@ -705,7 +736,7 @@ exports.userProfile = (req, res) => {
                             connection.query(
                                 "select challenge.*, `user`.user_name, `user`.user_id, (SELECT COUNT(*) FROM answer WHERE answer.challenge_id = challenge.challenge_id) as total_answers from challenge join `user` on challenge.post_user_id = `user`.user_id where `user`.user_id = ? ORDER BY posting_date DESC",
                                 [userID],
-                                function (error, results, fields) {
+                                function(error, results, fields) {
                                     if (error) {
                                         console.log("error ocurred", error);
                                         res.render("error", {
@@ -722,7 +753,7 @@ exports.userProfile = (req, res) => {
                                         connection.query(
                                             "select challenge.*, (select count(*) from answer where answer.challenge_id = challenge.challenge_id) as total_answer  from challenge join answer on challenge.challenge_id = answer.challenge_id where answer.post_user_id = ? GROUP BY challenge_id ORDER BY posting_date",
                                             [userID],
-                                            function (error, results, fields) {
+                                            function(error, results, fields) {
                                                 if (error) {
                                                     console.log("error ocurred", error);
                                                     res.render("error", {
@@ -739,7 +770,7 @@ exports.userProfile = (req, res) => {
                                                     connection.query(
                                                         "select user_category.category_id, user_category.`level`, category.category_name from user_category join category on user_category.category_id = category.id where user_id = ?",
                                                         [userID],
-                                                        function (error, results, fields) {
+                                                        function(error, results, fields) {
                                                             if (error) {
                                                                 console.log("error ocurred", error);
                                                                 res.render("error", {
@@ -790,11 +821,38 @@ exports.userProfile = (req, res) => {
                                                                                                         results[0][
                                                                                                             "count(*)"
                                                                                                         ];
-                                                                                                    res.render(
-                                                                                                        "userProfile",
-                                                                                                        {
-                                                                                                            data: resultObj,
-                                                                                                            user_token_balance: user_token_balance,
+                                                                                                    connection.query(
+                                                                                                        "select show_profile from connections where user_id = ?",
+                                                                                                        [userID],
+                                                                                                        (
+                                                                                                            error,
+                                                                                                            results,
+                                                                                                            fields,
+                                                                                                        ) => {
+                                                                                                            if (error) {
+                                                                                                                console.log(
+                                                                                                                    error,
+                                                                                                                );
+                                                                                                            } else if (results.length > 0) {
+                                                                                                                resultObj.show_profile =
+                                                                                                                    results[0].show_profile;
+                                                                                                                res.render(
+                                                                                                                    "userProfile",
+                                                                                                                    {
+                                                                                                                        data: resultObj,
+                                                                                                                        user_token_balance: user_token_balance,
+                                                                                                                    },
+                                                                                                                );
+                                                                                                            } else {
+                                                                                                                resultObj.show_profile = 0;
+                                                                                                                res.render(
+                                                                                                                    "userProfile",
+                                                                                                                    {
+                                                                                                                        data: resultObj,
+                                                                                                                        user_token_balance: user_token_balance,
+                                                                                                                    }, 
+                                                                                                                )
+                                                                                                            }
                                                                                                         },
                                                                                                     );
                                                                                                 }
@@ -838,10 +896,10 @@ exports.tokenRanking = function (req, res) {
 }
 **/
 
-exports.tokenRanking = function (req, res) {
+exports.tokenRanking = function(req, res) {
     connection.query(
         "select `user`.*, (select balance from user_balance b where b.user_id = `user`.user_id and balance_id in (select max(balance_id) from user_balance group by user_id)) as total from `user` ORDER BY total DESC limit 5",
-        function (error, results, fields) {
+        function(error, results, fields) {
             //connection.query('select `user`.*, ((select count(*) as total from challenge where post_user_id = `user`.user_id) + (select count(*) as total from answer where post_user_id = `user`.user_id)) as total from `user` ORDER BY total DESC limit 5', function (error, results, fields) {
             if (error) {
                 console.log("error ocurred", error);
@@ -856,14 +914,14 @@ exports.tokenRanking = function (req, res) {
     );
 };
 
-exports.updateUserProfile = function (req, res) {
+exports.updateUserProfile = function(req, res) {
     console.log("total Input", req.body);
 
     var session = req.session;
     var userID = session.user_id;
     var interests = req.body.interest;
     var levels = req.body.level;
-    levels = levels.map(function (n) {
+    levels = levels.map(function(n) {
         return n !== "" ? n : "Brozen";
     });
     var userCategoryInterest = [];
@@ -878,7 +936,7 @@ exports.updateUserProfile = function (req, res) {
         }
     }
 
-    connection.query("delete from user_category WHERE user_id = ?", [userID], function (error, results, fields) {
+    connection.query("delete from user_category WHERE user_id = ?", [userID], function(error, results, fields) {
         if (error) {
             console.log("error ocurred", error);
             res.render("error", {
@@ -890,7 +948,7 @@ exports.updateUserProfile = function (req, res) {
                 connection.query(
                     "INSERT INTO user_category (category_id, user_id, level) VALUES ?",
                     [userCategoryInterest],
-                    function (error, results, fields) {
+                    function(error, results, fields) {
                         if (error) {
                             console.log("error ocurred", error);
                             res.render("error", {
@@ -906,7 +964,7 @@ exports.updateUserProfile = function (req, res) {
                 if (error) {
                     console.log("error ocurred", error);
                     res.render("error", {
-                        errorMsg: "Error on deletion"
+                        errorMsg: "Error on deletion",
                     });
                 } else {
                     connection.query(
@@ -932,7 +990,7 @@ exports.updateUserProfile = function (req, res) {
             connection.query(
                 "update `user` set `user`.payment_address = ?, `user`.headline = ? WHERE user_id = ?",
                 [req.body.paymentAddress, headline, userID],
-                function (error, results, fields) {
+                function(error, results, fields) {
                     if (error) {
                         console.log("error ocurred", error);
                         res.render("error", {
@@ -949,8 +1007,8 @@ exports.updateUserProfile = function (req, res) {
     });
 };
 
-exports.getAllCategory = function (req, res) {
-    connection.query("select * from category", function (error, results, fields) {
+exports.getAllCategory = function(req, res) {
+    connection.query("select * from category", function(error, results, fields) {
         if (error) {
             console.log("error ocurred", error);
             res.render("error", {
@@ -963,12 +1021,12 @@ exports.getAllCategory = function (req, res) {
     });
 };
 
-exports.getAllCategoryWithUserCat = function (req, res) {
+exports.getAllCategoryWithUserCat = function(req, res) {
     var category;
     var userCategory;
     var session = req.session;
     var userID = session.user_id;
-    connection.query("select * from category", function (error, results, fields) {
+    connection.query("select * from category", function(error, results, fields) {
         if (error) {
             console.log("error ocurred", error);
             res.render("error", {
@@ -976,7 +1034,7 @@ exports.getAllCategoryWithUserCat = function (req, res) {
             });
         } else {
             category = results;
-            connection.query("select * from user_category where user_id = ?", [userID], function (
+            connection.query("select * from user_category where user_id = ?", [userID], function(
                 error,
                 results,
                 fields,
@@ -1025,167 +1083,211 @@ exports.sendMessage = (req, res) => {
 };
 
 exports.submitEmail = (req, res) => {
-    if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
-        console.log("Please select captcha")
-        return res.json({ "responseCode": 1, "responseDesc": "Please select captcha" });
-
+    if (
+        req.body["g-recaptcha-response"] === undefined ||
+        req.body["g-recaptcha-response"] === "" ||
+        req.body["g-recaptcha-response"] === null
+    ) {
+        console.log("Please select captcha");
+        return res.json({ responseCode: 1, responseDesc: "Please select captcha" });
     }
-    var givenString = req.body.emailorUsername
+    var givenString = req.body.emailorUsername;
     // Put your secret key here.
     var secretKey = global.config.secretKey;
     // req.connection.remoteAddress will provide IP address of connected user.
-    var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+    var verificationUrl =
+        "https://www.google.com/recaptcha/api/siteverify?secret=" +
+        secretKey +
+        "&response=" +
+        req.body["g-recaptcha-response"] +
+        "&remoteip=" +
+        req.connection.remoteAddress;
     // Hitting GET request to the URL, Google will respond with success or error scenario.
-    var request = require('request');
-    request(verificationUrl, function (error, response, body) {
+    var request = require("request");
+    request(verificationUrl, function(error, response, body) {
         body = JSON.parse(body);
         // Success will be true or false depending upon captcha validation.
         if (body.success !== undefined && !body.success) {
-            return res.json({ "responseCode": 1, "responseDesc": "Failed captcha verification. Please reload your browser and try again." });
-        } else {
-
-            connection.query("select user_id, user_email, user_name from user where user_email = ? or user_name = ?", [givenString, givenString], function (error, results, fields) {
-                if (error) {
-                    console.log(error);
-                    return res.json({ "responseCode": 1, "responseDesc": "Something wrong happened. Please try again" });
-                } else if (results.length == 1) {
-                    var user_email = results[0].user_email
-                    user_id = results[0].user_id
-                    var user_name = results[0].user_name
-                    var randomstring = require("randomstring");
-                    var dateStamp = new Date().valueOf();
-                    code = randomstring.generate();
-                    code = md5(code + dateStamp)
-                    console.log("the code is: ", code);
-                    expirationTime = Date.now() + 86400000; // 24 hour
-                    var hostname = req.headers.host;
-                    connection.query(
-                        "INSERT INTO forgetPasswordCode (token, time, user_id) VALUES (?,?,?)",
-                        [code, expirationTime, user_id],
-                        function (error, results, fields) {
-                            if (error) {
-                                console.log("error ocurred", error);
-                                return res.json({ "responseCode": 1, "responseDesc": "Something went wrong with Code generation. Please try again." });
-                            } else {
-                                // load aws sdk
-                                var aws = require('aws-sdk');
-                                // load aws config
-                                aws.config.loadFromPath('config.json');
-                                // load AWS SES
-                                var ses = new aws.SES({ apiVersion: '2010-12-01' });
-                                // send to list
-                                var to = [user_email]
-                                var url = global.config.baseUrl + "resetPassword" + "/" + code
-                                var emailBody = "Hi " + user_name + "<br><br> To reset your password, Please access this link within 24 hours: <a href='" + url + "' target='_blank'> Reset Password </a>";
-                                emailBody = emailBody + "<br> <br> Thanks <br>Chainmap Support Team<br><a href='http://chainmap.org/'>Chainmap.org</a>";
-                                emailSubject = "Reset Password link sent!!!"
-                                const params = {
-                                    Destination: {
-                                        ToAddresses: to
-                                    },
-                                    Message: {
-                                        Body: {
-                                            Html: {
-                                                Charset: 'UTF-8',
-                                                Data:
-                                                    emailBody
-                                            },
-                                            Text: {
-                                                Charset: 'UTF-8',
-                                                Data: 'This is the message body in text format.'
-                                            }
-                                        },
-                                        Subject: {
-                                            Charset: 'UTF-8',
-                                            Data: emailSubject
-                                        }
-                                    },
-                                    ReturnPath: global.config.supportEmail,
-                                    Source: global.config.supportEmail
-                                }
-                                // this sends the email
-                                // @todo - add HTML version
-                                ses.sendEmail(params, (err, data) => {
-                                    if (err) {
-                                        console.log(err, err.stack)
-                                        return res.json({ "responseCode": 1, "responseDesc": "Something went wrong with sending email. Either you can contact us for the code or you can try the process again. Thanks" });
-                                        
-                                    }
-                                    else {
-                                        console.log(data)
-                                        return res.json({ "responseCode": 2, "responseDesc": "A link is sent to your email. Please check to reset your password" });
-                                    }
-                                })
-
-                            }
-                        },
-                    );
-                } else {
-                    return res.json({ "responseCode": 1, "responseDesc": "There is no account with this email address" });
-                }
+            return res.json({
+                responseCode: 1,
+                responseDesc: "Failed captcha verification. Please reload your browser and try again.",
             });
+        } else {
+            connection.query(
+                "select user_id, user_email, user_name from user where user_email = ? or user_name = ?",
+                [givenString, givenString],
+                function(error, results, fields) {
+                    if (error) {
+                        console.log(error);
+                        return res.json({
+                            responseCode: 1,
+                            responseDesc: "Something wrong happened. Please try again",
+                        });
+                    } else if (results.length == 1) {
+                        var user_email = results[0].user_email;
+                        user_id = results[0].user_id;
+                        var user_name = results[0].user_name;
+                        var randomstring = require("randomstring");
+                        var dateStamp = new Date().valueOf();
+                        code = randomstring.generate();
+                        code = md5(code + dateStamp);
+                        console.log("the code is: ", code);
+                        expirationTime = Date.now() + 86400000; // 24 hour
+                        var hostname = req.headers.host;
+                        connection.query(
+                            "INSERT INTO forgetPasswordCode (token, time, user_id) VALUES (?,?,?)",
+                            [code, expirationTime, user_id],
+                            function(error, results, fields) {
+                                if (error) {
+                                    console.log("error ocurred", error);
+                                    return res.json({
+                                        responseCode: 1,
+                                        responseDesc: "Something went wrong with Code generation. Please try again.",
+                                    });
+                                } else {
+                                    // load aws sdk
+                                    var aws = require("aws-sdk");
+                                    // load aws config
+                                    aws.config.loadFromPath("config.json");
+                                    // load AWS SES
+                                    var ses = new aws.SES({ apiVersion: "2010-12-01" });
+                                    // send to list
+                                    var to = [user_email];
+                                    var url = global.config.baseUrl + "resetPassword" + "/" + code;
+                                    var emailBody =
+                                        "Hi " +
+                                        user_name +
+                                        "<br><br> To reset your password, Please access this link within 24 hours: <a href='" +
+                                        url +
+                                        "' target='_blank'> Reset Password </a>";
+                                    emailBody =
+                                        emailBody +
+                                        "<br> <br> Thanks <br>Chainmap Support Team<br><a href='http://chainmap.org/'>Chainmap.org</a>";
+                                    emailSubject = "Reset Password link sent!!!";
+                                    const params = {
+                                        Destination: {
+                                            ToAddresses: to,
+                                        },
+                                        Message: {
+                                            Body: {
+                                                Html: {
+                                                    Charset: "UTF-8",
+                                                    Data: emailBody,
+                                                },
+                                                Text: {
+                                                    Charset: "UTF-8",
+                                                    Data: "This is the message body in text format.",
+                                                },
+                                            },
+                                            Subject: {
+                                                Charset: "UTF-8",
+                                                Data: emailSubject,
+                                            },
+                                        },
+                                        ReturnPath: global.config.supportEmail,
+                                        Source: global.config.supportEmail,
+                                    };
+                                    // this sends the email
+                                    // @todo - add HTML version
+                                    ses.sendEmail(params, (err, data) => {
+                                        if (err) {
+                                            console.log(err, err.stack);
+                                            return res.json({
+                                                responseCode: 1,
+                                                responseDesc:
+                                                    "Something went wrong with sending email. Either you can contact us for the code or you can try the process again. Thanks",
+                                            });
+                                        } else {
+                                            console.log(data);
+                                            return res.json({
+                                                responseCode: 2,
+                                                responseDesc:
+                                                    "A link is sent to your email. Please check to reset your password",
+                                            });
+                                        }
+                                    });
+                                }
+                            },
+                        );
+                    } else {
+                        return res.json({
+                            responseCode: 1,
+                            responseDesc: "There is no account with this email address",
+                        });
+                    }
+                },
+            );
         }
     });
 };
 
-
 exports.resetPassword = (req, res) => {
-    var token = req.params.token
-    connection.query("select user_id, token, time from forgetPasswordCode where token = ?", [token], function (error, results, fields) {
+    var token = req.params.token;
+    connection.query("select user_id, token, time from forgetPasswordCode where token = ?", [token], function(
+        error,
+        results,
+        fields,
+    ) {
         if (error) {
             console.log(error);
             res.status(500).send({ error: "An unexpected error happened. Please try again." });
         } else if (results.length == 1) {
-            var user_id = results[0].user_id
-            var time = results[0].time
+            var user_id = results[0].user_id;
+            var time = results[0].time;
             if (time < Date.now()) {
                 res.render("resetPassword", {
-                    data: 0
+                    data: 0,
                 });
             } else {
                 res.render("resetPassword", {
                     data: 1,
                     user_id: user_id,
-                    token: token
+                    token: token,
                 });
             }
         } else {
             res.render("resetPassword", {
-                data: 0
+                data: 0,
             });
         }
     });
 };
 
 exports.resetPasswordAction = (req, res) => {
-    var password = req.body.password
-    var confirmPassword = req.body.confirmpassword
-    var token = req.body.token
+    var password = req.body.password;
+    var confirmPassword = req.body.confirmpassword;
+    var token = req.body.token;
     if (password == "") {
-        return res.json({ "responseCode": 1, "responseDesc": "Password is empty" });
-    }
-    else if (password != confirmPassword) {
-        return res.json({ "responseCode": 1, "responseDesc": "Password did not match" });
+        return res.json({ responseCode: 1, responseDesc: "Password is empty" });
+    } else if (password != confirmPassword) {
+        return res.json({ responseCode: 1, responseDesc: "Password did not match" });
     } else {
-        connection.query("select user_id, token, time from forgetPasswordCode where token = ?", [token], function (error, results, fields) {
+        connection.query("select user_id, token, time from forgetPasswordCode where token = ?", [token], function(
+            error,
+            results,
+            fields,
+        ) {
             if (error) {
                 console.log(error);
-                return res.json({ "responseCode": 1, "responseDesc": "Something went wrong. Please try again." });
+                return res.json({ responseCode: 1, responseDesc: "Something went wrong. Please try again." });
             } else if (results.length == 1) {
-                var user_id = results[0].user_id
-                var time = results[0].time
-                var isUsed = results[0].isUsed
+                var user_id = results[0].user_id;
+                var time = results[0].time;
+                var isUsed = results[0].isUsed;
                 if (time < Date.now()) {
-                    return res.json({ "responseCode": 1, "responseDesc": "Given code is expired. Please try again." });
+                    return res.json({ responseCode: 1, responseDesc: "Given code is expired. Please try again." });
                 } else {
-                    password = md5(password)
+                    password = md5(password);
                     connection.query(
                         "update `user` set `user`.password = ? WHERE user_id = ?",
                         [password, user_id],
                         (error, results, fields) => {
                             if (error) {
                                 console.log(error);
-                                return res.json({ "responseCode": 1, "responseDesc": "Something went wrong. Please try again." });
+                                return res.json({
+                                    responseCode: 1,
+                                    responseDesc: "Something went wrong. Please try again.",
+                                });
                             } else {
                                 connection.query(
                                     "delete from forgetPasswordCode where token = ?",
@@ -1193,9 +1295,15 @@ exports.resetPasswordAction = (req, res) => {
                                     (error, results, fields) => {
                                         if (error) {
                                             console.log(error);
-                                            return res.json({ "responseCode": 1, "responseDesc": "Something went wrong. Please try again." });
+                                            return res.json({
+                                                responseCode: 1,
+                                                responseDesc: "Something went wrong. Please try again.",
+                                            });
                                         } else {
-                                            return res.json({ "responseCode": 2, "responseDesc": "Password Updated Successfully. You can try login." });
+                                            return res.json({
+                                                responseCode: 2,
+                                                responseDesc: "Password Updated Successfully. You can try login.",
+                                            });
                                         }
                                     },
                                 );
@@ -1204,15 +1312,11 @@ exports.resetPasswordAction = (req, res) => {
                     );
                 }
             } else {
-                return res.json({ "responseCode": 1, "responseDesc": "Given code is expired. Please try again." });
+                return res.json({ responseCode: 1, responseDesc: "Given code is expired. Please try again." });
             }
         });
-
     }
-
 };
-
-
 
 exports.messages = (req, res, isInbox) => {
     const userID = req.session.user_id;
@@ -1220,10 +1324,10 @@ exports.messages = (req, res, isInbox) => {
     const displayedType = !isInbox ? "receiver_id" : "sender_id";
     connection.query(
         "select message, " +
-        displayedType +
-        ", timestamp from messages where " +
-        userType +
-        " = ? order by timestamp desc",
+            displayedType +
+            ", timestamp from messages where " +
+            userType +
+            " = ? order by timestamp desc",
         [userID],
         (error, results, fields) => {
             if (error) {
@@ -1255,7 +1359,5 @@ exports.messages = (req, res, isInbox) => {
         },
     );
 };
-
-
 
 // module.exports = router;

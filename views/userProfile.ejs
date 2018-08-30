@@ -36,7 +36,7 @@
 
         <div id="wrap" class="grid_1200">
 
-            <% include ./partials/header_login %>
+            <%- include("partials/header_login",{show_profile:data.show_profile}) %>
 
                 <% include ./partials/body_header %>
 
