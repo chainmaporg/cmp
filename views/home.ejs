@@ -10,9 +10,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description" CONTENT="Blockchain developer growth platform. Personalized training, challenges, search capabilities, team connections and job matching. Earn tokens by posting challenges or answers, and spend tokens to get special training materials.">
+    <meta name="description" CONTENT="Blockchain Solution Search, ranking and Recommendation powered by ChainMap">
     <meta name="keywords" CONTENT="blockchain education, blockchain jobs, blockchain community">
-    <title>Chainmap - Your map for blockchain success.</title>
+    <title>Chainmap - Blockchain Solution Map</title>
 </head>
 
 <% include ./partials/header %>
@@ -53,22 +53,13 @@
 
 
                                     <div class="col-md-12">
-                                        <h2>ChainMap</h2>
                                         <!--
                                         <h2>ChainMap <a href="/loginRegister" class="button small green-button custom-button">Register/Login Now</a></h2> 
                                         -->
                                         <p style="font-size: 26px !important">
-                                            The Best Map for Your Blockchain Career - You Come Here Every Day!
+                                            ChainMap 3.0 - Blockchain Solution Map - Search, Ranking and Recommendation
                                         </p>
 
-                                        <p style="font-size: 26px !important">
-
-                                            <center>
-                                                 <a href="/trainingMaterial_Introduction">Knowledge Center</a>
-                                            </center>
-
-
-                                        </p>
 
                                         <div class="clearfix"></div>
                                         <!-- <a class="color button dark_button medium" href="#">About Us</a>
@@ -89,12 +80,103 @@
                     <!-- Main Section of the home page contents -->
 
                     <section class="container main-content page-full-width">
+                    
+                    <!--Search row" -->
+                    <div class="row">
+                            <div class="col-md-12">
+                                <div class="page-content">
+                                    <div class="boxedtitle page-title">
+                                        <h2>BlockChain Solution Search</h2>
+                                    </div>
+                                    <div class="page-content">
+                                        <form class="form-style form-style-3 form-style-5" action="javascript:">
+                                            <div class="form-inputs clearfix">
+                                                <p>
+                                                    <label class="required">Select Category
+                                                        <span>*</span>
+                                                    </label>
+                                                    <span class="styled-select">
+                                                        <select required id="category" name="category" required>                                                                                             
+                                                            <option value="news">News</option>
+                                                            <option value="White_Paper">White Papers</option>
+                                                            <option value="company">Company</option>
+                                                            <option value="event">Event</option>
+                                                            <option value="ICO">ICO</option>
+                                                            <option value="article">Article</option>
+                                                            <option value="job">Jobs</option>
+                                                            <option value="knowledge">Knowledge</option>
+                                                            <option value="challenges">Challenges</option>
+                                                            <option value="All">All</option>
+
+                                                        </select>
+                                                    </span>
+                                                </p>
+                                                <p>
+                                                    <label class="required">Keyword
+                                                    </label>
+                                                    <input id="querybox" type="text" aria-required="true" placeholder="Blockchain" required>
+                                                </p>
+
+                                            </div>
+
+                                            <p class="form-submit">
+                                                <input name="submit" value="Search" class="submit button medium color" type="submit" onclick="search()">
+                                            </p>
+                                        </form>
+                                    </div>
+                                    <div class="row" id="result_display">
+                                        <p id="numResults"></p>
+
+
+                                        <!-- <p id="foundResults"></p> -->
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="list-group" id="foundResults">
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <!-- End page-content -->
+                            </div>
+                            <!-- End main -->
+                        </div>
+                        <!-- End row -->
+
+
+<br>
+<br>
+
+
                         <div class="col-md-12">
+                        
+                        
                             <div class="col-md-6">
                                 <a href="javascript:" class="anchorcontainer">
                                     <div class="page-content page-shortcode">
                                         <div class="boxedtitle page-title">
-                                            <a href="/connectJobs"><h2>Jobs - you know where the sun is</h2></a>
+                                            <a href="/usecase"><h2>Blockchain Use Case & News...</h2></a>
+                                        </div>
+                                        <div class="accordion blockcontainer">
+                                            <div>
+                                                <img alt="" src="image/homepage/usecase.jpg">
+                                            </div>
+                                            <div class="homepageoverlay">
+                                                <div class="homepageoverlaytext">We can describe some details about User Cases here</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- End page-content -->
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <a href="javascript:" class="anchorcontainer">
+                                    <div class="page-content page-shortcode">
+                                        <div class="boxedtitle page-title">
+                                            <a href="/connectJobs"><h2>Blockchain Jobs...</h2></a>
                                         </div>
                                         <div class="accordion blockcontainer">
                                             <div>
@@ -102,7 +184,7 @@
                                             </div>
 
                                             <div class="homepageoverlay">
-                                                <div class="homepageoverlaytext">We can describe some details about job here</div>
+                                                <div class="homepageoverlaytext">Blockchain Industry Hiring...</div>
                                             </div>
                                         </div>
 
@@ -111,29 +193,13 @@
 
                                 <!-- End page-content -->
                             </div>
-                            <div class="col-md-6">
+
+
+                             <div class="col-md-6">
                                 <a href="javascript:" class="anchorcontainer">
                                     <div class="page-content page-shortcode">
                                         <div class="boxedtitle page-title">
-                                            <a href="/solution"><h2>Solutions - you know how to bear fruits</h2></a>
-                                        </div>
-                                        <div class="accordion blockcontainer">
-                                            <div>
-                                                <img alt="" src="image/homepage/solutionmap.jpg">
-                                            </div>
-                                            <div class="homepageoverlay">
-                                                <div class="homepageoverlaytext">We can describe some details about Solutions here</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- End page-content -->
-                            </div>
-                            <div class="col-md-6">
-                                <a href="javascript:" class="anchorcontainer">
-                                    <div class="page-content page-shortcode">
-                                        <div class="boxedtitle page-title">
-                                            <a href="/partnerPage"><h2>Connections - you know whom to connect with</h2></a>
+                                            <a href="/partnerPage"><h2>Connections...</h2></a>
                                         </div>
                                         <div class="accordion blockcontainer">
                                             <div>
@@ -148,25 +214,39 @@
                                 </a>
                                 <!-- End page-content -->
                             </div>
-                            <div class="col-md-6">
+                            
+                           <div class="col-md-6">
                                 <a href="javascript:" class="anchorcontainer">
                                     <div class="page-content page-shortcode">
                                         <div class="boxedtitle page-title">
-                                            <a href="/usecase"><h2>Industry & Eco System - you know the world</h2></a>
+                                            <a href="/solution"><h2>Development Guide...</h2></a>
                                         </div>
                                         <div class="accordion blockcontainer">
                                             <div>
-                                                <img alt="" src="image/homepage/usecase.jpg">
+                                                <img alt="" src="image/homepage/solutionmap.jpg">
                                             </div>
                                             <div class="homepageoverlay">
-                                                <div class="homepageoverlaytext">We can describe some details about User Cases here</div>
+                                                <div class="homepageoverlaytext">How to do</div>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
                                 <!-- End page-content -->
                             </div>
+                            
                             <div class="col-md-12">
+                            
+                                        <p style="font-size: 26px !important">
+
+                                            <center>
+                                                 <h2><a href="/trainingMaterial_Introduction">Knowledge Center...</a></h2>
+                                            </center>
+
+
+                                        </p>
+                             </div>
+
+                             <div class="col-md-12">
                                 <div class="page-content page-shortcode">
                                     <center>
                                         <h3> Sign on to get personal recommendations on learning/connections and earn CMPAP tokens! </h3>
@@ -196,6 +276,56 @@
         <% include ./partials/footer_js %>
             <!-- footer end -->
 
+            <script type="text/javascript">
+                function search() {
+                    var query = document.getElementById("querybox").value;
+
+                    //http://chainmap.org/query/All/bitcoin
+                    var reqUrl = "./query/" + document.getElementById("category").value + "/" + encodeURI(query);
+
+
+                    $.get(reqUrl, function (data) {
+
+                        document.getElementById("numResults").innerHTML = "Found " + data.response.numFound + " results in category " + document.getElementById("category").value;;
+                        var docs = data.response.docs;
+
+                        // document.getElementById("results1").innerHTML = docs[1].title;
+                        var resultsNode = document.getElementById("foundResults");
+                        while (resultsNode.firstChild) {
+                            resultsNode.removeChild(resultsNode.firstChild);
+                        };
+
+                        $.each(docs, function (index, value) {
+                            var img = value.category + ".png";
+                            var url = String(value.url);
+                            //alert(url.length);
+                            if(url.startsWith("http")) {
+                                //alert(url);
+                            } else {
+                                url = "/resource/"+value.category+"/"+value.title;
+                            }
+                            
+                            document.getElementById("foundResults").innerHTML += (
+                                '<div class="row" margin-bottom: 4px>' +
+                                '<div class="col-sm-2"> ' +
+                                '<img src="image/' + img + '" class="img-rounded" alt="" width="40" height="40" align="right">' +
+                                '</div>' +
+                                '<div class="col-sm-10"> ' +
+                                '<a href="'+url+'" title = \"' + value.title + '\" onclick = "return logClick(this);" target="_blank" class="list-group-item" style="border: none" type=' 
+                                + value.category + '>' +
+                                '<h4 class="list-group-item-heading" style="color:DodgerBlue;">' + value.title + '</h4>' +
+                                '<p class="list-group-item-text">' + value.summary + ' </p>' +
+
+                                '</a>' +
+                                '</div>' +
+                                '</div>'
+                            )
+                        });
+
+                    }); //end jquery get
+                };
+
+            </script>
 
 
     </body>

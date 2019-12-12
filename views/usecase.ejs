@@ -52,12 +52,12 @@
                         
                
                             <div class="boxedtitle page-title">
-                                <h2>Latest Industry News Finding</h2>
+                                <h2>Blockchain Solutions Recommended by ChainMap</h2>
                             </div> 
 					
                             <div class="col-md-12">
                                 <% 
-                                 for(var i = 0;i < 5;i++) { %>
+                                 for(var i = 0;i < 8;i++) { %>
 
                                  <article class="post blog_2 clearfix">
                                      <div class="post-inner">
@@ -84,27 +84,55 @@
                                 <script type="text/javascript">
                                     var host = $(location).attr("hostname")
                                         var reqUrl = "http://" + $(location).attr("hostname") + "/getNews";
+                                        
                                         $.when($.get(reqUrl)).done((r) => {
-                                            for (i=0; i < 5; i++) 
+                                            //count=0;
+                                            todaydate = new Date().toISOString().slice(0,10); 
+                                            //dedup the similar links
+                                            title_set=new Set();
+                                            k=0;
+                                            for (i=0; i < 20; i++) 
                                             {
+                                        
                                                 var link = r[i]["url"][0];
                                                 var pdate = String(r[i]["date"][0]).replace("T00:00:00Z", "");
+                                                
+                                                //George: discard some bad date news                              
+                                                if(pdate>todaydate){
+                                                    continue;
+                                                }
+  
+  												//George: remove duplicate
                                                 var title = String(r[i]["title"][0]);
+                                                if(title_set.has(title)) {
+                                                   continue;
+                                                }
+                                                else {
+                                                    title_set.add(title);
+                                                }
                                                 var category = String(r[i]["category"][0]);
                                                 var summary = String(r[i]["summary"][0]).match(/(.*?)[.?!]\s/);
 
-						if(summary == null){
-						summary = 'No summary available';
-						}else{
-						summary = summary[0];
-						}
+					
                                                 
                                                 //var titlelink = "<a href=\'" + link +"\'"+ " title = \"" + title + "\"onclick = \'return logClick(this);\' type=\'news\' class='post-read-more button color small' target='_blank'>" + title + "</a>";
 												var titleline = "<a href=\'" + link +"\'"+" target='_blank'>" + title + "</a>";
-                        
-                                                document.getElementById("art"+i+"1").innerHTML=titleline;
-                                                document.getElementById("art"+i+"2").innerHTML="["+pdate+"]";
-                                                document.getElementById("art"+i+"3").innerHTML=summary;
+												var readmore = "<a href=\'" + link +"\'"+" target='_blank'>" + " read more..." + "</a>";
+       
+       	                        				if(summary == null){
+						                              summary = readmore;
+						                        }else{
+						                              summary = summary[0];
+						                        }
+						                                         
+                                                document.getElementById("art"+k+"1").innerHTML=titleline;
+                                                document.getElementById("art"+k+"2").innerHTML="["+pdate+"]";
+                                                document.getElementById("art"+k+"3").innerHTML=summary;
+                                                
+                                                k=k+1;
+                                                if(k==8) {
+                                                  break;
+                                                }
                                             }
                                         });
                                 </script>
