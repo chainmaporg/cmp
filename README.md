@@ -2,7 +2,8 @@
 
 
 ## What is chainmap
-See http://chainmap.org
+
+Map the Blockchain - Blockchain Knowledge Map
 
 ## Version and milestones
 
