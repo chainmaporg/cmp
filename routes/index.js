@@ -40,7 +40,7 @@ router.get("/query/:category/:content/:search_type", (req, res, next) => {
     if (req.params.category == "All") {
         url =
             solr_host +
-            "/select?fl=title,%20url,%20summary,%20category&q=search_content:" +
+            "/select?fl=title,%20url,%20summary,%20category&rows=50&q=search_content:" +
             encodeURI(req.params.content) +
             "&wt=json";
     } else if (req.params.category == "job_postings") {
@@ -50,7 +50,7 @@ router.get("/query/:category/:content/:search_type", (req, res, next) => {
         }
         url =
             solr_host +
-            "/select?fl=title,%20url,%20summary,%20date,%20city,%20location,%20company,%20tags,%20category&q=category:" +
+            "/select?fl=title,%20url,%20summary,%20date,%20city,%20location,%20company,%20tags,%20category&rows=50&q=category:" +
             encodeURI(req.params.category) +
             "%20AND%20search_content:" +
             encodeURI(req.params.content) +
@@ -59,7 +59,7 @@ router.get("/query/:category/:content/:search_type", (req, res, next) => {
     } else {
         url =
             solr_host +
-            "/select?fl=title,%20url,%20summary,%20category&q=category:" +
+            "/select?fl=title,%20url,%20summary,%20category&rows=50&q=category:" +
             encodeURI(req.params.category) +
             "%20AND%20search_content:" +
             encodeURI(req.params.content) +
@@ -79,13 +79,13 @@ router.get("/query/:category/:content", function(req, res, next) {
     if (req.params.category == "All") {
         url =
             solr_host +
-            "/select?fl=title,%20url,%20summary,%20category&q=search_content:" +
+            "/select?fl=title,%20url,%20summary,%20category&rows=50&q=search_content:" +
             encodeURI(req.params.content) +
             "&wt=json";
     } else {
         url =
             solr_host +
-            "/select?fl=title,%20url,%20summary,%20category&q=category:" +
+            "/select?fl=title,%20url,%20summary,%20category&rows=50&q=category:" +
             encodeURI(req.params.category) +
             "%20AND%20search_content:" +
             encodeURI(req.params.content) +

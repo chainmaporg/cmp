@@ -1,7 +1,7 @@
 exports.getNews = function(req, res) {
     var Client = require("node-rest-client").Client
     var client = new Client()
-    var url = "http://107.181.170.169:3000/news/top/5"
+    var url = "http://107.181.170.169:3000/news/top/20"
 
     function makePromise(url) {
         var p = new Promise((resolve, reject) => {
